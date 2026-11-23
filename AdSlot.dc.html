@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="_ds/kortx-design-guide-2026-5bc7ff27-9282-4218-938a-63d43f555d47/tokens/fonts.css">
+<link rel="stylesheet" href="_ds/kortx-design-guide-2026-5bc7ff27-9282-4218-938a-63d43f555d47/tokens/colors.css">
+<link rel="stylesheet" href="_ds/kortx-design-guide-2026-5bc7ff27-9282-4218-938a-63d43f555d47/tokens/base.css">
+<link rel="stylesheet" href="_ds/kortx-design-guide-2026-5bc7ff27-9282-4218-938a-63d43f555d47/styles.css">
+<script src="_ds/kortx-design-guide-2026-5bc7ff27-9282-4218-938a-63d43f555d47/_ds_bundle.js"></script>
+<style>
+  /* Ads sit in space rather than on the page: a slight angle, and a long,
+     slow drift so they read as floating. */
+  @keyframes kx-adfloat {
+    0%, 100% { transform: translate3d(0, -4px, 0) rotateY(var(--kx-ty, -7deg)) rotateX(var(--kx-tx, 4deg)); }
+    50%      { transform: translate3d(0, 6px, 0) rotateY(calc(var(--kx-ty, -7deg) * .72)) rotateX(calc(var(--kx-tx, 4deg) * .6)); }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    [data-ad-shell] { animation: none !important; }
+  }
+</style>
+</helmet>
+
+<!-- Replaceable ad slot. The wrapper is fluid; the creative inside is always
+     rendered at its NATIVE canvas size and scaled proportionally (--s), so a
+     300×250, a 300×600 and a 1920×1080 all keep their own geometry. -->
+<!-- Frosted-glass shell, same treatment as the gallery's creative stage:
+     translucent fill, lit top edge, deep shadow and a soft cyan/violet bloom
+     so the ad reads as an object sitting above the page. -->
+<div ref="{{ tiltRef }}" style="position: relative; perspective: 1400px; perspective-origin: 50% 50%; opacity: 0; transition: opacity 600ms cubic-bezier(.16,1,.3,1);">
+<div data-ad-shell style="position: relative; padding: 7px; border-radius: 17px; transform-style: preserve-3d; animation: kx-adfloat 11s ease-in-out infinite; border: 1px solid rgba(0,204,255,.30); background: rgba(255,255,255,.06); backdrop-filter: blur(24px) saturate(150%); -webkit-backdrop-filter: blur(24px) saturate(150%); box-shadow: inset 0 1px 0 rgba(255,255,255,.18), inset 0 -1px 0 rgba(255,255,255,.06), 0 22px 50px rgba(0,0,0,.45), 0 0 60px rgba(0,204,255,.16), 0 0 120px rgba(109,94,240,.18);">
+<div ref="{{ boxRef }}" role="img" aria-label="{{ alt }}" style="position: relative; width: 100%; overflow: hidden; border-radius: 10px; background: #04070E;">
+  <div style="position: absolute; top: 0; left: 0; width: var(--w, 300px); height: var(--h, 600px); transform-origin: 0 0; transform: scale(var(--s, 1));">
+
+    <sc-if value="{{ isImage }}" hint-placeholder-val="{{ false }}">
+      <img src="{{ src }}" alt="" onLoad="{{ onReady }}" onError="{{ onReady }}" style="width: 100%; height: 100%; object-fit: cover; display: block;">
+    </sc-if>
+
+    <sc-if value="{{ isVideo }}" hint-placeholder-val="{{ false }}">
+      <video ref="{{ videoRef }}" src="{{ src }}" poster="{{ poster }}" muted="{{ true }}" autoPlay="{{ true }}" loop="{{ true }}" playsInline="{{ true }}" preload="metadata" onLoadedData="{{ onReady }}" onError="{{ onReady }}" style="width: 100%; height: 100%; object-fit: cover; display: block;"></video>
+    </sc-if>
+
+    <sc-if value="{{ isHtml }}" hint-placeholder-val="{{ false }}">
+      <iframe src="{{ src }}" title="{{ alt }}" tabindex="-1" scrolling="no" loading="eager" onLoad="{{ onReady }}" style="width: 100%; height: 100%; border: 0; display: block; pointer-events: none;"></iframe>
+    </sc-if>
+
+    <!-- DEV PLACEHOLDER — stands in until a real creative is dropped into
+         story-assets.js. Drawn in the KORTX wireframe language. -->
+    <sc-if value="{{ isPlaceholderPortrait }}" hint-placeholder-val="{{ false }}">
+      <div style="position: absolute; inset: 0; display: flex; flex-direction: column; gap: 14px; padding: 18px; box-sizing: border-box; border-radius: 10px; border: 1px solid rgba(0,204,255,.30); background: radial-gradient(120% 70% at 50% 0%, rgba(0,204,255,.14), transparent 62%), #050A14; color: #fff;">
+        <div style="display: flex; align-items: center; gap: 8px;">
+          <span style="width: 12px; height: 12px; border-radius: 3px; background: var(--blue-400, #00CCFF);"></span>
+          <span style="font-size: 9px; font-weight: 600; letter-spacing: .14em; white-space: nowrap; color: rgba(255,255,255,.72);">{{ brand }}</span>
+        </div>
+        <!-- A clean plate keeps the headline BOX (the lifted layer has to land
+             in real empty space) and only hides the type. -->
+        <div data-ad-headline="1" style="font-size: 30px; font-weight: 800; line-height: 1.04; letter-spacing: -.03em; visibility: var(--kx-hl, visible);">{{ headline }}</div>
+        <div style="position: relative; flex: 1; min-height: 0; border-radius: 8px; border: 1px solid rgba(255,255,255,.14); background: linear-gradient(160deg, rgba(0,204,255,.16), rgba(109,94,240,.16) 62%, rgba(255,255,255,.03)); display: grid; place-items: center;">
+          <span style="font-size: 9px; font-weight: 600; letter-spacing: .16em; color: rgba(255,255,255,.55);">PRODUCT IMAGE</span>
+        </div>
+        <div style="font-size: 12px; line-height: 1.35; color: rgba(255,255,255,.76);">{{ support }}</div>
+        <div style="height: 40px; display: grid; place-items: center; border-radius: 999px; background: var(--blue-400, #00CCFF); color: #001830; font-size: 13px; font-weight: 700;">{{ cta }}</div>
+        <div style="position: absolute; bottom: 8px; right: 8px; padding: 3px 6px; border-radius: 4px; background: rgba(0,0,0,.5); font-size: 8px; font-weight: 600; letter-spacing: .1em; color: rgba(255,255,255,.6);">{{ sizeLabel }} · PLACEHOLDER</div>
+      </div>
+    </sc-if>
+
+    <sc-if value="{{ isPlaceholderLandscape }}" hint-placeholder-val="{{ false }}">
+      <div style="position: absolute; inset: 0; display: flex; align-items: center; gap: 80px; padding: 96px; box-sizing: border-box; border-radius: 10px; border: 1px solid rgba(0,204,255,.30); background: radial-gradient(90% 120% at 82% 50%, rgba(0,204,255,.16), transparent 60%), #050A14; color: #fff;">
+        <div style="flex: 1; display: flex; flex-direction: column; gap: 34px;">
+          <div style="display: flex; align-items: center; gap: 16px;">
+            <span style="width: 26px; height: 26px; border-radius: 6px; background: var(--blue-400, #00CCFF);"></span>
+            <span style="font-size: 22px; font-weight: 600; letter-spacing: .18em; color: rgba(255,255,255,.72);">{{ brand }}</span>
+          </div>
+          <div data-ad-headline="1" style="font-size: 104px; font-weight: 800; line-height: 1.02; letter-spacing: -.035em; max-width: 12ch; visibility: var(--kx-hl, visible);">{{ headline }}</div>
+          <div style="font-size: 34px; line-height: 1.35; color: rgba(255,255,255,.76);">{{ support }}</div>
+          <div style="align-self: flex-start; padding: 20px 40px; border-radius: 999px; background: var(--blue-400, #00CCFF); color: #001830; font-size: 30px; font-weight: 700;">{{ cta }}</div>
+        </div>
+        <div style="width: 620px; align-self: stretch; border-radius: 18px; border: 1px solid rgba(255,255,255,.14); background: linear-gradient(160deg, rgba(0,204,255,.16), rgba(109,94,240,.16) 62%, rgba(255,255,255,.03)); display: grid; place-items: center;">
+          <span style="font-size: 20px; font-weight: 600; letter-spacing: .16em; color: rgba(255,255,255,.55);">PRODUCT IMAGE</span>
+        </div>
+        <div style="position: absolute; top: 24px; right: 24px; padding: 8px 14px; border-radius: 6px; background: rgba(0,0,0,.5); font-size: 18px; font-weight: 600; letter-spacing: .1em; color: rgba(255,255,255,.6);">{{ sizeLabel }} · PLACEHOLDER</div>
+      </div>
+    </sc-if>
+
+  </div>
+</div>
+</div>
+</div>
+
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:300,&quot;height&quot;:600},&quot;media&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;placeholder&quot;,&quot;image&quot;,&quot;video&quot;,&quot;html&quot;],&quot;default&quot;:&quot;placeholder&quot;,&quot;tsType&quot;:&quot;string&quot;},&quot;src&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;&quot;,&quot;tsType&quot;:&quot;string&quot;},&quot;poster&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;&quot;,&quot;tsType&quot;:&quot;string&quot;},&quot;w&quot;:{&quot;editor&quot;:&quot;int&quot;,&quot;default&quot;:300,&quot;tsType&quot;:&quot;number&quot;},&quot;h&quot;:{&quot;editor&quot;:&quot;int&quot;,&quot;default&quot;:600,&quot;tsType&quot;:&quot;number&quot;},&quot;tilt&quot;:{&quot;editor&quot;:&quot;range&quot;,&quot;default&quot;:-7,&quot;min&quot;:-16,&quot;max&quot;:16,&quot;step&quot;:1,&quot;unit&quot;:&quot;deg&quot;,&quot;tsType&quot;:&quot;number&quot;},&quot;still&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:false,&quot;tsType&quot;:&quot;boolean&quot;},&quot;alt&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;Ad creative&quot;,&quot;tsType&quot;:&quot;string&quot;},&quot;brand&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;FORMA&quot;,&quot;tsType&quot;:&quot;string&quot;},&quot;headline&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;Comfort, beautifully formed.&quot;,&quot;tsType&quot;:&quot;string&quot;},&quot;support&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;Sculptural seating, made to be lived in.&quot;,&quot;tsType&quot;:&quot;string&quot;},&quot;cta&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;Shop collection&quot;,&quot;tsType&quot;:&quot;string&quot;},&quot;hideHeadline&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:false,&quot;tsType&quot;:&quot;boolean&quot;}}">
+class Component extends DCLogic {
+  boxRef = React.createRef();
+  tiltRef = React.createRef();
+  videoRef = React.createRef();
+
+  w() { return Number(this.props.w) || 300; }
+  h() { return Number(this.props.h) || 600; }
+
+  /* The frame is fluid, the creative is not: measure the frame and scale the
+     native canvas into it. Aspect ratio is pinned so nothing is ever cropped. */
+  measure = () => {
+    const box = this.boxRef.current;
+    if (!box) return;
+    const w = this.w(), h = this.h();
+    box.style.aspectRatio = w + ' / ' + h;
+    box.style.setProperty('--w', w + 'px');
+    box.style.setProperty('--h', h + 'px');
+    const bw = box.clientWidth;
+    if (bw) box.style.setProperty('--s', (bw / w).toFixed(5));
+    /* Clean plate: the headline box stays, the type goes. */
+    box.style.setProperty('--kx-hl', this.props.hideHeadline ? 'hidden' : 'visible');
+    /* Angle: yaw is the main tilt, pitch a fraction of it, so a slot can lean
+       left or right by passing a negative or positive `tilt`. */
+    /* `still` slots sit flat and dead still — the page draws overlay boxes and
+       lifted headlines on top of them, and those can only stay registered if
+       the ad itself does not float or rotate. */
+    const still = this.props.still === true || this.props.still === 'true';
+    const tilt = still ? 0 : (this.props.tilt === undefined ? -7 : Number(this.props.tilt));
+    const wrap = this.tiltRef.current;
+    if (wrap) {
+      wrap.style.setProperty('--kx-ty', tilt + 'deg');
+      wrap.style.setProperty('--kx-tx', (Math.abs(tilt) * 0.55).toFixed(2) + 'deg');
+      const shell = wrap.firstElementChild;
+      if (shell) {
+        shell.style.animation = still ? 'none' : '';
+        shell.style.transform = still ? 'none' : '';
+        /* Signed, so a left-leaning slot and its mirror never bob in step. */
+        if (!still) shell.style.animationDelay = -(((tilt + 21) * 1.7 + w / 100) % 11).toFixed(2) + 's';
+      }
+    }
+  };
+
+  /* The slot stays invisible until its creative has fully loaded, then fades in
+     whole — no dark empty frame, no half-drawn ad. */
+  onReady = () => {
+    const wrap = this.tiltRef.current;
+    if (wrap) wrap.style.opacity = '1';
+  };
+
+  componentDidMount() {
+    this.readyTimer = setTimeout(this.onReady, 5000);
+    this.measure();
+    this.ro = new ResizeObserver(this.measure);
+    if (this.boxRef.current) this.ro.observe(this.boxRef.current);
+    /* Inactive video is paused rather than left decoding behind a faded scene. */
+    this.io = new IntersectionObserver(es => es.forEach(e => {
+      const v = this.videoRef.current;
+      if (!v) return;
+      if (e.isIntersecting) { const p = v.play(); if (p && p.catch) p.catch(() => {}); }
+      else v.pause();
+    }), { threshold: 0.05 });
+    if (this.boxRef.current) this.io.observe(this.boxRef.current);
+  }
+
+  componentDidUpdate() { this.measure(); }
+
+  componentWillUnmount() {
+    clearTimeout(this.readyTimer);
+    this.ro && this.ro.disconnect();
+    this.io && this.io.disconnect();
+  }
+
+  renderVals() {
+    const p = this.props;
+    const media = p.media || 'placeholder';
+    const has = !!p.src;
+    const w = this.w(), h = this.h();
+    /* No mock creative: an empty slot stays dark until its real ad arrives. */
+    const placeholder = !has || media === 'placeholder';
+    return {
+      isImage: !placeholder && media === 'image',
+      isVideo: !placeholder && media === 'video',
+      isHtml: !placeholder && media === 'html',
+      isPlaceholderPortrait: false,
+      isPlaceholderLandscape: false,
+
+      sizeLabel: w + '×' + h,
+      src: p.src || '',
+      poster: p.poster || '',
+      alt: p.alt || 'Ad creative',
+      brand: p.brand || 'BRAND',
+      headline: p.headline || '',
+      support: p.support || '',
+      cta: p.cta || 'Learn more',
+      boxRef: this.boxRef,
+      tiltRef: this.tiltRef,
+      videoRef: this.videoRef,
+      onReady: this.onReady
+    };
+  }
+}
+
+</script>
+</body>
+</html>

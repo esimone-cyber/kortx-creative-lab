@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<script src="kx-theme.js"></script>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Upload your files · KORTX</title>
+<link rel="icon" type="image/svg+xml" href="assets/kortx-logomark-bright-blue.svg">
+<link rel="stylesheet" href="_ds/kortx-design-guide-2026-5bc7ff27-9282-4218-938a-63d43f555d47/tokens/fonts.css">
+<link rel="stylesheet" href="_ds/kortx-design-guide-2026-5bc7ff27-9282-4218-938a-63d43f555d47/tokens/colors.css">
+<style>
+  html, body { margin: 0; background: #000509; color: #fff; font-family: Inter, "Proxima Nova", Helvetica, sans-serif; -webkit-font-smoothing: antialiased; }
+  a { color: #33D6FF; } a:hover { color: #fff; }
+  button, [role="button"], button * { text-decoration: none !important; }
+  @keyframes kx-drift-a { 0%, 100% { transform: translate(0, 0) } 50% { transform: translate(-6%, 5%) } }
+  @keyframes kx-drift-b { 0%, 100% { transform: translate(0, 0) } 50% { transform: translate(5%, -4%) } }
+  @keyframes kx-orbit { 0% { transform: rotate(0) translateX(26px) } 100% { transform: rotate(360deg) translateX(26px) } }
+  @keyframes kx-rise { from { opacity: 0; transform: translateY(12px) } to { opacity: 1; transform: none } }
+  @keyframes kx-spin { to { transform: rotate(360deg) } }
+  @media (prefers-reduced-motion: reduce) { *, *::before, *::after { animation-duration: .001ms !important; animation-iteration-count: 1 !important; transition-duration: .001ms !important; } }
+</style>
+</helmet>
+<div style="position: relative; min-height: 100vh; background: #000509; overflow-x: clip;">
+  <div aria-hidden="true" style="position: fixed; inset: 0; z-index: 0; pointer-events: none; overflow: hidden;">
+    <div style="position: absolute; right: -18%; top: -22%; width: 70vw; height: 70vw; border-radius: 50%; background: radial-gradient(circle, rgba(0,204,255,.16), transparent 62%); animation: kx-drift-a 62s ease-in-out infinite;"></div>
+    <div style="position: absolute; left: -20%; bottom: -30%; width: 70vw; height: 70vw; border-radius: 50%; background: radial-gradient(circle, rgba(109,94,240,.16), transparent 62%); animation: kx-drift-b 78s ease-in-out infinite;"></div>
+    <div style="position: absolute; inset: 0; background-image: linear-gradient(rgba(255,255,255,.035) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,.035) 1px, transparent 1px); background-size: 88px 88px; -webkit-mask-image: linear-gradient(180deg, #000, transparent 70%); mask-image: linear-gradient(180deg, #000, transparent 70%);"></div>
+  </div>
+
+  <header style="position: relative; z-index: 2; display: flex; align-items: center; gap: 16px; min-height: 72px; padding: 12px clamp(20px, 4vw, 56px);">
+    <span aria-label="KORTX" style="position: relative; display: grid; place-items: center; width: 46px; height: 46px; flex: none;">
+      <span aria-hidden="true" style="position: absolute; inset: 0; border-radius: 50%; background: radial-gradient(circle at 50% 50%, rgba(0,204,255,.24), transparent 68%);"></span>
+      <span aria-hidden="true" style="position: absolute; inset: 3px; border: 1px solid rgba(0,204,255,.30); border-radius: 50%;"></span>
+      <span aria-hidden="true" style="position: absolute; inset: 8px; border: 1px solid rgba(138,124,248,.28); border-radius: 50%; transform: rotate(18deg) scaleY(.6);"></span>
+      <img src="assets/kortx-logomark-bright-blue.svg" alt="KORTX" style="position: relative; width: 20px; display: block;">
+      <span aria-hidden="true" style="position: absolute; top: 50%; left: 50%; width: 4px; height: 4px; margin: -2px; border-radius: 50%; background: #33D6FF; box-shadow: 0 0 9px rgba(0,204,255,.9); animation: kx-orbit 18s linear infinite;"></span>
+    </span>
+  </header>
+
+  <main data-block="Client upload" style="position: relative; z-index: 1; max-width: 860px; margin: 0 auto; padding: clamp(16px, 4vh, 48px) clamp(20px, 4vw, 40px) 96px; display: flex; flex-direction: column; gap: 24px;">
+    <div style="display: flex; flex-direction: column; align-items: center; gap: 12px; text-align: center; animation: kx-rise 600ms cubic-bezier(.16,1,.3,1) both;">
+      <span style="font-size: 11px; font-weight: 600; letter-spacing: .18em; text-transform: uppercase; color: #BEF264;">{{ eyebrow }}</span>
+      <h1 style="margin: 0; font-size: clamp(36px, 5vw, 64px); font-weight: 700; letter-spacing: -.035em; line-height: 1.05; text-wrap: balance;">Upload your files</h1>
+      <p style="margin: 0; max-width: 600px; font-size: 16px; line-height: 1.55; color: rgba(255,255,255,.74); text-wrap: pretty;">Logos, images, videos, fonts, copy or anything else for the campaign. Use this same link every time. Each upload is time-stamped for our team.</p>
+    </div>
+
+    <sc-if value="{{ bad }}" hint-placeholder-val="{{ false }}">
+      <div role="alert" style="padding: 18px 20px; border-radius: 14px; border: 1px solid rgba(214,125,240,.5); background: rgba(214,125,240,.08); text-align: center; font-size: 15px; line-height: 1.5; color: #F0B4FF;">{{ badText }}</div>
+    </sc-if>
+
+    <sc-if value="{{ ok }}" hint-placeholder-val="{{ true }}">
+      <label data-focusable="1" onDragOver="{{ onDragOver }}" onDragLeave="{{ onDragLeave }}" onDrop="{{ onDrop }}" style="{{ dropStyle }}" style-hover="border-color: rgba(167,139,250,.7); background: rgba(109,94,240,.08);">
+        <span aria-hidden="true" style="display: grid; place-items: center; width: 56px; height: 56px; border-radius: 50%; background: rgba(0,204,255,.12); color: #33D6FF;"><svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M12 16V4"></path><path d="M7 9l5-5 5 5"></path><path d="M4 20h16"></path></svg></span>
+        <span style="font-size: 18px; font-weight: 700; color: #fff;">Drop files here or browse</span>
+        <span style="font-size: 13px; color: rgba(255,255,255,.6);">Any file type · up to 500 MB each · add as many as you need</span>
+        <input type="file" multiple="{{ true }}" onChange="{{ onPick }}" style="position: absolute; width: 1px; height: 1px; opacity: 0; pointer-events: none;">
+      </label>
+      <label style="display: flex; flex-direction: column; gap: 6px; max-width: 420px; width: 100%; margin: 0 auto;">
+        <span style="font-size: 12px; font-weight: 600; color: rgba(255,255,255,.72);">Your name or email (optional)</span>
+        <input data-focusable="1" type="text" value="{{ uploader }}" onChange="{{ onUploader }}" placeholder="So our team knows who sent it" style="height: 42px; padding: 0 14px; border-radius: 8px; border: 1px solid rgba(255,255,255,.14); background: rgba(0,5,9,.6); color: #fff; font-size: 14px; outline: none; box-sizing: border-box;">
+      </label>
+
+      <sc-if value="{{ hasQueue }}" hint-placeholder-val="{{ false }}">
+        <div style="display: flex; flex-direction: column; gap: 8px;">
+          <sc-for list="{{ queue }}" as="q" hint-placeholder-count="0">
+            <div style="display: flex; align-items: center; gap: 12px; padding: 12px 14px; border-radius: 12px; border: 1px solid rgba(255,255,255,.08); background: #070B15;">
+              <span style="{{ q.dot }}">{{ q.mark }}</span>
+              <span style="flex: 1; min-width: 0; display: flex; flex-direction: column; gap: 6px;">
+                <span style="font-size: 14px; font-weight: 600; color: #fff; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">{{ q.name }}</span>
+                <span style="height: 4px; border-radius: 999px; background: rgba(255,255,255,.07); overflow: hidden;"><span style="{{ q.bar }}"></span></span>
+              </span>
+              <span style="flex: none; font-size: 12px; color: {{ q.color }};">{{ q.note }}</span>
+            </div>
+          </sc-for>
+        </div>
+      </sc-if>
+
+      <section aria-label="Your uploads" style="display: flex; flex-direction: column; gap: 10px; padding: 20px; border-radius: 16px; border: 1px solid rgba(255,255,255,.08); background: #070B15; box-shadow: inset 0 1px 0 rgba(255,255,255,.06), 0 24px 60px rgba(0,0,0,.45);">
+        <div style="display: flex; align-items: baseline; justify-content: space-between; gap: 12px;"><span style="font-size: 11px; font-weight: 600; letter-spacing: .18em; text-transform: uppercase; color: #33D6FF;">Uploaded so far</span><span style="font-size: 12px; color: rgba(255,255,255,.55);">{{ countLabel }}</span></div>
+        <sc-if value="{{ noUploads }}" hint-placeholder-val="{{ true }}"><p style="margin: 6px 0; text-align: center; font-size: 13px; color: rgba(255,255,255,.55);">Nothing yet. Your files show here once they finish uploading.</p></sc-if>
+        <sc-for list="{{ uploads }}" as="u" hint-placeholder-count="0">
+          <div style="display: flex; align-items: center; gap: 12px; min-height: 40px; padding: 6px 12px; border-radius: 10px; border: 1px solid rgba(255,255,255,.06); background: rgba(255,255,255,.02);">
+            <span style="flex: 1; min-width: 0; font-size: 14px; color: #fff; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">{{ u.name }}</span>
+            <sc-if value="{{ u.newest }}" hint-placeholder-val="{{ false }}"><span style="flex: none; padding: 2px 8px; border-radius: 999px; font-size: 10.5px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; color: #001830; background: #BEF264;">Newest</span></sc-if>
+            <span style="flex: none; font-size: 12px; color: rgba(255,255,255,.6); white-space: nowrap;">{{ u.when }}</span>
+          </div>
+        </sc-for>
+      </section>
+    </sc-if>
+  </main>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  state = { ok: false, bad: '', info: null, queue: [], uploads: [], over: false, uploader: '' };
+  async componentDidMount() {
+    const q = new URLSearchParams(location.search); this.rid = q.get('review') || ''; this.tok = q.get('t') || '';
+    try { this.uploader = localStorage.getItem('kx-client-uploader') || ''; if (this.uploader) this.setState({ uploader: this.uploader }); } catch (e) {}
+    try { const c = await import('./creative-cloud.js'); this.FN = c.SUPABASE_URL + '/functions/v1/client-upload'; this.KEY = c.SUPABASE_ANON_KEY; } catch (e) { this.setState({ bad: 'Could not reach KORTX. Check your connection and reload.' }); return; }
+    if (!this.rid || !this.tok) { this.setState({ bad: 'This upload link is missing its code. Use the link from your email.' }); return; }
+    try { const info = await this.call({ action: 'info' }); this.setState({ ok: true, info }); this.refresh(); }
+    catch (e) { this.setState({ bad: e.message || 'This upload link is not valid.' }); }
+  }
+  async call(body) {
+    const r = await fetch(this.FN, { method: 'POST', headers: { 'Content-Type': 'application/json', apikey: this.KEY, Authorization: 'Bearer ' + this.KEY }, body: JSON.stringify(Object.assign({ reviewId: this.rid, token: this.tok }, body)) });
+    if (r.status === 404) throw new Error('Uploads aren’t switched on yet. Please contact your KORTX team.');
+    const j = await r.json().catch(() => ({})); if (!r.ok || j.error) throw new Error(j.error || 'Something went wrong (' + r.status + ').'); return j;
+  }
+  refresh = async () => { try { const j = await this.call({ action: 'list' }); this.setState({ uploads: j.uploads || [] }); } catch (e) {} };
+  patchQ(id, p) { this.setState(s => ({ queue: s.queue.map(x => x.id === id ? Object.assign({}, x, p) : x) })); }
+  add(files) {
+    const list = Array.from(files || []).map(f => ({ id: Math.random().toString(36).slice(2), f, name: f.name, pct: 0, state: 'wait', err: '' }));
+    if (!list.length) return; this.setState(s => ({ queue: list.concat(s.queue) }), () => this.pump());
+  }
+  pump = async () => {
+    if (this.busy) return; this.busy = true;
+    try { for (;;) { const nx = this.state.queue.find(x => x.state === 'wait'); if (!nx) break; await this.send(nx); } }
+    finally { this.busy = false; this.refresh(); }
+  };
+  async send(it) {
+    const f = it.f; this.patchQ(it.id, { state: 'up', pct: 2 });
+    try {
+      const sg = await this.call({ action: 'sign', name: f.name, size: f.size, type: f.type });
+      await new Promise((res, rej) => { const x = new XMLHttpRequest(); x.open('PUT', sg.signedUrl); x.setRequestHeader('Content-Type', f.type || 'application/octet-stream'); x.setRequestHeader('x-upsert', 'false');
+        x.upload.onprogress = e => { if (e.lengthComputable) this.patchQ(it.id, { pct: Math.max(2, Math.round(e.loaded / e.total * 96)) }); };
+        x.onload = () => x.status < 300 ? res() : rej(new Error('Upload failed (' + x.status + ')')); x.onerror = () => rej(new Error('Upload failed. Check your connection.')); x.send(f); });
+      await this.call({ action: 'done', path: sg.path, name: f.name, size: f.size, type: f.type, uploader: this.state.uploader });
+      this.patchQ(it.id, { state: 'done', pct: 100 });
+    } catch (e) { this.patchQ(it.id, { state: 'err', err: e.message || 'Failed' }); }
+  }
+  onPick = e => { const fl = e.target.files; this.add(fl); e.target.value = ''; };
+  onDrop = e => { e.preventDefault(); this.setState({ over: false }); this.add(e.dataTransfer && e.dataTransfer.files); };
+  onDragOver = e => { e.preventDefault(); if (!this.state.over) this.setState({ over: true }); };
+  onDragLeave = () => this.setState({ over: false });
+  onUploader = e => { const v = e.target.value; this.setState({ uploader: v }); try { localStorage.setItem('kx-client-uploader', v); } catch (x) {} };
+  renderVals() {
+    const s = this.state, i = s.info || {}, fmt = d => { const t = new Date(d); return t.toLocaleDateString(undefined, { month: 'short', day: 'numeric', year: 'numeric' }) + ' · ' + t.toLocaleTimeString(undefined, { hour: 'numeric', minute: '2-digit' }); };
+    return {
+      ok: s.ok, bad: !!s.bad, badText: s.bad, eyebrow: [i.brand, i.title].filter(Boolean).join(' · ') || 'KORTX creative',
+      onDrop: this.onDrop, onDragOver: this.onDragOver, onDragLeave: this.onDragLeave, onPick: this.onPick, uploader: s.uploader, onUploader: this.onUploader,
+      dropStyle: { position: 'relative', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', gap: 10, minHeight: 220, padding: 28, borderRadius: 18, cursor: 'pointer', textAlign: 'center', border: '2px dashed ' + (s.over ? '#00CCFF' : 'rgba(0,204,255,.35)'), background: s.over ? 'rgba(0,204,255,.08)' : 'rgba(0,204,255,.03)', boxShadow: s.over ? '0 0 40px rgba(0,204,255,.25)' : 'none', transition: 'all 200ms cubic-bezier(.16,1,.3,1)', animation: 'kx-rise 600ms cubic-bezier(.16,1,.3,1) 120ms both' },
+      hasQueue: s.queue.length > 0,
+      queue: s.queue.map(q => { const done = q.state === 'done', err = q.state === 'err', c = done ? '#BEF264' : err ? '#F0B4FF' : '#00CCFF';
+        return { name: q.name, mark: done ? '✓' : err ? '!' : '', note: done ? 'Uploaded' : err ? q.err : q.state === 'wait' ? 'Waiting' : q.pct + '%', color: c,
+          dot: { flex: 'none', display: 'grid', placeItems: 'center', width: 26, height: 26, borderRadius: '50%', fontSize: 12, fontWeight: 800, color: '#001830', background: done || err ? c : 'transparent', border: '2px solid ' + (done || err ? c : 'rgba(0,204,255,.3)'), borderTopColor: c, animation: q.state === 'up' ? 'kx-spin 1s linear infinite' : 'none', boxSizing: 'border-box' },
+          bar: { display: 'block', height: '100%', width: q.pct + '%', borderRadius: 999, background: done ? '#BEF264' : 'linear-gradient(90deg, #00CCFF, #6D5EF0)', transition: 'width 200ms linear' } }; }),
+      uploads: s.uploads.map((u, k) => ({ name: u.name, when: fmt(u.uploaded_at), newest: k === 0 })), noUploads: !s.uploads.length,
+      countLabel: s.uploads.length ? s.uploads.length + (s.uploads.length === 1 ? ' file' : ' files') : ''
+    };
+  }
+}
+</script>
+</body>
+</html>

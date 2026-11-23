@@ -1,0 +1,1045 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<script src="kx-theme.js"></script>
+<link rel="icon" type="image/svg+xml" href="assets/kortx-logomark-bright-blue.svg">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="omelette-owns-print" content="1">
+<title>Virginia DMV · Proposal v2 | KORTX Creative Labs</title>
+<script src="./image-slot.js"></script>
+<link rel="stylesheet" href="_ds/kortx-design-guide-2026-5bc7ff27-9282-4218-938a-63d43f555d47/tokens/fonts.css">
+<link rel="stylesheet" href="_ds/kortx-design-guide-2026-5bc7ff27-9282-4218-938a-63d43f555d47/tokens/colors.css">
+<link rel="stylesheet" href="_ds/kortx-design-guide-2026-5bc7ff27-9282-4218-938a-63d43f555d47/tokens/typography.css">
+<link rel="stylesheet" href="_ds/kortx-design-guide-2026-5bc7ff27-9282-4218-938a-63d43f555d47/tokens/spacing.css">
+<link rel="stylesheet" href="_ds/kortx-design-guide-2026-5bc7ff27-9282-4218-938a-63d43f555d47/tokens/radius.css">
+<link rel="stylesheet" href="_ds/kortx-design-guide-2026-5bc7ff27-9282-4218-938a-63d43f555d47/tokens/elevation.css">
+<link rel="stylesheet" href="_ds/kortx-design-guide-2026-5bc7ff27-9282-4218-938a-63d43f555d47/tokens/motion.css">
+<link rel="stylesheet" href="_ds/kortx-design-guide-2026-5bc7ff27-9282-4218-938a-63d43f555d47/tokens/base.css">
+<link rel="stylesheet" href="_ds/kortx-design-guide-2026-5bc7ff27-9282-4218-938a-63d43f555d47/styles.css">
+<script src="_ds/kortx-design-guide-2026-5bc7ff27-9282-4218-938a-63d43f555d47/_ds_bundle.js"></script>
+<style>
+  html, body { margin: 0; padding: 0; background: #000509; }
+  body { font-family: var(--font-body, Inter, Helvetica, sans-serif); -webkit-font-smoothing: antialiased; }
+  a { color: var(--blue-300); text-decoration: none; }
+  a:hover { color: #fff; text-decoration: none; }
+  button { font-family: inherit; }
+  [data-focusable]:focus-visible { outline: none; box-shadow: 0 0 0 3px rgba(0,204,255,.55) !important; }
+  [data-print-only] { display: none; }
+  @media (max-width: 1100px) { [data-rail] { display: none !important; } }
+  @media (max-width: 1000px) { [data-tabs-nav] { top: 78px !important; } }
+  @media (max-width: 1560px) { [data-rail-tip] { display: none !important; } }
+  @keyframes kx-blurup { 0% { opacity: 0; filter: blur(14px); transform: translateY(20px) } 100% { opacity: 1; filter: blur(0); transform: translateY(0) } }
+  @keyframes kx-dotloop { 0% { opacity: 0; transform: translateX(-8px) scale(.2) } 18% { opacity: 1; transform: translateX(1px) scale(1.15) } 28%, 62% { opacity: 1; transform: none } 85%, 100% { opacity: 0; transform: translateX(6px) scale(.6) } }
+  @keyframes kx-dot { 0% { opacity: 0; transform: translateX(-10px) scale(.2) } 60% { opacity: 1; transform: translateX(2px) scale(1.15) } 100% { opacity: 1; transform: none } }
+  @keyframes kx-drift-a { 0% { transform: translate3d(0,0,0) } 50% { transform: translate3d(-4%,3%,0) } 100% { transform: translate3d(0,0,0) } }
+  @keyframes kx-drift-b { 0% { transform: translate3d(0,0,0) } 50% { transform: translate3d(5%,-2%,0) } 100% { transform: translate3d(0,0,0) } }
+  @keyframes kx-stars { 0% { transform: translate3d(0,0,0) } 100% { transform: translate3d(0,-60px,0) } }
+  @keyframes kx-spin { 0% { transform: rotate(0) } 100% { transform: rotate(360deg) } }
+  @keyframes kx-spin-r { 0% { transform: rotate(360deg) } 100% { transform: rotate(0) } }
+  @keyframes kx-halo { 0%,100% { opacity: .55; transform: translate(-50%,-50%) scale(1) } 50% { opacity: 1; transform: translate(-50%,-50%) scale(1.06) } }
+  [data-space-fade] { --fx: 12%; --fy: 14%; -webkit-mask-image: linear-gradient(90deg, transparent 0%, #000 var(--fx), #000 calc(100% - var(--fx)), transparent 100%), linear-gradient(180deg, transparent 0%, #000 var(--fy), #000 calc(100% - var(--fy)), transparent 100%); mask-image: linear-gradient(90deg, transparent 0%, #000 var(--fx), #000 calc(100% - var(--fx)), transparent 100%), linear-gradient(180deg, transparent 0%, #000 var(--fy), #000 calc(100% - var(--fy)), transparent 100%); -webkit-mask-composite: source-in; mask-composite: intersect; }
+  @keyframes kx-orbit { 0% { transform: rotate(0) translateX(26px) } 100% { transform: rotate(360deg) translateX(26px) } }
+  @keyframes kx-orbit-lg-unused { 0% { transform: rotate(0) translateX(min(34vw, 330px)) } 100% { transform: rotate(360deg) translateX(min(34vw, 330px)) } }
+  @keyframes kx-line { from { transform: translateY(105%) } to { transform: translateY(0) } }
+  @keyframes kx-rise { from { opacity: 0; transform: translateY(12px) } to { opacity: 1; transform: none } }
+  @keyframes kx-intakeglow { 0%,100% { transform: scale(1); box-shadow: 0 0 16px rgba(0,204,255,.18) } 50% { transform: scale(1.05); box-shadow: 0 0 34px rgba(0,204,255,.55), 0 0 60px rgba(0,204,255,.2) } }
+  @media (prefers-reduced-motion: reduce) { *, *::before, *::after { animation-duration: .001ms !important; animation-iteration-count: 1 !important; transition-duration: .001ms !important; } [data-line] { transform: none !important; } }
+  @media print {
+    @page { size: letter landscape; margin: .35in; }
+    body { zoom: .74; }
+    [data-hero], [data-block="Executive overview"], [data-index] { break-after: page; min-height: 0 !important; }
+    [data-tab-panel] section[id] { break-before: page; min-height: 0 !important; padding-top: 8px !important; }
+    [data-tab-close]:not([data-close-last="1"]) { display: none !important; }
+    [data-tab-close] [data-block="Seller close"] { break-before: page; padding-top: 8px !important; }
+    [data-tab-close] [data-block="Seller close"] > [data-reveal] { display: none !important; }
+    [data-hero] { min-height: 960px !important; justify-content: center !important; }
+    [data-hero-media]:has(iframe) { display: none !important; }
+    [data-rings] { display: none !important; }
+    [data-dot] { box-shadow: none !important; transform: none !important; opacity: 1 !important; }
+    [data-deck-frame] { border: 0 !important; box-shadow: none !important; background: transparent !important; border-radius: 12px !important; }
+    [data-print-pill] { margin: 0 0 22px !important; }
+    * { -webkit-print-color-adjust: exact !important; print-color-adjust: exact !important; backdrop-filter: none !important; -webkit-backdrop-filter: none !important; animation: none !important; }
+    html, body { background: #000509 !important; }
+    [data-noprint] { display: none !important; }
+    [data-print-only] { display: block !important; }
+    [data-tab-panel][hidden] { display: block !important; }
+    [data-tab-close="found"] { display: none !important; }
+    [data-line] { transform: none !important; }
+    [data-reveal] { opacity: 1 !important; transform: none !important; filter: none !important; } [data-dot] { opacity: 1 !important; } [data-slide] { clip-path: none !important; transform: none !important; opacity: 1 !important; }
+    [data-bg] { position: absolute !important; }
+    [data-page-head] { position: static !important; background: transparent !important; }
+    [data-hero] { padding-top: 12px !important; min-height: 0 !important; }
+    section { padding-top: 22px !important; padding-bottom: 22px !important; }
+    [data-avoid-break], article, figure, li { break-inside: avoid; }
+    [data-deck-col] { transform: none !important; margin-bottom: 0 !important; }
+    [data-deck] { position: static !important; width: auto !important; height: auto !important; display: flex !important; justify-content: center; gap: 18px; zoom: .62; }
+    [data-deck-card] { position: static !important; transform: none !important; opacity: 1 !important; filter: none !important; visibility: visible !important; width: 300px; }
+    [data-deck-cap] { display: none !important; }
+    /* PDF rule: the Creative section prints only the brand's own ads — no captions, intro copy, callouts, links or gallery. */
+    #creative [data-avoid-break] > p, #creative [data-print-only]:not([data-print-pill]), [data-block="Similar verticals gallery"] { display: none !important; }
+    [data-deck] { gap: 28px !important; }
+    [data-deck-frame] { position: relative !important; width: 300px !important; height: 600px !important; }
+    [data-stage] { display: block !important; }
+    [data-table-scroll] { overflow: visible !important; }
+    [data-table-scroll] > div { min-width: 0 !important; }
+    [data-fullbleed] { width: auto !important; margin: 0 !important; padding: 0 !important; }
+    [data-hero-media] { max-width: 640px !important; } [data-hero-media] iframe { display: none !important; }
+  }
+</style>
+</helmet>
+
+<div style="position: relative; min-height: 100vh; background: #000509; color: #fff; overflow-x: clip; isolation: isolate;">
+
+  <div data-bg aria-hidden="true" style="position: fixed; inset: 0; z-index: 0; pointer-events: none; overflow: hidden;">
+    <div style="position: absolute; top: -22vh; right: -14vw; width: 78vw; height: 78vw; border-radius: 50%; background: radial-gradient(circle at 50% 50%, rgba(0,204,255,.14), rgba(0,204,255,.04) 40%, transparent 68%); filter: blur(24px); animation: kx-drift-a 62s ease-in-out infinite;"></div>
+    <div style="position: absolute; bottom: -34vh; left: -18vw; width: 72vw; height: 72vw; border-radius: 50%; background: radial-gradient(circle at 50% 50%, rgba(109,94,240,.12), rgba(109,94,240,.03) 42%, transparent 70%); filter: blur(30px); animation: kx-drift-b 78s ease-in-out infinite;"></div>
+    <div style="position: absolute; top: 34vh; left: 28vw; width: 46vw; height: 46vw; border-radius: 50%; background: radial-gradient(circle at 50% 50%, rgba(214,125,240,.10), transparent 64%); filter: blur(40px); animation: kx-drift-a 96s ease-in-out infinite;"></div>
+    <div style="position: absolute; inset: -10% -10% -60%; opacity: .8; animation: kx-stars 140s linear infinite; background-image: radial-gradient(1.4px 1.4px at 7% 12%, rgba(255,255,255,.85), transparent), radial-gradient(1.2px 1.2px at 19% 41%, rgba(0,204,255,.8), transparent), radial-gradient(1px 1px at 31% 8%, rgba(255,255,255,.6), transparent), radial-gradient(1.6px 1.6px at 44% 63%, rgba(255,255,255,.7), transparent), radial-gradient(1px 1px at 57% 22%, rgba(156,235,255,.75), transparent), radial-gradient(1.3px 1.3px at 68% 51%, rgba(255,255,255,.65), transparent), radial-gradient(1px 1px at 78% 15%, rgba(255,255,255,.5), transparent), radial-gradient(1.5px 1.5px at 88% 37%, rgba(0,204,255,.6), transparent), radial-gradient(1px 1px at 95% 71%, rgba(255,255,255,.55), transparent), radial-gradient(1.2px 1.2px at 12% 78%, rgba(255,255,255,.6), transparent), radial-gradient(1px 1px at 26% 92%, rgba(138,124,248,.7), transparent), radial-gradient(1.4px 1.4px at 39% 33%, rgba(255,255,255,.5), transparent), radial-gradient(1px 1px at 52% 86%, rgba(255,255,255,.6), transparent), radial-gradient(1.2px 1.2px at 63% 74%, rgba(0,204,255,.55), transparent), radial-gradient(1.3px 1.3px at 84% 60%, rgba(255,255,255,.6), transparent), radial-gradient(1.1px 1.1px at 4% 55%, rgba(255,255,255,.5), transparent);"></div>
+    <div style="position: absolute; inset: 0; background-image: linear-gradient(rgba(255,255,255,.022) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,.022) 1px, transparent 1px); background-size: 88px 88px; mask-image: radial-gradient(circle at 50% 18%, #000, transparent 72%); -webkit-mask-image: radial-gradient(circle at 50% 18%, #000, transparent 72%);"></div>
+  </div>
+
+  <header data-page-head style="position: fixed; top: 0; left: 0; right: 0; z-index: 40; display: flex; align-items: center; gap: clamp(12px, 1.6vw, 20px); min-height: 72px; padding: 12px clamp(12px, 1.6vw, 24px) 18px clamp(20px, 4vw, 56px); background: transparent;">
+    <div aria-hidden="true" data-noprint style="position: absolute; left: 0; right: 0; top: 0; height: 170px; pointer-events: none; z-index: -1; background: linear-gradient(180deg, rgba(0,5,9,.97) 0%, rgba(0,5,9,.93) 40%, rgba(0,5,9,.7) 62%, rgba(0,5,9,.32) 82%, rgba(0,5,9,0) 100%); backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px); -webkit-mask-image: linear-gradient(180deg, #000 0%, #000 50%, transparent 100%); mask-image: linear-gradient(180deg, #000 0%, #000 50%, transparent 100%);"></div>
+    <a href="#top" aria-label="KORTX Creative Labs" style="position: relative; display: grid; place-items: center; width: 46px; height: 46px; flex: none;">
+      <span aria-hidden="true" style="position: absolute; inset: 0; border-radius: 50%; background: radial-gradient(circle at 50% 50%, rgba(0,204,255,.24), transparent 68%);"></span>
+      <span aria-hidden="true" style="position: absolute; inset: 3px; border: 1px solid rgba(0,204,255,.30); border-radius: 50%;"></span>
+      <span aria-hidden="true" style="position: absolute; inset: 8px; border: 1px solid rgba(138,124,248,.28); border-radius: 50%; transform: rotate(18deg) scaleY(.6);"></span>
+      <img src="assets/kortx-logomark-bright-blue.svg" alt="KORTX" style="position: relative; width: 20px; display: block;">
+      <span aria-hidden="true" style="position: absolute; top: 50%; left: 50%; width: 4px; height: 4px; margin: -2px; border-radius: 50%; background: var(--blue-300); box-shadow: 0 0 9px rgba(0,204,255,.9); animation: kx-orbit 18s linear infinite;"></span>
+    </a>
+    <div style="display: flex; flex-direction: column; gap: 3px; min-width: 0;">
+      <span style="font-size: 11.5px; line-height: 1.35; color: rgba(255,255,255,.62);">Proposal · {{ m.client }}</span>
+    </div>
+    <span style="flex: 1;"></span>
+    <div data-noprint style="flex: none; display: flex; flex-direction: column; align-items: center; gap: 8px;">
+    <button type="button" data-noprint data-focusable="1" onClick="{{ downloadPdf }}" style="flex: none; display: inline-flex; align-items: center; gap: 8px; padding: 9px 15px; border-radius: 999px; border: 1px solid rgba(255,255,255,.12); background: rgba(255,255,255,.05); backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px); color: rgba(255,255,255,.72); font-size: 12px; font-weight: 600; cursor: pointer; white-space: nowrap; transition: color 200ms cubic-bezier(.16,1,.3,1), background 200ms cubic-bezier(.16,1,.3,1);" style-hover="color: #fff; background: rgba(255,255,255,.12)" style-active="transform: scale(.985)">
+      <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="var(--blue-300, #66E0FF)" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 4v11"></path><path d="M7 10l5 5 5-5"></path><path d="M5 20h14"></path></svg>
+      Download PDF
+    </button>
+    </div>
+  </header>
+
+
+  <!-- ══ BLOCK: Proposal intro — one statement per screen, the Playground's rivet rings behind it ══ -->
+  <section id="top" data-hero data-block="Proposal intro" data-screen-label="01 Intro" style="position: relative; z-index: 1; min-height: 100vh; overflow: hidden; display: flex; flex-direction: column; align-items: center; justify-content: flex-start; text-align: center; gap: 0; padding: calc(72px + clamp(16px, 3vh, 32px)) clamp(20px, 4vw, 56px) clamp(56px, 8vh, 96px);">
+      <div data-print-only data-print-pill style="position: relative; z-index: 2;"><div style="display: flex; justify-content: center;"><div style="display: inline-flex; align-items: center; gap: 10px; padding: 8px 18px; border-radius: 999px; border: 1px solid rgba(251,146,60,.7); background: #1A1108; font-size: 13px; font-weight: 600; color: #fff; white-space: nowrap;"><span style="font-weight: 800; color: #FDBA74;">00</span><span>Proposal Overview</span></div></div></div>
+      <div data-rings data-noprint aria-hidden="true" style="position: absolute; left: 50%; top: 40%; width: min(150vh, 120vw); aspect-ratio: 1 / 1; transform: translate(-50%, -50%); z-index: 0; pointer-events: none; mask-image: radial-gradient(circle at 50% 50%, #000 52%, rgba(0,0,0,.55) 78%, transparent 100%), linear-gradient(180deg, transparent 0%, #000 15%, #000 85%, transparent 100%); -webkit-mask-image: radial-gradient(circle at 50% 50%, #000 52%, rgba(0,0,0,.55) 78%, transparent 100%), linear-gradient(180deg, transparent 0%, #000 15%, #000 85%, transparent 100%); mask-composite: intersect; -webkit-mask-composite: source-in;">
+        <div style="position: absolute; inset: 0%; animation: kx-spin 120s linear infinite normal;">
+          <div style="position: absolute; inset: 0; transform: rotate(calc(var(--spin, 0) * 150deg));">
+            <div style="position: absolute; inset: 0; border-radius: 50%; border: 1px solid rgba(255,255,255,.10);"></div>
+            <div style="position: absolute; inset: 0; transform: rotate(18deg);"><div style="position: absolute; top: -2.5px; left: 50%; width: 5px; height: 5px; margin-left: -2.5px; border-radius: 50%; background: #fff; box-shadow: 0 0 10px rgba(255,255,255,.85), 0 0 20px rgba(0,204,255,.55);"></div></div>
+            <div style="position: absolute; inset: 0; transform: rotate(142deg);"><div style="position: absolute; top: -2px; left: 50%; width: 4px; height: 4px; margin-left: -2px; border-radius: 50%; background: #fff; box-shadow: 0 0 8px rgba(255,255,255,.85), 0 0 16px rgba(0,204,255,.55);"></div></div>
+            <div style="position: absolute; inset: 0; transform: rotate(268deg);"><div style="position: absolute; top: -3px; left: 50%; width: 6px; height: 6px; margin-left: -3px; border-radius: 50%; background: #fff; box-shadow: 0 0 12px rgba(255,255,255,.85), 0 0 24px rgba(0,204,255,.55);"></div></div>
+          </div>
+        </div>
+        <div style="position: absolute; inset: 9%; animation: kx-spin 96s linear infinite reverse;">
+          <div style="position: absolute; inset: 0; transform: rotate(calc(var(--spin, 0) * -190deg));">
+            <div style="position: absolute; inset: 0; border-radius: 50%; border: 1px solid rgba(255,255,255,.085);"></div>
+            <div style="position: absolute; inset: 0; transform: rotate(64deg);"><div style="position: absolute; top: -2px; left: 50%; width: 4px; height: 4px; margin-left: -2px; border-radius: 50%; background: #fff; box-shadow: 0 0 8px rgba(255,255,255,.85), 0 0 16px rgba(0,204,255,.55);"></div></div>
+            <div style="position: absolute; inset: 0; transform: rotate(210deg);"><div style="position: absolute; top: -2.5px; left: 50%; width: 5px; height: 5px; margin-left: -2.5px; border-radius: 50%; background: #fff; box-shadow: 0 0 10px rgba(255,255,255,.85), 0 0 20px rgba(0,204,255,.55);"></div></div>
+          </div>
+        </div>
+        <div style="position: absolute; inset: 19%; animation: kx-spin 78s linear infinite normal;">
+          <div style="position: absolute; inset: 0; transform: rotate(calc(var(--spin, 0) * 240deg));">
+            <div style="position: absolute; inset: 0; border-radius: 50%; border: 1px solid rgba(255,255,255,.11);"></div>
+            <div style="position: absolute; inset: 0; transform: rotate(8deg);"><div style="position: absolute; top: -2px; left: 50%; width: 4px; height: 4px; margin-left: -2px; border-radius: 50%; background: #fff; box-shadow: 0 0 9px rgba(255,255,255,.85), 0 0 18px rgba(0,204,255,.55);"></div></div>
+            <div style="position: absolute; inset: 0; transform: rotate(128deg);"><div style="position: absolute; top: -1.5px; left: 50%; width: 3px; height: 3px; margin-left: -1.5px; border-radius: 50%; background: #fff; box-shadow: 0 0 7px rgba(255,255,255,.85), 0 0 14px rgba(0,204,255,.55);"></div></div>
+            <div style="position: absolute; inset: 0; transform: rotate(300deg);"><div style="position: absolute; top: -2.5px; left: 50%; width: 5px; height: 5px; margin-left: -2.5px; border-radius: 50%; background: #fff; box-shadow: 0 0 10px rgba(255,255,255,.85), 0 0 20px rgba(0,204,255,.55);"></div></div>
+          </div>
+        </div>
+        <div style="position: absolute; inset: 29%; animation: kx-spin 62s linear infinite reverse;">
+          <div style="position: absolute; inset: 0; transform: rotate(calc(var(--spin, 0) * -300deg));">
+            <div style="position: absolute; inset: 0; border-radius: 50%; border: 1px solid rgba(255,255,255,.07);"></div>
+            <div style="position: absolute; inset: 0; transform: rotate(96deg);"><div style="position: absolute; top: -1.5px; left: 50%; width: 3px; height: 3px; margin-left: -1.5px; border-radius: 50%; background: #fff; box-shadow: 0 0 7px rgba(255,255,255,.85), 0 0 14px rgba(0,204,255,.55);"></div></div>
+            <div style="position: absolute; inset: 0; transform: rotate(248deg);"><div style="position: absolute; top: -2px; left: 50%; width: 4px; height: 4px; margin-left: -2px; border-radius: 50%; background: #fff; box-shadow: 0 0 9px rgba(255,255,255,.85), 0 0 18px rgba(0,204,255,.55);"></div></div>
+          </div>
+        </div>
+        <div style="position: absolute; inset: 39%; animation: kx-spin 50s linear infinite normal;">
+          <div style="position: absolute; inset: 0; transform: rotate(calc(var(--spin, 0) * 380deg));">
+            <div style="position: absolute; inset: 0; border-radius: 50%; border: 1px solid rgba(255,255,255,.09);"></div>
+            <div style="position: absolute; inset: 0; transform: rotate(36deg);"><div style="position: absolute; top: -1.5px; left: 50%; width: 3px; height: 3px; margin-left: -1.5px; border-radius: 50%; background: #fff; box-shadow: 0 0 8px rgba(255,255,255,.85), 0 0 16px rgba(0,204,255,.55);"></div></div>
+            <div style="position: absolute; inset: 0; transform: rotate(196deg);"><div style="position: absolute; top: -2px; left: 50%; width: 4px; height: 4px; margin-left: -2px; border-radius: 50%; background: #fff; box-shadow: 0 0 9px rgba(255,255,255,.85), 0 0 18px rgba(0,204,255,.55);"></div></div>
+          </div>
+        </div>
+      </div>
+    <!-- Brand stage — full-width, edges dissolve into the page like the Playground hero. Slot, image, or live HTML via meta.heroMedia -->
+    <div data-hero-media data-block="Brand stage" style="position: relative; z-index: 1; width: min(1100px, 100%, calc(62vh * 16 / 9)); aspect-ratio: 16 / 9; margin: 0 auto; animation: kx-rise 900ms cubic-bezier(.16,1,.3,1) 120ms both;">
+      <div aria-hidden="true" style="position: absolute; left: 50%; top: 54%; width: 112%; height: 120%; transform: translate(-50%, -50%); pointer-events: none; filter: blur(60px); background: radial-gradient(closest-side, rgba(0,204,255,.24), rgba(109,94,240,.14) 55%, transparent 80%);"></div>
+      <div data-space-fade style="position: relative; width: 100%; height: 100%; overflow: hidden; -webkit-mask-image: linear-gradient(90deg, transparent 0%, #000 14%, #000 86%, transparent 100%), linear-gradient(180deg, transparent 0%, #000 12%, #000 88%, transparent 100%); mask-image: linear-gradient(90deg, transparent 0%, #000 14%, #000 86%, transparent 100%), linear-gradient(180deg, transparent 0%, #000 12%, #000 88%, transparent 100%); -webkit-mask-composite: source-in; mask-composite: intersect;">
+        <sc-if value="{{ heroSlot }}" hint-placeholder-val="{{ false }}"><image-slot id="vadmv-hero-media" shape="rect" placeholder="{{ heroPlaceholder }}"></image-slot></sc-if>
+        <sc-if value="{{ heroImg }}" hint-placeholder-val="{{ false }}"><img data-lazy-src="{{ heroSrc }}" alt="{{ m.client }}" style="display: block; width: 100%; height: 100%; object-fit: cover;"></sc-if>
+        <sc-if value="{{ heroHtml }}" hint-placeholder-val="{{ true }}"><iframe data-lazy-src="{{ heroSrc }}" title="{{ m.client }} key visual" scrolling="no" tabindex="-1" style="display: block; width: 100%; height: 100%; border: 0; background: #000509; pointer-events: none;"></iframe></sc-if>
+      </div>
+    </div>
+    <div style="position: relative; z-index: 2; width: 100%; max-width: 980px; margin-top: clamp(16px, 3vh, 32px); display: flex; flex-direction: column; align-items: center; text-align: center; gap: clamp(20px, 3.2vh, 34px);">
+      <div style="display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 16px; animation: kx-rise 700ms cubic-bezier(.16,1,.3,1) 200ms both;">
+        <img src="assets/kortx-wordmark-white.svg" alt="KORTX" style="height: 20px; width: auto; display: block;">
+        <sc-if value="{{ logoBare }}" hint-placeholder-val="{{ false }}"><img data-cfg-src="clientLogo" alt="Client logo" style="height: 36px; width: auto; display: block;"></sc-if>
+        <sc-if value="{{ logoPlate }}" hint-placeholder-val="{{ false }}"><span data-block="Client logo plate" style="display: inline-flex; align-items: center; justify-content: center; padding: 10px 18px; border-radius: 12px; background: linear-gradient(180deg, #FFFFFF, #EAF8FF); border: 1px solid rgba(0,204,255,.75); box-shadow: 0 0 0 4px rgba(0,204,255,.12), 0 0 26px rgba(0,204,255,.45), 0 0 60px rgba(0,204,255,.18);"><img data-cfg-src="clientLogo" alt="Client logo" style="height: 24px; width: auto; display: block;"></span></sc-if>
+        <sc-if value="{{ noClientLogo }}" hint-placeholder-val="{{ true }}"><image-slot id="vadmv-client-logo" shape="rounded" radius="8" fit="contain" placeholder="Client logo" style="width: 130px; height: 40px; display: block;"></image-slot></sc-if>
+      </div>
+      <div style="font-size: 11px; font-weight: 600; letter-spacing: .18em; text-transform: uppercase; color: var(--lime-300); animation: kx-rise 700ms cubic-bezier(.16,1,.3,1) 260ms both;">{{ m.type }} · {{ m.concept }}</div>
+      <h1 aria-label="{{ h1Aria }}" style="margin: 0; font-size: clamp(40px, 6.4vw, 92px); font-weight: 700; line-height: 1.04; letter-spacing: -.04em;">
+        <span aria-hidden="true" style="display: flex; flex-wrap: wrap; justify-content: center; column-gap: .24em;"><sc-for list="{{ titleWords }}" as="w" hint-placeholder-count="2"><span style="{{ w.style }}">{{ w.t }}</span></sc-for></span>
+        <span aria-hidden="true" style="display: flex; flex-wrap: wrap; justify-content: center; column-gap: .24em; color: var(--blue-400, #00CCFF);"><sc-for list="{{ accentWords }}" as="w" hint-placeholder-count="2"><span style="{{ w.style }}">{{ w.t }}</span></sc-for></span>
+      </h1>
+      <p style="margin: 0; max-width: 680px; font-size: clamp(15px, 1.5vw, 19px); line-height: 1.55; color: rgba(255,255,255,.76); text-wrap: pretty; animation: kx-rise 700ms cubic-bezier(.16,1,.3,1) 520ms both;">{{ m.support }}</p>
+      <div style="display: flex; flex-wrap: wrap; justify-content: center; align-items: center; gap: 6px 14px; margin-top: clamp(14px, 2.4vh, 26px); animation: kx-rise 700ms cubic-bezier(.16,1,.3,1) 600ms both;">
+        <sc-for list="{{ pillItems }}" as="pl" hint-placeholder-count="4">
+          <sc-if value="{{ pl.sep }}" hint-placeholder-val="{{ false }}"><span aria-hidden="true" style="width: 4px; height: 4px; border-radius: 50%; background: var(--blue-300); box-shadow: 0 0 8px rgba(0,204,255,.8);"></span></sc-if>
+          <span style="font-size: 13.5px; font-weight: 500; letter-spacing: .01em; color: rgba(255,255,255,.72); white-space: nowrap;">{{ pl.t }}</span>
+        </sc-for>
+      </div>
+      <div style="display: flex; flex-wrap: wrap; justify-content: center; row-gap: 14px; margin-top: clamp(4px, 1.4vh, 14px); animation: kx-rise 700ms cubic-bezier(.16,1,.3,1) 740ms both;">
+        <sc-for list="{{ metaRows }}" as="mr" hint-placeholder-count="4">
+          <div style="{{ mr.style }}">
+            <span style="font-size: 11px; font-weight: 600; letter-spacing: .14em; text-transform: uppercase; color: rgba(255,255,255,.5);">{{ mr.k }}</span>
+            <span style="font-size: 13.5px; font-weight: 600; color: rgba(255,255,255,.9); white-space: nowrap;">{{ mr.v }}</span>
+          </div>
+        </sc-for>
+      </div>
+    </div>
+  </section>
+
+    <!-- ══ BLOCK: Proposal tabs nav ══ -->
+  <nav data-noprint data-tabs-nav data-block="Proposal tabs nav" aria-label="Proposal tabs" style="position: sticky; top: 10px; z-index: 45; max-width: 1280px; margin: clamp(22px, 3vw, 38px) auto clamp(10px, 2vw, 24px); padding: 0 clamp(20px, 4vw, 56px); display: flex; justify-content: center; pointer-events: none;">
+    <div style="position: relative; display: flex; flex-direction: column; align-items: center; max-width: 100%; pointer-events: auto; border-radius: 999px; box-shadow: 0 12px 34px rgba(0,0,0,.55);">
+      <div role="tablist" aria-label="Proposal" style="{{ navShell }}" data-nav-shell>
+        <span aria-hidden="true" style="{{ navGlyph }}"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"></path></svg></span>
+        <div ref="{{ navInnerRef }}" style="display: flex; align-items: stretch; height: 100%; padding: 0 6px; width: max-content;">
+          <sc-for list="{{ tabBtns }}" as="tb" hint-placeholder-count="5">
+            <button type="button" role="tab" data-focusable="1" aria-selected="{{ tb.on }}" data-tab="{{ tb.key }}" onClick="{{ onTab }}" style="{{ tb.style }}" style-hover="color: #fff; text-shadow: 0 0 22px rgba(138,124,248,.85)"><span aria-hidden="true" style="{{ tb.dot }}"></span>{{ tb.label }}</button>
+          </sc-for>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <sc-for list="{{ panels }}" as="p" hint-placeholder-count="1">
+    <div data-tab-panel="{{ p.key }}" role="tabpanel" aria-label="{{ p.label }}" hidden="{{ p.hidden }}">
+      <sc-for list="{{ p.sections }}" as="s" hint-placeholder-count="3">
+        <section id="{{ s.id }}" data-plate data-block="{{ s.block }}" data-screen-label="{{ s.screen }}" style="position: relative; z-index: 1; max-width: 1280px; margin: 0 auto; padding: clamp(72px, 12vh, 150px) clamp(20px, 4vw, 56px) clamp(56px, 8vh, 112px); scroll-margin-top: 24px;">
+          <div data-print-only data-print-pill><div style="display: flex; justify-content: center;"><div style="display: inline-flex; align-items: center; gap: 10px; padding: 8px 18px; border-radius: 999px; border: 1px solid rgba(251,146,60,.7); background: #1A1108; font-size: 13px; font-weight: 600; color: #fff; white-space: nowrap;"><span style="font-weight: 800; color: #FDBA74;">{{ p.n }}</span><span>{{ p.label }}</span><span style="color: rgba(255,255,255,.35);">/</span><span style="color: rgba(255,255,255,.72);">{{ s.eyebrow }}</span></div></div></div>
+          <div data-avoid-break style="display: flex; flex-direction: column; align-items: center; text-align: center; gap: clamp(8px, 1.2vh, 14px); margin-bottom: clamp(32px, 5vh, 56px);">
+            <div data-reveal style="font-size: 11px; font-weight: 600; letter-spacing: .18em; text-transform: uppercase; color: var(--lime-300);">{{ s.eyebrow }}</div>
+            <h2 style="margin: 0; max-width: 1000px; text-wrap: balance; font-size: clamp(26px, 3.6vw, 46px); font-weight: 700; letter-spacing: -.03em; line-height: 1.05; color: #fff;">
+              <span style="display: block; overflow: hidden; padding-bottom: .14em; margin-bottom: -.14em;"><span data-line style="display: block; transform: translateY(105%);">{{ s.headline }}</span></span>
+            </h2>
+            <p data-reveal style="margin: 0; max-width: 660px; text-wrap: pretty; font-size: clamp(14px, 1.4vw, 17px); line-height: 1.5; color: rgba(255,255,255,.72);">{{ s.intro }}</p>
+            <sc-if value="{{ s.hasNarrative }}" hint-placeholder-val="{{ false }}"><p data-reveal style="margin: 4px 0 0; max-width: 760px; text-wrap: pretty; font-size: 15px; line-height: 1.55; color: rgba(255,255,255,.85);">{{ s.narrative }}</p></sc-if>
+          </div>
+
+          <sc-if value="{{ s.hasSteps }}" hint-placeholder-val="{{ false }}">
+            <div data-slide-slow style="display: flex; flex-wrap: wrap; justify-content: center; align-items: center; gap: 10px 12px; margin-bottom: clamp(22px, 3vh, 32px);">
+              <sc-for list="{{ s.steps }}" as="st" hint-placeholder-count="3">
+                <div data-slide style="{{ st.style }}"><span style="font-size: 20px; font-weight: 800; letter-spacing: -.02em; color: var(--blue-300);">{{ st.n }}</span><span>{{ st.t }}</span></div>
+                <sc-if value="{{ st.arrow }}" hint-placeholder-val="{{ true }}"><svg data-slide viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="rgba(255,255,255,.4)" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"></path><path d="M13 6l6 6-6 6"></path></svg></sc-if>
+              </sc-for>
+            </div>
+          </sc-if>
+          <sc-if value="{{ s.hasCta }}" hint-placeholder-val="{{ false }}">
+            <div data-noprint style="display: flex; justify-content: center; margin-bottom: clamp(28px, 4vh, 44px);">
+              <a href="{{ s.ctaHref }}" data-focusable="1" data-tab="{{ s.ctaTab }}" data-sec="{{ s.ctaSec }}" onClick="{{ goSection }}" style="display: inline-flex; align-items: center; gap: 8px; padding: 13px 22px; border-radius: 999px; background: var(--blue-400, #00CCFF); color: #001830; font-size: 14px; font-weight: 700; transition: background 200ms cubic-bezier(.16,1,.3,1), transform 200ms cubic-bezier(.16,1,.3,1);" style-hover="background: var(--blue-300, #66E0FF); color: #001830; transform: translateY(-2px)" style-active="transform: scale(.985)">{{ s.ctaLabel }}<svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 5v14"></path><path d="M6 13l6 6 6-6"></path></svg></a>
+            </div>
+          </sc-if>
+          <sc-if value="{{ s.hasSummary }}" hint-placeholder-val="{{ false }}">
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 200px), 1fr)); gap: 16px; margin-bottom: clamp(28px, 4vh, 44px);">
+              <sc-for list="{{ s.summary }}" as="sm" hint-placeholder-count="5">
+                <article data-reveal style="display: flex; flex-direction: column; gap: 10px; padding: 20px; border-radius: 16px; border: 1px solid rgba(0,204,255,.28); background: rgba(255,255,255,.055); backdrop-filter: blur(10px) saturate(120%); -webkit-backdrop-filter: blur(10px) saturate(120%); box-shadow: inset 0 1px 0 rgba(0,204,255,.34);">
+                  <span style="font-size: 11px; font-weight: 600; letter-spacing: .18em; text-transform: uppercase; color: var(--blue-300);">{{ sm.k }}</span>
+                  <p style="margin: 0; font-size: 15px; font-weight: 600; line-height: 1.45; color: #fff; text-wrap: pretty;">{{ sm.t }}</p>
+                </article>
+              </sc-for>
+            </div>
+          </sc-if>
+
+          <sc-if value="{{ s.hasFacts }}" hint-placeholder-val="{{ false }}">
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(max(calc((100% - 72px) / 4), min(calc((100% - 24px) / 2), calc((900px - 100%) * 999)), min(100%, calc((560px - 100%) * 999))), 1fr)); gap: 24px; margin-bottom: clamp(28px, 4vh, 44px);">
+              <sc-for list="{{ s.facts }}" as="f" hint-placeholder-count="4">
+                <article data-reveal data-stagger style="display: flex; flex-direction: column; gap: 10px; padding: clamp(22px, 2.4vw, 28px); border-radius: 16px; border: 1px solid rgba(255,255,255,.1); background: rgba(7,11,21,.55); backdrop-filter: blur(12px) saturate(130%); -webkit-backdrop-filter: blur(12px) saturate(130%); box-shadow: inset 0 1px 0 rgba(255,255,255,.07), 0 24px 60px rgba(0,0,0,.4);">
+                  <span style="font-size: 11px; font-weight: 600; letter-spacing: .16em; text-transform: uppercase; color: rgba(255,255,255,.55);">{{ f.label }}</span>
+                  <span data-count style="font-size: clamp(30px, 3.4vw, 42px); font-weight: 800; letter-spacing: -.035em; line-height: 1; color: var(--blue-300); font-variant-numeric: tabular-nums;">{{ f.value }}</span>
+                  <span style="font-size: 13px; line-height: 1.45; color: rgba(255,255,255,.72);">{{ f.note }}</span>
+                </article>
+              </sc-for>
+            </div>
+          </sc-if>
+
+          <sc-for list="{{ s.tables }}" as="tb" hint-placeholder-count="1">
+            <sc-if value="{{ tb.hasTitle }}" hint-placeholder-val="{{ false }}"><div style="margin: 0 0 10px; font-size: 11px; font-weight: 600; letter-spacing: .18em; text-transform: uppercase; color: var(--blue-300);">{{ tb.title }}</div></sc-if>
+            <div data-reveal data-table-scroll style="border-radius: 14px; border: 1px solid rgba(255,255,255,.1); background: rgba(7,11,21,.82); overflow-x: auto; margin-bottom: 10px;">
+              <div style="min-width: 760px;">
+                <div style="display: grid; grid-template-columns: {{ tb.grid }}; gap: 18px; padding: 14px 22px; border-bottom: 1px solid rgba(0,204,255,.28); font-size: 10px; font-weight: 600; letter-spacing: .14em; text-transform: uppercase; color: rgba(255,255,255,.55);">
+                  <sc-for list="{{ tb.cols }}" as="col" hint-placeholder-count="4"><span>{{ col }}</span></sc-for>
+                </div>
+                <sc-for list="{{ tb.rows }}" as="r" hint-placeholder-count="4">
+                  <div data-avoid-break style="display: grid; grid-template-columns: {{ tb.grid }}; gap: 18px; align-items: start; padding: 18px 22px; border-bottom: 1px solid rgba(255,255,255,.06); font-size: 13.5px; line-height: 1.45; color: rgba(255,255,255,.8);">
+                    <sc-for list="{{ r.cells }}" as="c" hint-placeholder-count="4">
+                      <span style="{{ c.style }}">{{ c.t }}</span>
+                    </sc-for>
+                  </div>
+                </sc-for>
+              </div>
+            </div>
+          <sc-if value="{{ tb.hasNote }}" hint-placeholder-val="{{ false }}"><p style="margin: 0 0 22px; font-size: 12px; line-height: 1.5; color: rgba(255,255,255,.55);">{{ tb.note }}</p></sc-if>
+            <sc-if value="{{ tb.noNote }}" hint-placeholder-val="{{ false }}"><div style="height: 12px;"></div></sc-if>
+          </sc-for>
+
+          <sc-if value="{{ s.isPersonas }}" hint-placeholder-val="{{ false }}">
+            <div data-noprint style="display: flex; flex-direction: column; align-items: center; gap: 16px;">
+              <div style="display: flex; align-items: center; gap: clamp(10px, 2.4vw, 28px); width: 100%; max-width: 1240px;">
+                <button type="button" data-focusable="1" onClick="{{ prevPersona }}" aria-label="Previous persona" style="position: relative; z-index: 5; flex: none; display: grid; place-items: center; width: 52px; height: 52px; border-radius: 999px; border: 1px solid rgba(255,255,255,.16); background: rgba(255,255,255,.05); color: #fff; cursor: pointer; transition: all 200ms cubic-bezier(.16,1,.3,1);" style-hover="border-color: rgba(167,139,250,.6); background: rgba(109,94,240,.16); color: #fff; box-shadow: 0 0 28px rgba(109,94,240,.5)" style-active="transform: scale(.94); border-color: rgba(167,139,250,.8); background: rgba(109,94,240,.28); box-shadow: 0 0 36px rgba(109,94,240,.7)"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 6l-6 6 6 6"></path></svg></button>
+                <div data-reveal tabindex="0" data-focusable="1" onKeyDown="{{ onPersonaKey }}" onPointerDown="{{ onPersonaDown }}" onPointerUp="{{ onPersonaUp }}" aria-live="polite" aria-label="{{ pv.aria }}" style="flex: 1; min-width: 0; display: grid; border-radius: 20px; touch-action: pan-y; outline: none;">
+                  <sc-for list="{{ personaCards }}" as="pc" hint-placeholder-count="3">
+                    <article aria-hidden="{{ pc.hidden }}" style="{{ pc.style }}">
+                      <div style="display: flex; align-items: flex-start; justify-content: space-between; gap: 16px;">
+                        <div style="display: flex; flex-direction: column; align-items: flex-start; gap: 8px; min-width: 0;">
+                          <h3 style="margin: 0; font-size: clamp(26px, 3.2vw, 42px); font-weight: 700; letter-spacing: -.03em; line-height: 1.06; text-wrap: balance;">{{ pc.name }}</h3>
+                          <span style="margin-top: 4px; padding: 5px 12px; border-radius: 999px; border: 1px solid rgba(255,255,255,.18); font-size: 12px; font-weight: 500; color: rgba(255,255,255,.85);">{{ pc.demo }}</span>
+                        </div>
+                        <span aria-hidden="true" style="flex: none; font-size: clamp(44px, 5vw, 72px); font-weight: 800; letter-spacing: -.04em; line-height: .9; color: rgba(255,255,255,.1); font-variant-numeric: tabular-nums;">{{ pc.num }}</span>
+                      </div>
+                      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 210px), 1fr)); gap: 24px 32px; margin-top: 12px;">
+                        <sc-for list="{{ pc.groups }}" as="g" hint-placeholder-count="4">
+                          <div style="display: flex; flex-direction: column; gap: 14px; min-width: 0;">
+                            <div style="font-size: 11px; font-weight: 600; letter-spacing: .18em; text-transform: uppercase; color: rgba(255,255,255,.55);">{{ g.title }}</div>
+                            <sc-if value="{{ g.quote }}" hint-placeholder-val="{{ false }}"><div style="font-size: 19px; font-weight: 700; line-height: 1.25; letter-spacing: -.01em; color: var(--blue-300); text-wrap: balance;">{{ g.quote }}</div></sc-if>
+                            <dl style="margin: 0; display: flex; flex-direction: column; gap: 12px;">
+                              <sc-for list="{{ g.items }}" as="gi" hint-placeholder-count="3">
+                                <div><dt style="font-size: 12px; color: rgba(255,255,255,.5);">{{ gi.k }}</dt><dd style="margin: 3px 0 0; font-size: 14px; line-height: 1.5; color: rgba(255,255,255,.86); text-wrap: pretty;">{{ gi.v }}</dd></div>
+                              </sc-for>
+                            </dl>
+                          </div>
+                        </sc-for>
+                      </div>
+                      <div style="margin-top: 12px; font-size: 11px; font-weight: 600; letter-spacing: .18em; text-transform: uppercase; color: rgba(255,255,255,.55);">Recommended Media Formats</div>
+                      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 200px), 1fr)); align-items: start; gap: 14px;">
+                        <sc-for list="{{ pc.formats }}" as="fm" hint-placeholder-count="4">
+                          <button type="button" data-focusable="1" data-k="{{ fm.k }}" onClick="{{ onFmt }}" aria-expanded="{{ fm.openStr }}" style="font: inherit; color: inherit; cursor: pointer; display: flex; flex-direction: column; align-items: center; text-align: center; gap: 10px; padding: 18px 16px 12px; border-radius: 16px; border: 1px solid rgba(0,204,255,.22); background: linear-gradient(180deg, rgba(14,26,46,.92), rgba(6,11,22,.96)); box-shadow: inset 0 1px 0 rgba(255,255,255,.12), inset 0 -1px 0 rgba(0,0,0,.4), 0 14px 28px -12px rgba(0,0,0,.7); transition: border-color 200ms cubic-bezier(.16,1,.3,1), box-shadow 200ms cubic-bezier(.16,1,.3,1), transform 200ms cubic-bezier(.16,1,.3,1);" style-hover="border-color: rgba(167,139,250,.6); box-shadow: inset 0 1px 0 rgba(255,255,255,.14), 0 18px 32px -12px rgba(0,0,0,.75), 0 0 28px rgba(109,94,240,.5); transform: translateY(-2px)">
+                            <span style="display: grid; place-items: center; width: 52px; height: 52px; border-radius: 50%; border: 1px solid rgba(0,204,255,.3); background: rgba(0,204,255,.08); box-shadow: 0 0 18px rgba(0,204,255,.22); color: var(--blue-300);"><sc-if value="{{ fm.isSnap }}" hint-placeholder-val="{{ false }}"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="6" y="2" width="12" height="20" rx="2.5"></rect><path d="M11 18h2"></path></svg></sc-if><sc-if value="{{ fm.isRich }}" hint-placeholder-val="{{ false }}"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 9l5 12 1.8-5.2L21 14Z"></path><path d="M7.2 2.2 8 5.1"></path><path d="m5.1 8-2.9-.8"></path><path d="M14 4.1 12 6"></path><path d="m6 12-1.9 2"></path></svg></sc-if><sc-if value="{{ fm.isVideo }}" hint-placeholder-val="{{ false }}"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"></circle><path d="M10 8l6 4-6 4Z"></path></svg></sc-if><sc-if value="{{ fm.isDisplay }}" hint-placeholder-val="{{ false }}"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="3" width="20" height="14" rx="2"></rect><path d="M8 21h8"></path><path d="M12 17v4"></path></svg></sc-if></span>
+                            <span style="font-size: 15px; font-weight: 700; color: #fff;">{{ fm.name }}</span>
+                            <sc-if value="{{ fm.open }}" hint-placeholder-val="{{ false }}"><span style="font-size: 13px; line-height: 1.5; color: rgba(255,255,255,.72); text-wrap: pretty; animation: kx-rise 320ms cubic-bezier(.16,1,.3,1) both;">{{ fm.body }}</span></sc-if>
+                            <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="{{ fm.chev }}"><path d="M6 9l6 6 6-6"></path></svg>
+                          </button>
+                        </sc-for>
+                      </div>
+                    </article>
+                  </sc-for>
+                </div>
+                <button type="button" data-focusable="1" onClick="{{ nextPersona }}" aria-label="Next persona" style="position: relative; z-index: 5; flex: none; display: grid; place-items: center; width: 52px; height: 52px; border-radius: 999px; border: 1px solid rgba(255,255,255,.16); background: rgba(255,255,255,.05); color: #fff; cursor: pointer; transition: all 200ms cubic-bezier(.16,1,.3,1);" style-hover="border-color: rgba(167,139,250,.6); background: rgba(109,94,240,.16); color: #fff; box-shadow: 0 0 28px rgba(109,94,240,.5)" style-active="transform: scale(.94); border-color: rgba(167,139,250,.8); background: rgba(109,94,240,.28); box-shadow: 0 0 36px rgba(109,94,240,.7)"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 6l6 6-6 6"></path></svg></button>
+              </div>
+              <div style="display: flex; gap: 6px;">
+                <sc-for list="{{ personaDots }}" as="pd" hint-placeholder-count="3">
+                  <button type="button" data-focusable="1" data-i="{{ pd.i }}" aria-label="{{ pd.aria }}" onClick="{{ onPersonaDot }}" style="{{ pd.style }}"></button>
+                </sc-for>
+              </div>
+              <div style="font-size: 12px; color: rgba(255,255,255,.55);">Use the arrows, swipe, or your keyboard to browse.</div>
+            </div>
+            <div data-print-only>
+              <div style="display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 12px;">
+                <sc-for list="{{ personaAll }}" as="pa" hint-placeholder-count="3">
+                  <article style="padding: 16px; border-radius: 14px; border: 1px solid rgba(0,204,255,.28); background: #070B15;">
+                    <div style="font-size: 10px; font-weight: 600; letter-spacing: .16em; text-transform: uppercase; color: var(--lime-300);">{{ pa.time }}</div>
+                    <div style="margin-top: 6px; font-size: 16px; font-weight: 800;">{{ pa.name }}</div>
+                    <div style="margin-top: 4px; font-size: 12px; line-height: 1.45; color: rgba(255,255,255,.76);">{{ pa.desc }}</div>
+                    <dl style="margin: 10px 0 0; display: grid; gap: 4px; font-size: 11px; line-height: 1.4;">
+                      <sc-for list="{{ pa.rows }}" as="pr" hint-placeholder-count="6"><div><dt style="display: inline; color: rgba(255,255,255,.5);">{{ pr.k }}: </dt><dd style="display: inline; margin: 0;">{{ pr.v }}</dd></div></sc-for>
+                    </dl>
+                  </article>
+                </sc-for>
+              </div>
+            </div>
+          </sc-if>
+
+          <sc-if value="{{ s.isCreative }}" hint-placeholder-val="{{ false }}">
+            
+
+            <div data-stage style="display: flex; flex-wrap: wrap; justify-content: center; align-items: flex-start; gap: clamp(24px, 3vh, 36px) clamp(40px, 6vw, 96px);">
+              <div data-deck-col style="display: flex; flex-direction: column; align-items: center; gap: 16px; transform-origin: 50% 0;">
+                <div data-deck style="position: relative; width: 300px; height: 600px; margin-top: 56px;">
+                  <sc-for list="{{ dpList }}" as="d" hint-placeholder-count="3">
+                    <figure data-deck-card="{{ d.i }}" aria-label="{{ d.aria }}" style="position: absolute; inset: 0; margin: 0; transform-origin: 50% 115%; will-change: transform, opacity, filter;">
+                      <figcaption data-deck-cap style="position: absolute; left: 0; right: 0; bottom: calc(100% + 14px); display: flex; flex-direction: column; align-items: center; gap: 3px; text-align: center; color: #fff; pointer-events: none;"><span style="font-size: 11px; font-weight: 600; letter-spacing: .18em; text-transform: uppercase;">{{ d.name }}</span><span style="font-size: 14px; font-weight: 700; letter-spacing: -.01em;">{{ d.time }}</span></figcaption>
+                      <div data-deck-frame style="position: absolute; inset: 0; border-radius: 22px; overflow: hidden; border: 1px solid rgba(0,204,255,.45); background: #050A16; box-shadow: inset 0 1px 0 rgba(255,255,255,.12), 0 26px 60px rgba(0,0,0,.55), 0 0 70px rgba(0,204,255,.22);">
+                        <img data-lazy-src="{{ d.img }}" alt="{{ d.aria }}" draggable="false" style="position: absolute; top: 0; left: 0; width: 300px; height: 600px; object-fit: cover; display: block; pointer-events: none;">
+                      </div>
+                    </figure>
+                  </sc-for>
+                </div>
+                <div data-noprint style="display: flex; flex-direction: column; align-items: center; gap: 10px;">
+                  <div data-dial role="slider" tabindex="0" data-focusable="1" aria-label="Scrub through the live units" aria-valuemin="0" aria-valuemax="{{ dpMax }}" aria-valuenow="{{ dpIndex }}" aria-valuetext="{{ dp.time }}" style="position: relative; width: clamp(200px, 26vw, 300px); height: 44px; border-radius: 999px; border: 1px solid rgba(0,204,255,.34); background: rgba(255,255,255,.06); backdrop-filter: blur(10px) saturate(120%); -webkit-backdrop-filter: blur(10px) saturate(120%); box-shadow: inset 0 1px 0 rgba(255,255,255,.2); overflow: hidden; cursor: grab; touch-action: none;">
+                    <div data-dial-ticks aria-hidden="true" style="position: absolute; inset: 0; background-image: repeating-linear-gradient(90deg, rgba(255,255,255,.26) 0 1px, transparent 1px 16px); background-position: 0 0; mask-image: linear-gradient(90deg, transparent, #000 22%, #000 78%, transparent); -webkit-mask-image: linear-gradient(90deg, transparent, #000 22%, #000 78%, transparent);"></div>
+                    <div aria-hidden="true" style="position: absolute; top: 8px; bottom: 8px; left: 50%; width: 2px; margin-left: -1px; border-radius: 2px; background: var(--blue-300); box-shadow: 0 0 12px rgba(0,204,255,.9);"></div>
+                  </div>
+                  
+                  <div style="display: flex; justify-content: center; gap: 6px; margin-top: 2px;">
+                    <sc-for list="{{ dpList }}" as="d" hint-placeholder-count="3">
+                      <button type="button" data-focusable="1" data-dp="{{ d.i }}" aria-label="{{ d.aria }}" onClick="{{ onDp }}" style="{{ d.dotStyle }}"></button>
+                    </sc-for>
+                  </div>
+                </div>
+              </div>
+
+              <div data-noprint data-dp-side style="flex: 1 1 340px; max-width: 440px; display: flex; flex-direction: column; gap: clamp(12px, 1.8vh, 18px);">
+                <div>
+                  <div style="font-size: 11px; font-weight: 600; letter-spacing: .18em; text-transform: uppercase; color: var(--lime-300);">{{ dp.time }} · {{ dp.name }}</div>
+                  <h3 style="margin: 8px 0 0; font-size: clamp(22px, 2.4vw, 30px); font-weight: 700; letter-spacing: -.03em; line-height: 1.12; color: #fff; text-wrap: balance;">{{ dp.headline }}</h3>
+                  <p style="margin: 6px 0 0; font-size: 14px; line-height: 1.5; color: rgba(255,255,255,.66); text-wrap: pretty;">{{ dp.concept }}</p>
+                </div>
+                <div style="display: flex; flex-direction: column; gap: 10px; padding: clamp(16px, 2.2vh, 22px) 20px; border-radius: 12px; border: 1px solid rgba(0,204,255,.28); background: rgba(255,255,255,.055); backdrop-filter: blur(10px) saturate(120%); -webkit-backdrop-filter: blur(10px) saturate(120%); box-shadow: inset 0 1px 0 rgba(0,204,255,.34);">
+                  <div style="font-size: 11px; font-weight: 600; letter-spacing: .18em; text-transform: uppercase; color: var(--blue-300);">Built In-House</div>
+                  <p style="margin: 0; font-size: 16px; font-weight: 700; line-height: 1.35; letter-spacing: -.01em; color: #fff; text-wrap: pretty;">{{ callout.title }}</p>
+                  <p style="margin: 0; font-size: 13px; line-height: 1.55; color: rgba(255,255,255,.76); text-wrap: pretty;">{{ callout.body }}</p>
+                  <div style="display: flex; flex-wrap: wrap; gap: 8px; margin-top: 4px;"><a href="https://kortx-creative-labs.netlify.app/" target="_blank" rel="noopener" data-focusable="1" style="display: inline-flex; align-items: center; gap: 8px; padding: 10px 16px; border-radius: 999px; border: 1px solid rgba(255,255,255,.16); background: rgba(255,255,255,.06); color: #fff; font-size: 13px; font-weight: 600; transition: all 200ms cubic-bezier(.16,1,.3,1);" style-hover="background: rgba(109,94,240,.16); border-color: rgba(167,139,250,.6); color: #fff; text-decoration: none; transform: translateY(-2px); box-shadow: 0 0 28px rgba(109,94,240,.5)">Visit Creative Playground ↗</a></div>
+                </div>
+              </div>
+            </div>
+
+
+            
+          </sc-if>
+
+          <sc-if value="{{ s.hasItems }}" hint-placeholder-val="{{ false }}">
+            <div style="display: grid; grid-template-columns: {{ s.itemGrid }}; gap: 24px; margin-bottom: clamp(28px, 4vh, 44px);">
+              <sc-for list="{{ s.items }}" as="it" hint-placeholder-count="3">
+                <article data-reveal id="{{ it.anchor }}" style="display: flex; flex-direction: column; gap: 12px; padding: clamp(22px, 2.4vw, 30px); border-radius: 16px; border: 1px solid rgba(255,255,255,.08); background: #070B15; box-shadow: inset 0 1px 0 rgba(255,255,255,.05), 0 24px 60px rgba(0,0,0,.45);">
+                  <div style="display: flex; align-items: center; justify-content: space-between; gap: 8px; flex-wrap: wrap;">
+                    <span style="padding: 3px 9px; border-radius: 999px; font-size: 11px; font-weight: 600; border: 1px solid rgba(0,204,255,.4); color: var(--blue-300);">{{ it.badge }}</span>
+                    <span style="{{ it.chip.style }}">{{ it.chip.label }}</span>
+                  </div>
+                  <h3 style="margin: 0; font-size: 20px; font-weight: 700; line-height: 1.2; letter-spacing: -.02em; text-wrap: balance;">{{ it.title }}</h3>
+                  <p style="margin: 0; font-size: 14px; line-height: 1.5; color: rgba(255,255,255,.76); text-wrap: pretty;">{{ it.body }}</p>
+                  <dl style="margin: 0; padding-top: 10px; border-top: 1px solid rgba(255,255,255,.08); display: grid; gap: 6px; font-size: 12.5px; line-height: 1.45;">
+                    <sc-for list="{{ it.meta }}" as="mm" hint-placeholder-count="2">
+                      <div><dt style="color: rgba(255,255,255,.5);">{{ mm.k }}</dt><dd style="margin: 2px 0 0; color: #fff;">{{ mm.v }}</dd></div>
+                    </sc-for>
+                  </dl>
+                  <sc-if value="{{ it.hasSrc }}" hint-placeholder-val="{{ false }}"><span style="font-size: 11px; color: rgba(255,255,255,.5);">{{ it.srcLabel }}</span></sc-if>
+                  <sc-if value="{{ it.hasLink }}" hint-placeholder-val="{{ false }}">
+                    <a data-noprint href="{{ it.linkHref }}" data-focusable="1" data-tab="{{ it.linkTab }}" data-sec="{{ it.linkSec }}" onClick="{{ goSection }}" style="margin-top: auto; font-size: 13px; font-weight: 600;">{{ it.linkLabel }} →</a>
+                  </sc-if>
+                </article>
+              </sc-for>
+            </div>
+          </sc-if>
+
+          <sc-if value="{{ s.hasDetails }}" hint-placeholder-val="{{ false }}">
+            <div data-reveal data-noprint style="position: relative; margin: 0 0 clamp(28px, 4vh, 44px); width: 100%; display: flex; flex-wrap: wrap; gap: 6px; padding: 8px; box-sizing: border-box; border-radius: 22px; border: 1px solid rgba(255,255,255,.12); background: linear-gradient(135deg, rgba(4,14,28,.72), rgba(2,8,18,.78) 50%, rgba(4,12,24,.7)); backdrop-filter: blur(24px) saturate(170%); -webkit-backdrop-filter: blur(24px) saturate(170%); box-shadow: inset 0 1px 0 rgba(255,255,255,.2), inset 0 -1px 0 rgba(0,0,0,.25), inset 0 0 0 1px rgba(255,255,255,.02), 0 30px 70px rgba(0,0,0,.4); overflow: hidden;">
+              <div role="tablist" aria-label="{{ s.headline }}" style="flex: 1 1 240px; max-width: 100%; display: flex; flex-direction: column; gap: 4px; padding: 8px;">
+                <sc-for list="{{ s.detailTabs }}" as="dtb" hint-placeholder-count="4">
+                  <button type="button" role="tab" data-focusable="1" aria-selected="{{ dtb.on }}" data-sec="{{ s.id }}" data-i="{{ dtb.i }}" onClick="{{ onDetailTab }}" style="{{ dtb.style }}" style-hover="color: #fff; background: rgba(255,255,255,.06)">{{ dtb.k }}</button>
+                </sc-for>
+              </div>
+              <div role="tabpanel" style="flex: 2.4 1 340px; min-width: 0; padding: clamp(20px, 2.6vw, 30px); display: flex; flex-direction: column; justify-content: center; gap: 12px; min-height: 180px; ">
+                <div style="font-size: 11px; font-weight: 600; letter-spacing: .18em; text-transform: uppercase; color: var(--blue-300);">{{ s.detailOn.k }}</div>
+                <p style="margin: 0; font-size: clamp(16px, 1.6vw, 19px); font-weight: 500; line-height: 1.5; color: #fff; text-wrap: pretty;">{{ s.detailOn.v }}</p>
+                <div style="display: flex; flex-wrap: wrap; align-items: center; gap: 8px 12px;"><span style="{{ s.detailOn.chip.style }}">{{ s.detailOn.chip.label }}</span><span style="font-size: 11px; color: rgba(255,255,255,.5);">{{ s.detailOn.srcLabel }}</span></div>
+              </div>
+            </div>
+            <dl data-print-only style="margin: 0 0 20px; border-radius: 14px; border: 1px solid rgba(255,255,255,.08); background: #070B15;">
+              <sc-for list="{{ s.details }}" as="dt" hint-placeholder-count="4">
+                <div style="display: grid; grid-template-columns: 220px minmax(0, 1fr); gap: 16px; padding: 12px 18px; border-bottom: 1px solid rgba(255,255,255,.06); font-size: 13px; line-height: 1.5;"><dt style="font-weight: 700; color: #fff;">{{ dt.k }}</dt><dd style="margin: 0; color: rgba(255,255,255,.8);">{{ dt.v }} <span style="{{ dt.chip.style }}">{{ dt.chip.label }}</span></dd></div>
+              </sc-for>
+            </dl>
+          </sc-if>
+
+          <sc-if value="{{ s.hasLists }}" hint-placeholder-val="{{ false }}">
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 340px), 1fr)); gap: clamp(16px, 2vw, 24px);">
+              <sc-for list="{{ s.lists }}" as="ls" hint-placeholder-count="2">
+                <div data-reveal data-avoid-break style="padding: clamp(22px, 2.4vw, 28px); border-radius: 16px; border: 1px solid rgba(0,204,255,.28); background: rgba(255,255,255,.055); box-shadow: inset 0 1px 0 rgba(0,204,255,.34);">
+                  <div style="font-size: 11px; font-weight: 600; letter-spacing: .18em; text-transform: uppercase; color: var(--blue-300);">{{ ls.title }}</div>
+                  <ul style="list-style: none; margin: 16px 0 0; padding: 0; display: flex; flex-direction: column; gap: 14px;">
+                    <sc-for list="{{ ls.items }}" as="li" hint-placeholder-count="3">
+                      <li data-slide style="display: flex; gap: 12px; align-items: flex-start;">
+                        <span aria-hidden="true" style="flex: none; width: 2px; align-self: stretch; background: var(--blue-400); border-radius: 2px;"></span>
+                        <span style="display: block; font-size: 14px; line-height: 1.55; color: rgba(255,255,255,.76); text-wrap: pretty;"><span style="color: rgba(255,255,255,.5);">{{ li.pre }}</span><strong style="font-weight: 700; color: #fff;">{{ li.b }}</strong> {{ li.t }} <span style="{{ li.chip.style }}">{{ li.chip.label }}</span></span>
+                      </li>
+                    </sc-for>
+                  </ul>
+                </div>
+              </sc-for>
+            </div>
+          </sc-if>
+
+          <sc-if value="{{ s.hasPanel }}" hint-placeholder-val="{{ false }}">
+            <div data-reveal data-avoid-break style="margin-top: 18px; padding: clamp(18px, 2.6vw, 26px); border-radius: 16px; border: 1px dashed rgba(0,204,255,.35); background: rgba(0,204,255,.04); display: flex; flex-direction: column; gap: 8px;">
+              <div style="display: flex; align-items: center; justify-content: space-between; gap: 10px; flex-wrap: wrap;"><span style="font-size: 11px; font-weight: 600; letter-spacing: .18em; text-transform: uppercase; color: var(--lime-300);">Kampus reporting preview</span><span style="padding: 2px 8px; border-radius: 999px; font-size: 11px; font-weight: 600; border: 1px dashed rgba(255,255,255,.3); color: rgba(255,255,255,.72);">{{ s.panelLabel }}</span></div>
+              <div style="font-size: 20px; font-weight: 700; letter-spacing: -.02em;">{{ s.panelTitle }}</div>
+              <p style="margin: 0; max-width: 720px; font-size: 14px; line-height: 1.5; color: rgba(255,255,255,.76);">{{ s.panelBody }}</p>
+              <div style="margin-top: 8px; display: grid; place-items: center; min-height: 120px; border-radius: 12px; border: 1px solid rgba(255,255,255,.08); background: #070B15; padding: 18px; text-align: center; font-size: 13px; color: rgba(255,255,255,.6);">{{ s.panelEmpty }}</div>
+            </div>
+          </sc-if>
+          <sc-if value="{{ s.isFullbleed }}" hint-placeholder-val="{{ false }}">
+            <div data-reveal style="display: flex; flex-wrap: wrap; justify-content: center; gap: 8px; margin: -12px 0 clamp(24px, 3.4vh, 36px);">
+              <sc-for list="{{ s.chips }}" as="fc" hint-placeholder-count="3"><span style="padding: 7px 14px; border-radius: 999px; border: 1px solid rgba(255,255,255,.14); background: rgba(255,255,255,.04); font-size: 12.5px; font-weight: 600; color: rgba(255,255,255,.82);">{{ fc }}</span></sc-for>
+            </div>
+            <figure data-reveal data-fullbleed data-block="Full-width image band" style="position: relative; width: 100%; margin: 0; padding: 0; box-sizing: border-box;">
+              <div aria-hidden="true" style="position: absolute; left: 10%; right: 10%; top: 8%; bottom: 8%; pointer-events: none; filter: blur(60px); background: radial-gradient(closest-side, rgba(0,204,255,.22), rgba(109,94,240,.12) 60%, transparent);"></div>
+              <div style="position: relative; border-radius: clamp(12px, 1.4vw, 20px); overflow: hidden; box-shadow: inset 0 1px 0 rgba(255,255,255,.12), 0 2px 0 rgba(0,0,0,.4), 0 24px 40px -12px rgba(0,0,0,.75), 0 60px 120px -20px rgba(0,0,0,.9), 0 0 90px rgba(0,204,255,.14); transform: translateY(-4px);">
+                <img data-lazy-src="{{ s.image }}" alt="{{ s.imageAlt }}" style="display: block; width: calc(100% + 6px); max-width: none; height: auto; margin-left: -4px;">
+              </div>
+            </figure>
+          </sc-if>
+          <sc-if value="{{ s.hasTimeline }}" hint-placeholder-val="{{ false }}">
+            <ol style="list-style: none; margin: 0 auto; padding: 0; max-width: 1100px; display: flex; flex-direction: column; gap: 12px;">
+              <sc-for list="{{ s.timeline }}" as="tl" hint-placeholder-count="5">
+                <li data-reveal data-avoid-break style="{{ tl.style }}">
+                  <span style="font-size: 26px; font-weight: 800; line-height: 1; letter-spacing: -.03em; color: var(--blue-300);">{{ tl.n }}</span>
+                  <span style="display: flex; flex-direction: column; gap: 6px; min-width: 0;">
+                    <span style="display: flex; align-items: baseline; gap: 10px; flex-wrap: wrap;"><span style="font-size: 17px; font-weight: 700; letter-spacing: -.01em; color: #fff;">{{ tl.title }}</span><span style="font-size: 17px; font-weight: 700; color: rgba(255,255,255,.4);">·</span><span style="font-size: 11px; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; color: var(--blue-300);">{{ tl.when }}</span></span>
+                    <span style="font-size: 14px; line-height: 1.55; color: rgba(255,255,255,.72); text-wrap: pretty;">{{ tl.body }}</span>
+                  </span>
+                </li>
+              </sc-for>
+            </ol>
+          </sc-if>
+          <sc-if value="{{ s.hasNote }}" hint-placeholder-val="{{ false }}"><p style="margin: 14px 0 0; font-size: 12px; line-height: 1.5; color: rgba(255,255,255,.55); text-align: center;">{{ s.note }}</p></sc-if>
+          <sc-if value="{{ s.hasTakeaway }}" hint-placeholder-val="{{ false }}">
+            <div data-reveal data-avoid-break style="margin: clamp(28px, 4vh, 44px) auto 0; max-width: 900px; display: flex; flex-wrap: wrap; gap: 14px 20px; align-items: center;">
+              <span style="flex: none; display: flex; align-items: center; gap: 14px;"><span style="font-size: 11px; font-weight: 600; letter-spacing: .18em; text-transform: uppercase; color: var(--lime-300); max-width: 120px;">{{ s.takeawayLabel }}</span><span aria-hidden="true" style="display: flex; align-items: center; gap: 6px;"><span data-dot aria-hidden="true" style="flex: none; width: 2px; height: 2px; border-radius: 50%; background: var(--blue-300); box-shadow: 0 0 4px rgba(0,204,255,0.40); opacity: 0;"></span><span data-dot aria-hidden="true" style="flex: none; width: 2.5px; height: 2.5px; border-radius: 50%; background: var(--blue-300); box-shadow: 0 0 6px rgba(0,204,255,0.50); opacity: 0;"></span><span data-dot aria-hidden="true" style="flex: none; width: 3px; height: 3px; border-radius: 50%; background: var(--blue-300); box-shadow: 0 0 8px rgba(0,204,255,0.60); opacity: 0;"></span><span data-dot aria-hidden="true" style="flex: none; width: 3.5px; height: 3.5px; border-radius: 50%; background: var(--blue-300); box-shadow: 0 0 10px rgba(0,204,255,0.70); opacity: 0;"></span><span data-dot aria-hidden="true" style="flex: none; width: 4.5px; height: 4.5px; border-radius: 50%; background: var(--blue-300); box-shadow: 0 0 12px rgba(0,204,255,0.80); opacity: 0;"></span><span data-dot aria-hidden="true" style="flex: none; width: 5.5px; height: 5.5px; border-radius: 50%; background: var(--blue-300); box-shadow: 0 0 14px rgba(0,204,255,0.90); opacity: 0;"></span></span></span>
+              <span style="flex: 1 1 420px; min-width: 0; font-size: clamp(16px, 1.5vw, 19px); font-weight: 600; line-height: 1.5; color: #fff; text-wrap: pretty;">{{ s.takeaway }}</span>
+            </div>
+          </sc-if>
+          
+        </section>
+      </sc-for>
+      <!-- ══ BLOCK: Similar verticals — the Playground's Full Catalogue, embedded with this proposal's vertical preselected (meta.galleryVertical) ══ -->
+      <sc-if value="{{ p.showGallery }}" hint-placeholder-val="{{ false }}">
+        <section data-noprint data-block="Similar verticals gallery" data-screen-label="Similar verticals" aria-label="Creatives from similar verticals" style="position: relative; z-index: 1; max-width: 1280px; margin: 0 auto; padding: clamp(24px, 4vh, 48px) clamp(12px, 3vw, 40px) 0;">
+          <iframe data-gallery-frame src="{{ gallerySrc }}" title="Creatives from similar verticals" scrolling="no" style="display: block; width: 100%; height: 900px; border: 0; background: transparent; transition: height 320ms cubic-bezier(.16,1,.3,1);"></iframe>
+        </section>
+      </sc-if>
+
+      <div data-tab-close="{{ p.key }}" data-close-last="{{ p.lastStr }}">
+
+      <!-- ══ BLOCK: Seller close — the Profile page's footer card: team plate with the seller's headshot + closing CTA ══ -->
+      <section data-block="Seller close" data-screen-label="Close" aria-label="Your KORTX contact" style="position: relative; z-index: 1; max-width: 1280px; margin: 0 auto; padding: clamp(56px, 8vh, 112px) clamp(20px, 4vw, 56px) 0; display: flex; flex-direction: column; align-items: center; gap: clamp(20px, 3vh, 36px);">
+        <div data-print-only data-print-pill><div style="display: flex; justify-content: center;"><div style="display: inline-flex; align-items: center; gap: 10px; padding: 8px 18px; border-radius: 999px; border: 1px solid rgba(251,146,60,.7); background: #1A1108; font-size: 13px; font-weight: 600; color: #fff; white-space: nowrap;"><span style="font-weight: 800; color: #FDBA74;">{{ p.n }}</span><span>Your KORTX Contact</span></div></div></div>
+        <div style="text-align: center; display: flex; flex-direction: column; align-items: center; gap: clamp(10px, 1.6vh, 18px);">
+          <div data-reveal style="font-size: 11px; font-weight: 600; letter-spacing: .18em; text-transform: uppercase; color: var(--blue-300);">{{ seller.eyebrow }}</div>
+          <h2 style="margin: 0; max-width: 900px; text-align: center; text-wrap: balance; font-size: clamp(26px, 3.6vw, 46px); font-weight: 700; letter-spacing: -.03em; line-height: 1.05; color: #fff;"><span style="display: block; overflow: hidden; padding-bottom: .14em; margin-bottom: -.14em;"><span data-line style="display: block; transform: translateY(105%);">Ready when you are</span></span></h2>
+          <p data-reveal style="margin: 0; max-width: 660px; text-align: center; text-wrap: pretty; font-size: clamp(14px, 1.4vw, 17px); line-height: 1.5; color: rgba(255,255,255,.72);">{{ seller.contactCopy }}</p>
+        </div>
+        <sc-if value="{{ p.isLast }}" hint-placeholder-val="{{ false }}"><div data-print-only><img data-cfg-src="headshot" alt="Your KORTX contact" style="display: block; width: 220px; height: 220px; margin: 0 auto; object-fit: cover; object-position: 50% 22%; border-radius: 16px; border: 1px solid rgba(255,255,255,.12);"></div></sc-if>
+        <sc-if value="{{ p.isRecommend }}" hint-placeholder-val="{{ false }}">
+        <div data-reveal data-noprint style="position: relative; width: min(520px, 84%); perspective: 1700px; perspective-origin: 62% 38%;">
+          <div aria-hidden="true" style="position: absolute; left: 50%; top: 54%; width: 116%; height: 116%; transform: translate(-50%, -50%); z-index: 0; pointer-events: none; filter: blur(40px); background: radial-gradient(closest-side, rgba(0,204,255,.30), rgba(109,94,240,.18) 52%, rgba(0,204,255,0) 78%);"></div>
+          <div data-space-fade style="position: relative; z-index: 1; aspect-ratio: 16 / 9; overflow: hidden; transform: rotateX(11deg) rotateY(-15deg) rotateZ(2.6deg);">
+            <img data-cfg-src="headshot" data-headshot-plate alt="Your KORTX contact" draggable="false" style="position: absolute; left: 50%; top: 50%; width: 55%; height: auto; max-width: none; transform: translate(-50%, -50%); pointer-events: none; -webkit-mask-image: linear-gradient(90deg, transparent 0%, #000 16%, #000 84%, transparent 100%), linear-gradient(180deg, transparent 0%, #000 12%, #000 88%, transparent 100%); mask-image: linear-gradient(90deg, transparent 0%, #000 16%, #000 84%, transparent 100%), linear-gradient(180deg, transparent 0%, #000 12%, #000 88%, transparent 100%); -webkit-mask-composite: source-in; mask-composite: intersect;">
+          </div>
+        </div>
+        </sc-if>
+      </section>
+      <footer data-block="Closing CTA footer" style="position: relative; z-index: 1; background: transparent;">
+        <div style="max-width: 1280px; margin: 0 auto; padding: clamp(40px, 6vh, 72px) clamp(20px, 4vw, 56px) clamp(40px, 5vw, 68px); display: flex; flex-direction: column; align-items: center; gap: clamp(16px, 2.2vw, 24px); text-align: center;">
+          <div style="display: flex; flex-direction: column; gap: 3px;">
+            <span style="font-size: 17px; font-weight: 700; color: #fff;">{{ seller.name }}</span>
+            <span style="font-size: 13px; color: rgba(255,255,255,.65);">{{ seller.title }}</span>
+            <span style="font-size: 13px; color: rgba(255,255,255,.55);"><a href="{{ sellerMail }}" style="color: inherit;">{{ seller.email }}</a> · <a href="{{ sellerTel }}" style="color: inherit;">{{ seller.phone }}</a></span>
+          </div>
+          <div style="margin-top: clamp(10px, 1.6vw, 20px); width: 100%; padding-top: clamp(16px, 2vw, 24px); border-top: 1px solid rgba(255,255,255,.07); font-size: 11px; font-weight: 600; letter-spacing: .18em; text-transform: uppercase; color: var(--blue-400, #00CCFF);">Built with grit in Detroit.</div>
+        </div>
+      </footer>
+      </div>
+    </div>
+  </sc-for>
+
+
+
+
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+const EASE = 'cubic-bezier(.16,1,.3,1)';
+const CONF = {
+  v: { label: 'Verified', c: '#BEF264', b: 'rgba(190,242,100,.45)', bg: 'rgba(190,242,100,.08)', text: 'backed by a cited source' },
+  i: { label: 'Inferred', c: '#66E0FF', b: 'rgba(0,204,255,.45)', bg: 'rgba(0,204,255,.08)', text: 'read from indirect evidence' },
+  a: { label: 'Assumed', c: '#C3BAFF', b: 'rgba(138,124,248,.5)', bg: 'rgba(138,124,248,.12)', text: 'a hypothesis to validate' },
+  u: { label: 'Unknown', c: 'rgba(255,255,255,.72)', b: 'rgba(255,255,255,.3)', bg: 'transparent', text: 'not observable yet' }
+};
+const TONE = { ok: CONF.v, wait: { c: '#FCD34D', b: 'rgba(252,211,77,.45)', bg: 'rgba(252,211,77,.08)' }, none: CONF.u, high: { c: '#001830', b: 'rgba(0,204,255,.9)', bg: '#33D6FF' }, mod: { c: '#CFF6FF', b: 'rgba(0,204,255,.35)', bg: 'rgba(0,204,255,.18)' } };
+const pill = t => ({ display: 'inline-block', justifySelf: 'start', width: 'max-content', maxWidth: '100%', padding: '2px 8px', borderRadius: 999, fontSize: 11, fontWeight: 600, lineHeight: 1.5, whiteSpace: 'nowrap', color: t.c, background: t.bg, border: '1px ' + (t === CONF.u ? 'dashed ' : 'solid ') + t.b });
+const chip = (c, cl) => { if (!c) return { label: '', style: { display: 'none' } }; const t = CONF[c] || CONF.u; return { label: cl || t.label, style: pill(t) }; };
+
+class Component extends DCLogic {
+  navInnerRef = React.createRef();
+  state = { menuOpen: false, navOpen: false, navW: 0, cfg: null, tab: 'media', dp: 0, persona: 0, intakeOpen: false, activeSec: '', fmtOpen: {} };
+
+  componentDidMount() {
+    import('./proposal-vadmv-v2.js').then(mod => {
+      this.setState({ cfg: mod.default }, () => { this.readHash(); this.afterRender(); setTimeout(() => this.navCheck(), 120); });
+    });
+    this.onScroll = () => { if (!this.raf) this.raf = requestAnimationFrame(() => { this.raf = 0; this.spy(); this.navCheck(); this.revealScan(); const r = document.querySelector('[data-rings]'); if (r) r.style.setProperty('--spin', (window.scrollY / Math.max(1, window.innerHeight * 3)).toFixed(4)); }); };
+    window.addEventListener('scroll', this.onScroll, { passive: true });
+    this.onGalleryMsg = e => { const d = e.data; if (d && d.kortxEmbed === 'gallery' && d.height) { const f = document.querySelector('[data-gallery-frame]'); if (f && f.contentWindow === e.source) f.style.height = d.height + 'px'; } };
+    window.addEventListener('message', this.onGalleryMsg);
+    this.postViewport = () => { const f = document.querySelector('[data-gallery-frame]'); if (f && f.contentWindow) { const r = f.getBoundingClientRect(); f.contentWindow.postMessage({ kortxViewport: { top: r.top, h: window.innerHeight } }, '*'); } };
+    window.addEventListener('scroll', this.postViewport, { passive: true }); window.addEventListener('resize', this.postViewport); this.vpTimer = setInterval(this.postViewport, 800);
+    this.onEsc = e => { if (e.key === 'Escape' && this.state.menuOpen) this.setState({ menuOpen: false }); };
+    window.addEventListener('keydown', this.onEsc);
+    this.onBefore = () => { (this.counters || []).forEach(nd => { if (nd.__kxFinal) nd.nodeValue = nd.__kxFinal; }); this.openedDetails = [...document.querySelectorAll('details:not([open])')]; this.openedDetails.forEach(d => d.open = true); };
+    this.onAfter = () => { (this.openedDetails || []).forEach(d => d.open = false); this.paintDeck(this.pos || 0, false); };
+    window.addEventListener('beforeprint', this.onBefore);
+    window.addEventListener('afterprint', this.onAfter);
+    this.onKey = e => { if (e.key === 'Escape' && this.state.intakeOpen) this.setState({ intakeOpen: false }); };
+    window.addEventListener('keydown', this.onKey);
+  }
+  componentDidUpdate() { this.afterRender(); }
+  flashedDp = 0;
+  componentWillUnmount() {
+    window.removeEventListener('scroll', this.onScroll);
+    window.removeEventListener('beforeprint', this.onBefore);
+    window.removeEventListener('afterprint', this.onAfter);
+    window.removeEventListener('keydown', this.onKey);
+    this.io && this.io.disconnect();
+  }
+
+  afterRender() {
+    if (!this.state.cfg) return;
+    const cfg = this.state.cfg, map = { clientLogo: [cfg.meta.clientLogo, cfg.meta.client], headshot: [cfg.seller.headshot, cfg.seller.name] };
+    document.querySelectorAll('[data-cfg-src]').forEach(img => { const v = map[img.dataset.cfgSrc]; if (v && img.getAttribute('src') !== v[0]) { img.src = v[0]; img.alt = v[1]; } });
+    const f = Object.assign({ z: .55, x: 0, y: 0, w: 1125, h: 1500 }, cfg.seller.headshotFrame || {});
+    const hw = 100 * Math.max(1, (f.w / f.h) / (16 / 9)) * f.z;
+    document.querySelectorAll('[data-headshot-plate]').forEach(img => { img.style.width = hw + '%'; img.style.left = 'calc(50% + ' + f.x + '%)'; img.style.top = 'calc(50% + ' + f.y + '%)'; });
+    document.querySelectorAll('[data-lazy-src]').forEach(el => { const v = el.getAttribute('data-lazy-src'); if (v && v.indexOf('{{') < 0 && el.getAttribute('src') !== v) el.setAttribute('src', v); });
+    this.fitStage();
+    if (!this.fitWired) { this.fitWired = true; window.addEventListener('resize', () => this.fitStage()); }
+    this.wireDial();
+    if (!this.dragging && !this.settling) this.paintDeck(this.state.dp, this.deckPainted);
+    this.deckPainted = true;
+    this.reveal();
+  }
+
+  /* Keep the whole ad example (caption, 300×600 deck and scrubber) on one
+     screen: scale the column down on short viewports, never up. */
+  fitStage() {
+    const col = document.querySelector('[data-deck-col]'); if (!col) return;
+    const natural = 56 + 600 + 16 + 64;
+    const sc = Math.max(.62, Math.min(1, (window.innerHeight - 150) / natural));
+    col.style.transform = sc < 1 ? 'scale(' + sc.toFixed(3) + ')' : '';
+    col.style.marginBottom = sc < 1 ? (-(1 - sc) * natural).toFixed(0) + 'px' : '';
+    /* Centre the right-hand copy on the ad itself, not the ad + caption + scrubber. */
+    const side = document.querySelector('[data-dp-side]'), deck = document.querySelector('[data-deck]');
+    if (side && deck) {
+      side.style.marginTop = '0px';
+      requestAnimationFrame(() => {
+        const d = deck.getBoundingClientRect(), s0 = side.getBoundingClientRect();
+        if (s0.top > d.bottom - 10) { side.style.marginTop = '0px'; return; }
+        const off = (d.top + d.height / 2) - (s0.top + s0.height / 2);
+        side.style.marginTop = Math.max(0, off).toFixed(0) + 'px';
+      });
+    }
+  }
+  /* Count each number in a value string up from ~0 to its final value,
+     keeping prefixes, suffixes, commas and decimals ("$85,000", "8.7M", "21 to 35"). */
+  countUp(el, delay) {
+    const walker = document.createTreeWalker(el, NodeFilter.SHOW_TEXT); const nodes = []; let n; while ((n = walker.nextNode())) if (n.nodeValue.trim()) nodes.push(n);
+    nodes.forEach(node => {
+      const final = node.__kxFinal || (node.__kxFinal = node.nodeValue);
+      const parts = [], re = /\d[\d,]*(?:\.\d+)?/g; let m, last = 0;
+      while ((m = re.exec(final))) { parts.push(final.slice(last, m.index)); const raw = m[0], dec = (raw.split('.')[1] || '').length; parts.push({ v: parseFloat(raw.replace(/,/g, '')), dec, comma: raw.includes(',') }); last = m.index + raw.length; }
+      parts.push(final.slice(last));
+      if (!parts.some(p => typeof p === 'object')) return;
+      (this.counters = this.counters || []).push(node);
+      const fmt = (p, t) => { const x = p.v * t; const s = p.dec ? x.toFixed(p.dec) : String(Math.round(x)); return p.comma ? Number(s).toLocaleString('en-US', { minimumFractionDigits: p.dec, maximumFractionDigits: p.dec }) : s; };
+      const paint = t => { node.nodeValue = parts.map(p => typeof p === 'object' ? fmt(p, t) : p).join(''); };
+      paint(0);
+      const dur = 900, t0 = performance.now() + delay * .6;
+      const step = now => { const k = Math.min(1, Math.max(0, (now - t0) / dur)); paint(1 - Math.pow(1 - k, 3)); if (k < 1) requestAnimationFrame(step); else node.nodeValue = final; };
+      requestAnimationFrame(step);
+    });
+  }
+  revealScan() { if (!this.pend) return; const vh = window.innerHeight; [...this.pend].forEach(t => { const r = t.getBoundingClientRect(); if ((r.width || r.height) && r.top < vh * .94) this.ioCb([{ isIntersecting: true, target: t }]); }); }
+  reveal() {
+    const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if (!this.io) { this.ioCb = es => es.forEach(en => {
+      if (!en.isIntersecting) return;
+      const el = en.target;
+      if (el.__kxSlides) { el.__kxSlides.forEach((li, k) => { const d = 150 + k * (el.hasAttribute('data-slide-slow') ? 240 : 110); li.style.transition = 'clip-path 900ms ' + EASE + ' ' + d + 'ms, transform 900ms ' + EASE + ' ' + d + 'ms, opacity 500ms ' + EASE + ' ' + d + 'ms'; li.style.clipPath = 'inset(0 0 0 0)'; li.style.transform = 'none'; li.style.opacity = 1; }); el.__kxSlides = null; this.io.unobserve(el); return; }
+      if (el.__kxLines) el.__kxLines.forEach((l, k) => { l.style.animation = 'kx-line 900ms ' + EASE + ' ' + (k * 140) + 'ms both'; });
+      else { const sib = el.parentElement ? [...el.parentElement.children].filter(x => x.hasAttribute('data-reveal')) : []; const st = el.hasAttribute('data-stagger'), d = Math.max(0, sib.indexOf(el)) * (st ? 240 : 120); el.style.transition = 'opacity 700ms ' + EASE + ' ' + d + 'ms, transform ' + (st ? 900 : 700) + 'ms ' + EASE + ' ' + d + 'ms, filter 700ms ' + EASE + ' ' + d + 'ms'; el.style.opacity = 1; el.style.transform = 'none'; el.style.filter = 'none'; el.querySelectorAll('[data-count]').forEach(cn => this.countUp(cn, d + 180)); el.querySelectorAll('[data-dot]').forEach((dt, k) => { dt.style.animation = 'kx-dotloop 2.4s ' + EASE + ' ' + (d + 300 + k * 140) + 'ms infinite both'; }); }
+      this.io.unobserve(el);
+    });
+    this.io = new IntersectionObserver(this.ioCb, { threshold: .12, rootMargin: '0px 0px -6% 0px' });
+    /* Scroll fallback: some embedded previews never deliver IO callbacks. */
+    this.pend = new Set(); const obs = this.io.observe.bind(this.io), un = this.io.unobserve.bind(this.io);
+    this.io.observe = t => { this.pend.add(t); obs(t); }; this.io.unobserve = t => { this.pend.delete(t); un(t); }; }
+    document.querySelectorAll('[data-line]:not([data-seen]), [data-reveal]:not([data-seen]), [data-slide]:not([data-seen])').forEach(el => {
+      el.setAttribute('data-seen', '');
+      if (reduce) { el.style.transform = 'none'; el.querySelectorAll('[data-dot]').forEach(dt => { dt.style.opacity = 1; }); return; }
+      if (el.hasAttribute('data-slide')) { el.style.clipPath = 'inset(0 100% 0 0)'; el.style.transform = 'translateX(-28px)'; el.style.opacity = 0; /* a clipped target never intersects: watch its list instead */ const host = el.parentElement; host.__kxSlides = (host.__kxSlides || []).concat(el); if (host.__kxSlides.length === 1) this.io.observe(host); return; }
+      if (el.hasAttribute('data-reveal')) { el.style.opacity = 0; el.style.transform = el.hasAttribute('data-stagger') ? 'translateY(44px) scale(.96)' : 'translateY(24px)'; if (el.hasAttribute('data-stagger')) el.style.filter = 'blur(6px)'; }
+      if (el.hasAttribute('data-line')) {
+        /* A masked line sits fully outside its clipping row, so it never intersects; watch the headline instead. */
+        const host = el.closest('h1,h2,h3') || el.parentElement.parentElement || el;
+        host.__kxLines = (host.__kxLines || []).concat(el);
+        if (host.__kxLines.length === 1) this.io.observe(host);
+        return;
+      }
+      this.io.observe(el);
+    });
+    clearTimeout(this.scanT); this.scanT = setTimeout(() => this.revealScan(), 250);
+  }
+
+  deckStyle(d) {
+    const ad = Math.abs(d), sign = d === 0 ? 0 : (d > 0 ? 1 : -1);
+    const ramp = (near, far) => ad <= 1 ? near * ad : near + far * (ad - 1);
+    return {
+      transform: 'translate3d(' + (-sign * ramp(46, 40)).toFixed(1) + 'px,' + (12 * Math.min(ad, 3)).toFixed(1) + 'px,0) rotate(' + (-sign * ramp(7, 5)).toFixed(2) + 'deg) scale(' + Math.max(.6, 1 - .09 * ad).toFixed(3) + ')',
+      filter: 'blur(' + ramp(5, 4).toFixed(2) + 'px)',
+      opacity: ad <= 1 ? 1 - .6 * ad : Math.max(0, .4 - .26 * (ad - 1)),
+      zIndex: Math.round(30 - ad * 10), pe: ad < .5 ? 'auto' : 'none'
+    };
+  }
+  paintDeck(pos, animate) {
+    const ease = 'transform 520ms ' + EASE + ', opacity 420ms ' + EASE + ', filter 420ms ' + EASE;
+    document.querySelectorAll('[data-deck-card]').forEach(el => {
+      const s = this.deckStyle(Number(el.dataset.deckCard) - pos);
+      el.style.transition = animate ? ease : 'none';
+      el.style.transform = s.transform; el.style.filter = s.filter; el.style.opacity = s.opacity;
+      el.style.zIndex = s.zIndex; el.style.pointerEvents = s.pe;
+      el.style.visibility = s.opacity <= .005 ? 'hidden' : 'visible';
+    });
+    const t = document.querySelector('[data-dial-ticks]');
+    if (t) { t.style.transition = animate ? 'background-position 520ms ' + EASE : 'none'; t.style.backgroundPosition = (-pos * 46).toFixed(1) + 'px 0'; }
+    this.pos = pos;
+  }
+  replay(i) {
+    if (this.lastDp === i) return;
+    const had = this.lastDp != null; this.lastDp = i;
+    if (!had) return;
+    const f = document.querySelector('[data-dp-frame="' + i + '"]');
+    if (f) { try { if (f.contentDocument) f.contentDocument.__kxOld = true; f.contentWindow.location.reload(); } catch (e) { const s = f.src; f.src = 'about:blank'; requestAnimationFrame(() => f.src = s); } }
+  }
+  setDp(i) { const changed = i !== this.flashedDp; this.replay(i); this.setState({ dp: i }, () => { if (changed) { this.flashedDp = i; this.flashFrameChanges(); } }); }
+
+  /* Ported from the Playground's flashFrameChanges() — the Sheetz (daypart)
+     branch: the daypart label, the headline and the product carousel each ring
+     once they have arrived, then all fade together. The ring is injected into
+     the same-origin build so it rides the build's own geometry. */
+  syncRows(delays, fadeAt) {
+    (this.rowTimers || []).forEach(clearTimeout);
+    this.rowTimers = [];
+    const rows = [...document.querySelectorAll('[data-change-row]')];
+    const off = el => { el.style.borderColor = 'rgba(255,255,255,.08)'; el.style.boxShadow = 'none'; el.style.background = 'rgba(255,255,255,.03)'; };
+    rows.forEach(off);
+    rows.forEach((el, j) => {
+      const d = delays[j]; if (d == null) return;
+      this.rowTimers.push(setTimeout(() => { el.style.borderColor = 'rgba(0,204,255,.9)'; el.style.boxShadow = '0 0 28px rgba(0,204,255,.35), inset 0 0 18px rgba(0,204,255,.18)'; el.style.background = 'rgba(0,204,255,.08)'; }, d));
+      this.rowTimers.push(setTimeout(() => off(el), fadeAt));
+    });
+  }
+  flashFrameChanges(tries) {
+    const n = tries == null ? 0 : tries;
+    let hit = false;
+    document.querySelectorAll('[data-dp-frame="' + this.state.dp + '"]').forEach(f => {
+      let d;
+      try { d = f.contentDocument; } catch (e) { return; }
+      if (!d || !d.body || d.readyState === 'loading' || d.__kxOld) return;
+      const want = f.getAttribute('src') || '';
+      if (want && d.URL && d.URL.indexOf(want.split('/').slice(-2)[0]) === -1) return;
+      const sheetz = !!d.querySelector('.daypart');
+      const targets = sheetz ? [
+        { el: d.querySelector('.daypart-wrap'), inset: 'inset:-4px -8px;border-radius:999px', delay: 900 },
+        { el: d.querySelector('#ad h1'), inset: 'inset:-6px -4px;border-radius:10px', delay: 1800 },
+        { el: d.querySelector('.stage'), inset: 'inset:-6px;border-radius:14px', delay: 3800 }
+      ] : [];
+      /* Light the matching row in the What Just Happened card on the same beat
+         as its ring, so each outline reads against its explanation. */
+      this.syncRows(targets.map(x => x.delay), 9600);
+      targets.forEach(({ el, inset, delay, key }) => {
+        if (!el) return;
+        hit = true;
+        let ring = key ? key.__kxRing : el.querySelector(':scope > [data-kx-ring]');
+        if (key && ring) ring.style.cssText = ring.style.cssText.replace(/top:[^;]*;left:[^;]*;width:[^;]*;height:[^;]*;border-radius:[^;]*/, inset);
+        if (key) el = key;
+        if (!ring) {
+          ring = d.createElement('div');
+          ring.setAttribute('data-kx-ring', '');
+          if (key) key.__kxRing = ring;
+          ring.style.cssText = 'position:absolute;z-index:' + (key ? 999 : 9) + ';pointer-events:none;border:2px solid rgba(0,204,255,.9);box-shadow:0 0 28px rgba(0,204,255,.5),inset 0 0 18px rgba(0,204,255,.28);opacity:0;transition:opacity 320ms cubic-bezier(.16,1,.3,1);'
+            + (inset || 'inset:0;border-radius:inherit');
+          if (key) d.body.appendChild(ring);
+          else {
+            if (getComputedStyle(el).position === 'static') el.style.position = 'relative';
+            el.appendChild(ring);
+          }
+        }
+        clearTimeout(el.__kxRingOn);
+        clearTimeout(el.__kxRingOff);
+        ring.style.opacity = '0';
+        const fadeAt = 9600;
+        el.__kxRingOn = setTimeout(() => {
+          void ring.offsetWidth;
+          ring.style.opacity = '1';
+          el.__kxRingOff = setTimeout(() => { ring.style.opacity = '0'; }, fadeAt - delay);
+        }, delay);
+      });
+    });
+    if (!hit && n < 30) {
+      clearTimeout(this.ringTimer);
+      this.ringTimer = setTimeout(() => this.flashFrameChanges(n + 1), 120);
+    }
+  }
+
+  wireDial() {
+    const dial = document.querySelector('[data-dial]');
+    if (!dial || dial.dataset.wired) return;
+    dial.dataset.wired = '1';
+    const STEP = 46, n = Math.max(1, document.querySelectorAll('[data-deck-card]').length), clamp = p => Math.max(0, Math.min(n - 1, p));
+    let down = false, x0 = 0, base = 0, lastX = 0, vel = 0, raf = 0;
+    const settle = target => {
+      cancelAnimationFrame(raf);
+      const from = this.pos == null ? target : this.pos, dist = target - from;
+      const dur = Math.min(620, 260 + Math.abs(dist) * 220), t0 = performance.now();
+      this.settling = true;
+      const step = now => {
+        const t = Math.min(1, (now - t0) / dur), e = 1 - Math.pow(1 - t, 3);
+        this.paintDeck(from + dist * e, false);
+        if (t < 1) { raf = requestAnimationFrame(step); return; }
+        this.settling = false; this.dragging = false;
+        this.paintDeck(target, false);
+        this.setDp(target);
+      };
+      raf = requestAnimationFrame(step);
+    };
+    dial.addEventListener('pointerdown', e => {
+      if (e.button != null && e.button !== 0) return;
+      e.preventDefault(); cancelAnimationFrame(raf);
+      down = true; x0 = lastX = e.clientX; vel = 0; base = this.pos == null ? this.state.dp : this.pos;
+      this.dragging = true; dial.style.cursor = 'grabbing';
+      try { dial.setPointerCapture(e.pointerId); } catch (err) {}
+    });
+    dial.addEventListener('pointermove', e => {
+      if (!down) return;
+      vel = vel * .7 + ((e.clientX - lastX) / STEP) * .3; lastX = e.clientX;
+      const p = clamp(base + (e.clientX - x0) / STEP);
+      this.paintDeck(p, false);
+      const j = Math.round(p);
+      if (j !== this.state.dp) this.setState({ dp: j });
+    });
+    const release = () => { if (!down) return; down = false; dial.style.cursor = 'grab'; settle(clamp(Math.round(this.pos + vel * 4))); };
+    dial.addEventListener('pointerup', release);
+    dial.addEventListener('pointercancel', release);
+    dial.addEventListener('keydown', e => {
+      if (e.key !== 'ArrowLeft' && e.key !== 'ArrowRight') return;
+      e.preventDefault();
+      this.setDp(clamp(this.state.dp + (e.key === 'ArrowRight' ? 1 : -1)));
+    });
+  }
+
+  onDp = e => this.setDp(Number(e.currentTarget.dataset.dp));
+
+  switchTab(tab, sec) {
+    this.scrollMem = this.scrollMem || {};
+    if (tab !== this.state.tab) this.scrollMem[this.state.tab] = window.scrollY;
+    const go = () => {
+      const el = sec && document.getElementById(sec);
+      if (el) window.scrollTo({ top: el.getBoundingClientRect().top + window.scrollY - 80, behavior: 'smooth' });
+      else if (tab !== this.prevTab) {
+        const nav = document.querySelector('[data-block="Proposal tabs nav"]');
+        const mem = this.scrollMem[tab];
+        window.scrollTo({ top: mem != null ? mem : (nav ? nav.getBoundingClientRect().top + window.scrollY - 72 : 0) });
+      }
+      this.prevTab = tab;
+    };
+    try { history.replaceState(null, '', '#' + tab + (sec ? '/' + sec : '')); } catch (e) {}
+    if (tab !== this.state.tab) this.setState({ tab }, () => requestAnimationFrame(go)); else go();
+  }
+  readHash() {
+    const h = decodeURIComponent((location.hash || '').slice(1));
+    if (!h || h === 'top') return;
+    const [tab, sec] = h.split('/');
+    if (this.state.cfg && this.state.cfg.tabs.some(t => t.key === tab)) this.switchTab(tab, sec);
+  }
+  onTab = e => { const t = e.currentTarget.dataset.tab; this.scrollMem = this.scrollMem || {}; if (e.currentTarget.closest('[data-page-head]')) { this.scrollMem[t] = null; } this.switchTab(t); };
+  goSection = e => { if (!e.currentTarget.dataset.tab) return; e.preventDefault(); this.switchTab(e.currentTarget.dataset.tab, e.currentTarget.dataset.sec); };
+  /* Liquid-glass tab bar: opens from a glass dot when it enters view,
+     folds back into the dot once it leaves, so it replays on every pass. */
+  toggleMenu = () => this.setState(s => ({ menuOpen: !s.menuOpen }));
+  closeMenu = () => this.setState({ menuOpen: false });
+  goMenu = e => { const { tab, sec } = e.currentTarget.dataset; e.preventDefault(); this.setState({ menuOpen: false }); this.scrollMem = this.scrollMem || {}; this.scrollMem[tab] = null; this.switchTab(tab, sec || undefined); };
+  navCheck() {
+    const n = document.querySelector('[data-tabs-nav]'); if (!n) return;
+    const r = n.getBoundingClientRect(), vh = window.innerHeight;
+    const open = r.top < vh * .86 && r.bottom > 60;
+    const inner = this.navInnerRef.current, w = inner ? inner.scrollWidth : 0;
+    if (open !== this.state.navOpen || (w && w !== this.state.navW)) this.setState({ navOpen: open, navW: w || this.state.navW });
+  }
+  spy() {
+    const cfg = this.state.cfg; if (!cfg) return;
+    const tab = cfg.tabs.find(t => t.key === this.state.tab); if (!tab) return;
+    let cur = '';
+    tab.sections.forEach(s => { const el = document.getElementById(s.id); if (el && el.getBoundingClientRect().top < 220) cur = s.id; });
+    if (cur !== this.state.activeSec) this.setState({ activeSec: cur });
+  }
+
+  movePersona(d) { const n = this.personas().length || 1; this.setState(s => ({ persona: (s.persona + d + n) % n })); }
+  prevPersona = () => this.movePersona(-1);
+  nextPersona = () => this.movePersona(1);
+  onPersonaDot = e => this.setState({ persona: Number(e.currentTarget.dataset.i) });
+  onPersonaKey = e => { if (e.key === 'ArrowLeft') { e.preventDefault(); this.movePersona(-1); } if (e.key === 'ArrowRight') { e.preventDefault(); this.movePersona(1); } };
+  onPersonaDown = e => { this.px = e.clientX; };
+  onPersonaUp = e => { if (this.px == null) return; const dx = e.clientX - this.px; this.px = null; if (Math.abs(dx) > 40) this.movePersona(dx < 0 ? 1 : -1); };
+  personas() { const s = this.findSec('personas'); return ((s && s.personas) || []).map(p => p.groups ? Object.assign({}, p, { desc: p.groups[0].rows[0][1], fields: p.groups.reduce((a, g) => a.concat(g.rows), []).concat((p.formats || []).map(f => [f.name, f.body])) }) : p); }
+  findSec(type) { const c = this.state.cfg; if (!c) return null; for (const t of c.tabs) for (const s of t.sections) if (s.type === type) return s; return null; }
+
+  onDetailTab = e => { const sec = e.currentTarget.dataset.sec, i = Number(e.currentTarget.dataset.i); this.setState(st => ({ detailTab: Object.assign({}, st.detailTab, { [sec]: i }) })); };
+  onFmt = e => { const k = e.currentTarget.dataset.k; this.setState(st => ({ fmtOpen: Object.assign({}, st.fmtOpen, { [k]: !st.fmtOpen[k] }) })); };
+  openIntake = () => this.setState({ intakeOpen: true });
+  closeIntake = () => this.setState({ intakeOpen: false });
+  downloadPdf = async () => {
+    const imgs = [...document.querySelectorAll('img[data-lazy-src]')];
+    imgs.forEach(i => { if (!i.getAttribute('src')) i.src = i.dataset.lazySrc; });
+    await Promise.all(imgs.map(i => i.complete ? null : new Promise(r => { i.onload = i.onerror = r; setTimeout(r, 4000); })));
+    window.print();
+  };
+
+  renderVals() {
+    const c = this.state.cfg;
+    const base = { onFmt: this.onFmt, onDetailTab: this.onDetailTab, onTab: this.onTab, goSection: this.goSection, onDp: this.onDp, openIntake: this.openIntake, closeIntake: this.closeIntake, downloadPdf: this.downloadPdf,
+      prevPersona: this.prevPersona, nextPersona: this.nextPersona, onPersonaDot: this.onPersonaDot, onPersonaKey: this.onPersonaKey, onPersonaDown: this.onPersonaDown, onPersonaUp: this.onPersonaUp,
+      intakeOpen: this.state.intakeOpen, loaded: !!c };
+    if (!c) return Object.assign(base, { m: { clientLogo: '', client: 'Virginia DMV', pills: [] }, showGallery: false, gallerySrc: '', pillItems: [], titleWords: [], accentWords: [], h1Aria: '', hasClientLogo: false, noClientLogo: true, logoPlate: false, logoBare: false, heroSlot: true, heroImg: false, heroHtml: false, heroSrc: '', heroPlaceholder: '', heroPrimary: {}, heroSecondary: {}, dpMax: '1', callout: {}, scope: '', metaRows: [], overview: [], legend: [], tabBtns: [], navChips: [], panels: [], dpList: [], dp: {}, ruleRows: [], personaDots: [], personaAll: [], railDots: [], otherTab: 'recommend', otherTabLabel: 'Go to What We Recommend', dyn: { cols: [], rows: [] }, dpSpec: [], dpSpecShort: [], dpChanges: [], personaCards: [], pv: { chip: {}, rows: [] }, seller: { headshot: 'assets/team/eric-simone.jpg', name: 'Eric Simone', eyebrow: '' }, sourceList: [], hasConfidential: false });
+    const m = c.meta, SRC = c.sources;
+    const srcLabel = k => (k && SRC[k]) ? 'Source: ' + SRC[k].label + ' (' + SRC[k].date + ')' : '';
+    const legend = ['v', 'i', 'a', 'u'].map(k => ({ label: CONF[k].label, style: pill(CONF[k]), text: CONF[k].text }));
+
+    const dpSec = this.findSec('creative') || { dayparts: [], rule: [] };
+    const dps = dpSec.dayparts || [];
+    const cur = Math.max(0, Math.min(dps.length - 1, this.state.dp));
+    const dpList = dps.map((d, i) => {
+      const on = i === cur;
+      const sp = Object.fromEntries(d.spec || []);
+      return Object.assign({}, d, { interaction: sp['Interaction'] || '', objective: sp['Campaign objective'] || '', i: String(i), on: String(on), aria: d.headline + ', ' + d.name,
+        segStyle: { padding: '9px 10px', borderRadius: 999, border: '1px solid ' + (on ? 'rgba(0,204,255,.6)' : 'transparent'), background: on ? 'rgba(0,204,255,.16)' : 'transparent', color: on ? '#fff' : 'rgba(255,255,255,.62)', boxShadow: on ? '0 0 24px rgba(0,204,255,.25)' : 'none', cursor: 'pointer', textAlign: 'center', transition: 'all 200ms ' + EASE },
+        dotStyle: { width: on ? 22 : 8, height: 8, padding: 0, borderRadius: 999, border: 0, cursor: 'pointer', background: on ? 'var(--blue-300)' : 'rgba(255,255,255,.28)', boxShadow: on ? '0 0 10px rgba(0,204,255,.8)' : 'none', transition: 'all 320ms ' + EASE } });
+    });
+
+    const P = this.personas(), pi = Math.max(0, Math.min(P.length - 1, this.state.persona));
+    const prow = p => (p.fields || []).map(([k, v]) => ({ k, v }));
+    const pp = P[pi] || {};
+    const KEYS = ['Core need', 'Trigger', 'Possible frustration', 'Desired action'];
+    const personaCards = P.map((p, i) => {
+      let d = i - pi; const n = P.length; if (d > n / 2) d -= n; if (d < -n / 2) d += n;
+      const ad = Math.abs(d), on = d === 0;
+      const fm = Object.fromEntries(p.fields || []);
+      return Object.assign({}, p, { num: String(i + 1).padStart(2, '0'), groups: (p.groups || []).map(g => ({ title: g.title, quote: g.quote || '', items: g.rows.map(([k, v]) => ({ k, v })) })), formats: (p.formats || []).map((f, fj) => { const k = i + '-' + fj, op = !!this.state.fmtOpen[k]; return Object.assign({}, f, { k, open: op, openStr: String(op), chev: { color: op ? '#C4B5FD' : 'rgba(255,255,255,.55)', transform: op ? 'rotate(180deg)' : 'none', transition: 'transform 320ms ' + EASE + ', color 200ms ' + EASE }, isSnap: f.icon === 'snap', isRich: f.icon === 'rich', isVideo: f.icon === 'video', isDisplay: f.icon === 'display' }); }), chip: chip(p.c, p.cl), rows: prow(p), count: (i + 1) + ' of ' + n, hidden: String(!on),
+        key: (p.keyFields || KEYS).filter(k => fm[k]).map(k => ({ k, v: fm[k] })), hasMessage: !!p.message,
+        style: { gridArea: '1 / 1', display: 'flex', flexDirection: 'column', gap: 16, padding: 'clamp(22px, 3vw, 34px)', borderRadius: 20,
+          border: '1px solid ' + (on ? 'rgba(0,204,255,.34)' : 'rgba(255,255,255,.08)'), background: on ? 'linear-gradient(180deg, rgba(18,30,52,.96) 0%, rgba(9,15,28,.96) 38%, rgba(5,9,18,.97) 100%)' : 'rgba(7,11,21,.9)',
+          backdropFilter: 'blur(10px) saturate(120%)', WebkitBackdropFilter: 'blur(10px) saturate(120%)',
+          boxShadow: on ? 'inset 0 1px 0 rgba(255,255,255,.16), inset 0 0 0 1px rgba(0,204,255,.06), inset 0 -2px 0 rgba(0,0,0,.45), 0 2px 0 rgba(0,0,0,.4), 0 18px 30px -10px rgba(0,0,0,.6), 0 50px 100px -24px rgba(0,0,0,.85), 0 0 80px rgba(0,204,255,.14)' : 'inset 0 1px 0 rgba(255,255,255,.05), 0 20px 50px rgba(0,0,0,.45)',
+          transform: 'translate3d(' + (d * 14) + '%, ' + (ad * 14) + 'px, 0) scale(' + (1 - ad * .08) + ')', transformOrigin: '50% 100%',
+          filter: on ? 'none' : 'blur(' + (ad * 3) + 'px)', opacity: on ? 1 : Math.max(0, .5 - (ad - 1) * .3), zIndex: 10 - ad,
+          pointerEvents: on ? 'auto' : 'none', visibility: ad > 1 ? 'hidden' : 'visible',
+          transition: 'transform 520ms ' + EASE + ', opacity 420ms ' + EASE + ', filter 420ms ' + EASE + ', border-color 320ms ' + EASE } });
+    });
+    const pv = Object.assign({}, pp, { chip: chip(pp.c, pp.cl), rows: P.length ? prow(pp) : [], aria: (pp.name || '') + ', persona ' + (pi + 1) + ' of ' + P.length });
+
+    const mapRows = rows => (rows || []).map(r => ({ cells: r.map((cell, k) => typeof cell === 'object'
+      ? { t: cell.pill, style: pill(TONE[cell.tone] || CONF.u) }
+      : { t: cell, style: k === 0 ? { fontWeight: 650, color: '#fff' } : {} }) }));
+    const dIdx = s => Math.min(((this.state.detailTab || {})[s.id]) || 0, Math.max(0, (s.details || []).length - 1));
+    const mapSec = (s, i, tab) => {
+      const items = (s.items || []).map((it, j) => Object.assign({}, it, {
+        anchor: s.id + '-' + j, chip: chip(it.c, it.cl), meta: (it.meta || []).map(([k, v]) => ({ k, v })),
+        hasSrc: !!it.src, srcLabel: srcLabel(it.src),
+        hasLink: !!it.link, linkLabel: it.link ? it.link.label : '', linkTab: it.link ? it.link.tab : '', linkSec: it.link ? it.link.sec : '',
+        linkHref: it.link ? '#' + it.link.tab + '/' + it.link.sec : '#'
+      }));
+      const tables = (s.tables || (s.cols ? [{ cols: s.cols, grid: s.grid, rows: s.rows }] : [])).map(t => ({ title: t.title || '', hasTitle: !!t.title, note: t.note || '', hasNote: !!t.note, noNote: !t.note, cols: t.cols, grid: t.grid || '1fr', rows: mapRows(t.rows) }));
+      return {
+        id: s.id, block: 'Proposal · ' + s.eyebrow, screen: String.fromCharCode(65 + Math.max(0, c.tabs.findIndex(x => x.key === tab))) + String(i + 1).padStart(2, '0') + ' ' + s.nav,
+        eyebrow: s.eyebrow, headline: s.headline, intro: s.intro, nav: s.nav, num: String(i + 1).padStart(2, '0'), tabLabel: (c.tabs.find(x => x.key === tab) || {}).label || '', href: '#' + tab + '/' + s.id,
+        hasFacts: !!(s.facts && s.facts.length), facts: (s.facts || []).map(f => Object.assign({}, f, { chip: chip(f.c, f.cl), srcLabel: srcLabel(f.src) })),
+        tables, hasNarrative: !!s.narrative, narrative: s.narrative || '', hasTakeaway: !!s.takeaway, takeaway: s.takeaway || '', hasNote: !!s.note, note: s.note || '',
+        hasPanel: !!s.panel, panelTitle: s.panel ? s.panel.title : '', panelBody: s.panel ? s.panel.body : '', panelLabel: s.panel ? s.panel.label : '', panelEmpty: s.panel ? s.panel.empty : '',
+        isPersonas: s.type === 'personas', isCreative: s.type === 'creative',
+        hasItems: items.length > 0, items, itemGrid: items.length % 3 === 0 || items.length === 5 ? 'repeat(auto-fit, minmax(max(calc((100% - 48px) / 3), min(100%, calc((760px - 100%) * 999))), 1fr))' : 'repeat(auto-fit, minmax(max(calc((100% - 24px) / 2), min(100%, calc((700px - 100%) * 999))), 1fr))',
+        hasDetails: !!(s.details && s.details.length), detailsLabel: s.detailsLabel || 'More detail',
+        detailTabs: (s.details || []).map((d, j) => { const on = j === dIdx(s); return { i: String(j), k: d.k, on: String(on), style: { textAlign: 'left', padding: '11px 16px', borderRadius: 999, border: '1px solid ' + (on ? 'rgba(255,255,255,.18)' : 'transparent'), background: on ? 'linear-gradient(180deg, rgba(255,255,255,.14), rgba(255,255,255,.05))' : 'transparent', color: on ? '#fff' : 'rgba(255,255,255,.62)', fontSize: 13, fontWeight: 600, letterSpacing: '-.01em', lineHeight: 1.35, cursor: 'pointer', boxShadow: on ? 'inset 0 1px 0 rgba(255,255,255,.28), 0 8px 22px rgba(0,0,0,.3), 0 0 24px rgba(0,204,255,.16)' : 'none', textShadow: on ? '0 0 18px rgba(0,204,255,.55)' : 'none', transition: 'all 320ms cubic-bezier(.34,1.36,.5,1)' } }; }),
+        detailOn: (() => { const d = (s.details || [])[dIdx(s)] || {}; return { k: d.k || '', v: d.v || '', chip: chip(d.c, d.cl), srcLabel: srcLabel(d.src) }; })(), details: (s.details || []).map(d => ({ k: d.k, v: d.v, chip: chip(d.c, d.cl), srcLabel: srcLabel(d.src) })),
+        hasLists: !!(s.lists && s.lists.length), lists: (s.lists || []).map(l => ({ title: l.title, items: l.items.map(x => ({ t: x.t || '', pre: x.pre || '', b: x.b || '', chip: chip(x.c, x.cl) })) })),
+        takeawayLabel: s.takeawayLabel || 'Takeaway',
+        hasSummary: !!(s.summary && s.summary.length), summary: s.summary || [],
+        hasSteps: !!(s.steps && s.steps.length), steps: (s.steps || []).map((t, j, a) => { const last = j === a.length - 1; return { t, n: String(j + 1).padStart(2, '0'), arrow: !last, style: { display: 'flex', alignItems: 'center', gap: 12, padding: '14px 20px', borderRadius: 14, fontSize: 14, fontWeight: 600, color: last ? '#fff' : 'rgba(255,255,255,.72)', border: '1px solid ' + (last ? 'rgba(0,204,255,.45)' : 'rgba(255,255,255,.1)'), background: last ? 'rgba(0,204,255,.08)' : '#070B15', boxShadow: last ? '0 0 26px rgba(0,204,255,.16)' : 'none' } }; }),
+        isFullbleed: s.type === 'fullbleed', chips: s.chips || [], image: s.image || '', imageAlt: s.imageAlt || '',
+        hasTimeline: !!(s.timeline && s.timeline.length), timeline: (s.timeline || []).map((x, j) => Object.assign({}, x, { n: String(j + 1), style: { display: 'grid', gridTemplateColumns: '44px minmax(0, 1fr)', gap: 16, alignItems: 'start', padding: 'clamp(18px, 2.2vw, 24px) clamp(18px, 2.4vw, 28px)', borderRadius: 14, border: '1px solid ' + (x.on ? 'rgba(0,204,255,.45)' : 'rgba(255,255,255,.08)'), background: x.on ? 'rgba(0,204,255,.07)' : '#070B15', boxShadow: x.on ? 'inset 0 1px 0 rgba(0,204,255,.34), 0 0 40px rgba(0,204,255,.12)' : 'inset 0 1px 0 rgba(255,255,255,.05)' } })),
+        hasCta: !!s.cta, ctaLabel: s.cta ? s.cta.label : '', ctaTab: s.cta && s.cta.tab || '', ctaSec: s.cta && s.cta.sec || '', ctaHref: s.cta ? (s.cta.href || '#' + s.cta.tab + '/' + s.cta.sec) : '#',
+        hasCta2: !!s.cta2, cta2Label: s.cta2 ? s.cta2.label : '', cta2Tab: s.cta2 && s.cta2.tab || '', cta2Sec: s.cta2 && s.cta2.sec || '', cta2Href: s.cta2 ? (s.cta2.href || '#' + s.cta2.tab + '/' + s.cta2.sec) : '#'
+      };
+    };
+    const activeTab = c.tabs.find(t => t.key === this.state.tab) || c.tabs[0];
+    const hm = m.heroMedia || { type: 'slot' };
+    const heroCta = k => { const x = (m.heroCtas || [])[k] || { label: '', tab: '', sec: '' }; return { label: x.label, tab: x.tab || '', sec: x.sec || '', href: '#' + (x.tab || 'top') + (x.sec ? '/' + x.sec : '') }; };
+    const railAll = [{ id: 'top', tab: '', label: 'Intro', href: '#top', gap: false }];
+    c.tabs.forEach((t, ti) => t.sections.forEach((s, i) => railAll.push({ id: s.id, tab: t.key, label: s.nav, href: '#' + t.key + '/' + s.id, gap: ti > 0 && i === 0 })));
+    let railCur = railAll.findIndex(d => d.tab === this.state.tab && d.id === this.state.activeSec);
+    if (railCur < 0) railCur = this.state.tab === c.tabs[0].key ? 0 : Math.max(0, railAll.findIndex(d => d.tab === this.state.tab) - 1);
+
+    return Object.assign(base, {
+      m, hasConfidential: !!m.confidential,
+      metaRows: [['Prepared for', m.preparedFor], ['Prepared by', m.preparedBy], ['Date prepared', m.date], ['Campaign period', m.period]].filter(r => r[1]).map(([k, v], i) => ({ k, v, style: { display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 6, textAlign: 'center', padding: '0 clamp(16px, 2.4vw, 32px)', borderLeft: i ? '1px solid rgba(255,255,255,.14)' : '0' } })),
+      overview: (m.overview || []).map(o => Object.assign({}, o, { chip: chip(o.c) })),
+      ...(() => { const tw = String(m.title || '').split(/\s+/).filter(Boolean), aw = String(m.titleAccent || '').split(/\s+/).filter(Boolean); const mk = (arr, off) => arr.map((t, i) => ({ t, style: { display: 'inline-block', animation: 'kx-blurup 760ms cubic-bezier(.16,1,.3,1) ' + (300 + (off + i) * 90) + 'ms both' } })); return { titleWords: mk(tw, 0), accentWords: mk(aw, tw.length), h1Aria: [m.title, m.titleAccent].filter(Boolean).join(' ') }; })(),
+      showGallery: this.state.tab === 'creative' && !!m.galleryVertical, gallerySrc: 'Creative%20Playground.dc.html?embed=gallery&vertical=' + encodeURIComponent(m.galleryVertical || '') + '&title=' + encodeURIComponent(m.galleryTitle || 'View creatives from similar verticals') + '&sub=' + encodeURIComponent(m.gallerySub || 'Browse KORTX work for brands in the same space, then filter by goal and interaction.'),
+      pillItems: (m.pills || []).map((t, i) => ({ t, sep: i > 0 })), hasClientLogo: !!m.clientLogo, noClientLogo: !m.clientLogo, logoPlate: !!m.clientLogo && !!m.clientLogoPlate, logoBare: !!m.clientLogo && !m.clientLogoPlate,
+      heroSlot: hm.type === 'slot', heroImg: hm.type === 'image', heroHtml: hm.type === 'html', heroSrc: hm.src || '', heroPlaceholder: hm.placeholder || 'Drop a brand image',
+      heroPrimary: heroCta(0), heroSecondary: heroCta(1),
+      dpMax: String(Math.max(0, dpList.length - 1)), callout: dpSec.callout || {},
+      legend,
+      railDots: railAll.map((d, i) => { const on = i === railCur, past = i < railCur; return Object.assign({}, d, { on: String(on),
+        wrap: { position: 'relative', display: 'flex', alignItems: 'center', gap: 12, padding: '3px 0', marginTop: d.gap ? 14 : 0, color: '#fff', textDecoration: 'none' },
+        dot: { flex: 'none', width: 6, height: on ? 26 : 6, borderRadius: 999, background: on ? 'var(--blue-300)' : (past ? 'rgba(255,255,255,.55)' : 'rgba(255,255,255,.2)'), boxShadow: on ? '0 0 12px rgba(0,204,255,.85)' : 'none', transition: 'height 320ms ' + EASE + ', background 200ms ' + EASE },
+        tip: { fontSize: 11, fontWeight: 600, letterSpacing: '.1em', textTransform: 'uppercase', whiteSpace: 'nowrap', color: 'rgba(255,255,255,.82)', opacity: on ? 1 : 0, transform: on ? 'none' : 'translateX(-4px)', pointerEvents: 'none', transition: 'opacity 320ms ' + EASE + ', transform 320ms ' + EASE } }); }),
+      otherTab: c.tabs[(c.tabs.findIndex(t => t.key === this.state.tab) + 1) % c.tabs.length].key,
+      otherTabLabel: 'Next: ' + c.tabs[(c.tabs.findIndex(t => t.key === this.state.tab) + 1) % c.tabs.length].label,
+      ...(() => { const n = c.tabs.length, ti = Math.max(0, c.tabs.findIndex(t => t.key === this.state.tab)), p = c.tabs[(ti - 1 + n) % n], x = c.tabs[(ti + 1) % n]; return { prevTab: p.key, prevTabAria: 'Previous: ' + p.label, nextTabAria: 'Next: ' + x.label, curTabLabel: c.tabs[ti].label, tabPos: (ti + 1) + '/' + n }; })(),
+      ...(() => { const open = this.state.navOpen, w = this.state.navW || 640; const LIQ = 'cubic-bezier(.34,1.36,.5,1)'; return {
+        navShell: { position: 'relative', height: 52, width: open ? Math.min(w + 2, typeof window !== 'undefined' ? (window.innerWidth > 1000 ? window.innerWidth - 500 : window.innerWidth - 40) : w) : 52, maxWidth: '100%', borderRadius: 999, overflowX: open ? 'auto' : 'hidden', overflowY: 'hidden', scrollbarWidth: 'none', display: 'flex', justifyContent: 'center', border: '1px solid ' + (open ? 'rgba(255,255,255,.12)' : 'rgba(0,204,255,.45)'), background: open ? 'rgba(255,255,255,.04)' : 'rgba(0,204,255,.10)', backdropFilter: 'blur(22px) saturate(160%)', WebkitBackdropFilter: 'blur(22px) saturate(160%)', boxShadow: open ? 'inset 0 1px 0 rgba(255,255,255,.18), inset 0 -1px 0 rgba(0,0,0,.25), 0 18px 40px rgba(0,0,0,.4), 0 0 40px rgba(0,204,255,.10)' : 'inset 0 1px 0 rgba(255,255,255,.22), 0 10px 30px rgba(0,0,0,.45), 0 0 26px rgba(0,204,255,.35)', transform: open ? 'scaleY(1)' : 'scale(.92)', transition: 'width 760ms ' + LIQ + ', transform 600ms ' + LIQ + ', background 320ms ' + EASE + ', border-color 320ms ' + EASE + ', box-shadow 320ms ' + EASE },
+        navGlyph: { position: 'absolute', left: '50%', top: '50%', width: 16, height: 16, margin: '-8px 0 0 -8px', color: 'var(--blue-300)', pointerEvents: 'none', opacity: open ? 0 : 1, transform: open ? 'scale(.4) rotate(90deg)' : 'none', transition: 'opacity 200ms ' + EASE + ', transform 320ms ' + EASE },
+        navNotch: { position: 'relative', zIndex: 0, width: 74, height: 14, marginBottom: -1, borderRadius: '12px 12px 0 0', border: '1px solid rgba(255,255,255,.12)', borderBottom: 0, background: 'linear-gradient(180deg, rgba(255,255,255,.08), rgba(255,255,255,.04))', backdropFilter: 'blur(22px)', WebkitBackdropFilter: 'blur(22px)', boxShadow: 'inset 0 1px 0 rgba(255,255,255,.18)', opacity: open ? 1 : 0, transform: open ? 'translateY(0)' : 'translateY(12px) scaleX(.4)', transition: 'opacity 320ms ' + EASE + ' ' + (open ? '520ms' : '0ms') + ', transform 520ms ' + LIQ + ' ' + (open ? '520ms' : '0ms') }
+      }; })(),
+      navInnerRef: this.navInnerRef,
+      menuOpen: this.state.menuOpen, menuOpenStr: String(this.state.menuOpen), toggleMenu: this.toggleMenu, closeMenu: this.closeMenu, goMenu: this.goMenu,
+      caretStyle: { transition: 'transform 240ms ' + EASE, transform: this.state.menuOpen ? 'rotate(180deg)' : 'none' },
+      tabLabelEl: (() => { const ti = Math.max(0, c.tabs.findIndex(t => t.key === this.state.tab)); return React.createElement('span', { key: this.state.tab, style: { display: 'inline-flex', gap: 6, animation: 'kx-rise 360ms cubic-bezier(.16,1,.3,1) both' } }, React.createElement('span', { style: { color: '#FDBA74' } }, (ti + 1) + '/' + c.tabs.length), React.createElement('span', null, c.tabs[ti].label)); })(),
+      menuTabs: c.tabs.map((t, ti) => { const on = t.key === this.state.tab; return { key: t.key, label: t.label, n: String(ti + 1), href: '#' + t.key,
+        style: { display: 'flex', alignItems: 'center', gap: 12, padding: '10px 12px', borderRadius: 10, fontSize: 14, fontWeight: 700, letterSpacing: '-.01em', color: '#fff', background: on ? 'rgba(251,146,60,.12)' : 'transparent', border: '1px solid ' + (on ? 'rgba(251,146,60,.45)' : 'transparent') },
+        numStyle: { display: 'grid', placeItems: 'center', width: 24, height: 24, borderRadius: '50%', fontSize: 11, fontWeight: 700, flex: 'none', background: on ? '#FB923C' : 'rgba(255,255,255,.08)', color: on ? '#1A0B00' : 'rgba(255,255,255,.8)' },
+        secs: t.sections.map(sx => { const so = on && sx.id === this.state.activeSec; return { id: sx.id, nav: sx.nav, href: '#' + t.key + '/' + sx.id,
+          style: { display: 'flex', alignItems: 'center', gap: 10, padding: '7px 10px', borderRadius: 8, fontSize: 13, fontWeight: 500, color: so ? '#fff' : 'rgba(255,255,255,.62)', transition: 'all 200ms ' + EASE },
+          dot: { width: 5, height: 5, borderRadius: '50%', flex: 'none', background: so ? '#FDBA74' : 'rgba(255,255,255,.22)', boxShadow: so ? '0 0 8px rgba(251,146,60,.9)' : 'none' } }; }) }; }),
+      tabBtns: c.tabs.map((t, ti) => { const on = t.key === this.state.tab, open = this.state.navOpen, mid = (c.tabs.length - 1) / 2, d = open ? 220 + Math.abs(ti - mid) * 70 : 0; return { key: t.key, label: t.label, on: String(on),
+        style: { opacity: open ? 1 : 0, filter: open ? 'blur(0)' : 'blur(6px)', transform: open ? 'none' : 'scale(.86)', transitionProperty: 'opacity, filter, transform, color, text-shadow', transitionDuration: '420ms, 420ms, 520ms, 200ms, 200ms', transitionTimingFunction: 'cubic-bezier(.16,1,.3,1)', transitionDelay: d + 'ms, ' + d + 'ms, ' + d + 'ms, 0ms, 0ms', position: 'relative', flex: 'none', display: 'flex', alignItems: 'center', gap: 8, padding: '0 16px', border: 0, background: 'transparent', color: on ? '#fff' : 'rgba(255,255,255,.62)', fontSize: 13, fontWeight: 600, letterSpacing: '-.01em', whiteSpace: 'nowrap', cursor: 'pointer' },
+        dot: { width: 5, height: 5, borderRadius: '50%', flex: 'none', background: 'var(--blue-300)', boxShadow: '0 0 8px rgba(0,204,255,.9)', display: on ? 'block' : 'none' } }; }),
+      navChips: activeTab.sections.map(s => { const on = s.id === this.state.activeSec; return { id: s.id, tab: activeTab.key, label: s.nav, href: '#' + activeTab.key + '/' + s.id,
+        style: { flex: 'none', padding: '7px 12px', borderRadius: 999, fontSize: 12, fontWeight: 600, whiteSpace: 'nowrap', color: on ? '#fff' : 'rgba(255,255,255,.62)', background: on ? 'rgba(255,255,255,.1)' : 'transparent', border: '1px solid ' + (on ? 'rgba(0,204,255,.45)' : 'transparent'), transition: 'all 200ms ' + EASE } }; }),
+      panels: c.tabs.map((t, ti) => ({ n: String(ti + 1).padStart(2, '0'), isRecommend: t.key === 'media', isLast: ti === c.tabs.length - 1, lastStr: ti === c.tabs.length - 1 ? '1' : '0', showGallery: t.key === 'creative' && !!m.galleryVertical, key: t.key, label: t.label, indexScreen: String.fromCharCode(65 + c.tabs.indexOf(t)) + '00 Index', indexSub: t.sub || '', hidden: t.key !== this.state.tab, sections: t.sections.map((s, i) => mapSec(s, i, t.key)) })),
+      dpList, dp: dpList[cur] || {}, dpIndex: cur,
+      ruleRows: ((dpSec.dynamic && dpSec.dynamic.details) || []).map(([k, v]) => ({ k, v })),
+      dyn: dpSec.dynamic ? { headline: dpSec.dynamic.headline, copy: dpSec.dynamic.copy, cols: dpSec.dynamic.table.cols, grid: dpSec.dynamic.table.grid, rows: mapRows(dpSec.dynamic.table.rows) } : { cols: [], rows: [] },
+      dpSpec: ((dps[cur] && dps[cur].spec) || []).map(([k, v]) => ({ k, v })),
+      dpChanges: ((dps[cur] && dps[cur].changes) || []).map((x, j) => Object.assign({}, x, { i: String(j), n: String(j + 1) })),
+      dpSpecShort: ((dps[cur] && dps[cur].spec) || []).filter(([k]) => k !== 'Interaction' && k !== 'Campaign objective').map(([k, v]) => ({ k, v })),
+      creativeSel: dpSec.selectorLabel || '', creativeHint: dpSec.hint || '', creativeStatus: dpSec.previewStatus || '', creativeFallback: dpSec.fallback || '', creativeFallbackCta: dpSec.fallbackCta || '',
+      pv, personaCards, personaAll: P.map(p => Object.assign({}, p, { rows: prow(p) })),
+      personaDots: P.map((p, i) => { const on = i === pi; return { i: String(i), aria: p.name, style: { width: on ? 22 : 8, height: 8, padding: 0, borderRadius: 999, border: 0, cursor: 'pointer', background: on ? 'var(--blue-300)' : 'rgba(255,255,255,.28)', transition: 'all 320ms ' + EASE } }; }),
+      seller: c.seller, sellerMail: 'mailto:' + c.seller.email, sellerTel: 'tel:' + c.seller.phone.replace(/[^0-9+]/g, ''),
+      scope: c.scope, methodology: c.methodology || '', closing: c.closing || '',
+      sourceList: Object.keys(SRC).map(k => Object.assign({}, SRC[k], { hasUrl: !!SRC[k].url }))
+    });
+  }
+}
+</script>
+</body>
+</html>

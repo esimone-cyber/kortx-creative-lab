@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<script src="kx-theme.js"></script>
+<link rel="icon" type="image/svg+xml" href="assets/kortx-logomark-bright-blue.svg">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Live Links · KORTX Creative Labs</title>
+<link rel="preconnect" href="https://fdjfsimjilicmfsiijyi.supabase.co" crossorigin>
+<link rel="stylesheet" href="_ds/kortx-design-guide-2026-5bc7ff27-9282-4218-938a-63d43f555d47/tokens/fonts.css">
+<link rel="stylesheet" href="_ds/kortx-design-guide-2026-5bc7ff27-9282-4218-938a-63d43f555d47/tokens/colors.css">
+<link rel="stylesheet" href="_ds/kortx-design-guide-2026-5bc7ff27-9282-4218-938a-63d43f555d47/tokens/typography.css">
+<link rel="stylesheet" href="_ds/kortx-design-guide-2026-5bc7ff27-9282-4218-938a-63d43f555d47/tokens/spacing.css">
+<link rel="stylesheet" href="_ds/kortx-design-guide-2026-5bc7ff27-9282-4218-938a-63d43f555d47/tokens/radius.css">
+<link rel="stylesheet" href="_ds/kortx-design-guide-2026-5bc7ff27-9282-4218-938a-63d43f555d47/tokens/elevation.css">
+<link rel="stylesheet" href="_ds/kortx-design-guide-2026-5bc7ff27-9282-4218-938a-63d43f555d47/tokens/motion.css">
+<link rel="stylesheet" href="_ds/kortx-design-guide-2026-5bc7ff27-9282-4218-938a-63d43f555d47/tokens/base.css">
+<link rel="stylesheet" href="_ds/kortx-design-guide-2026-5bc7ff27-9282-4218-938a-63d43f555d47/styles.css">
+<script src="_ds/kortx-design-guide-2026-5bc7ff27-9282-4218-938a-63d43f555d47/_ds_bundle.js"></script>
+<style>
+  html, body { margin: 0; padding: 0; background: #000509; }
+  body { font-family: var(--font-body, Inter, Helvetica, sans-serif); -webkit-font-smoothing: antialiased; }
+  a { color: var(--blue-400); text-decoration: none; }
+  a:hover { color: var(--blue-300); text-decoration: none; }
+  input, button { font-family: inherit; }
+  ::placeholder { color: rgba(255,255,255,.38); }
+  [data-focusable]:focus-visible, input[data-focusable]:focus { outline: none; border-color: var(--blue-400) !important; box-shadow: 0 0 0 3px rgba(0,204,255,.55) !important; }
+  @keyframes kx-rise { 0% { opacity: 0; transform: translateY(12px) } 100% { opacity: 1; transform: translateY(0) } }
+  @keyframes kx-spin { to { transform: rotate(360deg) } }
+  @keyframes kx-toast { 0% { opacity: 0; transform: translate(-50%, 14px) } 100% { opacity: 1; transform: translate(-50%, 0) } }
+  @media (prefers-reduced-motion: reduce) { *, *::before, *::after { animation-duration: .001ms !important; transition-duration: .001ms !important; } }
+  @media (max-width: 900px) { [data-link-row] { grid-template-columns: minmax(0, 1fr) !important; } [data-link-row] > [data-actions] { justify-content: flex-start !important; } }
+  @keyframes kx-orbit { 0% { transform: rotate(0) translateX(26px) } 100% { transform: rotate(360deg) translateX(26px) } }
+</style>
+</helmet>
+
+<div data-screen-label="Live Links" style="position: relative; min-height: 100vh; background: #000509; color: #fff; overflow-x: clip; isolation: isolate;">
+  <div aria-hidden="true" style="position: fixed; inset: 0; z-index: 0; pointer-events: none; overflow: hidden;">
+    <div style="position: absolute; top: -22vh; right: -14vw; width: 78vw; height: 78vw; border-radius: 50%; background: radial-gradient(circle at 50% 50%, rgba(0,204,255,.14), rgba(0,204,255,.04) 40%, transparent 68%); filter: blur(24px);"></div>
+    <div style="position: absolute; bottom: -34vh; left: -18vw; width: 72vw; height: 72vw; border-radius: 50%; background: radial-gradient(circle at 50% 50%, rgba(109,94,240,.14), rgba(109,94,240,.03) 42%, transparent 70%); filter: blur(30px);"></div>
+    <div style="position: absolute; left: 50%; top: 40%; width: min(150vh, 130vw); aspect-ratio: 1 / 1; transform: translate(-50%, -50%); border-radius: 50%; border: 1px solid rgba(255,255,255,.06);"></div>
+    <div style="position: absolute; left: 50%; top: 40%; width: min(110vh, 96vw); aspect-ratio: 1 / 1; transform: translate(-50%, -50%); border-radius: 50%; border: 1px solid rgba(255,255,255,.05);"></div>
+  </div>
+
+  <header style="position: sticky; top: 0; z-index: 60; display: flex; align-items: center; gap: 16px; flex-wrap: wrap; min-height: 72px; padding: 12px clamp(20px, 4vw, 56px); box-sizing: border-box; background: rgba(0,5,9,.72); backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px); border-bottom: 1px solid rgba(255,255,255,.07);">
+    <a href="/" aria-label="KORTX Creative Labs" style="position: relative; display: grid; place-items: center; width: 46px; height: 46px; flex: none;">
+      <span aria-hidden="true" style="position: absolute; inset: 0; border-radius: 50%; background: radial-gradient(circle at 50% 50%, rgba(0,204,255,.24), transparent 68%);"></span>
+      <span aria-hidden="true" style="position: absolute; inset: 3px; border: 1px solid rgba(0,204,255,.30); border-radius: 50%;"></span>
+      <span aria-hidden="true" style="position: absolute; inset: 8px; border: 1px solid rgba(138,124,248,.28); border-radius: 50%; transform: rotate(18deg) scaleY(.6);"></span>
+      <img src="assets/kortx-logomark-bright-blue.svg" alt="KORTX" style="position: relative; width: 20px; display: block;">
+      <span aria-hidden="true" style="position: absolute; top: 50%; left: 50%; width: 4px; height: 4px; margin: -2px; border-radius: 50%; background: var(--blue-300, #33D6FF); box-shadow: 0 0 9px rgba(0,204,255,.9); animation: kx-orbit 18s linear infinite;"></span>
+    </a>
+    <dc-import name="Site Nav" hint-size="200px,40px"></dc-import>
+    <div style="flex: 1;"></div>
+    <sc-if value="{{ signedIn }}" hint-placeholder-val="{{ false }}">
+      <a href="{{ adminHref }}" data-focusable="1" style="font-size: 13px; font-weight: 600; color: rgba(255,255,255,.75);" style-hover="color: #fff">Admin Control</a>
+      <span style="font-size: 12px; color: rgba(255,255,255,.55);">{{ meEmail }}</span>
+      <button type="button" data-focusable="1" onClick="{{ signOut }}" style="height: 34px; padding: 0 14px; border-radius: 999px; border: 1px solid rgba(255,255,255,.14); background: transparent; color: rgba(255,255,255,.8); font-size: 13px; font-weight: 600; cursor: pointer;" style-hover="background: rgba(255,255,255,.08); color: #fff">Sign Out</button>
+    </sc-if>
+    <dc-import name="User Menu" hint-size="40px,40px" style="margin-left: auto; order: 99;"></dc-import>
+  </header>
+
+  <main style="position: relative; z-index: 1; max-width: 1280px; margin: 0 auto; box-sizing: border-box; padding: clamp(36px, 6vh, 72px) clamp(20px, 4vw, 56px) 120px;">
+    <div data-block="Live Links · Section head" style="display: flex; flex-direction: column; align-items: center; text-align: center; gap: clamp(10px, 1.4vh, 16px); margin-bottom: clamp(36px, 6vh, 64px); animation: kx-rise 600ms cubic-bezier(.16,1,.3,1) both;">
+      <div style="font-size: 11px; font-weight: 600; letter-spacing: .18em; text-transform: uppercase; color: var(--lime-300);">Admins Only</div>
+      <h1 style="margin: 0; max-width: 1000px; font-size: clamp(40px, 5.6vw, 76px); font-weight: 700; line-height: 1.04; letter-spacing: -.035em; text-wrap: balance;">Every live link</h1>
+      <p style="margin: 0; max-width: 680px; font-size: clamp(16px, 1.5vw, 19px); line-height: 1.55; color: rgba(255,255,255,.76); text-wrap: pretty;">Update the URL for any page, choose which pages appear in the menus, then copy to share. Changes save for the whole team.</p>
+    </div>
+
+    <sc-if value="{{ gateLoading }}" hint-placeholder-val="{{ true }}">
+      <div role="status" style="display: grid; place-items: center; padding: 80px 0;"><span style="width: 24px; height: 24px; border-radius: 50%; border: 2px solid rgba(0,204,255,.25); border-top-color: var(--blue-400); animation: kx-spin 800ms linear infinite;"></span></div>
+    </sc-if>
+
+    <sc-if value="{{ gateBlocked }}" hint-placeholder-val="{{ false }}">
+      <div style="max-width: 460px; margin: 0 auto; display: flex; flex-direction: column; align-items: center; gap: 14px; text-align: center; padding: 32px; border-radius: 20px; border: 1px solid rgba(0,204,255,.28); background: rgba(7,11,21,.78); backdrop-filter: blur(14px); box-shadow: inset 0 1px 0 rgba(0,204,255,.34), 0 30px 80px rgba(0,0,0,.55);">
+        <h2 style="margin: 0; font-size: 24px; font-weight: 700; letter-spacing: -.02em;">{{ gateTitle }}</h2>
+        <p style="margin: 0; font-size: 14px; line-height: 1.55; color: rgba(255,255,255,.7);">{{ gateBody }}</p>
+        <a href="{{ gateHref }}" data-focusable="1" style="display: inline-flex; align-items: center; height: 46px; padding: 0 22px; border-radius: 999px; border: 1px solid rgba(255,255,255,.16); background: rgba(255,255,255,.06); color: #fff; font-size: 14px; font-weight: 600; transition: all 200ms cubic-bezier(.16,1,.3,1);" style-hover="background: rgba(109,94,240,.16); border-color: rgba(167,139,250,.6); color: #fff; transform: translateY(-2px); box-shadow: 0 0 32px rgba(109,94,240,.55)">{{ gateCta }}</a>
+      </div>
+    </sc-if>
+
+    <sc-if value="{{ ready }}" hint-placeholder-val="{{ false }}">
+      <section data-block="Live Links · List" aria-label="Live links" style="animation: kx-rise 600ms cubic-bezier(.16,1,.3,1) both;">
+        <div style="display: flex; flex-direction: column; align-items: center; text-align: center; gap: 16px; margin-bottom: 22px;">
+          <div>
+            <div style="font-size: 11px; font-weight: 600; letter-spacing: .18em; text-transform: uppercase; color: var(--blue-300);">{{ countLabel }}</div>
+            <h2 style="margin: 6px 0 0; font-size: clamp(26px, 2.8vw, 36px); font-weight: 700; letter-spacing: -.03em;">Pages and URLs</h2>
+          </div>
+          <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 10px;">
+            <input data-focusable="1" type="search" value="{{ q }}" onChange="{{ onSearch }}" placeholder="Search links" aria-label="Search links" style="height: 46px; width: min(240px, 100%); padding: 0 16px; border-radius: 999px; border: 1px solid rgba(255,255,255,.14); background: rgba(0,5,9,.6); color: #fff; font-size: 13px; outline: none; box-sizing: border-box;">
+            <button type="button" data-focusable="1" onClick="{{ copyAll }}" style="height: 46px; padding: 0 20px; border-radius: 999px; border: 1px solid rgba(255,255,255,.16); background: rgba(255,255,255,.06); color: #fff; font-size: 14px; font-weight: 600; cursor: pointer; transition: all 200ms cubic-bezier(.16,1,.3,1);" style-hover="background: rgba(109,94,240,.16); border-color: rgba(167,139,250,.6); transform: translateY(-2px); box-shadow: 0 0 32px rgba(109,94,240,.55)" style-active="transform: scale(.985)">Copy All</button>
+          </div>
+        </div>
+
+        <sc-if value="{{ needSql }}" hint-placeholder-val="{{ false }}">
+          <div role="status" style="margin-bottom: 14px; padding: 14px 16px; border-radius: 12px; border: 1px solid rgba(252,211,77,.4); background: rgba(252,211,77,.06); font-size: 13px; line-height: 1.55; color: #FDE68A;"><strong style="color: #fff;">One-time setup needed.</strong> Run <code style="color: #fff;">supabase/migrations/2026-10-14_site_links.sql</code> and <code style="color: #fff;">2026-10-20_site_links_menu.sql</code> in the Supabase SQL Editor so edits save for the whole team. Until then, changes save in this browser only.</div>
+        </sc-if>
+        <sc-if value="{{ err }}" hint-placeholder-val="{{ false }}">
+          <div role="alert" style="margin-bottom: 14px; padding: 12px 14px; border-radius: 10px; border: 1px solid rgba(240,180,255,.35); background: rgba(214,125,240,.07); font-size: 13px; line-height: 1.5; color: #F0B4FF;">{{ err }}</div>
+        </sc-if>
+
+        <div data-block="Live Links · Menus" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 360px), 1fr)); gap: 14px; margin-bottom: 28px;">
+          <sc-for list="{{ menus }}" as="mn" hint-placeholder-count="2">
+            <div style="display: flex; flex-direction: column; gap: 10px; padding: 18px 20px; border-radius: 14px; border: 1px solid rgba(255,255,255,.08); background: #070B15; box-shadow: inset 0 1px 0 rgba(255,255,255,.05);">
+              <div style="display: flex; align-items: baseline; justify-content: space-between; gap: 10px;"><span style="font-size: 15px; font-weight: 700;">{{ mn.title }}</span><span style="font-size: 12px; color: rgba(255,255,255,.55);">{{ mn.count }}</span></div>
+              <span style="font-size: 12.5px; line-height: 1.45; color: rgba(255,255,255,.6); text-wrap: pretty;">{{ mn.note }}</span>
+              <div style="display: flex; flex-wrap: wrap; gap: 6px;">
+                <sc-for list="{{ mn.items }}" as="mi" hint-placeholder-count="4"><span style="{{ mi.style }}">{{ mi.name }}</span></sc-for>
+              </div>
+            </div>
+          </sc-for>
+        </div>
+        <div role="list" style="display: flex; flex-direction: column; gap: 8px;">
+          <sc-for list="{{ groups }}" as="g" hint-placeholder-count="2">
+          <div style="display: flex; align-items: baseline; gap: 12px; margin: 18px 0 4px; padding-bottom: 8px; border-bottom: 1px solid rgba(255,255,255,.08);"><span style="font-size: 11px; font-weight: 600; letter-spacing: .18em; text-transform: uppercase; color: {{ g.color }};">{{ g.title }}</span><span style="font-size: 12px; color: rgba(255,255,255,.5);">{{ g.note }}</span></div>
+          <sc-for list="{{ g.rows }}" as="r" hint-placeholder-count="5">
+            <div role="listitem" data-link-row style="{{ r.rowStyle }}">
+              <div style="display: flex; flex-direction: column; gap: 6px; min-width: 0;">
+                <div style="display: flex; align-items: center; gap: 8px; flex-wrap: wrap;">
+                  <sc-if value="{{ r.editingName }}" hint-placeholder-val="{{ false }}">
+                    <input data-focusable="1" type="text" data-id="{{ r.id }}" data-k="name" value="{{ r.name }}" onChange="{{ onEdit }}" placeholder="Page name" aria-label="Page name" style="height: 34px; flex: 1 1 160px; min-width: 0; padding: 0 10px; border-radius: 8px; border: 1px solid rgba(255,255,255,.14); background: rgba(0,5,9,.6); color: #fff; font-size: 14px; font-weight: 700; outline: none;">
+                  </sc-if>
+                  <sc-if value="{{ r.showName }}" hint-placeholder-val="{{ true }}">
+                    <a href="{{ r.url }}" target="_blank" rel="noopener" data-focusable="1" data-id="{{ r.id }}" onClick="{{ openRow }}" style="font-size: 15px; font-weight: 700; letter-spacing: -.01em; color: var(--blue-300);" style-hover="color: #fff; text-decoration: underline">{{ r.name }}</a>
+                  </sc-if>
+                  <select data-focusable="1" data-id="{{ r.id }}" value="{{ r.tag }}" onChange="{{ setTag }}" aria-label="Access" style="{{ r.tagStyle }}">
+                    <option value="Public" style="background: #070B15; color: #fff;">Client facing</option>
+                    <option value="Team" style="background: #070B15; color: #fff;">Internal team</option>
+                    <option value="Admin" style="background: #070B15; color: #fff;">Internal · Admin</option>
+                  </select>
+                  <label title="Show this page in the top page dropdown" style="display: inline-flex; align-items: center; gap: 6px; height: 26px; padding: 0 10px 0 8px; border-radius: 999px; border: 1px solid rgba(255,255,255,.14); background: rgba(255,255,255,.04); font-size: 11px; font-weight: 600; color: rgba(255,255,255,.8); cursor: pointer; white-space: nowrap;">
+                    <input type="checkbox" data-focusable="1" data-id="{{ r.id }}" checked="{{ r.inNav }}" onChange="{{ toggleNav }}" style="width: 14px; height: 14px; margin: 0; accent-color: #00CCFF; cursor: pointer;">Top Dropdown</label>
+                  <label title="Show this page in the round profile menu at the top right" style="display: inline-flex; align-items: center; gap: 6px; height: 26px; padding: 0 10px 0 8px; border-radius: 999px; border: 1px solid rgba(255,255,255,.14); background: rgba(255,255,255,.04); font-size: 11px; font-weight: 600; color: rgba(255,255,255,.8); cursor: pointer; white-space: nowrap;">
+                    <input type="checkbox" data-focusable="1" data-id="{{ r.id }}" checked="{{ r.inMenu }}" onChange="{{ toggleMenu }}" style="width: 14px; height: 14px; margin: 0; accent-color: #A78BFA; cursor: pointer;">Circle Menu</label>
+                  <sc-if value="{{ r.dirty }}" hint-placeholder-val="{{ false }}"><span style="font-size: 11px; font-weight: 600; color: #FCD34D;">Unsaved</span></sc-if>
+                </div>
+                <span style="font-size: 12.5px; line-height: 1.45; color: rgba(255,255,255,.6); text-wrap: pretty;">{{ r.desc }}</span>
+              </div>
+              <label style="display: flex; flex-direction: column; gap: 4px; min-width: 0;">
+                <span style="font-size: 10.5px; font-weight: 600; letter-spacing: .14em; text-transform: uppercase; color: rgba(255,255,255,.45);">URL</span>
+                <input data-focusable="1" type="url" data-id="{{ r.id }}" data-k="url" value="{{ r.url }}" onChange="{{ onEdit }}" onKeyDown="{{ onKey }}" spellcheck="false" placeholder="https://…" style="{{ r.inputStyle }}">
+                <sc-if value="{{ r.badUrl }}" hint-placeholder-val="{{ false }}"><span style="font-size: 11.5px; color: #F0B4FF;">Start with https://</span></sc-if>
+              </label>
+              <div data-actions style="display: flex; flex-wrap: wrap; align-items: center; justify-content: flex-end; gap: 6px;">
+                <sc-if value="{{ r.dirty }}" hint-placeholder-val="{{ false }}">
+                  <button type="button" data-focusable="1" data-id="{{ r.id }}" disabled="{{ r.saveDisabled }}" onClick="{{ saveRow }}" style="{{ r.saveStyle }}" style-hover="background: var(--blue-300)">{{ r.saveLabel }}</button>
+                  <button type="button" data-focusable="1" data-id="{{ r.id }}" onClick="{{ undoRow }}" style="height: 34px; padding: 0 12px; border-radius: 999px; border: 1px solid rgba(255,255,255,.14); background: transparent; color: rgba(255,255,255,.8); font-size: 12px; font-weight: 600; cursor: pointer;" style-hover="color: #fff; border-color: rgba(255,255,255,.3)">Undo</button>
+                </sc-if>
+                <a href="{{ r.url }}" target="_blank" rel="noopener" data-focusable="1" data-id="{{ r.id }}" onClick="{{ openRow }}" aria-label="{{ r.openAria }}" style="display: inline-grid; place-items: center; width: 34px; height: 34px; border-radius: 50%; border: 1px solid rgba(255,255,255,.14); background: rgba(255,255,255,.04); color: rgba(255,255,255,.85);" style-hover="border-color: rgba(0,204,255,.5); color: #fff"><svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17L17 7"></path><path d="M8 7h9v9"></path></svg></a>
+                <button type="button" data-focusable="1" data-id="{{ r.id }}" onClick="{{ copyRow }}" style="{{ r.copyStyle }}" style-hover="background: rgba(0,204,255,.16); color: #fff"><svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="9" width="13" height="13" rx="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>{{ r.copyLabel }}</button>
+                <button type="button" data-focusable="1" data-id="{{ r.id }}" onClick="{{ removeRow }}" onBlur="{{ cancelDelete }}" aria-label="{{ r.delAria }}" style="{{ r.delStyle }}" style-hover="border-color: rgba(214,125,240,.6); background: rgba(214,125,240,.12); color: #F0B4FF"><svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 6h18"></path><path d="M8 6V4h8v2"></path><path d="M19 6l-1 14H6L5 6"></path></svg>{{ r.delLabel }}</button>
+              </div>
+            </div>
+          </sc-for>
+          </sc-for>
+          <sc-if value="{{ noRows }}" hint-placeholder-val="{{ false }}">
+            <div style="padding: 36px; border-radius: 14px; border: 1px dashed rgba(255,255,255,.14); text-align: center; font-size: 14px; color: rgba(255,255,255,.6);">No links match that search.</div>
+          </sc-if>
+        </div>
+        <p style="margin: 18px auto 0; max-width: 640px; text-align: center; font-size: 12.5px; line-height: 1.55; color: rgba(255,255,255,.5); text-wrap: pretty;">Editing a URL here changes the link the team copies and shares. It does not move the page itself on Netlify.</p>
+      </section>
+    </sc-if>
+  </main>
+
+  <footer data-block="Site footer" style="position: relative; z-index: 1; background: transparent;">
+    <div style="max-width: 1280px; margin: 0 auto; padding: clamp(28px, 4vh, 48px) clamp(20px, 4vw, 56px) clamp(32px, 4vw, 52px); text-align: center;">
+      <div style="padding-top: clamp(16px, 2vw, 24px); border-top: 1px solid rgba(255,255,255,.07); font-size: 11px; font-weight: 600; letter-spacing: .18em; text-transform: uppercase; color: var(--blue-400, #00CCFF);">Built with grit in Detroit.</div>
+    </div>
+  </footer>
+
+  <sc-if value="{{ toast }}" hint-placeholder-val="{{ false }}">
+    <div role="status" style="position: fixed; left: 50%; bottom: 28px; z-index: 99; padding: 12px 18px; border-radius: 999px; border: 1px solid rgba(190,242,100,.4); background: rgba(7,11,21,.94); color: #E4FBC2; font-size: 13px; font-weight: 600; box-shadow: 0 20px 50px rgba(0,0,0,.5); animation: kx-toast 320ms cubic-bezier(.16,1,.3,1) both;">{{ toast }}</div>
+  </sc-if>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+const SITE = 'https://kortx-creative-labs.netlify.app';
+let DEFAULTS = [];
+const TAGS = ['Public', 'Team', 'Admin'];
+const LS = 'kx-live-links-v1';
+const EASE = 'cubic-bezier(.16,1,.3,1)';
+const validUrl = u => /^https?:\/\/[^\s]+\.[^\s]+/i.test((u || '').trim());
+
+class Component extends DCLogic {
+  state = { gate: 'loading', me: null, saved: [], draft: {}, local: false, needSql: false, err: '', q: '', busyId: null, copiedId: null, confirmId: null, toast: '' };
+
+  async componentDidMount() {
+    try {
+      this.cloud = await import('./creative-cloud.js');
+      DEFAULTS = this.cloud.SITE_LINK_DEFAULTS;
+      const me = await this.cloud.currentUser();
+      if (!me) return this.setState({ gate: 'signin' });
+      if (!me.isAdmin) return this.setState({ gate: 'denied', me });
+      this.setState({ me, gate: 'ok' });
+      this.load();
+    } catch (e) { this.setState({ gate: 'error' }); }
+  }
+  componentWillUnmount() { clearTimeout(this.tt); clearTimeout(this.ct); }
+
+  merge(rows) { return this.cloud.mergeSiteLinks(rows); }
+  readLocal() { try { return JSON.parse(localStorage.getItem(LS) || '[]'); } catch (e) { return []; } }
+  async load() {
+    try { const rows = await this.cloud.listSiteLinks(); this.setState({ saved: this.merge(rows), local: false, needSql: false });
+      const stale = rows.find(r => r.name === 'My Proposals' || r.name === 'Proposal Builder' || (r.id === 'database' && r.name === 'Creative Database') || r.name === 'Creative Database · View Only'); if (stale && this.state.me) this.persist([this.row(stale.id)]).catch(() => {}); }
+    catch (e) {
+      const missing = /site_links|relation|schema cache|42P01|PGRST205/i.test((e && (e.message + ' ' + e.code)) || '');
+      this.setState({ saved: this.merge(this.readLocal()), local: true, needSql: missing, err: missing ? '' : 'Could not load links: ' + (e.message || 'unknown error') });
+    }
+  }
+  flash(t) { clearTimeout(this.tt); this.setState({ toast: t }); this.tt = setTimeout(() => this.setState({ toast: '' }), 2200); }
+  async copy(text) { try { await navigator.clipboard.writeText(text); } catch (e) { const ta = document.createElement('textarea'); ta.value = text; document.body.appendChild(ta); ta.select(); document.execCommand('copy'); ta.remove(); } }
+  row(id) { const s = this.state, base = s.saved.find(r => r.id === id); return base ? Object.assign({}, base, s.draft[id] || {}) : null; }
+
+  async persist(list, label) {
+    const stamp = new Date().toISOString(), by = (this.state.me || {}).email || null;
+    const rows = list.map(r => ({ id: r.id, name: r.name, url: r.url.trim(), tag: r.tag, description: r.description || null, sort_order: r.sort_order || 0, hidden: !!r.hidden, in_nav: !!r.in_nav, in_menu: r.in_menu !== false, updated_at: stamp, updated_by: by }));
+    if (this.state.local) {
+      const keep = this.readLocal().filter(x => !rows.some(r => r.id === x.id));
+      localStorage.setItem(LS, JSON.stringify(keep.concat(rows)));
+    } else {
+      try { await this.cloud.saveSiteLinks(rows); }
+      catch (e) { if (!/in_menu/i.test((e && e.message) || '')) throw e; await this.cloud.saveSiteLinks(rows.map(r => { const o = Object.assign({}, r); delete o.in_menu; return o; })); this.setState({ needMenuSql: true }); }
+    }
+    this.setState(s => { const draft = Object.assign({}, s.draft); rows.forEach(r => delete draft[r.id]);
+      const saved = s.saved.map(x => rows.find(r => r.id === x.id) || x).filter(x => !x.hidden); return { saved, draft, err: '' }; });
+    if (this.cloud.resetNavPages) this.cloud.resetNavPages();
+    if (label) this.flash(label);
+  }
+
+  onEdit = e => { const { id, k } = e.currentTarget.dataset, v = e.currentTarget.value; this.setState(s => ({ draft: Object.assign({}, s.draft, { [id]: Object.assign({}, s.draft[id], { [k]: v }) }) })); };
+  onKey = e => { if (e.key === 'Enter') { e.preventDefault(); this.saveId(e.currentTarget.dataset.id); } if (e.key === 'Escape') this.undoId(e.currentTarget.dataset.id); };
+  onSearch = e => this.setState({ q: e.currentTarget.value });
+  saveId = async id => {
+    const r = this.row(id); if (!r || !this.state.draft[id]) return;
+    if (!validUrl(r.url)) return this.flash('Enter a full URL starting with https://');
+    if (!(r.name || '').trim()) return this.flash('Give the link a name');
+    this.setState({ busyId: id });
+    try { await this.persist([r], r.name + ' saved'); } catch (err) { this.setState({ err: 'Could not save: ' + (err.message || 'unknown error') }); }
+    this.setState({ busyId: null });
+  };
+  saveRow = e => this.saveId(e.currentTarget.dataset.id);
+  undoId = id => this.setState(s => { const draft = Object.assign({}, s.draft); delete draft[id]; return { draft }; });
+  undoRow = e => this.undoId(e.currentTarget.dataset.id);
+  toggleMenu = e => { const id = e.currentTarget.dataset.id, in_menu = e.currentTarget.checked; this.setState(s => ({ draft: Object.assign({}, s.draft, { [id]: Object.assign({}, s.draft[id], { in_menu }) }) })); };
+  toggleNav = e => { const id = e.currentTarget.dataset.id, in_nav = e.currentTarget.checked; this.setState(s => ({ draft: Object.assign({}, s.draft, { [id]: Object.assign({}, s.draft[id], { in_nav }) }) })); };
+  setTag = e => { const id = e.currentTarget.dataset.id, tag = e.currentTarget.value; this.setState(s => ({ draft: Object.assign({}, s.draft, { [id]: Object.assign({}, s.draft[id], { tag }) }) })); };
+  cycleTag = e => { const id = e.currentTarget.dataset.id, r = this.row(id); const tag = TAGS[(TAGS.indexOf(r.tag) + 1) % TAGS.length]; this.setState(s => ({ draft: Object.assign({}, s.draft, { [id]: Object.assign({}, s.draft[id], { tag }) }) })); };
+  copyRow = e => {
+    const r = this.row(e.currentTarget.dataset.id); if (!r) return;
+    this.copy(r.url.trim()); clearTimeout(this.ct);
+    this.setState({ copiedId: r.id }); this.ct = setTimeout(() => this.setState({ copiedId: null }), 1600);
+    this.flash(r.name + ' link copied');
+  };
+  copyAll = () => { const list = this.state.saved.map(x => this.row(x.id)); this.copy(list.map(r => r.name + ': ' + r.url.trim()).join('\n')); this.flash('All ' + list.length + ' links copied'); };
+  addLink = () => {
+    const id = 'custom-' + Date.now().toString(36), max = Math.max(0, ...this.state.saved.map(r => r.sort_order || 0));
+    const r = { id, name: '', url: SITE + '/', tag: 'Team', description: 'Custom link.', in_nav: false, sort_order: max + 10, _new: true };
+    this.setState(s => ({ saved: s.saved.concat([r]), draft: Object.assign({}, s.draft, { [id]: { name: '' } }), q: '' }));
+  };
+  cancelDelete = () => setTimeout(() => this.setState({ confirmId: null }), 150);
+  removeRow = async e => {
+    const id = e.currentTarget.dataset.id, r = this.row(id);
+    if (this.state.confirmId !== id) return this.setState({ confirmId: id });
+    this.setState({ confirmId: null });
+    const isDefault = DEFAULTS.some(d => d.id === id);
+    try {
+      if (isDefault) await this.persist([Object.assign({}, r, { hidden: true })]);
+      else if (!r._new) { if (this.state.local) localStorage.setItem(LS, JSON.stringify(this.readLocal().filter(x => x.id !== id))); else await this.cloud.deleteSiteLink(id); }
+      this.setState(s => { const draft = Object.assign({}, s.draft); delete draft[id]; return { saved: s.saved.filter(x => x.id !== id), draft }; });
+      this.flash((r.name || 'Link') + ' deleted');
+    } catch (err) { this.setState({ err: 'Could not remove: ' + (err.message || 'unknown error') }); }
+  };
+  openRow = e => {
+    e.preventDefault();
+    const r = this.row(e.currentTarget.dataset.id); if (!r) return;
+    const url = r.url.trim(); if (!validUrl(url)) return this.flash('That URL isn’t complete yet');
+    const w = window.open(url, '_blank');
+    if (w) { try { w.opener = null; } catch (err) {} }
+    else { try { window.top.location.href = url; } catch (err) { location.href = url; } }
+  };
+  signOut = async () => { await this.cloud.signOut(); location.href = this.cloud.route('/sign-in?next=/links'); };
+
+  renderVals() {
+    const s = this.state, me = s.me || {}, R = this.cloud ? this.cloud.route : (x => x);
+    const pill = (c, b, bg) => ({ height: 26, padding: '0 26px 0 10px', borderRadius: 999, fontSize: 11, fontWeight: 700, color: c, border: '1px solid ' + b, backgroundColor: bg, backgroundImage: "url(\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23ffffff' stroke-opacity='.7' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E\")", backgroundRepeat: 'no-repeat', backgroundPosition: 'right 8px center', backgroundSize: '11px', appearance: 'none', WebkitAppearance: 'none', cursor: 'pointer', fontFamily: 'inherit', outline: 'none' });
+    const TS = { Public: pill('#E4FBC2', 'rgba(190,242,100,.35)', 'rgba(190,242,100,.06)'), Admin: pill('#D9CCFF', 'rgba(167,139,250,.45)', 'rgba(109,94,240,.12)'), Team: pill('var(--blue-300)', 'rgba(0,204,255,.35)', 'rgba(0,204,255,.06)') };
+    const q = s.q.trim().toLowerCase();
+    const rows = s.saved.map(base => {
+      const r = this.row(base.id), d = s.draft[base.id], dirty = !!d && Object.keys(d).some(k => (k === 'in_nav' ? !!d[k] !== !!base[k] : k === 'in_menu' ? (d[k] !== false) !== (base[k] !== false) : (d[k] || '') !== (base[k] || '')) || base._new);
+      const bad = !validUrl(r.url), busy = s.busyId === r.id, copied = s.copiedId === r.id, custom = !DEFAULTS.some(x => x.id === r.id);
+      return { id: r.id, name: r.name, desc: r.description || '', tag: r.tag, url: r.url, dirty, inNav: !!r.in_nav, inMenu: r.in_menu !== false, _tag: r.tag, badUrl: bad && dirty, isCustom: custom,
+        editingName: custom, showName: !custom, openAria: 'Open ' + (r.name || 'link'), _q: (r.name + ' ' + r.url + ' ' + r.tag).toLowerCase(),
+        tagStyle: TS[r.tag] || TS.Team,
+        rowStyle: { display: 'grid', gridTemplateColumns: 'minmax(0, 1fr) minmax(0, 1.25fr) auto', alignItems: 'center', gap: '12px 20px', padding: '16px 18px', borderRadius: 14, border: '1px solid ' + (dirty ? 'rgba(252,211,77,.35)' : 'rgba(255,255,255,.08)'), background: '#070B15', boxShadow: 'inset 0 1px 0 rgba(255,255,255,.05)', transition: 'border-color 200ms ' + EASE },
+        inputStyle: { height: 40, width: '100%', boxSizing: 'border-box', padding: '0 12px', borderRadius: 8, border: '1px solid ' + (bad && dirty ? 'rgba(240,180,255,.55)' : 'rgba(255,255,255,.14)'), background: 'rgba(0,5,9,.6)', color: '#fff', fontSize: 13, fontFamily: 'ui-monospace, SFMono-Regular, Menlo, monospace', outline: 'none' },
+        saveDisabled: busy || bad, saveLabel: busy ? 'Saving…' : 'Save',
+        saveStyle: { height: 34, padding: '0 16px', borderRadius: 999, border: 0, background: 'var(--blue-400)', color: '#001830', fontSize: 12, fontWeight: 700, cursor: bad ? 'default' : 'pointer', opacity: bad ? .4 : 1 },
+        copyLabel: copied ? 'Copied ✓' : 'Copy', delLabel: s.confirmId === r.id ? 'Confirm' : 'Delete', delAria: (s.confirmId === r.id ? 'Confirm delete ' : 'Delete ') + (r.name || 'link'),
+        delStyle: { display: 'inline-flex', alignItems: 'center', gap: 6, height: 34, padding: '0 12px', borderRadius: 999, border: '1px solid ' + (s.confirmId === r.id ? 'rgba(214,125,240,.7)' : 'rgba(255,255,255,.14)'), background: s.confirmId === r.id ? 'rgba(214,125,240,.18)' : 'transparent', color: s.confirmId === r.id ? '#F0B4FF' : 'rgba(255,255,255,.75)', fontSize: 12, fontWeight: 600, cursor: 'pointer', transition: 'all 200ms ' + EASE },
+        copyStyle: { display: 'inline-flex', alignItems: 'center', gap: 6, height: 34, padding: '0 14px', borderRadius: 999, border: '1px solid ' + (copied ? 'rgba(190,242,100,.5)' : 'rgba(0,204,255,.35)'), background: copied ? 'rgba(190,242,100,.08)' : 'rgba(0,204,255,.06)', color: copied ? '#E4FBC2' : 'var(--blue-300)', fontSize: 12, fontWeight: 600, cursor: 'pointer', transition: 'all 200ms ' + EASE } };
+    }).filter(r => !q || r._q.includes(q));
+    const gate = s.gate;
+    return {
+      gateLoading: gate === 'loading', ready: gate === 'ok', gateBlocked: ['signin', 'denied', 'error'].includes(gate),
+      gateTitle: gate === 'signin' ? 'Sign in to continue' : gate === 'denied' ? 'Admins only' : 'Couldn’t connect',
+      gateBody: gate === 'signin' ? 'Live Links is for KORTX Creative Labs admins.' : gate === 'denied' ? 'Your account (' + (me.email || '') + ') has Internal Team access. Ask an admin to upgrade you.' : 'We couldn’t reach the sign-in service. Check your connection and reload.',
+      gateHref: R(gate === 'signin' ? '/sign-in?next=/links' : gate === 'denied' ? '/page-builder' : '/links'), gateCta: gate === 'signin' ? 'Sign In' : gate === 'denied' ? 'Go to Page Builder' : 'Reload',
+      signedIn: !!s.me, meEmail: me.email || '', signOut: this.signOut, adminHref: R('/admin'),
+      countLabel: s.saved.length + ' Live Links', needSql: s.needSql || !!s.needMenuSql, err: s.err, q: s.q, onSearch: this.onSearch,
+      rows, noRows: !rows.length, toggleMenu: this.toggleMenu,
+      groups: [['Client facing', 'Pages customers can see', '#E4FBC2', x => x._tag === 'Public'], ['Internal team', 'Signed-in KORTX teammates only', 'var(--blue-300)', x => x._tag !== 'Public']].map(([title, note, color, f]) => ({ title, note, color, rows: rows.filter(f) })).filter(g => g.rows.length),
+      menus: (() => { const all = s.saved.map(x => this.row(x.id)); const chip = r => ({ name: r.name, style: { padding: '4px 10px', borderRadius: 999, fontSize: 12, fontWeight: 600, color: r.tag === 'Public' ? '#E4FBC2' : 'var(--blue-300)', border: '1px solid ' + (r.tag === 'Public' ? 'rgba(190,242,100,.35)' : 'rgba(0,204,255,.35)'), background: r.tag === 'Public' ? 'rgba(190,242,100,.06)' : 'rgba(0,204,255,.06)' } });
+        const top = all.filter(r => r.in_nav && !(this.cloud.NAV_EXCLUDE || []).includes(r.id)), circ = all.filter(r => r.in_menu !== false && r.id !== 'briefs' && r.id !== 'profile');
+        return [{ title: 'Top Dropdown', count: top.length + ' pages', note: 'The page switcher next to the logo. Client facing means signed out: those visitors only see Creative Playground, Rate Card and Required Assets & Process.', items: top.map(chip) },
+          { title: 'Circle Menu', count: circ.length + ' pages', note: 'The round icon with your name at the top right of every page. Signed out, it shows the same four client pages plus Sign In for the internal team. Signed in, it shows every page their access allows.', items: circ.map(chip) }]; })(), onEdit: this.onEdit, onKey: this.onKey, saveRow: this.saveRow, undoRow: this.undoRow, copyRow: this.copyRow, cycleTag: this.cycleTag, setTag: this.setTag, toggleNav: this.toggleNav, removeRow: this.removeRow, openRow: this.openRow, cancelDelete: this.cancelDelete,
+      copyAll: this.copyAll, addLink: this.addLink, toast: s.toast
+    };
+  }
+}
+</script>
+</body>
+</html>

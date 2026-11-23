@@ -1,0 +1,754 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<script src="kx-theme.js"></script>
+<link rel="icon" type="image/svg+xml" href="assets/kortx-logomark-bright-blue.svg">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Required Assets &amp; Process · KORTX Creative Labs</title>
+<link rel="stylesheet" href="_ds/kortx-design-guide-2026-5bc7ff27-9282-4218-938a-63d43f555d47/tokens/fonts.css">
+<link rel="stylesheet" href="_ds/kortx-design-guide-2026-5bc7ff27-9282-4218-938a-63d43f555d47/tokens/colors.css">
+<link rel="stylesheet" href="_ds/kortx-design-guide-2026-5bc7ff27-9282-4218-938a-63d43f555d47/tokens/typography.css">
+<link rel="stylesheet" href="_ds/kortx-design-guide-2026-5bc7ff27-9282-4218-938a-63d43f555d47/tokens/spacing.css">
+<link rel="stylesheet" href="_ds/kortx-design-guide-2026-5bc7ff27-9282-4218-938a-63d43f555d47/tokens/radius.css">
+<link rel="stylesheet" href="_ds/kortx-design-guide-2026-5bc7ff27-9282-4218-938a-63d43f555d47/tokens/elevation.css">
+<link rel="stylesheet" href="_ds/kortx-design-guide-2026-5bc7ff27-9282-4218-938a-63d43f555d47/tokens/motion.css">
+<link rel="stylesheet" href="_ds/kortx-design-guide-2026-5bc7ff27-9282-4218-938a-63d43f555d47/tokens/base.css">
+<link rel="stylesheet" href="_ds/kortx-design-guide-2026-5bc7ff27-9282-4218-938a-63d43f555d47/styles.css">
+<script src="_ds/kortx-design-guide-2026-5bc7ff27-9282-4218-938a-63d43f555d47/_ds_bundle.js"></script>
+<style>
+  html, body { margin: 0; padding: 0; background: #000509; }
+  body { font-family: var(--font-body, Inter, Helvetica, sans-serif); -webkit-font-smoothing: antialiased; }
+  a { color: var(--blue-400); text-decoration: none; }
+  a:hover { color: var(--blue-300); }
+  input, button { font-family: inherit; }
+  input[type="date"]::-webkit-calendar-picker-indicator { filter: invert(1); opacity: .7; cursor: pointer; }
+  [data-focusable]:focus-visible { outline: none; border-color: var(--blue-400) !important; box-shadow: 0 0 0 3px rgba(0,204,255,.55) !important; }
+  @keyframes kx-rise { 0% { opacity: 0; transform: translateY(12px) } 100% { opacity: 1; transform: none } }
+  @keyframes kx-orbit { 0% { transform: rotate(0) translateX(26px) } 100% { transform: rotate(360deg) translateX(26px) } }
+  [data-reveal] { opacity: 0; transform: translateY(12px); transition: opacity 600ms cubic-bezier(.16,1,.3,1), transform 600ms cubic-bezier(.16,1,.3,1); transition-delay: var(--rd, 0ms); }
+  [data-reveal][data-in] { opacity: 1; transform: none; }
+  [data-gantt]::-webkit-scrollbar { height: 8px; }
+  [data-gantt]::-webkit-scrollbar-thumb { background: rgba(0,204,255,.35); border-radius: 8px; }
+  @media (prefers-reduced-motion: reduce) { [data-reveal] { opacity: 1; transform: none; } *, *::before, *::after { animation-duration: .001ms !important; transition-duration: .001ms !important; } }
+</style>
+<style>
+  @keyframes kx-spin { 0% { transform: rotate(0) } 100% { transform: rotate(360deg) } }
+</style>
+</helmet>
+
+<div data-screen-label="Required Assets &amp; Process" style="position: relative; min-height: 100vh; background: #000509; color: #fff; overflow-x: clip; isolation: isolate;">
+  <div aria-hidden="true" data-kx-bg-keep style="position: fixed; inset: 0; z-index: 0; pointer-events: none; overflow: hidden;">
+    <div style="position: absolute; top: -22vh; right: -14vw; width: 78vw; height: 78vw; border-radius: 50%; background: radial-gradient(circle at 50% 50%, rgba(0,204,255,.14), rgba(0,204,255,.04) 40%, transparent 68%); filter: blur(24px); animation: kx-drift-a 62s ease-in-out infinite;"></div>
+    <div style="position: absolute; bottom: -34vh; left: -18vw; width: 72vw; height: 72vw; border-radius: 50%; background: radial-gradient(circle at 50% 50%, rgba(109,94,240,.12), rgba(109,94,240,.03) 42%, transparent 70%); filter: blur(30px); animation: kx-drift-b 78s ease-in-out infinite;"></div>
+    <div style="position: absolute; top: 34vh; left: 28vw; width: 46vw; height: 46vw; border-radius: 50%; background: radial-gradient(circle at 50% 50%, rgba(214,125,240,.10), transparent 64%); filter: blur(40px); animation: kx-drift-a 96s ease-in-out infinite;"></div>
+    <div style="position: absolute; inset: -10% -10% -60%; opacity: .8; animation: kx-stars 140s linear infinite; background-image: radial-gradient(1.4px 1.4px at 7% 12%, rgba(255,255,255,.85), transparent), radial-gradient(1.2px 1.2px at 19% 41%, rgba(0,204,255,.8), transparent), radial-gradient(1px 1px at 31% 8%, rgba(255,255,255,.6), transparent), radial-gradient(1.6px 1.6px at 44% 63%, rgba(255,255,255,.7), transparent), radial-gradient(1px 1px at 57% 22%, rgba(156,235,255,.75), transparent), radial-gradient(1.3px 1.3px at 68% 51%, rgba(255,255,255,.65), transparent), radial-gradient(1px 1px at 78% 15%, rgba(255,255,255,.5), transparent), radial-gradient(1.5px 1.5px at 88% 37%, rgba(0,204,255,.6), transparent), radial-gradient(1px 1px at 95% 71%, rgba(255,255,255,.55), transparent), radial-gradient(1.2px 1.2px at 12% 78%, rgba(255,255,255,.6), transparent), radial-gradient(1px 1px at 26% 92%, rgba(138,124,248,.7), transparent), radial-gradient(1.4px 1.4px at 39% 33%, rgba(255,255,255,.5), transparent), radial-gradient(1px 1px at 52% 86%, rgba(255,255,255,.6), transparent), radial-gradient(1.2px 1.2px at 63% 74%, rgba(0,204,255,.55), transparent), radial-gradient(1px 1px at 74% 95%, rgba(255,255,255,.45), transparent), radial-gradient(1.3px 1.3px at 84% 60%, rgba(255,255,255,.6), transparent), radial-gradient(1px 1px at 92% 88%, rgba(156,235,255,.5), transparent), radial-gradient(1.1px 1.1px at 4% 55%, rgba(255,255,255,.5), transparent);"></div>
+    <div style="position: absolute; inset: 0; background-image: linear-gradient(rgba(255,255,255,.022) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,.022) 1px, transparent 1px); background-size: 88px 88px; mask-image: radial-gradient(circle at 50% 18%, #000, transparent 72%);"></div>
+    <div data-kx-rings aria-hidden="true" style="position: absolute; left: 50%; top: 52%; width: min(168vh, 132vw); aspect-ratio: 1 / 1; transform: translate(-50%, -50%); z-index: 0; pointer-events: none; mask-image: radial-gradient(circle at 50% 50%, #000 52%, rgba(0,0,0,.55) 78%, transparent 100%), linear-gradient(180deg, transparent 0%, #000 15%, #000 85%, transparent 100%); -webkit-mask-image: radial-gradient(circle at 50% 50%, #000 52%, rgba(0,0,0,.55) 78%, transparent 100%), linear-gradient(180deg, transparent 0%, #000 15%, #000 85%, transparent 100%); mask-composite: intersect; -webkit-mask-composite: source-in;">
+      <div style="position: absolute; inset: 0%; animation: kx-spin 120s linear infinite normal;">
+        <div style="position: absolute; inset: 0; transform: rotate(calc(var(--spin, 0) * 150deg));">
+          <div style="position: absolute; inset: 0; border-radius: 50%; border: 1px solid rgba(255,255,255,.10);"></div>
+          <div style="position: absolute; inset: 0; transform: rotate(18deg);"><div style="position: absolute; top: -2.5px; left: 50%; width: 5px; height: 5px; margin-left: -2.5px; border-radius: 50%; background: #fff; box-shadow: 0 0 10px rgba(255,255,255,.85), 0 0 20px rgba(0,204,255,.55);"></div></div>
+          <div style="position: absolute; inset: 0; transform: rotate(142deg);"><div style="position: absolute; top: -2px; left: 50%; width: 4px; height: 4px; margin-left: -2px; border-radius: 50%; background: #fff; box-shadow: 0 0 8px rgba(255,255,255,.85), 0 0 16px rgba(0,204,255,.55);"></div></div>
+          <div style="position: absolute; inset: 0; transform: rotate(268deg);"><div style="position: absolute; top: -3px; left: 50%; width: 6px; height: 6px; margin-left: -3px; border-radius: 50%; background: #fff; box-shadow: 0 0 12px rgba(255,255,255,.85), 0 0 24px rgba(0,204,255,.55);"></div></div>
+        </div>
+      </div>
+      <div style="position: absolute; inset: 9%; animation: kx-spin 96s linear infinite reverse;">
+        <div style="position: absolute; inset: 0; transform: rotate(calc(var(--spin, 0) * -190deg));">
+          <div style="position: absolute; inset: 0; border-radius: 50%; border: 1px solid rgba(255,255,255,.085);"></div>
+          <div style="position: absolute; inset: 0; transform: rotate(64deg);"><div style="position: absolute; top: -2px; left: 50%; width: 4px; height: 4px; margin-left: -2px; border-radius: 50%; background: #fff; box-shadow: 0 0 8px rgba(255,255,255,.85), 0 0 16px rgba(0,204,255,.55);"></div></div>
+          <div style="position: absolute; inset: 0; transform: rotate(210deg);"><div style="position: absolute; top: -2.5px; left: 50%; width: 5px; height: 5px; margin-left: -2.5px; border-radius: 50%; background: #fff; box-shadow: 0 0 10px rgba(255,255,255,.85), 0 0 20px rgba(0,204,255,.55);"></div></div>
+        </div>
+      </div>
+      <div style="position: absolute; inset: 19%; animation: kx-spin 78s linear infinite normal;">
+        <div style="position: absolute; inset: 0; transform: rotate(calc(var(--spin, 0) * 240deg));">
+          <div style="position: absolute; inset: 0; border-radius: 50%; border: 1px solid rgba(255,255,255,.11);"></div>
+          <div style="position: absolute; inset: 0; transform: rotate(8deg);"><div style="position: absolute; top: -2px; left: 50%; width: 4px; height: 4px; margin-left: -2px; border-radius: 50%; background: #fff; box-shadow: 0 0 9px rgba(255,255,255,.85), 0 0 18px rgba(0,204,255,.55);"></div></div>
+          <div style="position: absolute; inset: 0; transform: rotate(128deg);"><div style="position: absolute; top: -1.5px; left: 50%; width: 3px; height: 3px; margin-left: -1.5px; border-radius: 50%; background: #fff; box-shadow: 0 0 7px rgba(255,255,255,.85), 0 0 14px rgba(0,204,255,.55);"></div></div>
+          <div style="position: absolute; inset: 0; transform: rotate(300deg);"><div style="position: absolute; top: -2.5px; left: 50%; width: 5px; height: 5px; margin-left: -2.5px; border-radius: 50%; background: #fff; box-shadow: 0 0 10px rgba(255,255,255,.85), 0 0 20px rgba(0,204,255,.55);"></div></div>
+        </div>
+      </div>
+      <div style="position: absolute; inset: 29%; animation: kx-spin 62s linear infinite reverse;">
+        <div style="position: absolute; inset: 0; transform: rotate(calc(var(--spin, 0) * -300deg));">
+          <div style="position: absolute; inset: 0; border-radius: 50%; border: 1px solid rgba(255,255,255,.07);"></div>
+          <div style="position: absolute; inset: 0; transform: rotate(96deg);"><div style="position: absolute; top: -1.5px; left: 50%; width: 3px; height: 3px; margin-left: -1.5px; border-radius: 50%; background: #fff; box-shadow: 0 0 7px rgba(255,255,255,.85), 0 0 14px rgba(0,204,255,.55);"></div></div>
+          <div style="position: absolute; inset: 0; transform: rotate(248deg);"><div style="position: absolute; top: -2px; left: 50%; width: 4px; height: 4px; margin-left: -2px; border-radius: 50%; background: #fff; box-shadow: 0 0 9px rgba(255,255,255,.85), 0 0 18px rgba(0,204,255,.55);"></div></div>
+        </div>
+      </div>
+      <div style="position: absolute; inset: 39%; animation: kx-spin 50s linear infinite normal;">
+        <div style="position: absolute; inset: 0; transform: rotate(calc(var(--spin, 0) * 380deg));">
+          <div style="position: absolute; inset: 0; border-radius: 50%; border: 1px solid rgba(255,255,255,.09);"></div>
+          <div style="position: absolute; inset: 0; transform: rotate(36deg);"><div style="position: absolute; top: -1.5px; left: 50%; width: 3px; height: 3px; margin-left: -1.5px; border-radius: 50%; background: #fff; box-shadow: 0 0 8px rgba(255,255,255,.85), 0 0 16px rgba(0,204,255,.55);"></div></div>
+          <div style="position: absolute; inset: 0; transform: rotate(196deg);"><div style="position: absolute; top: -2px; left: 50%; width: 4px; height: 4px; margin-left: -2px; border-radius: 50%; background: #fff; box-shadow: 0 0 9px rgba(255,255,255,.85), 0 0 18px rgba(0,204,255,.55);"></div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <header style="position: sticky; top: 0; z-index: 60; display: flex; align-items: center; gap: clamp(12px, 1.6vw, 20px); flex-wrap: wrap; min-height: 72px; padding: 14px clamp(20px, 4vw, 56px); background: rgba(0,5,9,.72); backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px);">
+    <a href="Creative Playground.dc.html" aria-label="KORTX home" style="position: relative; display: grid; place-items: center; width: 46px; height: 46px; flex: none;">
+      <span aria-hidden="true" style="position: absolute; inset: 0; border-radius: 50%; background: radial-gradient(circle at 50% 50%, rgba(0,204,255,.24), transparent 68%);"></span>
+      <span aria-hidden="true" style="position: absolute; inset: 3px; border: 1px solid rgba(0,204,255,.30); border-radius: 50%;"></span>
+      <span aria-hidden="true" style="position: absolute; inset: 8px; border: 1px solid rgba(138,124,248,.28); border-radius: 50%; transform: rotate(18deg) scaleY(.6);"></span>
+      <img src="assets/kortx-logomark-bright-blue.svg" alt="KORTX" style="position: relative; width: 20px; display: block;">
+      <span aria-hidden="true" style="position: absolute; top: 50%; left: 50%; width: 4px; height: 4px; margin: -2px; border-radius: 50%; background: var(--blue-300); box-shadow: 0 0 9px rgba(0,204,255,.9); animation: kx-orbit 18s linear infinite;"></span>
+    </a>
+    <dc-import name="Site Nav" current="specs" hint-size="200px,40px"></dc-import>
+    <div style="flex: 1;"></div>
+    <nav aria-label="On this page" style="display: flex; flex-wrap: wrap; gap: 6px;">
+      <sc-for list="{{ navLinks }}" as="nl" hint-placeholder-count="3">
+        <a href="{{ nl.href }}" data-sec="{{ nl.id }}" onClick="{{ goSec }}" aria-current="{{ nl.cur }}" style="{{ nl.style }}" style-hover="border-color: rgba(138,124,248,.75); background: rgba(109,94,240,.16); color: #fff; box-shadow: 0 0 24px rgba(109,94,240,.45), 0 0 48px rgba(214,125,240,.18); text-decoration: none">{{ nl.label }}</a>
+      </sc-for>
+    </nav>
+    <dc-import name="User Menu" current="specs" hint-size="40px,40px" style="margin-left: auto; order: 99;"></dc-import>
+  </header>
+
+  <main data-reveal-root="1" style="position: relative; z-index: 1; max-width: 1180px; margin: 0 auto; padding: clamp(40px, 8vh, 96px) clamp(20px, 4vw, 40px) 140px; box-sizing: border-box;">
+    <section data-block="Assets &amp; Process · Hero" style="display: flex; flex-direction: column; align-items: center; text-align: center;">
+      <h1 data-reveal="head" style="margin: 0; max-width: 820px; font-size: clamp(36px, 5.4vw, 68px); font-weight: 700; letter-spacing: -.03em; line-height: 1.04; text-wrap: balance;">Required assets &amp; process</h1>
+      <p data-reveal="copy" style="margin: 16px 0 0; max-width: 680px; font-size: 18px; line-height: 1.55; color: rgba(255,255,255,.76); text-wrap: pretty;">What we need from you, the specs every channel runs on, and the timeline from kick-off to launch.</p>
+    </section>
+
+    <!-- 01 · Required assets -->
+    <section id="assets" data-block="Assets &amp; Process · Required Assets" style="margin-top: 96px; scroll-margin-top: 96px;">
+      <div style="display: flex; flex-direction: column; align-items: center; text-align: center;">
+        <div data-reveal="head" style="display: flex; align-items: baseline; gap: 12px;">
+          <span style="font-size: 13px; font-weight: 700; color: var(--blue-400);">01</span>
+          <span style="font-size: 11px; font-weight: 600; letter-spacing: .18em; text-transform: uppercase; color: rgba(255,255,255,.55);">Required Assets</span>
+        </div>
+        <h2 data-reveal="head" style="margin: 10px 0 0; max-width: 820px; font-size: clamp(28px, 3.4vw, 44px); font-weight: 700; letter-spacing: -.025em; line-height: 1.08; text-wrap: balance;">Seven things we need to start</h2>
+        <p data-reveal="copy" style="margin: 12px 0 0; max-width: 700px; font-size: 16px; line-height: 1.55; color: rgba(255,255,255,.76); text-wrap: pretty;">Provided by the client at least 2 weeks before launch. Late assets push the launch day for day.</p>
+      </div>
+      <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, 250px), 1fr)); gap: 16px; margin-top: 48px;">
+        <sc-for list="{{ checklist }}" as="c" hint-placeholder-count="7">
+          <div data-reveal="card">
+            <div style="height: 100%; box-sizing: border-box; display: flex; flex-direction: column; gap: 12px; padding: 22px; border-radius: 12px; border: 1px solid rgba(255,255,255,.08); background: #070B15; box-shadow: inset 0 1px 0 rgba(255,255,255,.06), 0 24px 60px rgba(0,0,0,.45); transition: transform 200ms cubic-bezier(.16,1,.3,1), border-color 200ms;" style-hover="transform: translateY(-3px); border-color: rgba(0,204,255,.35)">
+              <span aria-hidden="true" style="display: grid; place-items: center; width: 42px; height: 42px; border-radius: 50%; background: rgba(0,204,255,.10); color: var(--blue-400); font-size: 13px; font-weight: 800;">{{ c.n }}</span>
+              <div style="font-size: 17px; font-weight: 700; color: var(--blue-400); letter-spacing: -.01em;">{{ c.t }}</div>
+              <div style="font-size: 14px; line-height: 1.55; color: rgba(255,255,255,.76); text-wrap: pretty;">{{ c.d }}</div>
+              <div style="display: flex; flex-wrap: wrap; gap: 6px; margin-top: auto; padding-top: 4px;">
+                <sc-for list="{{ c.tags }}" as="tg" hint-placeholder-count="2">
+                  <span style="padding: 4px 9px; border-radius: 999px; border: 1px solid rgba(255,255,255,.12); background: rgba(255,255,255,.04); font-size: 11.5px; font-weight: 600; color: rgba(255,255,255,.85);">{{ tg }}</span>
+                </sc-for>
+              </div>
+              <sc-if value="{{ c.hasLinks }}" hint-placeholder-val="{{ false }}">
+                <div style="display: flex; flex-direction: column; gap: 14px; padding-top: 4px;">
+                  <sc-for list="{{ c.links }}" as="lk" hint-placeholder-count="2">
+                    <div style="display: flex; flex-direction: column; gap: 6px;">
+                      <a href="{{ lk.href }}" download="" style="display: inline-flex; align-items: center; justify-content: center; gap: 6px; padding: 7px 12px; border-radius: 999px; border: 1px solid rgba(247,144,9,.6); background: rgba(247,144,9,.1); color: #fff; font-size: 11.5px; font-weight: 600; text-decoration: none; box-shadow: 0 0 22px rgba(247,144,9,.18); transition: all 200ms cubic-bezier(.16,1,.3,1);" style-hover="border-color: rgba(247,144,9,.9); background: rgba(247,144,9,.18); color: #fff; text-decoration: none; box-shadow: 0 0 30px rgba(247,144,9,.35)" style-active="transform: scale(.985)"><svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="#FDB022" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 4v12"></path><path d="M7 11l5 5 5-5"></path><path d="M4 20h16"></path></svg>{{ lk.label }}</a>
+                      <button type="button" data-focusable="1" data-form="{{ lk.id }}" onClick="{{ openIntake }}" style="display: inline-flex; align-items: center; justify-content: center; gap: 6px; padding: 7px 12px; border-radius: 999px; border: 1px solid rgba(0,204,255,.45); background: rgba(0,204,255,.1); color: #fff; font-size: 11.5px; font-weight: 600; cursor: pointer; box-shadow: 0 0 22px rgba(0,204,255,.18); transition: all 200ms cubic-bezier(.16,1,.3,1);" style-hover="border-color: rgba(0,204,255,.75); background: rgba(0,204,255,.18); box-shadow: 0 0 30px rgba(0,204,255,.35)" style-active="transform: scale(.985)"><svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="#33D6FF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="16" rx="2"></rect><path d="M3 10h18"></path><path d="M9 4v16"></path></svg>{{ lk.see }}</button>
+                    </div>
+                  </sc-for>
+                </div>
+              </sc-if>
+            </div>
+          </div>
+        </sc-for>
+      </div>
+    </section>
+
+    <!-- 02 · Specs by channel -->
+    <section id="specs" data-block="Assets &amp; Process · Specs by Channel" style="margin-top: 120px; scroll-margin-top: 96px;">
+      <div style="display: flex; flex-direction: column; align-items: center; text-align: center;">
+        <div data-reveal="head" style="display: flex; align-items: baseline; gap: 12px;">
+          <span style="font-size: 13px; font-weight: 700; color: var(--blue-400);">02</span>
+          <span style="font-size: 11px; font-weight: 600; letter-spacing: .18em; text-transform: uppercase; color: rgba(255,255,255,.55);">Specs by Channel</span>
+        </div>
+        <h2 data-reveal="head" style="margin: 10px 0 0; max-width: 820px; font-size: clamp(28px, 3.4vw, 44px); font-weight: 700; letter-spacing: -.025em; line-height: 1.08; text-wrap: balance;">Creative specs, channel by channel</h2>
+        <p data-reveal="copy" style="margin: 12px 0 0; max-width: 700px; font-size: 16px; line-height: 1.55; color: rgba(255,255,255,.76); text-wrap: pretty;">Pick a channel to see sizes, formats, limits and the assets it needs.</p>
+      </div>
+
+      <div data-reveal="copy" role="tablist" aria-label="Channel" style="display: flex; flex-wrap: wrap; justify-content: center; gap: 8px; margin-top: 40px;">
+        <sc-for list="{{ tabs }}" as="tb" hint-placeholder-count="12">
+          <button type="button" role="tab" data-focusable="1" aria-selected="{{ tb.sel }}" data-id="{{ tb.id }}" onClick="{{ pick }}" style="{{ tb.style }}" style-hover="border-color: rgba(138,124,248,.75); background: rgba(109,94,240,.16); color: #fff; box-shadow: 0 0 24px rgba(109,94,240,.45), 0 0 48px rgba(214,125,240,.18)">{{ tb.label }}</button>
+        </sc-for>
+      </div>
+
+      <div data-reveal="card" role="tabpanel" style="margin-top: 20px; padding: clamp(20px, 3vw, 32px); border-radius: 16px; border: 1px solid rgba(255,255,255,.08); background: #070B15; box-shadow: inset 0 1px 0 rgba(255,255,255,.06), 0 24px 60px rgba(0,0,0,.45);">
+        <div style="display: flex; flex-wrap: wrap; align-items: flex-start; gap: 16px 32px;">
+          <div style="flex: 1 1 420px; min-width: 0;">
+            <div style="font-size: 11px; font-weight: 600; letter-spacing: .18em; text-transform: uppercase; color: var(--lime-300);">{{ ch.group }}</div>
+            <h3 style="margin: 8px 0 0; font-size: 28px; font-weight: 700; letter-spacing: -.02em; line-height: 1.1;">{{ ch.title }}</h3>
+            <p style="margin: 10px 0 0; max-width: 620px; font-size: 15px; line-height: 1.55; color: rgba(255,255,255,.76); text-wrap: pretty;">{{ ch.lede }}</p>
+          </div>
+          <sc-if value="{{ ch.hasLimit }}" hint-placeholder-val="{{ true }}">
+            <div style="flex: 0 1 260px; padding: 16px 18px; border-radius: 12px; border: 1px solid rgba(0,204,255,.3); background: rgba(0,204,255,.06); box-shadow: 0 0 40px rgba(0,204,255,.1);">
+              <div style="font-size: 11px; font-weight: 600; letter-spacing: .18em; text-transform: uppercase; color: rgba(255,255,255,.6);">Creative Limit</div>
+              <div style="margin-top: 6px; font-size: 18px; font-weight: 700; line-height: 1.3; color: #fff;">{{ ch.limit }}</div>
+            </div>
+          </sc-if>
+        </div>
+
+        <sc-if value="{{ ch.hasStats }}" hint-placeholder-val="{{ true }}">
+          <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, 210px), 1fr)); gap: 1px; margin-top: 28px; border-radius: 12px; overflow: hidden; border: 1px solid rgba(255,255,255,.08); background: rgba(255,255,255,.08);">
+            <sc-for list="{{ ch.stats }}" as="s" hint-placeholder-count="6">
+              <div style="padding: 16px 18px; background: #0A0F1A;">
+                <div style="font-size: 11px; font-weight: 600; letter-spacing: .14em; text-transform: uppercase; color: rgba(255,255,255,.55);">{{ s.k }}</div>
+                <div style="margin-top: 6px; font-size: 15px; font-weight: 600; line-height: 1.45; color: #fff; text-wrap: pretty;">{{ s.v }}</div>
+              </div>
+            </sc-for>
+          </div>
+        </sc-if>
+
+        <sc-for list="{{ ch.tables }}" as="tbl" hint-placeholder-count="1">
+          <div style="margin-top: 28px;">
+            <div style="font-size: 15px; font-weight: 700; color: var(--blue-400);">{{ tbl.title }}</div>
+            <div style="margin-top: 12px; overflow-x: auto; border-radius: 12px; border: 1px solid rgba(255,255,255,.08);">
+              <table style="width: 100%; min-width: 560px; border-collapse: collapse; font-size: 14px;">
+                <thead>
+                  <tr style="background: rgba(255,255,255,.04);">
+                    <sc-for list="{{ tbl.cols }}" as="col" hint-placeholder-count="4">
+                      <th scope="col" style="padding: 12px 16px; text-align: left; font-size: 11px; font-weight: 600; letter-spacing: .14em; text-transform: uppercase; color: rgba(255,255,255,.6); border-bottom: 1px solid rgba(255,255,255,.08); white-space: nowrap;">{{ col }}</th>
+                    </sc-for>
+                  </tr>
+                </thead>
+                <tbody>
+                  <sc-for list="{{ tbl.rows }}" as="row" hint-placeholder-count="4">
+                    <tr style="border-bottom: 1px solid rgba(255,255,255,.06);" style-hover="background: rgba(0,204,255,.04)">
+                      <sc-for list="{{ row.cells }}" as="cell" hint-placeholder-count="4">
+                        <td style="{{ cell.style }}">{{ cell.v }}</td>
+                      </sc-for>
+                    </tr>
+                  </sc-for>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </sc-for>
+
+        <sc-if value="{{ ch.hasAssets }}" hint-placeholder-val="{{ true }}">
+          <div style="margin-top: 32px;">
+            <div style="display: flex; flex-wrap: wrap; align-items: baseline; gap: 8px 16px;">
+              <div style="font-size: 15px; font-weight: 700;">What we need from you:</div>
+              <sc-if value="{{ ch.hasSkip }}" hint-placeholder-val="{{ false }}">
+                <span style="display: inline-flex; align-items: center; gap: 6px; font-size: 12.5px; color: rgba(255,255,255,.6);"><span style="width: 8px; height: 8px; border-radius: 50%; background: var(--lime-300);"></span>Covered by a layered PSD or Figma file</span>
+              </sc-if>
+            </div>
+            <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, 300px), 1fr)); gap: 12px; margin-top: 14px;">
+              <sc-for list="{{ ch.assets }}" as="a" hint-placeholder-count="4">
+                <div data-reveal="card" style="display: flex; gap: 14px; padding: 16px 18px; border-radius: 12px; border: 1px solid rgba(255,255,255,.08); background: rgba(255,255,255,.03);">
+                  <span aria-hidden="true" style="flex: none; width: 2px; border-radius: 2px; background: #00CCFF;"></span>
+                  <div style="min-width: 0; flex: 1;">
+                    <div style="display: flex; align-items: center; gap: 8px; flex-wrap: wrap;">
+                      <span style="font-size: 15px; font-weight: 600; color: #fff;">{{ a.t }}</span>
+                      <sc-if value="{{ a.skip }}" hint-placeholder-val="{{ false }}"><span title="Not needed when layered PSD or Figma files are provided" style="width: 8px; height: 8px; border-radius: 50%; background: var(--lime-300);"></span></sc-if>
+                    </div>
+                    <div style="margin-top: 4px; font-size: 13.5px; line-height: 1.5; color: rgba(255,255,255,.7); text-wrap: pretty;">{{ a.d }}</div>
+                  </div>
+                </div>
+              </sc-for>
+            </div>
+          </div>
+        </sc-if>
+
+        <sc-if value="{{ ch.hasNotes }}" hint-placeholder-val="{{ false }}">
+          <div style="display: flex; flex-direction: column; gap: 8px; margin-top: 28px; padding-top: 20px; border-top: 1px solid rgba(255,255,255,.08);">
+            <sc-for list="{{ ch.notes }}" as="nt" hint-placeholder-count="2">
+              <div style="display: flex; gap: 10px; font-size: 13.5px; line-height: 1.55; color: rgba(255,255,255,.7);"><span aria-hidden="true" style="color: var(--blue-400);">›</span><span style="text-wrap: pretty;">{{ nt }}</span></div>
+            </sc-for>
+          </div>
+        </sc-if>
+      </div>
+    </section>
+
+    <!-- 03 · Process & timing -->
+    <section id="process" data-block="Assets &amp; Process · Process and Timing" style="margin-top: 120px; scroll-margin-top: 96px;">
+      <div style="display: flex; flex-direction: column; align-items: center; text-align: center;">
+        <div data-reveal="head" style="display: flex; align-items: baseline; gap: 12px;">
+          <span style="font-size: 13px; font-weight: 700; color: var(--blue-400);">03</span>
+          <span style="font-size: 11px; font-weight: 600; letter-spacing: .18em; text-transform: uppercase; color: rgba(255,255,255,.55);">Process &amp; Timing</span>
+        </div>
+        <h2 data-reveal="head" style="margin: 10px 0 0; max-width: 820px; font-size: clamp(28px, 3.4vw, 44px); font-weight: 700; letter-spacing: -.025em; line-height: 1.08; text-wrap: balance;">From signed IO to live in 3 weeks or less</h2>
+        <p data-reveal="copy" style="margin: 12px 0 0; max-width: 700px; font-size: 16px; line-height: 1.55; color: rgba(255,255,255,.76); text-wrap: pretty;">Drag any step along the timeline. Steps that break a requirement turn red.</p>
+      </div>
+
+      <div data-reveal="card" style="display: flex; flex-wrap: wrap; align-items: center; gap: 12px 20px; margin-top: 40px; padding: 16px 20px; border-radius: 12px; border: 1px solid rgba(255,255,255,.1); background: rgba(255,255,255,.03);">
+        <label for="launch" style="font-size: 14px; font-weight: 700;">Launch date</label>
+        <input id="launch" type="date" data-focusable="1" value="{{ launch }}" onChange="{{ onLaunch }}" style="height: 40px; padding: 0 12px; border-radius: 8px; border: 1px solid rgba(255,255,255,.14); background: rgba(0,5,9,.6); color: #fff; font-size: 14px; color-scheme: dark;">
+        <span style="{{ statusStyle }}">{{ status }}</span>
+        <span style="flex: 1;"></span>
+        <button type="button" data-focusable="1" onClick="{{ reset }}" style="height: 38px; padding: 0 16px; border-radius: 999px; border: 1px solid rgba(255,255,255,.14); background: rgba(255,255,255,.06); color: #fff; font-size: 13px; font-weight: 600; cursor: pointer;" style-hover="border-color: rgba(138,124,248,.75); background: rgba(109,94,240,.16); color: #fff; box-shadow: 0 0 24px rgba(109,94,240,.45), 0 0 48px rgba(214,125,240,.18)">Reset to Schedule</button>
+      </div>
+
+      <div data-reveal="card" style="margin-top: 16px; border-radius: 16px; border: 1px solid rgba(255,255,255,.08); background: #070B15; box-shadow: inset 0 1px 0 rgba(255,255,255,.06), 0 24px 60px rgba(0,0,0,.45); overflow: hidden;">
+        <div data-gantt="1" ref="{{ ganttRef }}" style="overflow-x: auto; overscroll-behavior-x: contain;">
+          <div style="{{ ganttInner }}">
+            <sc-for list="{{ ticks }}" as="tk" hint-placeholder-count="0">
+              <div style="{{ tk.col }}">
+                <span style="{{ tk.mon }}">{{ tk.month }}</span>
+                <span style="{{ tk.num }}">{{ tk.day }}</span>
+              </div>
+            </sc-for>
+            <div style="{{ launchLine }}"></div>
+            <sc-for list="{{ lanes }}" as="ln" hint-placeholder-count="7">
+              <div style="{{ ln.row }}">
+                <span style="position: sticky; left: 0; z-index: 4; display: flex; align-items: center; gap: 10px; width: 160px; height: 100%; padding: 0 16px; box-sizing: border-box; background: #070B15; border-right: 1px solid rgba(255,255,255,.08);">
+                  <span style="{{ ln.dot }}"></span>
+                  <span style="font-size: 13px; font-weight: 600; color: #fff; white-space: nowrap;">{{ ln.t }}</span>
+                </span>
+                <div style="{{ ln.win }}"></div>
+                <button type="button" data-focusable="1" data-i="{{ ln.i }}" onPointerDown="{{ onDown }}" onKeyDown="{{ onKey }}" aria-label="{{ ln.aria }}" style="{{ ln.pill }}">{{ ln.date }}</button>
+              </div>
+            </sc-for>
+          </div>
+        </div>
+        <div style="display: flex; flex-wrap: wrap; gap: 8px 20px; padding: 12px 16px; border-top: 1px solid rgba(255,255,255,.06); font-size: 12px; color: rgba(255,255,255,.55);">
+          <span>Business days only. Drag a date, or focus it and use ← →</span>
+          <span style="display: inline-flex; align-items: center; gap: 6px;"><span style="width: 14px; height: 8px; border-radius: 3px; background: rgba(0,204,255,.16); border: 1px solid rgba(0,204,255,.35);"></span>Allowed window</span>
+        </div>
+      </div>
+
+      <ol style="list-style: none; margin: 24px 0 0; padding: 0; display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, 340px), 1fr)); gap: 16px;">
+        <sc-for list="{{ steps }}" as="st" hint-placeholder-count="7">
+          <li data-reveal="card">
+            <div style="{{ st.card }}" style-hover="transform: translateY(-3px)">
+              <div style="display: flex; align-items: center; gap: 12px;">
+                <span aria-hidden="true" style="{{ st.num }}">{{ st.n }}</span>
+                <span style="{{ st.title }}">{{ st.t }}</span>
+                <span style="padding: 4px 10px; border-radius: 999px; background: rgba(190,242,100,.1); border: 1px solid rgba(190,242,100,.3); font-size: 11.5px; font-weight: 700; color: var(--lime-300); white-space: nowrap;">{{ st.when }}</span>
+              </div>
+              <div style="font-size: 14px; line-height: 1.55; color: rgba(255,255,255,.76); text-wrap: pretty;">{{ st.d }}</div>
+              <sc-if value="{{ st.fail }}" hint-placeholder-val="{{ false }}">
+                <div role="alert" style="display: flex; gap: 10px; padding: 10px 12px; border-radius: 8px; background: rgba(229,72,77,.12); font-size: 13px; line-height: 1.45; color: #FFB3B5;"><span aria-hidden="true" style="font-weight: 800;">!</span><span>{{ st.reason }}</span></div>
+              </sc-if>
+              <div style="display: flex; align-items: center; gap: 8px; margin-top: auto; padding-top: 12px; border-top: 1px solid rgba(255,255,255,.06); font-size: 12.5px;">
+                <span style="color: rgba(255,255,255,.55);">{{ st.owner }}</span>
+                <span style="flex: 1;"></span>
+                <span style="font-weight: 700; color: #fff;">{{ st.date }}</span>
+              </div>
+            </div>
+          </li>
+        </sc-for>
+      </ol>
+    </section>
+
+    <footer style="margin-top: 96px; padding-top: 24px; border-top: 1px solid rgba(255,255,255,.08); display: flex; flex-wrap: wrap; gap: 12px; justify-content: center; text-align: center; font-size: 12px; color: rgba(255,255,255,.5);">
+      <span style="font-weight: 700; letter-spacing: .18em; color: var(--blue-400);">BUILT WITH GRIT IN DETROIT</span>
+    </footer>
+  </main>
+
+  <sc-if value="{{ intakeOpen }}" hint-placeholder-val="{{ false }}">
+    <div role="dialog" aria-modal="true" aria-label="Intake form" style="position: fixed; inset: 0; z-index: 100; display: flex; align-items: center; justify-content: center; padding: clamp(12px, 3vw, 40px); background: rgba(0,8,18,.86); backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px); overflow-y: auto; overscroll-behavior: contain; animation: kx-rise 240ms cubic-bezier(.16,1,.3,1) both;">
+      <div onClick="{{ closeIntake }}" style="position: absolute; inset: 0;"></div>
+      <div style="position: relative; width: 100%; max-width: 1320px; margin: auto; padding: clamp(18px, 2.6vw, 28px); border-radius: 16px; border: 1px solid rgba(0,204,255,.28); background: linear-gradient(180deg, rgba(9,16,30,.97), rgba(4,8,18,.98)); box-shadow: inset 0 1px 0 rgba(0,204,255,.34), 0 40px 120px rgba(0,0,0,.7), 0 0 90px rgba(0,204,255,.10);">
+        <button type="button" data-focusable="1" onClick="{{ closeIntake }}" aria-label="Close" style="position: absolute; top: 16px; right: 16px; display: grid; place-items: center; width: 34px; height: 34px; border-radius: 8px; border: 1px solid rgba(0,204,255,.28); background: rgba(4,10,20,.9); color: #fff; cursor: pointer; padding: 0; transition: all 200ms cubic-bezier(.16,1,.3,1);" style-hover="border-color: rgba(0,204,255,.5); background: rgba(0,204,255,.16)"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 6L6 18"></path><path d="M6 6l12 12"></path></svg></button>
+        <sc-if value="{{ intakeIsZip }}" hint-placeholder-val="{{ false }}">
+        <div style="font-size: 11px; font-weight: 600; letter-spacing: .18em; text-transform: uppercase; color: var(--lime-300);">Intake form · Location list</div>
+        <h3 style="margin: 8px 0 0; padding-right: 44px; font-size: clamp(20px, 2.2vw, 28px); font-weight: 700; letter-spacing: -.025em; line-height: 1.1; color: #fff;">One row per location, one ad per row</h3>
+        <p style="margin: 8px 0 0; max-width: 700px; text-wrap: pretty; font-size: 14px; line-height: 1.5; color: rgba(255,255,255,.72);">The client fills in this sheet. Each row becomes a version of the ad, and the ZIP code decides which version a person sees.</p>
+
+        <div style="margin-top: clamp(14px, 2vh, 22px); border-radius: 12px; border: 1px solid rgba(255,255,255,.1); background: rgba(255,255,255,.035); overflow-x: auto;">
+          <div style="min-width: 940px;">
+            <div style="display: grid; grid-template-columns: 1.1fr 1.2fr 1fr .6fr .45fr .5fr .95fr 1.6fr .9fr; gap: 12px; padding: 12px 16px; border-bottom: 1px solid rgba(0,204,255,.28); font-size: 10px; font-weight: 600; letter-spacing: .14em; text-transform: uppercase; color: rgba(255,255,255,.5);">
+              <span>Name</span><span>Address</span><span>City</span><span style="color: var(--blue-300);">ZIP</span><span>State</span><span>Country</span><span>Phone</span><span>Opening hours</span><span>Website</span>
+            </div>
+            <sc-for list="{{ intakeRows }}" as="row" hint-placeholder-count="2">
+              <div style="display: grid; grid-template-columns: 1.1fr 1.2fr 1fr .6fr .45fr .5fr .95fr 1.6fr .9fr; gap: 12px; align-items: start; padding: 14px 16px; border-bottom: 1px solid rgba(255,255,255,.07); font-size: 13px; line-height: 1.4; color: rgba(255,255,255,.82);">
+                <span style="display: flex; flex-direction: column; gap: 5px; min-width: 0;"><span style="font-weight: 650; color: #fff;">{{ row.name }}</span><sc-if value="{{ row.hasLabel }}" hint-placeholder-val="{{ false }}"><span style="align-self: flex-start; padding: 2px 8px; border-radius: 999px; border: 1px solid rgba(190,242,100,.4); background: rgba(190,242,100,.08); font-size: 10px; font-weight: 600; color: var(--lime-300); white-space: nowrap;">{{ row.reportLabel }}</span></sc-if></span>
+                <span>{{ row.address }}</span>
+                <span>{{ row.city }}</span>
+                <span><span style="display: inline-block; padding: 2px 8px; border-radius: 999px; border: 1px solid rgba(0,204,255,.55); background: rgba(0,204,255,.12); font-family: ui-monospace, monospace; font-size: 12px; font-weight: 600; color: #fff; box-shadow: 0 0 14px rgba(0,204,255,.2);">{{ row.zip }}</span></span>
+                <span>{{ row.state }}</span>
+                <span>{{ row.country }}</span>
+                <span style="white-space: nowrap;">{{ row.phone }}</span>
+                <span style="font-size: 12px; color: rgba(255,255,255,.7);">{{ row.openingHours }}</span>
+                <a href="{{ row.website }}" target="_blank" rel="noopener" style="font-size: 12px; font-weight: 600; white-space: nowrap;">Store page</a>
+              </div>
+            </sc-for>
+            <sc-for list="{{ intakeBlanks }}" as="b" hint-placeholder-count="3">
+              <div style="display: grid; grid-template-columns: 1.1fr 1.2fr 1fr .6fr .45fr .5fr .95fr 1.6fr .9fr; gap: 12px; padding: 14px 16px; border-bottom: 1px solid rgba(255,255,255,.05);">
+                <span style="height: 8px; border-radius: 4px; background: rgba(255,255,255,.05);"></span><span style="height: 8px; border-radius: 4px; background: rgba(255,255,255,.05);"></span><span style="height: 8px; border-radius: 4px; background: rgba(255,255,255,.05);"></span><span style="height: 8px; border-radius: 4px; background: rgba(0,204,255,.07);"></span><span></span><span></span><span></span><span></span><span></span>
+              </div>
+            </sc-for>
+          </div>
+        </div>
+
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 12px; margin-top: clamp(14px, 2vh, 22px);">
+          <div style="padding: 14px 16px; border-radius: 10px; border: 1px solid rgba(0,204,255,.28); background: rgba(255,255,255,.055); box-shadow: inset 0 1px 0 rgba(0,204,255,.34);">
+            <div style="font-size: 13px; font-weight: 600; color: #fff;">ZIP Code Targets</div>
+            <div style="margin-top: 4px; font-size: 12.5px; line-height: 1.45; color: rgba(255,255,255,.7);">Each ZIP is a targeting value. Pick 48307 or 48326 in the menu and that row serves.</div>
+          </div>
+          <div style="padding: 14px 16px; border-radius: 10px; border: 1px solid rgba(0,204,255,.28); background: rgba(255,255,255,.055); box-shadow: inset 0 1px 0 rgba(0,204,255,.34);">
+            <div style="font-size: 13px; font-weight: 600; color: #fff;">Address Becomes Copy</div>
+            <div style="margin-top: 4px; font-size: 12.5px; line-height: 1.45; color: rgba(255,255,255,.7);">City and street fill the local line and the address at the bottom of the ad.</div>
+          </div>
+          <div style="padding: 14px 16px; border-radius: 10px; border: 1px solid rgba(0,204,255,.28); background: rgba(255,255,255,.055); box-shadow: inset 0 1px 0 rgba(0,204,255,.34);">
+            <div style="font-size: 13px; font-weight: 600; color: #fff;">Report Label</div>
+            <div style="margin-top: 4px; font-size: 12.5px; line-height: 1.45; color: rgba(255,255,255,.7);">An optional tag that groups rows in reporting, so results read by location.</div>
+          </div>
+        </div>
+        </sc-if>
+        <sc-if value="{{ intakeIsFeed }}" hint-placeholder-val="{{ false }}">
+        <div style="font-size: 11px; font-weight: 600; letter-spacing: .18em; text-transform: uppercase; color: var(--lime-300);">{{ feed.eyebrow }}</div>
+        <h3 style="margin: 8px 0 0; padding-right: 44px; font-size: clamp(20px, 2.2vw, 28px); font-weight: 700; letter-spacing: -.025em; line-height: 1.1; color: #fff;">{{ feed.title }}</h3>
+        <p style="margin: 8px 0 0; max-width: 700px; text-wrap: pretty; font-size: 14px; line-height: 1.5; color: rgba(255,255,255,.72);">{{ feed.lead }}</p>
+
+        <div style="margin-top: clamp(14px, 2vh, 22px); border-radius: 12px; border: 1px solid rgba(255,255,255,.1); background: rgba(255,255,255,.035); overflow-x: auto;">
+          <div style="min-width: {{ feed.minW }};">
+            <div style="display: grid; grid-template-columns: {{ feed.cols }}; gap: 24px; padding: 12px 16px; border-bottom: 1px solid rgba(0,204,255,.28); font-size: 10px; font-weight: 600; letter-spacing: .14em; text-transform: uppercase; color: rgba(255,255,255,.5);">
+              <span style="color: var(--blue-300);">{{ feed.trigger }}</span>
+              <span style="display: flex; align-items: center; gap: 8px;">Headline<span style="padding: 1px 6px; border-radius: 4px; border: 1px solid rgba(255,255,255,.16); font-size: 9px; letter-spacing: .1em; color: rgba(255,255,255,.55);">Text</span></span>
+              <span style="display: grid; grid-template-columns: {{ feed.imgCols }}; gap: 14px;"><sc-for list="{{ feed.imgHeads }}" as="ih" hint-placeholder-count="1"><span style="display: flex; align-items: center; gap: 8px; min-width: 0; white-space: nowrap;">{{ ih.label }}<span style="padding: 1px 6px; border-radius: 4px; border: 1px solid rgba(255,255,255,.16); font-size: 9px; letter-spacing: .1em; color: rgba(255,255,255,.55);">Image</span></span></sc-for></span>
+              <sc-if value="{{ feed.hasCta }}" hint-placeholder-val="{{ false }}"><span style="display: flex; align-items: center; gap: 8px;">CTA<span style="padding: 1px 6px; border-radius: 4px; border: 1px solid rgba(255,255,255,.16); font-size: 9px; letter-spacing: .1em; color: rgba(255,255,255,.55);">Text</span></span></sc-if>
+              <span>Report label</span>
+            </div>
+            <sc-for list="{{ feed.rows }}" as="row" hint-placeholder-count="3">
+              <div style="display: grid; grid-template-columns: {{ feed.cols }}; gap: 24px; align-items: center; padding: 12px 16px; border-bottom: 1px solid rgba(255,255,255,.07); font-size: 13px; line-height: 1.4; color: rgba(255,255,255,.82);">
+                <span style="display: flex; align-items: center; min-width: 0;"><span style="display: inline-block; padding: 2px 9px; border-radius: 999px; border: 1px solid rgba(0,204,255,.55); background: rgba(0,204,255,.12); font-size: 12px; font-weight: 600; color: #fff; box-shadow: 0 0 14px rgba(0,204,255,.2);">{{ row.range }}</span></span>
+                <span style="font-weight: 600; color: #fff;">{{ row.headline }}</span>
+                <span style="display: grid; grid-template-columns: {{ feed.imgCols }}; gap: 14px; min-width: 0;">
+                  <sc-for list="{{ row.images }}" as="im" hint-placeholder-count="1">
+                    <span style="display: flex; align-items: center; gap: 8px; min-width: 0;"><span aria-hidden="true" style="{{ im.thumbStyle }}">{{ im.tagText }}</span><span style="min-width: 0; overflow-wrap: anywhere; font-family: ui-monospace, monospace; font-size: 11px; line-height: 1.35; color: rgba(255,255,255,.7);">{{ im.file }}</span></span>
+                  </sc-for>
+                </span>
+                <sc-if value="{{ feed.hasCta }}" hint-placeholder-val="{{ false }}"><span><span style="display: inline-block; padding: 5px 12px; border-radius: 999px; background: #0058a3; color: #fff; font-size: 12px; font-weight: 700; white-space: nowrap;">{{ row.cta }}</span></span></sc-if>
+                <span><span style="display: inline-block; padding: 2px 8px; border-radius: 999px; border: 1px solid rgba(190,242,100,.4); background: rgba(190,242,100,.08); font-size: 11px; font-weight: 600; color: var(--lime-300);">{{ row.label }}</span></span>
+              </div>
+            </sc-for>
+            <sc-for list="{{ intakeBlanks }}" as="b" hint-placeholder-count="2">
+              <div style="display: grid; grid-template-columns: {{ feed.cols }}; gap: 24px; padding: 14px 16px; border-bottom: 1px solid rgba(255,255,255,.05);">
+                <span style="height: 8px; border-radius: 4px; background: rgba(0,204,255,.07);"></span><span style="height: 8px; border-radius: 4px; background: rgba(255,255,255,.05);"></span><span style="height: 8px; border-radius: 4px; background: rgba(255,255,255,.05);"></span><span></span>
+              </div>
+            </sc-for>
+          </div>
+        </div>
+
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 12px; margin-top: clamp(14px, 2vh, 22px);">
+          <div style="padding: 14px 16px; border-radius: 10px; border: 1px solid rgba(0,204,255,.28); background: rgba(255,255,255,.055); box-shadow: inset 0 1px 0 rgba(0,204,255,.34);">
+            <div style="font-size: 13px; font-weight: 600; color: #fff;">{{ feed.c1t }}</div>
+            <div style="margin-top: 4px; font-size: 12.5px; line-height: 1.45; color: rgba(255,255,255,.7);">{{ feed.c1d }}</div>
+          </div>
+          <div style="padding: 14px 16px; border-radius: 10px; border: 1px solid rgba(0,204,255,.28); background: rgba(255,255,255,.055); box-shadow: inset 0 1px 0 rgba(0,204,255,.34);">
+            <div style="font-size: 13px; font-weight: 600; color: #fff;">{{ feed.c2t }}</div>
+            <div style="margin-top: 4px; font-size: 12.5px; line-height: 1.45; color: rgba(255,255,255,.7);">{{ feed.c2d }}</div>
+          </div>
+          <div style="padding: 14px 16px; border-radius: 10px; border: 1px solid rgba(0,204,255,.28); background: rgba(255,255,255,.055); box-shadow: inset 0 1px 0 rgba(0,204,255,.34);">
+            <div style="font-size: 13px; font-weight: 600; color: #fff;">{{ feed.c3t }}</div>
+            <div style="margin-top: 4px; font-size: 12.5px; line-height: 1.45; color: rgba(255,255,255,.7);">{{ feed.c3d }}</div>
+          </div>
+        </div>
+        </sc-if>
+      </div>
+    </div>
+  </sc-if>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+const SKIP = true;
+const LOGO = { t: 'Brand Logo', d: '.svg or .eps preferred. Otherwise .png or .jpg at 300×100 minimum so it scales.', skip: SKIP };
+const SHOTS = { t: 'Raw Product Shots or Illustrations', d: 'Original .png or .jpg files in case resizing is needed.', skip: SKIP };
+const FONTS = { t: 'Font Files', d: 'TTF, OTF, or WOFF.' };
+const COLORS = { t: 'Color Specifications', d: 'Brand or campaign colors as hex values, e.g. #FFFFFF.', skip: SKIP };
+const COPY = { t: 'Copy Specifications', d: 'Headline, subheadline, body copy, carousel copy (if applicable), and CTA button copy.', skip: SKIP };
+const LINKS = { t: "Links and UTM's", d: 'All links or UTMs for the main click-out, plus any carousel product click-outs.' };
+const VIDEO = { t: 'Featured Video Content', d: '1920×1080 .mp4, :15, :30, or :60 in length.' };
+const DYN = { t: 'Dynamic Requirements', d: 'Nearest-location ads need the example location list. Rule-based asset swaps need the dynamic rules-based feed. Templates provided.' };
+const AHEAD = 'Assets are due per the final production schedule. Late delivery pushes go-live day for day.';
+const DISPLAY_SIZES = [['Leaderboard', '728×90', 'Desktop · Tablet'], ['Medium Rectangle', '300×250', 'Desktop · Tablet · Mobile'], ['Halfpage', '300×600', 'Desktop · Tablet'], ['Skyscraper', '160×600', 'Desktop'], ['Mobile Display', '300×50', 'Mobile'], ['Mobile Display', '320×50', 'Mobile']];
+
+const CHANNELS = [
+  { id: 'display-client', label: 'Display · Client Built', group: 'Display & Dynamic', title: 'Client-built display',
+    lede: 'Finished static, animated, or HTML5 banners supplied ready to traffic. A landing page is required for every asset.',
+    limit: '12 ad units per $10K minimum',
+    stats: [['Formats', 'JPG, GIF, PNG, animated GIF, HTML5'], ['Max File Weight', '150 KB static'], ['Animation', ':15 looping max'], ['Frame Rate', '18–24 fps'], ['Lead Time', '5 business days'], ['Ad Serving', '3rd party, 1×1 pixel, or click tag']],
+    tables: [
+      { title: 'Recommended sizes', cols: ['Placement', 'Size', 'Devices'], rows: [...DISPLAY_SIZES, ['Tablet Interstitial Landscape', '1024×768', 'Tablet'], ['Tablet Interstitial Portrait', '768×1024', 'Tablet'], ['Large Rectangle', '336×280', 'Desktop · Tablet']] },
+      { title: 'HTML5 file sizes', cols: ['Requirement', 'Maximum'], rows: [['Initial load', '300 KB (200 KB recommended)'], ['Subload', '600 KB'], ['Initial file count', '10 files'], ['Subload file count', '100 files'], ['Total file size', '5 MB'], ['User-initiated load', '2.2 MB recommended'], ['Primary HTML file', '100 KB'], ['Auto-started video', 'Under 1.1 MB'], ['Any individual file', '2.2 MB'], ['ZIP compressed / uncompressed', 'Under 10 MB / under 12 MB']] }
+    ],
+    notes: ['HTML5: never hardcode the landing page URL. It is set at upload, and a hardcoded URL cannot be overridden.', 'clickTAG is case-sensitive. The Trade Desk defaults to clickTAG, and clicks must open in a new window.', 'Package as a single HTML file, or one root HTML file with supporting images, JS, and CSS.'] },
+  { id: 'display-kortx', label: 'Display · KORTX Built', group: 'Display & Dynamic', title: 'KORTX-built display',
+    lede: 'KORTX designs and builds the banner set from your layered files. Dynamic display costs extra, production requirements stay the same.',
+    limit: '12 ad units per $10K minimum',
+    stats: [['Preferred Source', 'Layered PSD or layered Figma file'], ['Also Accepted', 'JPG, GIF, PNG, or HTML5'], ['Max File Weight', '150 KB flat image, no max for layered files'], ['Animation', ':15 looping max'], ['Lead Time', '5 business days'], ['Ad Serving', '3rd party, 1×1 pixel, or click tag']],
+    tables: [{ title: 'Recommended sizes', cols: ['Placement', 'Size', 'Devices'], rows: DISPLAY_SIZES }],
+    assets: [LOGO, SHOTS, FONTS, { t: "Links and UTM's", d: 'Link or UTM for the main click-out.' }, COLORS, COPY, DYN],
+    notes: [AHEAD] },
+  { id: 'rich', label: 'Rich Media', group: 'Rich Media', title: 'Rich media',
+    lede: 'Interactive 300×600 and 300×250 units built by KORTX, with optional 3–5 image carousels and video.',
+    limit: '2 ad sizes, 1 set per $10K',
+    stats: [['Acceptable Format', 'Layered PSD or Figma, 16:9 video placeholder if applicable'], ['Carousel', 'Yes, 3–5 images'], ['Build Time', '4 business days'], ['Revisions', 'Within 48 hours of feedback'], ['Ad Serving', '3rd party, 1×1 pixel, or click tag'], ['Built By', 'KORTX']],
+    tables: [{ title: 'Sizes', cols: ['Type', 'Size'], rows: [['Desktop', '300×600'], ['Mobile', '300×250']] }],
+    assets: [LOGO, SHOTS, FONTS, VIDEO, LINKS, COLORS, COPY, DYN], notes: [AHEAD] },
+  { id: 'iv', label: 'Interactive Video', group: 'Interactive Video', title: 'Interactive video',
+    lede: 'A 1920×1080 video skin built by KORTX. Recommended for desktop; mobile supports the overlay layout only.',
+    limit: '1 creative tag per line item',
+    stats: [['Creative Size', '1920×1080'], ['Acceptable Format', 'Layered PSD or Figma with 16:9 video placeholder'], ['Carousel', 'Yes, 3–5 images'], ['Raw Assets', 'PNG images, SVG/AI logos, font files'], ['Build Time', '4 business days'], ['Ad Serving', '3rd party, 1×1 pixel, or click tag']],
+    tables: [],
+    assets: [LOGO, SHOTS, FONTS, { t: 'Featured Video Content', d: 'The video that sits on the skin. 1920×1080 .mp4, :15, :30, or :60.' }, LINKS, COLORS, COPY, DYN], notes: [AHEAD] },
+  { id: 'olv', label: 'Online Video', group: 'Video', title: 'Online video · pre-roll',
+    lede: 'Hosted MP4 gives the widest scale across mobile, desktop, and CTV. VAST is standard for third-party in-stream.',
+    limit: '4 per $10K monthly budget',
+    stats: [['Ad Length', ':15 and :30'], ['File Size', '200 MB hosted'], ['Dimensions', '1920×1080 recommended, 1280×720 minimum'], ['Formats', 'MP4, WebM, MOV, MPG, MPEG'], ['Codec', 'H.264'], ['Min Bit Rate', '2,500 kbps'], ['Frame Rate', '24–25 or 29–30 fps'], ['VAST', '2.0 and higher']],
+    tables: [
+      { title: 'Format support by environment', cols: ['Creative Type', 'Mobile', 'Desktop', 'Connected TV'], rows: [['Hosted video', 'Yes, web and in-app', 'Yes', 'Yes'], ['VAST', 'Yes, use instead of VPAID in-app', 'Yes', 'Yes, with a high-quality MP4'], ['VPAID', 'Web only', 'If the player accepts VPAID', 'No'], ['MRAID', 'In-app interstitials only', 'No', 'No']] },
+      { title: 'Resolution and bitrate (16:9)', cols: ['Tier', 'Resolution', 'Target Bitrate'], rows: [['Low', '640×360 (360p or less)', '500–700 kbps'], ['Standard', '854×480 or 1024×576', '700–1,500 kbps'], ['High', '1280×720 or 1920×1080', '1,500–3,500 kbps']] }
+    ] },
+  { id: 'ctv', label: 'CTV', group: 'Connected TV', title: 'Connected TV',
+    lede: 'MP4 only, VAST tags only for third party. Share creative with the publisher before activation.',
+    limit: '4 per $10K monthly budget',
+    stats: [['File Type', 'MP4 only, no WebM'], ['Resolution', '1920×1080'], ['Frame Rate', '23.98 or 29.97 fps'], ['Bit Rate', '15,000–30,000 kbps'], ['Ad Length', ':15 and :30'], ['Audio', '48 kHz, 192 kbps min'], ['Serving', '3rd party or KORTX served'], ['Tags', 'VAST only, no VPAID, SSL required']],
+    tables: [],
+    assets: [{ t: 'Layered Source File', d: '1920×1080 layered PSD or Figma file for video with skins.' }, { t: 'Video', d: '1920×1080 .mp4, :15, :30, or :60.' }, LOGO, SHOTS, FONTS, COLORS, COPY, { t: 'QR Code', d: 'QR code image or destination URL.', skip: SKIP }],
+    notes: ['One tag per creative media asset. Rotating files through one tag is not recommended.', 'FreeWheel CTV creatives require publisher verification.', AHEAD] },
+  { id: 'pip', label: 'PiP CTV', group: 'Connected TV', title: 'Picture-in-picture CTV',
+    lede: 'L-bar and framed-offset placements. Monitoring tags only, blocking is not accepted.',
+    limit: '4 per $10K monthly budget',
+    stats: [['Duration', '5–30 seconds'], ['Aspect Ratio', '16:9'], ['Dimensions', '1920×1080, 1290×720 minimum'], ['Frame Rate', '25–30 fps'], ['Codecs', 'MOV H.264 High, ProRes 422 or 422HQ'], ['Trackers', '1×1 pixels, quartiles, clicks where available']],
+    tables: [{ title: '3rd-party VAST transcodes', cols: ['Bit Rate', 'Min Dimensions', ':15 Max', ':30 Max'], rows: [['8–30 Mbps', '1920×1080', 'Duration × bitrate', 'Duration × bitrate'], ['3,000 kbps+', '1280×720', '4.5 MB', '9 MB'], ['1,200 kbps+', '854×480', '3.5 MB', '7 MB'], ['500 kbps+', '640×360', '1.8 MB', '3.5 MB']] }],
+    notes: ['VAST 2 required for desktop, mobile, and OTT, with at least three bitrates. VPAID is not supported.', 'Audio: AAC-LC stereo, 44.1–48 kHz, peaks between -12 dB and -24 dB.', 'No skippable ads, no .3GPP, and a maximum of one VAST wrapper redirect. Interlaced video is not accepted.'] },
+  { id: 'audio', label: 'Audio', group: 'Audio', title: 'Programmatic audio',
+    lede: 'Up to :60 spots with optional companion banners. Publisher-specific specs take priority.',
+    limit: '4 per $10K monthly budget',
+    stats: [['Ad Length', ':15 to :60'], ['File Types', 'MP3, M4A, OGG, WAV'], ['Bit Rate', '160 kbps min, constant for MP3'], ['File Size', '1 GB'], ['VAST', '2.0 most widely supported'], ['Tracking', '1×1 pixel only, https click-throughs']],
+    tables: [{ title: 'Publisher requirements', cols: ['Publisher', 'File Type', 'Length', 'Bit Rate', 'Companion'], rows: [['SXM Media (Pandora, SoundCloud, Stitcher)', 'MP3, 2.2 MB max', ':15 or :30', '320 kbps max', 'JPEG, GIF 100 KB'], ['Spotify', 'MP4, MOV, OGG, 500 MB max', 'Up to :30', '192–1,000 kbps', 'JPEG, GIF 200 KB'], ['iHeart Media', 'MP3, WAV, WMA, OGG', ':05, :15, :30, :60', '128 kbps min', 'JPEG, GIF, PNG, HTML 50 KB']] }] },
+  { id: 'native', label: 'Native', group: 'Native', title: 'Native display',
+    lede: 'Components assembled by the publisher to match the page. Trackers must be secure 1×1 image tags.',
+    limit: '4 per $10K monthly budget',
+    tables: [{ title: 'Components', cols: ['Element', 'Specification'], rows: [['Main image', '1200×627 (1.91:1), under 2000×2000 and 2 MB'], ['Main video', '5 minutes max, under 2 GB'], ['Icon', '200×200 (1:1)'], ['Logo', '200×200 (1:1)'], ['Short title', '25 characters max'], ['Long title', '90 characters max'], ['Short description', '90 characters max'], ['Long description', '140 characters max'], ['Sponsor', '25 characters recommended, 100 max'], ['Call to action', '15 characters max']] }] },
+  { id: 'dooh', label: 'DOOH', group: 'Digital Out-of-Home', title: 'Digital out-of-home',
+    lede: 'Billboard and screen placements, supplied as layered PSDs at 72–150 dpi.',
+    limit: '4 per $10K monthly budget',
+    stats: [['File Type', '.psd'], ['Resolution', '72–150 dpi']],
+    tables: [{ title: 'Recommended sizes', cols: ['Size', 'Orientation'], rows: [['1400×400', 'Landscape'], ['1600×400', 'Landscape'], ['1200×400', 'Landscape'], ['1000×400', 'Landscape'], ['840×400', 'Landscape'], ['1920×1080', 'Landscape'], ['1280×960', 'Landscape'], ['1200×1200', 'Square'], ['1080×1920', 'Portrait']] }] },
+  { id: 'social', label: 'Social', group: 'Meta · X · LinkedIn', title: 'Paid social',
+    lede: 'Placements follow each platform\u2019s own spec pages. KORTX needs partner access to run them.',
+    limit: '4 ads and 4 swaps per $10K monthly',
+    tables: [{ title: 'Ad types and access', cols: ['Platform', 'Ad Types', 'KORTX Access'], rows: [['Facebook & Instagram', 'Video, photo, carousel, collection, stories', 'Business Manager › Ad Account › Assign Partner › Advertiser role, ID 898470343575670'], ['LinkedIn', 'Single image, carousel, video, click-to-message, event, thought leader, CTV', 'Business Manager › Partners › Add Partner › Advertiser role, ID 7028748167546380288'], ['X (Twitter)', 'Website cards, promoted video', 'Edit Access to Account › add @KORTXIO as Account Administrator']] },
+      { title: 'X promoted video', cols: ['Requirement', 'Specification'], rows: [['Tweet copy', '116 characters in Ads Manager'], ['File size', 'Under 1 GB recommended'], ['Max length', '2:20'], ['Codec', 'H.264, 4:2:0'], ['Frame rate', '29.97 or 30 fps'], ['Bitrate', '6,000k for 1080p, 5,000k for 720p'], ['Thumbnail', '640×360 min, 5 MB max']] }] },
+  { id: 'pmax', label: 'Performance Max', group: 'Google', title: 'Performance Max',
+    lede: 'Google assembles ads from an asset pool. More variety in each slot means better optimization.',
+    tables: [
+      { title: 'Images', cols: ['Type', 'Minimum', 'Recommended', 'Maximum'], rows: [['Landscape 1.91:1', '1', '4 at 1200×628', '20'], ['Square 1:1', '1', '4 at 1200×1200', '20'], ['Portrait 4:5', '—', '2 at 960×1200', '20'], ['Square logo 1:1', '1', '1 at 1200×1200', '5'], ['Landscape logo 4:1', '—', '1 at 1200×300', '5']] },
+      { title: 'Ad copy', cols: ['Type', 'Minimum', 'Maximum', 'Character Limit'], rows: [['Headlines', '3', '15', '30'], ['Long headlines', '2', '5', '90'], ['Description 1', '1', '1', '60'], ['Description 2', '1', '4', '90'], ['Business name', '1', '1', '25']] },
+      { title: 'Video', cols: ['Orientation', 'Size', 'Recommended'], rows: [['Horizontal 16:9', '1920×1080', '1 video, :10 or longer'], ['Vertical 9:16', '1080×1920', '1 video, :10–:60 for Shorts'], ['Square 1:1', '1080×1080', '1 video, :10 or longer']] }
+    ],
+    notes: ['Upload logos as square images and avoid white logos on transparent backgrounds; they render on white.', 'Video at 1080p, up to 256 GB. Audio-only files are not accepted.'] }
+];
+
+const CHECKLIST = [
+  { t: 'Raw Video', d: '1920×1080 at :15, :30, or :60 for interactive video and CTV.', tags: ['.MOV', '.mp4 H.264'] },
+  { t: 'PSD Layouts', d: '300×600 and 300×250 for rich media. 1920×1080 for video. 300×600, 300×250, 160×600, 728×90, 320×50 for banners.', tags: ['Layered PSD', 'Figma'] },
+  { t: 'Font Files', d: 'Every typeface used in the layouts.', tags: ['TTF', 'OTF', 'WOFF'] },
+  { t: 'Brand Guidelines', d: 'Keeps colors, copy, and layout on-brand.', tags: ['PDF', 'Hex values'] },
+  { t: 'Links', d: 'Website URLs and UTM trackers for every click-out.', tags: ['URLs', 'UTMs'] },
+  { t: 'Dynamic Data', d: 'Location and dynamic asset lists. Templates provided.', tags: ['Location list', 'Rules feed'], links: [{ id: 'feed', label: 'Dynamic Asset Feed Template', see: 'See Dynamic Feed Intake Form', href: 'https://fdjfsimjilicmfsiijyi.supabase.co/storage/v1/object/public/Client%20Dynamic%20Templates/Dynamic%20Display%20Rule%20Based%20Feed%20Sheet.xlsx?download=KORTX-Dynamic-Asset-Feed-Template.xlsx' }, { id: 'loc', label: 'Location List Template', see: 'See Location List Intake Form', href: 'https://fdjfsimjilicmfsiijyi.supabase.co/storage/v1/object/public/Client%20Dynamic%20Templates/Example%20Location%20List.xlsx?download=KORTX-Location-List-Template.xlsx' }] },
+  { t: 'Raw Images', d: 'Logos and product imagery for resizing.', tags: ['SVG logos', 'PNG images'] }
+];
+
+const INTAKE_ROWS = [
+  { name: 'Tropical Smoothie', address: '1288 Walton Blvd.', city: 'Rochester Hills', zip: '48307', state: 'MI', country: 'USA', phone: '248-923-2700', openingHours: 'MON - FRI: 7am - 9pm, SAT: 8am - 9pm, SUN: 8am - 9pm', website: 'https://locations.tropicalsmoothiecafe.com/mi/rochester-hills/1288-walton-blvd.', reportLabel: '' },
+  { name: 'Tropical Smoothie', address: '2709 University Dr', city: 'Auburn Hills', zip: '48326', state: 'MI', country: 'USA', phone: '248-481-6769', openingHours: 'MON - FRI: 7am - 9pm, SAT: 8am - 9pm, SUN: 8am - 9pm', website: 'https://locations.tropicalsmoothiecafe.com/mi/auburn-hills/2709-university-drive', reportLabel: '' }
+];
+const FEED_THUMB = src => ({ flex: 'none', width: 40, height: 40, borderRadius: 8, border: '1px solid rgba(255,255,255,.14)', background: 'center / cover no-repeat url("assets/intake/' + src + '")' });
+const FEED_ROW = (range, headline, src, file, label) => ({ range, headline, label, cta: '', images: [{ file, tagText: '', thumbStyle: FEED_THUMB(src) }] });
+const FEED = { eyebrow: 'Intake form · Weather feed', title: 'One row per temperature range, one ad per row', trigger: 'Temperature',
+  lead: 'The client fills in this sheet. The local temperature at the moment of the impression picks the row, and that row\'s headline and product image fill the ad.',
+  rows: [FEED_ROW('0°F to 39°F', 'Cold weather. Cozy coffee.', 'below-40.png', 'Below 40 image@2x.png', 'Naba_0°F to 40°F'),
+    FEED_ROW('40°F to 70°F', 'Chilly days. A little indulgence.', '40-70.png', '40-70 image@2x.png', 'Naba_40°F to 70°F'),
+    FEED_ROW('71°F to 100°F', 'Hot weather. Cool coffee.', 'above-70.png', 'above 70 image@2x.png', 'Naba_71°F to 100°F')],
+  imgHeads: [{ label: 'Product image' }], imgCols: 'repeat(1, minmax(0, 1fr))',
+  cols: '150px minmax(0, 1.2fr) minmax(0, 1.15fr) minmax(170px, max-content)', minW: '900px', hasCta: false,
+  c1t: 'Temperature Triggers', c1d: 'A live weather feed reads the local temperature and matches it to one of the three ranges.',
+  c2t: 'Headline And Image Swap', c2d: 'Each range carries its own headline and product shot, so the message fits the day.',
+  c3t: 'Report Label', c3d: 'Tags every impression with its range, so results read by weather.' };
+
+// Dates are whole UTC day numbers.
+const DAY = 864e5, DW = 34, LABEL = 160, ROW = 48, HEAD = 52;
+const toDay = s => Math.round(Date.parse(s + 'T00:00:00Z') / DAY);
+const toDate = n => new Date(n * DAY);
+const iso = n => toDate(n).toISOString().slice(0, 10);
+const fmt = n => toDate(n).toLocaleDateString('en-US', { month: 'short', day: 'numeric', timeZone: 'UTC' });
+const fmtL = n => toDate(n).toLocaleDateString('en-US', { weekday: 'short', month: 'short', day: 'numeric', timeZone: 'UTC' });
+const isWk = n => { const w = toDate(n).getUTCDay(); return w === 0 || w === 6; };
+const addBiz = (n, k) => { let x = n; while (k > 0) { x++; if (!isWk(x)) k--; } return x; };
+const bizBetween = (a, b) => { let c = 0; for (let x = a + 1; x <= b; x++) if (!isWk(x)) c++; return c; };
+const subBiz = (n, k) => { let x = n; while (k > 0) { x--; if (!isWk(x)) k--; } return x; };
+const snap = n => { let x = n; while (isWk(x)) x++; return x; };
+const bizGap = (a, b) => b >= a ? bizBetween(a, b) : -bizBetween(b, a);
+const COLS = 30, PRE = 20;
+const colsFrom = r0 => { const out = [r0]; while (out.length < COLS) out.push(addBiz(out[out.length - 1], 1)); return out; };
+const plural = (k, w) => `${k} business day${k === 1 ? '' : 's'}`;
+const STEP_META = [
+  { t: 'Kick-off Call', when: '15 business days out', d: 'Scheduled once the IO is signed, at least 3 weeks before launch.', owner: 'KORTX + Client' },
+  { t: 'Asset Delivery', when: '10 business days out', d: 'Provided by the client at least 2 weeks before launch.', owner: 'Client' },
+  { t: 'Asset Review', when: '1 business day', d: 'KORTX reviews within 24 hours of receiving assets and promptly requests anything missing.', owner: 'KORTX' },
+  { t: 'Production', when: '4 business days', d: 'Initial desktop mocks within 4 business days. Once approved, mobile ads and all animations are finalized.', owner: 'KORTX' },
+  { t: 'Client Feedback', when: '2 business days', d: 'The client reviews the mocks and sends consolidated feedback within 2 business days.', owner: 'Client' },
+  { t: 'Revisions', when: '2 business days', d: 'Each round is turned around within 48 hours of client feedback. All tags are implemented at this stage.', owner: 'KORTX' },
+  { t: 'Creative Audit', when: '2 business days', d: 'Allow up to 48 hours for audit before launch.', owner: 'KORTX' },
+  { t: 'Final Delivery', when: 'Launch date', d: 'KORTX delivers the final product by the date the client sets, with all links provided.', owner: 'KORTX' }
+];
+const schedule = L => { L = snap(L); const kick = subBiz(L, 15), assets = subBiz(L, 11), review = addBiz(assets, 1), mocks = addBiz(review, 4), fb = addBiz(mocks, 2), rev = addBiz(fb, 2); return [kick, assets, review, mocks, fb, rev, subBiz(L, 2), L]; };
+
+class Component extends DCLogic {
+  constructor(p) {
+    super(p);
+    const L = snap(Math.round(Date.now() / DAY) + 30);
+    this.state = { tab: 'display-client', sec: 'assets', dates: schedule(L), r0: subBiz(L, PRE) };
+    this.ganttRef = React.createRef();
+  }
+  componentDidMount() {
+    this.spy = () => {
+      if (this.lock && Date.now() < this.lock) return;
+      let cur = 'assets';
+      for (const id of ['assets', 'specs', 'process']) { const el = document.getElementById(id); if (el && el.getBoundingClientRect().top < window.innerHeight * 0.4) cur = id; }
+      if (window.innerHeight + window.scrollY >= document.documentElement.scrollHeight - 4) cur = 'process';
+      if (cur !== this.state.sec) this.setState({ sec: cur });
+    };
+    window.addEventListener('scroll', this.spy, { passive: true });
+    this.spy();
+    this.setupReveal();
+  }
+  componentWillUnmount() { window.removeEventListener('scroll', this.spy); this.io && this.io.disconnect(); this.mo && this.mo.disconnect(); this.endDrag && this.endDrag(); }
+  setupReveal() {
+    const root = document.querySelector('[data-reveal-root]');
+    if (!root) return;
+    if (!('IntersectionObserver' in window)) { root.querySelectorAll('[data-reveal]').forEach(el => el.setAttribute('data-in', '')); return; }
+    this.io = new IntersectionObserver(entries => {
+      const hits = entries.filter(e => e.isIntersecting).map(e => e.target).sort((a, b) => a.getBoundingClientRect().top - b.getBoundingClientRect().top || a.getBoundingClientRect().left - b.getBoundingClientRect().left);
+      let head = 0, card = 0, hasText = false;
+      hits.forEach(el => {
+        const kind = el.getAttribute('data-reveal');
+        let d = 0;
+        if (kind === 'head') { d = head++ * 90; hasText = true; }
+        else if (kind === 'copy') { d = 180 + head * 60; hasText = true; }
+        else d = (hasText ? 320 : 0) + card++ * 90;
+        el.style.setProperty('--rd', Math.min(d, 1100) + 'ms');
+        el.setAttribute('data-in', '');
+        this.io.unobserve(el);
+      });
+    }, { threshold: 0.12, rootMargin: '0px 0px -6% 0px' });
+    const scan = () => root.querySelectorAll('[data-reveal]:not([data-obs])').forEach(el => { el.setAttribute('data-obs', ''); this.io.observe(el); });
+    scan();
+    this.mo = new MutationObserver(scan);
+    this.mo.observe(root, { childList: true, subtree: true });
+  }
+  goSec = e => {
+    e.preventDefault();
+    const id = e.currentTarget.dataset.sec, el = document.getElementById(id);
+    this.lock = Date.now() + 900;
+    this.setState({ sec: id });
+    if (el) window.scrollTo({ top: el.getBoundingClientRect().top + window.scrollY - 88, behavior: 'smooth' });
+    e.currentTarget.blur();
+  };
+  pick = e => this.setState({ tab: e.currentTarget.dataset.id });
+  openIntake = e => { this.setState({ intake: e.currentTarget.dataset.form }); this.onEsc = ev => { if (ev.key === 'Escape') this.closeIntake(); }; window.addEventListener('keydown', this.onEsc); document.body.style.overflow = 'hidden'; };
+  closeIntake = () => { this.setState({ intake: null }); window.removeEventListener('keydown', this.onEsc); document.body.style.overflow = ''; };
+  setDate = (i, k) => this.setState(s => {
+    const cols = colsFrom(s.r0), dates = s.dates.slice();
+    dates[i] = cols[Math.max(0, Math.min(COLS - 1, k))];
+    return { dates };
+  });
+  colOf = n => colsFrom(this.state.r0).indexOf(n);
+  onDown = e => {
+    if (e.button !== undefined && e.button !== 0) return;
+    const i = +e.currentTarget.dataset.i, x0 = e.clientX, d0 = this.colOf(this.state.dates[i]), btn = e.currentTarget;
+    btn.focus();
+    const scroller = this.ganttRef.current;
+    const move = ev => {
+      this.setDate(i, d0 + Math.round((ev.clientX - x0) / DW));
+      if (scroller) { const r = scroller.getBoundingClientRect(); if (ev.clientX > r.right - 40) scroller.scrollLeft += 12; else if (ev.clientX < r.left + LABEL + 40) scroller.scrollLeft -= 12; }
+    };
+    const up = () => { window.removeEventListener('pointermove', move); window.removeEventListener('pointerup', up); window.removeEventListener('pointercancel', up); this.setState({ drag: null }); this.endDrag = null; };
+    window.addEventListener('pointermove', move);
+    window.addEventListener('pointerup', up);
+    window.addEventListener('pointercancel', up);
+    this.endDrag = up;
+    this.setState({ drag: i });
+    e.preventDefault();
+  };
+  onKey = e => {
+    const i = +e.currentTarget.dataset.i, k = e.key;
+    if (k === 'ArrowLeft' || k === 'ArrowRight') { e.preventDefault(); this.setDate(i, this.colOf(this.state.dates[i]) + (k === 'ArrowRight' ? 1 : -1) * (e.shiftKey ? 5 : 1)); }
+  };
+  onLaunch = e => { if (!e.target.value) return; const L = snap(toDay(e.target.value)); this.setState({ dates: schedule(L), r0: subBiz(L, PRE) }); };
+  reset = () => { const L = this.state.dates[7]; this.setState({ dates: schedule(L), r0: subBiz(L, PRE) }); };
+  check(D) {
+    const [kick, assets, review, mocks, fb, rev, audit, L] = D, f = {};
+    const add = (i, m) => { (f[i] = f[i] || []).push(m); };
+    const g = bizGap;
+    if (g(kick, L) < 15) add(0, `Kick-off is ${plural(g(kick, L))} before launch. It needs at least 15 (3 weeks).`);
+    if (kick > assets) { add(0, 'Kick-off has to happen before assets are delivered.'); add(1, 'Assets arrive before the kick-off call.'); }
+    if (g(assets, L) < 10) add(1, `Assets land ${plural(g(assets, L))} before launch. They are due at least 10 out (2 weeks).`);
+    if (review < assets) add(2, 'Review can\u2019t start before assets arrive.');
+    else if (g(assets, review) > 1) add(2, `Review is ${plural(g(assets, review))} after assets. KORTX reviews within 1.`);
+    if (mocks < review) add(3, 'Mocks are scheduled before the asset review.');
+    else if (g(review, mocks) < 4) add(3, `Only ${plural(g(review, mocks))} for production. Mocks need 4.`);
+    if (fb < mocks) add(4, 'Feedback is scheduled before the mocks are delivered.');
+    else if (g(mocks, fb) > 2) add(4, `Feedback is ${plural(g(mocks, fb))} after mocks. The client has 2.`);
+    if (g(fb, rev) < 2) add(5, rev < fb ? 'Revisions are scheduled before client feedback arrives.' : 'Revisions need 2 business days after client feedback.');
+    if (audit < rev) add(6, 'Audit starts before revisions are finished and tags are in.');
+    if (g(audit, L) < 2) { add(6, `Audit has ${plural(Math.max(g(audit, L), 0))} before launch. Allow 2.`); add(7, 'Launch doesn\u2019t leave 2 business days for the creative audit.'); }
+    if (D.slice(0, 7).some(d => d > L)) add(7, 'A step is scheduled after the launch date.');
+    return f;
+  }
+  renderVals() {
+    const c = CHANNELS.find(x => x.id === this.state.tab) || CHANNELS[0];
+    const tabs = CHANNELS.map(x => { const on = x.id === c.id; return { id: x.id, label: x.label, sel: String(on), style: {
+      height: 38, padding: '0 16px', borderRadius: 999, cursor: 'pointer', fontSize: 13.5, fontWeight: 600, whiteSpace: 'nowrap',
+      border: on ? '1px solid #00CCFF' : '1px solid rgba(255,255,255,.14)', background: on ? 'rgba(0,204,255,.14)' : 'rgba(255,255,255,.04)',
+      color: on ? '#fff' : 'rgba(255,255,255,.8)', boxShadow: on ? '0 0 24px rgba(0,204,255,.25)' : 'none', transition: 'all 200ms cubic-bezier(.16,1,.3,1)' } }; });
+    const cellStyle = i => ({ padding: '12px 16px', verticalAlign: 'top', lineHeight: 1.5, color: i === 0 ? '#fff' : 'rgba(255,255,255,.76)', fontWeight: i === 0 ? 600 : 400 });
+    const assets = c.assets || [], notes = c.notes || [], stats = (c.stats || []).map(([k, v]) => ({ k, v }));
+    const ch = { group: c.group, title: c.title, lede: c.lede, limit: c.limit || '', hasLimit: !!c.limit, stats, hasStats: stats.length > 0,
+      tables: (c.tables || []).map(t => ({ title: t.title, cols: t.cols, rows: t.rows.map(r => ({ cells: r.map((v, i) => ({ v, style: cellStyle(i) })) })) })),
+      assets: assets.map(a => ({ t: a.t, d: a.d, skip: !!a.skip })), hasAssets: assets.length > 0, hasSkip: assets.some(a => a.skip), notes, hasNotes: notes.length > 0 };
+
+    const sec = this.state.sec || 'assets';
+    const navLinks = [['assets', 'Required Assets'], ['specs', 'Specs by Channel'], ['process', 'Process & Timing']].map(([id, label]) => { const on = id === sec; return { id, label, href: '#' + id, cur: on ? 'true' : 'false', style: {
+      padding: '8px 14px', borderRadius: 999, fontSize: 13, fontWeight: 600, textDecoration: 'none', outline: 'none', whiteSpace: 'nowrap',
+      border: on ? '1px solid #00CCFF' : '1px solid rgba(255,255,255,.14)', background: on ? 'rgba(0,204,255,.14)' : 'transparent',
+      color: on ? '#fff' : 'rgba(255,255,255,.85)', boxShadow: on ? '0 0 24px rgba(0,204,255,.25)' : 'none', transition: 'all 200ms cubic-bezier(.16,1,.3,1)' } }; });
+
+    // Timeline
+    const D = this.state.dates, r0 = this.state.r0, N = COLS, L = D[7], cols = colsFrom(r0);
+    const fails = this.check(D), nFail = Object.keys(fails).length;
+    const ci = n => { const k = cols.indexOf(n); return k < 0 ? (n < r0 ? 0 : N - 1) : k; };
+    const x = n => LABEL + ci(n) * DW;
+    const RED = '#E5484D';
+    const ticks = cols.map((n, k) => { const dt = toDate(n), wk = false, first = k === 0 || toDate(cols[k - 1]).getUTCMonth() !== dt.getUTCMonth(), isL = n === L; return {
+      day: String(dt.getUTCDate()), month: first ? dt.toLocaleDateString('en-US', { month: 'short', timeZone: 'UTC' }) : '',
+      col: { position: 'absolute', top: 0, bottom: 0, left: x(n), width: DW, boxSizing: 'border-box', borderLeft: '1px solid rgba(255,255,255,' + (toDate(n).getUTCDay() === 1 ? '.09' : '.035') + ')', background: wk ? 'rgba(255,255,255,.035)' : 'transparent', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'flex-start', paddingTop: 10, gap: 2 },
+      mon: { fontSize: 10, fontWeight: 700, letterSpacing: '.1em', textTransform: 'uppercase', color: 'var(--lime-300)', height: 14 },
+      num: { fontSize: 12, fontWeight: isL ? 800 : 600, color: isL ? '#00CCFF' : wk ? 'rgba(255,255,255,.4)' : 'rgba(255,255,255,.75)' } }; });
+    const windows = [
+      [r0, subBiz(L, 15)], [D[0], subBiz(L, 10)], [D[1], addBiz(D[1], 1)], [addBiz(D[2], 4), D[4]], [D[3], addBiz(D[3], 2)], [addBiz(D[4], 2), D[6]], [D[5], subBiz(L, 2)], [addBiz(D[6], 2), cols[N - 1]]
+    ];
+    const lanes = D.map((n, i) => { const bad = !!fails[i], drag = this.state.drag === i, [w0, w1] = windows[i], ok = w1 >= w0; return {
+      i: String(i), t: STEP_META[i].t, date: fmt(n), aria: `${STEP_META[i].t}, ${fmtL(n)}. Use arrow keys to move.`,
+      row: { position: 'relative', height: ROW, borderTop: '1px solid rgba(255,255,255,.05)' },
+      dot: { flex: 'none', width: 8, height: 8, borderRadius: '50%', background: bad ? RED : '#00CCFF', boxShadow: bad ? '0 0 10px rgba(229,72,77,.7)' : '0 0 10px rgba(0,204,255,.6)' },
+      win: { position: 'absolute', top: 14, height: ROW - 28, left: x(Math.max(w0, r0)), width: ok ? Math.max(0, ci(Math.min(w1, cols[N - 1])) - ci(Math.max(w0, r0)) + 1) * DW : 0, borderRadius: 6, background: 'rgba(0,204,255,.08)', border: ok ? '1px dashed rgba(0,204,255,.3)' : 'none', boxSizing: 'border-box', pointerEvents: 'none' },
+      pill: { position: 'absolute', top: 9, left: x(n) + DW / 2, transform: 'translateX(-50%)' + (drag ? ' scale(1.06)' : ''), zIndex: drag ? 3 : 2, height: ROW - 18, padding: '0 12px', borderRadius: 999, whiteSpace: 'nowrap', cursor: drag ? 'grabbing' : 'grab', touchAction: 'none', userSelect: 'none',
+        fontSize: 12.5, fontWeight: 700, color: bad ? '#fff' : '#001830', background: bad ? RED : '#00CCFF', border: '1px solid ' + (bad ? '#FF8A8E' : '#66E0FF'),
+        boxShadow: bad ? '0 0 22px rgba(229,72,77,.55)' : drag ? '0 0 26px rgba(0,204,255,.7)' : '0 0 16px rgba(0,204,255,.35)', transition: drag ? 'none' : 'left 120ms cubic-bezier(.16,1,.3,1), background 200ms, box-shadow 200ms' } }; });
+    const W = LABEL + N * DW;
+    const steps = STEP_META.map((m, i) => { const bad = !!fails[i]; return { ...m, n: String(i + 1).padStart(2, '0'), date: (i === 7 ? 'Launch ' : '') + fmtL(D[i]), fail: bad, reason: bad ? fails[i].join(' ') : '',
+      card: { height: '100%', boxSizing: 'border-box', display: 'flex', flexDirection: 'column', gap: 12, padding: 22, borderRadius: 12, border: '1px solid ' + (bad ? 'rgba(229,72,77,.75)' : 'rgba(255,255,255,.08)'), background: bad ? 'linear-gradient(180deg, rgba(229,72,77,.14), rgba(229,72,77,.04)), #070B15' : '#070B15', boxShadow: bad ? '0 0 0 1px rgba(229,72,77,.25), 0 0 40px rgba(229,72,77,.22)' : 'inset 0 1px 0 rgba(255,255,255,.06), 0 24px 60px rgba(0,0,0,.45)', transition: 'transform 200ms cubic-bezier(.16,1,.3,1), border-color 200ms, box-shadow 200ms, background 200ms' },
+      num: { display: 'grid', placeItems: 'center', flex: 'none', width: 36, height: 36, borderRadius: '50%', background: bad ? 'rgba(229,72,77,.18)' : 'rgba(0,204,255,.10)', color: bad ? '#FF8A8E' : 'var(--blue-400)', fontSize: 13, fontWeight: 800 },
+      title: { flex: 1, fontSize: 17, fontWeight: 700, color: bad ? '#FFB3B5' : 'var(--blue-400)', letterSpacing: '-.01em' } }; });
+    const today = Math.round(Date.now() / DAY), daysOut = L >= today ? bizBetween(today, L) : -bizBetween(L, today);
+    return {
+      navLinks, goSec: this.goSec,
+      openIntake: this.openIntake, closeIntake: this.closeIntake, intakeOpen: !!this.state.intake, intakeIsZip: this.state.intake === 'loc', intakeIsFeed: this.state.intake === 'feed', intakeRows: INTAKE_ROWS.map(r => Object.assign({}, r, { hasLabel: !!r.reportLabel })), intakeBlanks: [{ k: 1 }, { k: 2 }, { k: 3 }], feed: FEED,
+      checklist: CHECKLIST.map((x, i) => ({ ...x, n: String(i + 1).padStart(2, '0'), links: x.links || [], hasLinks: !!x.links })),
+      tabs, pick: this.pick, ch,
+      launch: iso(L), onLaunch: this.onLaunch, reset: this.reset,
+      status: nFail ? `${nFail} step${nFail === 1 ? '' : 's'} out of spec · ${daysOut} business days to launch` : `All requirements met · ${daysOut} business days to launch`,
+      statusStyle: { display: 'inline-flex', alignItems: 'center', gap: 8, padding: '6px 12px', borderRadius: 999, fontSize: 12.5, fontWeight: 700, color: nFail ? '#FFB3B5' : 'var(--lime-300)', background: nFail ? 'rgba(229,72,77,.12)' : 'rgba(190,242,100,.1)', border: '1px solid ' + (nFail ? 'rgba(229,72,77,.5)' : 'rgba(190,242,100,.3)') },
+      ganttRef: this.ganttRef, ganttInner: { position: 'relative', width: W, minWidth: '100%', paddingTop: HEAD },
+      ticks, lanes, onDown: this.onDown, onKey: this.onKey,
+      launchLine: { position: 'absolute', top: HEAD - 6, bottom: 0, left: x(L) + DW / 2, width: 2, marginLeft: -1, background: '#00CCFF', boxShadow: '0 0 12px rgba(0,204,255,.7)', zIndex: 1, pointerEvents: 'none' },
+      steps
+    };
+  }
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <link rel="stylesheet" href="_ds/kortx-design-guide-2026-5bc7ff27-9282-4218-938a-63d43f555d47/tokens/fonts.css">
+  <link rel="stylesheet" href="_ds/kortx-design-guide-2026-5bc7ff27-9282-4218-938a-63d43f555d47/tokens/colors.css">
+  <link rel="stylesheet" href="_ds/kortx-design-guide-2026-5bc7ff27-9282-4218-938a-63d43f555d47/styles.css">
+  <script src="_ds/kortx-design-guide-2026-5bc7ff27-9282-4218-938a-63d43f555d47/_ds_bundle.js"></script>
+  <style>
+    @keyframes kxib-dash { to { stroke-dashoffset: -14 } }
+    @keyframes kx-liquid { 0% { opacity: 0; transform: translateX(-30px) scale(.55); filter: blur(9px) } 55% { opacity: 1; transform: translateX(3px) scale(1.04); filter: blur(0) } 100% { opacity: 1; transform: translateX(0) scale(1); filter: blur(0) } }
+    @keyframes kx-dragleft { 0% { transform: translateX(7px); opacity: .35 } 45% { opacity: 1 } 100% { transform: translateX(-7px); opacity: .3 } }
+    @keyframes kx-intakeglow { 0%,100% { transform: scale(1); box-shadow: 0 0 16px rgba(0,204,255,.18) } 50% { transform: scale(1.05); box-shadow: 0 0 34px rgba(0,204,255,.55), 0 0 60px rgba(0,204,255,.22) } }
+    @keyframes kx-rise { 0% { opacity: 0; transform: translateY(12px) } 100% { opacity: 1; transform: none } }
+    @keyframes kxib-glow { 0% { opacity: 0; transform: scale(1.04) } 100% { opacity: 1; transform: scale(1) } }
+  </style>
+</helmet>
+<div data-ix-root ref="{{ rootRef }}" style="width: 100%; font-family: var(--font-body, Inter, sans-serif); color: #fff;">
+
+  <!-- ══ Dynamic selector ══ -->
+  <sc-if value="{{ isDynamic }}" hint-placeholder-val="{{ false }}">
+    <div style="max-width: 1040px; margin: 0 auto;">
+      <div style="display: flex; justify-content: center;">
+        <div style="position: relative; z-index: 60; width: min(100%, 420px); box-sizing: border-box; display: grid; grid-template-columns: minmax(0, 1fr); padding: clamp(24px, 3.2vh, 32px) 6px clamp(10px, 1.4vh, 16px); border-radius: 12px; border: 1px solid rgba(0,204,255,.28); background: rgba(255,255,255,.055); backdrop-filter: blur(10px) saturate(120%); -webkit-backdrop-filter: blur(10px) saturate(120%); box-shadow: inset 0 1px 0 rgba(0,204,255,.34), 0 18px 44px rgba(0,0,0,.38);">
+          <div style="position: absolute; top: 4px; right: 10px; z-index: 2;">
+            <x-import component-from-global-scope="KORTXDesignSystem_a22685.Button" variant="ghost" size="sm" on-click="{{ dynReset }}" disabled="{{ dynClean }}" hint-size="auto,30px">Reset</x-import>
+          </div>
+          <div style="padding: 4px 16px;">
+            <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 10px;">
+              <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="var(--blue-300, #66E0FF)" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="{{ trigIcon }}"></path></svg>
+              <span style="font-size: 13px; font-weight: 600; letter-spacing: .01em; color: #fff;">{{ trigLabel }}</span>
+            </div>
+            <div style="position: relative;">
+              <button type="button" data-focusable="1" aria-expanded="{{ menuOpenStr }}" onClick="{{ toggleMenu }}" style="{{ selectStyle }}" style-hover="border-color: rgba(0,204,255,.62); background: rgba(0,204,255,.1)">
+                <span style="flex: 1; min-width: 0; text-align: left; font-size: 13px; color: {{ pickColor }}; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">{{ pickLabel }}</span>
+                <span style="{{ caretStyle }}"><svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 18 6-6-6-6"></path></svg></span>
+              </button>
+              <div role="listbox" style="{{ menuStyle }}">
+                <div role="group" style="display: flex; flex-direction: column; gap: 6px; padding: 8px;">
+                  <sc-for list="{{ dynOpts }}" as="o" hint-placeholder-count="0">
+                    <button type="button" role="option" data-focusable="1" aria-pressed="{{ o.on }}" data-i="{{ o.i }}" onClick="{{ pickVariant }}" style="{{ o.style }}" style-hover="border-color: rgba(0,204,255,.5); color: #fff">{{ o.label }}</button>
+                  </sc-for>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div aria-disabled="true" style="display: flex; justify-content: center; margin-top: 18px; text-align: center; user-select: none; cursor: default;">
+        <div style="display: flex; flex-direction: column; align-items: center;">
+          <div style="font-size: 11px; font-weight: 600; letter-spacing: .18em; text-transform: uppercase; color: rgba(255,255,255,.4);">All changeable ad elements</div>
+          <div style="display: flex; flex-wrap: wrap; justify-content: center; align-items: center; gap: 10px; margin-top: 9px; font-size: 12px; color: rgba(255,255,255,.38);">
+            <sc-for list="{{ glowNames }}" as="g" hint-placeholder-count="3">
+              <span style="display: inline-flex; align-items: center; gap: 10px;"><sc-if value="{{ g.sep }}" hint-placeholder-val="{{ false }}"><span aria-hidden="true" style="width: 1px; height: 11px; background: rgba(255,255,255,.16);"></span></sc-if><span style="{{ g.style }}">{{ g.label }}</span></span>
+            </sc-for>
+          </div>
+        </div>
+      </div>
+
+      <div style="display: flex; flex-wrap: wrap; justify-content: center; align-items: center; gap: clamp(20px, 3vw, 44px); margin-top: clamp(14px, 2vh, 28px);">
+        <div role="button" tabindex="0" data-focusable="1" style="{{ dynSlot }}" style-hover="transform: scale(1.07); border-color: rgba(0,204,255,.8); box-shadow: inset 0 1px 0 rgba(255,255,255,.1), 0 0 90px rgba(0,204,255,.26), 0 0 190px rgba(109,94,240,.24), 0 26px 60px rgba(0,0,0,.5)">
+          <sc-if value="{{ dynHasFrame }}" hint-placeholder-val="{{ false }}"><iframe src="{{ dynFrame.src }}" title="{{ dynTitle }}" scrolling="no" loading="lazy" style="{{ dynFrame.box }}"></iframe></sc-if>
+          <sc-if value="{{ dynHasImg }}" hint-placeholder-val="{{ false }}"><img src="{{ dynImg }}" alt="{{ dynTitle }}" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover;"></sc-if>
+          <sc-if value="{{ dynEmpty }}" hint-placeholder-val="{{ true }}"><div style="position: absolute; inset: 0; display: grid; place-items: center; padding: 0 14%; text-align: center; font-size: 13px; line-height: 1.45; color: rgba(255,255,255,.6);">The selected ads appear here.</div></sc-if>
+          <sc-for list="{{ glowBoxes }}" as="b" hint-placeholder-count="0">
+            <span aria-hidden="true" style="{{ b.style }}"></span>
+          </sc-for>
+        </div>
+        <div style="flex: 1 1 320px; max-width: 420px; display: flex; flex-direction: column; gap: 12px; min-width: 0;">
+        <div style="padding: 14px 20px; border-radius: 12px; border: 1px solid rgba(0,204,255,.28); background: rgba(255,255,255,.055); backdrop-filter: blur(10px) saturate(120%); -webkit-backdrop-filter: blur(10px) saturate(120%); box-shadow: inset 0 1px 0 rgba(0,204,255,.34), 0 18px 44px rgba(0,0,0,.38);">
+          <div style="font-size: 11px; font-weight: 600; letter-spacing: .18em; text-transform: uppercase; color: var(--lime-300, #BEF264);">What changed</div>
+          <p style="margin: 6px 0 0; text-wrap: pretty; font-size: 14px; line-height: 1.45; color: #fff;">{{ dyn.changed }}</p>
+          <div style="margin-top: 10px; padding-top: 10px; border-top: 1px solid rgba(255,255,255,.09);">
+            <div style="font-size: 11px; font-weight: 600; letter-spacing: .18em; text-transform: uppercase; color: var(--lime-300, #BEF264);">Why it matters</div>
+            <p style="margin: 6px 0 0; text-wrap: pretty; font-size: 14px; line-height: 1.45; color: rgba(255,255,255,.8);">{{ dyn.why }}</p>
+          </div>
+          <div style="margin-top: 10px; padding-top: 10px; border-top: 1px solid rgba(255,255,255,.09);">
+            <div style="font-size: 11px; font-weight: 600; letter-spacing: .18em; text-transform: uppercase; color: var(--lime-300, #BEF264);">What is measurable</div>
+            <p style="margin: 6px 0 0; text-wrap: pretty; font-size: 14px; line-height: 1.45; color: rgba(255,255,255,.8);">{{ dyn.measure }}</p>
+          </div>
+        </div>
+          <div style="display: flex; justify-content: center; margin-top: 10px;">
+            <button type="button" data-focusable="1" onClick="{{ openIntake }}" style="animation: kx-intakeglow 2.4s ease-in-out infinite; display: inline-flex; align-items: center; gap: 8px; padding: 9px 16px; border-radius: 999px; border: 1px solid rgba(0,204,255,.45); background: rgba(0,204,255,.1); color: #fff; font-size: 13px; font-weight: 600; cursor: pointer; box-shadow: 0 0 22px rgba(0,204,255,.18); transition: all 200ms cubic-bezier(.16,1,.3,1);" style-hover="border-color: rgba(0,204,255,.75); background: rgba(0,204,255,.18); box-shadow: 0 0 30px rgba(0,204,255,.35)" style-active="transform: scale(.985)"><svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="var(--blue-300, #66E0FF)" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="2"></rect><path d="M3 12h18M12 3v18"></path></svg>See Intake Form</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </sc-if>
+
+  <sc-if value="{{ intakeOpen }}" hint-placeholder-val="{{ false }}">
+    <div role="dialog" aria-modal="true" aria-label="Intake form" style="position: fixed; inset: 0; z-index: 100; display: flex; align-items: center; justify-content: center; padding: clamp(12px, 3vw, 40px); background: rgba(0,8,18,.86); backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px); overflow-y: auto; overscroll-behavior: contain; animation: kx-rise 240ms cubic-bezier(.16,1,.3,1) both;">
+      <div onClick="{{ closeIntake }}" style="position: absolute; inset: 0;"></div>
+      <div style="position: relative; width: 100%; max-width: 1320px; margin: auto; padding: clamp(18px, 2.6vw, 28px); border-radius: 16px; border: 1px solid rgba(0,204,255,.28); background: linear-gradient(180deg, rgba(9,16,30,.97), rgba(4,8,18,.98)); box-shadow: inset 0 1px 0 rgba(0,204,255,.34), 0 40px 120px rgba(0,0,0,.7), 0 0 90px rgba(0,204,255,.10);">
+        <button type="button" data-focusable="1" onClick="{{ closeIntake }}" aria-label="Close" style="position: absolute; top: 16px; right: 16px; display: grid; place-items: center; width: 34px; height: 34px; border-radius: 8px; border: 1px solid rgba(0,204,255,.28); background: rgba(4,10,20,.9); color: #fff; cursor: pointer; padding: 0; transition: all 200ms cubic-bezier(.16,1,.3,1);" style-hover="border-color: rgba(0,204,255,.5); background: rgba(0,204,255,.16)"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" aria-hidden="true"><path d="M18 6 6 18M6 6l12 12"></path></svg></button>
+        <div style="font-size: 11px; font-weight: 600; letter-spacing: .18em; text-transform: uppercase; color: var(--lime-300, #BEF264);">{{ feed.eyebrow }}</div>
+        <h3 style="margin: 8px 0 0; padding-right: 44px; font-size: clamp(20px, 2.2vw, 28px); font-weight: 700; letter-spacing: -.025em; line-height: 1.1; color: #fff;">{{ feed.title }}</h3>
+        <p style="margin: 8px 0 0; max-width: 700px; text-wrap: pretty; font-size: 14px; line-height: 1.5; color: rgba(255,255,255,.72);">{{ feed.lead }}</p>
+        <div style="margin-top: clamp(14px, 2vh, 22px); border-radius: 12px; border: 1px solid rgba(255,255,255,.1); background: rgba(255,255,255,.035); overflow-x: auto;">
+          <div style="{{ feed.wrapStyle }}">
+            <div style="{{ feed.headStyle }}">
+              <span style="color: var(--blue-300, #66E0FF);">{{ feed.trigger }}</span>
+              <span>Ad</span>
+              <sc-for list="{{ feed.heads }}" as="hd" hint-placeholder-count="2"><span style="display: flex; align-items: center; gap: 8px; white-space: nowrap;">{{ hd.label }}<span style="padding: 1px 6px; border-radius: 4px; border: 1px solid rgba(255,255,255,.16); font-size: 9px; letter-spacing: .1em; color: rgba(255,255,255,.55);">{{ hd.kind }}</span></span></sc-for>
+              <span>Report label</span>
+            </div>
+            <sc-for list="{{ feed.rows }}" as="row" hint-placeholder-count="2">
+              <div style="{{ feed.rowStyle }}">
+                <span style="display: flex; align-items: center; min-width: 0;"><span style="display: inline-block; padding: 2px 9px; border-radius: 999px; border: 1px solid rgba(0,204,255,.55); background: rgba(0,204,255,.12); font-size: 12px; font-weight: 600; color: #fff; box-shadow: 0 0 14px rgba(0,204,255,.2);">{{ row.range }}</span></span>
+                <span style="display: flex; align-items: center; gap: 10px; min-width: 0;"><span aria-hidden="true" style="{{ row.thumb }}"></span><span style="min-width: 0; font-weight: 600; color: #fff;">{{ row.ad }}</span></span>
+                <sc-for list="{{ row.cells }}" as="cl" hint-placeholder-count="2"><span style="{{ cl.style }}">{{ cl.v }}</span></sc-for>
+                <span><span style="display: inline-block; padding: 2px 8px; border-radius: 999px; border: 1px solid rgba(190,242,100,.4); background: rgba(190,242,100,.08); font-size: 11px; font-weight: 600; color: var(--lime-300, #BEF264);">{{ row.label }}</span></span>
+              </div>
+            </sc-for>
+            <sc-for list="{{ feed.blanks }}" as="b" hint-placeholder-count="2">
+              <div style="{{ feed.rowStyle }}"><span style="height: 8px; border-radius: 4px; background: rgba(0,204,255,.07);"></span><span style="height: 8px; border-radius: 4px; background: rgba(255,255,255,.05);"></span><span style="height: 8px; border-radius: 4px; background: rgba(255,255,255,.05);"></span><span></span></div>
+            </sc-for>
+          </div>
+        </div>
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 12px; margin-top: clamp(14px, 2vh, 22px);">
+          <sc-for list="{{ feed.cards }}" as="cd" hint-placeholder-count="3">
+            <div style="padding: 14px 16px; border-radius: 10px; border: 1px solid rgba(0,204,255,.28); background: rgba(255,255,255,.055); box-shadow: inset 0 1px 0 rgba(0,204,255,.34);">
+              <div style="font-size: 13px; font-weight: 600; color: #fff;">{{ cd.t }}</div>
+              <div style="margin-top: 4px; font-size: 12.5px; line-height: 1.45; color: rgba(255,255,255,.7);">{{ cd.d }}</div>
+            </div>
+          </sc-for>
+        </div>
+      </div>
+    </div>
+  </sc-if>
+
+  <!-- ══ Multi-Ad Scrubber ══ -->
+  <sc-if value="{{ isScrubber }}" hint-placeholder-val="{{ false }}">
+    <div style="display: flex; flex-wrap: wrap; justify-content: center; align-items: center; gap: clamp(28px, 4vh, 40px) clamp(48px, 6vw, 96px);">
+      <div style="display: flex; flex-direction: column; align-items: center; gap: 14px;">
+        <div style="{{ scrStage }}">
+          <sc-for list="{{ scrCards }}" as="c" hint-placeholder-count="2">
+            <div data-scr-card="{{ c.k }}" aria-hidden="{{ c.hidden }}" style="{{ c.style }}">
+              <sc-if value="{{ c.hasFrame }}" hint-placeholder-val="{{ false }}"><iframe src="{{ c.src }}" title="{{ c.title }}" scrolling="no" loading="lazy" style="{{ c.box }}"></iframe></sc-if>
+              <sc-if value="{{ c.hasImg }}" hint-placeholder-val="{{ false }}"><img src="{{ c.img }}" alt="{{ c.title }}" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover;"></sc-if>
+            </div>
+          </sc-for>
+        </div>
+        <div ref="{{ dialRef }}" role="slider" tabindex="0" data-focusable="1" aria-label="Scrub through the ads" aria-valuemin="0" aria-valuemax="{{ scrMax }}" aria-valuenow="{{ scrIdx }}" onPointerDown="{{ dialDown }}" onKeyDown="{{ dialKey }}" style="position: relative; width: clamp(200px, 26vw, 300px); height: 44px; border-radius: 999px; border: 1px solid rgba(0,204,255,.34); background: rgba(255,255,255,.06); box-shadow: inset 0 1px 0 rgba(255,255,255,.2); overflow: hidden; cursor: grab; touch-action: none;">
+          <div data-scr-ticks aria-hidden="true" style="{{ ticksStyle }}"></div>
+          <div aria-hidden="true" style="position: absolute; top: 8px; bottom: 8px; left: 50%; width: 2px; margin-left: -1px; border-radius: 2px; background: var(--blue-300, #66E0FF); box-shadow: 0 0 12px rgba(0,204,255,.9);"></div>
+        </div>
+        <div style="font-size: 12px; color: rgba(255,255,255,.6);">Drag to scrub through the ads.</div>
+        <div style="display: flex; gap: 6px;">
+          <sc-for list="{{ scrDots }}" as="d" hint-placeholder-count="2">
+            <button type="button" data-focusable="1" data-i="{{ d.i }}" aria-label="{{ d.aria }}" onClick="{{ pickScr }}" style="{{ d.style }}"></button>
+          </sc-for>
+        </div>
+      </div>
+      <div style="flex: 0 1 380px; min-width: 0; display: flex; flex-direction: column; gap: clamp(12px, 2vh, 22px);">
+        <div>
+          <div style="font-size: 11px; font-weight: 600; letter-spacing: .18em; text-transform: uppercase; color: var(--lime-300, #BEF264);">{{ scr.eyebrow }}</div>
+          <h3 style="margin: 6px 0 0; font-size: clamp(18px, 2vw, 24px); font-weight: 700; letter-spacing: -.025em; line-height: 1.16; color: #fff; text-wrap: balance;">{{ scr.title }}</h3>
+          <p style="margin: 6px 0 0; text-wrap: pretty; font-size: 13.5px; line-height: 1.45; color: rgba(255,255,255,.7);">{{ scr.sub }}</p>
+        </div>
+        <div style="font-size: 13px; line-height: 1.45; color: #fff;">{{ scr.instruction }}</div>
+        <sc-if value="{{ scr.hasNote }}" hint-placeholder-val="{{ true }}"><div style="padding: 14px 16px; border-radius: 10px; border: 1px solid rgba(0,204,255,.28); background: rgba(255,255,255,.055); box-shadow: inset 0 1px 0 rgba(0,204,255,.34);">
+          <div style="font-size: 11px; font-weight: 600; letter-spacing: .18em; text-transform: uppercase; color: var(--blue-300, #66E0FF);">What Just Happened</div>
+          <dl style="margin: 10px 0 0; display: grid; grid-template-columns: auto minmax(0, 1fr); column-gap: 14px; row-gap: 8px; font-size: 12.5px; line-height: 1.45;">
+            <sc-if value="{{ scr.hasConcept }}" hint-placeholder-val="{{ true }}"><dt style="color: rgba(255,255,255,.5);">Concept</dt><dd style="margin: 0; color: #fff;">{{ scr.concept }}</dd></sc-if>
+            <sc-if value="{{ scr.hasWhy }}" hint-placeholder-val="{{ true }}"><dt style="color: rgba(255,255,255,.5);">Why it’s useful</dt><dd style="margin: 0; color: rgba(255,255,255,.78);">{{ scr.why }}</dd></sc-if>
+            <sc-if value="{{ scr.hasMeasure }}" hint-placeholder-val="{{ true }}"><dt style="color: rgba(255,255,255,.5);">Measurable</dt><dd style="margin: 0; color: rgba(255,255,255,.78);">{{ scr.measure }}</dd></sc-if>
+          </dl>
+        </div></sc-if>
+      </div>
+    </div>
+  </sc-if>
+
+  <!-- ══ Drag and Drop ad builder ══ -->
+  <sc-if value="{{ isBuilder }}" hint-placeholder-val="{{ false }}">
+    <div style="display: flex; flex-wrap: wrap; justify-content: center; align-items: center; gap: clamp(28px, 4vh, 48px) clamp(48px, 6vw, 96px);">
+      <div style="position: relative; flex: none; padding: 7px; border-radius: 17px; border: 1px solid rgba(0,204,255,.30); background: rgba(255,255,255,.06); backdrop-filter: blur(24px) saturate(150%); -webkit-backdrop-filter: blur(24px) saturate(150%); box-shadow: inset 0 1px 0 rgba(255,255,255,.18), inset 0 -1px 0 rgba(255,255,255,.06), 0 22px 50px rgba(0,0,0,.45), 0 0 60px rgba(0,204,255,.16), 0 0 120px rgba(109,94,240,.18);">
+        <div ref="{{ slotRef }}" style="{{ bSlot }}">
+          <sc-for list="{{ bZones }}" as="z" hint-placeholder-count="6">
+            <div style="{{ z.style }}">{{ z.label }}</div>
+          </sc-for>
+          <div style="{{ bAdStyle }}">
+            <sc-if value="{{ bHasFrame }}" hint-placeholder-val="{{ false }}"><iframe src="{{ bFrame.src }}" title="{{ bTitle }}" scrolling="no" loading="lazy" style="{{ bFrame.box }}"></iframe></sc-if>
+            <sc-if value="{{ bHasImg }}" hint-placeholder-val="{{ false }}"><img src="{{ bImg }}" alt="{{ bTitle }}" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover;"></sc-if>
+          </div>
+        </div>
+      </div>
+      <div style="flex: 0 1 380px; min-width: 0; display: flex; flex-direction: column; gap: clamp(12px, 2vh, 22px);">
+        <div>
+          <div style="font-size: 11px; font-weight: 600; letter-spacing: .18em; text-transform: uppercase; color: var(--lime-300, #BEF264);">{{ bx.eyebrow }}</div>
+          <h3 style="margin: 6px 0 0; font-size: clamp(18px, 2vw, 24px); font-weight: 700; letter-spacing: -.025em; line-height: 1.16; color: #fff; text-wrap: balance;">{{ bx.title }}</h3>
+          <p style="margin: 6px 0 0; text-wrap: pretty; font-size: 13.5px; line-height: 1.45; color: rgba(255,255,255,.7);">{{ bx.body }}</p>
+        </div>
+        <div>
+          <div style="font-size: 11px; font-weight: 600; letter-spacing: .18em; text-transform: uppercase; color: var(--lime-300, #BEF264);">{{ bx.buildLabel }}</div>
+          <div style="margin-top: 6px; font-size: 13px; line-height: 1.4; color: #fff;">{{ bx.buildNote }}</div>
+          <div aria-hidden="true" style="position: relative; width: 92px; height: 58px; margin-top: clamp(8px, 1.2vh, 12px);">
+            <span style="position: absolute; top: 0; left: 0; right: 0; text-align: center; font-size: 10px; font-weight: 600; letter-spacing: .14em; text-transform: uppercase; color: var(--lime-300, #BEF264); white-space: nowrap;">Drag and drop</span>
+            <svg viewBox="0 0 92 34" width="92" height="34" fill="none" style="position: absolute; left: 0; bottom: 2px; overflow: visible; animation: kx-dragleft 2.1s cubic-bezier(.4,0,.2,1) infinite;"><path d="M86 6 C 60 -4, 26 2, 8 20" stroke="var(--blue-300, #66E0FF)" stroke-width="1.5" stroke-linecap="round" stroke-dasharray="3 4"></path><path d="M18.6 17.2 L 8 20 L 10.8 9.4" stroke="var(--blue-300, #66E0FF)" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+          </div>
+          <div style="display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 10px; margin-top: clamp(6px, 1vh, 10px);">
+            <sc-for list="{{ bTiles }}" as="t" hint-placeholder-count="6">
+              <button type="button" data-focusable="1" data-key="{{ t.key }}" aria-label="{{ t.aria }}" disabled="{{ t.placed }}" onPointerDown="{{ tileDown }}" onKeyDown="{{ tileKey }}" style="{{ t.style }}" style-hover="{{ t.hover }}">
+                <span style="{{ t.iconWrap }}"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="{{ t.iconColor }}" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="{{ t.icon }}"></path></svg></span>
+                <span style="font-size: 11px; font-weight: 600; letter-spacing: .01em; line-height: 1.2; text-align: center;">{{ t.label }}</span>
+              </button>
+            </sc-for>
+          </div>
+          <div style="display: flex; align-items: center; gap: 10px; margin-top: clamp(10px, 1.6vh, 16px); flex-wrap: wrap;">
+            <button type="button" data-focusable="1" disabled="{{ remixOff }}" onClick="{{ remix }}" style="{{ remixStyle }}" style-hover="box-shadow: 0 0 30px rgba(0,204,255,.55), inset 0 1px 0 rgba(255,255,255,.4)" style-active="transform: scale(.985)"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 18h1.4c1.3 0 2.5-.6 3.3-1.7l6.1-8.6c.7-1.1 2-1.7 3.3-1.7H22"></path><path d="m18 2 4 4-4 4"></path><path d="M2 6h1.9c1.5 0 2.9.9 3.6 2.2"></path><path d="M22 18h-5.9c-1.3 0-2.6-.7-3.3-1.8l-.5-.8"></path><path d="m18 14 4 4-4 4"></path></svg>Remix</button>
+            <button type="button" data-focusable="1" onClick="{{ seeFull }}" disabled="{{ bDone }}" style="{{ seeFullStyle }}" style-hover="border-color: rgba(0,204,255,.55); background: rgba(0,204,255,.12); color: #fff" style-active="transform: scale(.985)"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7-10-7-10-7Z"></path><circle cx="12" cy="12" r="3"></circle></svg>See full ad</button>
+            <button type="button" data-focusable="1" onClick="{{ startOver }}" style="padding: 9px 14px; border-radius: 999px; border: 1px solid rgba(255,255,255,.16); background: rgba(255,255,255,.05); color: rgba(255,255,255,.78); font-size: 13px; font-weight: 600; cursor: pointer; transition: all 200ms cubic-bezier(.16,1,.3,1);" style-hover="border-color: rgba(0,204,255,.55); color: #fff">Start over</button>
+            <span style="font-size: 12px; color: rgba(255,255,255,.6);">{{ bStatus }}</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </sc-if>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:1100,&quot;height&quot;:760},&quot;kind&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;dynamic&quot;,&quot;scrubber&quot;,&quot;builder&quot;],&quot;default&quot;:&quot;dynamic&quot;,&quot;tsType&quot;:&quot;'dynamic'|'scrubber'|'builder'&quot;},&quot;format&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;vertical&quot;,&quot;wide&quot;],&quot;default&quot;:&quot;vertical&quot;,&quot;tsType&quot;:&quot;'vertical'|'wide'&quot;},&quot;ix&quot;:{&quot;editor&quot;:null,&quot;tsType&quot;:&quot;object&quot;},&quot;ads&quot;:{&quot;editor&quot;:null,&quot;tsType&quot;:&quot;Array&lt;{key,fmt,kind,celtraId,capId,img,brand,name}&gt;&quot;}}">
+class Component extends DCLogic {
+  state = { dyn: 0, menu: false, scr: 0, scrOff: 0, placed: [], lay: 0 };
+  dialRef = React.createRef();
+  rootRef = React.createRef();
+  /* Responsive rule: every fixed-size ad stage shrinks to the space it has (never grows), so units, glow boxes and decks stay whole on tablets and phones. */
+  fit(W) { const a = this.state.availW || 0; return a && a < W + 8 ? Math.max(.4, (a - 8) / W) : 1; }
+  slotRef = React.createRef();
+
+  componentDidMount() {
+    const el = this.rootRef.current;
+    if (el && typeof ResizeObserver !== 'undefined') { this.ro = new ResizeObserver(() => { const w = el.clientWidth; if (w && Math.abs(w - (this.state.availW || 0)) > 2) this.setState({ availW: w }); }); this.ro.observe(el); }
+    import('./interactive-blocks.js').then(m => { this.lib = m; this.forceUpdate(); });
+    import('./creative-data.js').then(m => { this.celtraDoc = m.celtraDoc; this.forceUpdate(); }).catch(() => {});
+    this.onDocClick = e => { if (this.state.menu && !e.target.closest('[aria-expanded]') && !e.target.closest('[role=listbox]')) this.setState({ menu: false }); };
+    document.addEventListener('click', this.onDocClick);
+    this.onEsc = e => { if (e.key === 'Escape' && this.state.intake) this.closeIntake(); };
+    document.addEventListener('keydown', this.onEsc);
+  }
+  componentWillUnmount() { if (this.ro) this.ro.disconnect(); document.removeEventListener('click', this.onDocClick); document.removeEventListener('keydown', this.onEsc); }
+
+  ads() { return (this.props.ads || []).filter(Boolean); }
+  ad(key, i) { const a = this.ads(); return a.find(x => x.key === key) || a[i] || null; }
+  frame(u, W, H) { return this.lib ? this.lib.unitFrame(u, W, H, this.celtraDoc) : { src: '', box: {} }; }
+
+  openIntake = () => { this.lastFocus = document.activeElement; this.setState({ intake: true, menu: false }); };
+  closeIntake = () => { this.setState({ intake: false }); if (this.lastFocus && this.lastFocus.focus) this.lastFocus.focus(); };
+  toggleMenu = () => this.setState(s => ({ menu: !s.menu }));
+  pickVariant = e => this.setState({ dyn: Number(e.currentTarget.dataset.i), menu: false });
+  dynReset = () => this.setState({ dyn: 0, menu: false });
+
+  /* Same feel as the Creative Playground example scrubber: the deck follows the pointer a fraction of a card at a time (46px per ad), then a short throw eases into the nearest ad. Frames are painted straight to the DOM. */
+  scrN() { return ((this.props.ix && this.props.ix.items) || []).length; }
+  scrDeck(d, kS, sw) {
+    const ad = Math.abs(d), sign = d === 0 ? 0 : (d > 0 ? 1 : -1), k = kS * (sw ? 1.5 : 1);
+    const ramp = (near, far) => ad <= 1 ? near * ad : near + far * (ad - 1);
+    const op = ad <= 1 ? 1 - 0.6 * ad : Math.max(0, 0.4 - 0.26 * (ad - 1));
+    return { transform: 'translate3d(' + (-sign * ramp(46, 40) * k).toFixed(1) + 'px,' + (12 * Math.min(ad, 3) * kS).toFixed(1) + 'px,0) rotate(' + (-sign * ramp(sw ? 3 : 7, sw ? 2 : 5)).toFixed(2) + 'deg) scale(' + Math.max(0.6, 1 - 0.09 * ad).toFixed(3) + ')',
+      filter: 'blur(' + ramp(5, 4).toFixed(2) + 'px)', opacity: Number(op.toFixed(3)), zIndex: Math.round(30 - ad * 10), visibility: op <= 0.005 ? 'hidden' : 'visible' };
+  }
+  scrPaint(pos) {
+    const root = this.rootRef.current; if (!root) return;
+    const kS = this.scrKS || 1, sw = this.props.format === 'wide';
+    root.querySelectorAll('[data-scr-card]').forEach(c => { const st = this.scrDeck(Number(c.dataset.scrCard) - pos, kS, sw); c.style.transition = 'none'; Object.assign(c.style, st); });
+    const t = root.querySelector('[data-scr-ticks]'); if (t) { t.style.transition = 'none'; t.style.backgroundPosition = (-pos * 46).toFixed(1) + 'px 0'; }
+  }
+  scrSettle(target) {
+    cancelAnimationFrame(this.scrRaf);
+    const from = this.scrPos == null ? target : this.scrPos, dist = target - from, dur = Math.min(620, 260 + Math.abs(dist) * 220), t0 = performance.now();
+    this.scrMoving = true;
+    const step = now => { const t = Math.min(1, (now - t0) / dur), e = 1 - Math.pow(1 - t, 3); this.scrPos = from + dist * e; this.scrPaint(this.scrPos);
+      if (t < 1) { this.scrRaf = requestAnimationFrame(step); return; }
+      this.scrPos = target; this.scrMoving = false; if (target !== this.state.scr) this.setState({ scr: target }); else this.forceUpdate(); };
+    this.scrRaf = requestAnimationFrame(step);
+  }
+  dialDown = e => {
+    const n = this.scrN(); if (n < 2 || (e.button != null && e.button !== 0)) return;
+    e.preventDefault(); cancelAnimationFrame(this.scrRaf);
+    const el = e.currentTarget, clamp = p => Math.max(0, Math.min(n - 1, p)), x0 = e.clientX, base = this.scrPos == null ? this.state.scr : this.scrPos;
+    let lastX = x0, vel = 0; this.scrMoving = true; el.style.cursor = 'grabbing';
+    try { el.setPointerCapture(e.pointerId); } catch (x) {}
+    const move = ev => { vel = vel * 0.7 + ((ev.clientX - lastX) / 46) * 0.3; lastX = ev.clientX; this.scrPos = clamp(base + (ev.clientX - x0) / 46); this.scrPaint(this.scrPos); const j = Math.round(this.scrPos); if (j !== this.state.scr) this.setState({ scr: j }); };
+    const up = () => { window.removeEventListener('pointermove', move); window.removeEventListener('pointerup', up); window.removeEventListener('pointercancel', up); el.style.cursor = 'grab'; this.scrSettle(clamp(Math.round(this.scrPos + vel * 4))); };
+    window.addEventListener('pointermove', move); window.addEventListener('pointerup', up); window.addEventListener('pointercancel', up);
+  };
+  dialKey = e => { if (e.key !== 'ArrowLeft' && e.key !== 'ArrowRight') return; e.preventDefault(); const n = this.scrN(); this.scrSettle(Math.max(0, Math.min(n - 1, (this.state.scr || 0) + (e.key === 'ArrowRight' ? 1 : -1)))); };
+  pickScr = e => this.scrSettle(Number(e.currentTarget.dataset.i));
+
+  place(key) { this.setState(s => s.placed.includes(key) ? null : { placed: s.placed.concat([key]), lay: 0 }); }
+  tileDown = e => {
+    const key = e.currentTarget.dataset.key, x0 = e.clientX, y0 = e.clientY; let moved = false;
+    const move = ev => { if (Math.abs(ev.clientX - x0) + Math.abs(ev.clientY - y0) > 6) moved = true; };
+    const up = ev => {
+      window.removeEventListener('pointermove', move); window.removeEventListener('pointerup', up);
+      const r = this.slotRef.current && this.slotRef.current.getBoundingClientRect();
+      const over = r && ev.clientX >= r.left && ev.clientX <= r.right && ev.clientY >= r.top && ev.clientY <= r.bottom;
+      if (!moved || over) this.place(key);
+    };
+    window.addEventListener('pointermove', move); window.addEventListener('pointerup', up);
+  };
+  tileKey = e => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); this.place(e.currentTarget.dataset.key); } };
+  remix = () => this.setState(s => ({ lay: s.lay + 1 }));
+  startOver = () => this.setState({ placed: [], lay: 0 });
+  seeFull = () => this.setState({ placed: ['logo', 'headline', 'body', 'bg', 'cta', 'video'], lay: 0 });
+
+  renderVals() {
+    const L = this.lib, kind = this.props.kind || 'dynamic', ix = this.props.ix || {}, s = this.state;
+    const base = { isDynamic: kind === 'dynamic', isScrubber: kind === 'scrubber', isBuilder: kind === 'builder', dialRef: this.dialRef, slotRef: this.slotRef, rootRef: this.rootRef };
+    if (!L) return Object.assign(base, { isDynamic: false, isScrubber: false, isBuilder: false });
+    const ICON = { temperature: 'M14 4v10.54a4 4 0 1 1-4 0V4a2 2 0 0 1 4 0Z', time: 'M12 22a10 10 0 1 0 0-20 10 10 0 0 0 0 20zM12 6v6l4 2', dates: 'M8 2v4M16 2v4M3 10h18M5 4h14a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2z', zip: 'M3 11l19-9-9 19-2-8-8-2z', language: 'M5 8l6 6M4 14l6-6 2-3M2 5h12M7 2h1M22 22l-5-10-5 10M14 18h6' };
+
+    if (kind === 'dynamic') {
+      const vars = ix.variants || [], i = Math.min(s.dyn, Math.max(0, vars.length - 1)), v = vars[i] || {};
+      const trig = L.TRIGGERS.find(t => t.id === ix.trigger) || L.TRIGGERS[0];
+      const u = this.ad(v.ad, i), wide = this.props.format === 'wide' || !!(u && u.fmt === 'wide'), k = this.fit(wide ? 640 : 270), W = Math.round((wide ? 640 : 270) * k), H = Math.round((wide ? 360 : 540) * k), f = this.frame(u, W, H);
+      const union = []; vars.forEach(x => (x.glow || []).forEach(g => { if (!union.includes(g)) union.push(g); }));
+      const glowOn = v.glow || [];
+      return Object.assign(base, {
+        trigLabel: trig.label, trigIcon: ICON[trig.id], pickLabel: v.value || 'Any', pickColor: v.value ? 'var(--blue-300, #66E0FF)' : 'rgba(255,255,255,.5)', menuOpenStr: String(s.menu), toggleMenu: this.toggleMenu, dynReset: this.dynReset, dynClean: i === 0 && !s.menu, pickVariant: this.pickVariant,
+        selectStyle: { display: 'flex', alignItems: 'center', gap: 8, width: '100%', padding: '9px 12px', borderRadius: 8, border: '1px solid rgba(0,204,255,.55)', background: s.menu ? 'rgba(0,204,255,.12)' : 'rgba(255,255,255,.05)', cursor: 'pointer', textAlign: 'left', color: '#fff', transition: 'all 200ms cubic-bezier(.16,1,.3,1)' },
+        caretStyle: { display: 'grid', placeItems: 'center', flex: 'none', width: 16, height: 16, color: 'var(--blue-300, #66E0FF)', transform: 'rotate(' + (s.menu ? '-90deg' : '90deg') + ')', transition: 'transform 200ms cubic-bezier(.16,1,.3,1)' },
+        menuStyle: { position: 'absolute', top: 'calc(100% + 6px)', left: 0, right: 0, zIndex: 20, borderRadius: 8, border: '1px solid rgba(0,204,255,.34)', background: 'rgba(7,11,21,.94)', backdropFilter: 'blur(14px) saturate(120%)', WebkitBackdropFilter: 'blur(14px) saturate(120%)', boxShadow: 'inset 0 1px 0 rgba(255,255,255,.08), 0 18px 44px rgba(0,0,0,.55)', overflow: 'hidden', opacity: s.menu ? 1 : 0, transform: s.menu ? 'translateY(0)' : 'translateY(-6px)', pointerEvents: s.menu ? 'auto' : 'none', visibility: s.menu ? 'visible' : 'hidden', transition: 'opacity 200ms cubic-bezier(.16,1,.3,1), transform 200ms cubic-bezier(.16,1,.3,1)' },
+        dynOpts: s.menu ? vars.map((x, j) => { const on = j === i; return { i: String(j), label: x.value || 'Condition ' + (j + 1), on: String(on), style: { animation: 'kx-liquid 620ms cubic-bezier(.16,1,.3,1) ' + j * 42 + 'ms both', padding: '8px 14px', borderRadius: 999, border: '1px solid rgba(0,204,255,' + (on ? '.6' : '.34') + ')', background: on ? 'rgba(0,204,255,.16)' : 'rgba(255,255,255,.06)', color: on ? '#fff' : 'rgba(255,255,255,.82)', boxShadow: on ? '0 0 22px rgba(0,204,255,.24)' : 'none', fontSize: 13, fontWeight: 500, whiteSpace: 'nowrap', cursor: 'pointer', textAlign: 'left', transition: 'all 200ms cubic-bezier(.16,1,.3,1)' } }; }) : [],
+        glowNames: ['Text', 'Video', 'Image', 'URL', 'BG Color', 'Font'].map((label, j) => ({ label, sep: j > 0, style: { color: 'rgba(255,255,255,.38)' } })),
+        dynSlot: { position: 'relative', flex: 'none', width: W, height: H, borderRadius: 8, overflow: 'hidden', border: '1px solid rgba(0,204,255,.5)', background: '#050A16', boxShadow: 'inset 0 1px 0 rgba(255,255,255,.035), 0 0 70px rgba(0,204,255,.14), 0 0 150px rgba(109,94,240,.14)', transformOrigin: '50% 50%', willChange: 'transform', transition: 'transform 320ms cubic-bezier(.16,1,.3,1), box-shadow 320ms cubic-bezier(.16,1,.3,1), border-color 320ms cubic-bezier(.16,1,.3,1)' },
+        dynHasFrame: !!f.src, dynFrame: f, dynHasImg: !f.src && !!(u && u.img), dynImg: u ? u.img : '', dynEmpty: !u, dynTitle: u ? u.brand + ' · ' + u.name : '',
+        glowBoxes: u ? glowOn.map(g => { const bx = L.glowBox(g, wide ? 'wide' : 'vertical', v.boxes); if (!bx) return null; const [x, y, w, h] = bx; return { style: { position: 'absolute', left: x + '%', top: y + '%', width: w + '%', height: h + '%', zIndex: 5, borderRadius: 4, border: '2px solid #33D6FF', boxShadow: '0 0 14px rgba(0,204,255,.75), inset 0 0 12px rgba(0,204,255,.35)', pointerEvents: 'none', animation: 'kxib-glow 420ms cubic-bezier(.16,1,.3,1) both' } }; }).filter(Boolean) : [],
+        dyn: { changed: v.changed || '', why: v.why || '', measure: v.measure || '' },
+        openIntake: this.openIntake, closeIntake: this.closeIntake, intakeOpen: !!s.intake,
+        feed: (() => {
+          const KIND = { temperature: ['Weather feed', 'temperature range', 'The local temperature at the moment of the impression picks the row'], time: ['Time of day', 'daypart', "The viewer's local time picks the row"], dates: ['Dates', 'calendar moment', 'The flight dates pick the row'], zip: ['Location list', 'location', 'The ZIP code of the impression picks the row'], language: ['Language', 'language', "The viewer's browser language picks the row"] }[trig.id];
+          const heads = union.length ? union : ['headline', 'image'];
+          const cols = '150px minmax(220px, 1.3fr) ' + heads.map(() => 'minmax(140px, 1fr)').join(' ') + ' minmax(190px, max-content)';
+          const grid = { display: 'grid', gridTemplateColumns: cols, gap: 24 };
+          const client = (this.ads()[0] || {}).brand || 'Brand';
+          return { wrapStyle: { minWidth: 150 + 220 + heads.length * 140 + 190 + 24 * (heads.length + 3) + 32 }, eyebrow: 'Intake form · ' + KIND[0], title: 'One row per ' + KIND[1] + ', one ad per row', trigger: trig.label,
+            lead: 'The client fills in this sheet. ' + KIND[2] + ', and that row\u2019s ' + (n => n.length > 1 ? n.slice(0, -1).join(', ') + ' and ' + n[n.length - 1] : n[0])(heads.map(g => { const l = (L.GLOW.find(x => x.id === g) || { label: g }).label; return g === 'cta' ? 'CTA' : g === 'background' ? 'background color' : l.toLowerCase(); })) + ' fill the ad.',
+            headStyle: Object.assign({}, grid, { padding: '12px 16px', borderBottom: '1px solid rgba(0,204,255,.28)', fontSize: 10, fontWeight: 600, letterSpacing: '.14em', textTransform: 'uppercase', color: 'rgba(255,255,255,.5)' }),
+            rowStyle: Object.assign({}, grid, { alignItems: 'center', padding: '12px 16px', borderBottom: '1px solid rgba(255,255,255,.07)', fontSize: 13, lineHeight: 1.4, color: 'rgba(255,255,255,.82)' }),
+            heads: heads.map(g => { const m = L.GLOW.find(x => x.id === g) || { label: g }; return { label: m.label, kind: ['image', 'video', 'logo', 'background'].includes(g) ? 'Image' : 'Text' }; }),
+            rows: vars.map((x, j) => { const a = this.ad(x.ad, j) || {}; return { range: x.value || 'Condition ' + (j + 1), ad: (a.name || 'Ad ' + (j + 1)), label: (a.brand || client).replace(/\s+/g, '') + '_' + (x.value || 'Condition ' + (j + 1)),
+              thumb: { flex: 'none', width: 40, height: 40, borderRadius: 8, border: '1px solid rgba(255,255,255,.14)', background: a.img ? 'center / cover no-repeat url("' + a.img + '")' : 'rgba(0,204,255,.08)' },
+              cells: heads.map(g => { const on = (x.glow || []).includes(g); return { v: on ? 'Changes' : 'Same as base', style: { fontSize: 12, fontWeight: on ? 600 : 400, color: on ? 'var(--blue-300, #66E0FF)' : 'rgba(255,255,255,.5)' } }; }) }; }),
+            blanks: [{ k: 1 }, { k: 2 }],
+            cards: [{ t: trig.label + ' Triggers', d: 'Each row is one ' + KIND[1] + '. ' + KIND[2] + ' and serves that row\u2019s ad.' }, { t: heads.map(g => (L.GLOW.find(x => x.id === g) || { label: g }).label).join(', ') + ' Swap', d: 'Only the elements marked in the sheet change between rows. Everything else stays on brand.' }, { t: 'Report Label', d: 'Tags every impression with its ' + KIND[1] + ', so results read by condition.' }] };
+        })()
+      });
+    }
+
+    if (kind === 'scrubber') {
+      const items = ix.items || [], n = items.length, i = Math.min(s.scr, Math.max(0, n - 1)), it = items[i] || {};
+      const kS = this.fit(this.props.format === 'wide' ? 640 : 330), pos = this.scrMoving && this.scrPos != null ? this.scrPos : i, near = Math.round(pos); this.scrKS = kS;
+      return Object.assign(base, {
+        scrStage: { position: 'relative', width: Math.round((this.props.format === 'wide' ? 560 : 270) * kS), height: Math.round((this.props.format === 'wide' ? 315 : 540) * kS) },
+        scrCards: items.map((x, j) => {
+          const u = this.ad(x.ad, j), sw = this.props.format === 'wide', wide = sw || !!(u && u.fmt === 'wide'), W = Math.round((sw ? 560 : 270) * kS), H = Math.round((wide ? (sw ? 315 : 152) : 540) * kS), f = this.frame(u, W, H), d = j - i, on = d === 0, dk = this.scrDeck(j - pos, kS, sw);
+          return { title: u ? u.brand + ' · ' + u.name : 'Ad', hidden: String(!on), hasFrame: !!f.src && Math.abs(j - near) <= 1, k: String(j), src: f.src, box: Object.assign({}, f.box, { pointerEvents: on ? 'auto' : 'none' }), hasImg: !f.src && !!(u && u.img), img: u ? u.img : '',
+            style: { position: 'absolute', left: 0, top: wide && !sw ? (540 * kS - H) / 2 : 0, width: W, height: H, borderRadius: sw ? 14 : 22, overflow: 'hidden', border: '1px solid rgba(0,204,255,' + (on ? '.45' : '.18') + ')', background: '#050A16', boxShadow: on ? 'inset 0 1px 0 rgba(255,255,255,.12), 0 26px 60px rgba(0,0,0,.55), 0 0 70px rgba(0,204,255,.22)' : 'none', zIndex: dk.zIndex, opacity: dk.opacity, visibility: dk.visibility, filter: dk.filter, transform: dk.transform, transformOrigin: '50% 115%', willChange: 'transform, opacity, filter', transition: this.scrMoving ? 'none' : 'transform 520ms cubic-bezier(.16,1,.3,1), opacity 420ms cubic-bezier(.16,1,.3,1), filter 420ms cubic-bezier(.16,1,.3,1)' } };
+        }),
+        scrMax: String(Math.max(0, n - 1)), scrIdx: String(i), dialDown: this.dialDown, dialKey: this.dialKey, pickScr: this.pickScr,
+        ticksStyle: { position: 'absolute', inset: 0, backgroundImage: 'repeating-linear-gradient(90deg, rgba(255,255,255,.26) 0 1px, transparent 1px 16px)', backgroundPosition: (-pos * 46).toFixed(1) + 'px 0', transition: this.scrMoving ? 'none' : 'background-position 520ms cubic-bezier(.16,1,.3,1)', maskImage: 'linear-gradient(90deg, transparent, #000 22%, #000 78%, transparent)', WebkitMaskImage: 'linear-gradient(90deg, transparent, #000 22%, #000 78%, transparent)' },
+        scrDots: items.map((x, j) => ({ i: String(j), aria: 'Ad ' + (j + 1), style: { width: j === i ? 22 : 7, height: 7, padding: 0, borderRadius: 999, border: '1px solid ' + (j === i ? 'rgba(0,204,255,.7)' : 'rgba(255,255,255,.2)'), background: j === i ? 'rgba(0,204,255,.5)' : 'rgba(255,255,255,.1)', cursor: 'pointer', transition: 'all 320ms cubic-bezier(.16,1,.3,1)' } })),
+        scr: (() => { const concept = it.concept || it.idea || '', why = it.why || it.whyUseful || it.useful || '', measure = it.measure || it.measurable || it.kpi || ''; return { eyebrow: it.eyebrow || '', title: it.title || '', sub: it.sub || '', instruction: it.instruction || '', concept, why, measure, hasConcept: !!concept, hasWhy: !!why, hasMeasure: !!measure, hasNote: !!(concept || why || measure) }; })()
+      });
+    }
+
+    const lays = ix.layouts || [], done = s.placed.length >= 6;
+    const TILE_ICON = { logo: 'M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z', headline: 'M6 4v16M18 4v16M6 12h12', body: 'M4 6h16M4 12h16M4 18h10', bg: 'M5 3h14a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2zM9 11a2 2 0 1 0 0-4 2 2 0 0 0 0 4zM21 15l-5-5L5 21', cta: 'M9 9l5 12 1.8-5.2L21 14ZM7.2 2.2 8 5.1M5.1 8l-2.9-.8M14 4.1 12 6M6 12l-1.9 2', video: 'M12 22a10 10 0 1 0 0-20 10 10 0 0 0 0 20zM10 8l6 4-6 4V8z' };
+    const bw = this.props.format === 'wide';
+    const ZONES = bw ? [{ key: 'logo', label: 'Logo', box: [4, 7, 20, 11] }, { key: 'headline', label: 'Headline', box: [4, 24, 42, 18] }, { key: 'video', label: 'Video', box: [50, 7, 46, 62] }, { key: 'body', label: 'Body copy', box: [4, 47, 42, 14] }, { key: 'cta', label: 'CTA', box: [4, 68, 24, 11] }, { key: 'bg', label: 'BG image', box: [2, 85, 96, 10] }]
+      : [{ key: 'logo', label: 'Logo', box: [10, 6, 41, 4.5] }, { key: 'headline', label: 'Headline', box: [10, 16.5, 80, 16] }, { key: 'video', label: 'Video', box: [8, 38.5, 84, 24] }, { key: 'body', label: 'Body copy', box: [10, 67.5, 80, 10.5] }, { key: 'cta', label: 'CTA', box: [10, 86, 80, 7.5] }, { key: 'bg', label: 'BG image', box: [0, 0, 100, 100] }];
+    const cyc = lays.length ? lays : [];
+    const cur = done && cyc.length ? cyc[s.lay % cyc.length] : null, u = cur ? this.ad(cur.ad, s.lay % cyc.length) : null;
+    const kB = this.fit(bw ? 640 : 270), W = Math.round((bw ? 640 : 270) * kB), H = Math.round((bw ? 360 : 540) * kB), uw = !bw && u && u.fmt === 'wide', f = this.frame(u, W, uw ? Math.round(152 * kB) : H);
+    return Object.assign(base, {
+      bSlot: { position: 'relative', width: W, height: H, borderRadius: 10, overflow: 'hidden', isolation: 'isolate', background: 'linear-gradient(180deg, rgba(20,34,58,.85), rgba(7,11,21,.92)), #04070E', boxShadow: 'inset 0 1px 0 rgba(255,255,255,.1), inset 0 0 0 1px rgba(0,204,255,.34), inset 0 0 40px rgba(0,204,255,.12)' },
+      bZones: ZONES.map(z => { const on = s.placed.includes(z.key), bg = z.key === 'bg', [x, y, w, h] = z.box; return { label: z.label, style: Object.assign({ position: 'absolute', zIndex: 1, left: x + '%', top: y + '%', width: w + '%', height: h + '%', boxSizing: 'border-box', display: 'grid', placeItems: 'center', borderRadius: 12, border: '1px solid rgba(0,204,255,' + (on ? '.6' : '.34') + ')', background: 'linear-gradient(180deg, rgba(20,34,58,.85), rgba(7,11,21,.92))', boxShadow: on ? 'inset 0 1px 0 rgba(255,255,255,.14), 0 14px 30px rgba(0,0,0,.5), 0 0 40px rgba(0,204,255,.38)' : 'inset 0 1px 0 rgba(255,255,255,.1), 0 10px 26px rgba(0,0,0,.45), 0 0 22px rgba(0,204,255,.2)', fontSize: 9, fontWeight: 700, letterSpacing: '.16em', textTransform: 'uppercase', color: '#66E0FF', transition: 'opacity .3s, border-color .2s, box-shadow .2s' }, bg ? { left: 6, top: 6, width: 'calc(100% - 12px)', height: 'calc(100% - 12px)', zIndex: 0, borderRadius: 16, alignItems: 'end', paddingBottom: 6, background: 'transparent', boxShadow: 'none', borderColor: 'rgba(0,204,255,' + (on ? '.45' : '.2') + ')' } : {}) }; }),
+      bAdStyle: { position: 'absolute', inset: 0, zIndex: 5, display: 'grid', placeItems: 'center', background: '#050A16', opacity: u ? 1 : 0, pointerEvents: u ? 'auto' : 'none', transition: 'opacity 420ms cubic-bezier(.16,1,.3,1)' },
+      bHasFrame: !!f.src, bFrame: { src: f.src, box: Object.assign({}, f.box, uw ? { top: (H - 152 * kB) / 2 } : {}) }, bHasImg: !f.src && !!(u && u.img), bImg: u ? u.img : '', bTitle: u ? u.brand + ' · ' + u.name : '',
+      bShowName: !!u && cyc.length > 1, bLayoutName: cur ? cur.name || '' : '',
+      bx: { eyebrow: ix.eyebrow || '', title: ix.title || '', body: ix.body || '', buildLabel: ix.buildLabel || '', buildNote: ix.buildNote || '' },
+      bTiles: L.BUILD_TILES.map(t => { const on = s.placed.includes(t.key); return { key: t.key, label: t.label, icon: TILE_ICON[t.key], placed: on, aria: (on ? t.label + ' placed' : 'Add ' + t.label),
+        iconColor: on ? 'rgba(255,255,255,.4)' : 'var(--blue-300, #66E0FF)',
+        iconWrap: { display: 'grid', placeItems: 'center', width: 40, height: 40, borderRadius: 999, background: on ? 'rgba(255,255,255,.05)' : 'rgba(0,204,255,.10)', boxShadow: on ? 'none' : 'inset 0 0 0 1px rgba(0,204,255,.28), 0 0 18px rgba(0,204,255,.25)' },
+        style: { display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', gap: 8, minHeight: 92, padding: '12px 8px', borderRadius: 14, border: '1px solid ' + (on ? 'rgba(255,255,255,.08)' : 'rgba(0,204,255,.34)'), background: on ? 'rgba(255,255,255,.025)' : 'linear-gradient(180deg, rgba(20,34,58,.85), rgba(7,11,21,.92))', boxShadow: on ? 'none' : 'inset 0 1px 0 rgba(255,255,255,.1), 0 10px 26px rgba(0,0,0,.45), 0 0 26px rgba(0,204,255,.2)', color: on ? 'rgba(255,255,255,.4)' : '#fff', cursor: on ? 'default' : 'grab', touchAction: 'none', userSelect: 'none', opacity: on ? .55 : 1, transition: 'all 200ms cubic-bezier(.16,1,.3,1)' },
+        hover: on ? '' : 'transform: translateY(-3px); border-color: rgba(0,204,255,.6); box-shadow: inset 0 1px 0 rgba(255,255,255,.14), 0 14px 30px rgba(0,0,0,.5), 0 0 40px rgba(0,204,255,.38)' }; }),
+      seeFull: this.seeFull, bDone: done,
+      seeFullStyle: { display: 'inline-flex', alignItems: 'center', gap: 8, padding: '9px 14px', borderRadius: 999, border: '1px solid rgba(255,255,255,.16)', background: 'rgba(255,255,255,.05)', color: 'rgba(255,255,255,.78)', fontSize: 13, fontWeight: 600, cursor: done ? 'default' : 'pointer', opacity: done ? .4 : 1, transition: 'all 200ms cubic-bezier(.16,1,.3,1)' },
+      tileDown: this.tileDown, tileKey: this.tileKey, remix: this.remix, startOver: this.startOver, remixOff: !done || cyc.length < 2,
+      remixStyle: (() => { const all = done && cyc.length > 1; return { display: 'flex', alignItems: 'center', gap: 8, padding: '9px 18px', borderRadius: 999, border: '1px solid ' + (all ? 'rgba(0,204,255,.8)' : 'rgba(255,255,255,.14)'), background: all ? 'var(--blue-400, #00CCFF)' : 'rgba(255,255,255,.05)', color: all ? '#001830' : 'rgba(255,255,255,.4)', boxShadow: all ? '0 0 22px rgba(0,204,255,.4), inset 0 1px 0 rgba(255,255,255,.4)' : 'none', fontSize: 13, fontWeight: 700, cursor: all ? 'pointer' : 'not-allowed', transition: 'all 200ms cubic-bezier(.16,1,.3,1)' }; })(),
+      bStatus: done ? (cyc.length > 1 ? 'Layout ' + ((s.lay % cyc.length) + 1) + ' of ' + cyc.length : 'Build complete') : s.placed.length + ' of 6 placed'
+    });
+  }
+}
+</script>
+</body>
+</html>

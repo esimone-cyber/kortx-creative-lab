@@ -1,0 +1,17 @@
+:root{
+  /* Dark surfaces lift with inner light + a cyan bloom, never a grey drop shadow */
+  --shadow-card-dark:0 1px 0 rgba(255,255,255,.06) inset,0 24px 60px rgba(0,0,0,.45);
+  --shadow-panel-dark:0 1px 0 rgba(255,255,255,.05) inset,0 40px 90px rgba(0,0,0,.55);
+  --glow-accent:0 0 0 1px rgba(0,204,255,.35),0 0 40px rgba(0,204,255,.28);
+  --glow-accent-soft:0 0 28px rgba(0,204,255,.18);
+
+  /* Light surfaces (Kampus) use hairline borders plus a very low shadow */
+  --shadow-card-light:0 1px 2px rgba(16,24,40,.06),0 1px 3px rgba(16,24,40,.04);
+  --shadow-raised-light:0 4px 12px rgba(16,24,40,.08);
+  --shadow-popover-light:0 12px 32px rgba(16,24,40,.14);
+
+  /* Brand background washes */
+  --wash-cyan:radial-gradient(60% 70% at 80% 60%,rgba(0,204,255,.28) 0%,rgba(0,204,255,0) 70%); /* @kind color */
+  --wash-violet:radial-gradient(50% 60% at 20% 95%,rgba(138,124,248,.30) 0%,rgba(138,124,248,0) 70%); /* @kind color */
+  --wash-page:radial-gradient(70% 80% at 78% 55%,rgba(0,140,190,.30) 0%,rgba(0,25,48,0) 72%),radial-gradient(55% 60% at 12% 100%,rgba(126,106,214,.32) 0%,rgba(0,25,48,0) 70%); /* @kind color */
+}

@@ -1,0 +1,525 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<script src="kx-theme.js"></script>
+<link rel="icon" type="image/svg+xml" href="assets/kortx-logomark-bright-blue.svg">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Admin Control · KORTX Creative Labs</title>
+<link rel="preconnect" href="https://fdjfsimjilicmfsiijyi.supabase.co" crossorigin>
+<link rel="preconnect" href="https://esm.sh" crossorigin>
+<link rel="stylesheet" href="_ds/kortx-design-guide-2026-5bc7ff27-9282-4218-938a-63d43f555d47/tokens/fonts.css">
+<link rel="stylesheet" href="_ds/kortx-design-guide-2026-5bc7ff27-9282-4218-938a-63d43f555d47/tokens/colors.css">
+<link rel="stylesheet" href="_ds/kortx-design-guide-2026-5bc7ff27-9282-4218-938a-63d43f555d47/tokens/typography.css">
+<link rel="stylesheet" href="_ds/kortx-design-guide-2026-5bc7ff27-9282-4218-938a-63d43f555d47/tokens/spacing.css">
+<link rel="stylesheet" href="_ds/kortx-design-guide-2026-5bc7ff27-9282-4218-938a-63d43f555d47/tokens/radius.css">
+<link rel="stylesheet" href="_ds/kortx-design-guide-2026-5bc7ff27-9282-4218-938a-63d43f555d47/tokens/elevation.css">
+<link rel="stylesheet" href="_ds/kortx-design-guide-2026-5bc7ff27-9282-4218-938a-63d43f555d47/tokens/motion.css">
+<link rel="stylesheet" href="_ds/kortx-design-guide-2026-5bc7ff27-9282-4218-938a-63d43f555d47/tokens/base.css">
+<link rel="stylesheet" href="_ds/kortx-design-guide-2026-5bc7ff27-9282-4218-938a-63d43f555d47/styles.css">
+<script src="_ds/kortx-design-guide-2026-5bc7ff27-9282-4218-938a-63d43f555d47/_ds_bundle.js"></script>
+<style>
+  html, body { margin: 0; padding: 0; background: #000509; }
+  body { font-family: var(--font-body, Inter, Helvetica, sans-serif); -webkit-font-smoothing: antialiased; }
+  a { color: var(--blue-400); text-decoration: none; }
+  a:hover { color: var(--blue-300); text-decoration: none; }
+  input, select, button { font-family: inherit; }
+  ::placeholder { color: rgba(255,255,255,.38); }
+  [data-focusable]:focus-visible { outline: none; border-color: var(--blue-400) !important; box-shadow: 0 0 0 3px rgba(0,204,255,.55) !important; }
+  @keyframes kx-rise { 0% { opacity: 0; transform: translateY(12px) } 100% { opacity: 1; transform: translateY(0) } }
+  @keyframes kx-spin { to { transform: rotate(360deg) } }
+  @keyframes kx-toast { 0% { opacity: 0; transform: translate(-50%, 14px) } 100% { opacity: 1; transform: translate(-50%, 0) } }
+  @media (prefers-reduced-motion: reduce) { *, *::before, *::after { animation-duration: .001ms !important; transition-duration: .001ms !important; } }
+  @media (max-width: 860px) { [data-user-row] { grid-template-columns: 40px minmax(0, 1fr) !important; } [data-user-row] > [data-col] { grid-column: 2 !important; justify-content: flex-start !important; } }
+  @keyframes kx-orbit { 0% { transform: rotate(0) translateX(26px) } 100% { transform: rotate(360deg) translateX(26px) } }
+</style>
+</helmet>
+
+<div data-screen-label="Admin Control" style="position: relative; min-height: 100vh; background: #000509; color: #fff; overflow-x: clip; isolation: isolate;">
+  <div aria-hidden="true" style="position: fixed; inset: 0; z-index: 0; pointer-events: none; overflow: hidden;">
+    <div style="position: absolute; top: -22vh; right: -14vw; width: 78vw; height: 78vw; border-radius: 50%; background: radial-gradient(circle at 50% 50%, rgba(0,204,255,.14), rgba(0,204,255,.04) 40%, transparent 68%); filter: blur(24px);"></div>
+    <div style="position: absolute; bottom: -34vh; left: -18vw; width: 72vw; height: 72vw; border-radius: 50%; background: radial-gradient(circle at 50% 50%, rgba(109,94,240,.14), rgba(109,94,240,.03) 42%, transparent 70%); filter: blur(30px);"></div>
+    <div style="position: absolute; left: 50%; top: 40%; width: min(150vh, 130vw); aspect-ratio: 1 / 1; transform: translate(-50%, -50%); border-radius: 50%; border: 1px solid rgba(255,255,255,.06);"></div>
+    <div style="position: absolute; left: 50%; top: 40%; width: min(110vh, 96vw); aspect-ratio: 1 / 1; transform: translate(-50%, -50%); border-radius: 50%; border: 1px solid rgba(255,255,255,.05);"></div>
+  </div>
+
+  <header style="position: sticky; top: 0; z-index: 60; display: flex; align-items: center; gap: 16px; flex-wrap: wrap; min-height: 72px; padding: 12px clamp(20px, 4vw, 56px); box-sizing: border-box; background: rgba(0,5,9,.72); backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px); border-bottom: 1px solid rgba(255,255,255,.07);">
+    <a href="/" aria-label="KORTX Creative Labs" style="position: relative; display: grid; place-items: center; width: 46px; height: 46px; flex: none;">
+      <span aria-hidden="true" style="position: absolute; inset: 0; border-radius: 50%; background: radial-gradient(circle at 50% 50%, rgba(0,204,255,.24), transparent 68%);"></span>
+      <span aria-hidden="true" style="position: absolute; inset: 3px; border: 1px solid rgba(0,204,255,.30); border-radius: 50%;"></span>
+      <span aria-hidden="true" style="position: absolute; inset: 8px; border: 1px solid rgba(138,124,248,.28); border-radius: 50%; transform: rotate(18deg) scaleY(.6);"></span>
+      <img src="assets/kortx-logomark-bright-blue.svg" alt="KORTX" style="position: relative; width: 20px; display: block;">
+      <span aria-hidden="true" style="position: absolute; top: 50%; left: 50%; width: 4px; height: 4px; margin: -2px; border-radius: 50%; background: var(--blue-300, #33D6FF); box-shadow: 0 0 9px rgba(0,204,255,.9); animation: kx-orbit 18s linear infinite;"></span>
+    </a>
+    <dc-import name="Site Nav" hint-size="200px,40px"></dc-import>
+    <div style="flex: 1;"></div>
+    <sc-if value="{{ signedIn }}" hint-placeholder-val="{{ false }}">
+      <span style="font-size: 12px; color: rgba(255,255,255,.55);">{{ meEmail }} · {{ meRole }}</span>
+      <a href="{{ profileHref }}" data-focusable="1" style="display: flex; align-items: center; gap: 8px; padding: 6px 12px 6px 6px; border-radius: 999px; border: 1px solid rgba(255,255,255,.14); background: rgba(255,255,255,.05); color: #fff; font-size: 13px; font-weight: 600;" style-hover="border-color: rgba(0,204,255,.5); color: #fff">
+        <span style="display: grid; place-items: center; width: 26px; height: 26px; border-radius: 50%; background: rgba(0,204,255,.16); color: var(--blue-300); font-size: 12px; font-weight: 700;">{{ meInitial }}</span>Profile</a>
+      <button type="button" data-focusable="1" onClick="{{ signOut }}" style="height: 34px; padding: 0 14px; border-radius: 999px; border: 1px solid rgba(255,255,255,.14); background: transparent; color: rgba(255,255,255,.8); font-size: 13px; font-weight: 600; cursor: pointer;" style-hover="background: rgba(255,255,255,.08); color: #fff">Sign Out</button>
+    </sc-if>
+    <dc-import name="User Menu" hint-size="40px,40px" style="margin-left: auto; order: 99;"></dc-import>
+  </header>
+
+  <main style="position: relative; z-index: 1; max-width: 1280px; margin: 0 auto; box-sizing: border-box; padding: clamp(36px, 6vh, 72px) clamp(20px, 4vw, 56px) 120px;">
+
+    <div data-block="Admin · Section head" style="display: flex; flex-direction: column; align-items: center; text-align: center; gap: clamp(10px, 1.4vh, 16px); margin-bottom: clamp(36px, 6vh, 64px); animation: kx-rise 600ms cubic-bezier(.16,1,.3,1) both;">
+      <div style="font-size: 11px; font-weight: 600; letter-spacing: .18em; text-transform: uppercase; color: var(--lime-300);">KORTX Creative Labs</div>
+      <h1 style="margin: 0; max-width: 1000px; font-size: clamp(40px, 5.6vw, 76px); font-weight: 700; line-height: 1.04; letter-spacing: -.035em; text-wrap: balance;">Admin control</h1>
+      <p style="margin: 0; max-width: 680px; font-size: clamp(16px, 1.5vw, 19px); line-height: 1.55; color: rgba(255,255,255,.76); text-wrap: pretty;">Invite teammates, set who has admin access, and open every live Creative Labs page from one place.</p>
+    </div>
+
+    <sc-if value="{{ gateLoading }}" hint-placeholder-val="{{ true }}">
+      <div role="status" style="display: grid; place-items: center; padding: 80px 0;"><span style="width: 24px; height: 24px; border-radius: 50%; border: 2px solid rgba(0,204,255,.25); border-top-color: var(--blue-400); animation: kx-spin 800ms linear infinite;"></span></div>
+    </sc-if>
+
+    <sc-if value="{{ gateBlocked }}" hint-placeholder-val="{{ false }}">
+      <div style="max-width: 460px; margin: 0 auto; display: flex; flex-direction: column; align-items: center; gap: 14px; text-align: center; padding: 32px; border-radius: 20px; border: 1px solid rgba(0,204,255,.28); background: rgba(7,11,21,.78); backdrop-filter: blur(14px); box-shadow: inset 0 1px 0 rgba(0,204,255,.34), 0 30px 80px rgba(0,0,0,.55);">
+        <h2 style="margin: 0; font-size: 24px; font-weight: 700; letter-spacing: -.02em;">{{ gateTitle }}</h2>
+        <p style="margin: 0; font-size: 14px; line-height: 1.55; color: rgba(255,255,255,.7);">{{ gateBody }}</p>
+        <a href="{{ gateHref }}" data-focusable="1" style="display: inline-flex; align-items: center; height: 46px; padding: 0 22px; border-radius: 999px; border: 1px solid rgba(255,255,255,.16); background: rgba(255,255,255,.06); color: #fff; font-size: 14px; font-weight: 600; transition: all 200ms cubic-bezier(.16,1,.3,1);" style-hover="background: rgba(109,94,240,.16); border-color: rgba(167,139,250,.6); color: #fff; transform: translateY(-2px); box-shadow: 0 0 32px rgba(109,94,240,.55)">{{ gateCta }}</a>
+      </div>
+    </sc-if>
+
+    <sc-if value="{{ ready }}" hint-placeholder-val="{{ false }}">
+      <section data-block="Admin · Team" aria-label="Team" style="animation: kx-rise 600ms cubic-bezier(.16,1,.3,1) both;">
+        <div style="display: flex; flex-wrap: wrap; align-items: flex-end; justify-content: space-between; gap: 16px; margin-bottom: 18px;">
+          <div>
+            <div style="font-size: 11px; font-weight: 600; letter-spacing: .18em; text-transform: uppercase; color: var(--blue-300);">Team</div>
+            <h2 style="margin: 6px 0 0; font-size: clamp(26px, 2.8vw, 36px); font-weight: 700; letter-spacing: -.03em;">Who has access</h2>
+          </div>
+          <button type="button" data-focusable="1" onClick="{{ openAdd }}" style="display: inline-flex; align-items: center; gap: 8px; height: 46px; padding: 0 22px; border-radius: 999px; border: 1px solid rgba(255,255,255,.16); background: rgba(255,255,255,.06); color: #fff; font-size: 14px; font-weight: 600; cursor: pointer; transition: all 200ms cubic-bezier(.16,1,.3,1);" style-hover="background: rgba(109,94,240,.16); border-color: rgba(167,139,250,.6); transform: translateY(-2px); box-shadow: 0 0 0 1px rgba(109,94,240,.35), 0 0 32px rgba(109,94,240,.55), 0 0 64px rgba(214,125,240,.25)" style-active="transform: scale(.985)">
+            <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 5v14"></path><path d="M5 12h14"></path></svg>Add User</button>
+        </div>
+
+        <div style="display: flex; flex-wrap: wrap; align-items: center; gap: 10px; margin-bottom: 16px;">
+          <div role="tablist" aria-label="Filter team" style="display: flex; flex-wrap: wrap; gap: 6px;">
+            <sc-for list="{{ filters }}" as="f" hint-placeholder-count="4">
+              <button type="button" role="tab" data-focusable="1" data-f="{{ f.key }}" aria-selected="{{ f.on }}" onClick="{{ setFilter }}" style="{{ f.style }}">{{ f.label }} <span style="opacity: .6;">{{ f.count }}</span></button>
+            </sc-for>
+          </div>
+          <div style="flex: 1;"></div>
+          <input data-focusable="1" type="search" value="{{ q }}" onChange="{{ onSearch }}" placeholder="Search name or email" aria-label="Search team" style="height: 40px; width: min(280px, 100%); padding: 0 14px; border-radius: 999px; border: 1px solid rgba(255,255,255,.14); background: rgba(0,5,9,.6); color: #fff; font-size: 13px; outline: none; box-sizing: border-box;">
+        </div>
+
+        <sc-if value="{{ needSql }}" hint-placeholder-val="{{ false }}">
+          <div role="status" style="margin-bottom: 14px; padding: 14px 16px; border-radius: 12px; border: 1px solid rgba(252,211,77,.4); background: rgba(252,211,77,.06); font-size: 13px; line-height: 1.55; color: #FDE68A;"><strong style="color: #fff;">One-time setup needed.</strong> Run <code style="color: #fff;">supabase/migrations/2026-10-02_team_auth.sql</code>, then <code style="color: #fff;">2026-10-02_admin_control.sql</code>, in the Supabase SQL Editor to turn on invites, deletes, and sign-in dates. Until then this list reads profiles directly.</div>
+        </sc-if>
+        <sc-if value="{{ listErr }}" hint-placeholder-val="{{ false }}">
+          <div role="alert" style="margin-bottom: 14px; padding: 12px 14px; border-radius: 10px; border: 1px solid rgba(240,180,255,.35); background: rgba(214,125,240,.07); font-size: 13px; line-height: 1.5; color: #F0B4FF;">{{ listErr }}</div>
+        </sc-if>
+
+        <div role="list" style="display: flex; flex-direction: column; gap: 8px;">
+          <sc-for list="{{ rows }}" as="r" hint-placeholder-count="4">
+            <div role="listitem" data-user-row style="{{ r.rowStyle }}">
+              <span aria-hidden="true" style="{{ r.avatarStyle }}">{{ r.initial }}</span>
+              <div style="min-width: 0;">
+                <div style="display: flex; align-items: center; gap: 8px; flex-wrap: wrap;">
+                  <span style="font-size: 15px; font-weight: 700; letter-spacing: -.01em; color: #fff;">{{ r.name }}</span>
+                  <sc-if value="{{ r.isMe }}" hint-placeholder-val="{{ false }}"><span style="padding: 2px 8px; border-radius: 999px; background: rgba(0,204,255,.12); color: var(--blue-300); font-size: 10.5px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase;">You</span></sc-if>
+                </div>
+                <div style="margin-top: 2px; font-size: 13px; color: rgba(255,255,255,.6); overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">{{ r.sub }}</div>
+              </div>
+              <div data-col>
+                <sc-if value="{{ r.isUser }}" hint-placeholder-val="{{ true }}">
+                  <div role="radiogroup" aria-label="{{ r.roleAria }}" style="display: inline-grid; grid-template-columns: 1fr 1fr; gap: 3px; padding: 3px; border-radius: 999px; background: rgba(255,255,255,.05); border: 1px solid rgba(255,255,255,.08);">
+                    <button type="button" role="radio" data-focusable="1" data-id="{{ r.id }}" data-role="admin" aria-checked="{{ r.adminOn }}" disabled="{{ r.busy }}" onClick="{{ setRole }}" style="{{ r.adminStyle }}">Admin</button>
+                    <button type="button" role="radio" data-focusable="1" data-id="{{ r.id }}" data-role="internal" aria-checked="{{ r.internalOn }}" disabled="{{ r.busy }}" onClick="{{ setRole }}" style="{{ r.internalStyle }}">Internal</button>
+                  </div>
+                </sc-if>
+                <sc-if value="{{ r.isInvite }}" hint-placeholder-val="{{ false }}">
+                  <span style="display: inline-flex; padding: 6px 12px; border-radius: 999px; border: 1px solid rgba(255,255,255,.12); font-size: 12px; font-weight: 600; color: rgba(255,255,255,.75);">{{ r.roleLabel }}</span>
+                </sc-if>
+              </div>
+              <div data-col style="display: flex; flex-direction: column; gap: 3px; min-width: 0;">
+                <span style="{{ r.statusStyle }}">{{ r.status }}</span>
+                <span style="font-size: 11.5px; color: rgba(255,255,255,.5); white-space: nowrap;">{{ r.meta }}</span>
+              </div>
+              <div data-col style="display: flex; flex-wrap: wrap; justify-content: flex-end; gap: 6px;">
+                <sc-if value="{{ r.isUser }}" hint-placeholder-val="{{ true }}">
+                  <button type="button" data-focusable="1" data-id="{{ r.id }}" onClick="{{ openEdit }}" style="height: 32px; padding: 0 12px; border-radius: 999px; border: 1px solid rgba(255,255,255,.14); background: transparent; color: rgba(255,255,255,.85); font-size: 12px; font-weight: 600; cursor: pointer;" style-hover="border-color: rgba(0,204,255,.45); color: #fff">Edit</button>
+                  <sc-if value="{{ r.canDelete }}" hint-placeholder-val="{{ true }}">
+                    <button type="button" data-focusable="1" data-id="{{ r.id }}" onClick="{{ openDelete }}" style="height: 32px; padding: 0 12px; border-radius: 999px; border: 1px solid rgba(255,255,255,.14); background: transparent; color: rgba(255,255,255,.85); font-size: 12px; font-weight: 600; cursor: pointer;" style-hover="border-color: rgba(214,125,240,.55); color: #F0B4FF">Delete</button>
+                  </sc-if>
+                </sc-if>
+                <sc-if value="{{ r.isInvite }}" hint-placeholder-val="{{ false }}">
+                  <button type="button" data-focusable="1" data-id="{{ r.id }}" onClick="{{ copyInviteRow }}" style="height: 32px; padding: 0 12px; border-radius: 999px; border: 1px solid rgba(0,204,255,.35); background: rgba(0,204,255,.06); color: var(--blue-300); font-size: 12px; font-weight: 600; cursor: pointer;" style-hover="background: rgba(0,204,255,.14); color: #fff">{{ r.copyLabel }}</button>
+                  <button type="button" data-focusable="1" data-id="{{ r.id }}" onClick="{{ revokeInvite }}" style="height: 32px; padding: 0 12px; border-radius: 999px; border: 1px solid rgba(255,255,255,.14); background: transparent; color: rgba(255,255,255,.85); font-size: 12px; font-weight: 600; cursor: pointer;" style-hover="border-color: rgba(214,125,240,.55); color: #F0B4FF">Revoke</button>
+                </sc-if>
+              </div>
+            </div>
+          </sc-for>
+          <sc-if value="{{ noRows }}" hint-placeholder-val="{{ false }}">
+            <div style="padding: 36px; border-radius: 14px; border: 1px dashed rgba(255,255,255,.14); text-align: center; font-size: 14px; color: rgba(255,255,255,.6);">No one matches that filter.</div>
+          </sc-if>
+        </div>
+      </section>
+
+      <section data-block="Admin · Live links" aria-label="Live links" style="margin-top: clamp(64px, 10vh, 104px);">
+        <div style="display: flex; flex-wrap: wrap; align-items: flex-end; justify-content: space-between; gap: 16px; margin-bottom: 18px;">
+          <div>
+            <div style="font-size: 11px; font-weight: 600; letter-spacing: .18em; text-transform: uppercase; color: var(--blue-300);">Live Links</div>
+            <h2 style="margin: 6px 0 0; font-size: clamp(26px, 2.8vw, 36px); font-weight: 700; letter-spacing: -.03em;">Everything that's live</h2>
+          </div>
+          <span style="font-size: 12px; color: rgba(255,255,255,.5);">{{ siteBase }}</span>
+        </div>
+        <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, 300px), 1fr)); gap: 12px;">
+          <sc-for list="{{ links }}" as="l" hint-placeholder-count="9">
+            <article style="display: flex; flex-direction: column; gap: 10px; padding: 18px 20px; border-radius: 14px; border: 1px solid rgba(255,255,255,.08); background: #070B15; box-shadow: inset 0 1px 0 rgba(255,255,255,.05), 0 20px 40px rgba(0,0,0,.35); transition: border-color 200ms cubic-bezier(.16,1,.3,1), transform 200ms cubic-bezier(.16,1,.3,1);" style-hover="border-color: rgba(0,204,255,.35); transform: translateY(-2px)">
+              <div style="display: flex; align-items: flex-start; justify-content: space-between; gap: 10px;">
+                <div style="min-width: 0;">
+                  <div style="font-size: 15px; font-weight: 700; letter-spacing: -.01em; color: var(--blue-300);">{{ l.name }}</div>
+                  <div style="margin-top: 2px; font-size: 12px; color: rgba(255,255,255,.5); font-family: ui-monospace, SFMono-Regular, Menlo, monospace; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">{{ l.path }}</div>
+                </div>
+                <span style="{{ l.tagStyle }}">{{ l.tag }}</span>
+              </div>
+              <p style="margin: 0; font-size: 13px; line-height: 1.5; color: rgba(255,255,255,.7); text-wrap: pretty;">{{ l.desc }}</p>
+              <div style="display: flex; gap: 6px; margin-top: auto;">
+                <a href="{{ l.url }}" target="_blank" rel="noopener" data-focusable="1" style="display: inline-flex; align-items: center; gap: 6px; height: 32px; padding: 0 14px; border-radius: 999px; border: 1px solid rgba(255,255,255,.16); background: rgba(255,255,255,.06); color: #fff; font-size: 12px; font-weight: 600;" style-hover="background: rgba(109,94,240,.16); border-color: rgba(167,139,250,.6); color: #fff; box-shadow: 0 0 24px rgba(109,94,240,.5)">Open<svg viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17L17 7"></path><path d="M8 7h9v9"></path></svg></a>
+                <button type="button" data-focusable="1" data-url="{{ l.url }}" onClick="{{ copyLink }}" style="height: 32px; padding: 0 12px; border-radius: 999px; border: 1px solid rgba(255,255,255,.12); background: transparent; color: rgba(255,255,255,.75); font-size: 12px; font-weight: 600; cursor: pointer;" style-hover="color: #fff; border-color: rgba(0,204,255,.45)">Copy Link</button>
+              </div>
+            </article>
+          </sc-for>
+        </div>
+        <sc-if value="{{ hasPages }}" hint-placeholder-val="{{ false }}">
+          <div style="margin-top: 28px; font-size: 14px; font-weight: 700;">Published proposals</div>
+          <div role="list" style="margin-top: 10px; display: flex; flex-direction: column; border-radius: 14px; border: 1px solid rgba(255,255,255,.08); background: #070B15; overflow: hidden;">
+            <sc-for list="{{ pages }}" as="p" hint-placeholder-count="3">
+              <div role="listitem" style="display: flex; flex-wrap: wrap; align-items: center; gap: 10px 16px; padding: 14px 18px; border-top: 1px solid rgba(255,255,255,.06);">
+                <div style="flex: 1 1 260px; min-width: 0;">
+                  <div style="font-size: 14px; font-weight: 700; color: #fff;">{{ p.brand }}</div>
+                  <div style="margin-top: 2px; font-size: 12px; color: rgba(255,255,255,.5);">{{ p.meta }}</div>
+                </div>
+                <a href="{{ p.url }}" target="_blank" rel="noopener" data-focusable="1" style="font-size: 12.5px; font-weight: 600;">Open ↗</a>
+                <button type="button" data-focusable="1" data-url="{{ p.url }}" onClick="{{ copyLink }}" style="padding: 0; border: 0; background: none; color: rgba(255,255,255,.7); font-size: 12.5px; font-weight: 600; cursor: pointer;" style-hover="color: #fff">Copy Link</button>
+              </div>
+            </sc-for>
+          </div>
+        </sc-if>
+      </section>
+    </sc-if>
+  </main>
+
+  <footer data-block="Site footer" style="position: relative; z-index: 1; background: transparent;">
+    <div style="max-width: 1280px; margin: 0 auto; padding: clamp(28px, 4vh, 48px) clamp(20px, 4vw, 56px) clamp(32px, 4vw, 52px); text-align: center;">
+      <div style="padding-top: clamp(16px, 2vw, 24px); border-top: 1px solid rgba(255,255,255,.07); font-size: 11px; font-weight: 600; letter-spacing: .18em; text-transform: uppercase; color: var(--blue-400, #00CCFF);">Built with grit in Detroit.</div>
+    </div>
+  </footer>
+
+  <!-- ADD USER / INVITE -->
+  <sc-if value="{{ addOpen }}" hint-placeholder-val="{{ false }}">
+    <div style="position: fixed; inset: 0; z-index: 90; display: flex; align-items: center; justify-content: center; padding: 20px; background: rgba(0,8,18,.82); backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px);">
+      <div onClick="{{ closeAdd }}" style="position: absolute; inset: 0;"></div>
+      <div role="dialog" aria-modal="true" aria-label="Add user" style="position: relative; z-index: 2; width: 100%; max-width: 480px; display: flex; flex-direction: column; gap: 16px; padding: 28px; border-radius: 20px; border: 1px solid rgba(0,204,255,.28); background: rgba(7,11,21,.92); box-shadow: inset 0 1px 0 rgba(0,204,255,.34), 0 30px 80px rgba(0,0,0,.6), 0 0 80px rgba(0,204,255,.08); animation: kx-rise 320ms cubic-bezier(.16,1,.3,1) both;">
+        <button type="button" data-focusable="1" onClick="{{ closeAdd }}" aria-label="Close" style="position: absolute; top: 14px; right: 14px; width: 34px; height: 34px; border-radius: 50%; border: 1px solid rgba(255,255,255,.12); background: transparent; color: rgba(255,255,255,.7); cursor: pointer; display: grid; place-items: center;" style-hover="color: #fff; background: rgba(255,255,255,.08)"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12"></path><path d="M18 6L6 18"></path></svg></button>
+
+        <sc-if value="{{ addForm }}" hint-placeholder-val="{{ true }}">
+          <form onSubmit="{{ submitInvite }}" style="display: flex; flex-direction: column; gap: 14px;">
+            <div>
+              <div style="font-size: 11px; font-weight: 600; letter-spacing: .18em; text-transform: uppercase; color: var(--lime-300);">Step 1 of 2</div>
+              <h2 style="margin: 6px 0 0; font-size: 24px; font-weight: 700; letter-spacing: -.02em;">Add a teammate</h2>
+              <p style="margin: 6px 0 0; font-size: 13.5px; line-height: 1.5; color: rgba(255,255,255,.66);">We'll create a personal invite link. They use it to choose a password, and their role is applied automatically.</p>
+            </div>
+            <label style="display: flex; flex-direction: column; gap: 6px; font-size: 12px; font-weight: 600; color: rgba(255,255,255,.72);">Full name
+              <input data-focusable="1" type="text" required data-field="nName" value="{{ nName }}" onChange="{{ onField }}" placeholder="First Last" style="height: 46px; padding: 0 14px; border-radius: 8px; border: 1px solid rgba(255,255,255,.14); background: rgba(0,5,9,.6); color: #fff; font-size: 15px; outline: none;">
+            </label>
+            <label style="display: flex; flex-direction: column; gap: 6px; font-size: 12px; font-weight: 600; color: rgba(255,255,255,.72);">Work email
+              <input data-focusable="1" type="email" required data-field="nEmail" value="{{ nEmail }}" onChange="{{ onField }}" placeholder="name@kortx.io" style="{{ nEmailStyle }}">
+              <span style="{{ nEmailHint.style }}">{{ nEmailHint.text }}</span>
+            </label>
+            <div style="display: flex; flex-direction: column; gap: 6px;">
+              <span style="font-size: 12px; font-weight: 600; color: rgba(255,255,255,.72);">Access</span>
+              <div role="radiogroup" aria-label="Access level" style="display: grid; grid-template-columns: 1fr 1fr; gap: 8px;">
+                <sc-for list="{{ roleOpts }}" as="o" hint-placeholder-count="2">
+                  <button type="button" role="radio" data-focusable="1" data-role="{{ o.key }}" aria-checked="{{ o.on }}" onClick="{{ setNewRole }}" style="{{ o.style }}"><span style="font-size: 14px; font-weight: 700; color: #fff;">{{ o.label }}</span><span style="font-size: 12px; line-height: 1.4; color: rgba(255,255,255,.6);">{{ o.desc }}</span></button>
+                </sc-for>
+              </div>
+            </div>
+            <sc-if value="{{ addErr }}" hint-placeholder-val="{{ false }}"><div role="alert" style="font-size: 13px; color: #F0B4FF;">{{ addErr }}</div></sc-if>
+            <button type="submit" data-focusable="1" disabled="{{ inviteDisabled }}" style="{{ inviteBtn }}" style-hover="background: var(--blue-300)">{{ inviteLabel }}</button>
+          </form>
+        </sc-if>
+
+        <sc-if value="{{ addShare }}" hint-placeholder-val="{{ false }}">
+          <div style="display: flex; flex-direction: column; gap: 14px;">
+            <div>
+              <div style="font-size: 11px; font-weight: 600; letter-spacing: .18em; text-transform: uppercase; color: var(--lime-300);">Step 2 of 2 · Invite Ready</div>
+              <h2 style="margin: 6px 0 0; font-size: 24px; font-weight: 700; letter-spacing: -.02em;">Share the invite with {{ shareFirst }}</h2>
+              <p style="margin: 6px 0 0; font-size: 13.5px; line-height: 1.5; color: rgba(255,255,255,.66);">The link opens the sign-up page with their email filled in. It works once and expires in 30 days.</p>
+            </div>
+            <div style="display: flex; align-items: center; gap: 8px; padding: 6px 6px 6px 14px; border-radius: 12px; border: 1px solid rgba(0,204,255,.35); background: rgba(0,204,255,.05);">
+              <span style="flex: 1; min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; font-size: 12.5px; font-family: ui-monospace, SFMono-Regular, Menlo, monospace; color: rgba(255,255,255,.85);">{{ shareUrl }}</span>
+              <button type="button" data-focusable="1" onClick="{{ copyShareLink }}" style="flex: none; height: 36px; padding: 0 14px; border-radius: 8px; border: 0; background: var(--blue-400); color: #001830; font-size: 13px; font-weight: 700; cursor: pointer;" style-hover="background: var(--blue-300)">{{ copyLinkLabel }}</button>
+            </div>
+            <div style="display: flex; flex-direction: column; gap: 6px;">
+              <span style="font-size: 12px; font-weight: 600; color: rgba(255,255,255,.72);">Message to paste in Slack or email</span>
+              <div style="padding: 14px; border-radius: 12px; background: rgba(0,5,9,.6); border: 1px solid rgba(255,255,255,.1); font-size: 13px; line-height: 1.55; color: rgba(255,255,255,.82); white-space: pre-wrap;">{{ shareMessage }}</div>
+            </div>
+            <div style="display: flex; flex-wrap: wrap; gap: 8px;">
+              <button type="button" data-focusable="1" onClick="{{ copyShareMessage }}" style="flex: 1 1 160px; height: 44px; border-radius: 999px; border: 1px solid rgba(255,255,255,.16); background: rgba(255,255,255,.06); color: #fff; font-size: 13px; font-weight: 600; cursor: pointer; transition: all 200ms cubic-bezier(.16,1,.3,1);" style-hover="background: rgba(109,94,240,.16); border-color: rgba(167,139,250,.6); box-shadow: 0 0 28px rgba(109,94,240,.5)">{{ copyMsgLabel }}</button>
+              <a href="{{ shareMailto }}" data-focusable="1" style="flex: 1 1 160px; display: inline-flex; align-items: center; justify-content: center; height: 44px; border-radius: 999px; border: 1px solid rgba(255,255,255,.16); background: rgba(255,255,255,.06); color: #fff; font-size: 13px; font-weight: 600; transition: all 200ms cubic-bezier(.16,1,.3,1);" style-hover="background: rgba(109,94,240,.16); border-color: rgba(167,139,250,.6); color: #fff; box-shadow: 0 0 28px rgba(109,94,240,.5)">Open in Email</a>
+              <sc-if value="{{ canNativeShare }}" hint-placeholder-val="{{ false }}">
+                <button type="button" data-focusable="1" onClick="{{ nativeShare }}" style="flex: 1 1 100px; height: 44px; border-radius: 999px; border: 1px solid rgba(255,255,255,.16); background: rgba(255,255,255,.06); color: #fff; font-size: 13px; font-weight: 600; cursor: pointer;" style-hover="background: rgba(109,94,240,.16); border-color: rgba(167,139,250,.6)">Share…</button>
+              </sc-if>
+            </div>
+            <div style="display: flex; justify-content: space-between; gap: 12px; padding-top: 4px; font-size: 13px;">
+              <button type="button" data-focusable="1" onClick="{{ addAnother }}" style="padding: 0; border: 0; background: none; color: var(--blue-300); font-weight: 600; cursor: pointer;">Add another</button>
+              <button type="button" data-focusable="1" onClick="{{ closeAdd }}" style="padding: 0; border: 0; background: none; color: rgba(255,255,255,.7); font-weight: 600; cursor: pointer;" style-hover="color: #fff">Done</button>
+            </div>
+          </div>
+        </sc-if>
+      </div>
+    </div>
+  </sc-if>
+
+  <!-- EDIT USER -->
+  <sc-if value="{{ editOpen }}" hint-placeholder-val="{{ false }}">
+    <div style="position: fixed; inset: 0; z-index: 90; display: flex; align-items: center; justify-content: center; padding: 20px; background: rgba(0,8,18,.82); backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px);">
+      <div onClick="{{ closeEdit }}" style="position: absolute; inset: 0;"></div>
+      <form role="dialog" aria-modal="true" aria-label="Edit user" onSubmit="{{ submitEdit }}" style="position: relative; z-index: 2; width: 100%; max-width: 440px; display: flex; flex-direction: column; gap: 14px; padding: 28px; border-radius: 20px; border: 1px solid rgba(0,204,255,.28); background: rgba(7,11,21,.92); box-shadow: inset 0 1px 0 rgba(0,204,255,.34), 0 30px 80px rgba(0,0,0,.6); animation: kx-rise 320ms cubic-bezier(.16,1,.3,1) both;">
+        <div>
+          <h2 style="margin: 0; font-size: 22px; font-weight: 700; letter-spacing: -.02em;">Edit teammate</h2>
+          <p style="margin: 4px 0 0; font-size: 13px; color: rgba(255,255,255,.6);">{{ eEmail }}</p>
+        </div>
+        <label style="display: flex; flex-direction: column; gap: 6px; font-size: 12px; font-weight: 600; color: rgba(255,255,255,.72);">Full name
+          <input data-focusable="1" type="text" data-field="eName" value="{{ eName }}" onChange="{{ onField }}" style="height: 46px; padding: 0 14px; border-radius: 8px; border: 1px solid rgba(255,255,255,.14); background: rgba(0,5,9,.6); color: #fff; font-size: 15px; outline: none;">
+        </label>
+        <label style="display: flex; flex-direction: column; gap: 6px; font-size: 12px; font-weight: 600; color: rgba(255,255,255,.72);">Title
+          <input data-focusable="1" type="text" data-field="eTitle" value="{{ eTitle }}" onChange="{{ onField }}" style="height: 46px; padding: 0 14px; border-radius: 8px; border: 1px solid rgba(255,255,255,.14); background: rgba(0,5,9,.6); color: #fff; font-size: 15px; outline: none;">
+        </label>
+        <div style="display: flex; flex-direction: column; gap: 6px;">
+          <span style="font-size: 12px; font-weight: 600; color: rgba(255,255,255,.72);">Access</span>
+          <div role="radiogroup" aria-label="Access level" style="display: grid; grid-template-columns: 1fr 1fr; gap: 8px;">
+            <sc-for list="{{ eRoleOpts }}" as="o" hint-placeholder-count="2">
+              <button type="button" role="radio" data-focusable="1" data-role="{{ o.key }}" aria-checked="{{ o.on }}" disabled="{{ o.locked }}" onClick="{{ setEditRole }}" style="{{ o.style }}"><span style="font-size: 14px; font-weight: 700; color: #fff;">{{ o.label }}</span><span style="font-size: 12px; line-height: 1.4; color: rgba(255,255,255,.6);">{{ o.desc }}</span></button>
+            </sc-for>
+          </div>
+        </div>
+        <sc-if value="{{ editErr }}" hint-placeholder-val="{{ false }}"><div role="alert" style="font-size: 13px; color: #F0B4FF;">{{ editErr }}</div></sc-if>
+        <div style="display: flex; gap: 8px; justify-content: flex-end;">
+          <button type="button" data-focusable="1" onClick="{{ closeEdit }}" style="height: 44px; padding: 0 18px; border-radius: 999px; border: 1px solid rgba(255,255,255,.14); background: transparent; color: rgba(255,255,255,.8); font-size: 13px; font-weight: 600; cursor: pointer;">Cancel</button>
+          <button type="submit" data-focusable="1" disabled="{{ busy }}" style="height: 44px; padding: 0 22px; border-radius: 999px; border: 0; background: var(--blue-400); color: #001830; font-size: 13px; font-weight: 700; cursor: pointer;" style-hover="background: var(--blue-300)">{{ saveLabel }}</button>
+        </div>
+      </form>
+    </div>
+  </sc-if>
+
+  <!-- DELETE CONFIRM -->
+  <sc-if value="{{ delOpen }}" hint-placeholder-val="{{ false }}">
+    <div style="position: fixed; inset: 0; z-index: 90; display: flex; align-items: center; justify-content: center; padding: 20px; background: rgba(0,8,18,.82); backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px);">
+      <div onClick="{{ closeDelete }}" style="position: absolute; inset: 0;"></div>
+      <div role="alertdialog" aria-modal="true" aria-label="Delete user" style="position: relative; z-index: 2; width: 100%; max-width: 420px; display: flex; flex-direction: column; gap: 14px; padding: 28px; border-radius: 20px; border: 1px solid rgba(214,125,240,.35); background: rgba(7,11,21,.94); box-shadow: 0 30px 80px rgba(0,0,0,.6), 0 0 60px rgba(214,125,240,.12); animation: kx-rise 320ms cubic-bezier(.16,1,.3,1) both;">
+        <h2 style="margin: 0; font-size: 22px; font-weight: 700; letter-spacing: -.02em;">Delete {{ delName }}?</h2>
+        <p style="margin: 0; font-size: 14px; line-height: 1.55; color: rgba(255,255,255,.72);">This removes <strong style="color: #fff;">{{ delEmail }}</strong> from the Creative Labs and signs them out everywhere. Their saved drafts are deleted too. This can't be undone.</p>
+        <label style="display: flex; flex-direction: column; gap: 6px; font-size: 12px; font-weight: 600; color: rgba(255,255,255,.72);">Type DELETE to confirm
+          <input data-focusable="1" type="text" data-field="delConfirm" value="{{ delConfirm }}" onChange="{{ onField }}" autocomplete="off" style="height: 44px; padding: 0 14px; border-radius: 8px; border: 1px solid rgba(255,255,255,.14); background: rgba(0,5,9,.6); color: #fff; font-size: 14px; outline: none; letter-spacing: .08em;">
+        </label>
+        <sc-if value="{{ delErr }}" hint-placeholder-val="{{ false }}"><div role="alert" style="font-size: 13px; color: #F0B4FF;">{{ delErr }}</div></sc-if>
+        <div style="display: flex; gap: 8px; justify-content: flex-end;">
+          <button type="button" data-focusable="1" onClick="{{ closeDelete }}" style="height: 44px; padding: 0 18px; border-radius: 999px; border: 1px solid rgba(255,255,255,.14); background: transparent; color: rgba(255,255,255,.8); font-size: 13px; font-weight: 600; cursor: pointer;">Cancel</button>
+          <button type="button" data-focusable="1" disabled="{{ delDisabled }}" onClick="{{ confirmDelete }}" style="{{ delBtn }}">{{ delLabel }}</button>
+        </div>
+      </div>
+    </div>
+  </sc-if>
+
+  <sc-if value="{{ toast }}" hint-placeholder-val="{{ false }}">
+    <div role="status" style="position: fixed; left: 50%; bottom: 28px; z-index: 99; padding: 12px 18px; border-radius: 999px; border: 1px solid rgba(190,242,100,.4); background: rgba(7,11,21,.94); color: #E4FBC2; font-size: 13px; font-weight: 600; box-shadow: 0 20px 50px rgba(0,0,0,.5); animation: kx-toast 320ms cubic-bezier(.16,1,.3,1) both;">{{ toast }}</div>
+  </sc-if>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+const SITE = 'https://kortx-creative-labs.netlify.app';
+const LINKS = [
+  { name: 'Creative Playground', path: '/', tag: 'Public', desc: 'The public Creative Labs showcase: explore creative by goal and change live signals.' },
+  { name: 'Creative Database Admin', path: '/database', tag: 'Team', desc: 'The full library with admin tools to add, edit, tag and prioritize creatives.' },
+  { name: 'Creative Database', path: '/creative-database', tag: 'Public', desc: 'A read-only version of the library to share outside the team.' },
+  { name: 'Page Builder', path: '/page-builder', tag: 'Team', desc: 'Select creatives, add a brief, and generate a branded sales experience.' },
+  { name: 'Example Proposal', path: '/example-proposal', tag: 'Public', desc: 'A finished proposal to show clients what the Builder produces.' },
+  { name: 'The Pitch', path: '/pitch', tag: 'Team', desc: 'The vision and pilot plan for the KORTX Creative Labs ecosystem.' },
+  { name: 'Build Reference Style Guide', path: '/style-guide', tag: 'Team', desc: 'Every reusable block and style rule used across the Creative Labs.' },
+  { name: 'Sign In / Sign Up', path: '/sign-in', tag: 'Team', desc: 'Where teammates sign in or create their account with an invite.' },
+  { name: 'Profile', path: '/profile', tag: 'Team', desc: 'Each seller’s published pages, headshot, contact card and account settings.' },
+  { name: 'Admin Control', path: '/admin', tag: 'Admin', desc: 'This page: team access, invites and every live link.' },
+  { name: 'Live Links', path: '/links', tag: 'Admin', desc: 'Edit and copy the URL for every live page.' }
+];
+const EASE = 'cubic-bezier(.16,1,.3,1)';
+const fmtDate = d => d ? new Date(d).toLocaleDateString(undefined, { month: 'short', day: 'numeric', year: 'numeric' }) : '';
+const ago = d => { if (!d) return 'Never signed in'; const m = (Date.now() - new Date(d)) / 6e4; if (m < 60) return 'Active ' + Math.max(1, Math.round(m)) + 'm ago'; if (m < 1440) return 'Active ' + Math.round(m / 60) + 'h ago'; if (m < 43200) return 'Active ' + Math.round(m / 1440) + 'd ago'; return 'Last seen ' + fmtDate(d); };
+
+class Component extends DCLogic {
+  state = { gate: 'loading', me: null, users: [], invites: [], pages: [], listErr: '', q: '', filter: 'all', busyId: null,
+    addOpen: false, addStep: 'form', nName: '', nEmail: '', nRole: 'internal', addErr: '', invite: null, copied: '',
+    editId: null, eName: '', eTitle: '', eRole: 'internal', editErr: '',
+    delId: null, delConfirm: '', delErr: '', busy: false, toast: '' };
+
+  async componentDidMount() {
+    try {
+      this.cloud = await import('./creative-cloud.js');
+      const me = await this.cloud.currentUser();
+      this.R = this.cloud.route;
+      if (!me) return this.setState({ gate: 'signin' });
+      if (!me.isAdmin) return this.setState({ gate: 'denied', me });
+      this.setState({ me, gate: 'ok' });
+      this.refresh();
+    } catch (e) { this.setState({ gate: 'error' }); }
+  }
+  componentWillUnmount() { clearTimeout(this.tt); }
+
+  async refresh() {
+    const c = this.cloud;
+    const [u, i, p] = await Promise.allSettled([c.adminListUsers(), c.adminListInvites(), c.adminPublishedPages()]);
+    const fallback = u.value && u.value[0] && u.value[0]._fallback;
+    const needSql = fallback || (i.status === 'rejected' && /invites|relation|schema cache/i.test((i.reason && i.reason.message) || ''));
+    this.setState({ users: u.value || this.state.users, invites: i.value || [], pages: p.value || [], needSql,
+      listErr: u.status === 'rejected' ? 'Could not load the team: ' + ((u.reason && u.reason.message) || 'unknown error') : '' });
+  }
+  flash(t) { clearTimeout(this.tt); this.setState({ toast: t }); this.tt = setTimeout(() => this.setState({ toast: '' }), 2400); }
+  async copy(text, label) { try { await navigator.clipboard.writeText(text); } catch (e) { const ta = document.createElement('textarea'); ta.value = text; document.body.appendChild(ta); ta.select(); document.execCommand('copy'); ta.remove(); } this.flash(label || 'Copied'); }
+
+  inviteUrl(token) { return this.cloud.inviteUrl(token, SITE); }
+  inviteMessage(inv) {
+    const first = (inv.full_name || '').split(' ')[0] || 'there';
+    return 'Hi ' + first + ', you’re invited to the KORTX Creative Labs' + (inv.role === 'admin' ? ' as an admin' : '') + '.\n\nCreate your account with your @kortx.io email here:\n' + this.inviteUrl(inv.token) + '\n\nThe link works once and expires in 30 days.';
+  }
+
+  onField = e => this.setState({ [e.currentTarget.dataset.field]: e.currentTarget.value, addErr: '', editErr: '', delErr: '' });
+  onSearch = e => this.setState({ q: e.currentTarget.value });
+  setFilter = e => this.setState({ filter: e.currentTarget.dataset.f });
+  signOut = async () => { await this.cloud.signOut(); location.href = this.cloud.route('/sign-in?next=/admin'); };
+
+  setRole = async e => {
+    const { id, role } = e.currentTarget.dataset;
+    const u = this.state.users.find(x => x.id === id);
+    if (!u || u.role === role) return;
+    this.setState({ busyId: id });
+    try { await this.cloud.adminSetRole(id, role); this.setState(s => ({ users: s.users.map(x => x.id === id ? Object.assign({}, x, { role }) : x) })); this.flash((u.full_name || u.email) + ' is now ' + (role === 'admin' ? 'an admin' : 'internal')); }
+    catch (err) { this.flash(err.message || 'Could not change role'); }
+    this.setState({ busyId: null });
+  };
+
+  openAdd = () => this.setState({ addOpen: true, addStep: 'form', nName: '', nEmail: '', nRole: 'internal', addErr: '', invite: null, copied: '' });
+  closeAdd = () => this.setState({ addOpen: false });
+  addAnother = () => this.setState({ addStep: 'form', nName: '', nEmail: '', nRole: 'internal', addErr: '', invite: null, copied: '' });
+  setNewRole = e => this.setState({ nRole: e.currentTarget.dataset.role });
+  submitInvite = async e => {
+    e.preventDefault();
+    const s = this.state, email = s.nEmail.trim().toLowerCase();
+    if (!s.nName.trim()) return this.setState({ addErr: 'Add their name.' });
+    if (!this.cloud.isKortxEmail(email)) return this.setState({ addErr: 'Use an @kortx.io email.' });
+    if (s.users.some(u => (u.email || '').toLowerCase() === email)) return this.setState({ addErr: 'That person already has an account.' });
+    this.setState({ busy: true, addErr: '' });
+    try { const invite = await this.cloud.adminCreateInvite({ email, fullName: s.nName.trim(), role: s.nRole }); this.setState(st => ({ invite, addStep: 'share', invites: [invite].concat(st.invites.filter(i => i.email !== invite.email)) })); }
+    catch (err) { this.setState({ addErr: err.message || 'Could not create the invite' }); }
+    this.setState({ busy: false });
+  };
+  copyShareLink = () => { this.copy(this.inviteUrl(this.state.invite.token), 'Invite link copied'); this.setState({ copied: 'link' }); };
+  copyShareMessage = () => { this.copy(this.inviteMessage(this.state.invite), 'Invite message copied'); this.setState({ copied: 'msg' }); };
+  nativeShare = () => { const inv = this.state.invite; navigator.share({ title: 'KORTX Creative Labs invite', text: this.inviteMessage(inv) }).catch(() => {}); };
+  copyInviteRow = e => { const inv = this.state.invites.find(i => i.id === e.currentTarget.dataset.id); if (inv) this.copy(this.inviteMessage(inv), 'Invite for ' + inv.email + ' copied'); };
+  revokeInvite = async e => {
+    const id = e.currentTarget.dataset.id;
+    try { await this.cloud.adminRevokeInvite(id); this.setState(s => ({ invites: s.invites.filter(i => i.id !== id) })); this.flash('Invite revoked'); }
+    catch (err) { this.flash(err.message || 'Could not revoke'); }
+  };
+
+  openEdit = e => { const u = this.state.users.find(x => x.id === e.currentTarget.dataset.id); if (u) this.setState({ editId: u.id, eName: u.full_name || '', eTitle: u.title || '', eRole: u.role, editErr: '' }); };
+  closeEdit = () => this.setState({ editId: null });
+  setEditRole = e => this.setState({ eRole: e.currentTarget.dataset.role });
+  submitEdit = async e => {
+    e.preventDefault();
+    const s = this.state, u = s.users.find(x => x.id === s.editId);
+    this.setState({ busy: true, editErr: '' });
+    try {
+      await this.cloud.adminUpdateUser(u.id, s.eName.trim(), s.eTitle.trim());
+      if (s.eRole !== u.role) await this.cloud.adminSetRole(u.id, s.eRole);
+      this.setState(st => ({ editId: null, users: st.users.map(x => x.id === u.id ? Object.assign({}, x, { full_name: s.eName.trim(), title: s.eTitle.trim(), role: s.eRole }) : x) }));
+      this.flash('Saved');
+    } catch (err) { this.setState({ editErr: err.message || 'Could not save' }); }
+    this.setState({ busy: false });
+  };
+
+  openDelete = e => this.setState({ delId: e.currentTarget.dataset.id, delConfirm: '', delErr: '' });
+  closeDelete = () => this.setState({ delId: null });
+  confirmDelete = async () => {
+    const id = this.state.delId;
+    this.setState({ busy: true, delErr: '' });
+    try { await this.cloud.adminDeleteUser(id); this.setState(s => ({ users: s.users.filter(x => x.id !== id), delId: null })); this.flash('User deleted'); }
+    catch (err) { this.setState({ delErr: err.message || 'Could not delete' }); }
+    this.setState({ busy: false });
+  };
+  copyLink = e => this.copy(e.currentTarget.dataset.url, 'Link copied');
+
+  renderVals() {
+    const s = this.state, me = s.me || {};
+    const R = this.cloud ? this.cloud.route : (x => x);
+    const seg = on => ({ height: 30, padding: '0 14px', borderRadius: 999, border: 0, cursor: 'pointer', fontSize: 12, fontWeight: 700, transition: 'all 200ms ' + EASE, background: on ? 'var(--blue-400)' : 'transparent', color: on ? '#001830' : 'rgba(255,255,255,.7)' });
+    const card = (on, locked) => ({ display: 'flex', flexDirection: 'column', alignItems: 'flex-start', gap: 4, padding: '12px 14px', textAlign: 'left', borderRadius: 12, cursor: locked ? 'default' : 'pointer', opacity: locked ? .45 : 1, border: '1px solid ' + (on ? 'rgba(0,204,255,.55)' : 'rgba(255,255,255,.12)'), background: on ? 'rgba(0,204,255,.08)' : 'rgba(255,255,255,.03)', boxShadow: on ? '0 0 22px rgba(0,204,255,.18)' : 'none', transition: 'all 200ms ' + EASE });
+    const ROLES = [{ key: 'internal', label: 'Internal Team', desc: 'Build proposals, browse the library.' }, { key: 'admin', label: 'Admin', desc: 'Everything, plus edit the library and manage people.' }];
+    const pill = (c, b, bg) => ({ alignSelf: 'flex-start', padding: '3px 10px', borderRadius: 999, fontSize: 11.5, fontWeight: 700, color: c, border: '1px solid ' + b, background: bg, whiteSpace: 'nowrap' });
+    const ST = { active: pill('#E4FBC2', 'rgba(190,242,100,.4)', 'rgba(190,242,100,.07)'), unconfirmed: pill('#FCD34D', 'rgba(252,211,77,.4)', 'rgba(252,211,77,.07)'), invited: pill('var(--blue-300)', 'rgba(0,204,255,.4)', 'rgba(0,204,255,.07)') };
+    const rowBase = { display: 'grid', gridTemplateColumns: '40px minmax(0, 1.6fr) minmax(170px, auto) minmax(130px, .8fr) minmax(170px, auto)', alignItems: 'center', gap: '12px 18px', padding: '14px 18px', borderRadius: 14, border: '1px solid rgba(255,255,255,.08)', background: '#070B15', boxShadow: 'inset 0 1px 0 rgba(255,255,255,.05)' };
+    const av = (admin, invite) => ({ display: 'grid', placeItems: 'center', width: 40, height: 40, borderRadius: '50%', fontSize: 15, fontWeight: 700, background: invite ? 'transparent' : admin ? 'rgba(0,204,255,.16)' : 'rgba(255,255,255,.08)', border: invite ? '1px dashed rgba(0,204,255,.45)' : 'none', color: admin || invite ? 'var(--blue-300)' : '#fff' });
+    const q = s.q.trim().toLowerCase();
+    const userRows = s.users.map(u => {
+      const admin = u.role === 'admin', isMe = u.email === me.email, status = u.confirmed ? 'active' : 'unconfirmed';
+      return { kind: 'user', status, admin, id: u.id, name: u.full_name || u.email.split('@')[0], sub: u.email + (u.title ? ' · ' + u.title : ''), initial: (u.full_name || u.email).charAt(0).toUpperCase(),
+        isUser: true, isInvite: false, isMe, canDelete: !isMe, busy: s.busyId === u.id, roleAria: 'Access for ' + u.email,
+        adminOn: String(admin), internalOn: String(!admin), adminStyle: seg(admin), internalStyle: seg(!admin),
+        status: u.confirmed ? 'Active' : 'Email not confirmed', statusStyle: ST[status], meta: u.confirmed ? ago(u.last_sign_in_at) : 'Joined ' + fmtDate(u.created_at),
+        rowStyle: Object.assign({}, rowBase, isMe ? { borderColor: 'rgba(0,204,255,.28)' } : {}), avatarStyle: av(admin, false), _q: (u.full_name + ' ' + u.email).toLowerCase(), _s: status };
+    });
+    const invRows = s.invites.map(i => ({ kind: 'invite', id: i.id, name: i.full_name || i.email.split('@')[0], sub: i.email, initial: (i.full_name || i.email).charAt(0).toUpperCase(),
+      isUser: false, isInvite: true, isMe: false, roleLabel: i.role === 'admin' ? 'Admin' : 'Internal', copyLabel: 'Copy Invite',
+      status: 'Invite pending', statusStyle: ST.invited, meta: 'Sent ' + fmtDate(i.created_at), rowStyle: rowBase, avatarStyle: av(false, true), _q: ((i.full_name || '') + ' ' + i.email).toLowerCase(), _s: 'invited', admin: i.role === 'admin' }));
+    const all = userRows.concat(invRows);
+    const F = [['all', 'Everyone', () => true], ['admin', 'Admins', r => r.admin && r.kind === 'user'], ['internal', 'Internal', r => !r.admin && r.kind === 'user'], ['invited', 'Pending Invites', r => r.kind === 'invite']];
+    const fn = (F.find(f => f[0] === s.filter) || F[0])[2];
+    const rows = all.filter(fn).filter(r => !q || r._q.includes(q));
+    const inv = s.invite || {}, email = s.nEmail.trim(), typed = email.length > 0, ok = this.cloud ? this.cloud.isKortxEmail(email) : false;
+    const inviteReady = s.nName.trim() && ok && !s.busy;
+    const editUser = s.users.find(u => u.id === s.editId) || {}, delUser = s.users.find(u => u.id === s.delId) || {};
+    const delReady = s.delConfirm.trim().toUpperCase() === 'DELETE' && !s.busy;
+    const gate = s.gate;
+    return {
+      gateLoading: gate === 'loading', ready: gate === 'ok', gateBlocked: ['signin', 'denied', 'error'].includes(gate),
+      gateTitle: gate === 'signin' ? 'Sign in to continue' : gate === 'denied' ? 'Admins only' : 'Couldn’t connect',
+      gateBody: gate === 'signin' ? 'Admin Control is for KORTX Creative Labs admins.' : gate === 'denied' ? 'Your account (' + (me.email || '') + ') has Internal Team access. Ask an admin to upgrade you.' : 'We couldn’t reach the sign-in service. Check your connection and reload.',
+      gateHref: R(gate === 'signin' ? '/sign-in?next=/admin' : gate === 'denied' ? '/page-builder' : '/admin'), profileHref: R('/profile'), gateCta: gate === 'signin' ? 'Sign In' : gate === 'denied' ? 'Go to Page Builder' : 'Reload',
+      signedIn: !!s.me, meEmail: me.email || '', meRole: me.isAdmin ? 'Admin' : 'Internal', meInitial: (me.name || me.email || '?').charAt(0).toUpperCase(), signOut: this.signOut,
+      listErr: s.listErr, needSql: !!s.needSql, q: s.q, onSearch: this.onSearch, setFilter: this.setFilter,
+      filters: F.map(([key, label, f]) => { const on = s.filter === key; return { key, label, count: String(all.filter(f).length), on: String(on), style: { height: 34, padding: '0 14px', borderRadius: 999, cursor: 'pointer', fontSize: 12.5, fontWeight: 600, transition: 'all 200ms ' + EASE, border: '1px solid ' + (on ? 'rgba(0,204,255,.55)' : 'rgba(255,255,255,.12)'), background: on ? 'rgba(0,204,255,.12)' : 'transparent', color: on ? '#fff' : 'rgba(255,255,255,.7)' } }; }),
+      rows, noRows: !rows.length && !s.listErr, setRole: this.setRole, openEdit: this.openEdit, openDelete: this.openDelete, copyInviteRow: this.copyInviteRow, revokeInvite: this.revokeInvite,
+      siteBase: SITE.replace('https://', ''), copyLink: this.copyLink,
+      links: LINKS.map(l => Object.assign({}, l, { url: SITE + l.path, tagStyle: l.tag === 'Public' ? pill('#E4FBC2', 'rgba(190,242,100,.35)', 'rgba(190,242,100,.06)') : l.tag === 'Admin' ? pill('#D9CCFF', 'rgba(167,139,250,.45)', 'rgba(109,94,240,.12)') : pill('var(--blue-300)', 'rgba(0,204,255,.35)', 'rgba(0,204,255,.06)') })),
+      hasPages: s.pages.length > 0, pages: s.pages.map(p => ({ brand: p.brand + (p.agency ? ' · ' + p.agency : ''), meta: (p.page_type || 'Proposal') + ' · Updated ' + fmtDate(p.updated_at), url: SITE + '/p/' + p.slug })),
+      addOpen: s.addOpen, addForm: s.addStep === 'form', addShare: s.addStep === 'share', closeAdd: this.closeAdd, openAdd: this.openAdd, addAnother: this.addAnother,
+      nName: s.nName, nEmail: s.nEmail, onField: this.onField, addErr: s.addErr, submitInvite: this.submitInvite, setNewRole: this.setNewRole,
+      nEmailStyle: { height: 46, padding: '0 14px', borderRadius: 8, border: '1px solid ' + (typed && !ok ? 'rgba(240,180,255,.55)' : typed ? 'rgba(190,242,100,.45)' : 'rgba(255,255,255,.14)'), background: 'rgba(0,5,9,.6)', color: '#fff', fontSize: 15, outline: 'none' },
+      nEmailHint: { text: typed && !ok ? 'Must be an @kortx.io address' : typed ? '✓ KORTX email' : 'Only @kortx.io addresses can join', style: { fontSize: 11.5, fontWeight: 500, color: typed && !ok ? '#F0B4FF' : typed ? '#E4FBC2' : 'rgba(255,255,255,.45)' } },
+      roleOpts: ROLES.map(r => ({ key: r.key, label: r.label, desc: r.desc, on: String(s.nRole === r.key), style: card(s.nRole === r.key) })),
+      inviteDisabled: !inviteReady, inviteBtn: { height: 48, borderRadius: 999, border: 0, background: 'var(--blue-400)', color: '#001830', fontSize: 15, fontWeight: 700, cursor: inviteReady ? 'pointer' : 'default', opacity: inviteReady ? 1 : .4, transition: 'opacity 200ms ' + EASE },
+      inviteLabel: s.busy ? 'Creating invite…' : 'Create Invite Link',
+      shareFirst: (inv.full_name || '').split(' ')[0] || inv.email || '', shareUrl: inv.token ? this.inviteUrl(inv.token) : '', shareMessage: inv.token ? this.inviteMessage(inv) : '',
+      shareMailto: inv.token ? 'mailto:' + inv.email + '?subject=' + encodeURIComponent('Your KORTX Creative Labs invite') + '&body=' + encodeURIComponent(this.inviteMessage(inv)) : '#',
+      copyShareLink: this.copyShareLink, copyShareMessage: this.copyShareMessage, copyLinkLabel: s.copied === 'link' ? 'Copied ✓' : 'Copy Link', copyMsgLabel: s.copied === 'msg' ? 'Message Copied ✓' : 'Copy Invite Message',
+      canNativeShare: typeof navigator !== 'undefined' && !!navigator.share, nativeShare: this.nativeShare,
+      editOpen: !!s.editId, closeEdit: this.closeEdit, submitEdit: this.submitEdit, eEmail: editUser.email || '', eName: s.eName, eTitle: s.eTitle, editErr: s.editErr, setEditRole: this.setEditRole,
+      eRoleOpts: ROLES.map(r => { const locked = editUser.email === me.email && r.key === 'internal'; return { key: r.key, label: r.label, desc: locked ? 'You can’t remove your own admin access.' : r.desc, on: String(s.eRole === r.key), locked, style: card(s.eRole === r.key, locked) }; }),
+      busy: s.busy, saveLabel: s.busy ? 'Saving…' : 'Save Changes',
+      delOpen: !!s.delId, closeDelete: this.closeDelete, confirmDelete: this.confirmDelete, delName: delUser.full_name || delUser.email || '', delEmail: delUser.email || '', delConfirm: s.delConfirm, delErr: s.delErr,
+      delDisabled: !delReady, delBtn: { height: 44, padding: '0 22px', borderRadius: 999, border: '1px solid rgba(214,125,240,.6)', background: delReady ? 'rgba(214,125,240,.18)' : 'transparent', color: '#F0B4FF', fontSize: 13, fontWeight: 700, cursor: delReady ? 'pointer' : 'default', opacity: delReady ? 1 : .45, transition: 'all 200ms ' + EASE },
+      delLabel: s.busy ? 'Deleting…' : 'Delete User', toast: s.toast
+    };
+  }
+}
+</script>
+</body>
+</html>

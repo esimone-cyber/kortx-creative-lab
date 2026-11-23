@@ -1,0 +1,10 @@
+/* KORTX type — Inter (SIL Open Font License 1.1, see assets/fonts/OFL.txt).
+   Variable files: weight 100–900, optical size 14–32.
+   Acceptable substitutes when Inter is unavailable: Proxima Nova, then Helvetica. */
+@font-face{font-family:"Inter";font-style:normal;font-weight:100 900;font-stretch:100%;font-display:swap;src:url("../assets/fonts/Inter-Variable.ttf") format("truetype-variations"),url("../assets/fonts/Inter-Variable.ttf") format("truetype")}
+@font-face{font-family:"Inter";font-style:italic;font-weight:100 900;font-stretch:100%;font-display:swap;src:url("../assets/fonts/Inter-Italic-Variable.ttf") format("truetype-variations"),url("../assets/fonts/Inter-Italic-Variable.ttf") format("truetype")}
+:root{
+  --font-display:"Inter","Proxima Nova","Helvetica Neue",Helvetica,system-ui,sans-serif;
+  --font-body:"Inter","Proxima Nova","Helvetica Neue",Helvetica,system-ui,sans-serif;
+  --font-mono:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;
+}

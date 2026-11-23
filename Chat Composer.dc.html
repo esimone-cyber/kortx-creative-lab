@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="_ds/kortx-design-guide-2026-5bc7ff27-9282-4218-938a-63d43f555d47/tokens/fonts.css">
+<link rel="stylesheet" href="_ds/kortx-design-guide-2026-5bc7ff27-9282-4218-938a-63d43f555d47/tokens/colors.css">
+<script src="kx-dictate.js"></script>
+</helmet>
+<section data-block="Chat Composer" aria-label="{{ ariaLabel }}" aria-disabled="{{ disabledStr }}" style="position: relative; display: flex; flex-direction: column; gap: 8px; width: 100%; box-sizing: border-box; padding: 10px 14px; border-radius: 16px; border: 1px solid rgba(255,255,255,.1); background: rgba(7,11,21,.92); backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px); box-shadow: inset 0 1px 0 rgba(255,255,255,.06), 0 -18px 50px rgba(0,0,0,.5); font-family: var(--font-body, Inter, Helvetica, sans-serif);">
+  <sc-if value="{{ showTopRow }}" hint-placeholder-val="{{ true }}">
+    <div style="display: flex; justify-content: center; gap: 8px;"><sc-if value="{{ showHistory }}" hint-placeholder-val="{{ true }}"><button type="button" data-focusable="1" onClick="{{ onHistory }}" aria-haspopup="dialog" style="padding: 5px 12px; border-radius: 999px; border: 1px solid rgba(255,255,255,.16); background: rgba(255,255,255,.04); color: #fff; font: inherit; font-size: 12px; font-weight: 600; white-space: nowrap; cursor: pointer; transition: all 200ms cubic-bezier(.16,1,.3,1);" style-hover="transform: translateY(-2px); background: rgba(109,94,240,.16); border-color: rgba(167,139,250,.6); box-shadow: 0 0 32px rgba(109,94,240,.55)" style-active="transform: scale(.985)">Chat history</button></sc-if><sc-if value="{{ showStartOver }}" hint-placeholder-val="{{ false }}"><button type="button" data-focusable="1" onClick="{{ onStartOver }}" style="padding: 5px 12px; border-radius: 999px; border: 1px solid rgba(255,255,255,.16); background: rgba(255,255,255,.04); color: #fff; font: inherit; font-size: 12px; font-weight: 600; white-space: nowrap; cursor: pointer; text-decoration: none; transition: all 200ms cubic-bezier(.16,1,.3,1);" style-hover="transform: translateY(-2px); background: rgba(109,94,240,.16); border-color: rgba(167,139,250,.6); box-shadow: 0 0 32px rgba(109,94,240,.55)" style-active="transform: scale(.985)">Start over</button></sc-if></div>
+  </sc-if>
+  <div style="display: flex; align-items: flex-end; gap: 10px; width: 100%;">
+    <textarea data-focusable="1" rows="2" value="{{ value }}" onChange="{{ onText }}" onKeyDown="{{ onKey }}" disabled="{{ disabled }}" placeholder="{{ placeholder }}" aria-label="Message" style="flex: 1; min-width: 0; min-height: 44px; max-height: 260px; resize: vertical; padding: 13px 16px; border-radius: 12px; border: 1px solid rgba(255,255,255,.14); background: rgba(0,5,9,.6); color: #fff; font-size: 15px; line-height: 1.45; outline: none; box-sizing: border-box; font-family: inherit;"></textarea>
+    <button type="button" data-focusable="1" onClick="{{ onSendClick }}" disabled="{{ sendDisabled }}" style="{{ sendStyle }}" style-hover="transform: translateY(-2px); border-color: rgba(167,139,250,.6); background: rgba(109,94,240,.16); box-shadow: 0 0 32px rgba(109,94,240,.55)" style-active="transform: scale(.985)">{{ sendLabel }}</button>
+  </div>
+  <div style="display: flex; flex-wrap: wrap; justify-content: center; align-items: center; gap: 14px;">
+    <label data-focusable="1" aria-label="Upload" title="Upload" style="position: relative; display: inline-flex; align-items: center; justify-content: center; gap: 6px; width: 32px; height: 30px; padding: 0; border-radius: 8px; border: 1px solid rgba(255,255,255,.16); background: rgba(255,255,255,.06); color: #fff; font-size: 13px; font-weight: 600; cursor: pointer; transition: all 200ms cubic-bezier(.16,1,.3,1);" style-hover="background: rgba(109,94,240,.16); border-color: rgba(167,139,250,.6); transform: translateY(-2px); box-shadow: 0 0 32px rgba(109,94,240,.55)" style-active="transform: scale(.985)">
+      <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><path d="M17 8l-5-5-5 5"></path><path d="M12 3v12"></path></svg>
+      <input type="file" multiple="{{ true }}" onChange="{{ onFileInput }}" style="position: absolute; width: 1px; height: 1px; opacity: 0; pointer-events: none;">
+    </label>
+    <label style="display: flex; align-items: center; gap: 8px; flex: none;">
+      <span style="font-size: 11px; font-weight: 600; letter-spacing: .14em; text-transform: uppercase; color: rgba(255,255,255,.55);">Model</span>
+      <span style="font-size: 11.5px; font-weight: 500; color: rgba(255,255,255,.72); white-space: nowrap;">{{ modelLabel }}</span>
+    </label>
+    <label style="display: flex; align-items: center; gap: 8px; flex: none;">
+      <span style="font-size: 11px; font-weight: 600; letter-spacing: .14em; text-transform: uppercase; color: rgba(255,255,255,.55);">Effort</span>
+      <input data-focusable="1" type="range" min="0" max="{{ effortMax }}" step="1" value="{{ effortIdx }}" onChange="{{ onEffortChange }}" aria-label="Effort" aria-valuetext="{{ effortLabel }}" style="height: 30px; margin: 0; accent-color: #00CCFF; cursor: pointer;">
+      <span style="text-align: center; font-size: 11px; font-weight: 600; letter-spacing: .12em; text-transform: uppercase; color: var(--blue-300, #33D6FF);">{{ effortLabel }}</span>
+    </label>
+  </div>
+  <sc-if value="{{ disabled }}" hint-placeholder-val="{{ false }}"><div aria-hidden="true" title="{{ placeholder }}" style="position: absolute; inset: 0; z-index: 5; border-radius: 16px; background: rgba(7,11,21,.62); cursor: not-allowed;"></div></sc-if>
+</section>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;: {&quot;width&quot;: 900, &quot;height&quot;: 200}, &quot;placeholder&quot;: {&quot;editor&quot;: &quot;text&quot;, &quot;default&quot;: &quot;Describe the mock…&quot;, &quot;tsType&quot;: &quot;string&quot;}, &quot;sendLabel&quot;: {&quot;editor&quot;: &quot;text&quot;, &quot;default&quot;: &quot;Create&quot;, &quot;tsType&quot;: &quot;string&quot;}, &quot;value&quot;: {&quot;editor&quot;: null, &quot;tsType&quot;: &quot;string&quot;}, &quot;onChange&quot;: {&quot;editor&quot;: null, &quot;tsType&quot;: &quot;(v: string) =&gt; void&quot;}, &quot;onSend&quot;: {&quot;editor&quot;: null, &quot;tsType&quot;: &quot;(v: string) =&gt; void&quot;}, &quot;onFiles&quot;: {&quot;editor&quot;: null, &quot;tsType&quot;: &quot;(files: File[]) =&gt; void&quot;}, &quot;onHistory&quot;: {&quot;editor&quot;: null, &quot;tsType&quot;: &quot;() =&gt; void&quot;}, &quot;models&quot;: {&quot;editor&quot;: null, &quot;tsType&quot;: &quot;{id: string, label: string}[]&quot;}, &quot;model&quot;: {&quot;editor&quot;: null, &quot;tsType&quot;: &quot;string&quot;}, &quot;onModel&quot;: {&quot;editor&quot;: null, &quot;tsType&quot;: &quot;(id: string) =&gt; void&quot;}, &quot;efforts&quot;: {&quot;editor&quot;: null, &quot;tsType&quot;: &quot;string[]&quot;}, &quot;effort&quot;: {&quot;editor&quot;: null, &quot;tsType&quot;: &quot;string&quot;}, &quot;onEffort&quot;: {&quot;editor&quot;: null, &quot;tsType&quot;: &quot;(e: string) =&gt; void&quot;}, &quot;sendDisabled&quot;: {&quot;editor&quot;: &quot;boolean&quot;, &quot;default&quot;: false, &quot;tsType&quot;: &quot;boolean&quot;}, &quot;allowEmpty&quot;: {&quot;editor&quot;: &quot;boolean&quot;, &quot;default&quot;: false, &quot;tsType&quot;: &quot;boolean&quot;}}">
+class Component extends DCLogic {
+  state = { text: '', model: '', effort: '' };
+  LABELS = { low: 'Low', medium: 'Medium', high: 'High', xhigh: 'Extra high', max: 'Max' };
+  renderVals() {
+    const p = this.props, s = this.state;
+    const controlled = p.value != null, value = controlled ? p.value : s.text;
+    const models = p.models && p.models.length ? p.models : [{ id: 'claude-opus-5-5', label: 'Claude · Opus 5.5' }];
+    const model = p.model || s.model || models[0].id;
+    const efforts = p.efforts && p.efforts.length ? p.efforts : ['low', 'medium', 'high', 'max'];
+    const effort = p.effort || s.effort || (efforts.includes('medium') ? 'medium' : efforts[0]);
+    const dis = !!p.disabled || !!p.sendDisabled || (!p.allowEmpty && !String(value || '').trim());
+    const send = () => { if (dis) return; p.onSend && p.onSend(value); if (!controlled && p.clearOnSend !== false) this.setState({ text: '' }); };
+    const off = !!p.disabled;
+    return {
+      disabled: off, disabledStr: String(off),
+      ariaLabel: p.ariaLabel || 'Chat', showHistory: p.showHistory !== false && !!p.onHistory, onHistory: () => p.onHistory && p.onHistory(), showStartOver: !!p.onStartOver, onStartOver: () => p.onStartOver && p.onStartOver(), showTopRow: (p.showHistory !== false && !!p.onHistory) || !!p.onStartOver,
+      value, placeholder: p.placeholder || 'Describe what you need…',
+      onText: e => { const v = e.target.value; if (controlled) p.onChange && p.onChange(v); else this.setState({ text: v }); },
+      onKey: e => { if (e.key === 'Enter' && !e.shiftKey && !e.isComposing) { e.preventDefault(); send(); } },
+      onSendClick: send, sendDisabled: dis, sendLabel: p.sendLabel || 'Create',
+      sendStyle: { flex: 'none', alignSelf: 'flex-end', height: 44, padding: '0 22px', borderRadius: 12, border: '1px solid ' + (dis ? 'rgba(0,204,255,.25)' : 'rgba(0,204,255,.55)'), background: dis ? 'rgba(0,204,255,.06)' : 'rgba(0,204,255,.14)', color: dis ? 'rgba(255,255,255,.55)' : '#fff', font: 'inherit', fontSize: 15, fontWeight: 600, cursor: dis ? 'default' : 'pointer', transition: 'all 200ms cubic-bezier(.16,1,.3,1)', pointerEvents: dis ? 'none' : 'auto' },
+      onFileInput: e => { const f = Array.from(e.currentTarget.files || []); e.currentTarget.value = ''; if (f.length && p.onFiles) p.onFiles(f); },
+      model, models, modelLabel: (models.find(m => m.id === model) || models[0]).label, onModelChange: e => { const v = e.target.value; this.setState({ model: v }); p.onModel && p.onModel(v); },
+      effortIdx: String(Math.max(0, efforts.indexOf(effort))), effortMax: String(efforts.length - 1), effortLabel: this.LABELS[effort] || effort,
+      onEffortChange: e => { const v = efforts[+e.target.value] || effort; this.setState({ effort: v }); p.onEffort && p.onEffort(v); }
+    };
+  }
+}
+</script>
+</body>
+</html>

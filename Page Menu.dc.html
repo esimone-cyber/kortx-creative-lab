@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<sc-if value="{{ hasPages }}" hint-placeholder-val="{{ false }}">
+<div data-block="Profile menu · Pages" style="display: flex; flex-direction: column; padding-bottom: 6px; margin-bottom: 6px; border-bottom: 1px solid rgba(255,255,255,.08); font-family: var(--font-body, Inter, sans-serif);">
+  <sc-for list="{{ groups }}" as="g" hint-placeholder-count="2">
+    <div role="group" aria-label="{{ g.title }}" style="{{ g.style }}">
+      <div style="padding: 6px 10px 8px;"><span style="{{ g.headStyle }}">{{ g.title }}</span></div>
+      <sc-for list="{{ g.items }}" as="it" hint-placeholder-count="4">
+        <a href="{{ it.href }}" target="{{ it.target }}" role="menuitem" data-focusable="1" aria-current="{{ it.aria }}" style="{{ it.style }}" style-hover="background: rgba(0,204,255,.12); color: #fff">
+          <span style="min-width: 0; flex: 1; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">{{ it.label }}</span>
+          <span aria-hidden="true" style="{{ it.markStyle }}">✓</span>
+        </a>
+      </sc-for>
+    </div>
+  </sc-for>
+</div>
+</sc-if>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:240,&quot;height&quot;:280},&quot;current&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;builder&quot;,&quot;tsType&quot;:&quot;string&quot;}}">
+class Component extends DCLogic {
+  state = { pages: null };
+  componentDidMount() {
+    import('./creative-cloud.js').then(c => c.currentUser().then(u => (c.menuPages || c.navPages)(u)).then(pages => this.setState({ pages: pages.filter(x => x.id !== 'admin') }))).catch(() => this.setState({ pages: [] }));
+  }
+  renderVals() {
+    const cur = this.props.current === 'specs' ? 'assets' : (this.props.current || '');
+    const pages = this.state.pages || [];
+    return {
+      hasPages: pages.length > 0,
+      groups: [['Public sites', pages.filter(p => p.client), '#00CCFF'], ['Internal team sites', pages.filter(p => !p.client), '#A78BFA']].filter(g => g[1].length).map(([title, list, col], gi) => ({ title, headStyle: { display: 'inline-block', paddingBottom: 4, borderBottom: '2px solid ' + col, fontSize: 10.5, fontWeight: 600, letterSpacing: '.18em', textTransform: 'uppercase', color: 'rgba(255,255,255,.7)' }, style: { display: 'flex', flexDirection: 'column', marginTop: gi ? 6 : 0, paddingTop: gi ? 6 : 0, borderTop: gi ? '1px solid rgba(255,255,255,.06)' : 0 }, items: list.map(p => { const on = p.id === cur; return { label: p.label, href: p.href, target: p.external ? '_blank' : '_self', aria: on ? 'page' : 'false',
+        style: { display: 'flex', alignItems: 'center', gap: 10, padding: '9px 10px', borderRadius: 8, color: '#fff', fontSize: 13.5, fontWeight: 600, textDecoration: 'none', background: on ? 'rgba(0,204,255,.12)' : 'transparent' },
+        markStyle: { flex: 'none', fontSize: 12, fontWeight: 800, color: 'var(--blue-300)', opacity: on ? 1 : 0 } }; }) }))
+    };
+  }
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,628 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<script src="kx-theme.js"></script>
+<title>AI Video Simulator · KORTX Creative Labs</title>
+<link rel="icon" type="image/svg+xml" href="assets/kortx-logomark-bright-blue.svg">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="_ds/kortx-design-guide-2026-5bc7ff27-9282-4218-938a-63d43f555d47/tokens/fonts.css">
+<link rel="stylesheet" href="_ds/kortx-design-guide-2026-5bc7ff27-9282-4218-938a-63d43f555d47/tokens/colors.css">
+<link rel="stylesheet" href="_ds/kortx-design-guide-2026-5bc7ff27-9282-4218-938a-63d43f555d47/tokens/typography.css">
+<link rel="stylesheet" href="_ds/kortx-design-guide-2026-5bc7ff27-9282-4218-938a-63d43f555d47/tokens/spacing.css">
+<link rel="stylesheet" href="_ds/kortx-design-guide-2026-5bc7ff27-9282-4218-938a-63d43f555d47/tokens/radius.css">
+<link rel="stylesheet" href="_ds/kortx-design-guide-2026-5bc7ff27-9282-4218-938a-63d43f555d47/tokens/elevation.css">
+<link rel="stylesheet" href="_ds/kortx-design-guide-2026-5bc7ff27-9282-4218-938a-63d43f555d47/tokens/motion.css">
+<link rel="stylesheet" href="_ds/kortx-design-guide-2026-5bc7ff27-9282-4218-938a-63d43f555d47/tokens/base.css">
+<link rel="stylesheet" href="_ds/kortx-design-guide-2026-5bc7ff27-9282-4218-938a-63d43f555d47/styles.css">
+<script src="_ds/kortx-design-guide-2026-5bc7ff27-9282-4218-938a-63d43f555d47/_ds_bundle.js"></script>
+<style>
+  html, body { margin: 0; padding: 0; background: #000509; color: #fff; }
+  body { font-family: var(--font-body, Inter, Helvetica, sans-serif); -webkit-font-smoothing: antialiased; }
+  a { color: var(--blue-400); text-decoration: none; }
+  a:hover { color: var(--blue-300); text-decoration: none; }
+  button { font-family: inherit; }
+  [data-focusable]:focus-visible { outline: none; border-color: var(--blue-400) !important; box-shadow: 0 0 0 3px rgba(0,204,255,.55) !important; }
+  @keyframes kx-orbit { 0% { transform: rotate(0) translateX(26px) } 100% { transform: rotate(360deg) translateX(26px) } }
+  @keyframes kx-rise { 0% { opacity: 0; transform: translateY(12px) } 100% { opacity: 1; transform: none } }
+  @keyframes kxs-shim { 0% { background-position: 160% 0 } 100% { background-position: -60% 0 } }
+  @keyframes kxs-kb { 0% { transform: scale(1) translate(0, 0) } 100% { transform: scale(1.18) translate(-3%, -2%) } }
+  @keyframes kxs-eq { 0%, 100% { transform: scaleY(.3) } 50% { transform: scaleY(1) } }
+  @keyframes kxs-pulse { 0%, 100% { box-shadow: 0 0 0 0 rgba(0,204,255,.45), 0 0 36px rgba(0,204,255,.35) } 50% { box-shadow: 0 0 0 12px rgba(0,204,255,0), 0 0 48px rgba(0,204,255,.5) } }
+  @media (prefers-reduced-motion: reduce) { *, *::before, *::after { animation-duration: .001ms !important; animation-iteration-count: 1 !important; transition-duration: .001ms !important; } }
+</style>
+</helmet>
+<div style="position: relative; min-height: 100vh; background: #000509; color: #fff; overflow-x: hidden;">
+  <div aria-hidden="true" data-kx-bg-keep style="position: fixed; inset: 0; z-index: 0; pointer-events: none; overflow: hidden;">
+    <div style="position: absolute; top: -22vh; right: -14vw; width: 78vw; height: 78vw; border-radius: 50%; background: radial-gradient(circle at 50% 50%, rgba(0,204,255,.14), rgba(0,204,255,.04) 40%, transparent 68%); filter: blur(24px); animation: kx-drift-a 62s ease-in-out infinite;"></div>
+    <div style="position: absolute; bottom: -34vh; left: -18vw; width: 72vw; height: 72vw; border-radius: 50%; background: radial-gradient(circle at 50% 50%, rgba(109,94,240,.12), rgba(109,94,240,.03) 42%, transparent 70%); filter: blur(30px); animation: kx-drift-b 78s ease-in-out infinite;"></div>
+    <div style="position: absolute; top: 34vh; left: 28vw; width: 46vw; height: 46vw; border-radius: 50%; background: radial-gradient(circle at 50% 50%, rgba(214,125,240,.10), transparent 64%); filter: blur(40px); animation: kx-drift-a 96s ease-in-out infinite;"></div>
+    <div style="position: absolute; inset: -10% -10% -60%; opacity: .8; animation: kx-stars 140s linear infinite; background-image: radial-gradient(1.4px 1.4px at 7% 12%, rgba(255,255,255,.85), transparent), radial-gradient(1.2px 1.2px at 19% 41%, rgba(0,204,255,.8), transparent), radial-gradient(1px 1px at 31% 8%, rgba(255,255,255,.6), transparent), radial-gradient(1.6px 1.6px at 44% 63%, rgba(255,255,255,.7), transparent), radial-gradient(1px 1px at 57% 22%, rgba(156,235,255,.75), transparent), radial-gradient(1.3px 1.3px at 68% 51%, rgba(255,255,255,.65), transparent), radial-gradient(1px 1px at 78% 15%, rgba(255,255,255,.5), transparent), radial-gradient(1.5px 1.5px at 88% 37%, rgba(0,204,255,.6), transparent), radial-gradient(1px 1px at 95% 71%, rgba(255,255,255,.55), transparent), radial-gradient(1.2px 1.2px at 12% 78%, rgba(255,255,255,.6), transparent), radial-gradient(1px 1px at 26% 92%, rgba(138,124,248,.7), transparent), radial-gradient(1.4px 1.4px at 39% 33%, rgba(255,255,255,.5), transparent), radial-gradient(1px 1px at 52% 86%, rgba(255,255,255,.6), transparent), radial-gradient(1.2px 1.2px at 63% 74%, rgba(0,204,255,.55), transparent), radial-gradient(1px 1px at 74% 95%, rgba(255,255,255,.45), transparent), radial-gradient(1.3px 1.3px at 84% 60%, rgba(255,255,255,.6), transparent);"></div>
+    <div style="position: absolute; inset: 0; background-image: linear-gradient(rgba(255,255,255,.022) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,.022) 1px, transparent 1px); background-size: 88px 88px; mask-image: radial-gradient(circle at 50% 18%, #000, transparent 72%);"></div>
+  </div>
+
+  <header style="position: sticky; top: 0; z-index: 60; display: flex; align-items: center; gap: clamp(12px, 1.6vw, 20px); flex-wrap: wrap; min-height: 72px; padding: 14px clamp(20px, 4vw, 56px); box-sizing: border-box; background: rgba(0,5,9,.72); backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px);">
+    <a href="Creative Playground.dc.html" aria-label="KORTX home" style="position: relative; display: grid; place-items: center; width: 46px; height: 46px; flex: none;">
+      <span aria-hidden="true" style="position: absolute; inset: 0; border-radius: 50%; background: radial-gradient(circle at 50% 50%, rgba(0,204,255,.24), transparent 68%);"></span>
+      <span aria-hidden="true" style="position: absolute; inset: 3px; border: 1px solid rgba(0,204,255,.30); border-radius: 50%;"></span>
+      <span aria-hidden="true" style="position: absolute; inset: 8px; border: 1px solid rgba(138,124,248,.28); border-radius: 50%; transform: rotate(18deg) scaleY(.6);"></span>
+      <img src="assets/kortx-logomark-bright-blue.svg" alt="KORTX" style="position: relative; width: 20px; display: block;">
+      <span aria-hidden="true" style="position: absolute; top: 50%; left: 50%; width: 4px; height: 4px; margin: -2px; border-radius: 50%; background: var(--blue-300); box-shadow: 0 0 9px rgba(0,204,255,.9); animation: kx-orbit 18s linear infinite;"></span>
+    </a>
+    <dc-import name="Site Nav" hint-size="200px,40px"></dc-import>
+    <div style="flex: 1;"></div>
+    <dc-import name="User Menu" hint-size="40px,40px" style="margin-left: auto; order: 99;"></dc-import>
+  </header>
+
+  <main style="position: relative; max-width: 1180px; margin: 0 auto; box-sizing: border-box; padding: clamp(32px, 5vh, 56px) clamp(20px, 4vw, 40px) 96px; display: flex; flex-direction: column; gap: 28px;">
+    <div data-block="AI Video Simulator · Head" style="display: flex; flex-direction: column; align-items: center; text-align: center; gap: 10px; animation: kx-rise 600ms cubic-bezier(.16,1,.3,1) both;">
+      <h1 style="margin: 0; max-width: 820px; font-size: clamp(26px, 3.6vw, 46px); font-weight: 700; letter-spacing: -.03em; line-height: 1.05; text-wrap: balance;">AI video simulator</h1>
+      <p style="margin: 0; max-width: 640px; font-size: 17px; line-height: 1.5; color: rgba(255,255,255,.76); text-wrap: pretty;">Build a quick preview of a commercial spot the way we would. Pick the concept, the sound and the scenes, render them to video, then cut it together.</p>
+    </div>
+
+    <section data-block="AI Video Simulator · Studio" style="position: relative; border-radius: 16px; border: 1px solid rgba(255,255,255,.08); background: #070B15; box-shadow: inset 0 1px 0 rgba(255,255,255,.05), 0 30px 60px rgba(0,0,0,.55); padding: clamp(16px, 2.4vw, 28px); display: flex; flex-direction: column; gap: 20px; animation: kx-rise 600ms cubic-bezier(.16,1,.3,1) 120ms both;">
+      <nav aria-label="Steps" style="display: flex; flex-wrap: wrap; gap: 8px; justify-content: center;">
+        <sc-for list="{{ steps }}" as="st" hint-placeholder-count="6">
+          <button type="button" data-focusable="1" data-i="{{ st.i }}" onClick="{{ goStep }}" disabled="{{ st.locked }}" aria-current="{{ st.cur }}" style="{{ st.pill }}"><span style="{{ st.num }}">{{ st.n }}</span>{{ st.label }}</button>
+        </sc-for>
+      </nav>
+
+      <div style="display: flex; flex-direction: column; align-items: center; text-align: center; gap: 6px;">
+        <h2 style="margin: 0; font-size: clamp(22px, 2.4vw, 28px); font-weight: 700; letter-spacing: -.02em;">{{ prompt }}</h2>
+        <p style="margin: 0; max-width: 680px; font-size: 14.5px; line-height: 1.5; color: rgba(255,255,255,.6); text-wrap: pretty;">{{ note }}</p>
+      </div>
+
+      <sc-if value="{{ isPick }}" hint-placeholder-val="{{ true }}">
+        <div style="display: flex; flex-wrap: wrap; gap: 20px; align-items: stretch;">
+          <div style="flex: 1 1 440px; min-width: 0; display: flex; flex-direction: column; gap: 14px; padding: 18px; border-radius: 12px; border: 1px solid rgba(255,255,255,.08); background: rgba(255,255,255,.02);">
+
+            <sc-if value="{{ is0 }}" hint-placeholder-val="{{ true }}">
+              <div style="display: grid; grid-template-columns: minmax(0, 1fr); gap: 10px;">
+                <sc-for list="{{ concepts }}" as="c" hint-placeholder-count="3">
+                  <button type="button" data-focusable="1" data-i="{{ c.i }}" onClick="{{ pickConcept }}" aria-pressed="{{ c.on }}" style="{{ c.style }}">
+                    <span style="font-size: 16px; font-weight: 700;">{{ c.name }}</span>
+                    <span style="font-size: 14px; line-height: 1.45; color: rgba(255,255,255,.7);">{{ c.line }}</span>
+                  </button>
+                </sc-for>
+              </div>
+            </sc-if>
+
+            <sc-if value="{{ isMusic }}" hint-placeholder-val="{{ false }}">
+              <div style="display: flex; flex-direction: column; gap: 14px;">
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 10px;">
+                  <sc-for list="{{ songs }}" as="o" hint-placeholder-count="3">
+                    <div style="{{ o.style }}">
+                      <button type="button" data-focusable="1" data-i="{{ o.i }}" onClick="{{ pickSong }}" aria-pressed="{{ o.on }}" style="all: unset; cursor: pointer; display: flex; flex-direction: column; gap: 4px;">
+                        <span style="font-size: 15px; font-weight: 700;">{{ o.name }}</span>
+                        <span style="font-size: 13px; color: rgba(255,255,255,.62);">{{ o.desc }}</span>
+                      </button>
+                      <div style="display: flex; align-items: center; justify-content: space-between; gap: 8px;">
+                        <div aria-hidden="true" style="display: flex; align-items: flex-end; gap: 3px; height: 18px;">
+                          <sc-for list="{{ o.eq }}" as="b" hint-placeholder-count="5"><span style="{{ b }}"></span></sc-for>
+                        </div>
+                        <button type="button" data-focusable="1" data-i="{{ o.i }}" onClick="{{ previewSong }}" style="min-height: 32px; padding: 0 12px; border-radius: 999px; border: 1px solid rgba(255,255,255,.16); background: rgba(255,255,255,.06); color: #fff; font-size: 12.5px; font-weight: 600; cursor: pointer;" style-hover="background: rgba(255,255,255,.12);">{{ o.btn }}</button>
+                      </div>
+                    </div>
+                  </sc-for>
+                </div>
+              </div>
+            </sc-if>
+            <sc-if value="{{ isVoice }}" hint-placeholder-val="{{ false }}">
+              <div style="display: flex; flex-direction: column; gap: 14px;">
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 10px;">
+                  <sc-for list="{{ voices }}" as="o" hint-placeholder-count="3">
+                    <div style="{{ o.style }}">
+                      <button type="button" data-focusable="1" data-i="{{ o.i }}" onClick="{{ pickVoice }}" aria-pressed="{{ o.on }}" style="all: unset; cursor: pointer; display: flex; flex-direction: column; gap: 4px;">
+                        <span style="font-size: 15px; font-weight: 700;">{{ o.name }}</span>
+                        <span style="font-size: 13px; color: rgba(255,255,255,.62);">{{ o.desc }}</span>
+                      </button>
+                      <div style="display: flex; align-items: center; justify-content: space-between; gap: 8px;">
+                        <div aria-hidden="true" style="display: flex; align-items: flex-end; gap: 3px; height: 18px;">
+                          <sc-for list="{{ o.eq }}" as="b" hint-placeholder-count="5"><span style="{{ b }}"></span></sc-for>
+                        </div>
+                        <button type="button" data-focusable="1" data-i="{{ o.i }}" onClick="{{ previewVoice }}" style="min-height: 32px; padding: 0 12px; border-radius: 999px; border: 1px solid rgba(255,255,255,.16); background: rgba(255,255,255,.06); color: #fff; font-size: 12.5px; font-weight: 600; cursor: pointer;" style-hover="background: rgba(255,255,255,.12);">{{ o.btn }}</button>
+                      </div>
+                    </div>
+                  </sc-for>
+                </div>
+              </div>
+            </sc-if>
+
+            <sc-if value="{{ isChar }}" hint-placeholder-val="{{ false }}">
+              <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(170px, 1fr)); gap: 10px;">
+                <sc-for list="{{ chars }}" as="o" hint-placeholder-count="3">
+                  <button type="button" data-focusable="1" data-i="{{ o.i }}" onClick="{{ pickChar }}" aria-pressed="{{ o.on }}" style="{{ o.style }}">
+                    <span style="{{ o.ph }}"></span>
+                    <span style="display: flex; flex-direction: column; gap: 2px; padding: 8px 10px; text-align: left;"><span style="font-size: 14px; font-weight: 700;">{{ o.name }}</span><span style="font-size: 12.5px; color: rgba(255,255,255,.62);">{{ o.desc }}</span></span>
+                  </button>
+                </sc-for>
+              </div>
+            </sc-if>
+
+            <sc-if value="{{ isScenes }}" hint-placeholder-val="{{ false }}">
+              <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); gap: 10px;">
+                <sc-for list="{{ sceneOpts }}" as="o" hint-placeholder-count="6">
+                  <button type="button" data-focusable="1" data-i="{{ o.i }}" onClick="{{ toggleScene }}" aria-pressed="{{ o.on }}" style="{{ o.style }}">
+                    <span style="{{ o.ph }}"><span style="padding: 2px 8px; border-radius: 999px; background: rgba(5,8,15,.7); font-size: 11px; font-weight: 600; letter-spacing: .06em; text-transform: uppercase; color: rgba(255,255,255,.8);">{{ o.kind }}</span></span>
+                    <span style="display: block; padding: 8px 10px; font-size: 13px; font-weight: 600; text-align: left;">{{ o.name }}</span>
+                    <span style="{{ o.badge }}">{{ o.order }}</span>
+                  </button>
+                </sc-for>
+              </div>
+            </sc-if>
+
+            <sc-if value="{{ isStory }}" hint-placeholder-val="{{ false }}">
+              <div style="display: flex; flex-direction: column; gap: 12px;">
+                <sc-for list="{{ storyUI }}" as="row" hint-placeholder-count="3">
+                  <div style="display: flex; flex-wrap: wrap; align-items: center; gap: 14px; padding: 12px; border-radius: 12px; border: 1px solid rgba(255,255,255,.08); background: rgba(255,255,255,.02);">
+                    <div style="position: relative; flex: 0 0 180px; aspect-ratio: 16 / 9; border-radius: 8px; border: 1px dashed rgba(255,255,255,.28); background: repeating-linear-gradient(135deg, rgba(255,255,255,.035) 0 10px, transparent 10px 20px); display: grid; place-items: center; padding: 10px; box-sizing: border-box; text-align: center;">
+                      <span style="font-size: 12px; font-weight: 600; line-height: 1.35; color: rgba(255,255,255,.75);">{{ row.actLabel }}</span>
+                      <span style="position: absolute; left: 6px; top: 6px; font-size: 10.5px; font-weight: 600; letter-spacing: .12em; text-transform: uppercase; color: rgba(255,255,255,.45);">Sketch</span>
+                    </div>
+                    <div style="flex: 1 1 240px; min-width: 0; display: flex; flex-direction: column; gap: 8px;">
+                      <span style="font-size: 14px; font-weight: 700;">{{ row.title }}</span>
+                      <span style="font-size: 12.5px; color: rgba(255,255,255,.55);">Featuring · {{ row.who }}</span>
+                      <select data-focusable="1" data-r="{{ row.r }}" value="{{ row.act }}" onChange="{{ pickAct }}" aria-label="What happens in this scene" style="align-self: flex-start; min-height: 40px; min-width: 240px; max-width: 100%; padding: 0 36px 0 14px; border-radius: 999px; border: 1px solid rgba(255,255,255,.16); background: rgba(5,8,15,.6) url(&quot;data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' fill='none' stroke='%2300CCFF' stroke-width='1.8'/%3E%3C/svg%3E&quot;) no-repeat right 14px center; appearance: none; -webkit-appearance: none; color: #fff; font-size: 13.5px; font-weight: 600; font-family: inherit; cursor: pointer;">
+                        <sc-for list="{{ row.acts }}" as="o" hint-placeholder-count="2"><option value="{{ o.v }}" style="background: #070B15; color: #fff;">{{ o.label }}</option></sc-for>
+                      </select>
+                    </div>
+                  </div>
+                </sc-for>
+              </div>
+            </sc-if>
+
+            <sc-if value="{{ isImages }}" hint-placeholder-val="{{ false }}">
+              <div style="display: flex; flex-direction: column; gap: 18px;">
+                <sc-for list="{{ rowsUI }}" as="row" hint-placeholder-count="3">
+                  <div style="display: flex; flex-direction: column; gap: 10px;">
+                    <div style="display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 10px;">
+                      <span style="font-size: 14px; font-weight: 700;">{{ row.title }}</span>
+                      <span style="font-size: 13px; color: rgba(255,255,255,.62);">{{ row.sub }}</span>
+                    </div>
+                    <div style="display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 10px;">
+                      <sc-for list="{{ row.vars }}" as="o" hint-placeholder-count="3">
+                        <button type="button" data-focusable="1" data-r="{{ o.r }}" data-v="{{ o.v }}" onClick="{{ pickVar }}" aria-pressed="{{ o.on }}" style="{{ o.style }}">
+                          <span style="{{ o.ph }}"></span>
+                          <span style="display: block; padding: 6px 10px; font-size: 12.5px; font-weight: 600; text-align: left;">{{ o.label }}</span>
+                        </button>
+                      </sc-for>
+                    </div>
+                  </div>
+                </sc-for>
+              </div>
+            </sc-if>
+          </div>
+
+          <div style="flex: 0 0 auto; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 10px; padding: 8px; margin: 0 auto;">
+            <button type="button" data-focusable="1" onClick="{{ next }}" disabled="{{ orbOff }}" style="{{ orb }}" style-active="transform: scale(.97);">{{ orbLabel }}</button>
+          </div>
+
+        </div>
+      </sc-if>
+
+      <sc-if value="{{ isGen }}" hint-placeholder-val="{{ false }}">
+        <div style="display: flex; flex-direction: column; gap: 16px;">
+          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 14px;">
+            <sc-for list="{{ gens }}" as="g" hint-placeholder-count="4">
+              <div style="display: flex; flex-direction: column; gap: 8px; padding: 10px; border-radius: 12px; border: 1px solid rgba(255,255,255,.08); background: rgba(255,255,255,.02);">
+                <div style="position: relative; aspect-ratio: 16 / 9; border-radius: 8px; overflow: hidden; background: #04070E;">
+                  <sc-if value="{{ g.done }}" hint-placeholder-val="{{ false }}">
+                    <div style="{{ g.vid }}"></div>
+                  </sc-if>
+                  <sc-if value="{{ g.wait }}" hint-placeholder-val="{{ true }}">
+                    <div style="{{ g.still }}"></div>
+                    <div style="position: absolute; inset: 0; background: linear-gradient(100deg, transparent 30%, rgba(0,204,255,.35) 50%, transparent 70%); background-size: 220% 100%; animation: kxs-shim 1.4s linear infinite; mix-blend-mode: screen;"></div>
+                  </sc-if>
+                  <span style="position: absolute; right: 6px; top: 6px; padding: 2px 8px; border-radius: 999px; background: rgba(5,8,15,.8); font-size: 11.5px; font-weight: 600;">{{ g.tag }}</span>
+                </div>
+                <div style="display: flex; justify-content: space-between; gap: 8px; font-size: 13px; font-weight: 600;"><span>{{ g.name }}</span><span style="color: rgba(255,255,255,.6); font-variant-numeric: tabular-nums;">{{ g.pct }}</span></div>
+                <div style="height: 4px; border-radius: 999px; background: rgba(255,255,255,.08); overflow: hidden;"><div style="{{ g.bar }}"></div></div>
+              </div>
+            </sc-for>
+          </div>
+          <p style="margin: 0; text-align: center; font-size: 14px; color: rgba(255,255,255,.6);">{{ genStatus }}</p>
+        </div>
+      </sc-if>
+
+      <sc-if value="{{ isEdit }}" hint-placeholder-val="{{ false }}">
+        <div style="display: flex; flex-direction: column; gap: 14px;">
+          <div style="display: flex; flex-wrap: wrap; gap: 14px;">
+            <div style="flex: 3 1 460px; min-width: 0; display: flex; flex-direction: column; gap: 10px;">
+              <div style="position: relative; aspect-ratio: 16 / 9; border-radius: 10px; overflow: hidden; background: #000; border: 1px solid rgba(255,255,255,.1);">
+                <div style="{{ monStyle }}"></div>
+                <sc-if value="{{ monEmpty }}" hint-placeholder-val="{{ false }}"><div style="position: absolute; inset: 0; display: grid; place-items: center; font-size: 14px; color: rgba(255,255,255,.5);">No clip at the playhead</div></sc-if>
+                <span style="position: absolute; left: 10px; top: 10px; padding: 3px 10px; border-radius: 999px; background: rgba(5,8,15,.8); font-size: 12px; font-weight: 600; white-space: nowrap; max-width: calc(100% - 20px); overflow: hidden; text-overflow: ellipsis; box-sizing: border-box;">Program · {{ monLabel }}</span>
+              </div>
+              <div style="display: flex; align-items: center; gap: 12px; flex-wrap: wrap;">
+                <button type="button" data-focusable="1" onClick="{{ togglePlay }}" style="min-height: 40px; min-width: 92px; padding: 0 18px; border-radius: 999px; border: 1px solid rgba(0,204,255,.6); background: rgba(0,204,255,.14); color: #fff; font-size: 14px; font-weight: 600; cursor: pointer; transition: all 200ms cubic-bezier(.16,1,.3,1);" style-hover="transform: translateY(-2px); background: rgba(109,94,240,.16); border-color: rgba(167,139,250,.6); box-shadow: 0 0 32px rgba(109,94,240,.55);" style-active="transform: scale(.985);">{{ playLabel }}</button>
+                <span style="font-size: 14px; font-weight: 600; font-variant-numeric: tabular-nums;">{{ tLabel }}</span>
+                <span style="flex: 1;"></span>
+                <span style="font-size: 12.5px; color: rgba(255,255,255,.55);">Drag any clip to move it. Click the ruler to scrub. Space to play or pause.</span>
+              </div>
+            </div>
+            <div style="flex: 1 1 260px; min-width: 0; display: flex; flex-direction: column; gap: 12px; padding: 16px; border-radius: 12px; border: 1px solid rgba(255,255,255,.08); background: radial-gradient(120% 80% at 100% 0%, rgba(109,94,240,.14), transparent 60%), rgba(255,255,255,.02);">
+              <div style="font-size: 11px; font-weight: 600; letter-spacing: .18em; text-transform: uppercase; color: #C4B5FD;">Export</div>
+              <div style="font-size: 15px; font-weight: 700; word-break: break-all;">brand-spot.mp4</div>
+              <div style="display: grid; grid-template-columns: auto 1fr; gap: 6px 14px; font-size: 13px;">
+                <span style="color: rgba(255,255,255,.55);">Format</span><span>.mp4, H.264</span>
+                <span style="color: rgba(255,255,255,.55);">Size</span><span>1920×1080</span>
+                <span style="color: rgba(255,255,255,.55);">Audio</span><span>{{ expAudio }}</span>
+                <span style="color: rgba(255,255,255,.55);">Length</span><span>{{ expLen }}</span>
+              </div>
+              <sc-if value="{{ expIdle }}" hint-placeholder-val="{{ true }}">
+                <button type="button" data-focusable="1" onClick="{{ genMp4 }}" style="min-height: 46px; border-radius: 999px; border: 0; background: var(--blue-400, #00CCFF); color: #001830; font-size: 15px; font-weight: 700; cursor: pointer; transition: all 200ms cubic-bezier(.16,1,.3,1);" style-hover="transform: translateY(-2px); box-shadow: 0 0 32px rgba(0,204,255,.55);" style-active="transform: scale(.985);">Generate MP4</button>
+              </sc-if>
+              <sc-if value="{{ expRun }}" hint-placeholder-val="{{ false }}">
+                <div style="display: flex; flex-direction: column; gap: 8px;">
+                  <div style="display: flex; justify-content: space-between; font-size: 13px; font-weight: 600;"><span>{{ expStage }}</span><span style="font-variant-numeric: tabular-nums;">{{ expPct }}</span></div>
+                  <div style="height: 6px; border-radius: 999px; background: rgba(255,255,255,.08); overflow: hidden;"><div style="{{ expBar }}"></div></div>
+                </div>
+              </sc-if>
+              <sc-if value="{{ expDone }}" hint-placeholder-val="{{ false }}">
+                <div style="display: flex; flex-direction: column; gap: 10px;">
+                  <div style="display: flex; align-items: center; gap: 8px; font-size: 13.5px; font-weight: 600; color: var(--lime-300);">Rendered · ready for delivery</div>
+                  <button type="button" data-focusable="1" onClick="{{ playFinal }}" style="min-height: 44px; border-radius: 999px; border: 1px solid rgba(255,255,255,.16); background: rgba(255,255,255,.06); color: #fff; font-size: 14px; font-weight: 600; cursor: pointer; transition: all 200ms cubic-bezier(.16,1,.3,1);" style-hover="transform: translateY(-2px); background: rgba(109,94,240,.16); border-color: rgba(167,139,250,.6); box-shadow: 0 0 32px rgba(109,94,240,.55);" style-active="transform: scale(.985);">Play final cut</button>
+                  <button type="button" data-focusable="1" onClick="{{ genMp4 }}" style="all: unset; cursor: pointer; text-align: center; font-size: 13px; color: var(--blue-400);">Render again</button>
+                </div>
+              </sc-if>
+              <span style="flex: 1;"></span>
+              <button type="button" data-focusable="1" onClick="{{ restart }}" style="all: unset; cursor: pointer; text-align: center; font-size: 13px; color: rgba(255,255,255,.6);">Start over with a new concept</button>
+            </div>
+          </div>
+
+          <div style="display: flex; flex-direction: column; gap: 6px; padding: 12px; border-radius: 12px; border: 1px solid rgba(255,255,255,.08); background: #04070E; user-select: none; -webkit-user-select: none;">
+            <div style="display: grid; grid-template-columns: 96px minmax(0, 1fr); gap: 8px; align-items: end;">
+              <span></span>
+              <div onPointerDown="{{ scrubDown }}" onPointerMove="{{ scrubMove }}" onPointerUp="{{ scrubUp }}" style="position: relative; height: 24px; cursor: ew-resize; touch-action: none; border-bottom: 1px solid rgba(255,255,255,.1);">
+                <sc-for list="{{ ticks }}" as="k" hint-placeholder-count="11">
+                  <span style="{{ k.style }}">{{ k.label }}</span>
+                </sc-for>
+              </div>
+            </div>
+            <div style="position: relative; display: flex; flex-direction: column; gap: 6px;">
+              <div style="display: grid; grid-template-columns: 96px minmax(0, 1fr); gap: 8px; align-items: center;">
+                <span style="font-size: 12.5px; font-weight: 600; color: rgba(255,255,255,.7);">V1 · Video</span>
+                <div ref="{{ trk }}" style="position: relative; height: 64px; border-radius: 8px; background: rgba(255,255,255,.03);">
+                  <sc-for list="{{ vclips }}" as="c" hint-placeholder-count="4">
+                    <div data-k="{{ c.k }}" onPointerDown="{{ clipDown }}" onPointerMove="{{ clipMove }}" onPointerUp="{{ clipUp }}" onPointerCancel="{{ clipUp }}" title="{{ c.name }}" style="{{ c.style }}">
+                      <span style="position: absolute; left: 4px; bottom: 4px; max-width: calc(100% - 8px); overflow: hidden; text-overflow: ellipsis; white-space: nowrap; padding: 1px 6px; border-radius: 4px; background: rgba(5,8,15,.8); font-size: 11px; font-weight: 600;">{{ c.name }}</span>
+                    </div>
+                  </sc-for>
+                </div>
+              </div>
+              <div style="display: grid; grid-template-columns: 96px minmax(0, 1fr); gap: 8px; align-items: center;">
+                <span style="font-size: 12.5px; font-weight: 600; color: rgba(255,255,255,.7);">A1 · Voice</span>
+                <div style="position: relative; height: 44px; border-radius: 8px; background: rgba(255,255,255,.03);">
+                  <div data-k="vo" onPointerDown="{{ clipDown }}" onPointerMove="{{ clipMove }}" onPointerUp="{{ clipUp }}" onPointerCancel="{{ clipUp }}" style="{{ voStyle }}">
+                    <div aria-hidden="true" style="position: absolute; inset: 6px 6px 16px; display: flex; align-items: center; gap: 2px; overflow: hidden;"><sc-for list="{{ voWave }}" as="w" hint-placeholder-count="0"><span style="{{ w }}"></span></sc-for></div>
+                    <span style="position: absolute; left: 6px; bottom: 2px; font-size: 11px; font-weight: 600; white-space: nowrap;">VO · {{ outVoice }}</span>
+                  </div>
+                </div>
+              </div>
+              <div style="display: grid; grid-template-columns: 96px minmax(0, 1fr); gap: 8px; align-items: center;">
+                <span style="font-size: 12.5px; font-weight: 600; color: rgba(255,255,255,.7);">A2 · Music</span>
+                <div style="position: relative; height: 44px; border-radius: 8px; background: rgba(255,255,255,.03);">
+                  <div data-k="mu" onPointerDown="{{ clipDown }}" onPointerMove="{{ clipMove }}" onPointerUp="{{ clipUp }}" onPointerCancel="{{ clipUp }}" style="{{ muStyle }}">
+                    <div aria-hidden="true" style="position: absolute; inset: 6px 6px 16px; display: flex; align-items: center; gap: 2px; overflow: hidden;"><sc-for list="{{ muWave }}" as="w" hint-placeholder-count="0"><span style="{{ w }}"></span></sc-for></div>
+                    <span style="position: absolute; left: 6px; bottom: 2px; font-size: 11px; font-weight: 600; white-space: nowrap;">Music · {{ outSong }}</span>
+                  </div>
+                </div>
+              </div>
+              <div aria-hidden="true" style="{{ headStyle }}"></div>
+            </div>
+          </div>
+        </div>
+      </sc-if>
+    </section>
+  </main>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+const E = 'cubic-bezier(.16,1,.3,1)';
+const T = 10;
+const STEPS = [
+  { label: 'Brainstorming', prompt: 'Choose the concept.', note: 'We develop the overall idea, making sure the brand message is easily conveyed.' },
+  { label: 'Music', prompt: 'Choose the music.', note: 'Music comes first, so the video can be cut to its rhythm.' },
+  { label: 'Voiceover', prompt: 'Choose the voice.', note: 'We find the right voice for the brand and record the script before the edit.' },
+  { label: 'Characters', prompt: 'Choose the character.', note: 'The character is locked first so they look the same in every scene.' },
+  { label: 'Scenes', prompt: 'Choose 3 scenes.', note: 'Each scene is planned with its location so the spot tells one story.' },
+  { label: 'Storyboard', prompt: 'Set what happens in each scene.', note: 'The storyboard is approved before anything is generated.' },
+  { label: 'Images', prompt: 'Approve one image per scene.', note: 'An image is generated for each scene individually. This makes the video much more accurate.' },
+  { label: 'Video generation', prompt: 'Rendering each image to video.', note: 'Each approved image is turned into a video clip using the highest quality models.' },
+  { label: 'Final edit', prompt: 'Arrange the edit, then export.', note: 'Video, music and voiceover come together in the editor and export as an MP4.' }
+];
+const GEN = 7, EDIT = 8, LAST = 6;
+const CONCEPTS = [
+  { name: 'Product Reveal', line: 'A hero product moment, built shot by shot to the final reveal.', script: 'Made for the moments that matter. Meet your new favorite. Find it near you today.' },
+  { name: 'Narrative Brand Story', line: 'A short story with a character, a place and a feeling the brand owns.', script: 'Every day starts somewhere. Ours starts with you. The brand that shows up for your everyday.' }
+];
+const SONGS = [
+  { name: 'Sunny Pop', desc: 'Bright · 116 BPM', bpm: 116, wave: 'triangle', av: .07, arp: 8, prog: [[60, 64, 67], [55, 59, 62], [57, 60, 64], [53, 57, 60]] },
+  { name: 'Dreamy Synth', desc: 'Airy · 84 BPM', bpm: 84, wave: 'sine', av: .09, arp: 4, prog: [[53, 57, 60, 64], [57, 60, 64, 67], [50, 53, 57, 60], [48, 52, 55, 59]] },
+  { name: 'Playful Pluck', desc: 'Bouncy · 132 BPM', bpm: 132, wave: 'square', av: .025, arp: 8, prog: [[62, 66, 69], [59, 62, 66], [55, 59, 62], [57, 61, 64]] }
+];
+const VOICES = [
+  { name: 'Warm', desc: 'Close, friendly', rate: .95, pitch: 1.05, re: /samantha|victoria|zira|female|aria|jenny/i },
+  { name: 'Upbeat', desc: 'Energetic, quick', rate: 1.1, pitch: 1.2, re: /daniel|alex|david|guy|male/i },
+  { name: 'Storyteller', desc: 'Slow, rich narrator', rate: .82, pitch: .8, re: /fred|tom|arthur|george|ryan/i }
+];
+const PH = (x1, y1, x2, y2, ang) => 'radial-gradient(70% 70% at ' + x1 + '% ' + y1 + '%, rgba(0,204,255,.38), transparent 62%), radial-gradient(65% 65% at ' + x2 + '% ' + y2 + '%, rgba(109,94,240,.45), transparent 64%), radial-gradient(40% 40% at 50% 55%, rgba(214,125,240,.18), transparent 70%), linear-gradient(' + ang + 'deg, #0c1834, #04070E)';
+const SCENES = [
+  { name: 'Living room', kind: 'Location', ph: PH(78, 18, 20, 85, 160), acts: ['Relaxing on the couch', 'Friends arrive at the door'] },
+  { name: 'Kitchen', kind: 'Location', ph: PH(20, 20, 80, 80, 200), acts: ['Product set on the counter', 'Family gathers at the table'] },
+  { name: 'Outdoors', kind: 'Location', ph: PH(60, 10, 30, 90, 180), acts: ['Sunny backyard wide shot', 'Walk through the park'] },
+  { name: 'Product close-up', kind: 'Product', ph: PH(50, 40, 85, 85, 140), acts: ['Slow push-in on the pack', 'Product spins into frame'] },
+  { name: 'First taste', kind: 'Action', ph: PH(15, 60, 85, 25, 220), acts: ['First bite, eyes close', 'Shared taste between friends'] },
+  { name: 'Texture detail', kind: 'Detail', ph: PH(85, 70, 15, 15, 120), acts: ['Macro on the texture', 'Ingredients fall in slow motion'] }
+];
+const VAR = (si, act, v, ch) => { const r = n => (Math.sin(si * 12.9 + act * 78.2 + v * 37.7 + (ch || 0) * 19.3 + n * 4.1) + 1) / 2; return PH(Math.round(10 + r(1) * 80), Math.round(10 + r(2) * 80), Math.round(10 + r(3) * 80), Math.round(10 + r(4) * 80), Math.round(100 + r(5) * 140)); };
+const CHARS = [
+  { name: 'Young professional', desc: '20s · curious, upbeat', ph: PH(70, 25, 25, 80, 170) },
+  { name: 'Parent', desc: '30s · warm, busy', ph: PH(30, 30, 75, 75, 200) },
+  { name: 'Grandparent', desc: '60s · storyteller', ph: PH(55, 15, 45, 90, 140) }
+];
+const HEROES = [
+  { name: 'Hero product shot', kind: 'Hero', ph: PH(50, 30, 50, 95, 180) },
+  { name: 'Brand world', kind: 'Hero', ph: PH(25, 25, 75, 75, 150) },
+  { name: 'End card', kind: 'Hero', ph: PH(80, 50, 20, 50, 200) }
+];
+const wave = (n, seed) => Array.from({ length: n }, (_, i) => 25 + Math.round(70 * Math.abs(Math.sin(i * 1.7 + seed) * Math.cos(i * .43 + seed * 2))));
+const WAVE_VO = wave(90, 1), WAVE_MU = wave(140, 4);
+
+class Component extends DCLogic {
+  state = this.fresh();
+  trk = React.createRef();
+  fresh() { return { step: 0, max: 0, concept: null, song: null, voice: null, char: null, scenes: [], rows: [], gen: [0, 0, 0], clips: [], vo: { start: .3, len: 5 }, mu: { start: 0, len: 9 }, t: 0, playing: false, exp: -1, pv: null, dragK: null }; }
+  componentDidMount() {
+    document.title = 'AI Video Simulator · KORTX Creative Labs';
+    if (window.speechSynthesis) speechSynthesis.getVoices();
+    this.onKey = e => {
+      if (e.code !== 'Space' && e.key !== ' ') return;
+      if (this.state.step !== EDIT) return;
+      const el = e.target, tag = el && el.tagName;
+      if (tag === 'INPUT' || tag === 'TEXTAREA' || tag === 'SELECT' || (el && el.isContentEditable)) return;
+      e.preventDefault(); if (e.repeat) return;
+      if (el && el.blur && tag === 'BUTTON') el.blur();
+      this.togglePlay();
+    };
+    window.addEventListener('keydown', this.onKey);
+    const loop = () => { this.tick(); this.raf = requestAnimationFrame(loop); };
+    this.raf = requestAnimationFrame(loop);
+  }
+  componentWillUnmount() { window.removeEventListener('keydown', this.onKey); cancelAnimationFrame(this.raf); clearInterval(this.gi); clearInterval(this.ei); clearTimeout(this.pvT); this.stopAudio(); }
+
+  tick() {
+    const s = this.state; if (s.step !== EDIT || !s.playing) return;
+    let t = this.tStart + (performance.now() - this.t0) / 1000;
+    const end = this.spotEnd();
+    if (t >= end) { t = end; this.stopPlay(); }
+    this.setState({ t });
+    if (!this.voDone && t >= s.vo.start) { this.voDone = true; this.speak(s.voice); }
+  }
+  activeClip(t) { const cs = this.state.clips; for (let i = cs.length - 1; i >= 0; i--) { const c = cs[i]; if (t >= c.start && t < c.start + c.len) return c; } return null; }
+  spotEnd() { const cs = this.state.clips; return Math.min(T, Math.max(1, ...cs.map(c => c.start + c.len))); }
+
+  music(song, offset, delay, dur) {
+    try {
+      const ac = this.ac || (this.ac = new (window.AudioContext || window.webkitAudioContext)()); ac.resume();
+      const mg = ac.createGain(), now = ac.currentTime; mg.gain.setValueAtTime(.0001, now); mg.gain.setTargetAtTime(.5, now + delay, .06); mg.connect(ac.destination); this.mg = mg;
+      const beat = 60 / song.bpm, t0 = now + delay - offset, endPos = offset + dur;
+      mg.gain.setTargetAtTime(.0001, t0 + endPos - .15, .08);
+      const note = (m, at, len, type, vol) => {
+        if (at + len <= offset || at >= endPos) return;
+        const st = t0 + Math.max(at, offset), ln = Math.max(.06, at + len - Math.max(at, offset));
+        const o = ac.createOscillator(), g = ac.createGain(); o.type = type; o.frequency.value = 440 * Math.pow(2, (m - 69) / 12);
+        g.gain.setValueAtTime(0, st); g.gain.linearRampToValueAtTime(vol, st + .02); g.gain.exponentialRampToValueAtTime(.0005, st + ln);
+        o.connect(g); g.connect(mg); o.start(st); o.stop(st + ln + .05);
+      };
+      for (let pos = 0, bar = 0; pos < endPos; pos += beat * 4, bar++) {
+        const ch = song.prog[bar % song.prog.length];
+        ch.forEach(m => note(m, pos, beat * 4, 'sine', .035));
+        note(ch[0] - 12, pos, beat * 1.8, 'triangle', .12); note(ch[0] - 12, pos + beat * 2, beat * 1.8, 'triangle', .1);
+        const st = beat * 4 / song.arp;
+        for (let k = 0; k < song.arp; k++) note(ch[k % ch.length] + 12, pos + k * st, st * .9, song.wave, song.av);
+      }
+    } catch (e) {}
+  }
+  speak(vi) {
+    const ss = window.speechSynthesis; if (!ss || vi == null) return;
+    ss.cancel();
+    const V = VOICES[vi], u = new SpeechSynthesisUtterance(CONCEPTS[this.state.concept ?? 0].script);
+    const vs = ss.getVoices().filter(v => /^en/i.test(v.lang));
+    const pick = vs.find(v => V.re.test(v.name)) || vs[vi % Math.max(1, vs.length)];
+    if (pick) u.voice = pick; u.rate = V.rate; u.pitch = V.pitch;
+    ss.speak(u);
+  }
+  stopAudio() {
+    if (this.mg && this.ac) { const g = this.mg; try { g.gain.cancelScheduledValues(0); g.gain.setTargetAtTime(0, this.ac.currentTime, .04); } catch (e) {} setTimeout(() => { try { g.disconnect(); } catch (e) {} }, 400); }
+    this.mg = null;
+    if (window.speechSynthesis) speechSynthesis.cancel();
+  }
+
+  previewSong = e => {
+    const i = +e.currentTarget.dataset.i; this.stopAudio(); clearTimeout(this.pvT);
+    if (this.state.pv === 's' + i) { this.setState({ pv: null }); return; }
+    this.music(SONGS[i], 0, 0, 6); this.setState({ pv: 's' + i, song: i, max: Math.min(this.state.max, 1) });
+    this.pvT = setTimeout(() => this.setState({ pv: null }), 6000);
+  };
+  previewVoice = e => {
+    const i = +e.currentTarget.dataset.i; this.stopAudio(); clearTimeout(this.pvT);
+    if (this.state.pv === 'v' + i) { this.setState({ pv: null }); return; }
+    this.speak(i); this.setState({ pv: 'v' + i, voice: i, max: Math.min(this.state.max, 2) });
+    this.pvT = setTimeout(() => this.setState({ pv: null }), 5500);
+  };
+  pickConcept = e => { const i = +e.currentTarget.dataset.i; this.setState(s => ({ concept: i, max: Math.min(s.max, 0) })); };
+  pickSong = e => this.setState(s => ({ song: +e.currentTarget.dataset.i, max: Math.min(s.max, 1) }));
+  pickVoice = e => this.setState(s => ({ voice: +e.currentTarget.dataset.i, max: Math.min(s.max, 2) }));
+  pickChar = e => { const i = +e.currentTarget.dataset.i; this.setState(s => ({ char: i, rows: s.rows.map(r => ({ act: r.act, pick: null })), max: Math.min(s.max, 3) })); };
+  toggleScene = e => {
+    const i = +e.currentTarget.dataset.i;
+    this.setState(s => { const has = s.scenes.includes(i); let sc = has ? s.scenes.filter(x => x !== i) : s.scenes.concat(i); if (sc.length > 3) sc = sc.slice(1); return { scenes: sc, rows: sc.map(() => ({ act: 0, pick: null })), max: Math.min(s.max, 4) }; });
+  };
+  pickVar = e => { const r = +e.currentTarget.dataset.r, v = +e.currentTarget.dataset.v; this.setState(s => { const rows = s.rows.slice(); rows[r] = Object.assign({}, rows[r], { pick: v }); return { rows, max: Math.min(s.max, 6) }; }); };
+  pickAct = e => { const r = +e.currentTarget.dataset.r, a = +e.currentTarget.value; this.setState(s => { const rows = s.rows.slice(); rows[r] = { act: a, pick: null }; return { rows, max: Math.min(s.max, 5) }; }); };
+  canNext() { const s = this.state; return [s.concept != null, s.song != null, s.voice != null, s.char != null, s.scenes.length === 3, s.rows.length === 3, s.rows.length === 3 && s.rows.every(r => r.pick != null)][s.step]; }
+  next = () => {
+    if (!this.canNext()) return;
+    this.stopAudio(); clearTimeout(this.pvT);
+    const s = this.state;
+    if (s.step < LAST) { this.setState({ step: s.step + 1, max: Math.max(s.max, s.step + 1), pv: null }); return; }
+    this.render3d();
+  };
+  render3d() {
+    clearInterval(this.gi); this.g0 = performance.now();
+    this.setState({ step: GEN, max: GEN, gen: [0, 0, 0], pv: null, playing: false });
+    this.gi = setInterval(() => {
+      const el = performance.now() - this.g0;
+      const gen = [0, 1, 2].map(i => Math.max(0, Math.min(100, (el - i * 450) / 2300 * 100)));
+      this.setState({ gen });
+      if (gen.every(p => p >= 100)) { clearInterval(this.gi); this.gi = setTimeout(() => this.build(), 1600); }
+    }, 90);
+  }
+  build() {
+    const s = this.state, seq = s.scenes.map((si, k) => { const sc = SCENES[si], r = s.rows[k]; return { name: sc.acts[r.act], ph: VAR(si, r.act, r.pick, s.char) }; });
+    let at = 0; const clips = seq.map(c => { const len = 3, o = { name: c.name, ph: c.ph, start: at, len }; at += len; return o; });
+    const words = CONCEPTS[s.concept].script.split(/\s+/).length;
+    const voLen = Math.min(at - .3, Math.max(3, words / 2.6 / VOICES[s.voice].rate));
+    this.setState({ step: EDIT, max: EDIT, clips, vo: { start: .3, len: +voLen.toFixed(2) }, mu: { start: 0, len: +Math.min(T, at).toFixed(2) }, t: 0, exp: -1 });
+  }
+  goStep = e => {
+    const i = +e.currentTarget.dataset.i, s = this.state;
+    if (i > s.max || i === GEN || s.step === GEN) return;
+    this.stopPlay(); clearTimeout(this.pvT); this.setState({ step: i, pv: null });
+  };
+
+  togglePlay = () => { if (this.state.playing) this.stopPlay(); else this.play(this.state.t); };
+  play(from) {
+    const s = this.state; let t = from; if (t >= this.spotEnd() - .05) t = 0;
+    this.stopAudio(); this.tStart = t; this.t0 = performance.now(); this.voDone = t > s.vo.start + .2;
+    const mo = t - s.mu.start;
+    if (mo < s.mu.len) this.music(SONGS[s.song], Math.max(0, mo), Math.max(0, -mo), s.mu.len - Math.max(0, mo));
+    this.setState({ playing: true, t });
+  }
+  stopPlay() { if (this.state.playing) this.setState({ playing: false }); this.stopAudio(); }
+  playFinal = () => this.play(0);
+
+  getItem(k) { const s = this.state; return k === 'vo' ? s.vo : k === 'mu' ? s.mu : s.clips[+k.slice(1)]; }
+  clipDown = e => {
+    const k = e.currentTarget.dataset.k, it = this.getItem(k); if (!it) return;
+    this.stopPlay();
+    const w = this.trk.current ? this.trk.current.getBoundingClientRect().width : 600;
+    this.drag = { k, x0: e.clientX, s0: it.start, len: it.len, w };
+    try { e.currentTarget.setPointerCapture(e.pointerId); } catch (_) {}
+    e.preventDefault(); e.stopPropagation(); this.setState({ dragK: k });
+  };
+  clipMove = e => {
+    const d = this.drag; if (!d) return;
+    let ns = d.s0 + (e.clientX - d.x0) / d.w * T;
+    ns = Math.max(0, Math.min(T - d.len, ns));
+    if (d.k[0] === 'v') {
+      const idx = +d.k.slice(1), edges = [0];
+      this.state.clips.forEach((c, i) => { if (i !== idx) edges.push(c.start, c.start + c.len); });
+      for (const ed of edges) { if (Math.abs(ns - ed) < .18) { ns = ed; break; } if (Math.abs(ns + d.len - ed) < .18) { ns = ed - d.len; break; } }
+    }
+    ns = Math.round(ns * 100) / 100;
+    this.setState(s => {
+      if (d.k === 'vo') return { vo: Object.assign({}, s.vo, { start: ns }) };
+      if (d.k === 'mu') return { mu: Object.assign({}, s.mu, { start: ns }) };
+      const clips = s.clips.slice(), i = +d.k.slice(1); clips[i] = Object.assign({}, clips[i], { start: ns }); return { clips };
+    });
+  };
+  clipUp = () => {
+    const d = this.drag; this.drag = null;
+    if (d && d.k[0] === 'v') {
+      this.setState(s => {
+        const cs = s.clips.map(c => Object.assign({}, c)).sort((a, b) => (a.start + a.len / 2) - (b.start + b.len / 2));
+        let at = 0; cs.forEach(c => { c.start = Math.max(c.start, at); at = c.start + c.len; });
+        const over = at - T; if (over > 0) { let shift = over; for (let i = cs.length - 1; i >= 0 && shift > 0; i--) { const prevEnd = i ? cs[i - 1].start + cs[i - 1].len : 0, room = Math.min(shift, cs[i].start - prevEnd); cs.slice(i).forEach(c => { c.start -= room; }); shift -= room; } }
+        cs.forEach(c => { c.start = Math.round(c.start * 100) / 100; });
+        return { clips: cs, dragK: null };
+      });
+      return;
+    }
+    if (this.state.dragK) this.setState({ dragK: null });
+  };
+  scrubTo(e, el) { const r = el.getBoundingClientRect(); this.setState({ t: Math.max(0, Math.min(T, (e.clientX - r.left) / r.width * T)) }); }
+  scrubDown = e => { this.stopPlay(); this.scrubbing = true; try { e.currentTarget.setPointerCapture(e.pointerId); } catch (_) {} this.scrubTo(e, e.currentTarget); };
+  scrubMove = e => { if (this.scrubbing) this.scrubTo(e, e.currentTarget); };
+  scrubUp = () => { this.scrubbing = false; };
+
+  genMp4 = () => {
+    this.stopPlay(); clearInterval(this.ei); this.e0 = performance.now(); this.setState({ exp: 0 });
+    this.ei = setInterval(() => { const p = Math.min(100, (performance.now() - this.e0) / 4200 * 100); this.setState({ exp: p }); if (p >= 100) clearInterval(this.ei); }, 80);
+  };
+  restart = () => { this.stopPlay(); clearInterval(this.gi); clearTimeout(this.gi); clearInterval(this.ei); this.setState(this.fresh()); };
+
+  renderVals() {
+    const s = this.state, step = s.step;
+    const opt = on => ({ position: 'relative', display: 'flex', flexDirection: 'column', gap: 6, textAlign: 'left', padding: 16, borderRadius: 12, border: '1px solid ' + (on ? 'rgba(0,204,255,.65)' : 'rgba(255,255,255,.08)'), background: on ? 'rgba(0,60,110,.35)' : 'rgba(255,255,255,.03)', boxShadow: on ? '0 0 24px rgba(0,204,255,.25)' : 'inset 0 1px 0 rgba(255,255,255,.04)', color: '#fff', cursor: 'pointer', fontFamily: 'inherit', transition: 'all 200ms ' + E });
+    const phTile = ph => ({ display: 'grid', placeItems: 'center', width: '100%', aspectRatio: '16 / 9', background: ph });
+    const tile = on => Object.assign(opt(on), { padding: 0, gap: 0, overflow: 'hidden' });
+    const eq = live => [0, 1, 2, 3, 4].map(i => ({ width: 3, height: '100%', borderRadius: 2, background: live ? '#00CCFF' : 'rgba(255,255,255,.25)', transformOrigin: 'bottom', transform: live ? 'none' : 'scaleY(' + (.3 + (i % 3) * .2) + ')', animation: live ? 'kxs-eq ' + (.5 + i * .13) + 's ease-in-out ' + (i * .07) + 's infinite' : 'none' }));
+    const ok = this.canNext();
+    const fmt = t => '00:' + (t < 10 ? '0' : '') + t.toFixed(1);
+    const end = s.clips.length ? this.spotEnd() : 0;
+    const ac = step === EDIT ? this.activeClip(s.t) : null;
+    const pct = (a) => (a / T * 100) + '%';
+    const audio = (it, k, rgb) => ({ position: 'absolute', top: 3, bottom: 3, left: pct(it.start), width: pct(it.len), borderRadius: 8, overflow: 'hidden', cursor: s.dragK === k ? 'grabbing' : 'grab', touchAction: 'none', background: 'rgba(' + rgb + ',.22)', border: '1px solid rgba(' + rgb + ',' + (s.dragK === k ? '.95' : '.55') + ')', boxShadow: s.dragK === k ? '0 0 22px rgba(' + rgb + ',.5)' : 'none', transition: 'box-shadow 200ms ' + E });
+    const bars = (arr, it, rgb) => arr.slice(0, Math.max(4, Math.round(it.len * 14))).map(h => ({ flex: '0 0 2px', height: h + '%', borderRadius: 1, background: 'rgba(' + rgb + ',.85)' }));
+    const exp = s.exp, stage = exp < 30 ? 'Conforming ' + s.clips.length + ' clips' : exp < 60 ? 'Mixing voiceover and music' : exp < 90 ? 'Encoding H.264' : 'Writing .mp4';
+    return {
+      steps: STEPS.map((x, i) => { const on = i === step, locked = i > s.max || i === GEN || step === GEN; return { i: String(i), n: String(i + 1), label: x.label, locked, cur: on ? 'step' : undefined,
+        pill: { display: 'inline-flex', alignItems: 'center', gap: 8, minHeight: 44, padding: '0 16px 0 6px', borderRadius: 999, border: '1px solid ' + (on ? 'rgba(0,204,255,.65)' : 'rgba(255,255,255,.12)'), background: on ? 'rgba(0,60,110,.45)' : 'rgba(5,8,15,.4)', boxShadow: on ? '0 0 24px rgba(0,204,255,.28)' : 'none', color: on ? '#fff' : 'rgba(255,255,255,.72)', fontSize: 13.5, fontWeight: 600, cursor: locked && !on ? 'default' : 'pointer', opacity: locked && !on ? .45 : 1, transition: 'all 300ms ' + E },
+        num: { display: 'grid', placeItems: 'center', width: 30, height: 30, borderRadius: '50%', fontSize: 12, fontWeight: 700, background: on ? '#00CCFF' : i < step || (i <= s.max && i !== step) ? 'rgba(0,204,255,.18)' : 'rgba(255,255,255,.08)', color: on ? '#001830' : '#fff' } }; }),
+      prompt: STEPS[step].prompt, note: STEPS[step].note,
+      isPick: step <= LAST, is0: step === 0, isMusic: step === 1, isVoice: step === 2, isChar: step === 3, isScenes: step === 4, isStory: step === 5, isImages: step === 6, isGen: step === GEN, isEdit: step === EDIT,
+      chars: CHARS.map((c, i) => ({ i: String(i), on: String(s.char === i), name: c.name, desc: c.desc, style: tile(s.char === i), ph: { display: 'block', width: '100%', aspectRatio: '1 / 1', background: c.ph } })), pickChar: this.pickChar,
+      storyUI: step === 5 ? s.scenes.map((si, k) => { const sc = SCENES[si], r = s.rows[k] || { act: 0 }; return { r: String(k), title: 'Scene ' + (k + 1) + ' · ' + sc.name, act: String(r.act), actLabel: sc.acts[r.act], who: s.char != null ? CHARS[s.char].name : '', acts: sc.acts.map((a, j) => ({ v: String(j), label: a })) }; }) : [],
+      rowsUI: step === 6 ? s.scenes.map((si, k) => { const sc = SCENES[si], r = s.rows[k] || { act: 0, pick: null };
+        return { r: String(k), title: 'Scene ' + (k + 1) + ' · ' + sc.name, sub: sc.acts[r.act],
+          vars: [0, 1, 2].map(v => ({ r: String(k), v: String(v), on: String(r.pick === v), label: 'Option ' + (v + 1), style: tile(r.pick === v), ph: { display: 'block', width: '100%', aspectRatio: '16 / 9', background: VAR(si, r.act, v, s.char) } })) }; }) : [],
+      pickVar: this.pickVar, pickAct: this.pickAct,
+      concepts: CONCEPTS.map((c, i) => ({ i: String(i), on: String(s.concept === i), name: c.name, line: c.line, style: opt(s.concept === i) })),
+      songs: SONGS.map((c, i) => ({ i: String(i), on: String(s.song === i), name: c.name, desc: c.desc, btn: s.pv === 's' + i ? 'Stop' : 'Preview', eq: eq(s.pv === 's' + i), style: Object.assign(opt(s.song === i), { gap: 12, cursor: 'default' }) })),
+      voices: VOICES.map((c, i) => ({ i: String(i), on: String(s.voice === i), name: c.name, desc: c.desc, btn: s.pv === 'v' + i ? 'Stop' : 'Preview', eq: eq(s.pv === 'v' + i), style: Object.assign(opt(s.voice === i), { gap: 12, cursor: 'default' }) })),
+      sceneOpts: SCENES.map((c, i) => { const k = s.scenes.indexOf(i), on = k >= 0; return { i: String(i), on: String(on), name: c.name, kind: c.kind, ph: phTile(c.ph), order: on ? String(k + 1) : '', style: tile(on),
+        badge: { position: 'absolute', top: 8, right: 8, display: 'grid', placeItems: 'center', width: 28, height: 28, borderRadius: '50%', fontSize: 13, fontWeight: 700, background: on ? '#00CCFF' : 'rgba(5,8,15,.6)', color: on ? '#001830' : '#fff', border: on ? '0' : '1px solid rgba(255,255,255,.5)', transition: 'all 200ms ' + E } }; }),
+      heroOpts: HEROES.map((c, i) => ({ i: String(i), on: String(s.hero === i), name: c.name, kind: c.kind, ph: phTile(c.ph), style: tile(s.hero === i) })),
+      next: this.next, orbOff: !ok, orbLabel: step === LAST ? 'Render' : 'Generate',
+      orbHint: step === LAST ? 'Render each image to video' : ok ? 'Continue to ' + STEPS[step + 1].label : 'Make a choice to continue',
+      orb: { display: 'grid', placeItems: 'center', width: 108, height: 108, borderRadius: '50%', border: 0, background: ok ? 'radial-gradient(circle at 50% 35%, #fff, #E6F9FF 60%, #BDEFFF)' : 'rgba(255,255,255,.12)', color: ok ? '#001830' : 'rgba(255,255,255,.6)', fontSize: 16, fontWeight: 700, cursor: ok ? 'pointer' : 'default', boxShadow: ok ? '0 0 36px rgba(0,204,255,.35)' : 'none', animation: ok ? 'kxs-pulse 2.4s ease-in-out infinite' : 'none', transition: 'all 300ms ' + E },
+      outTitle: s.concept != null ? CONCEPTS[s.concept].name : 'No concept yet',
+      outScript: s.concept != null ? '“' + CONCEPTS[s.concept].script + '”' : 'Your script appears here once you choose a concept.',
+      outSong: s.song != null ? SONGS[s.song].name : '—', outVoice: s.voice != null ? VOICES[s.voice].name : '—',
+      board: [0, 1, 2, 3].map(k => { const c = k < 3 ? (s.scenes[k] != null ? SCENES[s.scenes[k]] : null) : (s.hero != null ? HEROES[s.hero] : null);
+        return { has: !!c, ph: { position: 'absolute', inset: 0, background: c ? c.ph : 'none' }, label: k < 3 ? 'Scene ' + (k + 1) : 'Hero', style: { position: 'relative', aspectRatio: '16 / 9', borderRadius: 8, overflow: 'hidden', border: c ? '1px solid rgba(255,255,255,.14)' : '1px dashed rgba(255,255,255,.2)', background: 'rgba(255,255,255,.03)' } }; }),
+      pickConcept: this.pickConcept, pickSong: this.pickSong, pickVoice: this.pickVoice, toggleScene: this.toggleScene, pickHero: this.pickHero, previewSong: this.previewSong, previewVoice: this.previewVoice, goStep: this.goStep,
+      gens: step === GEN ? s.scenes.map((si, k) => { const r = s.rows[k]; return { name: SCENES[si].acts[r.act], ph: VAR(si, r.act, r.pick, s.char) }; }).map((c, i) => { const p = s.gen[i] || 0, done = p >= 100;
+        return { name: c.name, done, wait: !done,
+          still: { position: 'absolute', inset: 0, background: c.ph, filter: 'saturate(.6) brightness(.7)' },
+          vid: { position: 'absolute', inset: '-10%', background: c.ph, animation: 'kxs-kb ' + (4 + i * .6) + 's ease-in-out infinite alternate' }, pct: Math.round(p) + '%', tag: done ? 'Video' : p > 0 ? 'Generating' : 'Queued',
+          bar: { height: '100%', width: p + '%', borderRadius: 999, background: done ? 'var(--lime-300, #BEF264)' : 'linear-gradient(90deg, #00CCFF, #6D5EF0)', transition: 'width 120ms linear' } }; }) : [],
+      genStatus: s.gen.every(p => p >= 100) ? 'All clips rendered. Adding them to the editor…' : 'Generating ' + s.gen.filter(p => p >= 100).length + ' of 3 clips',
+      trk: this.trk, monStyle: { position: 'absolute', inset: '-10%', background: ac ? ac.ph : '#000', opacity: ac ? 1 : 0, transform: ac ? 'scale(' + (1 + .16 * Math.min(1, (s.t - ac.start) / ac.len)).toFixed(4) + ')' : 'none' }, monEmpty: step === EDIT && !ac, monLabel: ac ? ac.name : 'Empty',
+      togglePlay: this.togglePlay, playLabel: s.playing ? 'Pause' : 'Play', tLabel: fmt(s.t) + ' / ' + fmt(end),
+      ticks: Array.from({ length: T + 1 }, (_, i) => ({ label: i + 's', style: { position: 'absolute', left: pct(i), bottom: 4, transform: i === 0 ? 'none' : i === T ? 'translateX(-100%)' : 'translateX(-50%)', fontSize: 11, color: 'rgba(255,255,255,.5)', fontVariantNumeric: 'tabular-nums', pointerEvents: 'none' } })),
+      scrubDown: this.scrubDown, scrubMove: this.scrubMove, scrubUp: this.scrubUp,
+      vclips: s.clips.map((c, i) => { const k = 'v' + i, dr = s.dragK === k; return { k, name: c.name,
+        style: { position: 'absolute', top: 3, bottom: 3, left: pct(c.start), width: pct(c.len), borderRadius: 8, overflow: 'hidden', cursor: dr ? 'grabbing' : 'grab', touchAction: 'none', background: c.ph, border: '1px solid ' + (dr ? '#00CCFF' : 'rgba(255,255,255,.22)'), boxShadow: dr ? '0 0 22px rgba(0,204,255,.5)' : '0 6px 16px rgba(0,0,0,.45)', zIndex: dr ? 3 : 1, animation: 'kx-rise 600ms ' + E + ' ' + (i * 140) + 'ms both', transition: 'box-shadow 200ms ' + E } }; }),
+      voStyle: audio(s.vo, 'vo', '109,94,240'), muStyle: audio(s.mu, 'mu', '0,204,255'),
+      voWave: step === EDIT ? bars(WAVE_VO, s.vo, '196,181,253') : [], muWave: step === EDIT ? bars(WAVE_MU, s.mu, '102,224,255') : [],
+      clipDown: this.clipDown, clipMove: this.clipMove, clipUp: this.clipUp,
+      headStyle: { position: 'absolute', top: -30, bottom: 0, left: 'calc(104px + (100% - 104px) * ' + (s.t / T).toFixed(4) + ')', width: 2, marginLeft: -1, background: '#fff', boxShadow: '0 0 10px rgba(0,204,255,.9)', pointerEvents: 'none', zIndex: 5 },
+      expIdle: exp < 0, expRun: exp >= 0 && exp < 100, expDone: exp >= 100, expStage: stage, expPct: Math.round(Math.max(0, exp)) + '%',
+      expBar: { height: '100%', width: Math.max(0, exp) + '%', borderRadius: 999, background: 'linear-gradient(90deg, #00CCFF, #6D5EF0)', transition: 'width 100ms linear' },
+      expAudio: 'Music + voiceover, AAC stereo', expLen: '0:' + (end < 10 ? '0' : '') + end.toFixed(1),
+      genMp4: this.genMp4, playFinal: this.playFinal, restart: this.restart
+    };
+  }
+}
+</script>
+</body>
+</html>

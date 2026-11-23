@@ -1,0 +1,120 @@
+:root{
+  /* ---- Brand core ---- */
+  --kortx-bright-blue:#00CCFF;   /* the mark; primary accent */
+  --kortx-midnight:#001930;      /* the brand ground */
+  --kortx-white:#FFFFFF;
+
+  /* ---- Midnight ramp (dark surfaces) ---- */
+  --navy-1000:#000A16;
+  --navy-950:#000F1F;
+  --navy-900:#001428;
+  --navy-850:#001930;
+  --navy-800:#011E3A;
+  --navy-700:#03294B;
+  --navy-600:#0A3A63;
+  --navy-500:#12507F;
+  --ink-black:#070B15;           /* deck pill / panel fill */
+
+  /* ---- Blue ramp (accent) ---- */
+  --blue-100:#CFF6FF;
+  --blue-200:#9DEBFF;
+  --blue-300:#5CDCFF;
+  --blue-400:#00CCFF;
+  --blue-500:#00B1DF;
+  --blue-600:#0090B8;
+  --blue-700:#00688A;
+
+  /* ---- Secondary accents seen in the deck ---- */
+  --violet-400:#8A7CF8;
+  --violet-500:#6D5EF0;
+  --magenta-400:#D67DF0;
+  --lime-300:#BEF264;            /* eyebrow labels on dark panels */
+  --teal-400:#2DD4BF;
+  --amber-400:#FECD00;
+  --green-400:#09D898;
+
+  /* ---- Neutrals (Kampus light UI) ---- */
+  --gray-0:#FFFFFF;
+  --gray-25:#FBFCFD;
+  --gray-50:#F5F7FA;
+  --gray-100:#EDF0F4;
+  --gray-200:#E2E7ED;
+  --gray-300:#CBD3DC;
+  --gray-400:#9AA5B2;
+  --gray-500:#6B7683;
+  --gray-600:#4B5563;
+  --gray-700:#333D49;
+  --gray-800:#1F2733;
+  --gray-900:#111823;
+
+  /* ---- Semantic: status ---- */
+  --success-500:#12B76A;
+  --success-100:#D6F5E5;
+  --warning-500:#F79009;
+  --warning-100:#FEF0C7;
+  --danger-500:#E5484D;
+  --danger-100:#FDE3E4;
+  --info-500:#00B1DF;
+  --info-100:#D6F3FC;
+
+  /* ================= SEMANTIC ALIASES ================= */
+  /* Dark theme (decks, marketing, brand surfaces) — the default */
+  --surface-page:var(--navy-850);
+  --surface-raised:var(--navy-950);
+  --surface-card:var(--ink-black);
+  --surface-inset:var(--navy-900);
+  --surface-overlay:rgba(0,25,48,.72);
+
+  --text-primary:var(--kortx-white);
+  --text-secondary:rgba(255,255,255,.76);
+  --text-tertiary:rgba(255,255,255,.55);
+  --text-accent:var(--blue-400);
+  --text-eyebrow:var(--lime-300);
+  --text-inverse:var(--navy-850);
+
+  --border-subtle:rgba(255,255,255,.08);
+  --border-default:rgba(255,255,255,.14);
+  --border-strong:rgba(0,204,255,.45);
+
+  --action-primary-bg:var(--blue-400);
+  --action-primary-fg:var(--navy-1000);
+  --action-primary-bg-hover:var(--blue-300);
+  --action-primary-bg-active:var(--blue-500);
+  --action-secondary-bg:rgba(255,255,255,.06);
+  --action-secondary-fg:var(--kortx-white);
+  --action-secondary-bg-hover:rgba(255,255,255,.12);
+  --focus-ring:rgba(0,204,255,.55);
+
+  --accent-rule:var(--blue-500);        /* 2px left bars on bullet lists */
+  --glow-cyan:rgba(0,204,255,.35);
+  --glow-violet:rgba(138,124,248,.30);
+}
+
+/* Light theme scope — Kampus product UI and light marketing sections */
+[data-theme="light"]{
+  --surface-page:var(--gray-50);
+  --surface-raised:var(--gray-0);
+  --surface-card:var(--gray-0);
+  --surface-inset:var(--gray-100);
+  --surface-overlay:rgba(17,24,35,.45);
+
+  --text-primary:var(--gray-900);
+  --text-secondary:var(--gray-600);
+  --text-tertiary:var(--gray-500);
+  --text-accent:var(--blue-500);
+  --text-eyebrow:var(--gray-500);
+  --text-inverse:var(--kortx-white);
+
+  --border-subtle:var(--gray-200);
+  --border-default:var(--gray-300);
+  --border-strong:var(--blue-400);
+
+  --action-primary-bg:var(--navy-850);
+  --action-primary-fg:var(--kortx-white);
+  --action-primary-bg-hover:var(--navy-700);
+  --action-primary-bg-active:var(--navy-1000);
+  --action-secondary-bg:var(--gray-0);
+  --action-secondary-fg:var(--gray-800);
+  --action-secondary-bg-hover:var(--gray-100);
+  --accent-rule:var(--blue-400);
+}

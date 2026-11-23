@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<script src="kx-theme.js"></script>
+<link rel="stylesheet" href="_ds/kortx-design-guide-2026-5bc7ff27-9282-4218-938a-63d43f555d47/tokens/fonts.css">
+<link rel="stylesheet" href="_ds/kortx-design-guide-2026-5bc7ff27-9282-4218-938a-63d43f555d47/tokens/colors.css">
+<link rel="stylesheet" href="_ds/kortx-design-guide-2026-5bc7ff27-9282-4218-938a-63d43f555d47/tokens/typography.css">
+<link rel="stylesheet" href="_ds/kortx-design-guide-2026-5bc7ff27-9282-4218-938a-63d43f555d47/tokens/spacing.css">
+<link rel="stylesheet" href="_ds/kortx-design-guide-2026-5bc7ff27-9282-4218-938a-63d43f555d47/tokens/radius.css">
+<link rel="stylesheet" href="_ds/kortx-design-guide-2026-5bc7ff27-9282-4218-938a-63d43f555d47/tokens/elevation.css">
+<link rel="stylesheet" href="_ds/kortx-design-guide-2026-5bc7ff27-9282-4218-938a-63d43f555d47/tokens/motion.css">
+<link rel="stylesheet" href="_ds/kortx-design-guide-2026-5bc7ff27-9282-4218-938a-63d43f555d47/tokens/base.css">
+<link rel="stylesheet" href="_ds/kortx-design-guide-2026-5bc7ff27-9282-4218-938a-63d43f555d47/styles.css">
+<script src="_ds/kortx-design-guide-2026-5bc7ff27-9282-4218-938a-63d43f555d47/_ds_bundle.js"></script>
+<style>
+  html, body { margin: 0; padding: 0; background: #000509; }
+  body { font-family: var(--font-body, Inter, Helvetica, sans-serif); -webkit-font-smoothing: antialiased; }
+  a { color: var(--blue-400); text-decoration: none; }
+  a:hover { color: var(--blue-300); }
+  input, button { font-family: inherit; }
+  input[type="date"]::-webkit-calendar-picker-indicator { filter: invert(1); opacity: .7; cursor: pointer; }
+  [data-focusable]:focus-visible { outline: none; border-color: var(--blue-400) !important; box-shadow: 0 0 0 3px rgba(0,204,255,.55) !important; }
+  [data-reveal] { opacity: 0; transform: translateY(12px); transition: opacity 600ms cubic-bezier(.16,1,.3,1), transform 600ms cubic-bezier(.16,1,.3,1); transition-delay: var(--rd, 0ms); }
+  [data-reveal][data-in] { opacity: 1; transform: none; }
+  [data-reveal="orb"] { transform: translateY(22px) scale(.86); transition-duration: 700ms; }
+  [data-reveal="menu"] { transform: scaleX(.04); transform-origin: 50% 50%; transition: transform 800ms cubic-bezier(.16,1,.3,1), opacity 300ms ease; transition-delay: var(--rd, 0ms); }
+  [data-reveal="menu"] button { opacity: 0; transform: translateY(6px); }
+  [data-reveal="menu"]:not([data-done]) button { transition: opacity 360ms cubic-bezier(.16,1,.3,1), transform 360ms cubic-bezier(.16,1,.3,1) !important; }
+  [data-reveal="menu"][data-in]:not([data-done]) button:nth-of-type(1), [data-reveal="menu"][data-in]:not([data-done]) > :nth-child(1) > button { transition-delay: calc(var(--rd, 0ms) + 390ms) !important; }
+  [data-reveal="menu"][data-in]:not([data-done]) button:nth-of-type(2), [data-reveal="menu"][data-in]:not([data-done]) > :nth-child(2) > button { transition-delay: calc(var(--rd, 0ms) + 480ms) !important; }
+  [data-reveal="menu"][data-in]:not([data-done]) button:nth-of-type(3), [data-reveal="menu"][data-in]:not([data-done]) > :nth-child(3) > button { transition-delay: calc(var(--rd, 0ms) + 570ms) !important; }
+  [data-reveal="menu"][data-in]:not([data-done]) button:nth-of-type(4), [data-reveal="menu"][data-in]:not([data-done]) > :nth-child(4) > button { transition-delay: calc(var(--rd, 0ms) + 660ms) !important; }
+  [data-reveal="menu"][data-in]:not([data-done]) button:nth-of-type(5), [data-reveal="menu"][data-in]:not([data-done]) > :nth-child(5) > button { transition-delay: calc(var(--rd, 0ms) + 750ms) !important; }
+  [data-reveal="menu"][data-in]:not([data-done]) button:nth-of-type(6), [data-reveal="menu"][data-in]:not([data-done]) > :nth-child(6) > button { transition-delay: calc(var(--rd, 0ms) + 840ms) !important; }
+  [data-reveal="menu"][data-in]:not([data-done]) button:nth-of-type(7), [data-reveal="menu"][data-in]:not([data-done]) > :nth-child(7) > button { transition-delay: calc(var(--rd, 0ms) + 930ms) !important; }
+  [data-reveal="menu"][data-in]:not([data-done]) button:nth-of-type(8), [data-reveal="menu"][data-in]:not([data-done]) > :nth-child(8) > button { transition-delay: calc(var(--rd, 0ms) + 1020ms) !important; }
+  [data-reveal="menu"][data-in]:not([data-done]) button:nth-of-type(9), [data-reveal="menu"][data-in]:not([data-done]) > :nth-child(9) > button { transition-delay: calc(var(--rd, 0ms) + 1110ms) !important; }
+  [data-reveal="menu"][data-in]:not([data-done]) button:nth-of-type(10), [data-reveal="menu"][data-in]:not([data-done]) > :nth-child(10) > button { transition-delay: calc(var(--rd, 0ms) + 1200ms) !important; }
+  [data-reveal="menu"][data-in]:not([data-done]) button:nth-of-type(11), [data-reveal="menu"][data-in]:not([data-done]) > :nth-child(11) > button { transition-delay: calc(var(--rd, 0ms) + 1290ms) !important; }
+  [data-reveal="menu"][data-in]:not([data-done]) button:nth-of-type(12), [data-reveal="menu"][data-in]:not([data-done]) > :nth-child(12) > button { transition-delay: calc(var(--rd, 0ms) + 1380ms) !important; }
+  [data-reveal="menu"][data-in]:not([data-done]) button:nth-of-type(13), [data-reveal="menu"][data-in]:not([data-done]) > :nth-child(13) > button { transition-delay: calc(var(--rd, 0ms) + 1470ms) !important; }
+  [data-reveal="menu"][data-in]:not([data-done]) button:nth-of-type(14), [data-reveal="menu"][data-in]:not([data-done]) > :nth-child(14) > button { transition-delay: calc(var(--rd, 0ms) + 1560ms) !important; }
+  [data-reveal="menu"][data-in] button { opacity: 1; transform: none; }
+  [data-gantt]::-webkit-scrollbar { height: 8px; }
+  [data-gantt]::-webkit-scrollbar-thumb { background: rgba(0,204,255,.35); border-radius: 8px; }
+  @media (prefers-reduced-motion: reduce) { [data-reveal] { opacity: 1; transform: none; } *, *::before, *::after { animation-duration: .001ms !important; transition-duration: .001ms !important; } }
+</style>
+</helmet>
+<div ref="{{ rootRef }}" style="font-family: var(--font-body, Inter, sans-serif); color: #fff;">
+  <section id="specs" data-block="Assets &amp; Process · Specs by Channel" style="padding: clamp(56px, 8vh, 112px) 0; scroll-margin-top: 96px;">
+      <div style="display: flex; flex-direction: column; align-items: center; text-align: center;">
+        <h2 data-reveal="head" style="margin: 0; max-width: 900px; font-size: clamp(26px, 3.6vw, 46px); font-weight: 700; letter-spacing: -.03em; line-height: 1.05; text-wrap: balance; color: #fff;">Additional requirements by channel</h2>
+        <p data-reveal="copy" style="margin: clamp(8px, 1.2vh, 14px) auto 0; max-width: 660px; font-size: clamp(14px, 1.4vw, 17px); line-height: 1.5; color: rgba(255,255,255,.72); text-wrap: pretty;">Pick from additional channels we offer, and see sizes, formats, limitations and required assets.</p>
+      </div>
+
+      <div role="tablist" aria-label="Channel" data-kx-sticky-fade="" style="position: sticky; top: calc(var(--kx-hdr, 72px) + 12px); z-index: 55; display: flex; justify-content: center; margin-top: 28px; pointer-events: none;">
+        <div data-reveal="menu" style="pointer-events: auto; display: flex; flex-wrap: wrap; justify-content: center; gap: 6px;">
+        <sc-for list="{{ tabs }}" as="tb" hint-placeholder-count="12">
+          <button type="button" role="tab" data-focusable="1" aria-selected="{{ tb.sel }}" data-id="{{ tb.id }}" onClick="{{ pick }}" style="{{ tb.style }}" style-hover="border-color: rgba(0,204,255,.55); color: #fff">{{ tb.label }}</button>
+        </sc-for>
+      </div>
+      </div>
+
+      <div data-reveal="card" role="tabpanel" style="margin-top: 20px; padding: clamp(20px, 3vw, 32px); border-radius: 16px; border: 1px solid rgba(255,255,255,.08); background: #070B15; box-shadow: inset 0 1px 0 rgba(255,255,255,.04), 0 24px 60px rgba(0,0,0,.5);">
+        <div style="display: flex; flex-wrap: wrap; align-items: flex-start; gap: 16px 32px;">
+          <div style="flex: 1 1 420px; min-width: 0;">
+            <div style="font-size: 11px; font-weight: 600; letter-spacing: .18em; text-transform: uppercase; color: var(--lime-300);">{{ ch.group }}</div>
+            <h3 style="margin: 8px 0 0; font-size: 28px; font-weight: 700; letter-spacing: -.02em; line-height: 1.1;">{{ ch.title }}</h3>
+            <p style="margin: 10px 0 0; max-width: 620px; font-size: 15px; line-height: 1.55; color: rgba(255,255,255,.76); text-wrap: pretty;">{{ ch.lede }}</p>
+          </div>
+          <sc-if value="{{ ch.hasLimit }}" hint-placeholder-val="{{ true }}">
+            <div style="flex: 0 1 260px; padding: 16px 18px; border-radius: 12px; border: 1px solid rgba(255,255,255,.08); background: #070B15; box-shadow: inset 0 1px 0 rgba(255,255,255,.04), 0 24px 60px rgba(0,0,0,.5);">
+              <div style="font-size: 11px; font-weight: 600; letter-spacing: .18em; text-transform: uppercase; color: rgba(255,255,255,.6);">Creative Limit</div>
+              <div style="margin-top: 6px; font-size: 18px; font-weight: 700; line-height: 1.3; color: #fff;">{{ ch.limit }}</div>
+            </div>
+          </sc-if>
+        </div>
+
+        <sc-if value="{{ ch.hasStats }}" hint-placeholder-val="{{ true }}">
+          <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, 210px), 1fr)); gap: 1px; margin-top: 28px; border-radius: 12px; overflow: hidden; border: 1px solid rgba(255,255,255,.08); background: #0A0F1A;">
+            <sc-for list="{{ ch.stats }}" as="s" hint-placeholder-count="6">
+              <div style="padding: 16px 18px; background: #0A0F1A; box-shadow: 1px 0 0 rgba(255,255,255,.08), 0 1px 0 rgba(255,255,255,.08);">
+                <div style="font-size: 11px; font-weight: 600; letter-spacing: .14em; text-transform: uppercase; color: rgba(255,255,255,.55);">{{ s.k }}</div>
+                <div style="margin-top: 6px; font-size: 15px; font-weight: 600; line-height: 1.45; color: #fff; text-wrap: pretty;">{{ s.v }}</div>
+              </div>
+            </sc-for>
+          </div>
+        </sc-if>
+
+        <sc-for list="{{ ch.tables }}" as="tbl" hint-placeholder-count="1">
+          <div style="margin-top: 28px;">
+            <div style="font-size: 15px; font-weight: 700; color: var(--blue-400);">{{ tbl.title }}</div>
+            <div style="margin-top: 12px; overflow-x: auto; border-radius: 12px; border: 1px solid rgba(255,255,255,.08);">
+              <table style="width: 100%; min-width: 560px; border-collapse: collapse; font-size: 14px;">
+                <thead>
+                  <tr style="background: rgba(255,255,255,.04);">
+                    <sc-for list="{{ tbl.cols }}" as="col" hint-placeholder-count="4">
+                      <th scope="col" style="padding: 12px 16px; text-align: left; font-size: 11px; font-weight: 600; letter-spacing: .14em; text-transform: uppercase; color: rgba(255,255,255,.6); border-bottom: 1px solid rgba(255,255,255,.08); white-space: nowrap;">{{ col }}</th>
+                    </sc-for>
+                  </tr>
+                </thead>
+                <tbody>
+                  <sc-for list="{{ tbl.rows }}" as="row" hint-placeholder-count="4">
+                    <tr style="border-bottom: 1px solid rgba(255,255,255,.06);" style-hover="background: rgba(0,204,255,.04)">
+                      <sc-for list="{{ row.cells }}" as="cell" hint-placeholder-count="4">
+                        <td style="{{ cell.style }}">{{ cell.v }}</td>
+                      </sc-for>
+                    </tr>
+                  </sc-for>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </sc-for>
+
+        <sc-if value="{{ ch.hasAssets }}" hint-placeholder-val="{{ true }}">
+          <div style="margin-top: 32px;">
+            <div style="display: flex; flex-wrap: wrap; align-items: baseline; gap: 8px 16px;">
+              <div style="font-size: 15px; font-weight: 700;">What we need from you:</div>
+              <sc-if value="{{ ch.hasSkip }}" hint-placeholder-val="{{ false }}">
+                <span style="display: inline-flex; align-items: center; gap: 6px; font-size: 12.5px; color: rgba(255,255,255,.6);"><span style="width: 8px; height: 8px; border-radius: 50%; background: var(--lime-300);"></span>Covered by a layered PSD or Figma file</span>
+              </sc-if>
+            </div>
+            <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, 300px), 1fr)); gap: 12px; margin-top: 14px;">
+              <sc-for list="{{ ch.assets }}" as="a" hint-placeholder-count="4">
+                <div data-reveal="card" style="display: flex; gap: 14px; padding: 16px 18px; border-radius: 12px; border: 1px solid rgba(255,255,255,.08); background: #070B15; box-shadow: inset 0 1px 0 rgba(255,255,255,.04), 0 18px 44px rgba(0,0,0,.4);">
+                  <span aria-hidden="true" style="flex: none; width: 2px; border-radius: 2px; background: #00CCFF;"></span>
+                  <div style="min-width: 0; flex: 1;">
+                    <div style="display: flex; align-items: center; gap: 8px; flex-wrap: wrap;">
+                      <span style="font-size: 15px; font-weight: 600; color: #fff;">{{ a.t }}</span>
+                      <sc-if value="{{ a.skip }}" hint-placeholder-val="{{ false }}"><span title="Not needed when layered PSD or Figma files are provided" style="width: 8px; height: 8px; border-radius: 50%; background: var(--lime-300);"></span></sc-if>
+                    </div>
+                    <div style="margin-top: 4px; font-size: 13.5px; line-height: 1.5; color: rgba(255,255,255,.7); text-wrap: pretty;">{{ a.d }}</div>
+                    <sc-if value="{{ a.hasLinks }}" hint-placeholder-val="{{ false }}">
+                      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 220px), 1fr)); gap: 10px; margin-top: 14px;">
+                    <sc-for list="{{ a.links }}" as="lk" hint-placeholder-count="2">
+                    <div style="display: flex; flex-direction: column; gap: 6px;">
+                      <a href="{{ lk.href }}" download="" style="display: inline-flex; align-items: center; justify-content: center; gap: 6px; padding: 7px 12px; border-radius: 999px; border: 1px solid rgba(247,144,9,.6); background: rgba(247,144,9,.1); color: #fff; font-size: 11.5px; font-weight: 600; text-decoration: none; box-shadow: 0 0 22px rgba(247,144,9,.18); transition: all 200ms cubic-bezier(.16,1,.3,1);" style-hover="border-color: rgba(247,144,9,.9); background: rgba(247,144,9,.18); color: #fff; text-decoration: none; box-shadow: 0 0 30px rgba(247,144,9,.35)" style-active="transform: scale(.985)"><svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="#FDB022" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 4v12"></path><path d="M7 11l5 5 5-5"></path><path d="M4 20h16"></path></svg>{{ lk.label }}</a>
+                      <button type="button" data-focusable="1" data-form="{{ lk.id }}" onClick="{{ openIntake }}" style="display: inline-flex; align-items: center; justify-content: center; gap: 6px; padding: 7px 12px; border-radius: 999px; border: 1px solid rgba(0,204,255,.45); background: rgba(0,204,255,.1); color: #fff; font-size: 11.5px; font-weight: 600; cursor: pointer; box-shadow: 0 0 22px rgba(0,204,255,.18); transition: all 200ms cubic-bezier(.16,1,.3,1);" style-hover="border-color: rgba(0,204,255,.75); background: rgba(0,204,255,.18); box-shadow: 0 0 30px rgba(0,204,255,.35)" style-active="transform: scale(.985)"><svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="#33D6FF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="16" rx="2"></rect><path d="M3 10h18"></path><path d="M9 4v16"></path></svg>{{ lk.see }}</button>
+                    </div>
+                  </sc-for>
+                      </div>
+                    </sc-if>
+                  </div>
+                </div>
+              </sc-for>
+            </div>
+          </div>
+        </sc-if>
+
+        <sc-if value="{{ ch.hasNotes }}" hint-placeholder-val="{{ false }}">
+          <div style="display: flex; flex-direction: column; gap: 8px; margin-top: 28px; padding-top: 20px; border-top: 1px solid rgba(255,255,255,.08);">
+            <sc-for list="{{ ch.notes }}" as="nt" hint-placeholder-count="2">
+              <div style="display: flex; gap: 10px; font-size: 13.5px; line-height: 1.55; color: rgba(255,255,255,.7);"><span style="text-wrap: pretty;">{{ nt }}</span></div>
+            </sc-for>
+          </div>
+        </sc-if>
+      </div>
+    </section>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:1200,&quot;height&quot;:1400}}">
+
+const SKIP = true;
+const LOGO = { t: 'Brand Logo', d: '.svg or .eps preferred. Otherwise .png or .jpg at 300×100 minimum so it scales.', skip: SKIP };
+const SHOTS = { t: 'Raw Product Shots or Illustrations', d: 'Original .png or .jpg files in case resizing is needed.', skip: SKIP };
+const FONTS = { t: 'Font Files', d: 'TTF, OTF, or WOFF.' };
+const BRAND = { t: 'Brand Guidelines', d: 'PDF brand book with logo usage, colors, type, and tone, so every frame stays on-brand.' };
+const PSD = sizes => ({ t: 'Layered PSD or Figma Files', d: 'One layered file per ad size: ' + sizes + '.' });
+const COLORS = { t: 'Color Specifications', d: 'Brand or campaign colors as hex values, e.g. #FFFFFF.', skip: SKIP };
+const COPY = { t: 'Copy Specifications', d: 'Headline, subheadline, body copy, carousel copy (if applicable), and CTA button copy.', skip: SKIP };
+const LINKS = { t: "Links and UTM's", d: 'All links or UTMs for the main click-out, plus any carousel product click-outs.' };
+const VIDEO = { t: 'Featured Video Content', d: '1920×1080 .mp4, :15, :30, or :60 in length.' };
+const DYN = { t: 'Dynamic Requirements', d: 'Nearest-location ads need the example location list. Rule-based asset swaps need the dynamic rules-based feed. Templates provided.', links: [{ id: 'feed', label: 'Dynamic Asset Feed Template', see: 'See Dynamic Feed Intake Form', href: 'https://fdjfsimjilicmfsiijyi.supabase.co/storage/v1/object/public/Client%20Dynamic%20Templates/Dynamic%20Display%20Rule%20Based%20Feed%20Sheet.xlsx?download=KORTX-Dynamic-Asset-Feed-Template.xlsx' }, { id: 'loc', label: 'Location List Template', see: 'See Location List Intake Form', href: 'https://fdjfsimjilicmfsiijyi.supabase.co/storage/v1/object/public/Client%20Dynamic%20Templates/Example%20Location%20List.xlsx?download=KORTX-Location-List-Template.xlsx' }] };
+const AHEAD = 'Assets are due per the final production schedule. Late delivery pushes go-live day for day.';
+const DISPLAY_SIZES = [['Leaderboard', '728×90', 'Desktop · Tablet'], ['Medium Rectangle', '300×250', 'Desktop · Tablet · Mobile'], ['Halfpage', '300×600', 'Desktop · Tablet'], ['Skyscraper', '160×600', 'Desktop'], ['Mobile Display', '300×50', 'Mobile'], ['Mobile Display', '320×50', 'Mobile']];
+
+const CHANNELS = [
+  { id: 'display-client', label: 'Display · Client Built', group: 'Display & Dynamic', title: 'Client-built display',
+    lede: 'Finished static, animated, or HTML5 banners supplied ready to traffic. A landing page is required for every asset.',
+    limit: '12 ad units',
+    stats: [['Formats', 'JPG, GIF, PNG, animated GIF, HTML5'], ['Max File Weight', '150 KB static'], ['Animation', ':15 looping max'], ['Frame Rate', '18–24 fps'], ['Lead Time', '5 business days'], ['Ad Serving', '3rd party, 1×1 pixel, or click tag']],
+    tables: [
+      { title: 'Recommended sizes', cols: ['Placement', 'Size', 'Devices'], rows: [...DISPLAY_SIZES, ['Tablet Interstitial Landscape', '1024×768', 'Tablet'], ['Tablet Interstitial Portrait', '768×1024', 'Tablet'], ['Large Rectangle', '336×280', 'Desktop · Tablet']] },
+      { title: 'HTML5 file sizes', cols: ['Requirement', 'Maximum'], rows: [['Initial load', '300 KB (200 KB recommended)'], ['Subload', '600 KB'], ['Initial file count', '10 files'], ['Subload file count', '100 files'], ['Total file size', '5 MB'], ['User-initiated load', '2.2 MB recommended'], ['Primary HTML file', '100 KB'], ['Auto-started video', 'Under 1.1 MB'], ['Any individual file', '2.2 MB'], ['ZIP compressed / uncompressed', 'Under 10 MB / under 12 MB']] }
+    ],
+    notes: ['HTML5: never hardcode the landing page URL. It is set at upload, and a hardcoded URL cannot be overridden.', 'clickTAG is case-sensitive. The Trade Desk defaults to clickTAG, and clicks must open in a new window.', 'Package as a single HTML file, or one root HTML file with supporting images, JS, and CSS.'] },
+  { id: 'display-kortx', label: 'Display · KORTX Built', group: 'Display & Dynamic', title: 'KORTX-built display',
+    lede: 'KORTX designs and builds the banner set from your layered files. Dynamic display costs extra, production requirements stay the same.',
+    limit: '12 ad units',
+    stats: [['Preferred Source', 'Layered PSD or layered Figma file'], ['Also Accepted', 'JPG, GIF, PNG, or HTML5'], ['Max File Weight', '150 KB flat image, no max for layered files'], ['Animation', ':15 looping max'], ['Lead Time', '5 business days'], ['Ad Serving', '3rd party, 1×1 pixel, or click tag']],
+    tables: [{ title: 'Recommended sizes', cols: ['Placement', 'Size', 'Devices'], rows: DISPLAY_SIZES }],
+    assets: [PSD('728×90, 300×250, 300×600, 160×600, 320×50'), BRAND, LOGO, SHOTS, FONTS, { t: "Links and UTM's", d: 'Link or UTM for the main click-out.' }, COLORS, COPY, DYN],
+    notes: [AHEAD] },
+  { id: 'rich', label: 'Rich Media', group: 'Rich Media', title: 'Rich media',
+    lede: 'Interactive 300×600 and 300×250 units built by KORTX, with optional 3–5 image carousels and video.',
+    limit: '2 ad sizes, 1 set',
+    stats: [['Acceptable Format', 'Layered PSD or Figma, 16:9 video placeholder if applicable'], ['Carousel', 'Yes, 3–5 images'], ['Build Time', '4 business days'], ['Revisions', 'Within 48 hours of feedback'], ['Ad Serving', '3rd party, 1×1 pixel, or click tag'], ['Built By', 'KORTX']],
+    tables: [{ title: 'Sizes', cols: ['Type', 'Size'], rows: [['Desktop', '300×600'], ['Mobile', '300×250']] }],
+    assets: [PSD('300×600 and 300×250'), BRAND, LOGO, SHOTS, FONTS, VIDEO, LINKS, COLORS, COPY, DYN], notes: [AHEAD] },
+  { id: 'iv', label: 'Interactive Video', group: 'Interactive Video', title: 'Interactive video',
+    lede: 'A 1920×1080 video skin built by KORTX. Recommended for desktop; mobile supports the overlay layout only.',
+    limit: '1 creative tag per line item',
+    stats: [['Creative Size', '1920×1080'], ['Acceptable Format', 'Layered PSD or Figma with 16:9 video placeholder'], ['Carousel', 'Yes, 3–5 images'], ['Raw Assets', 'PNG images, SVG/AI logos, font files'], ['Build Time', '4 business days'], ['Ad Serving', '3rd party, 1×1 pixel, or click tag']],
+    tables: [],
+    assets: [PSD('1920×1080, with a 16:9 video placeholder'), BRAND, LOGO, SHOTS, FONTS, { t: 'Featured Video Content', d: 'The video that sits on the skin. 1920×1080 .mp4, :15, :30, or :60.' }, LINKS, COLORS, COPY, DYN], notes: [AHEAD] },
+  { id: 'olv', label: 'Online Video', group: 'Video', title: 'Online video · pre-roll',
+    lede: 'Hosted MP4 gives the widest scale across mobile, desktop, and CTV. VAST is standard for third-party in-stream.',
+    limit: '4 creatives per month',
+    stats: [['Ad Length', ':15 and :30'], ['File Size', '200 MB hosted'], ['Dimensions', '1920×1080 recommended, 1280×720 minimum'], ['Formats', 'MP4, WebM, MOV, MPG, MPEG'], ['Codec', 'H.264'], ['Min Bit Rate', '2,500 kbps'], ['Frame Rate', '24–25 or 29–30 fps'], ['VAST', '2.0 and higher']],
+    tables: [
+      { title: 'Format support by environment', cols: ['Creative Type', 'Mobile', 'Desktop', 'Connected TV'], rows: [['Hosted video', 'Yes, web and in-app', 'Yes', 'Yes'], ['VAST', 'Yes, use instead of VPAID in-app', 'Yes', 'Yes, with a high-quality MP4'], ['VPAID', 'Web only', 'If the player accepts VPAID', 'No'], ['MRAID', 'In-app interstitials only', 'No', 'No']] },
+      { title: 'Resolution and bitrate (16:9)', cols: ['Tier', 'Resolution', 'Target Bitrate'], rows: [['Low', '640×360 (360p or less)', '500–700 kbps'], ['Standard', '854×480 or 1024×576', '700–1,500 kbps'], ['High', '1280×720 or 1920×1080', '1,500–3,500 kbps']] }
+    ] },
+  { id: 'ctv', label: 'CTV', group: 'Connected TV', title: 'Connected TV',
+    lede: 'MP4 only, VAST tags only for third party. Share creative with the publisher before activation.',
+    limit: '4 creatives per month',
+    stats: [['File Type', 'MP4 only, no WebM'], ['Resolution', '1920×1080'], ['Frame Rate', '23.98 or 29.97 fps'], ['Bit Rate', '15,000–30,000 kbps'], ['Ad Length', ':15 and :30'], ['Audio', '48 kHz, 192 kbps min'], ['Serving', '3rd party or KORTX served'], ['Tags', 'VAST only, no VPAID, SSL required']],
+    tables: [],
+    assets: [PSD('1920×1080, for video with skins'), BRAND, { t: 'Video', d: '1920×1080 .mp4, :15, :30, or :60.' }, LOGO, SHOTS, FONTS, COLORS, COPY, { t: 'QR Code', d: 'QR code image or destination URL.', skip: SKIP }, DYN],
+    notes: ['One tag per creative media asset. Rotating files through one tag is not recommended.', 'FreeWheel CTV creatives require publisher verification.', AHEAD] },
+  { id: 'pip', label: 'PiP CTV', group: 'Connected TV', title: 'Picture-in-picture CTV',
+    lede: 'L-bar and framed-offset placements. Monitoring tags only, blocking is not accepted.',
+    limit: '4 creatives per month',
+    stats: [['Duration', '5–30 seconds'], ['Aspect Ratio', '16:9'], ['Dimensions', '1920×1080, 1290×720 minimum'], ['Frame Rate', '25–30 fps'], ['Codecs', 'MOV H.264 High, ProRes 422 or 422HQ'], ['Trackers', '1×1 pixels, quartiles, clicks where available']],
+    tables: [{ title: '3rd-party VAST transcodes', cols: ['Bit Rate', 'Min Dimensions', ':15 Max', ':30 Max'], rows: [['8–30 Mbps', '1920×1080', 'Duration × bitrate', 'Duration × bitrate'], ['3,000 kbps+', '1280×720', '4.5 MB', '9 MB'], ['1,200 kbps+', '854×480', '3.5 MB', '7 MB'], ['500 kbps+', '640×360', '1.8 MB', '3.5 MB']] }],
+    notes: ['VAST 2 required for desktop, mobile, and OTT, with at least three bitrates. VPAID is not supported.', 'Audio: AAC-LC stereo, 44.1–48 kHz, peaks between -12 dB and -24 dB.', 'No skippable ads, no .3GPP, and a maximum of one VAST wrapper redirect. Interlaced video is not accepted.'] },
+  { id: 'audio', label: 'Audio', group: 'Audio', title: 'Programmatic audio',
+    lede: 'Up to :60 spots with optional companion banners. Publisher-specific specs take priority.',
+    limit: '4 creatives per month',
+    stats: [['Ad Length', ':15 to :60'], ['File Types', 'MP3, M4A, OGG, WAV'], ['Bit Rate', '160 kbps min, constant for MP3'], ['File Size', '1 GB'], ['VAST', '2.0 most widely supported'], ['Tracking', '1×1 pixel only, https click-throughs']],
+    tables: [{ title: 'Publisher requirements', cols: ['Publisher', 'File Type', 'Length', 'Bit Rate', 'Companion'], rows: [['SXM Media (Pandora, SoundCloud, Stitcher)', 'MP3, 2.2 MB max', ':15 or :30', '320 kbps max', 'JPEG, GIF 100 KB'], ['Spotify', 'MP4, MOV, OGG, 500 MB max', 'Up to :30', '192–1,000 kbps', 'JPEG, GIF 200 KB'], ['iHeart Media', 'MP3, WAV, WMA, OGG', ':05, :15, :30, :60', '128 kbps min', 'JPEG, GIF, PNG, HTML 50 KB']] }] },
+  { id: 'native', label: 'Native', group: 'Native', title: 'Native display',
+    lede: 'Components assembled by the publisher to match the page. Trackers must be secure 1×1 image tags.',
+    limit: '4 creatives per month',
+    tables: [{ title: 'Components', cols: ['Element', 'Specification'], rows: [['Main image', '1200×627 (1.91:1), under 2000×2000 and 2 MB'], ['Main video', '5 minutes max, under 2 GB'], ['Icon', '200×200 (1:1)'], ['Logo', '200×200 (1:1)'], ['Short title', '25 characters max'], ['Long title', '90 characters max'], ['Short description', '90 characters max'], ['Long description', '140 characters max'], ['Sponsor', '25 characters recommended, 100 max'], ['Call to action', '15 characters max']] }] },
+  { id: 'dooh', label: 'DOOH', group: 'Digital Out-of-Home', title: 'Digital out-of-home',
+    lede: 'Billboard and screen placements, supplied as layered PSDs at 72–150 dpi.',
+    limit: '4 creatives per month',
+    stats: [['File Type', '.psd'], ['Resolution', '72–150 dpi']],
+    tables: [{ title: 'Recommended sizes', cols: ['Size', 'Orientation'], rows: [['1400×400', 'Landscape'], ['1600×400', 'Landscape'], ['1200×400', 'Landscape'], ['1000×400', 'Landscape'], ['840×400', 'Landscape'], ['1920×1080', 'Landscape'], ['1280×960', 'Landscape'], ['1200×1200', 'Square'], ['1080×1920', 'Portrait']] }] },
+  { id: 'social', label: 'Social', group: 'Meta · X · LinkedIn', title: 'Paid social',
+    lede: 'Placements follow each platform\u2019s own spec pages. KORTX needs partner access to run them.',
+    limit: '4 ads and 4 swaps per month',
+    tables: [{ title: 'Ad types and access', cols: ['Platform', 'Ad Types', 'KORTX Access'], rows: [['Facebook & Instagram', 'Video, photo, carousel, collection, stories', 'Business Manager › Ad Account › Assign Partner › Advertiser role, ID 898470343575670'], ['LinkedIn', 'Single image, carousel, video, click-to-message, event, thought leader, CTV', 'Business Manager › Partners › Add Partner › Advertiser role, ID 7028748167546380288'], ['X (Twitter)', 'Website cards, promoted video', 'Edit Access to Account › add @KORTXIO as Account Administrator']] },
+      { title: 'X promoted video', cols: ['Requirement', 'Specification'], rows: [['Tweet copy', '116 characters in Ads Manager'], ['File size', 'Under 1 GB recommended'], ['Max length', '2:20'], ['Codec', 'H.264, 4:2:0'], ['Frame rate', '29.97 or 30 fps'], ['Bitrate', '6,000k for 1080p, 5,000k for 720p'], ['Thumbnail', '640×360 min, 5 MB max']] }] },
+  { id: 'pmax', label: 'Performance Max', group: 'Google', title: 'Performance Max',
+    lede: 'Google assembles ads from an asset pool. More variety in each slot means better optimization.',
+    tables: [
+      { title: 'Images', cols: ['Type', 'Minimum', 'Recommended', 'Maximum'], rows: [['Landscape 1.91:1', '1', '4 at 1200×628', '20'], ['Square 1:1', '1', '4 at 1200×1200', '20'], ['Portrait 4:5', '—', '2 at 960×1200', '20'], ['Square logo 1:1', '1', '1 at 1200×1200', '5'], ['Landscape logo 4:1', '—', '1 at 1200×300', '5']] },
+      { title: 'Ad copy', cols: ['Type', 'Minimum', 'Maximum', 'Character Limit'], rows: [['Headlines', '3', '15', '30'], ['Long headlines', '2', '5', '90'], ['Description 1', '1', '1', '60'], ['Description 2', '1', '4', '90'], ['Business name', '1', '1', '25']] },
+      { title: 'Video', cols: ['Orientation', 'Size', 'Recommended'], rows: [['Horizontal 16:9', '1920×1080', '1 video, :10 or longer'], ['Vertical 9:16', '1080×1920', '1 video, :10–:60 for Shorts'], ['Square 1:1', '1080×1080', '1 video, :10 or longer']] }
+    ],
+    notes: ['Upload logos as square images and avoid white logos on transparent backgrounds; they render on white.', 'Video at 1080p, up to 256 GB. Audio-only files are not accepted.'] }
+];
+
+
+class Component extends DCLogic {
+  openIntake = e => { window.dispatchEvent(new CustomEvent('kx-open-intake', { detail: e.currentTarget.dataset.form })); };
+  constructor(p) { super(p); this.state = { tab: 'display-client' }; this.rootRef = React.createRef(); }
+  componentDidMount() {
+    const r = this.rootRef.current;
+    if (r && !r.closest('[data-reveal-root]')) r.querySelectorAll('[data-reveal]').forEach(el => el.setAttribute('data-in', ''));
+  }
+  pick = e => this.setState({ tab: e.currentTarget.dataset.id });
+  renderVals() {
+    const c = CHANNELS.find(x => x.id === this.state.tab) || CHANNELS[0];
+    const tabs = CHANNELS.map(x => { const on = x.id === c.id; return { id: x.id, label: x.label, sel: String(on), style: { display: 'inline-flex', alignItems: 'center', height: 36, padding: '0 14px', borderRadius: 10, cursor: 'pointer', fontFamily: 'inherit', fontSize: 13, fontWeight: 600, whiteSpace: 'nowrap', border: '1px solid ' + (on ? 'rgba(0,204,255,.5)' : 'rgba(255,255,255,.08)'), background: on ? 'linear-gradient(180deg, rgba(0,204,255,.16), rgba(0,204,255,.06))' : 'rgba(7,11,21,.85)', color: on ? '#fff' : 'rgba(255,255,255,.7)', boxShadow: on ? 'inset 0 -2px 0 #00CCFF, 0 8px 20px rgba(0,0,0,.35)' : 'inset 0 1px 0 rgba(255,255,255,.04)', transition: 'all 200ms cubic-bezier(.16,1,.3,1)' } }; });
+    const cellStyle = i => ({ padding: '12px 16px', verticalAlign: 'top', lineHeight: 1.5, color: i === 0 ? '#fff' : 'rgba(255,255,255,.76)', fontWeight: i === 0 ? 600 : 400 });
+    const assets = c.assets || [], notes = c.notes || [], stats = (c.stats || []).map(([k, v]) => ({ k, v }));
+    const ch = { group: c.group, title: c.title, lede: c.lede, limit: c.limit || '', hasLimit: !!c.limit, stats, hasStats: stats.length > 0,
+      tables: (c.tables || []).map(t => ({ title: t.title, cols: t.cols, rows: t.rows.map(r => ({ cells: r.map((v, i) => ({ v, style: cellStyle(i) })) })) })),
+      assets: assets.map(a => ({ t: a.t, d: a.d, skip: !!a.skip, links: a.links || [], hasLinks: !!(a.links && a.links.length) })), hasAssets: assets.length > 0, hasSkip: assets.some(a => a.skip), notes, hasNotes: notes.length > 0 };
+    return { rootRef: this.rootRef, tabs, pick: this.pick, ch, openIntake: this.openIntake };
+  }
+}
+</script>
+</body>
+</html>

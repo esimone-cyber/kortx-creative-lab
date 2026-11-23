@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="_ds/kortx-design-guide-2026-5bc7ff27-9282-4218-938a-63d43f555d47/tokens/fonts.css">
+<link rel="stylesheet" href="_ds/kortx-design-guide-2026-5bc7ff27-9282-4218-938a-63d43f555d47/tokens/colors.css">
+<style>
+  @keyframes kx-dimin { 0% { opacity: 0 } 100% { opacity: 1 } }
+  @keyframes kx-navin { 0% { opacity: 0; transform: translateY(-6px) scale(.97) } 100% { opacity: 1; transform: none } }
+  a { color: var(--blue-300); }
+  a:hover { color: #fff; }
+  button, [role="button"], a[role="button"], a[data-btn], a[style*="border-radius: 999px"], a[style*="border-radius:999px"], button *, [role="button"] * { text-decoration: none !important; }
+</style>
+</helmet>
+<sc-if value="{{ show }}" hint-placeholder-val="{{ false }}">
+<div data-block="Site nav" ref="{{ rootRef }}" style="position: relative; display: inline-flex; pointer-events: auto; font-family: var(--font-body, Inter, sans-serif);">
+  <button type="button" data-focusable="1" onClick="{{ toggle }}" aria-haspopup="menu" aria-expanded="{{ openStr }}" aria-label="Go to another page" style="display: inline-flex; align-items: center; gap: 10px; height: 40px; padding: 0 12px 0 14px; border-radius: 999px; border: 1px solid rgba(255,255,255,.14); background: rgba(255,255,255,.05); backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px); color: #fff; font-size: 14px; font-weight: 700; letter-spacing: -.01em; white-space: nowrap; cursor: pointer; transition: border-color 200ms cubic-bezier(.16,1,.3,1), background 200ms cubic-bezier(.16,1,.3,1);" style-hover="border-color: rgba(0,204,255,.55); background: rgba(0,204,255,.08)">
+    {{ currentLabel }}
+    <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="{{ chevStyle }}"><path d="M6 9l6 6 6-6"></path></svg>
+  </button>
+  <sc-if value="{{ open }}" hint-placeholder-val="{{ false }}">
+    <div onClick="{{ close }}" style="position: fixed; inset: 0; z-index: 90; background: transparent;"></div>
+    <div role="menu" style="{{ panelPos }}"><div style=" width: 280px; padding: 8px; border-radius: 14px; border: 1px solid rgba(255,255,255,.12); background: #0A0F1A; box-shadow: 0 24px 60px rgba(0,0,0,.6), 0 0 40px rgba(0,204,255,.12); animation: kx-navin 180ms cubic-bezier(.16,1,.3,1) both;">
+      <div style="padding: 8px 10px 8px; font-size: 10.5px; font-weight: 600; letter-spacing: .18em; text-transform: uppercase; color: rgba(255,255,255,.5);">KORTX Creative Labs</div>
+      <sc-for list="{{ items }}" as="it" hint-placeholder-count="3">
+        <a href="{{ it.href }}" role="menuitem" data-focusable="1" aria-current="{{ it.aria }}" style="{{ it.style }}" style-hover="background: rgba(0,204,255,.12); color: #fff">
+          <span style="min-width: 0; flex: 1;">
+            <span style="display: block; font-size: 14px; font-weight: 700; color: #fff;">{{ it.label }}</span>
+          </span>
+          <span aria-hidden="true" style="{{ it.markStyle }}">✓</span>
+        </a>
+      </sc-for>
+    </div></div>
+  </sc-if>
+</div>
+</sc-if>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:340,&quot;height&quot;:340},&quot;current&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;builder&quot;,&quot;database&quot;,&quot;playground&quot;],&quot;default&quot;:&quot;builder&quot;,&quot;tsType&quot;:&quot;'builder'|'database'|'playground'&quot;},&quot;isAdmin&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:false,&quot;tsType&quot;:&quot;boolean&quot;},&quot;requireSignIn&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:false,&quot;tsType&quot;:&quot;boolean&quot;}}">
+class Component extends DCLogic {
+  state = { open: false, admin: false, signedIn: false };
+  componentDidMount() {
+    this.onOtherMenu = e => { if (e.detail !== 'nav' && this.state.open) this.setState({ open: false }); };
+    window.addEventListener('kx-menu-open', this.onOtherMenu);
+    /* Any click or tap outside the menu closes it; Escape too. */
+    this.onDocDown = e => { if (this.state.open && this.rootRef.current && !this.rootRef.current.contains(e.target)) this.setState({ open: false }); };
+    this.onKey = e => { if (e.key === 'Escape' && this.state.open) this.setState({ open: false }); };
+    document.addEventListener('pointerdown', this.onDocDown, true);
+    document.addEventListener('keydown', this.onKey);
+    import('./creative-cloud.js').then(c => {
+      const set = u => { this.setState(s => ({ admin: !!(u && u.isAdmin), signedIn: !!u, pages: s.signedIn !== !!u ? null : s.pages })); if (c.navPages) c.navPages(u).then(pages => this.setState({ pages })).catch(() => {}); };
+      c.currentUser().then(set).catch(() => {});
+      if (c.watchAuth) c.watchAuth(set); else if (c.onAuthChange) c.onAuthChange(set).catch(() => {});
+    }).catch(() => {});
+  }
+
+  /* Menus stay put on scroll: the panel is pinned to the viewport where it opened, until a click outside closes it. */
+  pin = e => { const r = e && e.currentTarget && e.currentTarget.getBoundingClientRect ? e.currentTarget.getBoundingClientRect() : null; return r ? { top: Math.round(r.bottom + 10), left: Math.round(r.left), right: Math.round(window.innerWidth - r.right) } : null; };
+  rootRef = React.createRef();
+  componentWillUnmount() { window.removeEventListener('kx-menu-open', this.onOtherMenu); document.removeEventListener('pointerdown', this.onDocDown, true); document.removeEventListener('keydown', this.onKey); }
+  toggle = e => { const pos = this.pin(e), opening = !this.state.open; if (opening) window.dispatchEvent(new CustomEvent('kx-menu-open', { detail: 'nav' })); this.setState({ open: opening, pos }); };
+  close = () => this.setState({ open: false });
+  renderVals() {
+    const ps = this.state.pos, panelPos = ps ? { position: 'fixed', top: ps.top, left: ps.left, zIndex: 91, maxHeight: 'calc(100vh - ' + (ps.top + 12) + 'px)', overflowY: 'auto', borderRadius: 14 } : { position: 'absolute', top: 'calc(100% + 10px)', left: 0, zIndex: 91 };
+    const cur = this.props.current || '', admin = this.props.isAdmin ?? this.state.admin;
+    const PAGES = [
+      { id: 'builder', label: 'Page Builder', sub: 'Build a brand proposal from the creative library', href: 'Proposal Builder.dc.html' },
+      { id: 'mock-builder', label: 'Mock Builder', sub: 'Draft ad mocks with the AI assistant', href: 'Mock Builder v3.dc.html', team: true, nav: false },
+      { id: 'creative-feedback', label: 'Creative Review', sub: 'Client review, comments and approvals for campaign creative', href: 'Creative Review.dc.html', team: true, nav: false },
+      { id: 'quick-mock', label: 'Quick Mock', sub: 'Pick a format, add brand + website, get a mock', href: 'Mock Builder v3.dc.html?quick=1', team: true },
+      { id: 'database', label: 'Creative Database Admin', sub: admin ? 'Add, edit and manage the shared library' : 'Browse and share the creative library', href: admin ? 'Best of Creative Services Database.dc.html' : 'Creative Database View Only.dc.html' },
+      { id: 'database-view', label: 'Creative Database', sub: 'Browse and share the creative library', href: 'Creative Database View Only.dc.html', nav: false },
+      { id: 'playground', label: 'Creative Playground', sub: 'Live, interactive KORTX creative', href: 'Creative Playground.dc.html' },
+      { id: 'products', label: 'Product Offering', sub: 'Our ad products and dynamic creative', href: 'Product Offering.dc.html' },
+      { id: 'process', label: 'Process & Requirements', sub: 'How we work, the timeline and required assets', href: 'Process and Requirements.dc.html' },
+      { id: 'pricing', label: 'Pricing', sub: 'How we price and the 2026 rate card', href: 'Pricing.dc.html' },
+      { id: 'briefs', label: 'Brief List', sub: 'Client campaign briefs, ready to claim', href: 'Brief List.dc.html', team: true },
+      { id: 'proposals', label: 'My Builds', sub: 'Your published proposals and their brief intakes', href: 'My Builds.dc.html', team: true },
+      { id: 'specs', label: 'Required Assets & Process', sub: 'Specs by channel and the production timeline', href: 'Required Assets and Process.dc.html' },
+      { id: 'rate-card', label: 'Rate Card', sub: '2026 pricing for creative, media and professional services', href: 'Rate Card.dc.html' },
+      { id: 'offerings', label: 'Offerings & Process', sub: 'Our ad products, pricing and the timeline to launch', href: 'Offerings and Process.dc.html' }
+    ];
+    const curId = cur === 'specs' ? 'assets' : cur;
+    const PUB = ['playground', 'products', 'process', 'pricing', 'brief', 'rate-card', 'specs', 'offerings'];
+    const HIDE = ['builder', 'database', 'briefs', 'offerings', 'rate-card', 'specs', 'assets'];
+    const list = this.state.pages || PAGES.filter(p => !HIDE.includes(p.id) && p.nav !== false && (this.state.signedIn || PUB.includes(p.id))).map(p => Object.assign({}, p, { id: p.id === 'specs' ? 'assets' : p.id }));
+    const hit = list.find(p => p.id === curId) || PAGES.find(p => p.id === cur);
+    return { panelPos, rootRef: this.rootRef,
+      /* Only on pages that are in this menu (2026-10-28). */
+      show: list.some(p => p.id === curId),
+      currentLabel: hit ? hit.label : 'Creative Labs',
+      open: this.state.open, openStr: String(this.state.open), toggle: this.toggle, close: this.close,
+      chevStyle: { flex: 'none', color: 'var(--blue-300)', transform: this.state.open ? 'rotate(180deg)' : 'none', transition: 'transform 200ms cubic-bezier(.16,1,.3,1)' },
+      items: list.map(p => { const on = p.id === curId; return { label: p.label, sub: p.sub, href: p.href, aria: on ? 'page' : 'false',
+        style: { display: 'flex', alignItems: 'center', gap: 12, padding: '9px 12px', borderRadius: 10, textDecoration: 'none', color: '#fff', background: on ? 'rgba(0,204,255,.12)' : 'transparent', boxShadow: on ? 'inset 0 0 0 1px rgba(0,204,255,.45)' : 'none' },
+        markStyle: { flex: 'none', display: 'grid', placeItems: 'center', width: 22, height: 22, borderRadius: '50%', fontSize: 12, fontWeight: 800, background: on ? '#00CCFF' : 'transparent', color: '#001830', opacity: on ? 1 : 0 } }; })
+    };
+  }
+}
+</script>
+</body>
+</html>

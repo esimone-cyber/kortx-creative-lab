@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<script src="kx-theme.js"></script>
+<link rel="icon" type="image/svg+xml" href="assets/kortx-logomark-bright-blue.svg">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Brief List · KORTX Creative Labs</title>
+<link rel="stylesheet" href="_ds/kortx-design-guide-2026-5bc7ff27-9282-4218-938a-63d43f555d47/tokens/fonts.css">
+<link rel="stylesheet" href="_ds/kortx-design-guide-2026-5bc7ff27-9282-4218-938a-63d43f555d47/tokens/colors.css">
+<link rel="stylesheet" href="_ds/kortx-design-guide-2026-5bc7ff27-9282-4218-938a-63d43f555d47/tokens/typography.css">
+<link rel="stylesheet" href="_ds/kortx-design-guide-2026-5bc7ff27-9282-4218-938a-63d43f555d47/tokens/spacing.css">
+<link rel="stylesheet" href="_ds/kortx-design-guide-2026-5bc7ff27-9282-4218-938a-63d43f555d47/tokens/radius.css">
+<link rel="stylesheet" href="_ds/kortx-design-guide-2026-5bc7ff27-9282-4218-938a-63d43f555d47/tokens/elevation.css">
+<link rel="stylesheet" href="_ds/kortx-design-guide-2026-5bc7ff27-9282-4218-938a-63d43f555d47/tokens/motion.css">
+<link rel="stylesheet" href="_ds/kortx-design-guide-2026-5bc7ff27-9282-4218-938a-63d43f555d47/tokens/base.css">
+<link rel="stylesheet" href="_ds/kortx-design-guide-2026-5bc7ff27-9282-4218-938a-63d43f555d47/styles.css">
+<script src="_ds/kortx-design-guide-2026-5bc7ff27-9282-4218-938a-63d43f555d47/_ds_bundle.js"></script>
+<style>
+  html, body { margin: 0; padding: 0; background: #000509; }
+  body { font-family: var(--font-body, Inter, Helvetica, sans-serif); -webkit-font-smoothing: antialiased; }
+  a { color: var(--blue-400); text-decoration: none; }
+  a:hover { color: var(--blue-300); }
+  input, button { font-family: inherit; }
+  ::placeholder { color: rgba(255,255,255,.38); }
+  [data-focusable]:focus-visible, input:focus { outline: none; border-color: var(--blue-400) !important; box-shadow: 0 0 0 3px rgba(0,204,255,.35) !important; }
+  @keyframes kx-orbit { 0% { transform: rotate(0) translateX(26px) } 100% { transform: rotate(360deg) translateX(26px) } }
+  @keyframes kx-rise { 0% { opacity: 0; transform: translateY(12px) } 100% { opacity: 1; transform: none } }
+  @keyframes kx-spin { to { transform: rotate(360deg) } }
+  @keyframes kx-flash { 0%, 100% { box-shadow: inset 0 1px 0 rgba(255,255,255,.06), 0 24px 60px rgba(0,0,0,.45) } 40% { box-shadow: 0 0 0 1px rgba(0,204,255,.6), 0 0 48px rgba(0,204,255,.35) } }
+  @media (prefers-reduced-motion: reduce) { *, *::before, *::after { animation-duration: .001ms !important; transition-duration: .001ms !important; } }
+</style>
+</helmet>
+
+<div data-screen-label="Brief List" style="position: relative; min-height: 100vh; background: #000509; color: #fff; overflow-x: clip; isolation: isolate;">
+  <div aria-hidden="true" style="position: fixed; inset: 0; z-index: 0; pointer-events: none; overflow: hidden;">
+    <div style="position: absolute; top: -22vh; right: -14vw; width: 78vw; height: 78vw; border-radius: 50%; background: radial-gradient(circle at 50% 50%, rgba(0,204,255,.14), rgba(0,204,255,.04) 40%, transparent 68%); filter: blur(24px);"></div>
+    <div style="position: absolute; bottom: -34vh; left: -18vw; width: 72vw; height: 72vw; border-radius: 50%; background: radial-gradient(circle at 50% 50%, rgba(109,94,240,.12), rgba(109,94,240,.03) 42%, transparent 70%); filter: blur(30px);"></div>
+    <div style="position: absolute; top: 30vh; left: 40vw; width: 40vw; height: 40vw; border-radius: 50%; background: radial-gradient(circle at 50% 50%, rgba(214,125,240,.07), transparent 65%); filter: blur(30px);"></div>
+    <div style="position: absolute; inset: 0; background-image: linear-gradient(rgba(255,255,255,.025) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,.025) 1px, transparent 1px); background-size: 88px 88px;"></div>
+    <div style="position: absolute; inset: 0; background-image: radial-gradient(1.4px 1.4px at 12% 18%, rgba(255,255,255,.8), transparent), radial-gradient(1.2px 1.2px at 78% 12%, rgba(255,255,255,.7), transparent), radial-gradient(1.6px 1.6px at 64% 72%, rgba(255,255,255,.7), transparent), radial-gradient(1.1px 1.1px at 28% 84%, rgba(255,255,255,.6), transparent), radial-gradient(1.3px 1.3px at 90% 58%, rgba(255,255,255,.7), transparent), radial-gradient(1px 1px at 44% 36%, rgba(255,255,255,.5), transparent);"></div>
+  </div>
+
+  <header style="position: sticky; top: 0; z-index: 60; display: flex; align-items: center; gap: clamp(12px, 1.6vw, 20px); flex-wrap: wrap; min-height: 72px; padding: 14px clamp(20px, 4vw, 56px); box-sizing: border-box; background: rgba(0,5,9,.72); backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px);">
+    <a href="Creative Playground.dc.html" aria-label="KORTX home" style="position: relative; display: grid; place-items: center; width: 46px; height: 46px; flex: none;">
+      <span aria-hidden="true" style="position: absolute; inset: 0; border-radius: 50%; background: radial-gradient(circle at 50% 50%, rgba(0,204,255,.24), transparent 68%);"></span>
+      <span aria-hidden="true" style="position: absolute; inset: 3px; border: 1px solid rgba(0,204,255,.30); border-radius: 50%;"></span>
+      <span aria-hidden="true" style="position: absolute; inset: 8px; border: 1px solid rgba(138,124,248,.28); border-radius: 50%; transform: rotate(18deg) scaleY(.6);"></span>
+      <img src="assets/kortx-logomark-bright-blue.svg" alt="KORTX" style="position: relative; width: 20px; display: block;">
+      <span aria-hidden="true" style="position: absolute; top: 50%; left: 50%; width: 4px; height: 4px; margin: -2px; border-radius: 50%; background: var(--blue-300); box-shadow: 0 0 9px rgba(0,204,255,.9); animation: kx-orbit 18s linear infinite;"></span>
+    </a>
+    <dc-import name="Site Nav" current="briefs" hint-size="200px,40px"></dc-import>
+    <div style="flex: 1;"></div>
+    <dc-import name="User Menu" current="briefs" hint-size="40px,40px" style="margin-left: auto; order: 99;"></dc-import>
+  </header>
+
+  <main style="position: relative; z-index: 1; max-width: 1180px; margin: 0 auto; padding: clamp(40px, 7vh, 80px) clamp(20px, 4vw, 40px) 140px; box-sizing: border-box;">
+    <section data-block="Brief List · Hero" style="display: flex; flex-direction: column; align-items: center; text-align: center; animation: kx-rise 600ms cubic-bezier(.16,1,.3,1) both;">
+      <div style="font-size: 11px; font-weight: 600; letter-spacing: .18em; text-transform: uppercase; color: var(--lime-300);">Strategy Team</div>
+      <h1 style="margin: 12px 0 0; font-size: clamp(36px, 5vw, 60px); font-weight: 700; letter-spacing: -.03em; line-height: 1.04;">Brief list</h1>
+      <p style="margin: 14px 0 0; max-width: 640px; font-size: 17px; line-height: 1.55; color: rgba(255,255,255,.76); text-wrap: pretty;">Client campaign briefs, ready to claim. Claim one to start the proposal process.</p>
+    </section>
+
+    <sc-if value="{{ gated }}" hint-placeholder-val="{{ false }}">
+      <div style="max-width: 520px; margin: 48px auto 0; padding: 28px; border-radius: 16px; border: 1px solid rgba(255,255,255,.08); background: #070B15; text-align: center; box-shadow: inset 0 1px 0 rgba(255,255,255,.06), 0 24px 60px rgba(0,0,0,.45);">
+        <h2 style="margin: 0; font-size: 22px; font-weight: 700;">{{ gateTitle }}</h2>
+        <p style="margin: 8px 0 18px; font-size: 14.5px; line-height: 1.55; color: rgba(255,255,255,.72);">{{ gateBody }}</p>
+        <a href="{{ signInHref }}" style="display: inline-block; padding: 12px 24px; border-radius: 999px; background: #00CCFF; color: #001830; font-size: 14px; font-weight: 700;" style-hover="background: #66E0FF; color: #001830">Sign In</a>
+      </div>
+    </sc-if>
+
+    <sc-if value="{{ ready }}" hint-placeholder-val="{{ true }}">
+      <div style="display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: 10px; margin-top: 40px;">
+        <input type="search" data-focusable="1" value="{{ q }}" onChange="{{ onQ }}" placeholder="Search advertiser, campaign, or contact" aria-label="Search briefs" style="flex: 1 1 320px; max-width: 460px; height: 42px; padding: 0 16px; border-radius: 999px; border: 1px solid rgba(255,255,255,.14); background: rgba(0,5,9,.6); color: #fff; font-size: 14px; box-sizing: border-box;">
+        <div role="group" aria-label="Status" style="display: flex; gap: 6px;">
+          <sc-for list="{{ filters }}" as="fl" hint-placeholder-count="3">
+            <button type="button" data-focusable="1" data-f="{{ fl.id }}" onClick="{{ setFilter }}" aria-pressed="{{ fl.on }}" style="{{ fl.style }}" style-hover="border-color: rgba(138,124,248,.75); box-shadow: 0 0 24px rgba(109,94,240,.4)">{{ fl.label }}</button>
+          </sc-for>
+        </div>
+      </div>
+
+      <sc-if value="{{ loading }}" hint-placeholder-val="{{ false }}">
+        <div style="display: flex; justify-content: center; align-items: center; gap: 10px; margin-top: 48px; font-size: 14px; color: rgba(255,255,255,.6);"><span aria-hidden="true" style="width: 16px; height: 16px; border-radius: 50%; border: 2px solid rgba(0,204,255,.25); border-top-color: #00CCFF; animation: kx-spin 800ms linear infinite;"></span>Loading briefs…</div>
+      </sc-if>
+      <sc-if value="{{ claimErr }}" hint-placeholder-val="{{ false }}">
+        <div role="alert" style="max-width: 640px; margin: 20px auto 0; padding: 12px 16px; border-radius: 12px; border: 1px solid rgba(229,72,77,.5); background: rgba(229,72,77,.1); font-size: 13.5px; line-height: 1.5; color: #FFB3B5; text-align: center;">{{ claimErr }}</div>
+      </sc-if>
+      <sc-if value="{{ hasErr }}" hint-placeholder-val="{{ false }}">
+        <div role="alert" style="max-width: 640px; margin: 32px auto 0; padding: 14px 18px; border-radius: 12px; border: 1px solid rgba(229,72,77,.5); background: rgba(229,72,77,.1); font-size: 13.5px; line-height: 1.5; color: #FFB3B5; text-align: center;">{{ err }}</div>
+      </sc-if>
+      <sc-if value="{{ isEmpty }}" hint-placeholder-val="{{ false }}">
+        <div style="margin-top: 48px; text-align: center; font-size: 15px; color: rgba(255,255,255,.6);">{{ emptyText }}</div>
+      </sc-if>
+
+      <div role="list" style="display: flex; flex-direction: column; gap: 12px; margin-top: 28px;">
+        <sc-for list="{{ briefs }}" as="b" hint-placeholder-count="3">
+          <article role="listitem" id="{{ b.anchor }}" style="{{ b.card }}">
+            <div style="display: flex; flex-wrap: wrap; align-items: center; gap: 14px 24px; padding: 18px 22px;">
+              <label title="{{ b.claimTitle }}" style="{{ b.claimWrap }}">
+                <input type="checkbox" data-focusable="1" data-id="{{ b.id }}" checked="{{ b.claimed }}" disabled="{{ b.claimLocked }}" onChange="{{ toggleClaim }}" aria-label="Claim brief" style="width: 18px; height: 18px; margin: 0; accent-color: #00CCFF; cursor: inherit;">
+                <span style="font-size: 12px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase;">{{ b.claimLabel }}</span>
+              </label>
+              <div style="flex: 1 1 260px; min-width: 0;">
+                <div style="display: flex; align-items: center; gap: 10px; flex-wrap: wrap;">
+                  <span style="font-size: 17px; font-weight: 700; color: var(--blue-400); letter-spacing: -.01em;">{{ b.advertiser }}</span>
+                  <span style="{{ b.statusStyle }}">{{ b.status }}</span>
+                </div>
+                <div style="margin-top: 4px; font-size: 13.5px; color: rgba(255,255,255,.72); overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">{{ b.sub }}</div>
+                <sc-if value="{{ b.claimedBy }}" hint-placeholder-val="{{ false }}"><div style="margin-top: 4px; font-size: 12.5px; font-weight: 600; color: var(--blue-300);">{{ b.claimedBy }}</div></sc-if>
+              </div>
+              <div style="display: grid; grid-template-columns: repeat(4, minmax(90px, auto)); gap: 4px 24px; font-size: 12.5px;">
+                <span style="font-size: 10.5px; font-weight: 600; letter-spacing: .14em; text-transform: uppercase; color: rgba(255,255,255,.5);">Sent By</span>
+                <span style="font-size: 10.5px; font-weight: 600; letter-spacing: .14em; text-transform: uppercase; color: rgba(255,255,255,.5);">Date Created</span>
+                <span style="font-size: 10.5px; font-weight: 600; letter-spacing: .14em; text-transform: uppercase; color: rgba(255,255,255,.5);">Budget</span>
+                <span style="font-size: 10.5px; font-weight: 600; letter-spacing: .14em; text-transform: uppercase; color: rgba(255,255,255,.5);">Flight</span>
+                <span style="font-weight: 600; color: #fff; max-width: 180px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;" title="{{ b.sender }}">{{ b.sender }}</span>
+                <span style="font-weight: 600; color: #fff; white-space: nowrap;" title="{{ b.whenFull }}">{{ b.when }}</span>
+                <span style="font-weight: 600; color: #fff;">{{ b.budget }}</span>
+                <span style="font-weight: 600; color: #fff; white-space: nowrap;">{{ b.flight }}</span>
+              </div>
+              <div style="display: flex; gap: 8px; flex-wrap: wrap;">
+                <button type="button" data-focusable="1" data-id="{{ b.id }}" onClick="{{ toggle }}" aria-expanded="{{ b.openStr }}" style="display: inline-flex; align-items: center; gap: 6px; padding: 9px 16px; border-radius: 999px; border: 1px solid rgba(255,255,255,.16); background: rgba(255,255,255,.05); color: #fff; font-size: 13px; font-weight: 600; cursor: pointer; transition: all 200ms cubic-bezier(.16,1,.3,1);" style-hover="border-color: rgba(138,124,248,.75); background: rgba(109,94,240,.16); box-shadow: 0 0 24px rgba(109,94,240,.45)">{{ b.viewLabel }}</button>
+                <sc-if value="{{ b.mine }}" hint-placeholder-val="{{ false }}"><button type="button" data-focusable="1" data-id="{{ b.id }}" onClick="{{ createProposal }}" style="display: inline-flex; align-items: center; gap: 6px; padding: 9px 18px; border-radius: 999px; border: 0; background: #00CCFF; color: #001830; font-size: 13px; font-weight: 700; cursor: pointer; transition: all 200ms cubic-bezier(.16,1,.3,1);" style-hover="background: #66E0FF; transform: translateY(-1px); box-shadow: 0 0 28px rgba(0,204,255,.45)" style-active="transform: scale(.985)">{{ b.startLabel }}</button></sc-if>
+              </div>
+            </div>
+            <sc-if value="{{ b.open }}" hint-placeholder-val="{{ false }}">
+              <div data-block="Brief List · Intake view" style="display: flex; flex-direction: column; gap: 20px; padding: 4px 22px 22px; animation: kx-rise 320ms cubic-bezier(.16,1,.3,1) both;">
+                <div style="height: 1px; background: rgba(255,255,255,.07);"></div>
+                <sc-for list="{{ b.sections }}" as="sec" hint-placeholder-count="2">
+                  <section style="padding: clamp(20px, 3vw, 32px); border-radius: 16px; border: 1px solid rgba(255,255,255,.08); background: #070B15; box-shadow: inset 0 1px 0 rgba(255,255,255,.06), 0 24px 60px rgba(0,0,0,.45);">
+                    <div style="display: flex; align-items: baseline; gap: 12px;">
+                      <span style="font-size: 13px; font-weight: 700; color: var(--blue-400);">{{ sec.n }}</span>
+                      <h3 style="margin: 0; font-size: 22px; font-weight: 700; letter-spacing: -.015em;">{{ sec.title }}</h3>
+                      <span style="flex: 1;"></span>
+                      <span style="{{ sec.countStyle }}">{{ sec.count }}</span>
+                    </div>
+                    <p style="margin: 8px 0 0; max-width: 640px; font-size: 14.5px; line-height: 1.55; color: rgba(255,255,255,.7); text-wrap: pretty;">{{ sec.lede }}</p>
+                      <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, 340px), 1fr)); gap: 18px 20px; margin-top: 24px;">
+                        <sc-for list="{{ sec.core }}" as="f" hint-placeholder-count="4">
+                          <div style="{{ f.wrap }}">
+                            <span style="display: flex; align-items: baseline; gap: 4px; font-size: 13.5px; font-weight: 600; color: #fff;">{{ f.label }}<sc-if value="{{ f.req }}" hint-placeholder-val="{{ false }}"><span aria-hidden="true" style="color: #FF8A8E; font-weight: 800;">*</span></sc-if><sc-if value="{{ f.missing }}" hint-placeholder-val="{{ false }}"><span style="margin-left: 6px; padding: 1px 7px; border-radius: 999px; border: 1px solid rgba(229,72,77,.6); background: rgba(229,72,77,.14); color: #FF8A8E; font-size: 10px; font-weight: 700; letter-spacing: .06em; text-transform: uppercase;">Missing</span></sc-if></span>
+                            <sc-if value="{{ f.hasHelp }}" hint-placeholder-val="{{ false }}"><span style="font-size: 12.5px; line-height: 1.45; color: rgba(255,255,255,.55);">{{ f.help }}</span></sc-if>
+                            <sc-if value="{{ f.isText }}" hint-placeholder-val="{{ true }}"><div style="{{ f.boxStyle }}">{{ f.value }}</div></sc-if>
+                            <sc-if value="{{ f.isDates }}" hint-placeholder-val="{{ false }}">
+                              <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(170px, 1fr)); gap: 10px;">
+                                <sc-for list="{{ f.dates }}" as="dt" hint-placeholder-count="2">
+                                  <div style="display: flex; flex-direction: column; gap: 4px;">
+                                    <span style="font-size: 11px; font-weight: 600; letter-spacing: .14em; text-transform: uppercase; color: rgba(255,255,255,.5);">{{ dt.label }}</span>
+                                    <div style="{{ dt.boxStyle }}">{{ dt.text }}</div>
+                                  </div>
+                                </sc-for>
+                              </div>
+                            </sc-if>
+                            <sc-if value="{{ f.isChoice }}" hint-placeholder-val="{{ false }}">
+                              <div role="group" aria-label="{{ f.label }}" style="display: flex; flex-wrap: wrap; gap: 8px;">
+                                <sc-for list="{{ f.opts }}" as="o" hint-placeholder-count="3"><span style="{{ o.style }}">{{ o.label }}</span></sc-for>
+                              </div>
+                            </sc-if>
+                          </div>
+                        </sc-for>
+                      </div>
+                    <sc-if value="{{ sec.hasMore }}" hint-placeholder-val="{{ false }}">
+                      <div style="margin-top: 24px; padding-top: 18px; border-top: 1px solid rgba(255,255,255,.07); font-size: 11px; font-weight: 600; letter-spacing: .18em; text-transform: uppercase; color: rgba(255,255,255,.55);">Additional Details</div>
+                      <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, 340px), 1fr)); gap: 18px 20px; margin-top: 14px;">
+                        <sc-for list="{{ sec.more }}" as="f" hint-placeholder-count="4">
+                          <div style="{{ f.wrap }}">
+                            <span style="display: flex; align-items: baseline; gap: 4px; font-size: 13.5px; font-weight: 600; color: #fff;">{{ f.label }}<sc-if value="{{ f.req }}" hint-placeholder-val="{{ false }}"><span aria-hidden="true" style="color: #FF8A8E; font-weight: 800;">*</span></sc-if><sc-if value="{{ f.missing }}" hint-placeholder-val="{{ false }}"><span style="margin-left: 6px; padding: 1px 7px; border-radius: 999px; border: 1px solid rgba(229,72,77,.6); background: rgba(229,72,77,.14); color: #FF8A8E; font-size: 10px; font-weight: 700; letter-spacing: .06em; text-transform: uppercase;">Missing</span></sc-if></span>
+                            <sc-if value="{{ f.hasHelp }}" hint-placeholder-val="{{ false }}"><span style="font-size: 12.5px; line-height: 1.45; color: rgba(255,255,255,.55);">{{ f.help }}</span></sc-if>
+                            <sc-if value="{{ f.isText }}" hint-placeholder-val="{{ true }}"><div style="{{ f.boxStyle }}">{{ f.value }}</div></sc-if>
+                            <sc-if value="{{ f.isDates }}" hint-placeholder-val="{{ false }}">
+                              <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(170px, 1fr)); gap: 10px;">
+                                <sc-for list="{{ f.dates }}" as="dt" hint-placeholder-count="2">
+                                  <div style="display: flex; flex-direction: column; gap: 4px;">
+                                    <span style="font-size: 11px; font-weight: 600; letter-spacing: .14em; text-transform: uppercase; color: rgba(255,255,255,.5);">{{ dt.label }}</span>
+                                    <div style="{{ dt.boxStyle }}">{{ dt.text }}</div>
+                                  </div>
+                                </sc-for>
+                              </div>
+                            </sc-if>
+                            <sc-if value="{{ f.isChoice }}" hint-placeholder-val="{{ false }}">
+                              <div role="group" aria-label="{{ f.label }}" style="display: flex; flex-wrap: wrap; gap: 8px;">
+                                <sc-for list="{{ f.opts }}" as="o" hint-placeholder-count="3"><span style="{{ o.style }}">{{ o.label }}</span></sc-for>
+                              </div>
+                            </sc-if>
+                          </div>
+                        </sc-for>
+                      </div>
+                    </sc-if>
+                  </section>
+                  <sc-if value="{{ sec.isFirst }}" hint-placeholder-val="{{ false }}">
+                    <section style="padding: clamp(20px, 3vw, 32px); border-radius: 16px; border: 1px solid rgba(0,204,255,.28); background: #070B15; box-shadow: inset 0 1px 0 rgba(0,204,255,.3), 0 24px 60px rgba(0,0,0,.45), 0 0 48px rgba(0,204,255,.08);">
+                      <div style="display: flex; align-items: baseline; gap: 12px;">
+                        <h3 style="margin: 0; font-size: 22px; font-weight: 700; letter-spacing: -.015em;">Campaign Snapshot</h3>
+                        <span style="flex: 1;"></span>
+                        <span style="{{ b.snapCountStyle }}">{{ b.snapCount }}</span>
+                      </div>
+                      <div role="list" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr)); gap: 10px; margin-top: 20px;">
+                        <sc-for list="{{ b.snapshot }}" as="sn" hint-placeholder-count="8">
+                          <div role="listitem" style="{{ sn.style }}">
+                            <span style="font-size: 11px; font-weight: 600; letter-spacing: .14em; text-transform: uppercase; color: rgba(255,255,255,.55);">{{ sn.label }}</span>
+                            <span style="{{ sn.valStyle }}">{{ sn.value }}</span>
+                          </div>
+                        </sc-for>
+                      </div>
+                    </section>
+                  </sc-if>
+                </sc-for>
+              </div>
+            </sc-if>
+          </article>
+        </sc-for>
+      </div>
+    </sc-if>
+
+    <footer style="margin-top: 96px; padding-top: 24px; border-top: 1px solid rgba(255,255,255,.08); display: flex; justify-content: center; font-size: 12px;">
+      <span style="font-weight: 700; letter-spacing: .18em; color: var(--blue-400);">BUILT WITH GRIT IN DETROIT</span>
+    </footer>
+  </main>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  state = { loading: true, user: undefined, rows: [], err: '', q: '', filter: 'open', open: {}, focus: '', copied: false, claimErr: '', claimBusy: {} };
+  async componentDidMount() {
+    this.focusId = new URLSearchParams(location.search).get('brief') || '';
+    try {
+      this.cloud = await import('./creative-cloud.js');
+      import('./brief-form.js').then(F => { this.F = F; this.forceUpdate(); }).catch(() => {});
+      const user = await this.cloud.currentUser();
+      this.setState({ user });
+      if (!user) { this.setState({ loading: false }); return; }
+      const rows = await this.cloud.listBriefs();
+      const open = this.focusId ? { [this.focusId]: true } : {};
+      this.setState({ rows, loading: false, open, focus: this.focusId, filter: this.focusId ? 'all' : 'open' });
+      /* Keep the list fresh while several teammates work it. */
+      this.poll = setInterval(() => this.cloud.listBriefs().then(rows => this.setState({ rows })).catch(() => {}), 20000);
+      if (this.focusId) setTimeout(() => { const el = document.getElementById('brief-' + this.focusId); if (el) window.scrollTo({ top: el.getBoundingClientRect().top + window.scrollY - 100, behavior: 'smooth' }); }, 120);
+    } catch (e) {
+      const msg = String(e.message || e);
+      this.setState({ loading: false, err: /campaign_briefs/.test(msg) ? 'The briefs table isn’t set up yet. Run supabase/migrations/2026-10-13_campaign_briefs.sql in the Supabase SQL Editor.' : 'Couldn’t load briefs: ' + msg });
+    }
+  }
+  componentWillUnmount() { clearInterval(this.poll); }
+  toggleClaim = async e => {
+    const id = e.currentTarget.dataset.id, want = e.currentTarget.checked, me = this.state.user || {};
+    this.setState(s => ({ claimErr: '', claimBusy: Object.assign({}, s.claimBusy, { [id]: true }) }));
+    try {
+      const row = want ? await this.cloud.claimBrief(id) : await this.cloud.unclaimBrief(id);
+      if (row) this.setState(s => ({ rows: s.rows.map(r => r.id === id ? row : r) }));
+    } catch (err) {
+      this.setState({ claimErr: err.message || String(err) });
+      this.cloud.listBriefs().then(rows => this.setState({ rows })).catch(() => {});
+    }
+    this.setState(s => ({ claimBusy: Object.assign({}, s.claimBusy, { [id]: false }) }));
+  };
+  onQ = e => this.setState({ q: e.currentTarget.value });
+  setFilter = e => this.setState({ filter: e.currentTarget.dataset.f });
+  toggle = e => { const id = e.currentTarget.dataset.id; this.setState(s => ({ open: Object.assign({}, s.open, { [id]: !s.open[id] }) })); };
+  createProposal = async e => {
+    const id = e.currentTarget.dataset.id, row = this.state.rows.find(r => r.id === id);
+    if (row && row.status !== 'proposal') { try { await this.cloud.setBriefStatus(id, 'proposal'); } catch (err) {} }
+    location.href = this.cloud.route('/page-builder?brief=' + encodeURIComponent(id));
+  };
+  /* Read-only copy of the client's intake: same sections, order, labels, choices and Missing flags as the form. */
+  formView(r) {
+    const F = this.F; if (!F) return { sections: [], snapshot: [] };
+    const v = Object.assign({}, r.answers || {});
+    const ok = (f) => f.t === 'dates' ? !!(v.flightStart && v.flightEnd) : !!F.answerOf(f, v);
+    const box = filled => ({ display: 'flex', alignItems: 'flex-start', minHeight: 46, padding: '11px 14px', borderRadius: 10, boxSizing: 'border-box', fontSize: 15, lineHeight: 1.45, whiteSpace: 'pre-wrap', overflowWrap: 'anywhere',
+      border: '1px solid ' + (filled ? 'rgba(255,255,255,.14)' : 'rgba(255,255,255,.08)'), background: 'rgba(0,5,9,.6)', color: filled ? '#fff' : 'rgba(255,255,255,.38)' });
+    const fieldVals = f => {
+      const filled = ok(f), isChoice = f.t === 'choice' || f.t === 'multi', picked = [].concat(v[f.key] || []);
+      return { key: f.key, label: f.label, req: !!f.req, missing: !!f.req && !filled, hasHelp: !!f.help, help: f.help || '',
+        wrap: { display: 'flex', flexDirection: 'column', gap: 8, minWidth: 0, gridColumn: f.wide || f.t === 'area' && f.wide ? '1 / -1' : 'auto' },
+        isText: !isChoice && f.t !== 'dates', isDates: f.t === 'dates', isChoice,
+        value: filled ? F.answerOf(f, v) : (f.ph || '—'), boxStyle: Object.assign(box(filled), f.t === 'area' ? { minHeight: 84 } : {}),
+        dates: [['Start', v.flightStart], ['End', v.flightEnd]].map(([label, iso]) => ({ label, text: iso ? F.fmtD(iso) : 'MM/DD/YYYY', boxStyle: box(!!iso) })),
+        opts: (f.opts || []).map(o => { const on = picked.indexOf(o) > -1; return { label: o, style: { display: 'inline-flex', alignItems: 'center', minHeight: 38, padding: '0 14px', borderRadius: 999, fontSize: 13, fontWeight: 600,
+          border: on ? '1px solid #00CCFF' : '1px solid rgba(255,255,255,.14)', background: on ? 'rgba(0,204,255,.14)' : 'rgba(255,255,255,.03)', color: on ? '#fff' : 'rgba(255,255,255,.5)', boxShadow: on ? '0 0 20px rgba(0,204,255,.22)' : 'none' } }; }) };
+    };
+    const sections = F.SECTIONS.map((sec, i) => {
+      const fs = [...sec.core, ...(sec.more || [])], req = fs.filter(f => f.req), done = (req.length ? req : fs).filter(ok).length, need = (req.length ? req : fs).length;
+      const complete = req.length ? done === need : done > 0;
+      return { n: String(i + 1).padStart(2, '0'), title: sec.title, lede: sec.lede, isFirst: i === 0,
+        count: complete ? '✓' : fs.filter(ok).length + ' of ' + fs.length + ' answered',
+        countStyle: complete ? { fontSize: 18, fontWeight: 800, lineHeight: 1, color: 'var(--lime-300)', whiteSpace: 'nowrap' } : { fontSize: 12, fontWeight: 600, color: '#FF8A8E', whiteSpace: 'nowrap' },
+        core: sec.core.map(fieldVals), more: (sec.more || []).map(fieldVals), hasMore: !!(sec.more || []).length };
+    });
+    const byKey = k => F.ALL.find(f => f.key === k);
+    const snapshot = F.SNAPSHOT.map(([label, keys]) => { const vals = keys.map(k => { const f = byKey(k); return f ? F.answerOf(f, v) : ''; }).filter(Boolean), has = vals.length > 0;
+      return { label, value: has ? vals.join(' · ') : 'Not answered', has,
+        style: { display: 'flex', flexDirection: 'column', gap: 4, minWidth: 0, padding: '12px 14px', borderRadius: 10, border: '1px solid ' + (has ? 'rgba(255,255,255,.08)' : 'rgba(229,72,77,.45)'), background: has ? 'rgba(255,255,255,.025)' : 'rgba(229,72,77,.06)' },
+        valStyle: { fontSize: 14, fontWeight: 600, lineHeight: 1.4, overflowWrap: 'anywhere', color: has ? '#fff' : '#FF8A8E' } }; });
+    const n = snapshot.filter(x => x.has).length, all = n === snapshot.length;
+    return { sections, snapshot, snapCount: all ? '✓' : n + ' of ' + snapshot.length + ' completed',
+      snapCountStyle: all ? { fontSize: 18, fontWeight: 800, lineHeight: 1, color: 'var(--lime-300)', whiteSpace: 'nowrap' } : { fontSize: 12, fontWeight: 600, color: '#FF8A8E', whiteSpace: 'nowrap' } };
+  }
+  renderVals() {
+    const s = this.state, signedIn = !!s.user, gated = s.user === null;
+    const fmt = d => d ? new Date(d).toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' }) : '';
+    const q = s.q.trim().toLowerCase();
+    const myId = s.user && s.user.id;
+    const counts = { open: s.rows.filter(r => !r.claimed_by).length, mine: s.rows.filter(r => r.claimed_by && r.claimed_by === myId).length, claimed: s.rows.filter(r => r.claimed_by).length, all: s.rows.length };
+    const pass = r => s.filter === 'all' || (s.filter === 'open' ? !r.claimed_by : s.filter === 'mine' ? r.claimed_by === myId : !!r.claimed_by);
+    const list = s.rows.filter(r => pass(r)
+      && (!q || [r.advertiser, r.campaign_name, r.agency, r.contact_name, r.contact_email].join(' ').toLowerCase().indexOf(q) > -1));
+    const briefs = list.map(r => {
+      const open = !!s.open[r.id], isNew = r.status !== 'proposal', focus = s.focus === r.id;
+      const claimed = !!r.claimed_by, mine = claimed && r.claimed_by === myId, busy = !!s.claimBusy[r.id], locked = busy || (claimed && !mine && !(s.user && s.user.isAdmin));
+      const who = mine ? 'you' : (r.claimed_by_name || r.claimed_by_email || 'a teammate');
+      const groups = []; (r.qa || []).forEach(x => { let g = groups[groups.length - 1]; if (!g || g.title !== x.section) groups.push(g = { title: x.section, rows: [] }); g.rows.push({ q: x.q, a: x.a }); });
+      return { id: r.id, anchor: 'brief-' + r.id, advertiser: r.advertiser || 'Untitled brief',
+        sub: [r.campaign_name, r.agency].filter(Boolean).join(' · ') || 'No campaign name',
+        sender: r.contact_name || r.contact_email || '—',
+        whenFull: r.created_at ? new Date(r.created_at).toLocaleString('en-US', { month: 'short', day: 'numeric', year: 'numeric', hour: 'numeric', minute: '2-digit' }) : '',
+        budget: r.budget || '—', flight: r.flight || '—', when: fmt(r.created_at),
+        status: isNew ? 'New' : 'Proposal Started',
+        statusStyle: { padding: '3px 9px', borderRadius: 999, fontSize: 11, fontWeight: 700, color: isNew ? 'var(--lime-300)' : 'var(--blue-300)', background: isNew ? 'rgba(190,242,100,.1)' : 'rgba(0,204,255,.1)', border: '1px solid ' + (isNew ? 'rgba(190,242,100,.35)' : 'rgba(0,204,255,.35)') },
+        contact: [r.contact_name, (r.answers || {}).contactRole].filter(Boolean).join(', '), email: r.contact_email || '', mailto: 'mailto:' + (r.contact_email || ''),
+        open, openStr: String(open), viewLabel: open ? 'Hide Brief' : 'View Brief', groups, ...(open ? this.formView(r) : { sections: [], snapshot: [] }),
+        claimed, mine, startLabel: isNew ? 'Start Proposal' : 'Continue Proposal', claimLocked: locked, claimLabel: busy ? '…' : claimed ? 'Claimed' : 'Claim',
+        claimTitle: claimed ? (mine ? 'Uncheck to release this brief' : 'Claimed by ' + who) : 'Claim this brief. It moves to your My Builds.',
+        claimedBy: claimed ? 'Claimed by ' + who + (r.claimed_at ? ' · ' + fmt(r.claimed_at) : '') : '',
+        claimWrap: { display: 'inline-flex', alignItems: 'center', gap: 8, minHeight: 44, padding: '0 14px', borderRadius: 999, cursor: locked ? 'not-allowed' : 'pointer', opacity: locked && !busy ? .55 : 1, border: '1px solid ' + (claimed ? 'rgba(0,204,255,.55)' : 'rgba(255,255,255,.16)'), background: claimed ? 'rgba(0,204,255,.1)' : 'rgba(255,255,255,.04)', color: claimed ? '#fff' : 'rgba(255,255,255,.85)', transition: 'all 200ms cubic-bezier(.16,1,.3,1)', flex: 'none' },
+        card: { borderRadius: 14, border: '1px solid ' + (focus ? 'rgba(0,204,255,.55)' : 'rgba(255,255,255,.08)'), background: '#070B15', boxShadow: 'inset 0 1px 0 rgba(255,255,255,.06), 0 24px 60px rgba(0,0,0,.45)', scrollMarginTop: 96, animation: focus ? 'kx-flash 1.6s cubic-bezier(.16,1,.3,1) 2' : 'none' } };
+    });
+    const filters = [['open', 'Unclaimed'], ['mine', 'Claimed by Me'], ['claimed', 'All Claimed'], ['all', 'All']].map(([id, label]) => { const on = s.filter === id; return { id, label: label + ' (' + counts[id] + ')', on: String(on), style: {
+      height: 38, padding: '0 14px', borderRadius: 999, cursor: 'pointer', fontSize: 13, fontWeight: 600, whiteSpace: 'nowrap',
+      border: on ? '1px solid #00CCFF' : '1px solid rgba(255,255,255,.14)', background: on ? 'rgba(0,204,255,.14)' : 'rgba(255,255,255,.04)', color: on ? '#fff' : 'rgba(255,255,255,.8)', boxShadow: on ? '0 0 24px rgba(0,204,255,.25)' : 'none', transition: 'all 200ms cubic-bezier(.16,1,.3,1)' } }; });
+    const R = h => this.cloud ? this.cloud.route(h) : h;
+    return {
+      gated, ready: signedIn, gateTitle: 'Sign in to see briefs', gateBody: 'Sign in with your @kortx.io account.',
+      signInHref: R('/sign-in?next=' + encodeURIComponent('/briefs' + location.search)),
+      loading: s.loading && signedIn, hasErr: !!s.err, err: s.err,
+      isEmpty: signedIn && !s.loading && !s.err && !briefs.length, emptyText: s.rows.length ? (s.filter === 'open' && !q ? 'Every brief is claimed. Nice work.' : 'No briefs match.') : 'No briefs yet. Send clients the intake link to get started.',
+      q: s.q, onQ: this.onQ, filters, setFilter: this.setFilter,
+      briefs, toggle: this.toggle, createProposal: this.createProposal, toggleClaim: this.toggleClaim, claimErr: s.claimErr
+    };
+  }
+}
+</script>
+</body>
+</html>

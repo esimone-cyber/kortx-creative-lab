@@ -1,0 +1,6 @@
+*,*::before,*::after{box-sizing:border-box}
+body{margin:0;font:var(--type-body);color:var(--text-primary);background:var(--surface-page);-webkit-font-smoothing:antialiased}
+a{color:var(--text-accent);text-decoration:none;transition:var(--transition-control)}
+a:hover{color:var(--blue-300);text-decoration:underline;text-underline-offset:3px}
+::selection{background:rgba(0,204,255,.3)}
+:focus-visible{outline:2px solid var(--focus-ring);outline-offset:2px}

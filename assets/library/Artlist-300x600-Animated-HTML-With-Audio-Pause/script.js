@@ -1,0 +1,16 @@
+"use strict";
+const ad=document.getElementById('ad');
+const tracks=[{"id": "o66", "frames": [{"offset": 0.025, "easing": "ease-out", "opacity": 0, "top": "54.18%", "left": "2.00%"}, {"offset": 0.1, "easing": "ease-out", "left": "2.00%", "opacity": 1, "top": "49.17%"}, {"offset": 1, "opacity": 1, "top": "49.17%", "left": "2.00%"}]}, {"id": "o81", "frames": [{"offset": 0.035, "easing": "ease-out", "opacity": 0, "top": "51.51%"}, {"offset": 0.11, "easing": "ease-out", "top": "46.50%", "opacity": 1}, {"offset": 1, "opacity": 1, "top": "46.50%"}]}, {"id": "o111", "frames": [{"offset": 0.0, "easing": "ease-out", "opacity": 0}, {"offset": 0.075, "easing": "ease-out", "opacity": 1}, {"offset": 1, "opacity": 1}]}, {"id": "o122", "frames": [{"offset": 0.0, "easing": "ease-out", "top": "18.51%", "left": "14.33%", "opacity": 0}, {"offset": 0.075, "easing": "ease-out", "top": "13.50%", "left": "14.33%", "opacity": 1}, {"offset": 1, "top": "13.50%", "left": "14.33%", "opacity": 1}]}, {"id": "o158", "frames": [{"offset": 0.01, "easing": "ease-out", "opacity": 0, "top": "29.68%"}, {"offset": 0.085, "easing": "ease-out", "opacity": 1, "top": "24.67%"}, {"offset": 1, "opacity": 1, "top": "24.67%"}]}];
+const animations=tracks.map(t=>document.getElementById(t.id).animate(t.frames,{duration:10000,iterations:Infinity,fill:'both'}));
+const audio=new Map([248,249].map(id=>[String(id),new Audio('assets/'+id+'.mp3')]));
+const pauseButton=document.getElementById('pause');
+const status=document.getElementById('status');
+let paused=false,active=null,resumeAudio=false;
+function report(name,detail={}){ad.dispatchEvent(new CustomEvent('adinteraction',{bubbles:true,detail:{name,...detail}}));}
+function updateButton(){pauseButton.setAttribute('aria-pressed',String(paused));pauseButton.setAttribute('aria-label',paused?'Resume animation and audio':'Pause animation and audio');document.getElementById('pause-label').textContent=paused?'Resume':'Pause';document.getElementById('pause-icon').textContent=paused?'▶':'Ⅱ';}
+function playActive(){if(!active)return;active.play().catch(()=>{status.textContent='Audio could not play. Click a sound preview to try again.';});}
+pauseButton.addEventListener('click',()=>{paused=!paused;if(paused){resumeAudio=!!active&&!active.paused;audio.forEach(a=>a.pause());animations.forEach(a=>a.pause());}else{animations.forEach(a=>a.play());if(resumeAudio)playActive();}updateButton();report(paused?'pause':'resume');});
+document.querySelectorAll('.preview').forEach(button=>{button.addEventListener('click',()=>{const next=audio.get(button.dataset.audio);audio.forEach(a=>{if(a!==next)a.pause();});active=next;if(active.ended)active.currentTime=0;if(paused){paused=false;animations.forEach(a=>a.play());updateButton();}resumeAudio=true;playActive();status.textContent=button.getAttribute('aria-label');report('sound_select',{sound:button.dataset.audio});});});
+audio.forEach(a=>{a.preload='auto';a.addEventListener('ended',()=>{if(active===a){resumeAudio=false;status.textContent='Preview finished. Select a sound preview to listen.';}});});
+document.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>report('clickout',{url:a.href})));
+window.addEventListener('pagehide',()=>audio.forEach(a=>a.pause()));

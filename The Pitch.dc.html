@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<script src="kx-theme.js"></script>
+<link rel="icon" type="image/svg+xml" href="assets/kortx-logomark-bright-blue.svg">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>KORTX Creative Labs Vision</title>
+<link rel="stylesheet" href="_ds/kortx-design-guide-2026-5bc7ff27-9282-4218-938a-63d43f555d47/tokens/fonts.css">
+<link rel="stylesheet" href="_ds/kortx-design-guide-2026-5bc7ff27-9282-4218-938a-63d43f555d47/tokens/colors.css">
+<link rel="stylesheet" href="_ds/kortx-design-guide-2026-5bc7ff27-9282-4218-938a-63d43f555d47/tokens/typography.css">
+<link rel="stylesheet" href="_ds/kortx-design-guide-2026-5bc7ff27-9282-4218-938a-63d43f555d47/tokens/spacing.css">
+<link rel="stylesheet" href="_ds/kortx-design-guide-2026-5bc7ff27-9282-4218-938a-63d43f555d47/tokens/radius.css">
+<link rel="stylesheet" href="_ds/kortx-design-guide-2026-5bc7ff27-9282-4218-938a-63d43f555d47/tokens/elevation.css">
+<link rel="stylesheet" href="_ds/kortx-design-guide-2026-5bc7ff27-9282-4218-938a-63d43f555d47/tokens/motion.css">
+<link rel="stylesheet" href="_ds/kortx-design-guide-2026-5bc7ff27-9282-4218-938a-63d43f555d47/tokens/base.css">
+<link rel="stylesheet" href="_ds/kortx-design-guide-2026-5bc7ff27-9282-4218-938a-63d43f555d47/styles.css">
+<script src="_ds/kortx-design-guide-2026-5bc7ff27-9282-4218-938a-63d43f555d47/_ds_bundle.js"></script>
+<style>
+  html, body { margin: 0; padding: 0; background: #000509; scroll-behavior: smooth; }
+  body { font-family: var(--font-body, Inter, Helvetica, sans-serif); -webkit-font-smoothing: antialiased; }
+  a { color: var(--blue-400); text-decoration: none; }
+  a:hover { color: var(--blue-300); }
+  a:focus-visible, button:focus-visible { outline: 3px solid rgba(0,204,255,.55); outline-offset: 3px; }
+  [data-space-fade] { --fx: 12%; --fy: 14%;
+    -webkit-mask-image: linear-gradient(90deg, transparent 0%, #000 var(--fx), #000 calc(100% - var(--fx)), transparent 100%), linear-gradient(180deg, transparent 0%, #000 var(--fy), #000 calc(100% - var(--fy)), transparent 100%);
+    mask-image: linear-gradient(90deg, transparent 0%, #000 var(--fx), #000 calc(100% - var(--fx)), transparent 100%), linear-gradient(180deg, transparent 0%, #000 var(--fy), #000 calc(100% - var(--fy)), transparent 100%);
+    -webkit-mask-composite: source-in; mask-composite: intersect; }
+  @keyframes kx-line { 0% { transform: translateY(105%) } 100% { transform: translateY(0) } }
+  @keyframes kx-rise { 0% { opacity: 0; transform: translateY(12px) } 100% { opacity: 1; transform: translateY(0) } }
+  @keyframes kx-bob { 0%,100% { transform: translateY(-3px); opacity: .55 } 50% { transform: translateY(4px); opacity: 1 } }
+  @keyframes kx-float { 0%,100% { transform: translateY(0) } 50% { transform: translateY(-8px) } }
+  @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } *, *::before, *::after { animation-duration: .001ms !important; animation-iteration-count: 1 !important; transition-duration: .001ms !important; } [data-line] { transform: none !important; } [data-fade] { opacity: 1 !important; transform: none !important; } }
+</style>
+</helmet>
+
+<div style="position: relative; min-height: 100vh; background: #000509; color: #fff; overflow-x: clip; isolation: isolate;">
+
+  <div aria-hidden="true" style="position: fixed; inset: 0; z-index: 0; pointer-events: none; overflow: hidden;">
+    <div style="position: absolute; top: -22vh; right: -14vw; width: 78vw; height: 78vw; border-radius: 50%; background: radial-gradient(circle at 50% 50%, rgba(0,204,255,.14), rgba(0,204,255,.04) 40%, transparent 68%); filter: blur(24px);"></div>
+    <div style="position: absolute; bottom: -34vh; left: -18vw; width: 72vw; height: 72vw; border-radius: 50%; background: radial-gradient(circle at 50% 50%, rgba(109,94,240,.12), rgba(109,94,240,.03) 42%, transparent 70%); filter: blur(30px);"></div>
+    <div style="position: absolute; inset: 0; background-image: radial-gradient(1.4px 1.4px at 12% 18%, rgba(255,255,255,.8), transparent), radial-gradient(1.2px 1.2px at 78% 12%, rgba(255,255,255,.7), transparent), radial-gradient(1.6px 1.6px at 64% 72%, rgba(255,255,255,.7), transparent), radial-gradient(1.1px 1.1px at 28% 84%, rgba(255,255,255,.6), transparent), radial-gradient(1.3px 1.3px at 90% 58%, rgba(255,255,255,.7), transparent), radial-gradient(1px 1px at 44% 36%, rgba(255,255,255,.5), transparent), radial-gradient(1.2px 1.2px at 6% 62%, rgba(255,255,255,.6), transparent);"></div>
+  </div>
+
+  <header style="position: fixed; top: 0; left: 0; right: 0; z-index: 30; display: flex; align-items: center; gap: 16px; padding: 18px clamp(20px, 4vw, 56px); pointer-events: none;">
+    <img src="assets/kortx-wordmark-white.svg" alt="KORTX" style="height: 18px; width: auto; display: block; pointer-events: auto;">
+    <span style="width: 1px; height: 18px; background: rgba(255,255,255,.18);"></span>
+    <dc-import name="Site Nav" hint-size="200px,40px"></dc-import>
+    <dc-import name="User Menu" hint-size="40px,40px" style="margin-left: auto; order: 99;"></dc-import>
+  </header>
+
+  <!-- ══ BLOCK: Vision hero ══ -->
+  <section data-block="Vision hero" data-screen-label="01 Hero" aria-label="KORTX Creative Ecosystem" style="position: relative; z-index: 1; display: flex; flex-direction: column; align-items: center; gap: clamp(16px, 2.4vh, 26px); padding: clamp(96px, 13vh, 128px) clamp(20px, 4vw, 56px) 0; text-align: center;">
+    <div style="font-size: 11px; font-weight: 600; letter-spacing: .18em; text-transform: uppercase; color: var(--lime-300); animation: kx-rise 600ms cubic-bezier(.16,1,.3,1) 150ms both;">KORTX Creative Labs</div>
+    <h1 style="margin: 0; max-width: 1000px; font-size: clamp(34px, 6vw, 80px); font-weight: 800; line-height: 1.02; letter-spacing: -.04em; text-wrap: balance;">
+      <span style="display: block; overflow: hidden; padding-bottom: .1em; margin-bottom: -.1em;"><span style="display: block; animation: kx-line 900ms cubic-bezier(.16,1,.3,1) 250ms both;">One creative system.</span></span>
+      <span style="display: block; overflow: hidden; padding-bottom: .1em; margin-bottom: -.1em;"><span style="display: block; animation: kx-line 900ms cubic-bezier(.16,1,.3,1) 380ms both;">Every team, every pitch.</span></span>
+    </h1>
+    <p style="margin: 0; max-width: 700px; font-size: clamp(15px, 1.5vw, 19px); line-height: 1.5; color: rgba(255,255,255,.76); text-wrap: pretty; animation: kx-rise 700ms cubic-bezier(.16,1,.3,1) 560ms both;">Make our creative easier to find, explain, and sell. Sellers build tailored pitches faster, clients play with interactive ads and see why each one fits, and every team works from one design system and a cohesive builder.</p>
+    <div style="display: flex; flex-direction: column; align-items: center; gap: 18px; animation: kx-rise 700ms cubic-bezier(.16,1,.3,1) 680ms both;">
+      <a href="{{ signInHref }}" data-focusable="1" style="display: inline-flex; align-items: center; gap: 8px; height: 46px; padding: 0 22px; border-radius: 999px; border: 1px solid rgba(255,255,255,.16); background: rgba(255,255,255,.06); color: #fff; font-size: 14px; font-weight: 600; text-decoration: none; transition: background 200ms cubic-bezier(.16,1,.3,1), border-color 200ms cubic-bezier(.16,1,.3,1), box-shadow 200ms cubic-bezier(.16,1,.3,1), transform 200ms cubic-bezier(.16,1,.3,1);" style-hover="background: rgba(109,94,240,.16); border-color: rgba(167,139,250,.6); color: #fff; text-decoration: none; transform: translateY(-2px); box-shadow: 0 0 0 1px rgba(109,94,240,.35), 0 0 32px rgba(109,94,240,.55), 0 0 64px rgba(214,125,240,.25)" style-active="transform: scale(.985)">Sign Up or Sign In to Build a Proposal</a>
+      <a href="#how-it-works" style="display: inline-flex; align-items: center; gap: 14px; padding: 6px 4px; color: rgba(255,255,255,.8); font-size: 15px; font-weight: 600; transition: color 200ms cubic-bezier(.16,1,.3,1);" style-hover="color: var(--blue-300)">
+        <span aria-hidden="true" style="display: inline-block; color: var(--blue-400); font-size: 18px; animation: kx-bob 1.6s ease-in-out infinite;">↓</span>
+        <span>Scroll down to see how it all works</span>
+        <span aria-hidden="true" style="display: inline-block; color: var(--blue-400); font-size: 18px; animation: kx-bob 1.6s ease-in-out 200ms infinite;">↓</span>
+      </a>
+    </div>
+    <div style="position: relative; width: min(1040px, 100%); margin-top: clamp(0px, 1vh, 12px); animation: kx-rise 900ms cubic-bezier(.16,1,.3,1) 760ms both;">
+      <div aria-hidden="true" style="position: absolute; left: 50%; top: 54%; width: 110%; height: 120%; transform: translate(-50%, -50%); pointer-events: none; filter: blur(60px); background: radial-gradient(closest-side, rgba(0,204,255,.26), rgba(109,94,240,.18) 55%, rgba(0,204,255,0) 80%);"></div>
+      <div data-space-fade style="position: relative; animation: kx-float 9s ease-in-out infinite;">
+        <img src="assets/vision/hero-ads.png" alt="Interactive KORTX creative for Bose, Genesis, Visit Arizona and Art &amp; Jake's" style="display: block; width: 100%; aspect-ratio: 1672 / 941; object-fit: cover;">
+      </div>
+    </div>
+  </section>
+
+  <section id="how-it-works" data-block="How it works" data-screen-label="03 How it works" aria-label="How it works" style="position: relative; z-index: 1; max-width: 1180px; margin: 0 auto; padding: clamp(48px, 8vh, 88px) clamp(20px, 4vw, 56px); scroll-margin-top: 40px;">
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 420px), 1fr)); gap: 20px;"><article data-reveal style="display: flex; flex-direction: column; gap: 18px; padding: clamp(22px, 3vw, 32px); border-radius: 16px; background: #070B15; border: 1px solid rgba(255,255,255,.08); box-shadow: inset 0 1px 0 rgba(255,255,255,.05), 0 24px 60px rgba(0,0,0,.45);"><div style="font-size: 11px; font-weight: 600; letter-spacing: .18em; text-transform: uppercase; color: var(--lime-300);">For Our Teams</div><h3 style="margin: 0; font-size: clamp(22px, 2.4vw, 30px); font-weight: 800; line-height: 1.12; letter-spacing: -.025em; text-wrap: balance;">Build tailored pitches faster, from work we stand behind.</h3><ul style="list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 16px;"><li style="display: flex; gap: 14px; align-items: flex-start;"><span aria-hidden="true" style="flex: none; width: 2px; align-self: stretch; background: var(--blue-400); border-radius: 2px;"></span><span><span style="display: block; font-size: 16px; font-weight: 700;">A Single Creative Platform</span><span style="display: block; margin-top: 3px; font-size: 15px; line-height: 1.5; color: rgba(255,255,255,.76);">Every team starts from one cohesive look and feel, with pre-approved work, metadata, and standards in one shared library.<span style="display: flex; flex-wrap: wrap; gap: 16px; margin-top: 6px;"><a href="https://kortx-creative-labs.netlify.app/style-guide" target="_blank" rel="noreferrer" style="font-size: 14px; font-weight: 600;">Build Reference Style Guide ↗</a></span></span></span></li><li style="display: flex; gap: 14px; align-items: flex-start;"><span aria-hidden="true" style="flex: none; width: 2px; align-self: stretch; background: var(--blue-400); border-radius: 2px;"></span><span><span style="display: block; font-size: 16px; font-weight: 700;">Sellers personalize in minutes</span><span style="display: block; margin-top: 3px; font-size: 15px; line-height: 1.5; color: rgba(255,255,255,.76);">Sellers assemble interactive blocks and custom creative mocks tailored to the client’s needs, so the client sees how each ad works and why it fits, bringing them to a decision sooner. AI drafts the copy; sellers edit, save, and send it to the client. Every proposal also includes the seller’s headshot, contact information, and call to action, set once in their profile builder, so prospects know exactly who to call.<span style="display: flex; flex-wrap: wrap; gap: 16px; margin-top: 6px;"><a href="https://kortx-creative-labs.netlify.app/sign-in?next=/builder" target="_blank" rel="noreferrer" style="font-size: 14px; font-weight: 600;">Page Builder ↗</a><a href="https://kortx-creative-labs.netlify.app/sign-in?next=/profile" target="_blank" rel="noreferrer" style="font-size: 14px; font-weight: 600;">Profile Builder ↗</a></span></span></span></li></ul></article><article data-reveal style="display: flex; flex-direction: column; gap: 18px; padding: clamp(22px, 3vw, 32px); border-radius: 16px; background: #070B15; border: 1px solid rgba(255,255,255,.08); box-shadow: inset 0 1px 0 rgba(255,255,255,.05), 0 24px 60px rgba(0,0,0,.45);"><div style="font-size: 11px; font-weight: 600; letter-spacing: .18em; text-transform: uppercase; color: var(--lime-300);">For Our Clients</div><h3 style="margin: 0; font-size: clamp(22px, 2.4vw, 30px); font-weight: 800; line-height: 1.12; letter-spacing: -.025em; text-wrap: balance;">Play with the creative and see why it fits.</h3><ul style="list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 16px;"><li style="display: flex; gap: 14px; align-items: flex-start;"><span aria-hidden="true" style="flex: none; width: 2px; align-self: stretch; background: var(--blue-400); border-radius: 2px;"></span><span><span style="display: block; font-size: 16px; font-weight: 700;">Explore & experiment</span><span style="display: block; margin-top: 3px; font-size: 15px; line-height: 1.5; color: rgba(255,255,255,.76);">Try live interactions and change dynamic triggers like weather, time, and location, then watch the creative respond and understand why it changed and what’s measurable.<span style="display: block; margin-top: 6px;"><a href="https://kortx-creative-labs.netlify.app/" target="_blank" rel="noreferrer" style="font-size: 14px; font-weight: 600;">Creative Playground ↗</a></span></span></span></li><li style="display: flex; gap: 14px; align-items: flex-start;"><span aria-hidden="true" style="flex: none; width: 2px; align-self: stretch; background: var(--blue-400); border-radius: 2px;"></span><span><span style="display: block; font-size: 16px; font-weight: 700;">See it for their brand</span><span style="display: block; margin-top: 3px; font-size: 15px; line-height: 1.5; color: rgba(255,255,255,.76);">A tailored interactive proposal explains why each ad fits their objectives and how success is measured.<span style="display: block; margin-top: 6px;"><a href="https://kortx-creative-labs.netlify.app/example-proposal" target="_blank" rel="noreferrer" style="font-size: 14px; font-weight: 600;">Example Proposal ↗</a></span></span></span></li></ul></article></div>
+
+  </section>
+
+  <section id="how-it-connects" data-block="How it connects" data-screen-label="04 How it connects" aria-labelledby="connect-h" style="position: relative; z-index: 1; max-width: 1180px; margin: 0 auto; padding: clamp(48px, 8vh, 88px) clamp(20px, 4vw, 56px); scroll-margin-top: 40px;">
+    <div data-reveal style="display: flex; flex-direction: column; align-items: center; text-align: center; gap: 12px; margin-bottom: 32px;"><div style="font-size: 11px; font-weight: 600; letter-spacing: .18em; text-transform: uppercase; color: var(--lime-300);">How It Connects</div><h2 id="connect-h" style="margin: 0; max-width: 860px; margin: 0 auto; font-size: clamp(28px, 3.6vw, 46px); font-weight: 800; line-height: 1.06; letter-spacing: -.035em; text-wrap: balance;"><span style="display: block; overflow: hidden; padding-bottom: .1em; margin-bottom: -.1em;"><span data-line style="display: block; transform: translateY(105%);">One foundation. Every client experience.</span></span></h2></div>
+    <ol ref="{{ flowRef }}" aria-label="Creative Database and Design System, then Creative Playground, then Personalized Pitch" style="list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; align-items: stretch; gap: 16px;"><li data-reveal style="flex: 1 1 calc((760px - 100%) * 999); min-width: 0; display: flex; flex-direction: column; gap: 12px; padding: 24px; border-radius: 16px; background: #070B15; border: 1px solid rgba(255,255,255,.08); box-shadow: inset 0 1px 0 rgba(255,255,255,.05), 0 24px 60px rgba(0,0,0,.45);"><div style="display: flex; align-items: center; gap: 12px;"><span style="display: grid; place-items: center; width: 36px; height: 36px; border-radius: 50%; border: 1px solid rgba(0,204,255,.5); background: rgba(0,204,255,.08); font-size: 15px; font-weight: 800; color: var(--blue-300);">1</span><span style="font-size: 11px; font-weight: 600; letter-spacing: .18em; text-transform: uppercase; color: rgba(255,255,255,.6);">Foundation</span></div><h3 style="margin: 0; font-size: 22px; font-weight: 700; line-height: 1.15; letter-spacing: -.02em; text-wrap: balance;">Creative Database + Design System</h3><p style="margin: 0; font-size: 15px; line-height: 1.55; color: rgba(255,255,255,.76); text-wrap: pretty;">Approved work and one cohesive look and feel, maintained by Creative.</p><div style="margin-top: auto; padding-top: 12px; border-top: 1px solid rgba(255,255,255,.08); display: flex; justify-content: center;"><span style="align-self: center; text-align: center; padding: 4px 10px; border-radius: 999px; font-size: 11px; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; background: rgba(190,242,100,.10); border: 1px solid rgba(190,242,100,.4); color: var(--lime-300);">Best for Internal Teams</span></div></li><li aria-hidden="true" style="flex: 0 0 max(40px, calc((760px - 100%) * 999)); max-width: 100%; align-self: center; display: flex; justify-content: center;"><span data-arrow style="display: flex; align-items: center; justify-content: center; width: 40px; height: 40px; border-radius: 50%; background: rgba(0,204,255,.10); color: var(--blue-400); font-size: 18px; font-weight: 800; transition: transform 200ms cubic-bezier(.16,1,.3,1);">→</span></li><li data-reveal style="flex: 1 1 calc((760px - 100%) * 999); min-width: 0; display: flex; flex-direction: column; gap: 12px; padding: 24px; border-radius: 16px; background: #070B15; border: 1px solid rgba(255,255,255,.08); box-shadow: inset 0 1px 0 rgba(255,255,255,.05), 0 24px 60px rgba(0,0,0,.45);"><div style="display: flex; align-items: center; gap: 12px;"><span style="display: grid; place-items: center; width: 36px; height: 36px; border-radius: 50%; border: 1px solid rgba(0,204,255,.5); background: rgba(0,204,255,.08); font-size: 15px; font-weight: 800; color: var(--blue-300);">2</span><span style="font-size: 11px; font-weight: 600; letter-spacing: .18em; text-transform: uppercase; color: rgba(255,255,255,.6);">Discovery</span></div><h3 style="margin: 0; font-size: 22px; font-weight: 700; line-height: 1.15; letter-spacing: -.02em; text-wrap: balance;">Creative Playground</h3><p style="margin: 0; font-size: 15px; line-height: 1.55; color: rgba(255,255,255,.76); text-wrap: pretty;">Live, hands-on ads that respond to signals like weather, time, and ZIP code.</p><div style="margin-top: auto; padding-top: 12px; border-top: 1px solid rgba(255,255,255,.08); display: flex; justify-content: center;"><span style="align-self: center; text-align: center; padding: 4px 10px; border-radius: 999px; font-size: 11px; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; background: rgba(190,242,100,.10); border: 1px solid rgba(190,242,100,.4); color: var(--lime-300);">Best for Any Potential Client</span></div></li><li aria-hidden="true" style="flex: 0 0 max(40px, calc((760px - 100%) * 999)); max-width: 100%; align-self: center; display: flex; justify-content: center;"><span data-arrow style="display: flex; align-items: center; justify-content: center; width: 40px; height: 40px; border-radius: 50%; background: rgba(0,204,255,.10); color: var(--blue-400); font-size: 18px; font-weight: 800; transition: transform 200ms cubic-bezier(.16,1,.3,1);">→</span></li><li data-reveal style="flex: 1 1 calc((760px - 100%) * 999); min-width: 0; display: flex; flex-direction: column; gap: 12px; padding: 24px; border-radius: 16px; background: #070B15; border: 1px solid rgba(0,204,255,.4); box-shadow: inset 0 1px 0 rgba(255,255,255,.05), 0 24px 60px rgba(0,0,0,.45), 0 0 60px rgba(0,204,255,.14);"><div style="display: flex; align-items: center; gap: 12px;"><span style="display: grid; place-items: center; width: 36px; height: 36px; border-radius: 50%; border: 1px solid rgba(0,204,255,.5); background: rgba(0,204,255,.08); font-size: 15px; font-weight: 800; color: var(--blue-300);">3</span><span style="font-size: 11px; font-weight: 600; letter-spacing: .18em; text-transform: uppercase; color: rgba(255,255,255,.6);">Proposal</span></div><h3 style="margin: 0; font-size: 22px; font-weight: 700; line-height: 1.15; letter-spacing: -.02em; text-wrap: balance;">Personalized Pitch</h3><p style="margin: 0; font-size: 15px; line-height: 1.55; color: rgba(255,255,255,.76); text-wrap: pretty;">Tailored interactive mocks, the reasoning behind each creative recommendation, and the seller’s contact card.</p><div style="margin-top: auto; padding-top: 12px; border-top: 1px solid rgba(255,255,255,.08); display: flex; justify-content: center;"><span style="align-self: center; text-align: center; padding: 4px 10px; border-radius: 999px; font-size: 11px; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; background: rgba(190,242,100,.10); border: 1px solid rgba(190,242,100,.4); color: var(--lime-300);">Best for Prospective Clients in the Official Proposal Phase</span></div></li></ol>
+    <!-- Proof: the example proposal as the system's output -->
+    <article data-reveal data-block="Proof preview" style="margin-top: 20px; display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 340px), 1fr)); gap: clamp(20px, 3vw, 40px); align-items: center; padding: clamp(20px, 3vw, 36px); border-radius: 16px; background: #070B15; border: 1px solid rgba(0,204,255,.28); box-shadow: inset 0 1px 0 rgba(255,255,255,.06), 0 24px 60px rgba(0,0,0,.45), 0 0 80px rgba(0,204,255,.10);">
+      <div style="display: flex; flex-direction: column; gap: 12px;">
+        <div style="display: flex; align-items: center; gap: 10px; flex-wrap: wrap;">
+          <span style="font-size: 11px; font-weight: 600; letter-spacing: .18em; text-transform: uppercase; color: var(--lime-300);">Proof · Example Proposal</span>
+          <span style="padding: 3px 9px; border-radius: 999px; font-size: 11px; font-weight: 600; border: 1px solid rgba(255,255,255,.22); color: rgba(255,255,255,.72);">Example · In Progress</span>
+        </div>
+        <h3 style="margin: 0; font-size: clamp(26px, 3vw, 38px); font-weight: 800; line-height: 1.08; letter-spacing: -.03em; text-wrap: balance;">See the finished client experience.</h3>
+        <p style="margin: 0; max-width: 460px; font-size: 16px; line-height: 1.55; color: rgba(255,255,255,.76);">One presentation brings together the creative, the recommendation, and the next step.</p>
+        <div style="padding-top: 6px;">
+          <a href="{{ exampleHref }}" target="_blank" rel="noreferrer" style="display: inline-flex; align-items: center; height: 46px; padding: 0 22px; border-radius: 999px; background: var(--blue-400); color: #001830; font-size: 14px; font-weight: 700; transition: background 200ms cubic-bezier(.16,1,.3,1);" style-hover="background: var(--blue-300); color: #001830">View Example ↗</a>
+        </div>
+      </div>
+      <div ref="{{ previewRef }}" aria-hidden="true" style="position: relative; width: 100%; aspect-ratio: 16 / 10; border-radius: 12px; overflow: hidden; border: 1px solid rgba(255,255,255,.12); background: #001830;">
+        <iframe src="Proposal Example.dc.html" title="Example proposal preview" tabindex="-1" loading="lazy" scrolling="no" style="position: absolute; top: 0; left: 0; width: 1280px; height: 800px; border: 0; transform-origin: 0 0; transform: scale(.4); pointer-events: none;"></iframe>
+        <div style="position: absolute; inset: auto 0 0 0; height: 30%; background: linear-gradient(to top, rgba(0,10,22,.92), transparent); pointer-events: none;"></div>
+      </div>
+    </article>
+  </section>
+
+  <!-- ══ BLOCK: Future expansion ══ -->
+  <section data-block="Future expansion" data-screen-label="05 Future expansion" aria-labelledby="future-h" style="position: relative; z-index: 1; max-width: 1180px; margin: 0 auto; padding: clamp(48px, 8vh, 88px) clamp(20px, 4vw, 56px);">
+    <div data-reveal style="display: flex; flex-direction: column; align-items: center; text-align: center; gap: 12px; margin-bottom: 32px;">
+      <div style="display: flex; align-items: center; justify-content: center; gap: 10px; flex-wrap: wrap;">
+        <span style="font-size: 11px; font-weight: 600; letter-spacing: .18em; text-transform: uppercase; color: var(--lime-300);">Future Expansion</span>
+        <span style="padding: 3px 9px; border-radius: 999px; font-size: 11px; font-weight: 600; border: 1px dashed rgba(255,255,255,.3); color: rgba(255,255,255,.75);">Planned</span>
+      </div>
+      <h2 id="future-h" style="margin: 0; max-width: 860px; margin: 0 auto; font-size: clamp(28px, 3.6vw, 46px); font-weight: 800; line-height: 1.06; letter-spacing: -.035em; text-wrap: balance;">
+        <span style="display: block; overflow: hidden; padding-bottom: .1em; margin-bottom: -.1em;"><span data-line style="display: block; transform: translateY(105%);">More than a pitch.</span></span>
+        <span style="display: block; overflow: hidden; padding-bottom: .1em; margin-bottom: -.1em;"><span data-line style="display: block; transform: translateY(105%);">More than proposals and mocks.</span></span>
+      </h2>
+      <p data-fade style="margin: 0 auto; max-width: 700px; font-size: 17px; line-height: 1.55; color: rgba(255,255,255,.76); text-wrap: pretty; opacity: 0; transform: translateY(12px); transition: opacity 600ms cubic-bezier(.16,1,.3,1) 200ms, transform 600ms cubic-bezier(.16,1,.3,1) 200ms;">A new feedback system for existing clients, planned after the core workflow is validated.</p>
+    </div>
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 320px), 1fr)); gap: 20px;">
+      <sc-for list="{{ future }}" as="f" hint-placeholder-count="2">
+        <article data-reveal style="display: flex; flex-direction: column; gap: 8px; padding: 24px; border-radius: 16px; background: #070B15; border: 1px solid rgba(255,255,255,.08); box-shadow: inset 0 1px 0 rgba(255,255,255,.05), 0 24px 60px rgba(0,0,0,.45);">
+          <div style="display: flex; align-items: center; justify-content: space-between; gap: 8px; flex-wrap: wrap;">
+            <h3 style="margin: 0; font-size: 22px; font-weight: 700; letter-spacing: -.02em; color: var(--blue-300);">{{ f.name }}</h3>
+            <span style="padding: 3px 9px; border-radius: 999px; font-size: 11px; font-weight: 600; border: 1px dashed rgba(255,255,255,.28); color: rgba(255,255,255,.65);">Coming Soon</span>
+          </div>
+          <p style="margin: 0; font-size: 15px; line-height: 1.55; color: rgba(255,255,255,.76); text-wrap: pretty;">{{ f.text }}</p>
+        </article>
+      </sc-for>
+    </div>
+  </section>
+
+  <footer data-block="Vision close" style="position: relative; z-index: 1; max-width: 1280px; margin: 0 auto; padding: 24px clamp(20px, 4vw, 56px) clamp(36px, 5vw, 60px); text-align: center;">
+    <div style="padding-top: 20px; border-top: 1px solid rgba(255,255,255,.07); font-size: 11px; font-weight: 600; letter-spacing: .18em; text-transform: uppercase; color: var(--blue-400);">Built with grit in Detroit.</div>
+  </footer>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  state = { band: 'cold' };
+  previewRef = React.createRef();
+  flowRef = React.createRef();
+
+  componentDidMount() {
+    const reduce = window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches;
+    const run = el => {
+      el.querySelectorAll('[data-line]').forEach((l, i) => { l.style.animation = reduce ? 'none' : 'kx-line 900ms cubic-bezier(.16,1,.3,1) ' + (i * 130) + 'ms both'; l.style.transform = reduce ? 'none' : ''; });
+      el.querySelectorAll('[data-fade]').forEach(f => { f.style.opacity = 1; f.style.transform = 'none'; });
+      if (!el.hasAttribute('data-reveal-done')) {
+        el.setAttribute('data-reveal-done', '');
+        const sibs = el.parentElement ? Array.from(el.parentElement.children).filter(c => c.hasAttribute('data-reveal')) : [];
+        const d = reduce ? 0 : Math.max(0, sibs.indexOf(el)) * 140;
+        el.style.transition = 'opacity 700ms cubic-bezier(.16,1,.3,1) ' + d + 'ms, transform 700ms cubic-bezier(.16,1,.3,1) ' + d + 'ms';
+        el.style.opacity = 1; el.style.transform = 'none';
+      }
+    };
+    const prep = t => { t.setAttribute('data-seen', ''); if (!reduce) { t.style.opacity = 0; t.style.transform = 'translateY(24px)'; } };
+    const all = () => document.querySelectorAll('[data-reveal]:not([data-seen])');
+    if (reduce || !('IntersectionObserver' in window)) { this.observeNew = () => all().forEach(t => { t.setAttribute('data-seen', ''); run(t); }); }
+    else {
+      this.io = new IntersectionObserver(es => es.forEach(en => { if (en.isIntersecting) { run(en.target); this.io.unobserve(en.target); } }), { threshold: .12, rootMargin: '0px 0px -6% 0px' });
+      this.observeNew = () => all().forEach(t => { prep(t); this.io.observe(t); });
+    }
+    this.observeNew();
+    setTimeout(() => this.observeNew(), 400);
+
+    const fit = () => { const el = this.previewRef.current; if (!el) return; const f = el.querySelector('iframe'); if (f) f.style.transform = 'scale(' + (el.clientWidth / 1280) + ')'; };
+    if (window.ResizeObserver) { this.ro = new ResizeObserver(fit); this.previewRef.current && this.ro.observe(this.previewRef.current); }
+    fit();
+    const flow = () => { const ol = this.flowRef.current; if (!ol) return; const stacked = ol.clientWidth < 760; ol.querySelectorAll('[data-arrow]').forEach(a => { a.style.transform = stacked ? 'rotate(90deg)' : 'none'; }); };
+    if (window.ResizeObserver && this.flowRef.current) { this.fro = new ResizeObserver(flow); this.fro.observe(this.flowRef.current); }
+    flow();
+  }
+  componentDidUpdate() { this.observeNew && this.observeNew(); }
+  componentWillUnmount() { this.io && this.io.disconnect(); this.ro && this.ro.disconnect(); this.fro && this.fro.disconnect(); }
+
+  pickBand = e => this.setState({ band: e.currentTarget.dataset.band });
+
+  renderVals() {
+    const L = 'https://kortx-creative-labs.netlify.app';
+    const BANDS = {
+      cold: { label: 'Below 40°F', src: 'assets/work/dco/below-40/index.html',
+        signal: 'Local temperature at the moment of the impression, read from a weather feed.',
+        rule: '0°F to 39°F serves the cold-weather row of the client’s intake sheet.',
+        change: 'Headline “Cold weather. Cozy coffee.” with a hot coffee product shot.',
+        measure: 'Order CTA clicks and click-through rate for the cold-weather version. Connected ordering data can measure purchases following those visits.' },
+      mild: { label: '40–70°F', src: 'assets/work/dco/40-70/index.html',
+        signal: 'Local temperature at the moment of the impression, read from a weather feed.',
+        rule: '40°F to 70°F serves the mild-weather row of the client’s intake sheet.',
+        change: 'Headline “Chilly days. A little indulgence.” with an indulgent coffee shot.',
+        measure: 'Order CTA clicks and click-through rate for the mild-weather version, with purchases measured through connected ordering data.' },
+      warm: { label: 'Above 70°F', src: 'assets/work/dco/above-70/index.html',
+        signal: 'Local temperature at the moment of the impression, read from a weather feed.',
+        rule: '71°F to 100°F serves the warm-weather row of the client’s intake sheet.',
+        change: 'Headline “Hot weather. Cool coffee.” with an iced coffee product shot.',
+        measure: 'Order CTA clicks and click-through rate for the hot-weather version. Connected ordering data can show whether those visits lead to purchases.' }
+    };
+    const cur = BANDS[this.state.band] || BANDS.cold;
+    const ok = { badgeBorder: '1px solid rgba(0,204,255,.4)', badgeColor: 'var(--blue-300)' };
+    const plan = { badgeBorder: '1px dashed rgba(255,255,255,.28)', badgeColor: 'rgba(255,255,255,.65)' };
+
+    return {
+      exampleHref: L + '/example-proposal',
+      benefits: [
+        { who: 'Sales', text: 'Find relevant work and build tailored pitches faster.' },
+        { who: 'Clients', text: 'Understand the recommendation and experience the creative.' },
+        { who: 'Creative', text: 'Reuse approved work while maintaining quality and control.' }
+      ],
+      layers: [
+        { layer: 'Foundation', names: 'Creative Database + Design System', status: 'Internal Beta',
+          title: 'Start with approved work.',
+          body: 'A shared creative library and consistent design standards give every team a reliable starting point. Creative maintains the work, metadata, and presentation standards.',
+          href: L + '/style-guide', cta: 'Open Style Guide', hasNote: false, hasSub: false },
+        { layer: 'Discovery', names: 'Creative Playground', status: 'Working Demo',
+          title: 'Help clients discover what fits.',
+          body: 'Explore creative by campaign goal, experience the interactions, and see how executions respond to different conditions.',
+          href: L + '/', cta: 'Open Playground', hasNote: false, hasSub: false },
+        { layer: 'Selling', names: 'Page Builder + Seller Profiles', status: 'Internal Beta',
+          title: 'Turn relevant creative into a tailored pitch.',
+          body: 'Bring selected creative, strategic rationale, and a personal point of contact together in one client-facing presentation.',
+          hasNote: true,
+          note: 'AI drafts the proposal sections from the seller’s brief; the seller reviews and edits each one before saving. No API key is required: Copy Prompt works with an existing ChatGPT or Claude seat. Seller Profiles add the seller’s headshot and contact card.',
+          href: L + '/sign-in?next=/builder', cta: 'Open Builder', hasSub: true, subHref: L + '/profile', subCta: 'Seller Profiles' }
+      ],
+      future: [
+        { name: 'Creative Feedback', text: 'Give existing clients one place to leave notes, track review status, and approve creative.' },
+        { name: 'AI Creative Builder', text: 'Brings AI mock generation and simple editing tools into one window, built on existing AI platforms, so every internal team can work quickly with little to no technical experience.' }
+      ],
+      stages: [
+        { num: '1', name: 'Explore & Experiment', line: 'Find creative that supports the campaign goal, then change a condition and see what changes in the creative—and why.', tool: 'Creative Playground', href: L + '/' },
+        { num: '2', name: 'Personalize', line: 'See a presentation shaped around the client’s brand and objectives.', tool: 'Page Builder', href: L + '/sign-in?next=/builder' }
+      ],
+      changeRows: [
+        Object.assign({ what: 'Proposal styling and strategy', how: 'The brand, brief, and selected creative shape an AI-drafted proposal the seller edits.', status: 'Available Internally' }, ok),
+        Object.assign({ what: 'Signal-driven variations', how: 'Rule-based versions built by Creative in advance, shown live in supported Playground examples.', status: 'Working Demo' }, ok),
+        Object.assign({ what: 'Modifying ad assets for a brand', how: 'Adapting existing ads with a prospect’s own brand assets.', status: 'Planned' }, plan),
+        Object.assign({ what: 'Generating new creative', how: 'Producing new concepts and mocks from a brief.', status: 'Planned' }, plan)
+      ],
+      scenario: [
+        { num: '1', title: 'Start with an objective', text: 'A seller’s coffee client wants to drive more order-ahead visits.' },
+        { num: '2', title: 'Select relevant creative', text: 'The seller picks a weather-responsive display unit from the Creative Database.' },
+        { num: '3', title: 'Explain it in a tailored proposal', text: 'The Page Builder drafts the recommendation and how it will be measured; the seller edits and saves it.' },
+        { num: '4', title: 'Show the signal at work', text: 'The client changes the temperature and sees the delivered build swap its headline and product.' }
+      ],
+      bands: Object.keys(BANDS).map(id => { const on = id === this.state.band; return { id, label: BANDS[id].label, on: String(on),
+        border: on ? '1px solid var(--blue-400)' : '1px solid rgba(255,255,255,.16)', bg: on ? 'rgba(0,204,255,.14)' : 'rgba(255,255,255,.04)', color: on ? '#fff' : 'rgba(255,255,255,.8)' }; }),
+      pickBand: this.pickBand,
+      band: cur, dcoSrc: cur.src, dcoTitle: 'Naba Coffee House ad, ' + cur.label + ' version',
+      previewRef: this.previewRef, flowRef: this.flowRef,
+      signUpHref: L + '/sign-in?next=/builder' + '#signup', signInHref: L + '/sign-in?next=/builder',
+      pilot: [
+        { label: 'Scope', text: 'Use the existing library, Creative Playground, and Page Builder in selected sales opportunities.', confirm: false },
+        { label: 'Participants', text: 'A small cross-functional pilot group from Sales, Strategy, and Creative.', confirm: false },
+        { label: 'Ownership', text: 'Creative maintains approved examples and standards; Strategy reviews recommendations; Sales tests the client workflow. Technical ownership must be assigned before rollout.', confirm: true },
+        { label: 'Resources', text: 'Confirm remaining development work, pilot duration, maintenance capacity, and recurring costs.', confirm: true },
+        { label: 'Success Measures', text: 'Proposal preparation time, repeat seller usage, client engagement, and qualified next steps.', confirm: false },
+        { label: 'Expansion', text: 'Use pilot findings to prioritize the AI Creative Builder and Creative Feedback capabilities.', confirm: false }
+      ]
+    };
+  }
+}
+</script>
+</body>
+</html>

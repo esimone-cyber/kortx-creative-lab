@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="ad.size" content="width=300,height=600"><title>The North Face | Clean Run</title><link rel="stylesheet" href="style.css"></head>
+<body><main id="ad" aria-label="The North Face Clean Run interactive ad" tabindex="0">
+<canvas id="scene" width="600" height="1200" aria-hidden="true"></canvas>
+<header><img src="assets/logo.svg" alt="The North Face" class="logo"><div class="edition">NEVER STOP<br>EXPLORING.</div></header>
+<section id="intro" class="screen active" role="button" tabindex="0" aria-label="Click anywhere to play Clean Run">
+<div class="intro-copy"><div class="eyebrow">YOUR NEXT ADVENTURE</div><h1>CLEAN<br>RUN</h1><p>It's our apparel,<br>but it's your winter.</p></div>
+<div class="intro-bottom"><div class="instructions"><span class="marker-icon">+</span><span>Collect markers. Dodge obstacles.</span></div><p class="controls-copy">Drag to steer · or use ← → keys</p><div class="click-play"><svg class="play-up" viewBox="0 0 20 20" aria-hidden="true"><path d="M10 16V4M5 9l5-5 5 5"/></svg><span>Click to Play</span><svg class="play-up" viewBox="0 0 20 20" aria-hidden="true"><path d="M10 16V4M5 9l5-5 5 5"/></svg></div></div>
+</section>
+<section id="play" class="screen" aria-label="Bobsledding game" hidden>
+<div class="hud"><div><span class="hud-label">SCORE</span><strong id="score">000</strong></div><div class="time-box"><span class="hud-label">SECONDS</span><strong id="time">10</strong></div><div class="hit-box"><span class="hud-label">HITS</span><strong id="hits">0</strong><span id="hitPenalty" aria-live="polite"></span></div><button id="pause" aria-label="Pause game"><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M7 4v12M13 4v12"/></svg></button></div><div class="time-track"><i id="timeFill"></i></div>
+<div id="gameHint">Drag left or right to find your line</div><div id="feedback" aria-live="polite"></div><div class="game-footer"><span><i class="tiny-marker"></i> +100</span><span>AVOID TREES & ROCKS</span></div>
+</section>
+<div id="countdown" hidden aria-live="assertive"><span id="countNum">3</span><small>Clean Run</small></div>
+<div id="paused" hidden><div class="pause-card"><div class="eyebrow">TAKE A BREATHER</div><h2>Ready to<br>drop back in?</h2><button id="resume" class="primary">Keep going</button><button id="apparel" class="text-button">explore our apparel</button></div></div>
+<section id="results" class="screen" aria-label="Final game score" hidden tabindex="-1">
+<div class="score-summary"><div class="eyebrow">CLEAN RUN COMPLETE</div><h2>Nice run.</h2><div class="score-caption">YOUR FINAL SCORE</div><strong id="summaryScore">0</strong><div class="score-unit">POINTS</div><div id="summaryHits">0 obstacle hits</div><div class="results-divider"></div><p>It's our apparel,<br>but it's your winter.</p></div>
+<div class="results-bottom"><button id="continue" class="primary">Explore our apparel</button><div class="next-caption">Your winter collection is up next</div><div class="results-progress"><i id="resultsFill"></i></div></div>
+</section>
+<section id="end" class="screen" aria-label="Results and winter collection" hidden>
+<div class="result-strip"><span id="resultLabel">CLEAN RUN COMPLETE</span><b><span id="finalScore">0</span> <small>PTS</small></b></div>
+<div class="end-copy"><div class="eyebrow">IT'S YOUR WINTER</div><h2>More winter.<br>More possibility.</h2></div>
+<div class="product-stage"><a id="productLink" href="https://www.thenorthface.com/en-us/c/shop-all/icons/nuptse-829805" target="_blank" rel="noopener noreferrer"><img id="productImage" src="assets/men.jpg" alt="Men’s 1996 Retro Nuptse Jacket"></a><button id="prev" class="arrow prev" aria-label="Previous winter product"><svg viewBox="0 0 20 20"><path d="m12 5-5 5 5 5"/></svg></button><button id="next" class="arrow next" aria-label="Next winter product"><svg viewBox="0 0 20 20"><path d="m8 5 5 5-5 5"/></svg></button><div class="product-tag">THE NUPTSE COLLECTION</div></div>
+<div class="product-info" aria-live="polite"><div id="productName">Men’s 1996 Retro Nuptse Jacket</div></div><div class="dots" aria-label="Choose a product"><button aria-label="Show men's jacket" class="selected"></button><button aria-label="Show women's jacket"></button><button aria-label="Show men's vest"></button></div>
+<a id="shop" class="primary" href="https://www.thenorthface.com/en-us/c/shop-all/icons/nuptse-829805" target="_blank" rel="noopener noreferrer">Shop Winter Layers</a>
+<button id="replay" class="replay"><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M4 7a6 6 0 1 1-1 6M4 3v5h5"/></svg>Play again</button>
+</section><div id="live" class="sr" aria-live="polite"></div>
+</main><script src="game.js"></script></body></html>

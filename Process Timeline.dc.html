@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<script src="kx-theme.js"></script>
+<link rel="stylesheet" href="_ds/kortx-design-guide-2026-5bc7ff27-9282-4218-938a-63d43f555d47/tokens/fonts.css">
+<link rel="stylesheet" href="_ds/kortx-design-guide-2026-5bc7ff27-9282-4218-938a-63d43f555d47/tokens/colors.css">
+<link rel="stylesheet" href="_ds/kortx-design-guide-2026-5bc7ff27-9282-4218-938a-63d43f555d47/tokens/typography.css">
+<link rel="stylesheet" href="_ds/kortx-design-guide-2026-5bc7ff27-9282-4218-938a-63d43f555d47/tokens/spacing.css">
+<link rel="stylesheet" href="_ds/kortx-design-guide-2026-5bc7ff27-9282-4218-938a-63d43f555d47/tokens/radius.css">
+<link rel="stylesheet" href="_ds/kortx-design-guide-2026-5bc7ff27-9282-4218-938a-63d43f555d47/tokens/elevation.css">
+<link rel="stylesheet" href="_ds/kortx-design-guide-2026-5bc7ff27-9282-4218-938a-63d43f555d47/tokens/motion.css">
+<link rel="stylesheet" href="_ds/kortx-design-guide-2026-5bc7ff27-9282-4218-938a-63d43f555d47/tokens/base.css">
+<link rel="stylesheet" href="_ds/kortx-design-guide-2026-5bc7ff27-9282-4218-938a-63d43f555d47/styles.css">
+<script src="_ds/kortx-design-guide-2026-5bc7ff27-9282-4218-938a-63d43f555d47/_ds_bundle.js"></script>
+<style>
+  html, body { margin: 0; padding: 0; background: #000509; }
+  @keyframes kx-datepulse { 0%, 100% { border-color: rgba(255,255,255,.14); box-shadow: 0 0 0 0 rgba(247,144,9,0); } 50% { border-color: rgba(247,144,9,.85); box-shadow: 0 0 0 3px rgba(247,144,9,.2), 0 0 22px rgba(247,144,9,.4); } }
+  @media (prefers-reduced-motion: reduce) { [data-date-pulse] { animation: none !important; } }
+  body { font-family: var(--font-body, Inter, Helvetica, sans-serif); -webkit-font-smoothing: antialiased; }
+  a { color: var(--blue-400); text-decoration: none; }
+  a:hover { color: var(--blue-300); }
+  input, button { font-family: inherit; }
+  input[type="date"]::-webkit-calendar-picker-indicator { filter: invert(1); opacity: .7; cursor: pointer; }
+  [data-focusable]:focus-visible { outline: none; border-color: var(--blue-400) !important; box-shadow: 0 0 0 3px rgba(0,204,255,.55) !important; }
+  [data-reveal] { opacity: 0; transform: translateY(12px); transition: opacity 600ms cubic-bezier(.16,1,.3,1), transform 600ms cubic-bezier(.16,1,.3,1); transition-delay: var(--rd, 0ms); }
+  [data-reveal][data-in] { opacity: 1; transform: none; }
+  [data-reveal="orb"] { transform: translateY(22px) scale(.86); transition-duration: 700ms; }
+  [data-reveal="menu"] { transform: scaleX(.04); transform-origin: 50% 50%; transition: transform 800ms cubic-bezier(.16,1,.3,1), opacity 300ms ease; transition-delay: var(--rd, 0ms); }
+  [data-reveal="menu"] button { opacity: 0; transform: translateY(6px); }
+  [data-reveal="menu"]:not([data-done]) button { transition: opacity 360ms cubic-bezier(.16,1,.3,1), transform 360ms cubic-bezier(.16,1,.3,1) !important; }
+  [data-reveal="menu"][data-in]:not([data-done]) button:nth-of-type(1), [data-reveal="menu"][data-in]:not([data-done]) > :nth-child(1) > button { transition-delay: calc(var(--rd, 0ms) + 390ms) !important; }
+  [data-reveal="menu"][data-in]:not([data-done]) button:nth-of-type(2), [data-reveal="menu"][data-in]:not([data-done]) > :nth-child(2) > button { transition-delay: calc(var(--rd, 0ms) + 480ms) !important; }
+  [data-reveal="menu"][data-in]:not([data-done]) button:nth-of-type(3), [data-reveal="menu"][data-in]:not([data-done]) > :nth-child(3) > button { transition-delay: calc(var(--rd, 0ms) + 570ms) !important; }
+  [data-reveal="menu"][data-in]:not([data-done]) button:nth-of-type(4), [data-reveal="menu"][data-in]:not([data-done]) > :nth-child(4) > button { transition-delay: calc(var(--rd, 0ms) + 660ms) !important; }
+  [data-reveal="menu"][data-in]:not([data-done]) button:nth-of-type(5), [data-reveal="menu"][data-in]:not([data-done]) > :nth-child(5) > button { transition-delay: calc(var(--rd, 0ms) + 750ms) !important; }
+  [data-reveal="menu"][data-in]:not([data-done]) button:nth-of-type(6), [data-reveal="menu"][data-in]:not([data-done]) > :nth-child(6) > button { transition-delay: calc(var(--rd, 0ms) + 840ms) !important; }
+  [data-reveal="menu"][data-in]:not([data-done]) button:nth-of-type(7), [data-reveal="menu"][data-in]:not([data-done]) > :nth-child(7) > button { transition-delay: calc(var(--rd, 0ms) + 930ms) !important; }
+  [data-reveal="menu"][data-in]:not([data-done]) button:nth-of-type(8), [data-reveal="menu"][data-in]:not([data-done]) > :nth-child(8) > button { transition-delay: calc(var(--rd, 0ms) + 1020ms) !important; }
+  [data-reveal="menu"][data-in]:not([data-done]) button:nth-of-type(9), [data-reveal="menu"][data-in]:not([data-done]) > :nth-child(9) > button { transition-delay: calc(var(--rd, 0ms) + 1110ms) !important; }
+  [data-reveal="menu"][data-in]:not([data-done]) button:nth-of-type(10), [data-reveal="menu"][data-in]:not([data-done]) > :nth-child(10) > button { transition-delay: calc(var(--rd, 0ms) + 1200ms) !important; }
+  [data-reveal="menu"][data-in]:not([data-done]) button:nth-of-type(11), [data-reveal="menu"][data-in]:not([data-done]) > :nth-child(11) > button { transition-delay: calc(var(--rd, 0ms) + 1290ms) !important; }
+  [data-reveal="menu"][data-in]:not([data-done]) button:nth-of-type(12), [data-reveal="menu"][data-in]:not([data-done]) > :nth-child(12) > button { transition-delay: calc(var(--rd, 0ms) + 1380ms) !important; }
+  [data-reveal="menu"][data-in]:not([data-done]) button:nth-of-type(13), [data-reveal="menu"][data-in]:not([data-done]) > :nth-child(13) > button { transition-delay: calc(var(--rd, 0ms) + 1470ms) !important; }
+  [data-reveal="menu"][data-in]:not([data-done]) button:nth-of-type(14), [data-reveal="menu"][data-in]:not([data-done]) > :nth-child(14) > button { transition-delay: calc(var(--rd, 0ms) + 1560ms) !important; }
+  [data-reveal="menu"][data-in] button { opacity: 1; transform: none; }
+  [data-gantt]::-webkit-scrollbar { height: 8px; }
+  [data-gantt]::-webkit-scrollbar-thumb { background: rgba(0,204,255,.35); border-radius: 8px; }
+  @media (prefers-reduced-motion: reduce) { [data-reveal] { opacity: 1; transform: none; } *, *::before, *::after { animation-duration: .001ms !important; transition-duration: .001ms !important; } }
+</style>
+</helmet>
+<div ref="{{ rootRef }}" style="font-family: var(--font-body, Inter, sans-serif); color: #fff;">
+  <section id="process" data-block="Offerings · Process Timeline" style="padding: clamp(56px, 8vh, 112px) 0; scroll-margin-top: 96px;">
+    <div style="display: flex; flex-direction: column; align-items: center; text-align: center;">
+      <h2 data-reveal="head" style="margin: 0; max-width: 900px; font-size: clamp(26px, 3.6vw, 46px); font-weight: 700; letter-spacing: -.03em; line-height: 1.05; text-wrap: balance; color: #fff;">Timeline, from start to finish</h2>
+    </div>
+
+    <div role="tablist" aria-label="Timeline type" style="display: flex; justify-content: center; margin-top: 32px; pointer-events: none;">
+      <div data-reveal="menu" style="pointer-events: auto; display: inline-flex; align-items: stretch; flex-wrap: wrap; justify-content: center; gap: 0; height: auto; min-height: 52px; padding: 0 6px; box-sizing: border-box; max-width: 100%; border-radius: 999px; border: 1px solid rgba(255,255,255,.12); background: rgba(255,255,255,.04); backdrop-filter: blur(22px) saturate(160%); -webkit-backdrop-filter: blur(22px) saturate(160%); box-shadow: inset 0 1px 0 rgba(255,255,255,.18), inset 0 -1px 0 rgba(0,0,0,.25), 0 18px 40px rgba(0,0,0,.4), 0 0 40px rgba(0,204,255,.10);">
+        <sc-for list="{{ tlTabs }}" as="tt" hint-placeholder-count="3">
+          <button type="button" role="tab" data-focusable="1" aria-selected="{{ tt.sel }}" data-k="{{ tt.id }}" onClick="{{ pickTl }}" style="{{ tt.style }}" style-hover="color: #fff; text-shadow: 0 0 22px rgba(138,124,248,.85)"><span aria-hidden="true" style="{{ tt.dot }}"></span>{{ tt.label }}</button>
+        </sc-for>
+      </div>
+    </div>
+
+    <div data-reveal="card" style="display: flex; flex-wrap: wrap; align-items: center; gap: 10px 14px; margin-top: 16px; padding: 12px 16px; border-radius: 12px; border: 1px solid rgba(255,255,255,.08); background: #070B15; box-shadow: inset 0 1px 0 rgba(255,255,255,.04), 0 18px 44px rgba(0,0,0,.4);">
+      <span id="launch-label" style="font-size: 13px; font-weight: 700; white-space: nowrap;">{{ dateLabel }}</span>
+      <div style="position: relative;">
+        <button type="button" data-focusable="1" aria-labelledby="launch-label" aria-haspopup="dialog" aria-expanded="{{ calOpenStr }}" onClick="{{ toggleCal }}" data-date-pulse="1" style="animation: {{ datePulse }}; display: inline-flex; align-items: center; justify-content: center; gap: 8px; width: 172px; box-sizing: border-box; white-space: nowrap; font-variant-numeric: tabular-nums; height: 40px; padding: 0 14px; border-radius: 8px; border: 1px solid rgba(255,255,255,.14); background: rgba(0,5,9,.6); color: #fff; font-size: 13px; font-weight: 600; cursor: pointer; transition: all 200ms cubic-bezier(.16,1,.3,1);" style-hover="border-color: rgba(167,139,250,.6); background: rgba(109,94,240,.16)">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2"></rect><path d="M16 2v4M8 2v4M3 10h18"></path></svg>
+          <span>{{ launchLabel }}</span>
+        </button>
+        <sc-if value="{{ calOpen }}" hint-placeholder-val="{{ false }}">
+          <div onClick="{{ closeCal }}" style="position: fixed; inset: 0; z-index: 40;"></div>
+          <div role="dialog" aria-label="Choose a launch date" onKeyDown="{{ calKey }}" style="position: absolute; top: calc(100% + 8px); left: 0; z-index: 41; width: 296px; padding: 16px; border-radius: 14px; border: 1px solid rgba(255,255,255,.08); background: #070B15; box-shadow: inset 0 1px 0 rgba(255,255,255,.04), 0 24px 60px rgba(0,0,0,.5);">
+            <div style="display: flex; align-items: center; justify-content: space-between; gap: 8px;">
+              <button type="button" data-focusable="1" aria-label="Previous month" data-d="-1" onClick="{{ calMonth }}" style="flex: none; display: grid; place-items: center; width: 32px; height: 32px; padding: 0; font-family: inherit; border-radius: 50%; border: 1px solid rgba(255,255,255,.16); background: rgba(255,255,255,.04); color: rgba(255,255,255,.7); cursor: pointer; transition: all 320ms cubic-bezier(.16,1,.3,1);" style-hover="border-color: rgba(0,204,255,.7); background: rgba(0,204,255,.14); color: #00CCFF"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.25" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m15 18-6-6 6-6"></path></svg></button>
+              <span style="font-size: 14px; font-weight: 700;">{{ calTitle }}</span>
+              <button type="button" data-focusable="1" aria-label="Next month" data-d="1" onClick="{{ calMonth }}" style="flex: none; display: grid; place-items: center; width: 32px; height: 32px; padding: 0; font-family: inherit; border-radius: 50%; border: 1px solid rgba(255,255,255,.16); background: rgba(255,255,255,.04); color: rgba(255,255,255,.7); cursor: pointer; transition: all 320ms cubic-bezier(.16,1,.3,1);" style-hover="border-color: rgba(0,204,255,.7); background: rgba(0,204,255,.14); color: #00CCFF"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.25" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 18 6-6-6-6"></path></svg></button>
+            </div>
+            <div style="display: grid; grid-template-columns: repeat(7, 1fr); gap: 2px; margin-top: 12px;">
+              <sc-for list="{{ calDow }}" as="dw" hint-placeholder-count="7"><span style="height: 28px; display: grid; place-items: center; font-size: 11px; font-weight: 600; letter-spacing: .08em; text-transform: uppercase; color: rgba(255,255,255,.5);">{{ dw }}</span></sc-for>
+              <sc-for list="{{ calDays }}" as="cd" hint-placeholder-count="35">
+                <button type="button" data-focusable="1" data-n="{{ cd.n }}" disabled="{{ cd.off }}" aria-label="{{ cd.aria }}" aria-pressed="{{ cd.sel }}" onClick="{{ pickDay }}" style="{{ cd.style }}">{{ cd.d }}</button>
+              </sc-for>
+            </div>
+            <div style="margin-top: 10px; font-size: 12px; color: rgba(255,255,255,.55);">Launches land on business days only.</div>
+          </div>
+        </sc-if>
+      </div>
+      <span style="flex: 1 1 0; min-width: 0;"></span>
+      <span style="font-size: 13px; white-space: nowrap; color: rgba(255,255,255,.76);"><strong style="font-weight: 700; color: #fff;">{{ totalDays }}</strong> business days needed for {{ totalWhat }}</span>
+      <span style="flex: 1 1 0; min-width: 0;"></span>
+      <div style="display: flex; flex-wrap: wrap; align-items: center; gap: 8px 12px; font-size: 12px; white-space: nowrap; font-weight: 600; color: rgba(255,255,255,.85);">
+        <span style="display: inline-flex; align-items: center; gap: 8px;"><span style="width: 14px; height: 8px; border-radius: 999px; background: #00CCFF;"></span>Due from KORTX</span>
+        <span style="display: inline-flex; align-items: center; gap: 8px;"><span style="width: 14px; height: 8px; border-radius: 999px; background: #D67DF0;"></span>Due from client</span>
+        <button type="button" data-focusable="1" onClick="{{ reset }}" style="height: 30px; padding: 0 12px; border-radius: 999px; border: 1px solid rgba(255,255,255,.14); background: rgba(255,255,255,.06); color: #fff; font-size: 12px; font-weight: 600; white-space: nowrap; cursor: pointer; transition: all 200ms cubic-bezier(.16,1,.3,1);" style-hover="transform: translateY(-2px); border-color: rgba(167,139,250,.6); background: rgba(109,94,240,.16); box-shadow: 0 0 32px rgba(109,94,240,.55)" style-active="transform: scale(.985)">Reset to Schedule</button>
+      </div>
+    </div>
+
+    <div data-reveal="card" style="margin-top: 16px; border-radius: 16px; border: 1px solid rgba(255,255,255,.08); background: #070B15; box-shadow: inset 0 1px 0 rgba(255,255,255,.04), 0 24px 60px rgba(0,0,0,.5); overflow: hidden;">
+      <div style="display: flex; flex-wrap: wrap; align-items: center; gap: 8px 20px; padding: 12px 16px; border-bottom: 1px solid rgba(255,255,255,.06); font-size: 12px; color: rgba(255,255,255,.62);">
+        <span>Business days only. Drag any step, or focus it and use ← →, to move the whole schedule.</span>
+        <span aria-hidden="true" style="align-self: stretch; width: 1px; background: rgba(255,255,255,.18);"></span>
+        <span>{{ startWhat }} should start by <strong style="font-weight: 700; color: #00CCFF;">{{ startLabel }}</strong></span>
+      </div>
+      <div data-gantt="1" ref="{{ ganttRef }}" style="overflow-x: auto; overscroll-behavior-x: contain;">
+        <div style="{{ ganttInner }}">
+          <sc-for list="{{ ticks }}" as="tk" hint-placeholder-count="0">
+            <div style="{{ tk.col }}">
+              <span style="{{ tk.mon }}">{{ tk.month }}</span>
+              <span style="{{ tk.num }}">{{ tk.day }}</span>
+            </div>
+          </sc-for>
+          <sc-for list="{{ lanes }}" as="ln" hint-placeholder-count="8">
+            <div style="position: relative; height: 48px; border-top: 1px solid rgba(255,255,255,.1);">
+              <span style="position: sticky; left: 0; z-index: 4; display: flex; align-items: center; gap: 10px; width: 170px; height: 100%; padding: 0 16px; box-sizing: border-box; background: #0B1220; border-right: 1px solid rgba(255,255,255,.08);">
+                <span style="{{ ln.dot }}"></span>
+                <span style="font-size: 13px; font-weight: 600; color: #fff; white-space: nowrap;">{{ ln.t }}</span>
+              </span>
+              <button type="button" data-focusable="1" onPointerDown="{{ onDown }}" onKeyDown="{{ onKey }}" aria-label="{{ ln.aria }}" style="{{ ln.bar }}">{{ ln.dur }}</button>
+            </div>
+          </sc-for>
+        </div>
+      </div>
+    </div>
+
+  </section>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:1200,&quot;height&quot;:1400}}">
+const DAY = 864e5, DW = 52, LABEL = 170, ROW = 48, HEAD = 52;
+const KX = '#00CCFF', CL = '#D67DF0';
+const toDay = s => Math.round(Date.parse(s + 'T00:00:00Z') / DAY);
+const toDate = n => new Date(n * DAY);
+const iso = n => toDate(n).toISOString().slice(0, 10);
+const fmtL = n => toDate(n).toLocaleDateString('en-US', { weekday: 'short', month: 'short', day: 'numeric', timeZone: 'UTC' });
+const isWk = n => { const w = toDate(n).getUTCDay(); return w === 0 || w === 6; };
+const addBiz = (n, k) => { let x = n; while (k > 0) { x++; if (!isWk(x)) k--; } return x; };
+const subBiz = (n, k) => { let x = n; while (k > 0) { x--; if (!isWk(x)) k--; } return x; };
+const bizBetween = (a, b) => { let c = 0; for (let x = a + 1; x <= b; x++) if (!isWk(x)) c++; return c; };
+const snap = n => { let x = n; while (isWk(x)) x++; return x; };
+const colsFrom = (r0, n) => { const out = [r0]; while (out.length < n) out.push(addBiz(out[out.length - 1], 1)); return out; };
+// Steps run back to back and end on launch. who: 'k' = KORTX, 'c' = client.
+const PROG = [
+  { t: 'Kick-off Call', days: 1, who: 'k', when: '15 business days out', d: 'Scheduled once the IO is signed, at least 3 weeks before launch.', owner: 'KORTX + Client' },
+  { t: 'Asset Delivery', days: 3, who: 'c', when: '3 business days', d: 'Provided by the client at least 2 weeks before launch.', owner: 'Client' },
+  { t: 'Asset Review', days: 1, who: 'k', when: '1 business day', d: 'KORTX reviews within 24 hours of receiving assets and promptly requests anything missing.', owner: 'KORTX' },
+  { t: 'Concept & Design', days: 4, who: 'k', when: '4 business days', d: 'Initial desktop mocks within 4 business days. Once approved, mobile ads and all animations are finalized.', owner: 'KORTX' },
+  { t: 'Client Feedback', days: 2, who: 'c', when: '2 business days', d: 'The client reviews the mocks and sends consolidated feedback within 2 business days.', owner: 'Client' },
+  { t: 'Revisions', days: 2, who: 'k', when: '2 business days', d: 'Each round is turned around within 48 hours of client feedback. All tags are implemented at this stage.', owner: 'KORTX' },
+  { t: 'Creative Audit', days: 2, who: 'k', when: '2 business days', d: 'Allow up to 48 hours for audit before launch.', owner: 'KORTX' },
+  { t: 'Launch', days: 1, who: 'k', when: 'Launch date', d: 'KORTX delivers the final product by the date the client sets, with all links provided.', owner: 'KORTX' }
+];
+const PROJ = [
+  { t: 'Kick-off Call', days: 1, who: 'k', owner: 'KORTX + Client' },
+  { t: 'Asset Delivery', days: 3, who: 'c', owner: 'Client' },
+  { t: 'Asset Review', days: 1, who: 'k', owner: 'KORTX' },
+  { t: 'Concept & Design', days: 4, who: 'k', owner: 'KORTX' },
+  { t: 'Client Feedback', days: 2, who: 'c', owner: 'Client' },
+  { t: 'Revisions', days: 2, who: 'k', owner: 'KORTX' },
+  { t: 'Final Delivery', days: 1, who: 'k', owner: 'KORTX' }
+];
+const AIV = [
+  { t: 'Kick-off Call', days: 1, who: 'k', owner: 'KORTX + Client' },
+  { t: 'Asset Delivery', days: 3, who: 'c', owner: 'Client' },
+  { t: 'Asset Review', days: 1, who: 'k', owner: 'KORTX' },
+  { t: 'Concept & Script', days: 4, who: 'k', owner: 'KORTX' },
+  { t: 'AI Video Generation', days: 3, who: 'k', owner: 'KORTX' },
+  { t: 'Client Feedback', days: 2, who: 'c', owner: 'Client' },
+  { t: 'Revisions', days: 2, who: 'k', owner: 'KORTX' },
+  { t: 'MP4 Delivery', days: 1, who: 'k', owner: 'KORTX' }
+];
+const TL = { prog: { label: 'Programmatic', steps: PROG, end: 'Launch', date: 'Desired launch date' }, proj: { label: 'Project Based Creative Production', steps: PROJ, end: 'Delivery', date: 'Desired delivery date' }, aiv: { label: 'AI Video Production', steps: AIV, end: 'Delivery', date: 'Desired delivery date' } };
+let STEPS = PROG, LEAD = 0;
+let TOTAL = 0;
+const useTl = k => { STEPS = (TL[k] || TL.prog).steps; LEAD = STEPS.slice(0, -1).reduce((n, s) => n + s.days, 0); TOTAL = LEAD + STEPS[STEPS.length - 1].days; };
+const shiftBiz = (n, k) => k >= 0 ? addBiz(n, k) : subBiz(n, -k);
+const spans = L => { const out = []; let end = L; for (let i = STEPS.length - 1; i >= 0; i--) { const start = subBiz(end, STEPS[i].days - 1); out[i] = [start, end]; end = subBiz(start, 1); } return out; };
+const defaultL = () => snap(Math.round(Date.now() / DAY) + 30);
+
+class Component extends DCLogic {
+  constructor(p) {
+    super(p);
+    useTl('prog');
+    const L = defaultL();
+    this.state = { tl: 'prog', L, r0: subBiz(L, LEAD) };
+    this.ganttRef = React.createRef();
+    this.rootRef = React.createRef();
+  }
+  componentDidMount() {
+    const g = this.ganttRef.current;
+    if (g && 'ResizeObserver' in window) { this.ro = new ResizeObserver(() => { const gw = g.clientWidth; if (gw !== this.state.gw) this.setState({ gw }); }); this.ro.observe(g); }
+    const r = this.rootRef.current;
+    if (r && !r.closest('[data-reveal-root]')) r.querySelectorAll('[data-reveal]').forEach(el => el.setAttribute('data-in', ''));
+  }
+  componentWillUnmount() { if (this.endDrag) this.endDrag(); this.ro && this.ro.disconnect(); }
+  // Move the whole schedule to launch column k (clamped so kick-off stays on the grid).
+  // Grid always spans kick-off → launch exactly; dragging shifts the dates by whole business days.
+  shift = (L0, k) => { const t = Math.round(Date.now() / DAY), L = shiftBiz(L0, k); const kick = subBiz(L, TOTAL - 1); this.setState({ L: kick < t ? addBiz(snap(t), TOTAL - 1) : L }); };
+  onDown = e => {
+    if (e.button !== undefined && e.button !== 0) return;
+    const x0 = e.clientX, L0 = this.state.L, btn = e.currentTarget, scroller = this.ganttRef.current;
+    btn.focus();
+    const move = ev => {
+      this.shift(L0, Math.round((ev.clientX - x0) / (this.dw || DW)));
+    };
+    const up = () => { window.removeEventListener('pointermove', move); window.removeEventListener('pointerup', up); window.removeEventListener('pointercancel', up); this.setState({ drag: false }); this.endDrag = null; };
+    window.addEventListener('pointermove', move);
+    window.addEventListener('pointerup', up);
+    window.addEventListener('pointercancel', up);
+    this.endDrag = up;
+    this.setState({ drag: true });
+    e.preventDefault();
+  };
+  onKey = e => {
+    if (e.key === 'ArrowLeft' || e.key === 'ArrowRight') { e.preventDefault(); this.shift(this.state.L, (e.key === 'ArrowRight' ? 1 : -1) * (e.shiftKey ? 5 : 1)); }
+  };
+  onLaunch = e => { if (!e.target.value) return; const L = snap(toDay(e.target.value)); this.setState({ L, r0: subBiz(L, LEAD) }); };
+  toggleCal = () => this.setState(s => { const d = toDate(s.L); return { cal: !s.cal, dateTouched: true, cm: [d.getUTCFullYear(), d.getUTCMonth()] }; });
+  closeCal = () => this.setState({ cal: false });
+  calKey = e => { if (e.key === 'Escape') this.setState({ cal: false }); };
+  calMonth = e => { const d = +e.currentTarget.dataset.d; this.setState(s => { let [y, m] = s.cm; m += d; if (m < 0) { m = 11; y--; } if (m > 11) { m = 0; y++; } return { cm: [y, m] }; }); };
+  pickDay = e => { const L = +e.currentTarget.dataset.n; this.setState({ L, r0: subBiz(L, LEAD), cal: false }); };
+  pickTl = e => { const k = e.currentTarget.dataset.k; useTl(k); this.setState(s => ({ tl: k, cal: false, r0: subBiz(s.L, LEAD) })); };
+  reset = () => { const L = defaultL(); this.setState({ L, r0: subBiz(L, LEAD) }); };
+  renderVals() {
+    useTl(this.state.tl);
+    const tlc = TL[this.state.tl] || TL.prog;
+    const { L, drag } = this.state, N = TOTAL, r0 = subBiz(L, N - 1), cols = colsFrom(r0, N), S = spans(L);
+    const dw = this.dw = Math.max(DW, this.state.gw ? (this.state.gw - LABEL) / N : DW);
+    const ci = n => { const k = cols.indexOf(n); return k < 0 ? (n < r0 ? 0 : N - 1) : k; };
+    const x = n => LABEL + ci(n) * dw;
+    const ticks = cols.map((n, k) => { const dt = toDate(n), first = k === 0 || toDate(cols[k - 1]).getUTCMonth() !== dt.getUTCMonth(), isL = n === L; return {
+      day: String(dt.getUTCDate()), month: first ? dt.toLocaleDateString('en-US', { month: 'short', timeZone: 'UTC' }) : '',
+      col: { position: 'absolute', top: 0, bottom: 0, left: x(n), width: dw, boxSizing: 'border-box', borderLeft: '1px solid rgba(255,255,255,' + (dt.getUTCDay() === 1 ? '.22' : '.1') + ')', background: k % 2 ? 'rgba(255,255,255,.025)' : 'transparent', display: 'flex', flexDirection: 'column', alignItems: 'center', paddingTop: 10, gap: 2 },
+      mon: { fontSize: 10, fontWeight: 700, letterSpacing: '.1em', textTransform: 'uppercase', color: 'var(--lime-300)', height: 14 },
+      num: { fontSize: 12, fontWeight: isL ? 800 : 600, color: isL ? KX : 'rgba(255,255,255,.75)' } }; });
+    const lanes = STEPS.map((m, i) => {
+      const [a, b] = S[i], c = m.who === 'c' ? CL : KX, span = (ci(b) - ci(a) + 1) * dw;
+      const w = span - 8, left = x(a) + 4;
+      const dur = m.days + (m.days === 1 ? ' day' : ' days');
+      return { t: m.t, dur, aria: `${m.t}, ${dur}, ${m.who === 'c' ? 'due from client' : 'due from KORTX'}. Use arrow keys to move the whole schedule.`,
+        dot: { flex: 'none', width: 8, height: 8, borderRadius: '50%', background: c, boxShadow: '0 0 10px ' + (m.who === 'c' ? 'rgba(214,125,240,.6)' : 'rgba(0,204,255,.6)') },
+        bar: { position: 'absolute', top: 9, left, width: w, zIndex: 2, height: ROW - 18, padding: 0, borderRadius: 999, whiteSpace: 'nowrap', cursor: drag ? 'grabbing' : 'grab', touchAction: 'none', userSelect: 'none',
+          fontSize: 12, fontWeight: 700, overflow: 'hidden', textOverflow: 'clip', color: '#001830', background: c, border: '1px solid ' + (m.who === 'c' ? '#EBB5F7' : '#66E0FF'),
+          boxShadow: drag ? '0 0 26px ' + (m.who === 'c' ? 'rgba(214,125,240,.7)' : 'rgba(0,204,255,.7)') : '0 0 16px ' + (m.who === 'c' ? 'rgba(214,125,240,.35)' : 'rgba(0,204,255,.35)'),
+          transition: 'box-shadow 200ms' } }; });
+    const steps = STEPS.map((m, i) => { const c = m.who === 'c' ? CL : KX; return { ...m, n: String(i + 1).padStart(2, '0'), date: i === 0 ? fmtL(S[i][0]) : (i === STEPS.length - 1 ? 'Launch ' : 'Due ') + fmtL(S[i][1]),
+      ownerStyle: { fontWeight: 600, color: c },
+      num: { display: 'grid', placeItems: 'center', flex: 'none', width: 36, height: 36, borderRadius: '50%', background: m.who === 'c' ? 'rgba(214,125,240,.14)' : 'rgba(0,204,255,.10)', color: c, fontSize: 13, fontWeight: 800 },
+      title: { flex: 1, fontSize: 17, fontWeight: 700, color: c, letterSpacing: '-.01em' } }; });
+    const today = Math.round(Date.now() / DAY);
+    const [cy, cmo] = this.state.cm || [toDate(L).getUTCFullYear(), toDate(L).getUTCMonth()];
+    const m0 = Math.round(Date.UTC(cy, cmo, 1) / DAY), lead = toDate(m0).getUTCDay(), dim = new Date(Date.UTC(cy, cmo + 1, 0)).getUTCDate();
+    const cal = { title: toDate(m0).toLocaleDateString('en-US', { month: 'long', year: 'numeric', timeZone: 'UTC' }), days: [] };
+    for (let k = 0; k < lead; k++) cal.days.push({ n: '', d: '', off: true, sel: 'false', aria: '', style: { height: 34, border: 0, background: 'transparent', visibility: 'hidden' } });
+    for (let k = 0; k < dim; k++) { const n = m0 + k, off = isWk(n) || n < today, sel = n === L, isT = n === today;
+      cal.days.push({ n: String(n), d: String(k + 1), off, sel: String(sel), aria: fmtL(n) + (off ? ', unavailable' : ''), style: { height: 34, borderRadius: 8, border: '1px solid ' + (sel ? '#00CCFF' : isT ? 'rgba(255,255,255,.3)' : 'transparent'), background: sel ? '#00CCFF' : 'transparent', color: sel ? '#001830' : off ? 'rgba(255,255,255,.25)' : '#fff', fontSize: 13, fontWeight: sel ? 800 : 600, cursor: off ? 'default' : 'pointer', padding: 0, fontFamily: 'inherit', transition: 'background 120ms, border-color 120ms' } }); }
+    const daysOut = L >= today ? bizBetween(today, L) : -bizBetween(L, today);
+    return {
+      rootRef: this.rootRef, ganttRef: this.ganttRef,
+      dateLabel: tlc.date, datePulse: this.state.cal ? 'none' : 'kx-datepulse 2.6s ease-in-out infinite', totalWhat: this.state.tl === 'prog' ? 'a typical launch' : 'typical delivery', pickTl: this.pickTl,
+      tlTabs: Object.keys(TL).map(id => { const on = id === this.state.tl; return { id, label: TL[id].label, sel: String(on), style: { position: 'relative', flex: 'none', display: 'flex', alignItems: 'center', gap: 8, minHeight: 52, padding: '0 16px', border: 0, background: 'transparent', color: on ? '#fff' : 'rgba(255,255,255,.62)', fontFamily: 'inherit', fontSize: 13, fontWeight: 600, letterSpacing: '-.01em', whiteSpace: 'nowrap', cursor: 'pointer', transition: 'color 200ms cubic-bezier(.16,1,.3,1), text-shadow 200ms cubic-bezier(.16,1,.3,1)' }, dot: { width: 5, height: 5, borderRadius: '50%', flex: 'none', background: on ? '#33D6FF' : 'rgba(255,255,255,.22)', boxShadow: on ? '0 0 8px rgba(0,204,255,.9)' : 'none', transition: 'all 200ms cubic-bezier(.16,1,.3,1)' } }; }),
+      startLabel: fmtL(subBiz(L, TOTAL - 1)), startWhat: 'Kick-off',
+      launchLabel: fmtL(L), calOpen: !!this.state.cal, calOpenStr: String(!!this.state.cal), toggleCal: this.toggleCal, closeCal: this.closeCal, calKey: this.calKey, calMonth: this.calMonth, pickDay: this.pickDay,
+      calTitle: cal.title, calDow: ['Su', 'Mo', 'Tu', 'We', 'Th', 'Fr', 'Sa'], calDays: cal.days, reset: this.reset,
+      totalDays: String(STEPS.reduce((n, s) => n + s.days, 0)),
+      ganttInner: { position: 'relative', width: LABEL + N * dw, paddingTop: HEAD },
+      ticks, lanes, onDown: this.onDown, onKey: this.onKey,
+      launchLine: { position: 'absolute', top: HEAD - 6, bottom: 0, left: x(L) + dw / 2, width: 2, marginLeft: -1, background: KX, boxShadow: '0 0 12px rgba(0,204,255,.7)', zIndex: 1, pointerEvents: 'none' },
+      steps
+    };
+  }
+}
+</script>
+</body>
+</html>

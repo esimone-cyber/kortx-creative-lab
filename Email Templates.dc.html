@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<script src="kx-theme.js"></script>
+<meta name="design_doc_mode" content="canvas">
+<title>Email Templates · KORTX Creative Labs</title>
+<link rel="stylesheet" href="_ds/kortx-design-guide-2026-5bc7ff27-9282-4218-938a-63d43f555d47/tokens/fonts.css">
+<link rel="stylesheet" href="_ds/kortx-design-guide-2026-5bc7ff27-9282-4218-938a-63d43f555d47/tokens/colors.css">
+<script src="_ds/kortx-design-guide-2026-5bc7ff27-9282-4218-938a-63d43f555d47/_ds_bundle.js"></script>
+<style>
+  html, body { margin: 0; background: #000509; }
+  body { font-family: var(--font-body, Inter, Helvetica, sans-serif); -webkit-font-smoothing: antialiased; }
+  a { color: var(--blue-400, #00CCFF); text-decoration: none; }
+  a:hover { color: var(--blue-300, #66E0FF); }
+</style>
+</helmet>
+<div data-screen-label="Email Templates" style="min-height: 100vh; background: #000509; color: #fff; padding: 56px clamp(16px, 3vw, 48px) 96px; box-sizing: border-box;">
+  <div style="display: flex; flex-direction: column; align-items: center; text-align: center; gap: 10px; margin-bottom: 44px;">
+    <div style="font-size: 11px; font-weight: 600; letter-spacing: .18em; text-transform: uppercase; color: var(--lime-300, #BEF264);">KORTX Creative Labs</div>
+    <h1 style="margin: 0; font-size: 44px; font-weight: 700; letter-spacing: -.025em;">Email templates</h1>
+  </div>
+  <div style="display: grid; grid-template-columns: repeat(2, minmax(0, 620px)); gap: 48px clamp(16px, 3vw, 40px); justify-content: center; align-items: start;">
+    <sc-for list="{{ emails }}" as="e" hint-placeholder-count="5">
+      <figure id="{{ e.id }}" style="margin: 0; display: flex; flex-direction: column; gap: 12px; min-width: 0;">
+        <figcaption style="display: flex; flex-wrap: wrap; align-items: center; gap: 6px 10px;">
+          <span style="padding: 3px 9px; border-radius: 6px; background: rgba(0,204,255,.14); color: #66E0FF; font-size: 12px; font-weight: 700;">{{ e.id }}</span>
+          <span style="font-size: 15px; font-weight: 700;">{{ e.name }}</span>
+          <span style="margin-left: auto; font-size: 12px; color: rgba(255,255,255,.55);">{{ e.where }}</span>
+        </figcaption>
+        <div style="font-size: 12.5px; color: rgba(255,255,255,.7);">Subject: <span style="color: #fff; font-weight: 600;">{{ e.subject }}</span></div>
+        <iframe src="{{ e.src }}" title="{{ e.name }}" data-email-frame="1" onLoad="{{ fit }}" style="display: block; width: 100%; height: {{ e.h }}; border: 1px solid rgba(255,255,255,.08); border-radius: 12px; background: #00101F;"></iframe>
+      </figure>
+    </sc-for>
+  </div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  /* Emails reflow at narrow widths (as they do in a phone inbox), so re-measure on resize. */
+  componentDidMount() { this.onResize = () => { clearTimeout(this.rt); this.rt = setTimeout(() => document.querySelectorAll('[data-email-frame]').forEach(f => this.measure(f)), 120); }; window.addEventListener('resize', this.onResize); }
+  componentWillUnmount() { window.removeEventListener('resize', this.onResize); }
+  measure(f) { try { const d = f.contentDocument, tb = d.body && d.body.querySelector('table'); if (tb) { f.style.height = '200px'; const h = Math.ceil(tb.getBoundingClientRect().height); if (h > 200) f.style.height = h + 'px'; } } catch (err) {} }
+  renderVals() {
+    const E = [
+      ['1a', 'Reset password', 'Supabase → Reset Password', 'Reset your KORTX Creative Labs password', 'Supabase - Reset Password.html'],
+      ['1b', 'Confirm sign up', 'Supabase → Confirm signup', 'Confirm your KORTX Creative Labs account', 'Supabase - Confirm Signup.html'],
+      ['1c', 'Change email', 'Supabase → Change Email Address', 'Confirm your new KORTX Creative Labs email', 'Supabase - Change Email.html']
+    ];
+    /* Size each preview to its email: measure the card, not the viewport-tall body. */
+    const fit = e => { const f = e.currentTarget; try { const d = f.contentDocument; d.querySelectorAll('img[src*="kortx-wordmark-white"]').forEach(i => { i.onerror = () => { i.onerror = null; i.src = '../assets/email/kortx-wordmark-white.png'; }; if (i.complete && !i.naturalWidth) i.onerror(); }); const t = d.body && d.body.querySelector('table'); const h = t ? Math.ceil(t.getBoundingClientRect().height) : d.documentElement.scrollHeight; if (h > 200) f.style.height = h + 'px'; } catch (err) {} };
+    const H = { '1a': '760px', '1b': '740px', '1c': '740px', '1d': '920px', '1e': '860px' };
+    return { fit, emails: E.map(([id, name, where, subject, f]) => ({ id, name, where, subject, h: H[id], src: 'emails/' + encodeURIComponent(f) })) };
+  }
+}
+</script>
+</body>
+</html>

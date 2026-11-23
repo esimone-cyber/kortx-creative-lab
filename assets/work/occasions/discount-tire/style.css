@@ -1,0 +1,29 @@
+* { box-sizing: border-box; }
+html, body { margin: 0; min-height: 100%; }
+body { min-height: 100svh; display: grid; place-items: center; background: #e8e9eb; font-family: Arial, sans-serif; }
+.ad { position: relative; width: 300px; height: 600px; flex: none; overflow: hidden; background: #060c12; isolation: isolate; }
+.artwork { position: absolute; inset: 0; width: 300px; height: 600px; display: block; }
+.background-motion { position: absolute; inset: 0; width: 300px; height: 600px; object-fit: fill; pointer-events: none; -webkit-mask-image: linear-gradient(to bottom, transparent 0 107px, #000 107px 224px, transparent 224px 451px, #000 451px 463px, transparent 463px); mask-image: linear-gradient(to bottom, transparent 0 107px, #000 107px 224px, transparent 224px 451px, #000 451px 463px, transparent 463px); }
+.carousel { position: absolute; left: 12px; top: 232px; width: 276px; height: 215px; overflow: hidden; background: #060c12; isolation: isolate; }
+.carousel::after { content: ""; position: absolute; z-index: 10; left: 0; top: 0; bottom: 0; width: 38px; background: linear-gradient(to right, #060c12 0%, rgba(6,12,18,.95) 15%, rgba(6,12,18,.55) 50%, rgba(6,12,18,0) 100%); opacity: 0; transition: opacity 100ms ease; pointer-events: none; }
+.carousel.is-transitioning::after { opacity: 1; }
+.offer { position: absolute; inset: 0; overflow: hidden; visibility: hidden; background: #060c12; }
+.offer img { position: absolute; left: -12px; top: -232px; width: 300px; height: 600px; display: block; max-width: none; }
+.offer.active, .offer.outgoing { visibility: visible; }
+.offer.active { z-index: 2; }
+.offer.outgoing { z-index: 1; }
+.hotspot { position: absolute; cursor: pointer; background: transparent; border: 0; padding: 0; }
+.location { left: 40px; top: 88px; width: 220px; height: 19px; }
+.details { left: 14px; top: 232px; width: 272px; height: 214px; border-radius: 18px; }
+.main-link { position: absolute; inset: 0; z-index: 1; }
+.hotspot, .dots { z-index: 2; }
+.carousel { pointer-events: none; }
+.shop { left: 45px; top: 498px; width: 210px; height: 45px; border-radius: 11px; }
+.phone { left: 105px; top: 564px; width: 92px; height: 22px; }
+.dots { position: absolute; top: 462px; left: 104px; height: 15px; width: 92px; background: #060c12; display: flex; align-items: center; justify-content: center; gap: 6px; }
+.dot { border: 0; padding: 0; width: 18px; height: 15px; cursor: pointer; background: transparent; position: relative; transition: width 240ms ease; }
+.dot::after { content: ''; position: absolute; left: 0; right: 0; top: 6px; height: 3px; border-radius: 4px; background: #646769; }
+.dot.selected { width: 32px; }
+.dot.selected::after { background: white; }
+:focus-visible { outline: 2px solid #ffe321; outline-offset: 2px; }
+@media (prefers-reduced-motion: reduce) { .offer, .dot { transition: none; } .background-motion { display: none; } }

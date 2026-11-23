@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=300,initial-scale=1"><meta name="ad.size" content="width=300,height=600"><title>Pandora • Remix</title>
+<style>
+@font-face{font-family:Figtree;src:url('assets/figtree.woff2')}
+*{box-sizing:border-box}html,body{margin:0;width:300px;height:600px;overflow:hidden;background:transparent;font-family:Figtree,Arial,sans-serif}
+.ad{position:relative;width:300px;height:600px;overflow:hidden;background:linear-gradient(180deg,rgba(20,34,58,.85),rgba(7,11,21,.92));box-shadow:inset 0 1px 0 rgba(255,255,255,.1),inset 0 0 0 1px rgba(0,204,255,.34),inset 0 0 40px rgba(0,204,255,.12);isolation:isolate;transition:background-color .8s cubic-bezier(.22,1,.36,1)}
+.layer{position:absolute;z-index:2;opacity:0;pointer-events:none;transition:left .8s cubic-bezier(.22,1,.36,1),top .8s cubic-bezier(.22,1,.36,1),width .8s cubic-bezier(.22,1,.36,1),height .8s cubic-bezier(.22,1,.36,1),opacity .3s}
+.layer.on{opacity:1;pointer-events:auto}
+.layer img{display:block;width:100%;height:100%;transition:opacity .4s}
+.layer.background{z-index:0}
+.layer.video{overflow:hidden;border-radius:12px;background:#050918;box-shadow:0 12px 32px #0005;z-index:3}
+.video video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.play{position:absolute;inset:0;padding:0;border:0;background:transparent;cursor:pointer}
+.play img{width:100%;height:100%}
+.play[hidden]{display:none}
+.layer.cta{border-radius:30px;cursor:pointer}
+.slot{position:absolute;z-index:1;border:1px solid rgba(0,204,255,.34);border-radius:12px;background:linear-gradient(180deg,rgba(20,34,58,.85),rgba(7,11,21,.92));box-shadow:inset 0 1px 0 rgba(255,255,255,.1),0 10px 26px rgba(0,0,0,.45),0 0 22px rgba(0,204,255,.2);display:grid;place-items:center;font-size:9px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:#66E0FF;transition:opacity .3s,border-color .2s,box-shadow .2s}
+.slot.bg{inset:6px;border-radius:16px;align-items:end;padding-bottom:6px;background:transparent;box-shadow:none;border-color:rgba(0,204,255,.2)}
+.slot.hide{opacity:0}
+.ad.over .slot{border-color:rgba(0,204,255,.6);box-shadow:inset 0 1px 0 rgba(255,255,255,.14),0 14px 30px rgba(0,0,0,.5),0 0 40px rgba(0,204,255,.38)}
+.hint{position:absolute;left:0;right:0;top:50%;transform:translateY(-50%);text-align:center;z-index:1;pointer-events:none;color:#fff;transition:opacity .3s}
+.hint b{display:block;font-size:20px;font-weight:800;letter-spacing:-.02em}
+.hint span{display:block;margin-top:6px;font-size:11px;color:rgba(255,255,255,.62)}
+@media (prefers-reduced-motion:reduce){.layer{transition:none}}
+</style></head>
+<body><main class="ad" aria-label="Pandora remix ad, 300 by 600"></main>
+<script>
+(function(){
+const L=[
+ {name:'Cobalt texture',base:'#10266D',logo:[24,29,130,27],headline:[24,93,252,101],body:[24,407,252,65],cta:[24,522,252,48],video:[18,229,264,149],background:[0,0,300,600]},
+ {name:'Purple record',base:'#24103E',logo:[85,29,130,27],headline:[24,345,252,98],body:[24,480,252,65],cta:[55,275,190,48],video:[0,84,300,169],background:[0,0,300,600]},
+ {name:'Teal frequency',base:'#063B43',logo:[85,30,130,27],headline:[24,92,252,98],body:[24,285,252,65],cta:[54,210,192,48],video:[18,393,264,149],background:[0,0,300,600]}];
+const KEYS=['background','video','logo','headline','body','cta'];
+const LABEL={background:'BG image',logo:'Logo',headline:'Headline',body:'Body copy',cta:'CTA',video:'Video'};
+const ALT={logo:'Pandora',headline:'Your music. Your way.',body:'Find your favorites. Discover more. Personalized stations and podcasts. Start listening for free.',cta:'Sign up'};
+const ad=document.querySelector('.ad');
+let active=0,busy=false;const placed=new Set();const els={},slots={};
+const reduce=matchMedia('(prefers-reduced-motion:reduce)').matches;
+const src=k=>'layout-'+(active+1)+'/'+k+'.png';
+KEYS.forEach(k=>{
+ const s=document.createElement('div');s.className='slot'+(k==='background'?' bg':'');s.textContent=LABEL[k];ad.appendChild(s);slots[k]=s;
+ const el=document.createElement('div');el.className='layer '+k;el.dataset.layer=k;
+ if(k==='video'){el.innerHTML='<video playsinline preload="none" poster="assets/poster.jpg" aria-label="Pandora City Vibes concert video"></video><button class="play" aria-label="Play video"><img alt=""></button>';
+  const v=el.querySelector('video'),b=el.querySelector('.play');v.src='assets/concert.mp4';
+  b.onclick=async()=>{try{await v.play();v.controls=true;b.hidden=true;}catch(e){}};v.onended=()=>{b.hidden=false;v.controls=false;};}
+ else el.innerHTML='<img alt="'+(ALT[k]||'')+'">';
+ ad.appendChild(el);els[k]=el;
+});
+function place(){
+ const T=L[active];
+ ad.style.background=placed.has('background')?T.base:'';
+ KEYS.forEach(k=>{
+  const [x,y,w,h]=T[k];
+  for(const n of [els[k],slots[k]]){if(n===slots[k]&&k==='background')continue;Object.assign(n.style,{left:x+'px',top:y+'px',width:w+'px',height:h+'px'});}
+  els[k].classList.toggle('on',placed.has(k));slots[k].classList.toggle('hide',placed.has(k));
+  const img=els[k].querySelector(k==='video'?'.play img':'img');if(img)img.src=src(k);
+ });
+}
+function status(){parent.postMessage({type:'pandora:status',placed:[...placed],layout:active,name:L[active].name,busy},'*');}
+function add(k,pt){
+ if(placed.has(k)||!els[k])return;placed.add(k);place();
+ const [x,y,w,h]=L[active][k];
+ if(!reduce){const dx=pt?pt.x-x-w/2:0,dy=pt?pt.y-y-h/2:-40;
+  els[k].animate([{transform:'translate('+dx+'px,'+dy+'px) scale(.82)',opacity:.55,filter:'blur(2px)'},{transform:'translate(0,2px) scale(1.012)',opacity:1,filter:'blur(0)',offset:.72},{transform:'none',opacity:1,filter:'blur(0)'}],{duration:900,easing:'cubic-bezier(.22,1,.36,1)'});}
+ status();
+}
+function remix(){if(busy||placed.size<KEYS.length)return;busy=true;active=(active+1)%L.length;place();status();setTimeout(()=>{busy=false;status();},850);}
+function reset(){const v=ad.querySelector('video');if(v){v.pause();v.currentTime=0;v.controls=false;}els.video.querySelector('.play').hidden=false;placed.clear();active=0;place();status();}
+els.cta.addEventListener('click',e=>{e.preventDefault();});
+window.addEventListener('message',e=>{const d=e.data||{};
+ if(d.type==='pandora:add')add(d.key,d.x!=null?{x:d.x,y:d.y}:null);
+ else if(d.type==='pandora:remix')remix();
+ else if(d.type==='pandora:reset')reset();
+ else if(d.type==='pandora:over')ad.classList.toggle('over',!!d.on);
+ else if(d.type==='pandora:ping')status();});
+place();status();
+})();
+</script></body></html>

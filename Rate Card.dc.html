@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<script src="kx-theme.js"></script>
+<link rel="icon" type="image/svg+xml" href="assets/kortx-logomark-bright-blue.svg">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Rate Card · KORTX Creative Labs</title>
+<link rel="stylesheet" href="_ds/kortx-design-guide-2026-5bc7ff27-9282-4218-938a-63d43f555d47/tokens/fonts.css">
+<link rel="stylesheet" href="_ds/kortx-design-guide-2026-5bc7ff27-9282-4218-938a-63d43f555d47/tokens/colors.css">
+<link rel="stylesheet" href="_ds/kortx-design-guide-2026-5bc7ff27-9282-4218-938a-63d43f555d47/tokens/typography.css">
+<link rel="stylesheet" href="_ds/kortx-design-guide-2026-5bc7ff27-9282-4218-938a-63d43f555d47/tokens/spacing.css">
+<link rel="stylesheet" href="_ds/kortx-design-guide-2026-5bc7ff27-9282-4218-938a-63d43f555d47/tokens/radius.css">
+<link rel="stylesheet" href="_ds/kortx-design-guide-2026-5bc7ff27-9282-4218-938a-63d43f555d47/tokens/elevation.css">
+<link rel="stylesheet" href="_ds/kortx-design-guide-2026-5bc7ff27-9282-4218-938a-63d43f555d47/tokens/motion.css">
+<link rel="stylesheet" href="_ds/kortx-design-guide-2026-5bc7ff27-9282-4218-938a-63d43f555d47/tokens/base.css">
+<link rel="stylesheet" href="_ds/kortx-design-guide-2026-5bc7ff27-9282-4218-938a-63d43f555d47/styles.css">
+<script src="_ds/kortx-design-guide-2026-5bc7ff27-9282-4218-938a-63d43f555d47/_ds_bundle.js"></script>
+<style>
+  html, body { margin: 0; padding: 0; background: #000509; }
+  body { font-family: var(--font-body, Inter, Helvetica, sans-serif); -webkit-font-smoothing: antialiased; }
+  a { color: var(--blue-400); text-decoration: none; }
+  a:hover { color: var(--blue-300); text-decoration: none; }
+  button { font-family: inherit; }
+  [data-focusable]:focus-visible { outline: none; border-color: var(--blue-400) !important; box-shadow: 0 0 0 3px rgba(0,204,255,.55) !important; }
+  @keyframes kx-orbit { 0% { transform: rotate(0) translateX(26px) } 100% { transform: rotate(360deg) translateX(26px) } }
+  [data-reveal] { opacity: 0; transform: translateY(12px); transition: opacity 600ms cubic-bezier(.16,1,.3,1), transform 600ms cubic-bezier(.16,1,.3,1); transition-delay: var(--rd, 0ms); }
+  [data-reveal][data-in] { opacity: 1; transform: none; }
+  @media (max-width: 760px) { [data-rc-row] { grid-template-columns: minmax(0, 1fr) !important; } [data-rc-head] { display: none !important; } [data-rc-row] > [data-rc-rate] { justify-self: start !important; } }
+  @media (prefers-reduced-motion: reduce) { [data-reveal] { opacity: 1; transform: none; } *, *::before, *::after { animation-duration: .001ms !important; transition-duration: .001ms !important; } }
+</style>
+<style>
+  @keyframes kx-spin { 0% { transform: rotate(0) } 100% { transform: rotate(360deg) } }
+</style>
+</helmet>
+
+<div data-screen-label="Rate Card" style="position: relative; min-height: 100vh; background: #000509; color: #fff; overflow-x: clip; isolation: isolate;">
+  <div aria-hidden="true" data-kx-bg-keep style="position: fixed; inset: 0; z-index: 0; pointer-events: none; overflow: hidden;">
+    <div style="position: absolute; top: -22vh; right: -14vw; width: 78vw; height: 78vw; border-radius: 50%; background: radial-gradient(circle at 50% 50%, rgba(0,204,255,.14), rgba(0,204,255,.04) 40%, transparent 68%); filter: blur(24px); animation: kx-drift-a 62s ease-in-out infinite;"></div>
+    <div style="position: absolute; bottom: -34vh; left: -18vw; width: 72vw; height: 72vw; border-radius: 50%; background: radial-gradient(circle at 50% 50%, rgba(109,94,240,.12), rgba(109,94,240,.03) 42%, transparent 70%); filter: blur(30px); animation: kx-drift-b 78s ease-in-out infinite;"></div>
+    <div style="position: absolute; top: 34vh; left: 28vw; width: 46vw; height: 46vw; border-radius: 50%; background: radial-gradient(circle at 50% 50%, rgba(214,125,240,.10), transparent 64%); filter: blur(40px); animation: kx-drift-a 96s ease-in-out infinite;"></div>
+    <div style="position: absolute; inset: -10% -10% -60%; opacity: .8; animation: kx-stars 140s linear infinite; background-image: radial-gradient(1.4px 1.4px at 7% 12%, rgba(255,255,255,.85), transparent), radial-gradient(1.2px 1.2px at 19% 41%, rgba(0,204,255,.8), transparent), radial-gradient(1px 1px at 31% 8%, rgba(255,255,255,.6), transparent), radial-gradient(1.6px 1.6px at 44% 63%, rgba(255,255,255,.7), transparent), radial-gradient(1px 1px at 57% 22%, rgba(156,235,255,.75), transparent), radial-gradient(1.3px 1.3px at 68% 51%, rgba(255,255,255,.65), transparent), radial-gradient(1px 1px at 78% 15%, rgba(255,255,255,.5), transparent), radial-gradient(1.5px 1.5px at 88% 37%, rgba(0,204,255,.6), transparent), radial-gradient(1px 1px at 95% 71%, rgba(255,255,255,.55), transparent), radial-gradient(1.2px 1.2px at 12% 78%, rgba(255,255,255,.6), transparent), radial-gradient(1px 1px at 26% 92%, rgba(138,124,248,.7), transparent), radial-gradient(1.4px 1.4px at 39% 33%, rgba(255,255,255,.5), transparent), radial-gradient(1px 1px at 52% 86%, rgba(255,255,255,.6), transparent), radial-gradient(1.2px 1.2px at 63% 74%, rgba(0,204,255,.55), transparent), radial-gradient(1px 1px at 74% 95%, rgba(255,255,255,.45), transparent), radial-gradient(1.3px 1.3px at 84% 60%, rgba(255,255,255,.6), transparent), radial-gradient(1px 1px at 92% 88%, rgba(156,235,255,.5), transparent), radial-gradient(1.1px 1.1px at 4% 55%, rgba(255,255,255,.5), transparent);"></div>
+    <div style="position: absolute; inset: 0; background-image: linear-gradient(rgba(255,255,255,.022) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,.022) 1px, transparent 1px); background-size: 88px 88px; mask-image: radial-gradient(circle at 50% 18%, #000, transparent 72%);"></div>
+    <div data-kx-rings aria-hidden="true" style="position: absolute; left: 50%; top: 52%; width: min(168vh, 132vw); aspect-ratio: 1 / 1; transform: translate(-50%, -50%); z-index: 0; pointer-events: none; mask-image: radial-gradient(circle at 50% 50%, #000 52%, rgba(0,0,0,.55) 78%, transparent 100%), linear-gradient(180deg, transparent 0%, #000 15%, #000 85%, transparent 100%); -webkit-mask-image: radial-gradient(circle at 50% 50%, #000 52%, rgba(0,0,0,.55) 78%, transparent 100%), linear-gradient(180deg, transparent 0%, #000 15%, #000 85%, transparent 100%); mask-composite: intersect; -webkit-mask-composite: source-in;">
+      <div style="position: absolute; inset: 0%; animation: kx-spin 120s linear infinite normal;">
+        <div style="position: absolute; inset: 0; transform: rotate(calc(var(--spin, 0) * 150deg));">
+          <div style="position: absolute; inset: 0; border-radius: 50%; border: 1px solid rgba(255,255,255,.10);"></div>
+          <div style="position: absolute; inset: 0; transform: rotate(18deg);"><div style="position: absolute; top: -2.5px; left: 50%; width: 5px; height: 5px; margin-left: -2.5px; border-radius: 50%; background: #fff; box-shadow: 0 0 10px rgba(255,255,255,.85), 0 0 20px rgba(0,204,255,.55);"></div></div>
+          <div style="position: absolute; inset: 0; transform: rotate(142deg);"><div style="position: absolute; top: -2px; left: 50%; width: 4px; height: 4px; margin-left: -2px; border-radius: 50%; background: #fff; box-shadow: 0 0 8px rgba(255,255,255,.85), 0 0 16px rgba(0,204,255,.55);"></div></div>
+          <div style="position: absolute; inset: 0; transform: rotate(268deg);"><div style="position: absolute; top: -3px; left: 50%; width: 6px; height: 6px; margin-left: -3px; border-radius: 50%; background: #fff; box-shadow: 0 0 12px rgba(255,255,255,.85), 0 0 24px rgba(0,204,255,.55);"></div></div>
+        </div>
+      </div>
+      <div style="position: absolute; inset: 9%; animation: kx-spin 96s linear infinite reverse;">
+        <div style="position: absolute; inset: 0; transform: rotate(calc(var(--spin, 0) * -190deg));">
+          <div style="position: absolute; inset: 0; border-radius: 50%; border: 1px solid rgba(255,255,255,.085);"></div>
+          <div style="position: absolute; inset: 0; transform: rotate(64deg);"><div style="position: absolute; top: -2px; left: 50%; width: 4px; height: 4px; margin-left: -2px; border-radius: 50%; background: #fff; box-shadow: 0 0 8px rgba(255,255,255,.85), 0 0 16px rgba(0,204,255,.55);"></div></div>
+          <div style="position: absolute; inset: 0; transform: rotate(210deg);"><div style="position: absolute; top: -2.5px; left: 50%; width: 5px; height: 5px; margin-left: -2.5px; border-radius: 50%; background: #fff; box-shadow: 0 0 10px rgba(255,255,255,.85), 0 0 20px rgba(0,204,255,.55);"></div></div>
+        </div>
+      </div>
+      <div style="position: absolute; inset: 19%; animation: kx-spin 78s linear infinite normal;">
+        <div style="position: absolute; inset: 0; transform: rotate(calc(var(--spin, 0) * 240deg));">
+          <div style="position: absolute; inset: 0; border-radius: 50%; border: 1px solid rgba(255,255,255,.11);"></div>
+          <div style="position: absolute; inset: 0; transform: rotate(8deg);"><div style="position: absolute; top: -2px; left: 50%; width: 4px; height: 4px; margin-left: -2px; border-radius: 50%; background: #fff; box-shadow: 0 0 9px rgba(255,255,255,.85), 0 0 18px rgba(0,204,255,.55);"></div></div>
+          <div style="position: absolute; inset: 0; transform: rotate(128deg);"><div style="position: absolute; top: -1.5px; left: 50%; width: 3px; height: 3px; margin-left: -1.5px; border-radius: 50%; background: #fff; box-shadow: 0 0 7px rgba(255,255,255,.85), 0 0 14px rgba(0,204,255,.55);"></div></div>
+          <div style="position: absolute; inset: 0; transform: rotate(300deg);"><div style="position: absolute; top: -2.5px; left: 50%; width: 5px; height: 5px; margin-left: -2.5px; border-radius: 50%; background: #fff; box-shadow: 0 0 10px rgba(255,255,255,.85), 0 0 20px rgba(0,204,255,.55);"></div></div>
+        </div>
+      </div>
+      <div style="position: absolute; inset: 29%; animation: kx-spin 62s linear infinite reverse;">
+        <div style="position: absolute; inset: 0; transform: rotate(calc(var(--spin, 0) * -300deg));">
+          <div style="position: absolute; inset: 0; border-radius: 50%; border: 1px solid rgba(255,255,255,.07);"></div>
+          <div style="position: absolute; inset: 0; transform: rotate(96deg);"><div style="position: absolute; top: -1.5px; left: 50%; width: 3px; height: 3px; margin-left: -1.5px; border-radius: 50%; background: #fff; box-shadow: 0 0 7px rgba(255,255,255,.85), 0 0 14px rgba(0,204,255,.55);"></div></div>
+          <div style="position: absolute; inset: 0; transform: rotate(248deg);"><div style="position: absolute; top: -2px; left: 50%; width: 4px; height: 4px; margin-left: -2px; border-radius: 50%; background: #fff; box-shadow: 0 0 9px rgba(255,255,255,.85), 0 0 18px rgba(0,204,255,.55);"></div></div>
+        </div>
+      </div>
+      <div style="position: absolute; inset: 39%; animation: kx-spin 50s linear infinite normal;">
+        <div style="position: absolute; inset: 0; transform: rotate(calc(var(--spin, 0) * 380deg));">
+          <div style="position: absolute; inset: 0; border-radius: 50%; border: 1px solid rgba(255,255,255,.09);"></div>
+          <div style="position: absolute; inset: 0; transform: rotate(36deg);"><div style="position: absolute; top: -1.5px; left: 50%; width: 3px; height: 3px; margin-left: -1.5px; border-radius: 50%; background: #fff; box-shadow: 0 0 8px rgba(255,255,255,.85), 0 0 16px rgba(0,204,255,.55);"></div></div>
+          <div style="position: absolute; inset: 0; transform: rotate(196deg);"><div style="position: absolute; top: -2px; left: 50%; width: 4px; height: 4px; margin-left: -2px; border-radius: 50%; background: #fff; box-shadow: 0 0 9px rgba(255,255,255,.85), 0 0 18px rgba(0,204,255,.55);"></div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <header style="position: sticky; top: 0; z-index: 60; display: flex; align-items: center; gap: clamp(12px, 1.6vw, 20px); flex-wrap: wrap; min-height: 72px; padding: 14px clamp(20px, 4vw, 56px); box-sizing: border-box; background: rgba(0,5,9,.72); backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px);">
+    <a href="Creative Playground.dc.html" aria-label="KORTX home" style="position: relative; display: grid; place-items: center; width: 46px; height: 46px; flex: none;">
+      <span aria-hidden="true" style="position: absolute; inset: 0; border-radius: 50%; background: radial-gradient(circle at 50% 50%, rgba(0,204,255,.24), transparent 68%);"></span>
+      <span aria-hidden="true" style="position: absolute; inset: 3px; border: 1px solid rgba(0,204,255,.30); border-radius: 50%;"></span>
+      <span aria-hidden="true" style="position: absolute; inset: 8px; border: 1px solid rgba(138,124,248,.28); border-radius: 50%; transform: rotate(18deg) scaleY(.6);"></span>
+      <img src="assets/kortx-logomark-bright-blue.svg" alt="KORTX" style="position: relative; width: 20px; display: block;">
+      <span aria-hidden="true" style="position: absolute; top: 50%; left: 50%; width: 4px; height: 4px; margin: -2px; border-radius: 50%; background: var(--blue-300); box-shadow: 0 0 9px rgba(0,204,255,.9); animation: kx-orbit 18s linear infinite;"></span>
+    </a>
+    <dc-import name="Site Nav" current="rate-card" hint-size="200px,40px"></dc-import>
+    <div style="flex: 1;"></div>
+    <nav aria-label="On this page" style="display: flex; flex-wrap: wrap; gap: 6px;">
+      <sc-for list="{{ navLinks }}" as="nl" hint-placeholder-count="3">
+        <a href="{{ nl.href }}" data-sec="{{ nl.id }}" onClick="{{ goSec }}" aria-current="{{ nl.cur }}" style="{{ nl.style }}" style-hover="border-color: rgba(138,124,248,.75); background: rgba(109,94,240,.16); color: #fff; box-shadow: 0 0 24px rgba(109,94,240,.45), 0 0 48px rgba(214,125,240,.18); text-decoration: none">{{ nl.label }}</a>
+      </sc-for>
+    </nav>
+    <dc-import name="User Menu" current="rate-card" hint-size="40px,40px" style="margin-left: auto; order: 99;"></dc-import>
+  </header>
+
+  <main data-reveal-root="1" style="position: relative; z-index: 1; max-width: 1180px; margin: 0 auto; padding: clamp(40px, 8vh, 96px) clamp(20px, 4vw, 40px) 140px; box-sizing: border-box;">
+    <section data-block="Rate Card · Hero" style="display: flex; flex-direction: column; align-items: center; text-align: center;">
+      <div data-reveal="head" style="font-size: 11px; font-weight: 600; letter-spacing: .18em; text-transform: uppercase; color: var(--lime-300);">KORTX 2026 Rate Card</div>
+      <h1 data-reveal="head" style="margin: 12px 0 0; max-width: 820px; font-size: clamp(36px, 5.4vw, 68px); font-weight: 700; letter-spacing: -.03em; line-height: 1.04; text-wrap: balance;">Rate card</h1>
+      <p data-reveal="copy" style="margin: 16px 0 0; max-width: 680px; font-size: 18px; line-height: 1.55; color: rgba(255,255,255,.76); text-wrap: pretty;">Transparent pricing for creative, media and professional services, with every minimum and add-on in plain view.</p>
+    </section>
+
+    <section id="creative" data-block="Rate Card · Creative Services" style="margin-top: 96px; scroll-margin-top: 96px;">
+      <div style="display: flex; flex-direction: column; align-items: center; text-align: center;">
+        <div data-reveal="head" style="display: flex; align-items: baseline; gap: 12px;">
+          <span style="font-size: 13px; font-weight: 700; color: var(--blue-400);">01</span>
+          <span style="font-size: 11px; font-weight: 600; letter-spacing: .18em; text-transform: uppercase; color: rgba(255,255,255,.55);">Creative Services</span>
+        </div>
+        <h2 data-reveal="head" style="margin: 10px 0 0; max-width: 820px; font-size: clamp(28px, 3.4vw, 44px); font-weight: 700; letter-spacing: -.025em; line-height: 1.08; text-wrap: balance;">From ideation to production</h2>
+        <p data-reveal="copy" style="margin: 12px 0 0; max-width: 700px; font-size: 16px; line-height: 1.55; color: rgba(255,255,255,.76); text-wrap: pretty;">KORTX offers a suite of data-inspired creative solutions. Fees can be paid on a project basis or built into the media campaign CPM as a surcharge.</p>
+      </div>
+
+      <div data-reveal="card" style="margin-top: 48px; display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 320px), 1fr)); gap: 0; border-radius: 16px; border: 1px solid rgba(0,204,255,.28); background: #070B15; overflow: hidden; box-shadow: inset 0 1px 0 rgba(0,204,255,.30), 0 24px 60px rgba(0,0,0,.45), 0 0 80px rgba(0,204,255,.10);">
+        <div style="display: flex; flex-direction: column; justify-content: center; gap: 8px; padding: clamp(24px, 3.4vw, 40px); background: radial-gradient(120% 140% at 0% 0%, rgba(0,204,255,.14), transparent 60%);">
+          <div style="font-size: 11px; font-weight: 600; letter-spacing: .18em; text-transform: uppercase; color: var(--lime-300);">Project Based Solutions</div>
+          <div style="display: flex; align-items: baseline; gap: 8px;">
+            <span style="font-size: clamp(56px, 7vw, 88px); font-weight: 700; letter-spacing: -.04em; line-height: 1; color: #fff;">$250</span>
+            <span style="font-size: 18px; font-weight: 600; color: var(--blue-300);">/ hour</span>
+          </div>
+          <div style="font-size: 14px; color: rgba(255,255,255,.7);">Minimum of 6 hours</div>
+        </div>
+        <div style="display: flex; flex-direction: column; gap: 18px; padding: clamp(24px, 3.4vw, 40px); border-left: 1px solid rgba(255,255,255,.06);">
+          <div style="font-size: 14px; font-weight: 700; color: #fff;">What it covers:</div>
+          <div style="display: flex; flex-wrap: wrap; gap: 8px;">
+            <sc-for list="{{ creativeScope }}" as="cs" hint-placeholder-count="8">
+              <span style="padding: 7px 12px; border-radius: 999px; border: 1px solid rgba(255,255,255,.12); background: rgba(255,255,255,.04); font-size: 13px; font-weight: 600; color: rgba(255,255,255,.88); transition: all 200ms cubic-bezier(.16,1,.3,1);" style-hover="border-color: rgba(0,204,255,.5); background: rgba(0,204,255,.10); color: #fff">{{ cs }}</span>
+            </sc-for>
+          </div>
+          <div style="display: flex; gap: 12px; padding-top: 14px; border-top: 1px solid rgba(255,255,255,.07);">
+            <span aria-hidden="true" style="flex: none; width: 2px; border-radius: 2px; background: #00CCFF;"></span>
+            <span style="font-size: 14px; line-height: 1.5; color: rgba(255,255,255,.76); text-wrap: pretty;">Each project is subject to a discovery and scoping conversation.</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="media" data-block="Rate Card · Digital Advertising" style="margin-top: 120px; scroll-margin-top: 96px;">
+      <div style="display: flex; flex-direction: column; align-items: center; text-align: center;">
+        <div data-reveal="head" style="display: flex; align-items: baseline; gap: 12px;">
+          <span style="font-size: 13px; font-weight: 700; color: var(--blue-400);">02</span>
+          <span style="font-size: 11px; font-weight: 600; letter-spacing: .18em; text-transform: uppercase; color: rgba(255,255,255,.55);">Digital Advertising</span>
+        </div>
+        <h2 data-reveal="head" style="margin: 10px 0 0; max-width: 820px; font-size: clamp(28px, 3.4vw, 44px); font-weight: 700; letter-spacing: -.025em; line-height: 1.08; text-wrap: balance;">Products and services, priced by CPM</h2>
+        <p data-reveal="copy" style="margin: 12px 0 0; max-width: 700px; font-size: 16px; line-height: 1.55; color: rgba(255,255,255,.76); text-wrap: pretty;">Pick a KPI to see the ad tactics built to move it.</p>
+      </div>
+
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 260px), 1fr)); gap: 16px; margin-top: 40px;">
+        <sc-for list="{{ minimums }}" as="m" hint-placeholder-count="2">
+          <div data-reveal="card" style="display: flex; flex-direction: column; gap: 6px; padding: 22px 24px; border-radius: 12px; border: 1px solid rgba(255,255,255,.08); background: #070B15; box-shadow: inset 0 1px 0 rgba(255,255,255,.05), 0 20px 40px rgba(0,0,0,.35);">
+            <span style="font-size: clamp(32px, 3.6vw, 44px); font-weight: 700; letter-spacing: -.03em; line-height: 1; color: #fff;">{{ m.value }}</span>
+            <span style="font-size: 14px; color: rgba(255,255,255,.7);">{{ m.label }}</span>
+          </div>
+        </sc-for>
+      </div>
+
+      <div data-reveal="copy" role="group" aria-label="Filter by KPI" style="display: flex; flex-wrap: wrap; justify-content: center; gap: 8px; margin-top: 40px;">
+        <sc-for list="{{ kpis }}" as="k" hint-placeholder-count="8">
+          <button type="button" data-focusable="1" aria-pressed="{{ k.on }}" data-k="{{ k.key }}" onClick="{{ pickKpi }}" style="{{ k.style }}" style-hover="border-color: rgba(138,124,248,.75); background: rgba(109,94,240,.16); color: #fff">{{ k.label }}</button>
+        </sc-for>
+      </div>
+
+      <div data-reveal="card" style="margin-top: 20px; border-radius: 16px; border: 1px solid rgba(255,255,255,.08); background: #070B15; overflow: hidden; box-shadow: inset 0 1px 0 rgba(255,255,255,.06), 0 24px 60px rgba(0,0,0,.4);">
+        <div data-rc-head style="display: grid; grid-template-columns: minmax(0, 1.2fr) minmax(0, 1.4fr) 110px minmax(0, 1.4fr); gap: 16px; padding: 14px 22px; background: rgba(0,204,255,.08); border-bottom: 1px solid rgba(0,204,255,.25); font-size: 11px; font-weight: 600; letter-spacing: .14em; text-transform: uppercase; color: var(--blue-300);">
+          <span>Ad Tactic</span><span>KPI Options</span><span style="text-align: right;">CPM</span><span>Notes</span>
+        </div>
+        <sc-for list="{{ tactics }}" as="t" hint-placeholder-count="12">
+          <div data-rc-row style="{{ t.rowStyle }}">
+            <span style="font-size: 15px; font-weight: 700; color: #fff;">{{ t.name }}<sc-if value="{{ t.star }}" hint-placeholder-val="{{ false }}"><span style="color: var(--lime-300);">*</span></sc-if></span>
+            <span style="font-size: 13px; line-height: 1.45; color: rgba(255,255,255,.7);">{{ t.kpi }}</span>
+            <span data-rc-rate style="justify-self: end; font-size: 16px; font-weight: 700; color: var(--blue-300); white-space: nowrap; font-variant-numeric: tabular-nums;">{{ t.rate }}</span>
+            <span style="font-size: 13px; line-height: 1.45; color: rgba(255,255,255,.7);">{{ t.note }}</span>
+          </div>
+        </sc-for>
+        <div style="padding: 14px 22px; border-top: 1px solid rgba(255,255,255,.06); font-size: 12.5px; line-height: 1.5; color: rgba(255,255,255,.6);"><span style="color: var(--lime-300); font-weight: 700;">*</span> Listed CPMs include creative ideation, production and ad serving for these products, and are subject to review.</div>
+      </div>
+
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 340px), 1fr)); gap: 16px; margin-top: 16px;">
+        <div data-reveal="card" style="display: flex; flex-direction: column; gap: 14px; padding: 24px; border-radius: 16px; border: 1px solid rgba(255,255,255,.08); background: #070B15;">
+          <div style="display: flex; align-items: baseline; justify-content: space-between; gap: 12px; flex-wrap: wrap;">
+            <span style="font-size: 18px; font-weight: 700; letter-spacing: -.01em;">Paid Media Services</span>
+            <span style="font-size: 22px; font-weight: 700; color: var(--blue-300);">25% Fee</span>
+          </div>
+          <sc-for list="{{ paid }}" as="p" hint-placeholder-count="3">
+            <div style="display: flex; gap: 12px;">
+              <span aria-hidden="true" style="flex: none; width: 2px; border-radius: 2px; background: #00CCFF;"></span>
+              <div><div style="font-size: 14px; font-weight: 700;">{{ p.name }}</div><div style="margin-top: 2px; font-size: 13px; color: rgba(255,255,255,.66);">{{ p.note }}</div></div>
+            </div>
+          </sc-for>
+          <p style="margin: 4px 0 0; font-size: 13px; line-height: 1.55; color: rgba(255,255,255,.66); text-wrap: pretty;">A fixed-rate model covering campaign setup, management, inventory and platform fees. We deduct a 25% management service fee from the gross media budget, and the rest goes directly into your ad spend. KPIs are platform-specific.</p>
+        </div>
+        <div data-reveal="card" style="display: flex; flex-direction: column; gap: 14px; padding: 24px; border-radius: 16px; border: 1px solid rgba(255,255,255,.08); background: #070B15;">
+          <span style="font-size: 18px; font-weight: 700; letter-spacing: -.01em;">KORTX Targeting Strategies</span>
+          <sc-for list="{{ targeting }}" as="x" hint-placeholder-count="4">
+            <div style="display: flex; align-items: baseline; justify-content: space-between; gap: 12px; padding-bottom: 12px; border-bottom: 1px solid rgba(255,255,255,.06);">
+              <div><div style="font-size: 14px; font-weight: 700;">{{ x.name }}</div><div style="margin-top: 2px; font-size: 12.5px; color: rgba(255,255,255,.55);">{{ x.sub }}</div></div>
+              <span style="font-size: 14px; font-weight: 700; color: var(--blue-300); white-space: nowrap;">{{ x.rate }}</span>
+            </div>
+          </sc-for>
+          <span style="font-size: 12px; color: rgba(255,255,255,.5);">CPM addition</span>
+        </div>
+      </div>
+
+      <div data-reveal="card" style="margin-top: 16px; border-radius: 16px; border: 1px solid rgba(255,255,255,.08); background: #070B15; overflow: hidden;">
+        <div style="padding: 20px 22px 6px; font-size: 18px; font-weight: 700; letter-spacing: -.01em;">Ad Measurement &amp; Verification</div>
+        <sc-for list="{{ measurement }}" as="v" hint-placeholder-count="6">
+          <div data-rc-row style="display: grid; grid-template-columns: minmax(0, 1.2fr) minmax(0, .8fr) minmax(0, 1.6fr); gap: 6px 16px; align-items: center; padding: 14px 22px; border-top: 1px solid rgba(255,255,255,.06);">
+            <span style="font-size: 14px; font-weight: 700;">{{ v.name }}</span>
+            <span style="font-size: 14px; font-weight: 700; color: var(--blue-300);">{{ v.rate }}</span>
+            <span style="font-size: 13px; line-height: 1.45; color: rgba(255,255,255,.66);">{{ v.note }}</span>
+          </div>
+        </sc-for>
+      </div>
+
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 340px), 1fr)); gap: 16px; margin-top: 16px;">
+        <sc-for list="{{ details }}" as="dt" hint-placeholder-count="2">
+          <div data-reveal="card" style="display: flex; flex-direction: column; gap: 12px; padding: 24px; border-radius: 16px; border: 1px solid rgba(255,255,255,.08); background: #070B15;">
+            <span style="font-size: 11px; font-weight: 600; letter-spacing: .18em; text-transform: uppercase; color: var(--lime-300);">Activation Details</span>
+            <span style="font-size: 18px; font-weight: 700; letter-spacing: -.01em;">{{ dt.title }}</span>
+            <sc-for list="{{ dt.items }}" as="it" hint-placeholder-count="3">
+              <div style="display: flex; gap: 12px;">
+                <span aria-hidden="true" style="flex: none; width: 2px; border-radius: 2px; background: #00CCFF;"></span>
+                <span style="font-size: 13.5px; line-height: 1.55; color: rgba(255,255,255,.76); text-wrap: pretty;">{{ it }}</span>
+              </div>
+            </sc-for>
+          </div>
+        </sc-for>
+      </div>
+
+      <div data-reveal="card" style="margin-top: 16px; border-radius: 16px; border: 1px solid rgba(255,255,255,.08); background: #070B15; overflow: hidden;">
+        <div style="padding: 20px 22px 4px; font-size: 18px; font-weight: 700; letter-spacing: -.01em;">Reporting by spend</div>
+        <p style="margin: 0; padding: 0 22px 14px; font-size: 13px; line-height: 1.55; color: rgba(255,255,255,.6); text-wrap: pretty;">Tiers are set by past or contracted IOs over 12 months, per advertiser. Reports use KORTX data only; third-party data needs a custom reporting engagement.</p>
+        <div data-rc-head style="display: grid; grid-template-columns: minmax(0, 1.4fr) repeat(3, minmax(0, 1fr)); gap: 16px; padding: 12px 22px; background: rgba(0,204,255,.08); border-top: 1px solid rgba(0,204,255,.25); border-bottom: 1px solid rgba(0,204,255,.25); font-size: 11px; font-weight: 600; letter-spacing: .14em; text-transform: uppercase; color: var(--blue-300);">
+          <span>Service</span><span>All Clients</span><span>$250K+</span><span>$1M+</span>
+        </div>
+        <sc-for list="{{ reporting }}" as="rp" hint-placeholder-count="3">
+          <div data-rc-row style="display: grid; grid-template-columns: minmax(0, 1.4fr) repeat(3, minmax(0, 1fr)); gap: 6px 16px; padding: 14px 22px; border-bottom: 1px solid rgba(255,255,255,.06);">
+            <span style="font-size: 14px; font-weight: 700;">{{ rp.name }}</span>
+            <span style="font-size: 13px; color: rgba(255,255,255,.76);">{{ rp.a }}</span>
+            <span style="font-size: 13px; color: rgba(255,255,255,.76);">{{ rp.b }}</span>
+            <span style="font-size: 13px; color: rgba(255,255,255,.76);">{{ rp.c }}</span>
+          </div>
+        </sc-for>
+        <div style="padding: 14px 22px; font-size: 13px; color: rgba(255,255,255,.66);"><strong style="color: #fff;">Custom Reporting</strong> is available through KORTX Analytics, subject to project scope.</div>
+      </div>
+    </section>
+
+    <section id="professional" data-block="Rate Card · Professional Services" style="margin-top: 120px; scroll-margin-top: 96px;">
+      <div style="display: flex; flex-direction: column; align-items: center; text-align: center;">
+        <div data-reveal="head" style="display: flex; align-items: baseline; gap: 12px;">
+          <span style="font-size: 13px; font-weight: 700; color: var(--blue-400);">03</span>
+          <span style="font-size: 11px; font-weight: 600; letter-spacing: .18em; text-transform: uppercase; color: rgba(255,255,255,.55);">Professional Services</span>
+        </div>
+        <h2 data-reveal="head" style="margin: 10px 0 0; max-width: 820px; font-size: clamp(28px, 3.4vw, 44px); font-weight: 700; letter-spacing: -.025em; line-height: 1.08; text-wrap: balance;">An integrated approach to optimization</h2>
+        <p data-reveal="copy" style="margin: 12px 0 0; max-width: 700px; font-size: 16px; line-height: 1.55; color: rgba(255,255,255,.76); text-wrap: pretty;">Tag management, SEO, analytics and tailored reporting that drive performance and insight. Projects start at a $5,000 minimum scope.</p>
+      </div>
+      <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, 320px), 1fr)); gap: 16px; margin-top: 48px;">
+        <sc-for list="{{ pro }}" as="ps" hint-placeholder-count="7">
+          <div data-reveal="card">
+            <div style="height: 100%; box-sizing: border-box; display: flex; flex-direction: column; gap: 12px; padding: 22px; border-radius: 12px; border: 1px solid rgba(255,255,255,.08); background: #070B15; box-shadow: inset 0 1px 0 rgba(255,255,255,.05), 0 20px 40px rgba(0,0,0,.35); transition: transform 200ms cubic-bezier(.16,1,.3,1), border-color 200ms cubic-bezier(.16,1,.3,1), box-shadow 200ms cubic-bezier(.16,1,.3,1);" style-hover="transform: translateY(-3px); border-color: rgba(0,204,255,.35); box-shadow: inset 0 1px 0 rgba(255,255,255,.05), 0 20px 40px rgba(0,0,0,.35), 0 0 40px rgba(0,204,255,.14)">
+              <span style="font-size: 16px; font-weight: 700; color: var(--blue-300);">{{ ps.name }}</span>
+              <span style="font-size: 13.5px; line-height: 1.55; color: rgba(255,255,255,.76); text-wrap: pretty;">{{ ps.desc }}</span>
+              <div style="margin-top: auto; padding-top: 12px; border-top: 1px solid rgba(255,255,255,.07);">
+                <div style="font-size: 18px; font-weight: 700; color: #fff;">{{ ps.rate }}</div>
+                <sc-if value="{{ ps.hasNote }}" hint-placeholder-val="{{ false }}"><div style="margin-top: 4px; font-size: 12.5px; line-height: 1.45; color: rgba(255,255,255,.55);">{{ ps.note }}</div></sc-if>
+              </div>
+            </div>
+          </div>
+        </sc-for>
+      </div>
+
+      <figure data-reveal="card" style="margin: 48px auto 0; max-width: 860px; display: flex; flex-direction: column; align-items: center; gap: 18px; text-align: center; padding: clamp(28px, 4vw, 44px); border-radius: 16px; border: 1px solid rgba(255,255,255,.08); background: #070B15; box-shadow: inset 0 1px 0 rgba(255,255,255,.05), 0 24px 60px rgba(0,0,0,.4);">
+        <blockquote style="margin: 0; font-size: clamp(17px, 1.8vw, 21px); line-height: 1.55; font-weight: 500; color: #fff; text-wrap: pretty;">“KORTX is a partner that truly cares about the details, which in this industry is a difference maker. KORTX helps solve problems, no matter the complexity.”</blockquote>
+        <figcaption style="font-size: 13px; font-weight: 600; color: var(--blue-300);">Channel Engagement Manager, The Buntin Group</figcaption>
+      </figure>
+    </section>
+
+    <p data-reveal="copy" style="margin: 72px auto 0; max-width: 720px; text-align: center; font-size: 12.5px; line-height: 1.6; color: rgba(255,255,255,.5); text-wrap: pretty;">Rates supplied in media plans and RFPs are valid for 45 days from the date of proposal submittal. KORTX reserves the right to adjust rates for campaigns under rate card.</p>
+  </main>
+
+  <footer data-block="Site footer" style="position: relative; z-index: 1;">
+    <div style="max-width: 1280px; margin: 0 auto; padding: 0 clamp(20px, 4vw, 56px) clamp(32px, 4vw, 52px); display: flex; flex-direction: column; align-items: center; gap: 24px; text-align: center;">
+      <a href="https://www.kortx.io/contact/" target="_blank" rel="noreferrer" style="display: inline-block; padding: 16px 30px; border-radius: 999px; background: var(--blue-400, #00CCFF); color: #001830; font-size: 15px; font-weight: 700; letter-spacing: -.01em; transition: background 200ms cubic-bezier(.16,1,.3,1), transform 200ms cubic-bezier(.16,1,.3,1);" style-hover="background: var(--blue-300, #66E0FF); color: #001830; transform: translateY(-2px)">Contact Us</a>
+      <div style="width: 100%; padding-top: clamp(16px, 2vw, 24px); border-top: 1px solid rgba(255,255,255,.07); font-size: 11px; font-weight: 600; letter-spacing: .18em; text-transform: uppercase; color: var(--blue-400, #00CCFF);">Built with grit in Detroit.</div>
+    </div>
+  </footer>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+const TACTICS = [
+  ['Cross-Platform Display', ['Delivery', 'CTR', 'Site Traffic', 'Conversions'], '$5.50', 'Includes first-party and modeled audiences', false],
+  ['Dynamic Display', ['Delivery', 'CTR', 'Site Traffic', 'Conversions'], '$6.25', 'Minimum 2-month commitment', true],
+  ['Native Display', ['Delivery', 'CTR', 'Site Traffic', 'Conversions'], '$6.50', 'Mobile, tablet, computer devices', false],
+  ['Custom Rich Media', ['Delivery', 'CTR', 'Site Traffic', 'Conversions'], '$9.00', 'Includes ideation, production and hosting', true],
+  ['Digital Out of Home', ['Ad Plays'], '$20.00+', 'Pricing varies by venues and screens', false],
+  ['Online Video', ['Web Traffic', 'Site Actions', 'VCR'], '$19.50', 'Mobile, tablet, computer devices', false],
+  ['Interactive Online Video', ['Engagement Rate', 'VCR'], '$23.50', 'Mobile, tablet, computer devices', true],
+  ['Programmatic Audio', ['LTR'], '$23.50', 'Mobile, tablet, computer devices', false],
+  ['Open Inventory OTT', ['Web Traffic', 'Site Actions', 'VCR'], '$33.50', 'Mobile, tablet, computer, CTV devices', false],
+  ['Preferred Publisher OTT', ['Web Traffic', 'Site Actions', 'VCR'], '$38.00', 'Mobile, tablet, computer, CTV devices', false],
+  ['Interactive CTV', ['Engagement Rate', 'VCR'], '$44.00', 'Minimum 2-month commitment', true],
+  ['Open Inventory CTV', ['VCR'], 'Variable', 'CTV devices', false]
+];
+const KPIS = ['All', 'Delivery', 'CTR', 'Site Traffic', 'Conversions', 'Web Traffic', 'Site Actions', 'VCR', 'Engagement Rate', 'LTR', 'Ad Plays'];
+const SECS = [['creative', 'Creative'], ['media', 'Media'], ['professional', 'Professional']];
+const EASE = 'cubic-bezier(.16,1,.3,1)';
+
+class Component extends DCLogic {
+  state = { kpi: 'All', sec: 'creative' };
+  componentDidMount() {
+    this.spy = () => {
+      if (this.lock && Date.now() < this.lock) return;
+      let cur = 'creative';
+      for (const [id] of SECS) { const el = document.getElementById(id); if (el && el.getBoundingClientRect().top < window.innerHeight * 0.4) cur = id; }
+      if (window.scrollY > 0 && window.innerHeight + window.scrollY >= document.documentElement.scrollHeight - 4) cur = 'professional';
+      if (cur !== this.state.sec) this.setState({ sec: cur });
+    };
+    window.addEventListener('scroll', this.spy, { passive: true });
+    this.spy();
+    this.spyT = setTimeout(this.spy, 400);
+    this.setupReveal();
+  }
+  componentWillUnmount() { clearTimeout(this.spyT); window.removeEventListener('scroll', this.spy); this.io && this.io.disconnect(); this.mo && this.mo.disconnect(); }
+  setupReveal() {
+    const root = document.querySelector('[data-reveal-root]');
+    if (!root) return;
+    if (!('IntersectionObserver' in window)) { root.querySelectorAll('[data-reveal]').forEach(el => el.setAttribute('data-in', '')); return; }
+    this.io = new IntersectionObserver(entries => {
+      const hits = entries.filter(e => e.isIntersecting).map(e => e.target).sort((a, b) => a.getBoundingClientRect().top - b.getBoundingClientRect().top || a.getBoundingClientRect().left - b.getBoundingClientRect().left);
+      let head = 0, card = 0, hasText = false;
+      hits.forEach(el => {
+        const kind = el.getAttribute('data-reveal');
+        let d = 0;
+        if (kind === 'head') { d = head++ * 90; hasText = true; }
+        else if (kind === 'copy') { d = 180 + head * 60; hasText = true; }
+        else d = (hasText ? 320 : 0) + card++ * 90;
+        el.style.setProperty('--rd', Math.min(d, 1100) + 'ms');
+        el.setAttribute('data-in', '');
+        this.io.unobserve(el);
+      });
+    }, { threshold: 0.12, rootMargin: '0px 0px -6% 0px' });
+    const scan = () => root.querySelectorAll('[data-reveal]:not([data-obs])').forEach(el => { el.setAttribute('data-obs', ''); this.io.observe(el); });
+    scan();
+    this.mo = new MutationObserver(scan);
+    this.mo.observe(root, { childList: true, subtree: true });
+  }
+  goSec = e => {
+    e.preventDefault();
+    const id = e.currentTarget.dataset.sec, el = document.getElementById(id);
+    this.lock = Date.now() + 900;
+    this.setState({ sec: id });
+    if (el) window.scrollTo({ top: el.getBoundingClientRect().top + window.scrollY - 88, behavior: 'smooth' });
+  };
+  pickKpi = e => this.setState({ kpi: e.currentTarget.dataset.k });
+
+  renderVals() {
+    const s = this.state;
+    const chip = on => ({ height: 36, padding: '0 14px', borderRadius: 999, cursor: 'pointer', fontSize: 13, fontWeight: 600, transition: 'all 200ms ' + EASE, border: '1px solid ' + (on ? 'rgba(0,204,255,.6)' : 'rgba(255,255,255,.14)'), background: on ? 'rgba(0,204,255,.14)' : 'rgba(255,255,255,.04)', color: on ? '#fff' : 'rgba(255,255,255,.75)', boxShadow: on ? '0 0 22px rgba(0,204,255,.22)' : 'none' });
+    return {
+      navLinks: SECS.map(([id, label]) => { const on = s.sec === id; return { id, label, href: '#' + id, cur: on ? 'true' : 'false', style: { display: 'inline-flex', alignItems: 'center', height: 34, padding: '0 14px', borderRadius: 999, fontSize: 13, fontWeight: 600, transition: 'all 200ms ' + EASE, border: '1px solid ' + (on ? 'rgba(0,204,255,.55)' : 'rgba(255,255,255,.12)'), background: on ? 'rgba(0,204,255,.12)' : 'transparent', color: on ? '#fff' : 'rgba(255,255,255,.75)' } }; }),
+      goSec: this.goSec,
+      creativeScope: ['Ideation', 'Custom Design & Layouts', 'Social Ads', 'Display Ads', 'Video Editing', 'Animation', 'Image Editing', 'Audio Editing'],
+      minimums: [{ value: '$10,000', label: 'Monthly IO total minimum budget' }, { value: '$5,000', label: 'Monthly IO minimum per ad tactic' }],
+      kpis: KPIS.map(k => ({ key: k, label: k === 'All' ? 'All Tactics' : k, on: String(s.kpi === k), style: chip(s.kpi === k) })), pickKpi: this.pickKpi,
+      tactics: TACTICS.map(([name, kpi, rate, note, star], i) => {
+        const match = s.kpi === 'All' || kpi.includes(s.kpi);
+        return { name, kpi: kpi.join(', '), rate, note, star,
+          rowStyle: { display: 'grid', gridTemplateColumns: 'minmax(0, 1.2fr) minmax(0, 1.4fr) 110px minmax(0, 1.4fr)', gap: '4px 16px', alignItems: 'center', padding: '14px 22px', borderTop: i ? '1px solid rgba(255,255,255,.06)' : 'none', background: match && s.kpi !== 'All' ? 'rgba(0,204,255,.06)' : 'transparent', opacity: match ? 1 : .28, transition: 'opacity 320ms ' + EASE + ', background 320ms ' + EASE } };
+      }),
+      paid: [{ name: 'Paid Search', note: 'Google & Bing' }, { name: 'Paid Social', note: 'Meta, TikTok, LinkedIn, Snapchat, Pinterest' }, { name: 'Google Ads', note: 'YouTube, LSA and Performance Max' }],
+      targeting: [{ name: 'Third-Party Data', sub: 'Curated audience segments', rate: 'Variable' }, { name: 'Lookalike Modeling', sub: 'Minimum seed 7,500', rate: 'Variable' }, { name: 'CRM List Modeling', sub: 'Minimum seed 10,000', rate: 'No Cost' }, { name: 'CRM List Targeting', sub: 'Minimum seed 10,000', rate: '+$2.75' }],
+      measurement: [
+        { name: 'Fraud / Viewability / Brand Safety', rate: '+$0.10', note: '' },
+        { name: 'DoubleVerify IQ Viewability Advanced', rate: '+$0.25', note: '' },
+        { name: 'ComScore Reach/Frequency · Digital', rate: '+$0.50', note: '' },
+        { name: 'ComScore Reach/Frequency · Linear TV', rate: '+$1.00', note: 'Available for the top 100 DMAs' },
+        { name: 'Foursquare Foot Traffic', rate: '+$1.00', note: 'Minimum $30K campaign budget, 3MM impressions and twelve locations' },
+        { name: 'Nielsen EV Lite Brand Study', rate: 'Variable', note: 'Minimum 10MM total impressions and a two-month flight' }
+      ],
+      details: [
+        { title: 'Audience Activation', items: ['A $5K minimum monthly budget supports up to four audiences (first-party, third-party, modeled).', 'One additional audience for every $2,500 of added budget, capped at ten audiences per campaign.', 'Campaigns below $5K total budget are limited to one audience. The All Website Visitors audience does not count toward activation.'] },
+        { title: 'Custom Rich Media', items: ['A $10,000/month budget provides two ad sizes (300x600 and 300x250) with one structural layout. A/B versions can change copy and imagery only.', 'A production fee of $5,000 per size and revision is invoiced for programs that do not deliver 100% of the scheduled line item budget.', 'Clients may license KORTX Rich Media units at a 5M monthly impression minimum, from $1.50 CPM. A production fee covers any shortfall.'] }
+      ],
+      reporting: [
+        { name: 'Media Reporting + Audience Insights', a: 'Kampus', b: 'Kampus', c: 'Kampus' },
+        { name: 'Campaign Status Calls', a: 'Quarterly', b: 'Monthly', c: 'Weekly' },
+        { name: 'Performance Reports', a: 'Post-campaign', b: 'Mid + post-campaign', c: 'Monthly + quarterly + post-campaign' }
+      ],
+      pro: [
+        { name: 'SEO Services', desc: 'A full-site technical audit diagnosing technical and usability issues. Content optimization and consulting are also available.', rate: '$5,000 audit', note: 'Plus consulting on a monthly retainer' },
+        { name: 'Marketing Tag Plan', desc: 'A website audit and digital marketing tag plan supporting Axon, Google Analytics and other popular marketing platforms.', rate: 'From $5,000 per website', note: 'Max of 20 hours; additional hours available' },
+        { name: 'Tag Plan Implementation', desc: 'We implement the tag plan within your preferred tag management solution.', rate: '$5,000', note: '' },
+        { name: 'Tag Manager', desc: 'A unique, configured Google Tag Manager instance for your website, including events, variables and triggers.', rate: '$250/hr', note: 'Estimated length provided after a scoping conversation' },
+        { name: 'Google Analytics', desc: 'Analytics tracking tags implemented from a KORTX or client-provided tracking plan.', rate: '$250/hr', note: 'Estimated length provided once Tag Manager access is granted' },
+        { name: 'Custom Reporting', desc: 'Custom marketing analytics reports built to your specifications. Additional data visualization seats are available.', rate: 'From $250/hr', note: '' },
+        { name: 'KORTX Operations', desc: 'Our engineers, ad ops specialists, consultants, data strategists, scientists and analysts, available for your internal projects.', rate: 'From $250/hr', note: '' }
+      ].map(p => Object.assign(p, { hasNote: !!p.note }))
+    };
+  }
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,1418 @@
+<!DOCTYPE html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<script src="kx-theme.js"></script>
+<link rel="icon" type="image/svg+xml" href="assets/kortx-logomark-bright-blue.svg">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Mock Builder · KORTX Creative Labs</title>
+<link rel="preconnect" href="https://fdjfsimjilicmfsiijyi.supabase.co" crossorigin>
+<link rel="stylesheet" href="_ds/kortx-design-guide-2026-5bc7ff27-9282-4218-938a-63d43f555d47/tokens/fonts.css">
+<link rel="stylesheet" href="_ds/kortx-design-guide-2026-5bc7ff27-9282-4218-938a-63d43f555d47/tokens/colors.css">
+<link rel="stylesheet" href="_ds/kortx-design-guide-2026-5bc7ff27-9282-4218-938a-63d43f555d47/tokens/typography.css">
+<link rel="stylesheet" href="_ds/kortx-design-guide-2026-5bc7ff27-9282-4218-938a-63d43f555d47/tokens/spacing.css">
+<link rel="stylesheet" href="_ds/kortx-design-guide-2026-5bc7ff27-9282-4218-938a-63d43f555d47/tokens/radius.css">
+<link rel="stylesheet" href="_ds/kortx-design-guide-2026-5bc7ff27-9282-4218-938a-63d43f555d47/tokens/elevation.css">
+<link rel="stylesheet" href="_ds/kortx-design-guide-2026-5bc7ff27-9282-4218-938a-63d43f555d47/tokens/motion.css">
+<link rel="stylesheet" href="_ds/kortx-design-guide-2026-5bc7ff27-9282-4218-938a-63d43f555d47/tokens/base.css">
+<link rel="stylesheet" href="_ds/kortx-design-guide-2026-5bc7ff27-9282-4218-938a-63d43f555d47/styles.css">
+<script src="_ds/kortx-design-guide-2026-5bc7ff27-9282-4218-938a-63d43f555d47/_ds_bundle.js"></script>
+<style>
+  html, body { margin: 0; padding: 0; background: #000509; }
+  body { font-family: var(--font-body, Inter, Helvetica, sans-serif); -webkit-font-smoothing: antialiased; }
+  a { color: var(--blue-400); text-decoration: none; }
+  a:hover { color: var(--blue-300); text-decoration: none; }
+  textarea, button { font-family: inherit; }
+  ::placeholder { color: rgba(255,255,255,.38); }
+  [data-focusable]:focus-visible, textarea[data-focusable]:focus { outline: none; border-color: var(--blue-400) !important; box-shadow: 0 0 0 3px rgba(0,204,255,.55) !important; }
+  @keyframes kx-rise { 0% { opacity: 0; transform: translateY(12px) } 100% { opacity: 1; transform: translateY(0) } }
+  @keyframes kx-spin { to { transform: rotate(360deg) } }
+  @keyframes kx-orbit { 0% { transform: rotate(0) translateX(26px) } 100% { transform: rotate(360deg) translateX(26px) } }
+  @keyframes kx-drift-a { 0%, 100% { transform: translate(0, 0) } 50% { transform: translate(-6vw, 5vh) } }
+  @keyframes kx-drift-b { 0%, 100% { transform: translate(0, 0) } 50% { transform: translate(7vw, -6vh) } }
+  @keyframes kx-drift-c { 0%, 100% { transform: translate(-50%, -50%) scale(1) } 50% { transform: translate(-46%, -54%) scale(1.08) } }
+  @keyframes kx-stars { from { background-position: 0 0 } to { background-position: 0 -600px } }
+  @keyframes kx-dot { 0%, 80%, 100% { opacity: .25 } 40% { opacity: 1 } }
+  @media (prefers-reduced-motion: reduce) { *, *::before, *::after { animation-duration: .001ms !important; transition-duration: .001ms !important; } }
+</style>
+<style>
+  /* Light mode: glass panels like the Signals bar — translucent fill, cyan hairline, soft fields. */
+  html[data-kx-theme="light"] body section[data-block^="Mock Builder"][data-block][style][aria-label], html[data-kx-theme="light"] body section[data-block^="Mock Builder"][data-block][style][aria-label]:not(#x):not(#y) { background-color: transparent !important; background-image: linear-gradient(135deg, rgba(255,255,255,.42), rgba(255,255,255,.18)) !important; border-color: rgba(0,204,255,.35) !important; backdrop-filter: blur(18px) saturate(140%); -webkit-backdrop-filter: blur(18px) saturate(140%); box-shadow: inset 0 1px 0 rgba(255,255,255,.7), 0 18px 44px rgba(0,24,48,.08) !important; }
+  html[data-kx-theme="light"] section[data-block^="Mock Builder"] input[type="text"], html[data-kx-theme="light"] section[data-block^="Mock Builder"] input[type="url"], html[data-kx-theme="light"] section[data-block^="Mock Builder"] textarea { background: rgba(0,24,48,.05) !important; border: 1px solid rgba(0,24,48,.16) !important; color: #001830 !important; }
+  html[data-kx-theme="light"] section[data-block^="Mock Builder"] label[style*="border-radius: 999px"] { background: rgba(0,24,48,.05) !important; border-color: rgba(0,24,48,.16) !important; box-shadow: none !important; }
+  html[data-kx-theme="light"] section[data-block^="Mock Builder"] button[aria-pressed="true"] { background: rgba(0,204,255,.10) !important; }
+  html[data-kx-theme="light"] body section[data-block^="Mock Builder"] button[aria-pressed][data-focusable][style], html[data-kx-theme="light"] body section[data-block^="Mock Builder"] button[aria-pressed][data-focusable][style]:not(#x):not(#y) { background-color: rgba(255,255,255,.06) !important; background-image: none !important; border-color: rgba(0,204,255,.35) !important; box-shadow: inset 0 1px 0 rgba(255,255,255,.5) !important; }
+  html[data-kx-theme="light"] body section[data-block^="Mock Builder"] button[aria-pressed][data-focusable][style][aria-pressed="true"], html[data-kx-theme="light"] body section[data-block^="Mock Builder"] button[aria-pressed][data-focusable][style][aria-pressed="true"]:not(#x):not(#y) { background-color: rgba(0,204,255,.08) !important; background-image: none !important; border-color: rgba(0,204,255,.75) !important; box-shadow: 0 0 0 3px rgba(0,204,255,.18), inset 0 1px 0 rgba(255,255,255,.7), 0 12px 30px rgba(0,24,48,.07) !important; }
+  html[data-kx-theme="light"] body section[data-block^="Mock Builder"] button[aria-pressed][data-focusable][style] > span:first-child, html[data-kx-theme="light"] body section[data-block^="Mock Builder"] button[aria-pressed][data-focusable][style] > span:first-child:not(#x):not(#y) { background-color: transparent !important; background-image: none !important; border-color: rgba(0,24,48,.10) !important; box-shadow: none !important; }
+  html[data-kx-theme="light"] body section[data-block^="Mock Builder"] select[data-focusable] { background-color: rgba(0,24,48,.05) !important; border-color: rgba(0,24,48,.16) !important; color: #001830 !important; }
+  html[data-kx-theme="light"] ::placeholder { color: rgba(0,24,48,.42); }
+</style>
+<script src="kx-dictate.js"></script>
+</helmet>
+
+<div data-screen-label="Mock Builder" style="position: relative; min-height: 100vh; background: #000509; color: #fff; overflow-x: clip; isolation: isolate;">
+  <div aria-hidden="true" data-kx-bg-keep style="position: fixed; inset: 0; z-index: 0; pointer-events: none; overflow: hidden;">
+    <div style="position: absolute; top: -22vh; right: -14vw; width: 78vw; height: 78vw; border-radius: 50%; background: radial-gradient(circle at 50% 50%, rgba(0,204,255,.14), rgba(0,204,255,.04) 40%, transparent 68%); filter: blur(24px); animation: kx-drift-a 62s ease-in-out infinite;"></div>
+    <div style="position: absolute; bottom: -34vh; left: -18vw; width: 72vw; height: 72vw; border-radius: 50%; background: radial-gradient(circle at 50% 50%, rgba(109,94,240,.12), rgba(109,94,240,.03) 42%, transparent 70%); filter: blur(30px); animation: kx-drift-b 78s ease-in-out infinite;"></div>
+    <div style="position: absolute; top: 34vh; left: 28vw; width: 46vw; height: 46vw; border-radius: 50%; background: radial-gradient(circle at 50% 50%, rgba(214,125,240,.10), transparent 64%); filter: blur(40px); animation: kx-drift-a 96s ease-in-out infinite;"></div>
+    <div style="position: absolute; inset: -10% -10% -60%; opacity: .8; animation: kx-stars 140s linear infinite; background-image: radial-gradient(1.4px 1.4px at 7% 12%, rgba(255,255,255,.85), transparent), radial-gradient(1.2px 1.2px at 19% 41%, rgba(0,204,255,.8), transparent), radial-gradient(1px 1px at 31% 8%, rgba(255,255,255,.6), transparent), radial-gradient(1.6px 1.6px at 44% 63%, rgba(255,255,255,.7), transparent), radial-gradient(1px 1px at 57% 22%, rgba(156,235,255,.75), transparent), radial-gradient(1.3px 1.3px at 68% 51%, rgba(255,255,255,.65), transparent), radial-gradient(1px 1px at 78% 15%, rgba(255,255,255,.5), transparent), radial-gradient(1.5px 1.5px at 88% 37%, rgba(0,204,255,.6), transparent), radial-gradient(1px 1px at 95% 71%, rgba(255,255,255,.55), transparent), radial-gradient(1.2px 1.2px at 12% 78%, rgba(255,255,255,.6), transparent), radial-gradient(1px 1px at 26% 92%, rgba(138,124,248,.7), transparent), radial-gradient(1.4px 1.4px at 39% 33%, rgba(255,255,255,.5), transparent), radial-gradient(1px 1px at 52% 86%, rgba(255,255,255,.6), transparent), radial-gradient(1.2px 1.2px at 63% 74%, rgba(0,204,255,.55), transparent), radial-gradient(1px 1px at 74% 95%, rgba(255,255,255,.45), transparent), radial-gradient(1.3px 1.3px at 84% 60%, rgba(255,255,255,.6), transparent), radial-gradient(1px 1px at 92% 88%, rgba(156,235,255,.5), transparent), radial-gradient(1.1px 1.1px at 4% 55%, rgba(255,255,255,.5), transparent);"></div>
+  </div>
+    <div data-kx-rings aria-hidden="true" style="position: absolute; left: 50%; top: 52%; width: min(168vh, 132vw); aspect-ratio: 1 / 1; transform: translate(-50%, -50%); z-index: 0; pointer-events: none; mask-image: radial-gradient(circle at 50% 50%, #000 52%, rgba(0,0,0,.55) 78%, transparent 100%), linear-gradient(180deg, transparent 0%, #000 15%, #000 85%, transparent 100%); -webkit-mask-image: radial-gradient(circle at 50% 50%, #000 52%, rgba(0,0,0,.55) 78%, transparent 100%), linear-gradient(180deg, transparent 0%, #000 15%, #000 85%, transparent 100%); mask-composite: intersect; -webkit-mask-composite: source-in;">
+      <div style="position: absolute; inset: 0%; animation: kx-spin 120s linear infinite normal;">
+        <div style="position: absolute; inset: 0; transform: rotate(calc(var(--spin, 0) * 150deg));">
+          <div style="position: absolute; inset: 0; border-radius: 50%; border: 1px solid rgba(255,255,255,.10);"></div>
+          <div style="position: absolute; inset: 0; transform: rotate(18deg);"><div style="position: absolute; top: -2.5px; left: 50%; width: 5px; height: 5px; margin-left: -2.5px; border-radius: 50%; background: #fff; box-shadow: 0 0 10px rgba(255,255,255,.85), 0 0 20px rgba(0,204,255,.55);"></div></div>
+          <div style="position: absolute; inset: 0; transform: rotate(142deg);"><div style="position: absolute; top: -2px; left: 50%; width: 4px; height: 4px; margin-left: -2px; border-radius: 50%; background: #fff; box-shadow: 0 0 8px rgba(255,255,255,.85), 0 0 16px rgba(0,204,255,.55);"></div></div>
+          <div style="position: absolute; inset: 0; transform: rotate(268deg);"><div style="position: absolute; top: -3px; left: 50%; width: 6px; height: 6px; margin-left: -3px; border-radius: 50%; background: #fff; box-shadow: 0 0 12px rgba(255,255,255,.85), 0 0 24px rgba(0,204,255,.55);"></div></div>
+        </div>
+      </div>
+      <div style="position: absolute; inset: 9%; animation: kx-spin 96s linear infinite reverse;">
+        <div style="position: absolute; inset: 0; transform: rotate(calc(var(--spin, 0) * -190deg));">
+          <div style="position: absolute; inset: 0; border-radius: 50%; border: 1px solid rgba(255,255,255,.085);"></div>
+          <div style="position: absolute; inset: 0; transform: rotate(64deg);"><div style="position: absolute; top: -2px; left: 50%; width: 4px; height: 4px; margin-left: -2px; border-radius: 50%; background: #fff; box-shadow: 0 0 8px rgba(255,255,255,.85), 0 0 16px rgba(0,204,255,.55);"></div></div>
+          <div style="position: absolute; inset: 0; transform: rotate(210deg);"><div style="position: absolute; top: -2.5px; left: 50%; width: 5px; height: 5px; margin-left: -2.5px; border-radius: 50%; background: #fff; box-shadow: 0 0 10px rgba(255,255,255,.85), 0 0 20px rgba(0,204,255,.55);"></div></div>
+        </div>
+      </div>
+    </div>
+
+  <header style="position: sticky; top: 0; z-index: 60; display: flex; align-items: center; gap: 16px; flex-wrap: wrap; min-height: 72px; padding: 12px clamp(20px, 4vw, 56px); box-sizing: border-box; background: rgba(0,5,9,.72); backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px); border-bottom: 1px solid rgba(255,255,255,.07);">
+    <a href="/" aria-label="KORTX home" data-focusable="1" style="position: relative; display: grid; place-items: center; width: 46px; height: 46px; flex: none;">
+      <span aria-hidden="true" style="position: absolute; inset: 0; border-radius: 50%; background: radial-gradient(circle at 50% 50%, rgba(0,204,255,.24), transparent 68%);"></span>
+      <span aria-hidden="true" style="position: absolute; inset: 3px; border: 1px solid rgba(0,204,255,.30); border-radius: 50%;"></span>
+      <span aria-hidden="true" style="position: absolute; inset: 8px; border: 1px solid rgba(138,124,248,.28); border-radius: 50%; transform: rotate(18deg) scaleY(.6);"></span>
+      <img src="assets/kortx-logomark-bright-blue.svg" alt="KORTX" style="position: relative; width: 20px; display: block;">
+      <span aria-hidden="true" style="position: absolute; top: 50%; left: 50%; width: 4px; height: 4px; margin: -2px; border-radius: 50%; background: var(--blue-300); box-shadow: 0 0 9px rgba(0,204,255,.9); animation: kx-orbit 18s linear infinite;"></span>
+    </a>
+    <dc-import name="Site Nav" current="mock-builder" hint-size="200px,40px"></dc-import>
+    <div style="flex: 1;"></div>
+    <dc-import name="User Menu" hint-size="40px,40px" style="margin-left: auto; order: 99;"></dc-import>
+  </header>
+
+  <main style="position: relative; z-index: 1; max-width: 960px; margin: 0 auto; box-sizing: border-box; padding: clamp(36px, 6vh, 72px) clamp(20px, 4vw, 56px) 120px;">
+    <div data-block="Mock Builder · Page head" style="display: flex; flex-direction: column; align-items: center; text-align: center; gap: clamp(10px, 1.4vh, 16px); margin-bottom: clamp(28px, 5vh, 48px); animation: kx-rise 600ms cubic-bezier(.16,1,.3,1) both;">
+      <h1 style="margin: 0; max-width: 900px; font-size: clamp(40px, 5.6vw, 72px); font-weight: 700; line-height: 1.04; letter-spacing: -.035em; text-wrap: balance;">Mock Builder</h1>
+      <p style="margin: 0; max-width: 620px; font-size: clamp(16px, 1.5vw, 19px); line-height: 1.55; color: rgba(255,255,255,.76); text-wrap: pretty;">Describe the mock you need. The assistant drafts it with you.</p>
+      <div role="tablist" aria-label="Mock type" style="position: relative; display: flex; align-items: stretch; justify-content: space-evenly; height: 52px; width: min(378px, 100%); margin-top: clamp(6px, 1vh, 12px); border-radius: 999px; border: 1px solid rgba(255,255,255,.1); background: rgba(255,255,255,.035); backdrop-filter: blur(22px) saturate(140%); -webkit-backdrop-filter: blur(22px) saturate(140%); box-shadow: inset 0 1px 0 rgba(255,255,255,.16), 0 12px 34px rgba(0,0,0,.55); overflow: hidden;">
+        <sc-for list="{{ modeTabs }}" as="tb" hint-placeholder-count="2">
+          <button type="button" role="tab" data-focusable="1" aria-selected="{{ tb.on }}" onClick="{{ tb.pick }}" style="{{ tb.style }}" style-hover="color: #fff; text-shadow: 0 0 22px rgba(138,124,248,.85)"><span aria-hidden="true" style="{{ tb.dot }}"></span>{{ tb.label }}</button>
+        </sc-for>
+      </div>
+      <sc-if value="{{ isBanner }}" hint-placeholder-val="{{ true }}">
+
+        <div role="radiogroup" aria-label="Banner behavior" style="display: flex; flex-wrap: wrap; justify-content: center; gap: 8px;">
+          <sc-for list="{{ behaviorOpts }}" as="bo" hint-placeholder-count="2">
+            <button type="button" role="radio" data-focusable="1" aria-checked="{{ bo.on }}" onClick="{{ bo.pick }}" style="{{ bo.style }}" style-hover="background: rgba(109,94,240,.16); border-color: rgba(167,139,250,.6); transform: translateY(-2px); box-shadow: 0 0 32px rgba(109,94,240,.55)" style-active="transform: scale(.985)">{{ bo.label }}</button>
+          </sc-for>
+        </div>
+        <sc-if value="{{ multiNote }}" hint-placeholder-val="{{ false }}">
+          <p style="margin: 0; text-align: center; font-size: 13px; color: rgba(255,255,255,.7);">{{ multiNote }}</p>
+        </sc-if>
+      </sc-if>
+      <sc-if value="{{ isVideo }}" hint-placeholder-val="{{ false }}">
+        <div role="radiogroup" aria-label="Video type" style="display: flex; flex-wrap: wrap; justify-content: center; gap: 22px; animation: kx-rise 600ms cubic-bezier(.16,1,.3,1) both;">
+          <sc-for list="{{ vkindOpts }}" as="vk" hint-placeholder-count="2">
+            <button type="button" role="radio" data-focusable="1" aria-checked="{{ vk.on }}" onClick="{{ vk.pick }}" style="display: inline-flex; align-items: center; gap: 10px; min-height: 44px; padding: 0 6px; border: none; background: transparent; color: #fff; font: inherit; font-size: 15px; font-weight: 600; cursor: pointer;">
+              <span aria-hidden="true" style="{{ vk.dial }}"><span style="{{ vk.dot }}"></span></span>
+              {{ vk.label }}
+            </button>
+          </sc-for>
+        </div>
+        <div role="radiogroup" aria-label="Video options" style="display: flex; flex-wrap: wrap; justify-content: center; gap: 8px; animation: kx-rise 600ms cubic-bezier(.16,1,.3,1) both;">
+          <sc-for list="{{ videoOpts }}" as="so" hint-placeholder-count="2">
+            <button type="button" role="radio" data-focusable="1" aria-checked="{{ so.on }}" onClick="{{ so.pick }}" style="{{ so.style }}" style-hover="background: rgba(109,94,240,.16); border-color: rgba(167,139,250,.6); transform: translateY(-2px); box-shadow: 0 0 32px rgba(109,94,240,.55)" style-active="transform: scale(.985)">{{ so.label }}</button>
+          </sc-for>
+        </div>
+
+
+        <sc-if value="{{ showYt }}" hint-placeholder-val="{{ true }}">
+        <label style="display: flex; flex-direction: column; align-items: center; gap: 6px; width: 100%; max-width: 560px; margin: 0 auto; font-size: 13px; font-weight: 600; color: rgba(255,255,255,.8);">YouTube link · preview only
+          <input data-focusable="1" type="url" value="{{ ytUrl }}" onChange="{{ onYt }}" placeholder="https://www.youtube.com/watch?v=…" style="width: 100%; height: 46px; padding: 0 16px; border-radius: 12px; border: 1px solid rgba(255,255,255,.14); background: rgba(0,5,9,.6); color: #fff; font-size: 15px; font-weight: 400; outline: none; box-sizing: border-box; text-align: center;">
+          <span style="font-size: 12.5px; font-weight: 400; color: rgba(255,255,255,.55); text-align: center;">{{ ytNote }}</span>
+        </label>
+        </sc-if>
+
+      </sc-if>
+    </div>
+
+    <sc-if value="{{ gateLoading }}" hint-placeholder-val="{{ false }}">
+      <div role="status" style="display: grid; place-items: center; padding: 80px 0;"><span style="width: 24px; height: 24px; border-radius: 50%; border: 2px solid rgba(0,204,255,.25); border-top-color: var(--blue-400); animation: kx-spin 800ms linear infinite;"></span></div>
+    </sc-if>
+
+    <sc-if value="{{ gateBlocked }}" hint-placeholder-val="{{ false }}">
+      <div style="max-width: 460px; margin: 0 auto; display: flex; flex-direction: column; align-items: center; gap: 14px; text-align: center; padding: 32px; border-radius: 16px; border: 1px solid rgba(255,255,255,.08); background: #070B15; box-shadow: inset 0 1px 0 rgba(255,255,255,.05), 0 30px 80px rgba(0,0,0,.55);">
+        <h2 style="margin: 0; font-size: 24px; font-weight: 700; letter-spacing: -.02em;">Sign in to continue</h2>
+        <p style="margin: 0; font-size: 14px; line-height: 1.55; color: rgba(255,255,255,.7);">Mock Builder is for the KORTX team.</p>
+        <a href="{{ signInHref }}" data-focusable="1" style="display: inline-flex; align-items: center; height: 46px; padding: 0 22px; border-radius: 999px; border: 1px solid rgba(255,255,255,.16); background: rgba(255,255,255,.06); color: #fff; font-size: 14px; font-weight: 600; transition: all 200ms cubic-bezier(.16,1,.3,1);" style-hover="background: rgba(109,94,240,.16); border-color: rgba(167,139,250,.6); color: #fff; transform: translateY(-2px); box-shadow: 0 0 32px rgba(109,94,240,.55)" style-active="transform: scale(.985)">Sign In</a>
+      </div>
+    </sc-if>
+
+    <sc-if value="{{ ready }}" hint-placeholder-val="{{ true }}">
+      <section data-block="Mock Builder · Brand inputs" aria-label="Brand details" style="display: flex; flex-direction: column; gap: 14px; margin-bottom: 16px; padding: 20px; border-radius: 16px; border: 1px solid rgba(255,255,255,.08); background: #070B15; box-shadow: inset 0 1px 0 rgba(255,255,255,.05), 0 30px 80px rgba(0,0,0,.55); animation: kx-rise 600ms cubic-bezier(.16,1,.3,1) both;">
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 260px), 1fr)); gap: 14px;">
+          <label style="display: flex; flex-direction: column; gap: 6px; font-size: 13px; font-weight: 600; color: rgba(255,255,255,.8);">Brand name
+            <span style="position: relative; display: block;">
+              <input data-focusable="1" type="text" role="combobox" aria-autocomplete="list" aria-expanded="{{ brandOpenStr }}" autocomplete="off" value="{{ brand }}" onChange="{{ onBrand }}" onFocus="{{ onBrandFocus }}" onBlur="{{ onBrandBlur }}" onKeyDown="{{ onBrandKey }}" placeholder="Type a brand, or search saved brands" style="width: 100%; height: 46px; padding: 0 16px; border-radius: 12px; border: 1px solid rgba(255,255,255,.14); background: rgba(0,5,9,.6); color: #fff; font-size: 15px; font-weight: 400; outline: none; box-sizing: border-box;">
+              <sc-if value="{{ brandOpen }}" hint-placeholder-val="{{ false }}">
+                <div role="listbox" aria-label="Saved brands" style="position: absolute; left: 0; right: 0; top: calc(100% + 6px); z-index: 30; max-height: 260px; overflow-y: auto; padding: 6px; border-radius: 12px; border: 1px solid rgba(255,255,255,.12); background: #0A1120; box-shadow: 0 20px 50px rgba(0,0,0,.6);">
+                  <sc-for list="{{ brandMatches }}" as="bm" hint-placeholder-count="0">
+                    <button type="button" role="option" data-focusable="1" aria-selected="{{ bm.on }}" onMouseDown="{{ bm.pick }}" style="{{ bm.style }}" style-hover="background: rgba(109,94,240,.16)"><span>{{ bm.label }}</span><span style="font-size: 11px; font-weight: 600; letter-spacing: .12em; text-transform: uppercase; color: rgba(255,255,255,.5);">{{ bm.tag }}</span></button>
+                  </sc-for>
+                </div>
+              </sc-if>
+            </span>
+          </label>
+          <label style="display: flex; flex-direction: column; gap: 6px; font-size: 13px; font-weight: 600; color: rgba(255,255,255,.8);">Website URL
+            <input data-focusable="1" type="url" value="{{ site }}" onChange="{{ onSite }}" onBlur="{{ onSiteBlur }}" placeholder="https://" style="height: 46px; padding: 0 16px; border-radius: 12px; border: 1px solid rgba(255,255,255,.14); background: rgba(0,5,9,.6); color: #fff; font-size: 15px; font-weight: 400; outline: none; box-sizing: border-box;">
+          </label>
+        </div>
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 260px), 1fr)); gap: 14px;">
+
+          <sc-if value="{{ isVideo }}" hint-placeholder-val="{{ false }}">
+          <label style="display: flex; flex-direction: column; gap: 6px; font-size: 13px; font-weight: 600; color: rgba(255,255,255,.8);">Duration
+            <span style="position: relative; display: block;">
+              <select data-focusable="1" value="{{ duration }}" onChange="{{ onDuration }}" style="height: 46px; width: 100%; box-sizing: border-box; padding: 0 38px 0 16px; border-radius: 12px; border: 1px solid rgba(255,255,255,.14); background: rgba(0,5,9,.6); color: #fff; font: inherit; font-size: 15px; font-weight: 400; appearance: none; -webkit-appearance: none; cursor: pointer; outline: none;"><option value="15">:15</option><option value="30">:30</option></select>
+              <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="position: absolute; right: 14px; top: 50%; margin-top: -8px; color: var(--blue-400); pointer-events: none;"><path d="M6 9l6 6 6-6"></path></svg>
+            </span>
+          </label>
+          </sc-if>
+        </div>
+        <sc-if value="{{ evNote }}" hint-placeholder-val="{{ false }}">
+          <div role="status" style="display: flex; flex-wrap: wrap; align-items: center; gap: 8px; font-size: 12.5px; color: rgba(255,255,255,.7);">
+            <span>{{ evNote }}</span>
+            <sc-for list="{{ evColors }}" as="ec" hint-placeholder-count="0"><span title="{{ ec.hex }}" style="{{ ec.style }}"></span></sc-for>
+          </div>
+        </sc-if>
+        <div style="display: flex; align-items: center; flex-wrap: wrap; gap: 10px;">
+          <label data-focusable="1" style="display: inline-flex; align-items: center; gap: 8px; height: 44px; padding: 0 20px; border-radius: 999px; border: 1px solid rgba(255,255,255,.16); background: rgba(255,255,255,.06); color: #fff; font-size: 14px; font-weight: 600; cursor: pointer; transition: all 200ms cubic-bezier(.16,1,.3,1);" style-hover="background: rgba(109,94,240,.16); border-color: rgba(167,139,250,.6); transform: translateY(-2px); box-shadow: 0 0 32px rgba(109,94,240,.55)" style-active="transform: scale(.985)">
+            <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><path d="M17 8l-5-5-5 5"></path><path d="M12 3v12"></path></svg>
+            Upload Assets
+            <input type="file" multiple="{{ true }}" onChange="{{ onFiles }}" style="position: absolute; width: 1px; height: 1px; opacity: 0; pointer-events: none;">
+          </label>
+          <sc-for list="{{ files }}" as="fl" hint-placeholder-count="0">
+            <span style="display: inline-flex; align-items: center; gap: 6px; height: 32px; padding: 0 6px 0 12px; border-radius: 999px; border: 1px solid rgba(0,204,255,.35); background: rgba(0,204,255,.08); font-size: 13px; color: #fff; max-width: 100%;">
+              <button type="button" data-focusable="1" onClick="{{ fl.open }}" title="{{ fl.title }}" style="padding: 0; border: none; background: transparent; color: inherit; font: inherit; cursor: pointer; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; max-width: 220px;">{{ fl.name }}</button>
+              <button type="button" data-focusable="1" onClick="{{ fl.remove }}" aria-label="{{ fl.removeLabel }}" style="display: grid; place-items: center; width: 22px; height: 22px; border-radius: 50%; border: none; background: transparent; color: rgba(255,255,255,.7); font-size: 14px; cursor: pointer;" style-hover="background: rgba(255,255,255,.1); color: #fff">×</button>
+            </span>
+          </sc-for>
+          <sc-if value="{{ fillNote }}" hint-placeholder-val="{{ false }}">
+            <span role="status" style="flex-basis: 100%; font-size: 12.5px; color: var(--blue-300);">{{ fillNote }}</span>
+          </sc-if>
+        </div>
+      </section>
+      <section data-block="Mock Builder · Chat" aria-label="Mock Builder chat" style="display: flex; flex-direction: column; border-radius: 16px; border: 1px solid rgba(255,255,255,.08); background: #070B15; box-shadow: inset 0 1px 0 rgba(255,255,255,.05), 0 30px 80px rgba(0,0,0,.55); overflow: hidden; animation: kx-rise 600ms cubic-bezier(.16,1,.3,1) both;">
+
+        <div ref="{{ listRef }}" aria-live="polite" style="{{ listStyle }}">
+          <sc-if value="{{ empty }}" hint-placeholder-val="{{ true }}">
+            <div style="margin: auto; display: flex; flex-direction: column; align-items: center; gap: 12px; text-align: center; width: 100%;">
+              <sc-if value="{{ showComps }}" hint-placeholder-val="{{ true }}">
+              <div style="display: flex; flex-direction: column; align-items: center; gap: 10px; width: 100%;">
+                <span style="font-size: 11px; font-weight: 600; letter-spacing: .18em; text-transform: uppercase; color: rgba(255,255,255,.6);">Components · pick one, or two that pair</span>
+                <div role="group" aria-label="Components" style="display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, 140px), 1fr)); gap: 10px; width: 100%;">
+                  <sc-for list="{{ compOpts }}" as="co" hint-placeholder-count="12">
+                    <button type="button" data-focusable="1" aria-pressed="{{ co.on }}" onClick="{{ co.pick }}" style="{{ co.style }}" style-hover="transform: translateY(-2px); border-color: rgba(167,139,250,.6); box-shadow: 0 0 32px rgba(109,94,240,.4)" style-active="transform: scale(.985)">
+                      <span aria-hidden="true" style="{{ co.thumb }}">
+                        <span style="position: relative; display: grid; place-items: center; width: 40px; height: 40px; border-radius: 50%; background: rgba(0,204,255,.10); box-shadow: 0 0 20px rgba(0,204,255,.18); color: var(--blue-400);"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="{{ co.d }}"></path></svg></span>
+                        <span style="{{ co.ring }}">{{ co.tick }}</span>
+                      </span>
+                      <span style="display: flex; flex-direction: column; gap: 3px; padding: 0 2px 2px;">
+                        <span style="font-size: 14px; font-weight: 600; color: #fff;">{{ co.label }}</span>
+                      </span>
+                    </button>
+                  </sc-for>
+                </div>
+              <sc-if value="{{ compNote }}" hint-placeholder-val="{{ false }}">
+                <p style="margin: 0; font-size: 13px; color: rgba(255,255,255,.7); text-align: center;">{{ compNote }}</p>
+              </sc-if>
+              <sc-if value="{{ needLoc }}" hint-placeholder-val="{{ false }}">
+                <div data-block="Mock Builder · Nearby location details" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 200px), 1fr)); gap: 12px; width: 100%; padding: 14px; border-radius: 12px; border: 1px solid rgba(255,255,255,.08); background: rgba(255,255,255,.03); box-sizing: border-box;">
+                  <span style="grid-column: 1 / -1; font-size: 11px; font-weight: 600; letter-spacing: .18em; text-transform: uppercase; color: rgba(255,255,255,.6); text-align: left;">Nearby location · optional</span>
+                  <label style="display: flex; flex-direction: column; gap: 6px; font-size: 13px; font-weight: 600; color: rgba(255,255,255,.8); text-align: left;">Business or branch name<input data-focusable="1" type="text" value="{{ locName }}" onChange="{{ onLocName }}" placeholder="Auto-filled if empty" style="height: 46px; padding: 0 16px; border-radius: 12px; border: 1px solid rgba(255,255,255,.14); background: rgba(0,5,9,.6); color: #fff; font-size: 15px; font-weight: 400; outline: none; box-sizing: border-box;"></label>
+                  <label style="display: flex; flex-direction: column; gap: 6px; font-size: 13px; font-weight: 600; color: rgba(255,255,255,.8); text-align: left;">Full street address<input data-focusable="1" type="text" value="{{ locAddr }}" onChange="{{ onLocAddr }}" placeholder="Auto-filled if empty" style="height: 46px; padding: 0 16px; border-radius: 12px; border: 1px solid rgba(255,255,255,.14); background: rgba(0,5,9,.6); color: #fff; font-size: 15px; font-weight: 400; outline: none; box-sizing: border-box;"></label>
+                  <label style="display: flex; flex-direction: column; gap: 6px; font-size: 13px; font-weight: 600; color: rgba(255,255,255,.8); text-align: left;">Miles away<input data-focusable="1" type="text" value="{{ locMiles }}" onChange="{{ onLocMiles }}" placeholder="e.g. 4 miles" style="height: 46px; padding: 0 16px; border-radius: 12px; border: 1px solid rgba(255,255,255,.14); background: rgba(0,5,9,.6); color: #fff; font-size: 15px; font-weight: 400; outline: none; box-sizing: border-box;"></label>
+                  <label style="display: flex; flex-direction: column; gap: 6px; font-size: 13px; font-weight: 600; color: rgba(255,255,255,.8); text-align: left;">Your city or ZIP<input data-focusable="1" type="text" value="{{ locOrigin }}" onChange="{{ onLocOrigin }}" placeholder="For the nearest branch" style="height: 46px; padding: 0 16px; border-radius: 12px; border: 1px solid rgba(255,255,255,.14); background: rgba(0,5,9,.6); color: #fff; font-size: 15px; font-weight: 400; outline: none; box-sizing: border-box;"></label>
+                  <span style="grid-column: 1 / -1; font-size: 12.5px; color: rgba(255,255,255,.6); text-align: left;">Leave blank and the mock uses an address from your uploads or website, or a clearly labeled demo address. Edit any of it beside the finished mock.</span>
+                </div>
+              </sc-if>
+              <sc-if value="{{ needDisc }}" hint-placeholder-val="{{ false }}">
+                <div data-block="Mock Builder · Disclaimer details" style="display: flex; flex-direction: column; gap: 12px; width: 100%; padding: 14px; border-radius: 12px; border: 1px solid rgba(255,255,255,.08); background: rgba(255,255,255,.03); box-sizing: border-box;">
+                  <span style="font-size: 11px; font-weight: 600; letter-spacing: .18em; text-transform: uppercase; color: rgba(255,255,255,.6); text-align: left;">Scrolling disclaimer · optional</span>
+                  <label style="display: flex; flex-direction: column; gap: 6px; font-size: 13px; font-weight: 600; color: rgba(255,255,255,.8); text-align: left;">Disclaimer text (used word for word)
+                    <textarea data-focusable="1" rows="3" value="{{ discText }}" onChange="{{ onDiscText }}" placeholder="Leave blank to use text from your uploads or website, or demo copy" style="min-height: 80px; resize: vertical; padding: 12px 14px; border-radius: 12px; border: 1px solid rgba(255,255,255,.14); background: rgba(0,5,9,.6); color: #fff; font: inherit; font-size: 14px; font-weight: 400; line-height: 1.45; outline: none; box-sizing: border-box;"></textarea>
+                  </label>
+                  <div style="display: flex; flex-wrap: wrap; gap: 12px;">
+                    <label style="display: flex; flex-direction: column; gap: 6px; font-size: 13px; font-weight: 600; color: rgba(255,255,255,.8); text-align: left;">Speed<select data-focusable="1" value="{{ discSpeed }}" onChange="{{ onDiscSpeed }}" style="height: 44px; padding: 0 12px; border-radius: 10px; border: 1px solid rgba(255,255,255,.14); background: rgba(0,5,9,.6); color: #fff; font: inherit; font-size: 14px;"><option value="slow">Slow</option><option value="medium">Medium</option><option value="fast">Fast</option></select></label>
+                    <label style="display: flex; flex-direction: column; gap: 6px; font-size: 13px; font-weight: 600; color: rgba(255,255,255,.8); text-align: left;">Direction<select data-focusable="1" value="{{ discDir }}" onChange="{{ onDiscDir }}" style="height: 44px; padding: 0 12px; border-radius: 10px; border: 1px solid rgba(255,255,255,.14); background: rgba(0,5,9,.6); color: #fff; font: inherit; font-size: 14px;"><option value="up">Vertical (up)</option><option value="left">Horizontal (left)</option></select></label>
+                    <label style="display: flex; flex-direction: column; gap: 6px; font-size: 13px; font-weight: 600; color: rgba(255,255,255,.8); text-align: left;">Strip<select data-focusable="1" value="{{ discStrip }}" onChange="{{ onDiscStrip }}" style="height: 44px; padding: 0 12px; border-radius: 10px; border: 1px solid rgba(255,255,255,.14); background: rgba(0,5,9,.6); color: #fff; font: inherit; font-size: 14px;"><option value="bottom">Bottom</option><option value="side">Side</option></select></label>
+                  </div>
+                  <span style="font-size: 12.5px; color: rgba(255,255,255,.6); text-align: left;">{{ discNote }}</span>
+                </div>
+              </sc-if>
+              </div>
+              </sc-if>
+            </div>
+          </sc-if>
+          <sc-for list="{{ msgs }}" as="m" hint-placeholder-count="0">
+            <div style="{{ m.rowStyle }}">
+              <div style="{{ m.bubbleStyle }}">{{ m.content }}</div>
+            </div>
+          </sc-for>
+          <sc-if value="{{ busy }}" hint-placeholder-val="{{ false }}">
+            <div role="status" aria-label="Thinking" style="display: flex; gap: 5px; padding: 6px 4px;">
+              <span style="width: 6px; height: 6px; border-radius: 50%; background: var(--blue-400); animation: kx-dot 1.2s infinite;"></span>
+              <span style="width: 6px; height: 6px; border-radius: 50%; background: var(--blue-400); animation: kx-dot 1.2s .2s infinite;"></span>
+              <span style="width: 6px; height: 6px; border-radius: 50%; background: var(--blue-400); animation: kx-dot 1.2s .4s infinite;"></span>
+            </div>
+          </sc-if>
+        </div>
+
+        <sc-if value="{{ err }}" hint-placeholder-val="{{ false }}">
+          <div role="alert" style="margin: 0 18px 12px; padding: 12px 14px; border-radius: 10px; border: 1px solid rgba(240,180,255,.35); background: rgba(214,125,240,.07); font-size: 13px; line-height: 1.5; color: #F0B4FF;">{{ err }}</div>
+        </sc-if>
+
+        <div style="display: flex; flex-direction: column; gap: 12px; padding: 14px 18px 18px; border-top: {{ inputBorder }};">
+          <div style="display: flex; align-items: flex-end; gap: 10px;">
+            <textarea data-focusable="1" rows="4" value="{{ draft }}" onChange="{{ onDraft }}" onKeyDown="{{ onKey }}" placeholder="Describe the mock…" aria-label="Message" style="flex: 1; min-width: 0; min-height: 96px; max-height: 260px; resize: vertical; padding: 13px 16px; border-radius: 12px; border: 1px solid rgba(255,255,255,.14); background: rgba(0,5,9,.6); color: #fff; font-size: 15px; line-height: 1.45; outline: none; box-sizing: border-box;"></textarea>
+            <button type="button" data-focusable="1" onClick="{{ send }}" disabled="{{ cantSend }}" style="{{ sendStyle }}" style-hover="background: var(--blue-300, #66E0FF); transform: translateY(-2px)" style-active="transform: scale(.985)">Send</button>
+            </div>
+        </div>
+      </section>
+      <div style="display: flex; flex-wrap: wrap; justify-content: center; align-items: center; gap: 14px; margin-top: 16px;">
+              <label style="display: flex; flex-direction: column; gap: 6px; flex: none;">
+                <span style="text-align: center; font-size: 11px; font-weight: 600; letter-spacing: .18em; text-transform: uppercase; color: rgba(255,255,255,.55);">Model</span>
+                <span style="position: relative; display: block;">
+                  <select data-focusable="1" value="{{ model }}" onChange="{{ onModel }}" aria-label="AI model" style="height: 46px; width: 100%; box-sizing: border-box; padding: 0 38px 0 14px; border-radius: 12px; border: 1px solid rgba(255,255,255,.14); background: rgba(255,255,255,.05); color: #fff; font: inherit; font-size: 14px; font-weight: 600; appearance: none; -webkit-appearance: none; cursor: pointer;">
+                  <sc-for list="{{ models }}" as="md" hint-placeholder-count="4">
+                    <option value="{{ md.id }}">{{ md.label }}</option>
+                  </sc-for>
+                </select>
+                  <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="position: absolute; right: 13px; top: 50%; margin-top: -8px; color: var(--blue-400); pointer-events: none;"><path d="M6 9l6 6 6-6"></path></svg>
+                </span>
+              </label>
+              <sc-if value="{{ hasEffort }}" hint-placeholder-val="{{ false }}">
+                <label style="display: flex; flex-direction: column; gap: 6px; flex: none; width: 190px;">
+                  <span style="text-align: center; font-size: 11px; font-weight: 600; letter-spacing: .18em; text-transform: uppercase; color: rgba(255,255,255,.55);">Effort</span>
+                  <input data-focusable="1" type="range" min="0" max="{{ effortMax }}" step="1" value="{{ effortIdx }}" onChange="{{ onEffort }}" aria-label="Effort" aria-valuetext="{{ effortLabel }}" style="height: 46px; margin: 0; accent-color: #00CCFF; cursor: pointer;">
+                  <span style="text-align: center; font-size: 11px; font-weight: 600; letter-spacing: .12em; text-transform: uppercase; color: var(--blue-300);">{{ effortLabel }}</span>
+                </label>
+              </sc-if>
+        </div>
+
+      <sc-if value="{{ hasMocks }}" hint-placeholder-val="{{ false }}">
+        <section data-block="Mock Builder · Mock Viewer" aria-label="Generated mocks" style="display: flex; flex-direction: column; gap: 16px; margin-top: 28px; padding: 22px; border-radius: 16px; border: 1px solid rgba(255,255,255,.08); background: #070B15; box-shadow: inset 0 1px 0 rgba(255,255,255,.05), 0 30px 80px rgba(0,0,0,.55); animation: kx-rise 600ms cubic-bezier(.16,1,.3,1) both;">
+          <div style="display: flex; align-items: center; justify-content: space-between; gap: 12px;">
+            <button type="button" data-focusable="1" onClick="{{ prevMock }}" disabled="{{ onlyOne }}" aria-label="Previous size" style="display: grid; place-items: center; width: 44px; height: 44px; border-radius: 50%; border: 1px solid rgba(255,255,255,.16); background: rgba(255,255,255,.06); color: #fff; cursor: pointer; transition: all 200ms cubic-bezier(.16,1,.3,1);" style-hover="background: rgba(109,94,240,.16); border-color: rgba(167,139,250,.6); transform: translateY(-2px); box-shadow: 0 0 32px rgba(109,94,240,.55)" style-active="transform: scale(.985)"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 18l-6-6 6-6"></path></svg></button>
+            <div style="display: flex; flex-direction: column; align-items: center; gap: 4px; text-align: center;">
+              <span style="font-size: 11px; font-weight: 600; letter-spacing: .18em; text-transform: uppercase; color: var(--blue-300);">{{ mockSize }}</span>
+              <span role="status" style="font-size: 13px; color: rgba(255,255,255,.7);">{{ mockCount }}</span>
+            </div>
+            <button type="button" data-focusable="1" onClick="{{ nextMock }}" disabled="{{ onlyOne }}" aria-label="Next size" style="display: grid; place-items: center; width: 44px; height: 44px; border-radius: 50%; border: 1px solid rgba(255,255,255,.16); background: rgba(255,255,255,.06); color: #fff; cursor: pointer; transition: all 200ms cubic-bezier(.16,1,.3,1);" style-hover="background: rgba(109,94,240,.16); border-color: rgba(167,139,250,.6); transform: translateY(-2px); box-shadow: 0 0 32px rgba(109,94,240,.55)" style-active="transform: scale(.985)"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 18l6-6-6-6"></path></svg></button>
+          </div>
+          <div ref="{{ stageRef }}" style="display: flex; justify-content: center; width: 100%; min-width: 0;">
+            <div style="{{ mockBox }}">
+              <iframe ref="{{ previewRef }}" key="{{ mockKey }}" title="{{ mockTitle }}" srcDoc="{{ mockHtml }}" sandbox="allow-scripts" style="{{ mockFrame }}"></iframe>
+              <sc-if value="{{ hasSlot }}" hint-placeholder-val="{{ false }}">
+                <sc-if value="{{ hasYt }}" hint-placeholder-val="{{ false }}">
+                  <iframe title="Client video" src="{{ ytSrc }}" allow="autoplay; encrypted-media; picture-in-picture" allowfullscreen="{{ true }}" style="{{ slotStyle }}"></iframe>
+                </sc-if>
+                <sc-if value="{{ noYt }}" hint-placeholder-val="{{ false }}">
+                  <div style="{{ slotBlank }}">Video here</div>
+                </sc-if>
+              </sc-if>
+              <sc-if value="{{ working }}" hint-placeholder-val="{{ false }}">
+                <div style="position: absolute; inset: 0; display: grid; place-items: center; background: rgba(0,5,9,.55); color: #fff; font-size: 14px; font-weight: 600; text-align: center; padding: 12px;"><div style="display: flex; flex-direction: column; align-items: center; gap: 12px;"><span aria-hidden="true" style="width: 28px; height: 28px; border-radius: 50%; border: 2px solid rgba(255,255,255,.2); border-top-color: #00CCFF; animation: kx-spin 900ms linear infinite;"></span><span role="status">{{ workingText }}</span></div></div>
+              </sc-if>
+            </div>
+          </div>
+          <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 10px;">
+            <sc-if value="{{ live }}" hint-placeholder-val="{{ false }}">
+              <button type="button" data-focusable="1" onClick="{{ replayMock }}" style="height: 44px; padding: 0 20px; border-radius: 999px; border: 1px solid rgba(255,255,255,.16); background: rgba(255,255,255,.06); color: #fff; font: inherit; font-size: 14px; font-weight: 600; cursor: pointer; transition: all 200ms cubic-bezier(.16,1,.3,1);" style-hover="background: rgba(109,94,240,.16); border-color: rgba(167,139,250,.6); transform: translateY(-2px); box-shadow: 0 0 32px rgba(109,94,240,.55)" style-active="transform: scale(.985)">Replay</button>
+            </sc-if>
+            <sc-if value="{{ canApproveImg }}" hint-placeholder-val="{{ false }}">
+              <button type="button" data-focusable="1" onClick="{{ approveImg }}" disabled="{{ busy }}" style="height: 44px; padding: 0 22px; border-radius: 999px; border: 1px solid transparent; background: #00CCFF; color: #001830; font: inherit; font-size: 14px; font-weight: 700; cursor: pointer; transition: all 200ms cubic-bezier(.16,1,.3,1);" style-hover="background: #66E0FF; transform: translateY(-2px); box-shadow: 0 0 32px rgba(0,204,255,.45)" style-active="transform: scale(.985)">Approve &amp; animate</button>
+            </sc-if>
+            <sc-if value="{{ canApproveAnim }}" hint-placeholder-val="{{ false }}">
+              <button type="button" data-focusable="1" onClick="{{ approveAnim }}" disabled="{{ busy }}" style="height: 44px; padding: 0 22px; border-radius: 999px; border: 1px solid transparent; background: #00CCFF; color: #001830; font: inherit; font-size: 14px; font-weight: 700; cursor: pointer; transition: all 200ms cubic-bezier(.16,1,.3,1);" style-hover="background: #66E0FF; transform: translateY(-2px); box-shadow: 0 0 32px rgba(0,204,255,.45)" style-active="transform: scale(.985)">Approve animation</button>
+            </sc-if>
+            <sc-if value="{{ isFailed }}" hint-placeholder-val="{{ false }}">
+              <button type="button" data-focusable="1" onClick="{{ retry }}" disabled="{{ busy }}" style="height: 44px; padding: 0 22px; border-radius: 999px; border: 1px solid transparent; background: #00CCFF; color: #001830; font: inherit; font-size: 14px; font-weight: 700; cursor: pointer; transition: all 200ms cubic-bezier(.16,1,.3,1);" style-hover="background: #66E0FF; transform: translateY(-2px); box-shadow: 0 0 32px rgba(0,204,255,.45)" style-active="transform: scale(.985)">Retry this size</button>
+            </sc-if>
+          </div>
+          <sc-if value="{{ hasStrip }}" hint-placeholder-val="{{ false }}">
+            <div data-block="Mock Builder · Slide review" style="display: flex; flex-direction: column; align-items: center; gap: 10px; width: 100%; min-width: 0;">
+              <span style="font-size: 11px; font-weight: 600; letter-spacing: .18em; text-transform: uppercase; color: rgba(255,255,255,.6);">Every planned slide · review before approving</span>
+              <div style="display: flex; gap: 12px; overflow-x: auto; max-width: 100%; padding: 4px 2px 8px;">
+                <sc-for list="{{ strip }}" as="it" hint-placeholder-count="0">
+                  <figure style="margin: 0; display: flex; flex-direction: column; align-items: center; gap: 6px; flex: none;">
+                    <div style="{{ it.box }}"><iframe key="{{ it.key }}" title="{{ it.label }}" srcDoc="{{ it.html }}" sandbox="allow-scripts" tabindex="-1" style="{{ it.frame }}"></iframe></div>
+                    <figcaption style="max-width: 160px; font-size: 12px; color: rgba(255,255,255,.75); text-align: center;">{{ it.label }}</figcaption>
+                  </figure>
+                </sc-for>
+              </div>
+            </div>
+          </sc-if>
+          <sc-if value="{{ hasPlan }}" hint-placeholder-val="{{ false }}">
+            <details data-block="Mock Builder · Content plan" style="width: 100%; max-width: 760px; margin: 0 auto; padding: 14px; border-radius: 12px; border: 1px solid rgba(255,255,255,.08); background: rgba(255,255,255,.03); box-sizing: border-box;">
+              <summary style="cursor: pointer; min-height: 32px; display: flex; align-items: center; font-size: 13px; font-weight: 600; color: #fff;">{{ planTitle }}</summary>
+              <div style="display: flex; flex-direction: column; gap: 10px; margin-top: 10px;">
+                <span style="font-size: 13px; color: rgba(255,255,255,.75);">{{ planConcept }}</span>
+                <sc-for list="{{ planSlides }}" as="ps" hint-placeholder-count="0">
+                  <div style="display: grid; grid-template-columns: 28px minmax(0, 1fr); gap: 10px; padding: 10px 12px; border-radius: 10px; border: 1px solid rgba(255,255,255,.07); background: rgba(0,5,9,.4);">
+                    <span style="font-size: 12px; font-weight: 700; color: var(--blue-300);">{{ ps.n }}</span>
+                    <span style="display: flex; flex-direction: column; gap: 3px; min-width: 0;">
+                      <span style="font-size: 14px; font-weight: 600; color: #fff;">{{ ps.head }}</span>
+                      <span style="font-size: 13px; color: rgba(255,255,255,.75);">{{ ps.body }}</span>
+                      <span style="font-size: 12px; color: rgba(255,255,255,.55); overflow-wrap: anywhere;">{{ ps.meta }}</span>
+                    </span>
+                  </div>
+                </sc-for>
+                <span style="font-size: 12.5px; color: #FCD34D;">{{ planCoverage }}</span>
+                <span style="font-size: 12px; color: rgba(255,255,255,.55);">{{ planChanges }}</span>
+              </div>
+            </details>
+          </sc-if>
+          <sc-if value="{{ hasChecks }}" hint-placeholder-val="{{ false }}">
+            <details data-block="Mock Builder · Checks" open="{{ checksOpen }}" style="width: 100%; max-width: 760px; margin: 0 auto; padding: 14px; border-radius: 12px; border: 1px solid rgba(255,255,255,.08); background: rgba(255,255,255,.03); box-sizing: border-box;">
+              <summary style="cursor: pointer; min-height: 32px; display: flex; align-items: center; font-size: 13px; font-weight: 600; color: #fff;">{{ checksTitle }}</summary>
+              <div style="display: flex; flex-direction: column; gap: 6px; margin-top: 10px;">
+                <sc-for list="{{ checkRows }}" as="cr" hint-placeholder-count="0">
+                  <div style="display: flex; align-items: baseline; gap: 8px; font-size: 13px; color: rgba(255,255,255,.85);">
+                    <span style="{{ cr.markStyle }}">{{ cr.mark }}</span>
+                    <span style="min-width: 0;"><span style="font-weight: 600;">{{ cr.label }}</span> <span style="color: rgba(255,255,255,.6); overflow-wrap: anywhere;">{{ cr.detail }}</span></span>
+                  </div>
+                </sc-for>
+                <span style="font-size: 12.5px; color: rgba(255,255,255,.7);">{{ checksNote }}</span>
+                <span style="font-size: 12px; color: rgba(255,255,255,.5);">{{ checksMethod }}</span>
+                <sc-if value="{{ hasFailed }}" hint-placeholder-val="{{ false }}">
+                  <button type="button" data-focusable="1" onClick="{{ fixFailed }}" disabled="{{ busy }}" style="align-self: center; height: 44px; padding: 0 20px; border-radius: 999px; border: 1px solid rgba(255,255,255,.16); background: rgba(255,255,255,.06); color: #fff; font: inherit; font-size: 14px; font-weight: 600; cursor: pointer; transition: all 200ms cubic-bezier(.16,1,.3,1);" style-hover="background: rgba(109,94,240,.16); border-color: rgba(167,139,250,.6); transform: translateY(-2px); box-shadow: 0 0 32px rgba(109,94,240,.55)" style-active="transform: scale(.985)">Ask the AI to fix these</button>
+                </sc-if>
+              </div>
+            </details>
+          </sc-if>
+          <sc-if value="{{ showEdit }}" hint-placeholder-val="{{ false }}">
+            <div style="display: flex; flex-direction: column; gap: 8px; width: 100%; max-width: 760px; margin: 0 auto;">
+              <label style="font-size: 13px; font-weight: 600; color: rgba(255,255,255,.8);">{{ editHeading }}</label>
+              <div style="display: flex; align-items: flex-end; gap: 10px; flex-wrap: wrap;">
+                <textarea ref="{{ editRef }}" data-focusable="1" rows="2" value="{{ editText }}" onChange="{{ onEditText }}" onKeyDown="{{ onEditKey }}" placeholder="{{ editPlaceholder }}" aria-label="{{ editHeading }}" style="flex: 1 1 320px; min-width: 0; min-height: 56px; resize: vertical; padding: 12px 14px; border-radius: 12px; border: 1px solid rgba(255,255,255,.14); background: rgba(0,5,9,.6); color: #fff; font: inherit; font-size: 15px; line-height: 1.45; outline: none; box-sizing: border-box;"></textarea>
+                <button type="button" data-focusable="1" onClick="{{ doEdit }}" disabled="{{ busy }}" style="height: 44px; padding: 0 20px; border-radius: 999px; border: 1px solid rgba(255,255,255,.16); background: rgba(255,255,255,.06); color: #fff; font: inherit; font-size: 14px; font-weight: 600; cursor: pointer; transition: all 200ms cubic-bezier(.16,1,.3,1);" style-hover="background: rgba(109,94,240,.16); border-color: rgba(167,139,250,.6); transform: translateY(-2px); box-shadow: 0 0 32px rgba(109,94,240,.55)" style-active="transform: scale(.985)">{{ editLabel }}</button>
+              </div>
+              <sc-if value="{{ multiReady }}" hint-placeholder-val="{{ false }}">
+                <label style="display: inline-flex; align-items: center; gap: 8px; min-height: 44px; font-size: 13px; color: rgba(255,255,255,.85); cursor: pointer;"><input type="checkbox" data-focusable="1" checked="{{ applyAll }}" onChange="{{ onApplyAll }}" style="width: 18px; height: 18px; accent-color: #00CCFF;">Apply to all sizes</label>
+              </sc-if>
+            </div>
+          </sc-if>
+          <sc-if value="{{ hasContent }}" hint-placeholder-val="{{ false }}">
+            <div data-block="Mock Builder · Mock content" style="display: flex; flex-direction: column; gap: 12px; width: 100%; max-width: 760px; margin: 0 auto; padding: 14px; border-radius: 12px; border: 1px solid rgba(255,255,255,.08); background: rgba(255,255,255,.03); box-sizing: border-box;">
+              <span style="font-size: 11px; font-weight: 600; letter-spacing: .18em; text-transform: uppercase; color: rgba(255,255,255,.6);">Mock content · this version only</span>
+              <sc-if value="{{ cHasDisc }}" hint-placeholder-val="{{ false }}">
+                <label style="display: flex; flex-direction: column; gap: 6px; font-size: 13px; font-weight: 600; color: rgba(255,255,255,.8); text-align: left;"><span style="display: flex; align-items: center; gap: 8px;">Disclaimer<span style="{{ cDiscBadge }}">{{ cDiscSrc }}</span></span>
+                  <textarea data-focusable="1" rows="3" value="{{ cDisc }}" onChange="{{ onCDisc }}" onKeyDown="{{ onContentKey }}" style="min-height: 80px; resize: vertical; padding: 12px 14px; border-radius: 12px; border: 1px solid rgba(255,255,255,.14); background: rgba(0,5,9,.6); color: #fff; font: inherit; font-size: 14px; font-weight: 400; line-height: 1.45; outline: none; box-sizing: border-box;"></textarea>
+                </label>
+              </sc-if>
+              <sc-for list="{{ cLocs }}" as="cl" hint-placeholder-count="0">
+                <div style="display: grid; grid-template-columns: minmax(0, 1.2fr) minmax(0, 1.8fr) minmax(0, .7fr) auto; gap: 8px; align-items: end;">
+                  <label style="display: flex; flex-direction: column; gap: 6px; font-size: 13px; font-weight: 600; color: rgba(255,255,255,.8); text-align: left;">Location name<input data-focusable="1" type="text" value="{{ cl.name }}" onChange="{{ cl.onName }}" onKeyDown="{{ onContentKey }}" style="height: 44px; padding: 0 12px; border-radius: 10px; border: 1px solid rgba(255,255,255,.14); background: rgba(0,5,9,.6); color: #fff; font: inherit; font-size: 14px; outline: none; box-sizing: border-box; min-width: 0;"></label>
+                  <label style="display: flex; flex-direction: column; gap: 6px; font-size: 13px; font-weight: 600; color: rgba(255,255,255,.8); text-align: left;">Address<input data-focusable="1" type="text" value="{{ cl.address }}" onChange="{{ cl.onAddress }}" onKeyDown="{{ onContentKey }}" style="height: 44px; padding: 0 12px; border-radius: 10px; border: 1px solid rgba(255,255,255,.14); background: rgba(0,5,9,.6); color: #fff; font: inherit; font-size: 14px; outline: none; box-sizing: border-box; min-width: 0;"></label>
+                  <label style="display: flex; flex-direction: column; gap: 6px; font-size: 13px; font-weight: 600; color: rgba(255,255,255,.8); text-align: left;">Miles away<input data-focusable="1" type="text" value="{{ cl.miles }}" onChange="{{ cl.onMiles }}" onKeyDown="{{ onContentKey }}" style="height: 44px; padding: 0 12px; border-radius: 10px; border: 1px solid rgba(255,255,255,.14); background: rgba(0,5,9,.6); color: #fff; font: inherit; font-size: 14px; outline: none; box-sizing: border-box; min-width: 0;"></label>
+                  <span style="{{ cl.badge }}">{{ cl.src }}</span>
+                </div>
+              </sc-for>
+              <div style="display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 10px;">
+                <span style="font-size: 12.5px; color: rgba(255,255,255,.6);">Demo values are mock content, not verified facts or approved legal language.</span>
+                <button type="button" data-focusable="1" onClick="{{ applyContent }}" disabled="{{ busy }}" style="height: 44px; padding: 0 20px; border-radius: 999px; border: 1px solid rgba(255,255,255,.16); background: rgba(255,255,255,.06); color: #fff; font: inherit; font-size: 14px; font-weight: 600; cursor: pointer; transition: all 200ms cubic-bezier(.16,1,.3,1);" style-hover="background: rgba(109,94,240,.16); border-color: rgba(167,139,250,.6); transform: translateY(-2px); box-shadow: 0 0 32px rgba(109,94,240,.55)" style-active="transform: scale(.985)">Apply content edits</button>
+              </div>
+            </div>
+          </sc-if>
+          <sc-if value="{{ hasDl }}" hint-placeholder-val="{{ false }}">
+            <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 10px;">
+              <sc-for list="{{ dlOpts }}" as="dl" hint-placeholder-count="3">
+                <button type="button" data-focusable="1" onClick="{{ dl.go }}" disabled="{{ dl.off }}" title="{{ dl.why }}" style="height: 44px; padding: 0 20px; border-radius: 999px; border: 1px solid rgba(255,255,255,.16); background: rgba(255,255,255,.06); color: #fff; font: inherit; font-size: 14px; font-weight: 600; cursor: pointer; transition: all 200ms cubic-bezier(.16,1,.3,1);" style-hover="background: rgba(109,94,240,.16); border-color: rgba(167,139,250,.6); transform: translateY(-2px); box-shadow: 0 0 32px rgba(109,94,240,.55)" style-active="transform: scale(.985)">{{ dl.label }}</button>
+              </sc-for>
+            </div>
+          </sc-if>
+          <sc-if value="{{ prevNote }}" hint-placeholder-val="{{ false }}">
+            <p role="status" style="margin: 0; text-align: center; font-size: 13px; color: #FCD34D;">{{ prevNote }}</p>
+          </sc-if>
+          <sc-if value="{{ dlNote }}" hint-placeholder-val="{{ false }}">
+            <p style="margin: 0; text-align: center; font-size: 13px; color: #FCD34D;">{{ dlNote }}</p>
+          </sc-if>
+          <sc-if value="{{ exportMsg }}" hint-placeholder-val="{{ false }}">
+            <p role="status" style="margin: 0; text-align: center; font-size: 13px; color: var(--blue-300);">{{ exportMsg }}</p>
+          </sc-if>
+          <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; padding-top: 14px; border-top: 1px solid rgba(255,255,255,.07);">
+            <sc-if value="{{ hasAllDl }}" hint-placeholder-val="{{ false }}">
+              <button type="button" data-focusable="1" onClick="{{ downloadAll }}" disabled="{{ exporting }}" style="height: 44px; padding: 0 22px; border-radius: 999px; border: 1px solid transparent; background: #00CCFF; color: #001830; font: inherit; font-size: 14px; font-weight: 700; cursor: pointer; transition: all 200ms cubic-bezier(.16,1,.3,1);" style-hover="background: #66E0FF; transform: translateY(-2px); box-shadow: 0 0 32px rgba(0,204,255,.45)" style-active="transform: scale(.985)">Download all generated assets</button>
+            </sc-if>
+            <button type="button" data-focusable="1" onClick="{{ newMock }}" disabled="{{ busy }}" style="height: 44px; padding: 0 20px; border-radius: 999px; border: 1px solid rgba(255,255,255,.16); background: rgba(255,255,255,.06); color: #fff; font: inherit; font-size: 14px; font-weight: 600; cursor: pointer; transition: all 200ms cubic-bezier(.16,1,.3,1);" style-hover="background: rgba(109,94,240,.16); border-color: rgba(167,139,250,.6); transform: translateY(-2px); box-shadow: 0 0 32px rgba(109,94,240,.55)" style-active="transform: scale(.985)">Start a new mock</button>
+          </div>
+          <sc-if value="{{ allNote }}" hint-placeholder-val="{{ false }}">
+            <p style="margin: 0; text-align: center; font-size: 12.5px; color: rgba(255,255,255,.6);">{{ allNote }}</p>
+          </sc-if>
+        </section>
+      </sc-if>
+        </sc-if>
+  </main>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  /* Effort levels per model, from each provider's API docs (Oct 2026). Default is always medium. */
+  EFFORTS_BY_MODEL = { 'gpt-6-astra': ['low', 'medium', 'high', 'xhigh', 'max'], 'claude-opus-5-5': ['low', 'medium', 'high', 'xhigh', 'max'] };
+  efforts(m) { return this.EFFORTS_BY_MODEL[m || this.state.model] || ['low', 'medium', 'high']; }
+  MODELS = [['gpt-6-astra', 'ChatGPT · GPT-6 Astra']];
+  state = { clients: [], sessions: [], clientId: '', sessionId: '', save: '', saveErr: '', effort: 'medium', model: 'gpt-6-astra', mode: 'banner', size: '300x600', vopt: 'both', vkind: 'ctv', ytUrl: '', slot: null, behavior: 'rich', behaviorSet: false, size: 'both', vpres: 'overlay', ovar: 'auto', loc: { name: '', address: '', miles: '', origin: '', source: '' }, compMsg: '', cedit: null, disc: { text: '', speed: 'slow', dir: 'up', strip: 'bottom' }, duration: 15, dest: '', evidence: null, scanNote: '', versions: [], cur: 0, prevHtml: '', editText: '', applyAll: false, comps: [], gate: 'loading', msgs: [], draft: '', busy: false, err: '', brand: '', site: '', files: [] };
+  listRef = React.createRef();
+  SIZES = [['300x600', '300×600', '300×600'], ['300x250', '300×250', '300×250'], ['both', '300×250 & 300×600', '300×250 and 300×600'], ['iab5', '5 IAB sizes', '5 IAB sizes: 300×250, 300×600, 728×90, 160×600, 320×50']];
+  VOPTS = [['skin', 'Skin only'], ['both', 'YouTube video & skin']];
+  COMPS = [
+    ['Carousel', 'Swipe through frames, products or offers.', 'M2 3v18M22 3v18M7 5h10a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H7a1 1 0 0 1-1-1V6a1 1 0 0 1 1-1z'],
+    ['Inline video', 'Video plays inside the unit.', 'M3 5h18a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V6a1 1 0 0 1 1-1zM10 9l5 3-5 3z'],
+    ['Flip card', 'Tap to turn and reveal the back.', 'M8 3h8a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2zM2 12a10 10 0 0 0 4 8M22 12a10 10 0 0 0-4-8'],
+    ['Game', 'A quick play moment tied to the brand.', 'M6 11h4M8 9v4M15 12h.01M18 10h.01M17.32 5H6.68a4 4 0 0 0-3.978 3.59l-.9 8.1A3 3 0 0 0 4.784 20c.83 0 1.6-.38 2.11-1.03L8 17h8l1.106 1.97A2.69 2.69 0 0 0 19.216 20a3 3 0 0 0 2.982-3.31l-.9-8.1A4 4 0 0 0 17.32 5z'],
+    ['Slider', 'Drag to compare or reveal.', 'M3 6h10M17 6h4M3 12h4M11 12h10M3 18h12M19 18h2M15 4v4M9 10v4M17 16v4'],
+    ['Quiz', 'A few questions lead to a result.', 'M3 17l2 2 4-4M3 7l2 2 4-4M13 6h8M13 12h8M13 18h8'],
+    ['Maps', 'Find the nearest location.', 'M20 10c0 6-8 12-8 12S4 16 4 10a8 8 0 0 1 16 0zM12 7a3 3 0 1 0 0 6 3 3 0 0 0 0-6z'],
+    ['Drag and drop', 'Move pieces to build or match.', 'M5 9l-3 3 3 3M9 5l3-3 3 3M15 19l-3 3-3-3M19 9l3 3-3 3M2 12h20M12 2v20'],
+    ['Pop up window', 'Tap to open a window with more detail.', 'M3 4h18a1 1 0 0 1 1 1v14a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V5a1 1 0 0 1 1-1zM2 8h20M7 12h10M7 16h6'],
+    ['Scratch off', 'Rub away the surface to reveal the offer.', 'M4 20l6-6M7 17l3 3M14 4l6 6-8 8-6-6z'],
+    ['Nearby location', 'Business name and street address, auto-filled or demo.', 'M12 21s-7-6.2-7-11.5A7 7 0 0 1 19 9.5C19 14.8 12 21 12 21zM12 12a2.5 2.5 0 1 0 0-5 2.5 2.5 0 0 0 0 5z'],
+    ['Scrolling disclaimer', 'Legal copy in a readable scrolling strip.', 'M6 3h9l4 4v14H6zM14 3v5h5M9 12h7M9 15h7M9 18h4']
+  ];
+
+  /* Component picker rules (skill v3): one component by default; two only when both are pairable; never more than two. */
+  PAIR = ['Carousel', 'Inline video', 'Flip card', 'Maps', 'Nearby location', 'Scrolling disclaimer'];
+  ALIAS = { 'Nearby': 'Nearby location', 'Scrolling disclaimers': 'Scrolling disclaimer', 'Video': 'Inline video', 'Popup window': 'Pop up window', 'Scratch-off': 'Scratch off' };
+  canonComps(list) { const out = []; (list || []).forEach(c => { const k = this.ALIAS[c] || c; if (this.COMPS.some(x => x[0] === k) && !out.includes(k)) out.push(k); }); return this.validComps(out) ? out : out.slice(0, 1); }
+  validComps(l) { return l.length <= 1 || (l.length === 2 && l.every(c => this.PAIR.includes(c))); }
+  toggleComp(label) {
+    if (this.compsOff()) return;
+    const cur = this.state.comps;
+    if (cur.includes(label)) return this.setState({ comps: cur.filter(c => c !== label), compMsg: '' });
+    if (!cur.length) return this.setState({ comps: [label], compMsg: '' });
+    if (!this.PAIR.includes(label)) return this.setState({ comps: [label], compMsg: label + ' works on its own, so it replaced ' + cur.join(' and ') + '.' });
+    if (cur.some(c => !this.PAIR.includes(c))) return this.setState({ comps: [label], compMsg: cur[0] + ' works on its own, so ' + label + ' replaced it.' });
+    if (cur.length >= 2) return this.setState({ compMsg: 'Maximum 2 components. Deselect one to choose ' + label + '.' });
+    this.setState({ comps: cur.concat(label), compMsg: '' });
+  }
+  ensureComp(label) { const cur = this.state.comps; if (cur.includes(label)) return; if (cur.length === 1 && this.PAIR.includes(cur[0]) && this.PAIR.includes(label)) this.setState({ comps: cur.concat(label), compMsg: '' }); else this.setState({ comps: [label], compMsg: cur.length ? label + ' is part of this presentation, so it replaced ' + cur.join(' and ') + '.' : '' }); }
+  /* Reference images sent to the model for the selected components and presentation. */
+  REFS = { 'Carousel': ['carousel.png', 'carousel-2.png', 'circular-carousel.png'], 'Inline video': ['inline-video.png', 'video-player-and-carousel.png'], 'Maps': ['maps.png'], 'Nearby location': ['nearby-location.png', 'nearby-location-2.png'], 'Pop up window': ['pop-up-windows.png'] };
+  refNames() {
+    const s = this.state, lists = [];
+    if (s.mode === 'video') { lists.push([{ overlay: 'interactive-video-overlay.png', carousel: 'interactive-video-carousel.png', ctvqr: 'ctv-qr-code.png' }[s.vpres]]); if (s.vkind === 'ctv') lists.push(['ctv-qr-code-2.png']); }
+    if (!this.compsOff()) s.comps.forEach(c => lists.push(this.REFS[c] || []));
+    const out = [];
+    for (let i = 0; out.length < 3 && i < 3; i++) lists.forEach(l => { if (l[i] && !out.includes(l[i]) && out.length < 3) out.push(l[i]); });
+    return out;
+  }
+  refCache = {};
+  async refImages() {
+    const out = [];
+    for (const n of this.refNames()) {
+      try {
+        if (!this.refCache[n]) {
+          const img = await new Promise((ok, no) => { const i = new Image(); i.onload = () => ok(i); i.onerror = no; i.src = './mock-templates/examples/' + n; });
+          const k = Math.min(1, 1024 / Math.max(img.naturalWidth, img.naturalHeight)), c = document.createElement('canvas');
+          c.width = Math.round(img.naturalWidth * k); c.height = Math.round(img.naturalHeight * k); c.getContext('2d').drawImage(img, 0, 0, c.width, c.height);
+          this.refCache[n] = c.toDataURL('image/jpeg', .82);
+        }
+        out.push({ name: n, url: this.refCache[n] });
+      } catch (e) {}
+    }
+    return out;
+  }
+  /* Editable mock content (disclaimer + locations) per version. User overrides always win over generated values. */
+  mergeContent(c, ov) {
+    const out = { disclaimer: c && c.disclaimer ? Object.assign({}, c.disclaimer) : null, locations: ((c && c.locations) || []).map(l => Object.assign({}, l)) };
+    if (ov && ov.disclaimer) out.disclaimer = { text: ov.disclaimer, source: 'user' };
+    if (ov && ov.locations) out.locations = ov.locations.map(l => Object.assign({}, l, { source: 'user' }));
+    return out.disclaimer || out.locations.length ? out : null;
+  }
+  editBuf(v) { const s = this.state; if (s.cedit && s.cedit.vid === v.vid && s.cedit.rev === v.rev) return s.cedit; const c = v.content || {}; return { vid: v.vid, rev: v.rev, disc: (c.disclaimer && c.disclaimer.text) || '', locs: (c.locations || []).map(l => ({ name: l.name || '', address: l.address || '', miles: l.miles || '', source: l.source || 'demo' })) }; }
+  setBuf(v, fn) { this.setState(() => { const b = this.editBuf(v); return { cedit: Object.assign({}, b, fn(b)) }; }); }
+  applyContent(v) {
+    const b = this.editBuf(v), c = v.content || {};
+    const same = (b.disc || '') === ((c.disclaimer && c.disclaimer.text) || '') && JSON.stringify(b.locs.map(l => [l.name, l.address, l.miles])) === JSON.stringify((c.locations || []).map(l => [l.name || '', l.address || '', l.miles || '']));
+    if (same) return;
+    const ov = Object.assign({}, v.overrides || {}); if (c.disclaimer || b.disc) ov.disclaimer = b.disc; if (b.locs.length) ov.locations = b.locs.map(l => ({ name: l.name, address: l.address, miles: l.miles }));
+    this.setV(v.vid, { overrides: ov });
+    const txt = 'Update the mock content to exactly these values and change nothing else.' + (c.disclaimer || b.disc ? ' Disclaimer text, verbatim: """' + b.disc + '""".' : '') + (b.locs.length ? ' Locations: ' + b.locs.map((l, i) => (i + 1) + ') ' + l.name + ' — ' + l.address + (l.miles ? ' — ' + l.miles : '')).join('; ') + '. These are user-edited values (source: user).' : '');
+    if (v.stage === 'awaitImg') this.reviseImage(v.vid, txt); else if (v.stage === 'awaitAnim') this.reviseAnimation(v.vid, txt); else if (v.stage === 'ready') this.editVersion(v.vid, txt, false);
+  }
+  showComps() { return true; }
+  needLoc() { const s = this.state; return s.comps.includes('Nearby location') && !this.compsOff(); }
+  needDisc() { return this.state.comps.includes('Scrolling disclaimer'); }
+  mapAssetName() { const up = this.state.files.find(f => !f.pending && /map/i.test(f.name) && /\.(png|jpe?g|webp)$/i.test(f.name)); return up ? up.name : 'maps-2.png'; }
+  async ensureMapTemplate() {
+    if (!this.state.comps.includes('Maps') || this.compsOff() || this.mapAssetName() !== 'maps-2.png' || this.extraAssets['maps-2.png']) return;
+    try {
+      const blob = await (await fetch('./mock-templates/maps-2.png')).blob();
+      const url = await new Promise(r => { const fr = new FileReader(); fr.onload = () => r(fr.result); fr.readAsDataURL(blob); });
+      this.extraAssets['maps-2.png'] = { url, blob, kind: 'template', source: 'KORTX map template (maps-2.png)' };
+      this.setState(s => ({ assetTick: (s.assetTick || 0) + 1 }));
+    } catch (e) {}
+  }
+  compsOff() { return this.state.mode !== 'video' && this.state.behavior === 'standard'; }
+  FNS = ['builder-ai', 'mock-builder'];
+  stageRef = React.createRef();
+  isVideo(mk) { return /data-kx-video/i.test(mk.raw || '') || (mk.w >= 640 && mk.h >= 360); }
+  ytId() { const m = (this.state.ytUrl || '').match(/(?:youtu\.be\/|[?&]v=|\/shorts\/|\/embed\/|\/live\/)([A-Za-z0-9_-]{11})/); return m ? m[1] : ''; }
+  previewRef = React.createRef();
+  onSlotMsg = e => { const f = this.previewRef.current; if (!f || e.source !== f.contentWindow || !e.data) return; const d = e.data; if (d.kx === 'slot') return this.setState({ slot: d.r }); if (d.kx === 'perr') return this.setState({ prevNote: 'This version has a script error: ' + d.msg + '. Describe a change (e.g. “fix the animation so it plays”) to regenerate it.' }); if (d.kx === 'pblank') this.setState({ prevNote: d.fixed ? 'The animation didn’t play on its own, so the preview is showing its final frame' + (d.err ? ' (' + d.err + ')' : '') + '. Revise the animation to fix playback.' : 'This version renders blank' + (d.err ? ' (' + d.err + ')' : '') + '. Describe a change, e.g. “fix the animation so everything is visible”, to regenerate it.' }); };
+  withSlot(code) { const js = '<script>(function(){var last="";function s(){var e=document.querySelector("[data-kx-video]");var r=e?e.getBoundingClientRect():null;var v=r?[r.left,r.top,r.width,r.height].map(Math.round).join(","):"";if(v!==last){last=v;parent.postMessage({kx:"slot",r:r?[r.left,r.top,r.width,r.height]:null},"*")}}setInterval(s,200);addEventListener("load",s);s()})()<\/script>'; return /<\/body>/i.test(code) ? code.replace(/<\/body>(?![\s\S]*<\/body>)/i, js + '</body>') : code + js; }
+  frameCache = {};
+  /* Plays the mock in a hidden sandboxed frame and grabs frames in real time (html-to-image), so CSS and JS animation both record. */
+  captureFrames(mk, onProg) {
+    if (this.frameCache[mk.code]) return Promise.resolve(this.frameCache[mk.code]);
+    const cap = '<script type="module">const h=await import("https://cdn.jsdelivr.net/npm/html-to-image@1.11.11/+esm");addEventListener("message",async e=>{const o=e.data;if(!o||o.kx!=="cap")return;try{let d=10;try{const ends=document.getAnimations().map(a=>{const t=a.effect&&a.effect.getComputedTiming();return t&&isFinite(t.endTime)?t.endTime/1000:0});const m=Math.max(0,...ends);if(m>=3)d=m+0.5}catch(x){}d=Math.min(15,Math.max(6,d));document.getAnimations().forEach(a=>{try{a.currentTime=0}catch(x){}});const PH="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII=";document.querySelectorAll("img").forEach(i=>{if(/^asset:/i.test(i.getAttribute("src")||"")||(i.complete&&!i.naturalWidth))i.src=PH});const opts={width:o.w,height:o.h,pixelRatio:1,cacheBust:false,imagePlaceholder:PH};try{opts.fontEmbedCSS=await h.getFontEmbedCSS(document.body)}catch(x){}const out=[],t0=performance.now();while(performance.now()-t0<d*1000){const ts=performance.now()-t0;const c=await h.toCanvas(document.body,opts);const se=document.querySelector("[data-kx-video]"),sr=se?se.getBoundingClientRect():null;out.push({t:ts,b:await createImageBitmap(c),r:sr?[sr.left,sr.top,sr.width,sr.height]:null});parent.postMessage({kx:"prog",p:ts/(d*1000)},"*");const w=1000/o.fps-(performance.now()-t0-ts);if(w>0)await new Promise(r=>setTimeout(r,w))}parent.postMessage({kx:"frames",frames:out,dur:d},"*",out.map(f=>f.b))}catch(err){parent.postMessage({kx:"fail",msg:err&&err.message||(err&&err.type?"An image in the ad could not be loaded ("+err.type+")":String(err))},"*")}});parent.postMessage({kx:"ready"},"*");<\/script>';
+    const html = /<\/body>/i.test(mk.code) ? mk.code.replace(/<\/body>(?![\s\S]*<\/body>)/i, cap + '</body>') : mk.code + cap;
+    return new Promise((resolve, reject) => {
+      const f = document.createElement('iframe');
+      f.setAttribute('sandbox', 'allow-scripts'); f.setAttribute('aria-hidden', 'true'); f.tabIndex = -1;
+      f.style.cssText = 'position:fixed;left:-20000px;top:0;border:0;width:' + mk.w + 'px;height:' + mk.h + 'px;';
+      const done = (fn, v) => { window.removeEventListener('message', on); clearTimeout(to); f.remove(); fn(v); };
+      const on = e => {
+        if (e.source !== f.contentWindow || !e.data) return;
+        const d = e.data;
+        if (d.kx === 'ready') f.contentWindow.postMessage({ kx: 'cap', w: mk.w, h: mk.h, fps: this.isVideo(mk) ? 12 : 15 }, '*');
+        else if (d.kx === 'prog') onProg && onProg(d.p);
+        else if (d.kx === 'frames') { if (!d.frames.length) return done(reject, new Error('No frames captured')); this.frameCache[mk.code] = d.frames; done(resolve, d.frames); }
+        else if (d.kx === 'fail') done(reject, new Error(d.msg));
+      };
+      const to = setTimeout(() => done(reject, new Error('Recording timed out')), 90000);
+      window.addEventListener('message', on);
+      f.srcdoc = html; document.body.appendChild(f);
+    });
+  }
+  saveBlob(blob, name) { const a = document.createElement('a'); a.href = URL.createObjectURL(blob); a.download = name; document.body.appendChild(a); a.click(); a.remove(); setTimeout(() => URL.revokeObjectURL(a.href), 4000); }
+  fileBase(mk) { return (this.state.brand || 'kortx-mock').replace(/[^a-z0-9]+/gi, '-').toLowerCase() + '-' + mk.w + 'x' + mk.h + (this.isVideo(mk) ? '-skin' : ''); }
+  async exportMock(mk, kind) {
+    if (kind === 'html') return this.zipFor([mk]);
+    const label = kind.toUpperCase();
+    this.setState({ exporting: true, exportMsg: 'Recording the ad for ' + label + '…' });
+    try {
+      const frames = await this.captureFrames(mk, p => this.setState({ exportMsg: 'Recording the ad for ' + label + '… ' + Math.round(p * 100) + '%' }));
+      const cv = document.createElement('canvas'), ctx = cv.getContext('2d');
+      if (kind === 'png') {
+        const lf = frames[frames.length - 1]; cv.width = mk.w; cv.height = mk.h; ctx.drawImage(lf.b, 0, 0); if (lf.r) ctx.clearRect(lf.r[0], lf.r[1], lf.r[2], lf.r[3]);
+        this.saveBlob(await new Promise(r => cv.toBlob(r, 'image/png')), this.fileBase(mk) + '.png');
+      } else if (kind === 'gif') {
+        this.setState({ exportMsg: 'Encoding GIF…' });
+        const { GIFEncoder, quantize, applyPalette } = await import('https://cdn.jsdelivr.net/npm/gifenc@1.0.3/+esm');
+        const sc = Math.min(1, 640 / mk.w); cv.width = Math.round(mk.w * sc); cv.height = Math.round(mk.h * sc);
+        const gif = GIFEncoder(), step = 100; let next = 0;
+        const pick = frames.filter(fr => { if (fr.t + 1 >= next) { next = fr.t + step; return true; } return false; });
+        pick.forEach((fr, i) => {
+          ctx.drawImage(fr.b, 0, 0, cv.width, cv.height);
+          if (fr.r) { ctx.fillStyle = '#000'; ctx.fillRect(fr.r[0] * sc, fr.r[1] * sc, fr.r[2] * sc, fr.r[3] * sc); }
+          const { data } = ctx.getImageData(0, 0, cv.width, cv.height);
+          const palette = quantize(data, 256), index = applyPalette(data, palette);
+          const delay = i < pick.length - 1 ? Math.max(20, pick[i + 1].t - fr.t) : 1500;
+          gif.writeFrame(index, cv.width, cv.height, { palette, delay });
+        });
+        gif.finish();
+        this.saveBlob(new Blob([gif.bytes()], { type: 'image/gif' }), this.fileBase(mk) + '.gif');
+      } else if (kind === 'mp4') {
+        const mime = ['video/mp4;codecs=avc1', 'video/mp4', 'video/webm;codecs=vp9', 'video/webm'].find(t => window.MediaRecorder && MediaRecorder.isTypeSupported(t));
+        if (!mime) throw new Error('This browser cannot record video. Try Chrome or Safari.');
+        this.setState({ exportMsg: 'Encoding video…' });
+        cv.width = mk.w - (mk.w % 2); cv.height = mk.h - (mk.h % 2);
+        ctx.drawImage(frames[0].b, 0, 0, cv.width, cv.height);
+        const rec = new MediaRecorder(cv.captureStream(30), { mimeType: mime, videoBitsPerSecond: 8e6 }), chunks = [];
+        rec.ondataavailable = e => e.data.size && chunks.push(e.data);
+        const stopped = new Promise(r => { rec.onstop = r; });
+        rec.start();
+        const t0 = performance.now(), end = frames[frames.length - 1].t + 300;
+        await new Promise(r => { let k = 0; const tick = () => { const el = performance.now() - t0; while (k < frames.length - 1 && frames[k + 1].t <= el) k++; ctx.drawImage(frames[k].b, 0, 0, cv.width, cv.height); if (el < end) requestAnimationFrame(tick); else r(); }; tick(); });
+        rec.stop(); await stopped;
+        this.saveBlob(new Blob(chunks, { type: mime.split(';')[0] }), this.fileBase(mk) + (mime.includes('mp4') ? '.mp4' : '.webm'));
+      }
+      this.setState({ exporting: false, exportMsg: '' });
+    } catch (e) {
+      this.setState({ exporting: false, exportMsg: '', err: label + ' export failed: ' + (e.message || e) });
+    }
+  }
+
+  extract(text) {
+    const out = [], re = /```(?:html)?\s*\n([\s\S]*?)(?:```|$)/gi; let m;
+    while ((m = re.exec(text || ''))) {
+      const code = m[1].trim();
+      if (!/<(html|body|div|svg|style)/i.test(code) || code.length < 80) continue;
+      let w = 300, h = 600;
+      const meta = code.match(/ad\.size"?\s+content="width=(\d+),\s*height=(\d+)/i) || code.match(/width:\s*(\d{2,4})px;[^}]*height:\s*(\d{2,4})px/i);
+      if (meta) { w = +meta[1]; h = +meta[2]; }
+      const stage = /kx-stage"?\s+content="still/i.test(code) ? 'still' : 'animated';
+      out.push({ raw: /<html/i.test(code) ? code : '<!doctype html><html><head><meta charset="utf-8"></head><body style="margin:0">' + code + '</body></html>', w, h, stage });
+    }
+    return out;
+  }
+  assetUrls = {};
+  withAssets(raw) { return raw.replace(/asset:\/\/([^"'()\s<>]+)/g, (m, n) => { const k = decodeURIComponent(n); return this.assetUrls[k] || m; }); }
+  async loadAssets() {
+    let changed = false;
+    for (const f of this.state.files) {
+      if (f.pending || this.assetUrls[f.name]) continue;
+      try {
+        if (f.file) this.assetUrls[f.name] = await new Promise((ok, no) => { const r = new FileReader(); r.onload = () => ok(r.result); r.onerror = no; r.readAsDataURL(f.file); });
+        else if (f.path && this.api) this.assetUrls[f.name] = await this.api.fileUrl(f.path);
+        changed = true;
+      } catch (e) {}
+    }
+    if (changed) this.setState(s => ({ assetTick: (s.assetTick || 0) + 1 }));
+  }
+  async assetBlob(name) {
+    if (this.extraAssets[name]) return this.extraAssets[name].blob;
+    const f = this.state.files.find(x => x.name === name);
+    if (f && f.file) return f.file;
+    const u = this.assetUrls[name] || (f && f.path && this.api ? await this.api.fileUrl(f.path) : null);
+    if (!u) return null;
+    const r = await fetch(u); return r.ok ? r.blob() : null;
+  }
+  allMocks() { const list = []; this.state.msgs.forEach(m => { if (m.role === 'assistant') this.extract(m.content).forEach(x => list.push(Object.assign(x, { code: this.withAssets(x.raw) }))); }); return list; }
+  strip(text) { let n = 0; return (text || '').replace(/```(?:html)?\s*\n[\s\S]*?(?:```|$)/gi, (blk) => this.extract(blk).length ? '[Mock ' + (++n) + ' — preview below]' : blk).replace(/\*\*(.+?)\*\*/g, '$1').replace(/^#{1,6}\s+/gm, '').trim(); }
+  async zipFor(mocks) {
+    if (!window.JSZip) await new Promise((ok, no) => { const s = document.createElement('script'); s.src = 'https://cdn.jsdelivr.net/npm/jszip@3.10.1/dist/jszip.min.js'; s.onload = ok; s.onerror = no; document.head.appendChild(s); });
+    const zip = new window.JSZip(), base = (this.state.brand || 'kortx-mock').replace(/[^a-z0-9]+/gi, '-').toLowerCase();
+    const pack = async (folder, x) => {
+      const names = Array.from(new Set((x.raw.match(/asset:\/\/([^"'()\s<>]+)/g) || []).map(a => decodeURIComponent(a.slice(8)))));
+      let html = x.raw;
+      for (const n of names) { const b = await this.assetBlob(n).catch(() => null); if (b) { folder.file('assets/' + n, b); html = html.split('asset://' + encodeURIComponent(n)).join('assets/' + n).split('asset://' + n).join('assets/' + n); } }
+      folder.file('index.html', html);
+    };
+    if (mocks.length === 1) await pack(zip, mocks[0]);
+    else for (const x of mocks) await pack(zip.folder(x.w + 'x' + x.h), x);
+    const blob = await zip.generateAsync({ type: 'blob' });
+    const a = document.createElement('a'); a.href = URL.createObjectURL(blob); a.download = base + (mocks.length === 1 ? '-' + mocks[0].w + 'x' + mocks[0].h : '-all-sizes') + '.zip'; a.click(); setTimeout(() => URL.revokeObjectURL(a.href), 4000);
+  }
+  measure = () => { const el = this.stageRef.current; if (el && el.clientWidth !== this.state.stageW) this.setState({ stageW: el.clientWidth }); };
+
+  SYSTEM = "You are the KORTX Mock Builder assistant. KORTX is a Detroit media firm. You build ad mocks for the team. Be plain, short and specific. Sentence-case headlines. No exclamation marks.\n\nWork in this order:\n1. Gather. The page context below gives the format and size, components, brand, website and uploaded assets. If anything needed is missing, ask for it in one short bulleted list and stop. Ask only for what is missing, from: Brand name; Website URL; Idea, story or interaction; Copy (headline, subcopy, CTA and any line below the CTA, or say \"draft the copy\"); Click-through URL. End with one line inviting them to attach a logo, product images, carousel cards, reference designs or video with Upload Assets. If the user says \"draft the copy\", write it yourself. If the request already has enough to build, skip this step.\n2. Still preview. Build the static design first: one fenced html code block per size containing <meta name=\"kx-stage\" content=\"still\">, no animation, every element visible in its final layout. Before the code, at most one sentence on what the animation will do. After the code, exactly one line: Say \"animate it\" to build the animated HTML5 version, or tell me what to change.\n3. Animate. When the user approves (\"animate it\", \"looks good\", \"go\"), rebuild the same design fully animated, one block per size, containing <meta name=\"kx-stage\" content=\"animated\">: an intro build, working interactions (the requested components must really work with mouse and touch: carousels swipe, flip cards flip, hotspots open popups, sliders drag), a clear CTA end state, total loop 15 to 30 seconds. Declare var clickTag = \"<click-through URL>\"; and open it with window.open(clickTag, \"_blank\") from the CTA.\n4. Revise. When asked for changes, return the complete updated document(s) at the same stage.\n\nEvery code block is one complete, self-contained HTML document: inline CSS and vanilla JS only, includes <meta name=\"ad.size\" content=\"width=W,height=H\">, and sets html and body to exactly W x H px with overflow hidden. Uploaded assets: reference them as src=\"asset://<exact file name>\" and the page swaps in the real file. Never invent or hotlink image URLs. If no product image was uploaded, build the product visual from CSS or inline SVG and mention once that real product images can be attached. Keep text outside the code to one or two short sentences. Never say you cannot make a zip, GIF, PNG or MP4: the page previews the ad and exports those formats itself. Video mocks (CTV or interactive video): never build or embed the video itself. Leave exactly one empty element with the attribute data-kx-video where the video plays (absolutely positioned, 16:9 unless the layout needs otherwise, no background, no content, no border). The page plays the client's video there in preview and exports the skin only. Video & Skin: the video sits in a squeezeback or L-shape with the branded skin around it. Skin only: a branded frame or overlay around a full-frame video slot. CTV mocks are 1920x1080 and drive actions with a QR code or remote-style buttons; interactive video mocks are 1920x1080 or 16:9 player overlays with clickable elements.";
+  componentDidUpdate2(prev) {
+    if (prev.files !== this.state.files) this.loadAssets();
+    this.refreshPreview();
+    clearTimeout(this._mt);
+    this._mt = setTimeout(() => { const el = this.stageRef.current; if (!el) return; if (el !== this.roEl && window.ResizeObserver) { if (this.ro) this.ro.disconnect(); this.roEl = el; this.ro = new ResizeObserver(() => this.measure()); this.ro.observe(el); } if (el.clientWidth !== this.state.stageW) this.measure(); }, 30);
+  }
+  componentDidMount() {
+    window.addEventListener('resize', this.measure); setTimeout(this.measure, 0);
+    window.addEventListener('message', this.onSlotMsg);
+    import('./creative-cloud.js').then(async c => {
+      this.cloud = c;
+      const u = await c.currentUser().catch(() => null);
+      this.setState({ gate: u ? 'ok' : 'signin' });
+      this.userEmail = u && u.email;
+      this.wf = await import('./mock-workflow.js');
+      this.pl = await import('./mock-pipeline.js');
+      if (u) { this.api = await import('./mock-api.js'); await this.loadClients(); this.resumeFromUrl(); }
+    }).catch(() => this.setState({ gate: 'ok', err: 'Couldn’t load the sign-in helper.' }));
+  }
+  componentDidUpdate() {
+    const prev = this._prevState || {}; this._prevState = this.state;
+    this.componentDidUpdate2(prev);
+    if ((prev.msgs !== this.state.msgs || prev.busy !== this.state.busy) && this.listRef.current) this.listRef.current.scrollTop = this.listRef.current.scrollHeight;
+  }
+  async call(messages, opt) {
+    const sb = await this.cloud.client();
+    const { data: { session } } = await sb.auth.getSession();
+    if (!session) throw new Error('401');
+    const base = (this.cloud.SUPABASE_URL || 'https://fdjfsimjilicmfsiijyi.supabase.co') + '/functions/v1/';
+    const body = JSON.stringify({ messages, model: this.state.model, reasoning_effort: (opt && opt.effort) || this.state.effort, stream: true, images: (opt && opt.images) || undefined });
+    let res, lastErr;
+    for (const fn of this.fnName ? [this.fnName] : this.FNS) {
+      try {
+        res = await fetch(base + fn, { method: 'POST', headers: { Authorization: 'Bearer ' + session.access_token, apikey: this.cloud.SUPABASE_ANON_KEY || '', 'Content-Type': 'application/json' }, body });
+      } catch (e) { lastErr = e; res = null; break; }
+      if (res.status !== 404) { this.fnName = fn; break; }
+    }
+    if (!res) throw new Error((lastErr && lastErr.message) || 'Failed to fetch');
+    if (!res.ok) { let m = 'Request failed (' + res.status + ')'; try { const j = await res.json(); if (j && j.error) m = j.error; } catch (e) {} throw new Error(res.status === 404 ? '404' : m); }
+    const ver = res.headers.get('x-kx-version') || '', rid = res.headers.get('x-request-id') || '';
+    if ((res.headers.get('content-type') || '').includes('application/json')) {
+      const j = await res.json(); if (j.error) throw new Error(j.error);
+      this.lastMeta = { version: j.version || ver || 'legacy', requestId: j.requestId || rid, status: j.status || 'unknown', usage: j.usage || null, incomplete: j.incomplete || null };
+      if (j.status && j.status !== 'completed') throw new Error('The AI reply was cut off (' + ((j.incomplete && j.incomplete.reason) || j.status) + '). Nothing was changed; try again.');
+      return j.text || '';
+    }
+    const reader = res.body.getReader(), dec = new TextDecoder();
+    let text = '';
+    try { for (;;) { const { value, done } = await reader.read(); if (done) break; text += dec.decode(value, { stream: true }); } }
+    catch (e) { this.lastMeta = { version: ver || 'legacy', requestId: rid, status: 'interrupted', error: String(e.message || e) }; throw new Error('The connection to the AI dropped before the reply finished. Nothing was changed; try again.'); }
+    let meta = null; const mk = text.lastIndexOf('\n[[KX_META]]');
+    if (mk >= 0) { try { meta = JSON.parse(text.slice(mk + 12)); } catch (e) {} text = text.slice(0, mk); }
+    const k = text.indexOf('\n[[KX_ERROR]]'); let streamErr = '';
+    if (k >= 0) { streamErr = text.slice(k + 14); text = text.slice(0, k); }
+    this.lastMeta = Object.assign({ version: ver || 'legacy (no x-kx-version)', requestId: rid, status: meta ? meta.status : (streamErr ? 'failed' : 'unknown') }, meta || {}, streamErr ? { error: streamErr } : {});
+    if (streamErr) throw new Error('The AI reply failed part-way (' + streamErr + '). Nothing was changed; try again.');
+    if (ver && (!meta || meta.status !== 'completed')) throw new Error(meta && meta.status === 'incomplete' ? 'The AI reply was cut off (' + ((meta.incomplete && meta.incomplete.reason) || 'incomplete') + '). Nothing was changed; try again or lower the effort.' : 'The AI reply ended early (' + ((meta && meta.status) || 'interrupted') + '). Nothing was changed; try again.');
+    return text;
+  }
+  /* ── Saved work (Supabase: mock_clients / mock_sessions / mock_files) ── */
+  settings() { const s = this.state; return { mode: s.mode, size: s.size, vopt: s.vopt, vkind: s.vkind, behavior: s.behavior, vpres: s.vpres, ovar: s.ovar, loc: s.loc, disc: s.disc, duration: s.duration, dest: s.dest, ytUrl: s.ytUrl, comps: s.comps, model: s.model, effort: s.effort, evidence: s.evidence, manifest: this.manifest || [], products: s.products || [], coverage: s.coverage || '', versions: (s.versions || []).map(v => Object.assign({}, v)), cur: s.cur || 0, promptVersion: this.wf ? this.wf.PROMPT_VERSION : '' }; }
+  saved(save, text) { this.setState({ save, saveErr: text || '' }); }
+  loadClients = async () => { try { this.setState({ clients: await this.api.listClients() }); } catch (e) { this.saved('off', this.dbErr(e)); } };
+  dbErr(e) { const m = (e && e.message) || String(e); return /relation|does not exist|schema cache|bucket/i.test(m) ? 'Saving is off until the Mock Builder tables are set up in Supabase.' : 'Couldn’t save: ' + m; }
+  onClient = async e => {
+    const id = e.target.value;
+    if (!id) return this.setState({ clientId: '', sessionId: '', sessions: [], brand: '', site: '', msgs: [], files: [], err: '' });
+    const c = (this.state.clients || []).find(x => x.id === id) || {};
+    this.setState({ clientId: id, sessionId: '', brand: c.name || '', site: c.website || '', msgs: [], files: [], err: '' });
+    try {
+      const [sessions, files] = await Promise.all([this.api.listSessions(id), this.api.listFiles(id)]);
+      this.setState({ sessions, files: files.filter(f => !f.session_id).map(this.fileRow) });
+      if (sessions[0]) this.openSession(sessions[0].id);
+    } catch (x) { this.saved('off', this.dbErr(x)); }
+  };
+  onSession = e => { const id = e.target.value; if (!id) return this.setState({ sessionId: '', msgs: [], err: '' }); this.openSession(id); };
+  openSession = async id => {
+    try {
+      const [r, files] = await Promise.all([this.api.getSession(id), this.api.listFiles(this.state.clientId, id)]);
+      const st = r.settings || {};
+      this.manifest = Array.isArray(st.manifest) ? st.manifest : [];
+      this.setState(s => ({ sessionId: id, products: st.products || [], coverage: st.coverage || '', msgs: (r.messages || []).map(m => ({ role: m.role, content: m.content })), files: files.map(this.fileRow), err: '',
+        mode: st.mode || s.mode, size: st.size || s.size, vopt: st.vopt || s.vopt, comps: st.comps ? this.canonComps(st.comps) : s.comps, vkind: st.vkind || s.vkind, behavior: st.behavior || s.behavior, behaviorSet: !!st.behavior, size: (st.behavior || s.behavior) === 'standard' ? 'iab5' : 'both', vpres: st.vpres || s.vpres, ovar: 'auto', vpres: 'overlay', loc: Object.assign({}, s.loc, st.loc || {}), disc: Object.assign({}, s.disc, st.disc || {}), duration: +st.duration === 30 ? 30 : 15, dest: '', ytUrl: st.ytUrl || '', evidence: st.evidence || null, versions: this.recover(st.versions), cur: st.cur || 0, model: 'gpt-6-astra', effort: this.efforts('gpt-6-astra').includes(st.effort) ? st.effort : 'medium' }));
+      this.saved('ok');
+    } catch (x) { this.saved('off', this.dbErr(x)); }
+  };
+
+  /* Brand name: type a new brand or pick a saved one. */
+  matchClient(name) { const n = String(name || '').trim().toLowerCase(); return n ? (this.state.clients || []).find(c => (c.name || '').trim().toLowerCase() === n) : null; }
+  pickBrand = c => { this.setState(s => ({ brand: c.name, site: s.site || c.website || '', clientId: c.id, brandOpen: false })); };
+  onBrandFocus = () => this.setState({ brandOpen: true });
+  onBrandBlur = () => { setTimeout(() => { const c = this.matchClient(this.state.brand); this.setState({ brandOpen: false }); if (c && c.id !== this.state.clientId) this.pickBrand(c); else this.saveClient(); }, 120); };
+  onBrandKey = e => {
+    if (e.key === 'Escape') return this.setState({ brandOpen: false });
+    if (e.key === 'Enter') { e.preventDefault(); const c = this.matchClient(this.state.brand) || this.brandList()[0]; if (c && c.id) this.pickBrand(c); else this.setState({ brandOpen: false }); e.currentTarget.blur(); }
+  };
+  brandList() { const q = String(this.state.brand || '').trim().toLowerCase(); return (this.state.clients || []).filter(c => !q || (c.name || '').toLowerCase().includes(q)).slice(0, 8); }
+  /* Read uploads and fill any empty Mock Builder fields. */
+  async readUpload(f) {
+    const n = f.name || '', t = f.type || '';
+    try {
+      if (/\.docx$/i.test(n)) { const { docxText } = await import('./docx-text.js'); return (await docxText(f)).slice(0, 20000); }
+      if (/^text\//.test(t) || /\.(txt|md|csv|json|html?|rtf|xml)$/i.test(n)) return (await f.text()).slice(0, 20000);
+    } catch (e) {}
+    return '';
+  }
+  async autofill(files) {
+    const parts = [];
+    for (const f of files) { const txt = await this.readUpload(f); parts.push('FILE: ' + f.name + (f.type ? ' (' + f.type + ')' : '') + (txt ? '\n' + txt : '')); }
+    if (!parts.length) return;
+    this.setState({ fillNote: 'Reading your uploads…' });
+    const ask = 'From these uploaded files (names and any text), extract what you can for an ad mock brief. Reply with JSON only, no prose: {"brand": string|null, "website": string|null, "mode": "banner"|"video"|null, "size": "300x600"|"300x250"|"both"|"iab5"|null, "videoType": "ctv"|"iv"|null, "videoOption": "skin"|"both"|null, "components": [any of ' + JSON.stringify(this.COMPS.map(c => c[0])) + '], "youtube": string|null, "idea": string|null}. Use null when the files do not say. "idea" is one or two sentences describing the ad concept, copy or CTA if the files describe one.\n\n' + parts.join('\n\n');
+    try {
+      const raw = await this.call([{ role: 'system', content: 'You extract structured fields. Reply with one JSON object only.' }, { role: 'user', content: ask }], { effort: 'low' });
+      const m = raw.match(/\{[\s\S]*\}/); if (!m) throw new Error('no json');
+      const j = JSON.parse(m[0]), s = this.state, set = {}, got = [];
+      if (j.brand && !s.brand.trim()) { set.brand = j.brand; got.push('brand name'); const c = this.matchClient(j.brand); if (c) set.clientId = c.id; }
+      if (j.website && !s.site.trim()) { set.site = /^https?:/i.test(j.website) ? j.website : 'https://' + j.website; got.push('website'); }
+      if (!s.msgs.length) {
+        if (j.mode === 'banner' || j.mode === 'video') { set.mode = j.mode; got.push('format'); }
+        if (this.SIZES.some(z => z[0] === j.size)) set.size = j.size;
+        if (j.videoType === 'ctv' || j.videoType === 'iv') set.vkind = j.videoType;
+        if (j.videoOption === 'skin' || j.videoOption === 'both') set.vopt = j.videoOption;
+      }
+      const comps = (j.components || []).filter(c => this.COMPS.some(x => x[0] === c) && !s.comps.includes(c));
+      if (comps.length) { set.comps = s.comps.concat(comps); got.push('components'); }
+      if (j.youtube && !s.ytUrl.trim() && /youtu/i.test(j.youtube)) { set.ytUrl = j.youtube; got.push('YouTube link'); }
+      if (j.idea && !s.draft.trim() && !s.msgs.length) { set.draft = j.idea; got.push('mock idea'); }
+      set.fillNote = got.length ? 'Filled from your uploads: ' + got.join(', ') + '. Check and edit anything that’s off.' : '';
+      this.setState(set);
+    } catch (e) { this.setState({ fillNote: '' }); }
+  }
+  /* Opened from My Builds: /mock-builder?session=<id> continues that conversation. */
+  async resumeFromUrl() {
+    const id = new URLSearchParams(location.search).get('session');
+    if (!id || !this.api) return;
+    try {
+      const r = await this.api.getSession(id);
+      const c = (this.state.clients || []).find(x => x.id === r.client_id) || (await this.api.listClients()).find(x => x.id === r.client_id) || {};
+      this.sessionClient = r.client_id;
+      this.setState({ clientId: r.client_id, brand: c.name || '', site: c.website || '' });
+      await this.openSession(id);
+    } catch (e) { this.saved('off', this.dbErr(e)); }
+  }
+
+  /* ── Mock workflow: still → Approve & animate → Approve animation → automatic size adaptations → per-version edits and exports ── */
+  STAGE_LABEL = { planning: 'Planning slides, assets and copy…', fixing: 'Fixing failed checks…', stillGen: 'Building the still…', awaitImg: 'Still · awaiting image approval', animating: 'Animating the approved still…', awaitAnim: 'Animation · awaiting approval', adapting: 'Adapting from the approved primary…', revising: 'Applying your changes…', ready: 'Approved · ready to export', failed: 'Generation failed · retry' };
+  extraAssets = {};
+  capCache = {};
+  editRef = React.createRef();
+  plan() { const s = this.state; return (this.wf && this.wf.SIZE_PLANS[s.mode === 'video' ? 'video' : s.size]) || [[300, 600]]; }
+  videoFile() { return [...this.state.files].reverse().find(f => !f.pending && (/^video\//.test((f.file && f.file.type) || (f.row && f.row.mime) || '') || /\.(mp4|mov|webm|m4v)$/i.test(f.name))); }
+  extraUrls() { const o = {}; Object.keys(this.extraAssets).forEach(k => { o[k] = this.extraAssets[k].url; }); return o; }
+  qrDest() { const d = ((this.state.dest || '').trim() || this.state.site.trim()); if (!d) return ''; const u = /^https?:\/\//i.test(d) ? d : 'https://' + d; return /^https?:\/\/[^\s/]+\.[^\s]+/i.test(u) ? u : ''; }
+  briefObj() {
+    const s = this.state;
+    return { vpres: s.vpres, ovar: s.ovar, loc: this.needLoc() ? s.loc : null, disc: this.needDisc() ? s.disc : null, site: s.site.trim(), mapTemplate: s.comps.includes('Maps') && !this.compsOff() ? this.mapAssetName() : '', mode: s.mode, behavior: s.behavior, vkind: s.vkind, vopt: s.vopt, comps: s.mode !== 'video' && s.behavior === 'standard' ? [] : s.comps, duration: Math.max(5, Math.min(60, +s.duration || 15)),
+      brand: s.brand.trim(), site: s.site.trim(), dest: this.qrDest() || (s.dest || '').trim(), evidence: s.evidence,
+      assets: s.files.filter(f => !f.pending && !/\.(mp4|mov|webm|m4v)$/i.test(f.name)).map(f => f.name).concat(Object.keys(this.extraAssets).filter(n => !s.files.some(f => f.name === n))) };
+  }
+  prepOpts(forExport) {
+    const s = this.state, vf = s.mode === 'video' && s.vopt !== 'skin' ? this.videoFile() : null;
+    return { assets: forExport ? {} : Object.assign({}, this.extraUrls(), this.assetUrls), skinOnly: s.mode === 'video' && s.vopt === 'skin',
+      videoSrc: vf ? (forExport ? 'asset://' + vf.name : (this.assetUrls[vf.name] || '')) : '', qrUrl: s.mode === 'video' && s.vkind === 'ctv' ? this.qrDest() : '' };
+  }
+  previewSrc(v) { return ['stillGen', 'awaitImg', 'animating'].includes(v.stage) || (['revising', 'fixing'].includes(v.stage) && v.prevStage === 'awaitImg') ? v.still : (v.anim || v.still); }
+  async refreshPreview() {
+    const s = this.state, v = (s.versions || [])[s.cur || 0];
+    if (!v || !this.wf) return;
+    const src = this.previewSrc(v) || '';
+    const key = [v.vid, v.rev, v.stage, src.length, s.assetTick || 0, s.vopt, s.vkind, this.qrDest(), (this.videoFile() || {}).name || '', s.replay || 0].join('|');
+    if (key === this.prevKey) return;
+    this.prevKey = key;
+    const html = src ? await this.wf.prepare(src, Object.assign(this.prepOpts(false), { preview: true })).catch(() => src) : '';
+    if (this.prevKey === key) this.setState({ prevHtml: html, prevNote: '' });
+    this.buildStrip(v, src);
+  }
+  stripKey(v) { return v.vid + ':' + v.rev + ':' + (v.anim ? 'a' : 's') + ':' + (this.state.assetTick || 0); }
+  /* Review strip: one small render per planned slide, so approval covers the whole content plan. */
+  async buildStrip(v, src) {
+    const p = v.brief && v.brief.plan, n = p ? p.slides.length : 0, key = this.stripKey(v);
+    if (n < 2 || !src || !this.pl || !['awaitImg', 'awaitAnim', 'ready'].includes(v.stage)) { if (this.state.strip) this.setState({ strip: null }); return; }
+    if (this.state.strip && this.state.strip.key === key) return;
+    const base = await this.wf.prepare(src, this.prepOpts(false)).catch(() => src);
+    const items = []; for (let i = 0; i < Math.min(n, 12); i++) items.push({ key: key + ':' + i, html: this.pl.withSlide(base, i) });
+    const now = this.getV(v.vid); if (now && this.stripKey(now) === key) this.setState({ strip: { key, items } });
+  }
+  planVals(v, s) {
+    const b = v.brief || {}, p = b.plan, ck = v.checks && v.checks.rev === v.rev ? v.checks : null, slides = p ? p.slides : [];
+    const sc = Math.min(1, 220 / v.h, 160 / v.w), strip = s.strip && s.strip.key === this.stripKey(v) ? s.strip.items : [];
+    const okStage = ['awaitImg', 'awaitAnim', 'ready'].includes(v.stage);
+    return {
+      hasPlan: !!p, planTitle: 'Content plan · ' + slides.length + (slides.length === 1 ? ' slide' : ' slides') + ' · ' + (p && p.mode === 'exact' ? 'exact artwork' : 'new concept') + (b.planApproved ? ' · approved' : ' · approved together with the still'),
+      planConcept: p ? [p.concept, p.interaction].filter(Boolean).join(' · ') : '', planCoverage: p && p.coverage ? 'Coverage: ' + p.coverage : '',
+      planChanges: (b.changes || []).length ? 'Brief v' + b.v + ' · ' + b.changes.length + ' change' + (b.changes.length > 1 ? 's' : '') + ' carried into every stage' : 'Brief v' + (b.v || 1),
+      planSlides: slides.map((x, i) => ({ n: String(i + 1), head: x.headline || x.title, body: x.body || '', meta: [x.asset ? 'Image ' + x.asset : x.assetWanted ? 'Image not found: ' + x.assetWanted : 'No image', x.destination, 'Source: ' + x.source].filter(Boolean).join(' · ') })),
+      hasStrip: okStage && strip.length > 1,
+      strip: strip.map((it, i) => ({ key: it.key, html: it.html, label: 'Slide ' + (i + 1) + (slides[i] ? ' · ' + (slides[i].title || '').slice(0, 24) : ''), box: { position: 'relative', width: Math.round(v.w * sc), height: Math.round(v.h * sc), overflow: 'hidden', borderRadius: 4, background: '#fff', boxShadow: '0 0 0 1px rgba(255,255,255,.12)' }, frame: { width: v.w, height: v.h, border: 0, display: 'block', transform: 'scale(' + sc + ')', transformOrigin: '0 0', pointerEvents: 'none' } })),
+      hasChecks: !!ck, checksOpen: !!(ck && ck.errors.length), checksTitle: ck ? 'Checks on this ' + ck.of + ' · ' + ck.passed + ' of ' + ck.total + ' passed' : '', checksMethod: ck ? ck.method : '', checksNote: ck ? ck.correction || '' : '',
+      checkRows: ck ? ck.checks.map(c => ({ label: c.label, detail: c.detail || '', mark: c.ok ? '✓' : '✕', markStyle: { flex: 'none', width: 22, textAlign: 'center', fontWeight: 700, color: c.ok ? '#86EFAC' : '#FCA5A5' } })) : [],
+      hasFailed: !!(ck && ck.errors.length && okStage),
+      fixFailed: () => { if (!ck) return; const t = 'Fix these failed checks: ' + ck.errors.join('; '); if (v.stage === 'awaitImg') this.reviseImage(v.vid, t); else if (v.stage === 'awaitAnim') this.reviseAnimation(v.vid, t); else this.editVersion(v.vid, t, false); }
+    };
+  }
+  /* Every stage gets the version's own brief (idea, plan, change log), the asset manifest and labelled image inputs. */
+  async ask(kind, o, userText) {
+    const v = o.vid ? this.getV(o.vid) : null, brief = (v && v.brief) || o.brief0 || null;
+    const form = Object.assign({}, brief ? brief.form : this.briefObj(), { manifest: this.fullManifest(), products: this.state.products || [], coverage: this.state.coverage || '' });
+    const refs = ['plan', 'still'].includes(kind) ? await this.refImages() : [];
+    this.lastRefs = refs.map(x => x.name);
+    const focus = ((brief && brief.plan && brief.plan.slides) || []).map(s => s.asset).filter(Boolean);
+    const vis = this.pl ? await this.pl.visualInputs(this.fullManifest(), a => this.assetSrc(a.file), { refs, focus, max: 12 }).catch(() => ({ images: refs.map(r => r.url), labels: refs.map(r => r.name), omitted: [] })) : { images: refs.map(r => r.url), labels: [], omitted: [] };
+    const ctx = { idea: brief ? brief.idea : o.idea, plan: brief && brief.plan, planApproved: !!(brief && brief.planApproved), changes: brief ? brief.changes : [], images: vis.labels, omitted: vis.omitted };
+    const t0 = performance.now(); let raw = '', err = null; this.lastMeta = null;
+    try { raw = await this.call([{ role: 'system', content: this.wf.prompt(kind, Object.assign({ brief: form, refs: this.lastRefs, ctx }, o)) }, { role: 'user', content: userText || 'Build it.' }], vis.images.length ? { images: vis.images } : undefined); }
+    catch (e) { err = e; }
+    const html = raw && kind !== 'plan' ? this.wf.extractHtml(raw) : null;
+    const truncated = !!raw && kind !== 'plan' && !html && this.wf.looksTruncated(raw);
+    this.logRun({ stage: kind, vid: o.vid || null, ms: Math.round(performance.now() - t0), images: vis.labels.length, omitted: vis.omitted, ok: !err && !truncated, error: err ? String(err.message || err) : truncated ? 'truncated html' : null, briefVersion: brief ? brief.v : null });
+    if (err) throw err;
+    if (truncated) throw new Error('The AI reply was cut off before the HTML finished. Nothing was changed; try again.');
+    return { html, say: this.wf.sayText(raw), raw };
+  }
+  assetSrc(file) { return (this.extraAssets[file] && this.extraAssets[file].url) || this.assetUrls[file] || ''; }
+  /* Uploads + downloaded website images + generated art + templates, with stable IDs. */
+  fullManifest() {
+    const s = this.state, list = (this.manifest || []).filter(a => this.extraAssets[a.file] || this.assetUrls[a.file]), have = new Set(list.map(a => a.file));
+    s.files.filter(f => !f.pending && !/\.(mp4|mov|webm|m4v|pdf|docx?|txt|csv)$/i.test(f.name) && !have.has(f.name)).forEach((f, i) => { have.add(f.name); list.push({ id: 'U' + String(i + 1).padStart(2, '0'), file: f.name, kind: 'upload', role: /logo/i.test(f.name) ? 'logo' : /map/i.test(f.name) ? 'template' : 'upload', source: 'upload' }); });
+    Object.keys(this.extraAssets).filter(n => !have.has(n)).forEach((n, i) => { const x = this.extraAssets[n]; list.push({ id: 'G' + String(i + 1).padStart(2, '0'), file: n, kind: x.kind || 'generated', role: x.kind === 'template' ? 'template' : x.kind === 'website' ? 'lifestyle' : 'artwork', source: x.source || x.model || 'generated' }); });
+    return list;
+  }
+  addManifest(e) { this.manifest = (this.manifest || []).concat(Object.assign({ id: 'A' + String((this.manifest || []).length + 1).padStart(2, '0') }, e)); }
+  async logRun(row) {
+    const m = this.lastMeta || {}, s = this.state;
+    const rec = Object.assign({ session_id: s.sessionId || null, model: s.model, effort: s.effort, prompt_version: this.wf ? this.wf.PROMPT_VERSION : '', backend_version: m.version || null, request_id: m.id || m.requestId || null, status: m.status || null, usage: m.usage || null, incomplete: m.incomplete || null, manifest: (this.fullManifest() || []).map(a => ({ id: a.id, file: a.file, role: a.role, w: a.w, h: a.h, product: a.product, source: a.source })) }, row);
+    this.runLog = (this.runLog || []).concat(rec).slice(-50);
+    if (!this.api || !this.api.logRun) return;
+    try { await this.api.logRun(rec); if (s.runLogErr) this.setState({ runLogErr: '' }); }
+    catch (e) { if (!s.runLogErr) this.setState({ runLogErr: /relation|does not exist|schema cache/i.test(e.message || '') ? 'Run log off (mock_runs table missing)' : 'Run log not saved' }); }
+  }
+  /* Rendered checks against the version's plan, then at most one automatic correction pass. */
+  async checkAndFix(vid, anim) {
+    let v = this.getV(vid); if (!v || !this.pl) return;
+    const plan = v.brief && v.brief.plan, src = anim ? v.anim : v.still; if (!src) return;
+    let res = await this.pl.validate(await this.wf.prepare(src, this.prepOpts(false)), src, v.w, v.h, { plan, anim }), ran = false, improved = false;
+    const noDest = !((v.brief && v.brief.form && v.brief.form.dest) || '').replace('#', '');
+    const fixable = res.errors.filter(e => !(noDest && /^Click-through/.test(e)));
+    if (noDest && fixable.length < res.errors.length) res.note = 'No click-through URL was given, so the ad uses "#". Add a Website URL to fix it.';
+    if (fixable.length) {
+      ran = true; const back = v.stage;
+      await this.setV(vid, { stage: 'fixing', prevStage: back });
+      try {
+        const r = await this.ask('fix', { vid, w: v.w, h: v.h, html: src, errors: fixable }, 'Fix the failed checks.');
+        if (r.html) { const res2 = await this.pl.validate(await this.wf.prepare(r.html, this.prepOpts(false)), r.html, v.w, v.h, { plan, anim }); if (res2.errors.length < res.errors.length) { await this.setV(vid, anim ? { anim: r.html } : { still: r.html }); res = res2; improved = true; } }
+      } catch (e) { res.fixError = this.niceErr(e); }
+      await this.setV(vid, { stage: back });
+    }
+    res.correction = (res.note ? res.note + ' ' : '') + (ran ? (improved ? 'One automatic correction pass ran and improved the result.' : 'One automatic correction pass ran; it didn’t improve the result, so the original was kept.' + (res.fixError ? ' (' + res.fixError + ')' : '')) : '');
+    const cur = this.getV(vid); await this.setV(vid, { checks: Object.assign(res, { of: anim ? 'animation' : 'still', rev: cur ? cur.rev : 0 }) });
+    this.lastMeta = null;
+    this.logRun({ stage: 'validate', vid, ok: !res.errors.length, validation: { passed: res.passed, total: res.total, errors: res.errors, correctionRan: ran, improved } });
+  }
+  note(text, role) { this.setState(s => ({ msgs: s.msgs.concat({ role: role || 'assistant', content: text }) })); }
+  getV(vid) { return (this.state.versions || []).find(v => v.vid === vid); }
+  setV(vid, patch) { return new Promise(r => this.setState(s => ({ versions: s.versions.map(v => { if (v.vid !== vid) return v; const p = typeof patch === 'function' ? patch(v) : patch, n = Object.assign({}, v, p); if ((p.anim || p.still || p.overrides) && this.wf && this.wf.extractContent) { const src = n.anim || n.still; n.content = this.mergeContent(this.wf.extractContent(src) || n.content, n.overrides); } return n; }) }), r)); }
+  recover(list) {
+    return (list || []).filter(v => v.still || v.anim).map(v => v.stage === 'animating' ? Object.assign({}, v, { stage: 'awaitImg' })
+      : (v.stage === 'revising' || v.stage === 'fixing') ? Object.assign({}, v, { stage: v.prevStage || 'awaitImg' })
+      : (v.stage === 'adapting' || v.stage === 'stillGen') ? Object.assign({}, v, { stage: 'failed' }) : v);
+  }
+  niceErr(e) { const m = (e && e.message) || String(e); return /401|jwt|unauthor/i.test(m) ? 'Your session expired. Sign in again.' : /404|not found/i.test(m) ? 'The builder-ai function isn’t deployed yet.' : /failed to fetch|networkerror|failed to send/i.test(m) ? 'Couldn’t reach the AI service. Deploy the latest builder-ai function in Supabase.' : m; }
+  /* One action at a time; a second click while one runs is ignored, so nothing is charged twice. */
+  async run(key, fn) {
+    if (this.inflight) return;
+    this.inflight = key; this.setState({ busy: true, err: '' });
+    try { await fn(); }
+    catch (e) { this.setState(s => ({ err: this.niceErr(e), versions: this.recover(s.versions) })); }
+    finally { this.inflight = null; this.setState({ busy: false }); this.persist(this.state.msgs); }
+  }
+  /* Suitable creative imagery, not just any image: logos, icons and social-sharing images don't count. */
+  hasImages() { return this.pl ? this.fullManifest().some(a => this.pl.isCreative(a)) : this.state.files.some(f => /\.(png|jpe?g|webp|gif)$/i.test(f.name) && !/map|logo/i.test(f.name)); }
+  hintWords(idea) { const stop = /^(with|that|this|from|your|their|about|make|build|create|show|banner|mock|carousel|animated|using|into|have|will|want)$/i; return String(idea || '').toLowerCase().split(/[^a-z0-9]+/).filter(w => w.length > 3 && !stop.test(w)).slice(0, 10); }
+  wantsResearch(idea) { const s = this.state; return !!(s.brand.trim() || s.site.trim()) && (s.comps.includes('Carousel') || /\b(latest|new|newest|current|products?|line-?up|range|collection|menu|models?)\b/i.test(idea || '')); }
+  /* Download, validate, de-dupe and classify scanned images; build the manifest. Bounded to 24 per pass. */
+  async collect(catalog, ev) {
+    if (!this.pl) return { added: 0, fails: [] };
+    const picks = this.pl.pickDownloads(catalog, ev, 24), fails = [], shas = new Set((this.manifest || []).map(a => a.sha).filter(Boolean)), prodBy = {};
+    ((catalog && catalog.products) || []).forEach(p => { prodBy[p.key] = p; });
+    let n = (this.manifest || []).filter(a => a.kind === 'website').length, added = 0;
+    for (let i = 0; i < picks.length; i += 4) await Promise.all(picks.slice(i, i + 4).map(async p => {
+      try {
+        const a = await this.fn({ action: 'asset', url: p.url });
+        if (a.sha256 && shas.has(a.sha256)) return; if (a.sha256) shas.add(a.sha256);
+        if (a.truncated) throw new Error('over 2 MB');
+        const role = this.pl.classify({ url: p.url, alt: p.alt, hint: p.roleHint || p.hint, w: a.width, h: a.height, product: p.product });
+        if (role === 'icon') return;
+        const ext = (a.mime.split('/')[1] || 'png').replace('svg+xml', 'svg').replace('jpeg', 'jpg');
+        const file = role === 'logo' && !(this.manifest || []).some(m => m.role === 'logo') ? 'brand-logo.' + ext : role === 'social' ? 'social-share-' + (++n) + '.' + ext : this.pl.fileFor(++n, p.productName || p.alt || role, a.mime);
+        await this.keepAsset(file, a.b64, a.mime, { source: a.source, kind: 'website' });
+        this.addManifest({ file, kind: 'website', role, w: a.width || 0, h: a.height || 0, alt: p.alt || '', product: p.productName || (prodBy[p.product] || {}).name || '', source: a.source, page: p.page || '', sha: a.sha256 || '' }); added++;
+      } catch (e) { fails.push((p.url || '').split('?')[0].split('/').pop().slice(0, 40) + ' (' + this.niceErr(e) + ')'); }
+    }));
+    return { added, fails };
+  }
+  /* Product list for the brief: website catalog + web-search research, each linked to a downloaded image when one exists. */
+  mergeProducts(list) {
+    const m = this.manifest || [], norm = u => String(u || '').replace(/[#?].*$/, '').replace(/\/$/, '').toLowerCase();
+    const cur = (this.state.products || []).slice(), key = p => (p.name || '').toLowerCase();
+    const decode = s => String(s || '').replace(/&nbsp;/g, ' ').replace(/&amp;/g, '&').replace(/&#39;|&apos;/g, "'").replace(/&quot;/g, '"').replace(/\s+/g, ' ').trim();
+    list = list.map(p => Object.assign({}, p, { name: decode(p.name), description: decode(p.description) })).filter(p => p.name && !/\{\{|\$\{|^[a-z_]+\.[a-zA-Z_.]+$/.test(p.name));
+    for (const p of list) { const img = m.find(a => a.product && a.product.toLowerCase() === key(p)) || m.find(a => a.page && norm(a.page) === norm(p.url) && a.role !== 'social' && a.role !== 'logo'); const x = { name: p.name, description: p.description || '', url: p.url || '', source: p.source || 'website', asset: img ? img.file : '' }; const i = cur.findIndex(c => key(c) === key(p)); if (i >= 0) cur[i] = Object.assign({}, cur[i], x, { asset: cur[i].asset || x.asset }); else cur.push(x); }
+    this.setState({ products: cur.slice(0, 30) });
+  }
+  async fn(body) {
+    const sb = await this.cloud.client(); const { data: { session } } = await sb.auth.getSession(); if (!session) throw new Error('401');
+    const res = await fetch((this.cloud.SUPABASE_URL || '') + '/functions/v1/' + (this.fnName || 'builder-ai'), { method: 'POST', headers: { Authorization: 'Bearer ' + session.access_token, apikey: this.cloud.SUPABASE_ANON_KEY || '', 'Content-Type': 'application/json' }, body: JSON.stringify(body) });
+    const j = await res.json().catch(() => ({}));
+    if (!res.ok || j.error) throw new Error(j.error || 'Request failed (' + res.status + ')');
+    return j;
+  }
+  async keepAsset(name, b64, mime, meta) {
+    const bin = Uint8Array.from(atob(b64), ch => ch.charCodeAt(0)), blob = new Blob([bin], { type: mime });
+    this.extraAssets[name] = Object.assign({ url: 'data:' + mime + ';base64,' + b64, blob }, meta || {});
+    this.setState(s => ({ assetTick: (s.assetTick || 0) + 1 }));
+    try { const { clientId, sessionId } = await this.ensureSaved(); await this.api.saveGenerated(clientId, sessionId, name, blob, Object.assign({ mime }, meta || {})); } catch (e) {}
+  }
+  scanSite = async () => {
+    const raw = this.state.site.trim(); if (!raw) return;
+    const url = /^https?:/i.test(raw) ? raw : 'https://' + raw;
+    if (this.scanned === url) return;
+    this.scanned = url; this.setState({ scanNote: 'Scanning ' + url + ' for brand evidence…' });
+    try {
+      const ev = await this.fn({ action: 'scan', url, hints: this.hintWords(this.state.draft), maxPages: 6 });
+      const cat = ev.catalog || null, slim = Object.assign({}, ev); delete slim.catalog;
+      if (cat) slim.catalogSummary = { images: (cat.images || []).length, products: (cat.products || []).length, pages: cat.pagesCrawled || [], errors: cat.errors || [], truncated: !!cat.truncated };
+      this.setState({ evidence: slim, scanNote: 'Collecting brand and product images…' });
+      const got = await this.collect(cat, ev);
+      if (cat && cat.products) this.mergeProducts(cat.products.map(p => ({ name: p.name, description: p.description, url: p.url, source: 'website' })));
+      const roles = {}; (this.manifest || []).forEach(a => { roles[a.role] = (roles[a.role] || 0) + 1; });
+      this.setState({ scanNote: 'Found ' + ((this.manifest || []).length ? Object.keys(roles).map(k => roles[k] + ' ' + k).join(', ') + ' image' + ((this.manifest || []).length > 1 ? 's' : '') : 'no usable images') + (cat ? ' from ' + (1 + (cat.pagesCrawled || []).length) + ' page' + ((cat.pagesCrawled || []).length ? 's' : '') : ' (older scan: logo and sharing image only)') + '.' + (got.fails.length ? ' ' + got.fails.length + ' image' + (got.fails.length > 1 ? 's' : '') + ' couldn’t be downloaded.' : '') });
+    } catch (e) { this.scanned = null; this.setState({ scanNote: 'Website scan failed (' + this.niceErr(e) + '). Continuing with what you entered.' }); }
+  };
+  onSiteBlur = () => { this.saveClient(); this.scanSite(); };
+  async makeArt(idea, w, h) {
+    this.setState({ scanNote: 'Generating source artwork…' });
+    try {
+      const a = await this.fn({ action: 'image', prompt: this.wf.prompt('art', { brief: this.briefObj(), idea, w, h }), orientation: w > h * 1.3 ? 'landscape' : h > w * 1.3 ? 'portrait' : 'square' });
+      await this.keepAsset('kx-artwork-' + (Object.keys(this.extraAssets).filter(k => /^kx-artwork/.test(k)).length + 1) + '.png', a.b64, a.mime || 'image/png', { kind: 'generated', model: a.model });
+      this.setState({ scanNote: '' });
+    } catch (e) { this.setState({ scanNote: 'Artwork generation unavailable (' + this.niceErr(e) + '). Building with CSS and your assets.' }); }
+  }
+  /* Current official products via web search (separate from downloading); then fetch those pages for images. */
+  async research(idea) {
+    this.researched = idea; const s = this.state;
+    this.setState({ scanNote: 'Researching current products…' });
+    const rr = await this.fn({ action: 'research', brand: s.brand.trim(), site: s.site.trim(), idea, max: 12 }).catch(e => ({ error: this.niceErr(e), products: [] }));
+    this.lastMeta = { version: rr.version || null, requestId: rr.requestId || null, status: rr.status || (rr.error ? 'failed' : null), usage: rr.usage || null };
+    this.logRun({ stage: 'research', ok: !rr.error, error: rr.error || null, products: (rr.products || []).length, sources: rr.sources || [] });
+    if (!rr.products || !rr.products.length) { this.setState({ coverage: (rr.unsupported ? 'Web search unavailable (' + (rr.error || 'not supported') + '); ' : rr.error ? 'Research failed (' + rr.error + '); ' : 'Research found no products; ') + 'using the website crawl only.', scanNote: '' }); return; }
+    const site = s.site.trim() ? (/^https?:/i.test(s.site.trim()) ? s.site.trim() : 'https://' + s.site.trim()) : rr.products[0].url;
+    const tok = (() => { try { return new URL(site).hostname.replace(/^www\./, '').split('.')[0]; } catch (e) { return ''; } })();
+    const official = rr.products.filter(p => { try { return !tok || new URL(p.url).hostname.toLowerCase().split(/[.-]/).includes(tok); } catch (e) { return false; } });
+    let cat = null;
+    try { const ev = await this.fn({ action: 'scan', url: site, pages: official.map(p => p.url).slice(0, 8), maxPages: 0 }); cat = ev.catalog || null; } catch (e) {}
+    if (cat) {
+      const norm = u => String(u || '').replace(/[#?].*$/, '').replace(/\/$/, '').toLowerCase(), per = {};
+      cat.products = (cat.products || []).slice();
+      official.forEach((p, k) => cat.products.push({ key: 'r' + k, name: p.name, description: p.description, url: p.url, image: p.imageUrl || '', source: p.url }));
+      cat.images = (cat.images || []).filter(i => !['logo', 'icon', 'social'].includes(i.hint)).map(i => { const k = official.findIndex(p => norm(p.url) === norm(i.page)); return k >= 0 && !i.product ? Object.assign({}, i, { product: 'r' + k }) : i; }).filter(i => { if (!i.product) return false; per[i.product] = (per[i.product] || 0) + 1; return per[i.product] <= 2; });
+      await this.collect(cat, null);
+    }
+    this.mergeProducts(official.map(p => ({ name: p.name, description: p.description, url: p.url, source: 'verified search' })));
+    const withImg = (this.state.products || []).filter(p => p.source === 'verified search' && p.asset).length;
+    this.setState({ coverage: official.length + ' current product' + (official.length > 1 ? 's' : '') + ' confirmed by web search; ' + withImg + ' with an official image.' + (rr.coverage ? ' ' + rr.coverage : '') + (official.length < rr.products.length ? ' ' + (rr.products.length - official.length) + ' non-official result(s) dropped.' : ''), scanNote: '' });
+  }
+  generatePrimary = idea => this.run('primary', async () => {
+    const [[w, h], ...rest] = this.plan();
+    this.note(idea, 'user');
+    if (rest.length) this.note(this.wf.MULTI_MSG);
+    if (this.state.site.trim() && !this.state.evidence) await this.scanSite();
+    if (this.wantsResearch(idea) && this.researched !== idea) await this.research(idea);
+    await this.ensureMapTemplate();
+    if (!this.hasImages()) await this.makeArt(idea, w, h);
+    const vid = 'v' + Date.now().toString(36);
+    const brief = this.pl ? this.pl.newBrief(this.briefObj(), idea) : null;
+    await new Promise(r => this.setState({ versions: [{ vid, w, h, rev: 1, stage: 'planning', still: '', anim: '', approvals: [], history: [], primary: true, idea, brief }], cur: 0 }, r));
+    const pr = await this.ask('plan', { vid, w, h }, idea);
+    let plan = this.pl ? this.pl.normPlan(this.wf.extractJson(pr.raw), this.fullManifest()) : null;
+    if (plan && this.state.comps.includes('Carousel') && plan.slides.length > 4) { const cut = plan.slides.slice(4).map(x => x.title || x.headline); plan = Object.assign({}, plan, { slides: plan.slides.slice(0, 4), coverage: ((plan.coverage || '') + ' Carousel limited to 4 items; left out: ' + cut.join(', ') + '.').trim() }); }
+    if (!plan) this.note('No usable content plan came back, so the still is built from your idea directly.');
+    await this.setV(vid, x => ({ stage: 'stillGen', brief: Object.assign({}, x.brief, { plan }) }));
+    const r = await this.ask('still', { vid, w, h, idea }, idea);
+    if (!r.html) { this.setState({ versions: [] }); this.note(r.say || 'No design came back. Describe the idea again.'); return; }
+    await this.setV(vid, { still: r.html, stage: 'awaitImg', refs: this.lastRefs || [], components: this.state.comps.slice(), presentation: this.state.mode === 'video' ? { vpres: this.state.vpres, ovar: this.state.ovar } : null });
+    await this.checkAndFix(vid, false);
+    const n = plan ? plan.slides.length : 1;
+    this.note((r.say ? r.say + '\n\n' : '') + 'Still ' + w + '×' + h + ' v1 is ready below' + (n > 1 ? ' with all ' + n + ' planned slides to review' : '') + '. Approve & animate approves the content plan too, or describe what to change.' + (plan && plan.coverage ? '\n\nCoverage: ' + plan.coverage : ''));
+  });
+  reviseImage = (vid, text) => this.run('rimg:' + vid, async () => {
+    const v = this.getV(vid); if (!v || v.stage !== 'awaitImg') return;
+    this.note(text, 'user');
+    await this.setV(vid, x => ({ stage: 'revising', prevStage: 'awaitImg', brief: x.brief && this.pl ? this.pl.withChange(x.brief, 'still', text) : x.brief }));
+    const r = await this.ask('reviseStill', { vid, w: v.w, h: v.h, html: v.still, text }, text);
+    if (!r.html) { await this.setV(vid, { stage: 'awaitImg' }); this.note(r.say || 'No revised still came back.'); return; }
+    await this.setV(vid, x => ({ still: r.html, anim: '', rev: x.rev + 1, stage: 'awaitImg', history: x.history.concat({ rev: x.rev, still: x.still, anim: x.anim, supersededAt: new Date().toISOString() }) }));
+    await this.checkAndFix(vid, false);
+    this.note((r.say ? r.say + '\n\n' : '') + 'Revised still v' + (v.rev + 1) + ' is ready. It needs a fresh image approval.');
+  });
+  approveImage = (vid, rev) => this.run('aimg:' + vid + ':' + rev, async () => {
+    const v = this.getV(vid);
+    if (!v || v.stage !== 'awaitImg' || v.rev !== rev) { this.setState({ err: 'That still is no longer the current version. Review the newest one.' }); return; }
+    await this.setV(vid, x => { const ph = x.brief && x.brief.plan && this.pl ? this.pl.hash(JSON.stringify(x.brief.plan)) : null; return { stage: 'animating', brief: x.brief ? Object.assign({}, x.brief, { planApproved: true, planHash: ph }) : x.brief, approvals: x.approvals.concat({ stage: 'image', rev, planHash: ph, slides: x.brief && x.brief.plan ? x.brief.plan.slides.length : 1, at: new Date().toISOString(), by: this.userEmail || '' }) }; });
+    const r = await this.ask('animate', { vid, w: v.w, h: v.h, html: v.still }, 'Approved. Animate it.');
+    const now = this.getV(vid); if (!now || now.rev !== rev) return;
+    if (!r.html) throw new Error(r.say || 'No animation came back.');
+    await this.setV(vid, { anim: r.html, stage: 'awaitAnim' });
+    await this.checkAndFix(vid, true);
+    this.note((r.say ? r.say + '\n\n' : '') + 'Animation ' + v.w + '×' + v.h + ' v' + rev + ' is playing below. Approve animation, or describe what to change.');
+  });
+  reviseAnimation = (vid, text) => this.run('ranim:' + vid, async () => {
+    const v = this.getV(vid); if (!v || v.stage !== 'awaitAnim') return;
+    this.note(text, 'user');
+    await this.setV(vid, x => ({ stage: 'revising', prevStage: 'awaitAnim', brief: x.brief && this.pl ? this.pl.withChange(x.brief, 'animation', text) : x.brief }));
+    const r = await this.ask('reviseAnim', { vid, w: v.w, h: v.h, html: v.anim, text }, text);
+    if (!r.html) { await this.setV(vid, { stage: 'awaitAnim' }); this.note(r.say || 'No revised animation came back.'); return; }
+    await this.setV(vid, x => ({ anim: r.html, rev: x.rev + 1, stage: 'awaitAnim', history: x.history.concat({ rev: x.rev, still: x.still, anim: x.anim, supersededAt: new Date().toISOString() }) }));
+    await this.checkAndFix(vid, true);
+    this.note((r.say ? r.say + '\n\n' : '') + 'Revised animation v' + (v.rev + 1) + ' is ready. It needs a fresh animation approval.');
+  });
+  approveAnimation = (vid, rev) => this.run('aanim:' + vid + ':' + rev, async () => {
+    const v = this.getV(vid);
+    if (!v || v.stage !== 'awaitAnim' || v.rev !== rev) { this.setState({ err: 'That animation is no longer the current version. Review the newest one.' }); return; }
+    await this.setV(vid, x => ({ stage: 'ready', approvals: x.approvals.concat({ stage: 'animation', rev, at: new Date().toISOString(), by: this.userEmail || '' }) }));
+    if (!v.primary) return;
+    const have = (this.state.versions || []).map(x => x.w + 'x' + x.h);
+    const todo = this.plan().slice(1).filter(([w, h]) => !have.includes(w + 'x' + h));
+    for (const [w, h] of todo) { this.note('Approved. Now I am creating the ' + w + '×' + h + ' version.'); await this.adaptOne(v, w, h); }
+  });
+  async adaptOne(primary, w, h, existingVid) {
+    const vid = existingVid || 'v' + Date.now().toString(36) + w + 'x' + h;
+    if (existingVid) { await this.setV(vid, { stage: 'adapting' }); this.setState(s => ({ cur: Math.max(0, s.versions.findIndex(x => x.vid === vid)) })); }
+    else await new Promise(r => this.setState(s => ({ cur: s.versions.length, versions: s.versions.concat({ vid, w, h, rev: 1, stage: 'adapting', still: '', anim: '', approvals: [], history: [], primary: false, from: primary.vid, fromRev: primary.rev, brief: primary.brief || null }) }), r));
+    const st = this.stageRef.current; if (st) { const y = st.getBoundingClientRect().top + window.scrollY - 120; window.scrollTo({ top: Math.max(0, y), behavior: 'smooth' }); }
+    try {
+      const r = await this.ask('adapt', { vid, w, h, html: primary.anim, fromSize: primary.w + 'x' + primary.h }, 'Adapt the approved ad to ' + w + 'x' + h + '.');
+      if (!r.html) throw new Error(r.say || 'No adaptation came back.');
+      await this.setV(vid, { anim: r.html, still: r.html, stage: 'awaitAnim', adaptedFrom: { version: primary.vid, rev: primary.rev, at: new Date().toISOString() } });
+      await this.checkAndFix(vid, true);
+      this.note('The ' + w + '×' + h + ' version is ready. Review it and click Approve animation to add it to your downloads.');
+    } catch (e) { await this.setV(vid, { stage: 'failed', error: this.niceErr(e) }); }
+  }
+  retryAdapt = vid => this.run('retry:' + vid, async () => {
+    const v = this.getV(vid), p = (this.state.versions || []).find(x => x.primary);
+    if (!v || v.stage !== 'failed') return;
+    if (v.primary) { this.setState(s => ({ versions: s.versions.filter(x => x.vid !== vid) })); return; }
+    if (p && p.stage === 'ready') await this.adaptOne(p, v.w, v.h, vid);
+  });
+  editVersion = (vid, text, all) => this.run('edit:' + vid, async () => {
+    const targets = all ? (this.state.versions || []).filter(x => x.stage === 'ready') : [this.getV(vid)].filter(x => x && x.stage === 'ready');
+    if (!targets.length) return;
+    this.note(text + (all && targets.length > 1 ? ' (all sizes)' : ''), 'user');
+    for (const v of targets) {
+      await this.setV(v.vid, x => ({ stage: 'revising', prevStage: 'ready', brief: x.brief && this.pl ? this.pl.withChange(x.brief, 'edit', text) : x.brief }));
+      const r = await this.ask('edit', { vid: v.vid, w: v.w, h: v.h, html: v.anim, text }, text);
+      if (!r.html) { await this.setV(v.vid, { stage: 'ready' }); this.note(r.say || 'No edit came back for ' + v.w + '×' + v.h + '.'); continue; }
+      await this.setV(v.vid, x => ({ anim: r.html, rev: x.rev + 1, stage: 'awaitAnim', history: x.history.concat({ rev: x.rev, still: x.still, anim: x.anim, supersededAt: new Date().toISOString() }) }));
+      await this.checkAndFix(v.vid, true);
+    }
+    this.note('Edited ' + targets.map(v => v.w + '×' + v.h).join(', ') + '. Review and approve the new animation' + (targets.length > 1 ? 's' : '') + '; earlier versions are kept in history.');
+  });
+  newMock = () => { if (this.state.busy) return; this.sessionClient = null; this.prevKey = null; this.setState({ versions: [], cur: 0, msgs: [], sessionId: '', prevHtml: '', editText: '', err: '', exportMsg: '' }); };
+  blockers(v) {
+    const s = this.state, all = [];
+    if (s.mode === 'video' && s.vkind === 'ctv' && !this.qrDest()) all.push('Add the website URL so the CTV QR code can be generated.');
+    const ytOnly = s.mode === 'video' && s.vopt !== 'skin' && !this.videoFile() && !!this.ytId();
+    return { all, media: ytOnly ? 'YouTube plays in the online preview only. Upload the source video to export PNG, GIF and MP4.' : '' };
+  }
+  slugName() { return (this.state.brand || 'kortx').replace(/[^a-z0-9]+/gi, '-').replace(/^-|-$/g, '') || 'kortx'; }
+  async framesFor(v, onProg) {
+    const key = [v.vid, v.rev, this.state.vopt, this.state.vkind, this.qrDest(), (this.videoFile() || {}).name || '', this.state.duration].join('|');
+    if (this.capCache[key]) return this.capCache[key];
+    const html = await this.wf.prepare(v.anim || v.still, this.prepOpts(false));
+    const r = await this.wf.capture(html, v.w, v.h, { fps: this.state.mode === 'video' ? 30 : 15, dur: this.briefObj().duration, onProg });
+    this.capCache[key] = r; return r;
+  }
+  async exportOne(v, kind, onProg) {
+    const base = this.slugName() + '-' + v.w + 'x' + v.h + '-v' + v.rev;
+    if (kind === 'zip') {
+      const JSZip = await this.wf.JSZipLib(), z = new JSZip();
+      const prepared = await this.wf.prepare(v.anim || v.still, this.prepOpts(true));
+      await this.wf.packHtml(prepared, this.wf.assetRefs(prepared), n => this.assetBlob(n), z);
+      return { blob: await z.generateAsync({ type: 'blob' }), name: base + '-html.zip' };
+    }
+    if (kind === 'layers') {
+      onProg && onProg('Exporting layers ' + v.w + '×' + v.h + '…');
+      const JSZip = await this.wf.JSZipLib(), z = new JSZip(), list = await this.wf.layers(await this.wf.prepare(v.anim || v.still, this.prepOpts(false)), v.w, v.h);
+      await this.wf.packLayers(list, v.w, v.h, z);
+      return { blob: await z.generateAsync({ type: 'blob' }), name: base + '-layers.zip', list };
+    }
+    const fr = await this.framesFor(v, p => onProg && onProg('Recording ' + v.w + '×' + v.h + '… ' + Math.round(p * 100) + '%'));
+    if (kind === 'png') return { blob: await this.wf.toPng(fr.fin || fr.frames[fr.frames.length - 1].b, v.w, v.h), name: base + '-final-frame.png' };
+    if (kind === 'gif') return { blob: await this.wf.toGif(fr.frames, v.w, v.h, p => onProg && onProg('Encoding GIF… ' + Math.round(p * 100) + '%'), fr.fin), name: base + '.gif' };
+    const m = await this.wf.toMp4(fr.frames, v.w, v.h, 30, p => onProg && onProg('Encoding MP4… ' + Math.round(p * 100) + '%'));
+    return { blob: m.blob, name: base + '.' + m.ext };
+  }
+  download = (vid, kind) => {
+    if (this.state.exporting) return;
+    const v = this.getV(vid); if (!v) return;
+    this.setState({ exporting: true, exportMsg: 'Preparing…' });
+    this.exportOne(v, kind, msg => this.setState({ exportMsg: msg }))
+      .then(r => { this.wf.save(r.blob, r.name); this.setState({ exporting: false, exportMsg: '' }); })
+      .catch(e => this.setState({ exporting: false, exportMsg: '', err: kind.toUpperCase() + ' export failed: ' + this.niceErr(e) }));
+  };
+  downloadAll = async () => {
+    if (this.state.exporting) return;
+    this.setState({ exporting: true, exportMsg: 'Building the archive…' });
+    try {
+      const JSZip = await this.wf.JSZipLib(), z = new JSZip(), dir = this.slugName() + '-Mocks', root = z.folder(dir), s = this.state;
+      const man = { project: s.brand || 'Untitled', generatedAt: new Date().toISOString(), conversation: s.sessionId || null, format: this.wf.briefLines(this.briefObj()).split('\n')[0], durationSeconds: this.briefObj().duration, versions: [], complete: true };
+      /* Only what the user made: the mock they generated, plus any size they reviewed and approved themselves (not untouched auto-adaptations). */
+      const mine = (s.versions || []).filter(x => x.primary || (x.approvals || []).some(p => p.stage === 'animation'));
+      if (!mine.length) { this.setState({ exporting: false, exportMsg: 'Nothing to download yet. Generate and approve a mock first.' }); return; }
+      for (const v of mine) {
+        const { w, h } = v;
+        const entry = { content: v ? v.content || null : null, components: v ? v.components || s.comps : s.comps, references: v ? v.refs || [] : [], size: w + 'x' + h, version: v ? v.vid : null, revision: v ? v.rev : null, state: v ? v.stage : 'not generated', approvals: v ? v.approvals : [], exports: {} };
+        man.versions.push(entry);
+        if (!v || v.stage !== 'ready') { entry.exports = 'pending: needs approval'; man.complete = false; continue; }
+        const f = root.folder(w + 'x' + h), bl = this.blockers(v);
+        const kinds = [['png', 'final-frame.png'], ['zip', 'animated-ad.zip'], ['gif', 'animation.gif']].concat(s.mode === 'video' ? [['mp4', 'animation.mp4']] : []).concat([['layers', 'layers']]);
+        for (const [k, fname] of kinds) {
+          const why = bl.all[0] || (bl.media && k !== 'zip' ? bl.media : '');
+          if (why) { entry.exports[fname] = 'blocked: ' + why; man.complete = false; continue; }
+          try { if (k === 'layers') { this.setState({ exportMsg: w + '×' + h + ' · Exporting layers…' }); const list = await this.wf.layers(await this.wf.prepare(v.anim || v.still, this.prepOpts(false)), w, h); const lm = await this.wf.packLayers(list, w, h, f.folder('layers')); const errs = list.filter(x => x.kind === 'error').length; entry.exports.layers = errs ? 'partial: ' + errs + ' element(s) could not be rendered' : 'ok (' + Object.values(lm.slides).reduce((a, b) => a + b.length, 0) + ' PNGs)'; if (errs) man.complete = false; continue; } const r = await this.exportOne(v, k, msg => this.setState({ exportMsg: w + '×' + h + ' · ' + msg })); const name = k === 'mp4' && /\.webm$/.test(r.name) ? 'animation.webm' : fname; f.file(name, r.blob); entry.exports[name] = 'ok'; }
+          catch (e) { entry.exports[fname] = 'failed: ' + this.niceErr(e); man.complete = false; }
+        }
+      }
+      root.file('manifest.json', JSON.stringify(man, null, 2));
+      this.wf.save(await z.generateAsync({ type: 'blob' }), dir + (man.complete ? '' : '-INCOMPLETE') + '.zip');
+      this.setState({ exporting: false, exportMsg: man.complete ? '' : 'Downloaded, but incomplete: manifest.json lists the pending, blocked or failed files.' });
+    } catch (e) { this.setState({ exporting: false, exportMsg: '', err: 'Archive failed: ' + this.niceErr(e) }); }
+  };
+  fileRow = f => ({ name: f.name, size: f.size, id: f.id, path: f.path, kind: f.kind, row: f });
+  /* Creates the client (by brand name) and a chat the first time something needs saving. */
+  async ensureSaved() {
+    if (!this.api) throw new Error('not ready');
+    let { clientId, sessionId } = this.state;
+    if (!clientId) {
+      const c = await this.api.ensureClient(this.state.brand, this.state.site);
+      clientId = c.id; this.setState({ clientId, brand: this.state.brand || c.name }); this.loadClients();
+    }
+    if (!sessionId) {
+      const r = await this.api.createSession(clientId, this.settings());
+      sessionId = r.id; this.sessionClient = clientId; this.setState({ sessionId });
+    } else if (this.sessionClient && this.sessionClient !== clientId && this.api.moveSession) {
+      await this.api.moveSession(sessionId, clientId); this.sessionClient = clientId;
+    }
+    return { clientId, sessionId };
+  }
+  persist = async msgs => {
+    try {
+      this.saved('saving');
+      const { clientId, sessionId } = await this.ensureSaved();
+      const first = msgs.find(m => m.role === 'user');
+      await this.api.saveSession(sessionId, { messages: msgs, settings: this.settings(), title: first ? first.content.slice(0, 60) : undefined });
+      this.setState({ sessions: await this.api.listSessions(clientId) });
+      this.saved('ok');
+    } catch (e) { this.saved('off', this.dbErr(e)); }
+  };
+  saveClient = async () => {
+    const { clientId, brand, site } = this.state;
+    if (!clientId || !this.api || !brand.trim()) return;
+    try { await this.api.updateClient(clientId, { name: brand.trim(), website: site || null }); this.loadClients(); } catch (e) { this.saved('off', this.dbErr(e)); }
+  };
+  openFile = async f => {
+    if (f.file) { const u = URL.createObjectURL(f.file); window.open(u, '_blank', 'noopener'); return; }
+    if (f.path && this.api) { try { window.open(await this.api.fileUrl(f.path), '_blank', 'noopener'); } catch (e) { this.saved('off', this.dbErr(e)); } }
+  };
+  send = async (text) => {
+    const content = (typeof text === 'string' ? text : this.state.draft).trim();
+    if (!content || this.state.busy || !this.cloud || !this.wf) return;
+    this.setState({ draft: '' });
+    const v = (this.state.versions || [])[this.state.cur || 0];
+    if (!v) return this.generatePrimary(content);
+    if (v.stage === 'awaitImg') return this.reviseImage(v.vid, content);
+    if (v.stage === 'awaitAnim') return this.reviseAnimation(v.vid, content);
+    if (v.stage === 'ready') return this.editVersion(v.vid, content, false);
+  };
+  onDraft = e => this.setState({ draft: e.target.value });
+  onBrand = e => { const v = e.target.value; this.setState(s => { const c = (s.clients || []).find(x => x.id === s.clientId); return { brand: v, brandOpen: true, clientId: c && c.name.trim().toLowerCase() === v.trim().toLowerCase() ? s.clientId : '' }; }); };
+  onSite = e => this.setState({ site: e.target.value });
+  onFiles = async e => {
+    const add = Array.from(e.target.files || []).filter(f => !this.state.files.some(x => x.name === f.name && x.size === f.size)); e.target.value = '';
+    if (!add.length) return;
+    const tmp = add.map(f => ({ name: f.name, size: f.size, file: f, pending: true, key: Math.random().toString(36).slice(2) }));
+    this.setState(s => ({ files: s.files.concat(tmp) }));
+    this.autofill(add);
+    try {
+      this.saved('saving');
+      const { clientId, sessionId } = await this.ensureSaved();
+      for (const t of tmp) {
+        const row = await this.api.saveUpload(clientId, sessionId, t.file);
+        this.setState(s => ({ files: s.files.map(x => x.key === t.key ? Object.assign(this.fileRow(row), { file: t.file }) : x) }));
+      }
+      this.saved('ok');
+    } catch (x) { this.saved('off', this.dbErr(x)); }
+  };
+  removeFile = async i => {
+    const f = this.state.files[i];
+    this.setState(s => ({ files: s.files.filter((_, j) => j !== i) }));
+    if (f && f.row && this.api) { try { await this.api.deleteFile(f.row); } catch (e) { this.saved('off', this.dbErr(e)); } }
+  };
+  onKey = e => { if (e.key === 'Enter' && !e.shiftKey) { e.preventDefault(); this.send(); } };
+  clearChat = () => this.setState({ msgs: [], err: '', draft: '', sessionId: '' });
+  renderVals() {
+    const s = this.state, canSend = !!s.draft.trim() && !s.busy;
+    return {
+      hasEffort: true, effortIdx: Math.max(0, this.efforts().indexOf(s.effort)), effortMax: String(this.efforts().length - 1), effortLabel: { low: 'Low', medium: 'Medium', high: 'High', xhigh: 'Extra High', max: 'Max' }[s.effort] || 'Medium',
+      onEffort: e => this.setState({ effort: this.efforts()[+e.target.value] || 'medium' }),
+      model: s.model, models: this.MODELS.map(([id, label]) => ({ id, label })), onModel: e => { const model = e.target.value; this.setState(st => ({ model, effort: this.efforts(model).includes(st.effort) ? st.effort : 'medium' })); },
+      gateLoading: s.gate === 'loading', gateBlocked: s.gate === 'signin', ready: s.gate === 'ok',
+      signInHref: '/sign-in?next=/mock-builder',
+      empty: !s.msgs.length && !s.busy, busy: s.busy, err: s.err,
+      starters: ['300×600 weather-triggered display for a coffee brand', 'CTV mock with a QR end card', 'Interactive video for a QSR lunch promo'].map(label => ({ label, pick: () => this.send(label) })),
+      msgs: s.msgs.map(m => { const me = m.role === 'user'; return { content: me ? m.content : this.strip(m.content),
+        rowStyle: { display: 'flex', justifyContent: me ? 'flex-end' : 'flex-start' },
+        bubbleStyle: { maxWidth: '78%', padding: '11px 15px', borderRadius: 14, fontSize: 15, lineHeight: 1.5, whiteSpace: 'pre-wrap', overflowWrap: 'anywhere', background: me ? 'rgba(0,204,255,.12)' : 'rgba(255,255,255,.04)', border: '1px solid ' + (me ? 'rgba(0,204,255,.35)' : 'rgba(255,255,255,.08)'), color: '#fff' } }; }),
+      ...(() => { const vs = s.versions || [], n = vs.length;
+        if (!n || !this.wf) return { hasMocks: false };
+        const i = Math.min(s.cur || 0, n - 1), v = vs[i], isVid = s.mode === 'video', bl = this.blockers(v);
+        const sc = Math.min(1, ((s.stageW || Math.min(v.w, (this.stageRef.current && this.stageRef.current.clientWidth) || 360)) - 4) / v.w), go = d => this.setState({ cur: (i + d + n) % n, editText: '', replay: 0 });
+        const working = ['planning', 'stillGen', 'animating', 'adapting', 'revising', 'fixing'].includes(v.stage), live = !!v.anim && ['awaitAnim', 'ready'].includes(v.stage);
+        const ytOverlay = isVid && s.vopt !== 'skin' && !this.videoFile() && !!s.slot;
+        const dl = v.stage === 'ready' ? [['png', 'Download PNG'], ['zip', 'Download HTML ZIP'], ['gif', 'Download GIF']].concat(isVid ? [['mp4', 'Download MP4']] : []).concat([['layers', 'Download layers (PNGs)']]).map(([k, label]) => { const why = bl.all[0] || (bl.media && k !== 'zip' ? bl.media : ''); return { label, why: why || label, off: !!why || !!s.exporting, go: () => this.download(v.vid, k) }; }) : [];
+        const slotBox = s.slot ? { position: 'absolute', left: s.slot[0] * sc, top: s.slot[1] * sc, width: s.slot[2] * sc, height: s.slot[3] * sc } : { display: 'none' };
+        const readyN = vs.filter(x => x.stage === 'ready').length, pend = this.plan().filter(([w, h]) => !vs.some(x => x.w === w && x.h === h && x.stage === 'ready')).map(([w, h]) => w + '×' + h);
+        return { hasMocks: true, onlyOne: n < 2, mockSize: v.w + ' × ' + v.h + ' · v' + v.rev + (v.primary && n > 1 ? ' · primary' : ''), mockCount: (this.STAGE_LABEL[v.stage] || '') + (v.error ? ' · ' + v.error : '') + (n > 1 ? ' · ' + (i + 1) + ' of ' + n : ''),
+          mockTitle: 'Ad mock ' + v.w + '×' + v.h, mockHtml: s.prevHtml || '', previewRef: this.previewRef, mockKey: v.vid + '-' + v.rev + '-' + (s.replay || 0) + '-' + (live ? 'a' : 's'),
+          mockBox: { position: 'relative', width: Math.round(v.w * sc), height: Math.round(v.h * sc), flex: 'none', borderRadius: 4, overflow: 'hidden', boxShadow: '0 0 0 1px rgba(255,255,255,.12), 0 20px 50px rgba(0,0,0,.5)', background: '#fff' },
+          mockFrame: { width: v.w, height: v.h, border: 0, display: 'block', transform: 'scale(' + sc + ')', transformOrigin: '0 0' },
+          prevMock: () => go(-1), nextMock: () => go(1), replayMock: () => this.setState(st => ({ replay: (st.replay || 0) + 1 })),
+          hasSlot: ytOverlay, hasYt: ytOverlay && !!this.ytId(), noYt: ytOverlay && !this.ytId(),
+          ytSrc: this.ytId() ? 'https://www.youtube-nocookie.com/embed/' + this.ytId() + '?autoplay=1&mute=1&loop=1&playlist=' + this.ytId() + '&controls=1&playsinline=1&rel=0' : '',
+          slotStyle: Object.assign({ border: 0, background: '#000' }, slotBox),
+          slotBlank: Object.assign({ background: '#fff', color: '#001830', display: 'grid', placeItems: 'center', fontSize: Math.max(14, Math.round(((s.slot || [0, 0, 0, 100])[3]) * sc * 0.08)), fontWeight: 700, textAlign: 'center' }, slotBox),
+          working, workingText: v.stage === 'adapting' ? 'Now I am creating the ' + v.w + '×' + v.h + ' version…' : (this.STAGE_LABEL[v.stage] || 'Working…'), live,
+          ...this.planVals(v, s),
+          canApproveImg: v.stage === 'awaitImg', canApproveAnim: v.stage === 'awaitAnim', isFailed: v.stage === 'failed',
+          approveImg: () => this.approveImage(v.vid, v.rev), approveAnim: () => this.approveAnimation(v.vid, v.rev), retry: () => this.retryAdapt(v.vid),
+          showEdit: ['awaitImg', 'awaitAnim', 'ready'].includes(v.stage), editLabel: v.stage === 'awaitImg' ? 'Revise image' : v.stage === 'awaitAnim' ? 'Revise animation' : 'Apply edits',
+          editHeading: v.stage === 'ready' ? 'Edit this ' + v.w + '×' + v.h + ' version' : 'What should change?',
+          editPlaceholder: v.stage === 'awaitImg' ? 'e.g. Make the logo bigger and move the CTA up' : v.stage === 'awaitAnim' ? 'e.g. Slow the intro and hold the end card longer' : 'Changes apply to this size only unless you tick Apply to all sizes',
+          editRef: this.editRef, editText: s.editText || '', onEditText: e => this.setState({ editText: e.target.value }),
+          doEdit: () => { const t = (s.editText || '').trim(); if (!t) { if (this.editRef.current) this.editRef.current.focus(); return; } this.setState({ editText: '' }); if (v.stage === 'awaitImg') this.reviseImage(v.vid, t); else if (v.stage === 'awaitAnim') this.reviseAnimation(v.vid, t); else this.editVersion(v.vid, t, !!s.applyAll && readyN > 1); },
+          multiReady: v.stage === 'ready' && readyN > 1, applyAll: !!s.applyAll, onApplyAll: e => this.setState({ applyAll: e.target.checked }),
+          ...(() => { const showC = ['awaitImg', 'awaitAnim', 'ready'].includes(v.stage) && !!v.content, b = showC ? this.editBuf(v) : null, badge = src => ({ padding: '2px 8px', borderRadius: 999, fontSize: 11, fontWeight: 600, letterSpacing: '.06em', textTransform: 'uppercase', whiteSpace: 'nowrap', alignSelf: 'center', color: src === 'demo' ? '#FCD34D' : '#fff', border: '1px solid ' + (src === 'demo' ? 'rgba(252,211,77,.5)' : 'rgba(0,204,255,.45)'), background: src === 'demo' ? 'rgba(252,211,77,.08)' : 'rgba(0,204,255,.08)' }), lbl = src => ({ user: 'You', upload: 'Upload', website: 'Website', 'verified search': 'Verified', demo: 'Demo' }[src] || src || 'Demo');
+            if (!showC) return { hasContent: false, cLocs: [] };
+            const ds = (v.content.disclaimer && v.content.disclaimer.source) || 'demo';
+            return { hasContent: true, cHasDisc: !!v.content.disclaimer, cDisc: b.disc, cDiscSrc: lbl(ds), cDiscBadge: badge(ds), onCDisc: e => { const t = e.target.value; this.setBuf(v, () => ({ disc: t })); }, applyContent: () => this.applyContent(v),
+              cLocs: b.locs.map((l, i) => { const set = k => e => { const t = e.target.value; this.setBuf(v, bb => ({ locs: bb.locs.map((x, j) => j === i ? Object.assign({}, x, { [k]: t }) : x) })); }; return { name: l.name, address: l.address, miles: l.miles, src: lbl(l.source), badge: badge(l.source), onName: set('name'), onAddress: set('address'), onMiles: set('miles') }; }) }; })(),
+          prevNote: s.prevNote || '', onEditKey: e => { if (e.key === 'Enter' && !e.shiftKey) { e.preventDefault(); const t = (s.editText || '').trim(); if (!t || s.busy) return; this.setState({ editText: '' }); if (v.stage === 'awaitImg') this.reviseImage(v.vid, t); else if (v.stage === 'awaitAnim') this.reviseAnimation(v.vid, t); else this.editVersion(v.vid, t, !!s.applyAll && readyN > 1); } }, onContentKey: e => { if (e.key === 'Enter' && !e.shiftKey && !s.busy) { e.preventDefault(); this.applyContent(v); } },
+          dlOpts: dl, hasDl: dl.length > 0, dlNote: v.stage === 'ready' ? (bl.all[0] || bl.media || '') : '',
+          exporting: !!s.exporting, exportMsg: s.exportMsg || '', downloadAll: this.downloadAll, newMock: this.newMock, hasAllDl: readyN > 0,
+          allNote: readyN && pend.length ? 'Not yet in the archive: ' + pend.join(', ') + '.' : '' }; })(),
+      stageRef: this.stageRef,
+      brandOpen: !!s.brandOpen && this.brandList().length > 0, brandOpenStr: String(!!s.brandOpen && this.brandList().length > 0), onBrandFocus: this.onBrandFocus, onBrandBlur: this.onBrandBlur, onBrandKey: this.onBrandKey,
+      brandMatches: this.brandList().map(c => { const on = c.id === s.clientId; return { label: c.name, tag: on ? 'Selected' : 'Saved', on: String(on), pick: e => { e.preventDefault(); this.pickBrand(c); },
+        style: { display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: 10, width: '100%', minHeight: 44, padding: '0 12px', border: 0, borderRadius: 8, background: on ? 'rgba(0,204,255,.1)' : 'transparent', color: '#fff', font: 'inherit', fontSize: 14, textAlign: 'left', cursor: 'pointer' } }; }),
+      fillNote: s.fillNote || '',
+      presOpts: [['overlay', 'Overlay'], ['ctvqr', 'CTV QR layout']].map(([key, label]) => { const on = s.vpres === key; return { label, on: String(on), pick: () => { this.setState({ vpres: key }); if (key === 'carousel') this.setState({ comps: ['Inline video', 'Carousel'], compMsg: 'Video + carousel uses both component slots: Inline video and Carousel.' }); },
+        style: { minHeight: 44, padding: '8px 18px', borderRadius: 999, border: '1px solid ' + (on ? 'rgba(0,204,255,.6)' : 'rgba(255,255,255,.14)'), background: on ? 'rgba(0,204,255,.12)' : 'rgba(255,255,255,.04)', color: '#fff', font: 'inherit', fontSize: 14, fontWeight: 600, cursor: 'pointer', transition: 'all 200ms cubic-bezier(.16,1,.3,1)' } }; }),
+      isOverlay: s.vpres === 'overlay',
+      ovarOpts: [['brand', 'Brand panel'], ['products', 'Product carousel'], ['hotspots', 'Feature hotspots'], ['nearby', 'Nearby location']].map(([key, label]) => { const on = s.ovar === key; return { label, on: String(on), pick: () => { this.setState({ ovar: key }); if (key === 'nearby') this.ensureComp('Nearby location'); },
+        style: { minHeight: 44, padding: '6px 14px', borderRadius: 999, border: '1px solid ' + (on ? 'rgba(167,139,250,.6)' : 'rgba(255,255,255,.12)'), background: on ? 'rgba(109,94,240,.16)' : 'transparent', color: '#fff', font: 'inherit', fontSize: 13, fontWeight: 600, cursor: 'pointer', transition: 'all 200ms cubic-bezier(.16,1,.3,1)' } }; }),
+      presNote: s.vpres === 'overlay' ? 'A compact branded panel sits over the footage' + (s.vopt === 'skin' ? ' (or over the white “insert video here” box)' : '') + '.' : s.vpres === 'carousel' ? 'Product carousel on the left, video on the right.' : 'Bottom brand strip or end card with a real QR code to your destination.' + (s.vkind !== 'ctv' ? ' Best paired with CTV.' : ''),
+      needLoc: this.needLoc(), locName: s.loc.name, locAddr: s.loc.address, locSrc: s.loc.source,
+      onLocName: e => { const v = e.target.value; this.setState(st => ({ loc: Object.assign({}, st.loc, { name: v }) })); },
+      onLocAddr: e => { const v = e.target.value; this.setState(st => ({ loc: Object.assign({}, st.loc, { address: v }) })); },
+      locMiles: s.loc.miles || '', locOrigin: s.loc.origin || '', onLocMiles: e => { const v = e.target.value; this.setState(st => ({ loc: Object.assign({}, st.loc, { miles: v }) })); }, onLocOrigin: e => { const v = e.target.value; this.setState(st => ({ loc: Object.assign({}, st.loc, { origin: v }) })); },
+      needDisc: this.needDisc(), discText: s.disc.text, discSpeed: s.disc.speed, discDir: s.disc.dir, discStrip: s.disc.strip,
+      onDiscText: e => { const v = e.target.value; this.setState(st => ({ disc: Object.assign({}, st.disc, { text: v }) })); },
+      onDiscSpeed: e => { const v = e.target.value; this.setState(st => ({ disc: Object.assign({}, st.disc, { speed: v }) })); },
+      onDiscDir: e => { const v = e.target.value; this.setState(st => ({ disc: Object.assign({}, st.disc, { dir: v }) })); },
+      onDiscStrip: e => { const v = e.target.value; this.setState(st => ({ disc: Object.assign({}, st.disc, { strip: v }) })); },
+      discNote: (() => { const t = s.disc.text.trim(); if (!t) return 'Optional. Supplied text is used word for word; otherwise text from uploads or the website, then labeled demo copy.'; const wps = { slow: 2.2, medium: 3, fast: 4 }[s.disc.speed] || 2.2, need = Math.ceil(t.split(/\s+/).length / wps) + 3, d = +s.duration || 15; return need > d ? 'At ' + s.disc.speed + ' speed this copy needs about ' + need + 's to read; duration is ' + d + 's. Raise the duration or the speed.' : 'Fits in ' + d + 's at ' + s.disc.speed + ' speed (about ' + need + 's to read, with start and end holds).'; })(),
+      behaviorOpts: [['rich', 'Rich media'], ['standard', 'Standard IAB']].map(([key, label]) => { const on = s.behavior === key; return { label, on: String(on), pick: () => this.setState({ behavior: key, behaviorSet: true, size: key === 'standard' ? 'iab5' : 'both' }),
+        style: { minHeight: 44, padding: '8px 18px', borderRadius: 999, border: '1px solid ' + (on ? 'rgba(0,204,255,.6)' : 'rgba(255,255,255,.14)'), background: on ? 'rgba(0,204,255,.12)' : 'rgba(255,255,255,.04)', color: '#fff', font: 'inherit', fontSize: 14, fontWeight: 600, cursor: 'pointer', transition: 'all 200ms cubic-bezier(.16,1,.3,1)' } }; }),
+      multiNote: s.mode !== 'video' ? 'We’ll create and approve the 300x600 first, then adapt the approved ad to your remaining sizes.' : '',
+      compNote: s.compMsg && !this.compsOff() ? s.compMsg : this.compsOff() ? 'Standard IAB ads animate text in and out with a normal click-through, so components are off.' + (s.comps.length ? ' Your ' + s.comps.length + ' pick' + (s.comps.length > 1 ? 's are' : ' is') + ' kept for Rich media.' : '') : (s.mode === 'video' && s.vkind === 'ctv' && s.comps.length ? 'CTV has no pointer input: selected components play as autoplay showcases and a QR code replaces the CTA.' : ''),
+      destLabel: s.mode === 'video' && s.vkind === 'ctv' ? 'QR destination URL' : 'Click-through URL', dest: s.dest, onDest: e => this.setState({ dest: e.target.value }),
+      duration: String(+s.duration === 30 ? 30 : 15), onDuration: e => this.setState({ duration: +e.target.value === 30 ? 30 : 15 }), onSiteBlur: this.onSiteBlur,
+      evNote: s.scanNote || (s.evidence ? 'Brand scan · ' + (s.evidence.siteName || s.evidence.title || s.evidence.url) + ' · ' + s.evidence.fetchedAt.slice(0, 10) + ((s.evidence.fonts && s.evidence.fonts.detected && s.evidence.fonts.detected.length) ? ' · fonts detected: ' + s.evidence.fonts.detected.slice(0, 2).join(', ') : '') + (Object.keys(this.extraAssets).length ? ' · ' + Object.keys(this.extraAssets).join(', ') : '') : ''),
+      evColors: ((s.evidence && s.evidence.colors) || []).slice(0, 6).map(hex => ({ hex, style: { width: 16, height: 16, borderRadius: 4, background: hex, border: '1px solid rgba(255,255,255,.25)' } })),
+      brand: s.brand, site: s.site, onBrand: this.onBrand, onSite: this.onSite, onFiles: this.onFiles,
+      files: s.files.map((f, i) => ({ name: (f.kind === 'generated' ? 'Generated · ' : '') + f.name, title: f.pending ? 'Uploading…' : 'Open ' + f.name, open: () => this.openFile(f), removeLabel: 'Remove ' + f.name, remove: () => this.removeFile(i) })),
+      clientId: s.clientId || '', sessionId: s.sessionId || '', onClient: this.onClient, onSession: this.onSession, saveClient: this.saveClient,
+      clientOpts: (s.clients || []).map(c => ({ id: c.id, label: c.name })),
+      sessionOpts: (s.sessions || []).map(x => ({ id: x.id, label: (x.title || 'New chat').slice(0, 48) + ' · ' + new Date(x.updated_at).toLocaleDateString(undefined, { month: 'short', day: 'numeric' }) })),
+      saveNote: (s.runLogErr ? s.runLogErr + ' · ' : '') + (s.save === 'saving' ? 'Saving…' : s.save === 'off' ? (s.saveErr || 'Not saved') : s.clientId ? 'Saved to ' + (s.brand || 'this client') : 'Saves automatically once you send or upload'),
+      draft: s.draft, onDraft: this.onDraft, onKey: this.onKey, send: () => this.send(), cantSend: !canSend,
+      clearChat: this.clearChat, cantClear: !s.msgs.length || s.busy,
+      sendStyle: { flex: 'none', height: 48, padding: '0 22px', borderRadius: 999, border: 'none', background: 'var(--blue-400, #00CCFF)', color: '#001830', fontSize: 15, fontWeight: 700, cursor: canSend ? 'pointer' : 'default', opacity: canSend ? 1 : .4, pointerEvents: canSend ? 'auto' : 'none', transition: 'all 200ms cubic-bezier(.16,1,.3,1)' },
+      listRef: this.listRef,
+      compOpts: this.COMPS.map(([label, desc, d]) => { const on = s.comps.includes(label); return { label, desc, d, on: String(on), tick: on ? '✓' : '', pick: () => this.toggleComp(label),
+        thumb: { position: 'relative', display: 'grid', placeItems: 'center', aspectRatio: '16 / 9', borderRadius: 10, overflow: 'hidden', border: '1px solid ' + (on ? 'rgba(0,204,255,.6)' : 'rgba(255,255,255,.12)'), background: 'rgba(255,255,255,.06)' },
+        ring: { position: 'absolute', top: 7, right: 7, display: 'grid', placeItems: 'center', width: 20, height: 20, borderRadius: '50%', border: '1.5px solid ' + (on ? 'var(--blue-400)' : 'rgba(255,255,255,.45)'), background: on ? 'var(--blue-400)' : 'transparent', color: '#001830', fontSize: 13, fontWeight: 800, transition: 'all 200ms cubic-bezier(.16,1,.3,1)' },
+        style: { opacity: this.compsOff() ? .4 : 1, pointerEvents: this.compsOff() ? 'none' : 'auto', position: 'relative', display: 'flex', flexDirection: 'column', gap: 8, padding: 8, textAlign: 'left', borderRadius: 14, border: '1px solid ' + (on ? 'rgba(0,204,255,.75)' : 'rgba(0,204,255,.28)'), background: on ? 'rgba(0,204,255, 0.08)' : 'rgba(255,255,255,.04)', backdropFilter: 'blur(14px)', WebkitBackdropFilter: 'blur(14px)', boxShadow: (on ? '0 0 0 3px rgba(0,204,255,.18), ' : '') + 'inset 0 1px 0 rgba(255,255,255,.06), 0 18px 40px rgba(0,0,0,.35)', color: '#fff', cursor: 'pointer', fontFamily: 'inherit', transition: 'all 200ms cubic-bezier(.16,1,.3,1)' } }; }),
+      showComps: this.showComps(), inputBorder: (!s.msgs.length && !s.busy && !this.showComps()) ? '0' : '1px solid rgba(255,255,255,.07)',
+      listStyle: (!s.msgs.length && !s.busy && !this.showComps()) ? { display: 'none' } : (s.msgs.length || s.busy) ? { display: 'flex', flexDirection: 'column', gap: 14, minHeight: 340, maxHeight: '58vh', overflowY: 'auto', padding: '22px 18px' } : { display: 'flex', flexDirection: 'column', gap: 14, padding: '22px 18px' }, isBanner: s.mode === 'banner', isVideo: s.mode === 'video',
+      showYt: s.vopt !== 'skin', ytUrl: s.ytUrl, onYt: e => this.setState({ ytUrl: e.target.value }), ytNote: s.ytUrl && !this.ytId() ? 'That doesn’t look like a YouTube link.' : 'Plays inside the mock preview. Downloads include the skin and graphics only.',
+      vkindOpts: [['ctv', 'CTV'], ['iv', 'Interactive video']].map(([key, label]) => { const on = s.vkind === key; return { label, on: String(on), pick: () => this.setState({ vkind: key }),
+        dial: { display: 'grid', placeItems: 'center', width: 20, height: 20, borderRadius: '50%', border: '1.5px solid ' + (on ? 'var(--blue-400)' : 'rgba(255,255,255,.45)'), boxShadow: on ? '0 0 14px rgba(0,204,255,.45)' : 'none', transition: 'all 200ms cubic-bezier(.16,1,.3,1)', flex: 'none' },
+        dot: { width: 10, height: 10, borderRadius: '50%', background: 'var(--blue-400)', transform: on ? 'scale(1)' : 'scale(0)', transition: 'transform 200ms cubic-bezier(.16,1,.3,1)' } }; }),
+      videoOpts: this.VOPTS.map(([key, label]) => { const on = s.vopt === key; return { label, on: String(on), pick: () => this.setState({ vopt: key }),
+        style: { minHeight: 44, padding: '8px 18px', borderRadius: 999, border: '1px solid ' + (on ? 'rgba(0,204,255,.6)' : 'rgba(255,255,255,.14)'), background: on ? 'rgba(0,204,255,.12)' : 'rgba(255,255,255,.05)', color: '#fff', fontSize: 14, fontWeight: 600, cursor: 'pointer', transition: 'all 200ms cubic-bezier(.16,1,.3,1)' } }; }),
+      sizeOpts: this.SIZES.map(([key, label]) => { const on = s.size === key; return { label, on: String(on), pick: () => this.setState(st => ({ size: key, behavior: st.behaviorSet ? st.behavior : (this.wf ? this.wf.defaultBehavior(key) : (key === 'iab5' ? 'standard' : 'rich')) })),
+        style: { minHeight: 44, padding: '8px 18px', borderRadius: 999, border: '1px solid ' + (on ? 'rgba(0,204,255,.6)' : 'rgba(255,255,255,.14)'), background: on ? 'rgba(0,204,255,.12)' : 'rgba(255,255,255,.05)', color: '#fff', fontSize: 14, fontWeight: 600, cursor: 'pointer', transition: 'all 200ms cubic-bezier(.16,1,.3,1)' } }; }),
+      modeTabs: [['banner', 'Banner'], ['video', 'Video']].map(([key, label]) => { const on = s.mode === key; const E = 'cubic-bezier(.16,1,.3,1)'; return { label, on: String(on), pick: () => this.setState({ mode: key }),
+        style: { position: 'relative', flex: 1, display: 'flex', alignItems: 'center', justifyContent: 'center', gap: 8, padding: '0 10px', border: 0, background: 'transparent', color: on ? '#fff' : 'rgba(255,255,255,.62)', fontSize: 14, fontWeight: 600, letterSpacing: '-.01em', whiteSpace: 'nowrap', cursor: 'pointer', transition: 'color 200ms ' + E + ', text-shadow 200ms ' + E },
+        dot: { width: 5, height: 5, borderRadius: '50%', flex: 'none', background: 'var(--blue-300)', boxShadow: '0 0 8px rgba(0,204,255,.9)', display: on ? 'block' : 'none' } }; })
+    };
+  }
+}
+</script>
+</body>
+</html>

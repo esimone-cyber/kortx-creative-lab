@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="_ds/kortx-design-guide-2026-5bc7ff27-9282-4218-938a-63d43f555d47/tokens/fonts.css">
+<link rel="stylesheet" href="_ds/kortx-design-guide-2026-5bc7ff27-9282-4218-938a-63d43f555d47/tokens/colors.css">
+<style>
+  @keyframes kxum-in { 0% { opacity: 0; transform: translateY(-6px) scale(.97) } 100% { opacity: 1; transform: none } }
+  @keyframes kxum-dim { 0% { opacity: 0 } 100% { opacity: 1 } }
+</style>
+</helmet>
+<span aria-hidden="true" style="display: block; width: 40px; height: 40px; flex: none;"></span>
+<div data-block="User menu" ref="{{ rootRef }}" style="position: fixed; top: 16px; right: 20px; z-index: 92; display: inline-flex; flex: none; pointer-events: auto; font-family: var(--font-body, Inter, sans-serif); color: #fff;">
+  <button type="button" data-focusable="1" onClick="{{ toggle }}" aria-haspopup="menu" aria-expanded="{{ openStr }}" aria-label="{{ btnAria }}" title="{{ btnAria }}" style="{{ btnStyle }}" style-hover="border-color: rgba(167,139,250,.7); box-shadow: 0 0 0 3px rgba(109,94,240,.25), 0 0 26px rgba(109,94,240,.55)">
+    <sc-if value="{{ hasPhoto }}" hint-placeholder-val="{{ false }}"><span aria-hidden="true" style="{{ photoStyle }}"></span></sc-if>
+    <sc-if value="{{ hasInitial }}" hint-placeholder-val="{{ false }}"><span aria-hidden="true" style="font-size: 15px; font-weight: 800; color: #001830;">{{ initial }}</span></sc-if>
+    <sc-if value="{{ signedOut }}" hint-placeholder-val="{{ true }}"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="7" height="7" rx="1.5"></rect><rect x="14" y="3" width="7" height="7" rx="1.5"></rect><rect x="3" y="14" width="7" height="7" rx="1.5"></rect><rect x="14" y="14" width="7" height="7" rx="1.5"></rect></svg></sc-if>
+  </button>
+  <sc-if value="{{ open }}" hint-placeholder-val="{{ false }}">
+    <div onClick="{{ close }}" style="position: fixed; inset: 0; z-index: 94; background: rgba(0,5,9,.5); animation: kxum-dim 200ms cubic-bezier(.16,1,.3,1) both;"></div>
+    <div role="menu" aria-label="All pages" style="{{ panelPos }}"><div style="width: 300px; max-height: inherit; overflow-y: auto; padding: 8px; border-radius: 14px; border: 1px solid rgba(255,255,255,.12); background: #0A0F1A; box-shadow: 0 24px 60px rgba(0,0,0,.6), 0 0 40px rgba(0,204,255,.12); animation: kxum-in 180ms cubic-bezier(.16,1,.3,1) both;">
+      <sc-if value="{{ signedIn }}" hint-placeholder-val="{{ false }}">
+        <div style="display: flex; align-items: center; gap: 10px; padding: 8px 10px 12px; margin-bottom: 6px; border-bottom: 1px solid rgba(255,255,255,.08);">
+          <span style="position: relative; flex: none; display: grid; place-items: center; width: 36px; height: 36px; border-radius: 50%; overflow: hidden; background: #00CCFF; color: #001830; font-size: 14px; font-weight: 800;"><sc-if value="{{ hasPhoto }}" hint-placeholder-val="{{ false }}"><span aria-hidden="true" style="{{ photoStyle }}"></span></sc-if><sc-if value="{{ hasInitial }}" hint-placeholder-val="{{ false }}">{{ initial }}</sc-if></span>
+          <span style="min-width: 0;">
+            <span style="display: block; font-size: 14px; font-weight: 700; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">{{ name }}</span>
+            <span style="display: block; margin-top: 1px; font-size: 12px; color: rgba(255,255,255,.55); white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">{{ email }}</span>
+          </span>
+        </div>
+      </sc-if>
+      <sc-for list="{{ groups }}" as="g" hint-placeholder-count="2">
+        <div style="padding: 8px 10px 4px; font-size: 10.5px; font-weight: 600; letter-spacing: .18em; text-transform: uppercase; color: {{ g.color }};">{{ g.title }}</div>
+        <sc-for list="{{ g.items }}" as="it" hint-placeholder-count="3">
+          <a href="{{ it.href }}" target="{{ it.target }}" role="menuitem" data-focusable="1" aria-current="{{ it.aria }}" style="{{ it.style }}" style-hover="background: rgba(0,204,255,.12); color: #fff">
+            <span style="min-width: 0; flex: 1; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">{{ it.label }}</span>
+            <span aria-hidden="true" style="{{ it.markStyle }}">✓</span>
+          </a>
+        </sc-for>
+      </sc-for>
+      <div style="display: flex; flex-direction: column; gap: 2px; margin-top: 6px; padding-top: 6px; border-top: 1px solid rgba(255,255,255,.08);">
+        <sc-if value="{{ signedIn }}" hint-placeholder-val="{{ false }}">
+          <a href="{{ profileHref }}" role="menuitem" data-focusable="1" style="display: flex; align-items: center; gap: 10px; padding: 9px 10px; border-radius: 8px; color: #fff; font-size: 13.5px; font-weight: 600; text-decoration: none;" style-hover="background: rgba(0,204,255,.12); color: #fff">Profile</a>
+          <button type="button" role="menuitem" data-focusable="1" onClick="{{ signOut }}" style="display: flex; align-items: center; gap: 10px; padding: 9px 10px; border: 0; border-radius: 8px; background: transparent; color: rgba(255,255,255,.8); font-size: 13.5px; font-weight: 600; text-align: left; cursor: pointer;" style-hover="background: rgba(255,255,255,.06); color: #fff">Sign Out</button>
+        </sc-if>
+        <sc-if value="{{ signedOutNoLink }}" hint-placeholder-val="{{ false }}">
+          <a href="{{ signInHref }}" role="menuitem" data-focusable="1" style="display: flex; align-items: center; gap: 10px; padding: 9px 10px; border-radius: 8px; color: rgba(255,255,255,.85); font-size: 13.5px; font-weight: 600; text-decoration: none;" style-hover="background: rgba(0,204,255,.12); color: #fff">KORTX Team Sign In</a>
+        </sc-if>
+      </div>
+    </div></div>
+  </sc-if>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:340,&quot;height&quot;:520},&quot;current&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;&quot;,&quot;tsType&quot;:&quot;string&quot;}}">
+class Component extends DCLogic {
+  state = { open: false, user: null, pages: null };
+  rootRef = React.createRef();
+  /* Pinned to the top-right corner of its header (the header is its positioning parent). */
+  placeCorner = () => {
+    const el = this.rootRef.current, hd = el && el.closest('header'); if (!hd) return;
+    if (getComputedStyle(hd).position === 'static') hd.style.position = 'relative';
+  };
+  componentDidMount() {
+    this.onOtherMenu = e => { if (e.detail !== 'user' && this.state.open) this.setState({ open: false }); };
+    window.addEventListener('kx-menu-open', this.onOtherMenu);
+    this.placeCorner(); requestAnimationFrame(this.placeCorner);
+    import('./creative-cloud.js').then(c => {
+      this.cloud = c;
+      const set = u => { this.setState(s => ({ user: u || null, pages: !!s.user !== !!u ? null : s.pages })); if (c.resetNavPages) c.resetNavPages(); (c.menuPages ? c.menuPages(u) : c.navPages(u)).then(pages => this.setState({ pages })).catch(() => this.setState({ pages: [] })); };
+      c.currentUser().then(set).catch(() => set(null));
+      if (c.watchAuth) c.watchAuth(set); else if (c.onAuthChange) c.onAuthChange(set).catch(() => {});
+    }).catch(() => this.setState({ pages: [] }));
+    this.onEsc = e => { if (e.key === 'Escape' && this.state.open) this.setState({ open: false }); };
+    document.addEventListener('keydown', this.onEsc);
+  }
+  componentWillUnmount() { document.removeEventListener('keydown', this.onEsc); window.removeEventListener('kx-menu-open', this.onOtherMenu); }
+
+  /* Menus stay put on scroll: the panel is pinned to the viewport where it opened, until a click outside closes it. */
+  pin = e => { const r = e && e.currentTarget && e.currentTarget.getBoundingClientRect ? e.currentTarget.getBoundingClientRect() : null; return r ? { top: Math.round(r.bottom + 10), left: Math.round(r.left), right: Math.round(window.innerWidth - r.right) } : null; };
+  toggle = e => { const pos = this.pin(e), opening = !this.state.open; if (opening) window.dispatchEvent(new CustomEvent('kx-menu-open', { detail: 'user' })); this.setState({ open: opening, pos }); };
+  close = () => this.setState({ open: false });
+  signOut = () => { this.setState({ open: false }); if (this.cloud) this.cloud.signOut().then(() => { location.href = this.cloud.route('/sign-in'); }).catch(() => {}); };
+  renderVals() {
+    const s = this.state, u = s.user, R = this.cloud ? this.cloud.route : (x => x);
+    const cur = this.props.current === 'specs' ? 'assets' : (this.props.current || '');
+    const pages = s.pages || [], name = u ? (u.name || u.email || '') : '';
+    const item = p => { const on = p.id === cur; return { label: p.label, href: p.href, target: p.external ? '_blank' : '_self', aria: on ? 'page' : 'false',
+      style: { display: 'flex', alignItems: 'center', gap: 10, padding: '9px 10px', borderRadius: 8, color: '#fff', fontSize: 13.5, fontWeight: 600, textDecoration: 'none', background: on ? 'rgba(0,204,255,.12)' : 'transparent' },
+      markStyle: { flex: 'none', fontSize: 12, fontWeight: 800, color: 'var(--blue-300)', opacity: on ? 1 : 0 } }; };
+    const groups = !u ? [{ title: 'KORTX Creative Labs', color: '#BEF264', items: pages.map(item) }].filter(g => g.items.length)
+      : [['Client Facing', '#BEF264', p => p.client], ['Internal Team', 'var(--blue-300)', p => !p.client]].map(([title, color, f]) => ({ title, color, items: pages.filter(f).map(item) })).filter(g => g.items.length);
+    const ps = s.pos;
+    return {
+      panelPos: ps ? { position: 'fixed', top: ps.top, right: Math.max(8, ps.right), zIndex: 95, maxHeight: 'calc(100vh - ' + (ps.top + 12) + 'px)', display: 'flex' } : { position: 'absolute', top: 'calc(100% + 10px)', right: 0, zIndex: 95, maxHeight: 'calc(100vh - 100px)', display: 'flex' },
+      open: s.open, openStr: String(s.open), toggle: this.toggle, close: this.close, signOut: this.signOut,
+      signedIn: !!u, signedOut: !u, name, email: u ? u.email : '',
+      hasPhoto: !!(u && u.headshot), hasInitial: !!u && !u.headshot, initial: (name || '?').charAt(0).toUpperCase(),
+      btnAria: u ? name + ' · all pages' : 'All pages',
+      btnStyle: { position: 'relative', display: 'grid', placeItems: 'center', width: 40, height: 40, padding: 0, borderRadius: '50%', overflow: 'hidden', cursor: 'pointer', color: '#fff', border: '1px solid ' + (s.open ? 'rgba(167,139,250,.7)' : 'rgba(0,204,255,.45)'), background: u ? '#00CCFF' : 'rgba(255,255,255,.06)', boxShadow: s.open ? '0 0 0 3px rgba(109,94,240,.25), 0 0 26px rgba(109,94,240,.55)' : '0 0 18px rgba(0,204,255,.22)', transition: 'all 200ms cubic-bezier(.16,1,.3,1)' },
+      photoStyle: { position: 'absolute', inset: 0, backgroundImage: u && u.headshot ? 'url(' + JSON.stringify(u.headshot) + ')' : 'none', backgroundSize: 'cover', backgroundPosition: '50% 22%' },
+      signedOutNoLink: !u && !pages.some(p => p.id === 'sign-in'), groups, profileHref: R('/profile'), signInHref: R('/sign-in')
+    };
+  }
+}
+</script>
+</body>
+</html>

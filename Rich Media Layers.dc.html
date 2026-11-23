@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<script src="kx-theme.js"></script>
+<link rel="icon" type="image/svg+xml" href="assets/kortx-logomark-bright-blue.svg">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="_ds/kortx-design-guide-2026-5bc7ff27-9282-4218-938a-63d43f555d47/tokens/fonts.css">
+<link rel="stylesheet" href="_ds/kortx-design-guide-2026-5bc7ff27-9282-4218-938a-63d43f555d47/tokens/colors.css">
+<link rel="stylesheet" href="_ds/kortx-design-guide-2026-5bc7ff27-9282-4218-938a-63d43f555d47/tokens/typography.css">
+<link rel="stylesheet" href="_ds/kortx-design-guide-2026-5bc7ff27-9282-4218-938a-63d43f555d47/tokens/spacing.css">
+<link rel="stylesheet" href="_ds/kortx-design-guide-2026-5bc7ff27-9282-4218-938a-63d43f555d47/tokens/radius.css">
+<link rel="stylesheet" href="_ds/kortx-design-guide-2026-5bc7ff27-9282-4218-938a-63d43f555d47/tokens/elevation.css">
+<link rel="stylesheet" href="_ds/kortx-design-guide-2026-5bc7ff27-9282-4218-938a-63d43f555d47/tokens/motion.css">
+<link rel="stylesheet" href="_ds/kortx-design-guide-2026-5bc7ff27-9282-4218-938a-63d43f555d47/tokens/base.css">
+<link rel="stylesheet" href="_ds/kortx-design-guide-2026-5bc7ff27-9282-4218-938a-63d43f555d47/styles.css">
+<script src="_ds/kortx-design-guide-2026-5bc7ff27-9282-4218-938a-63d43f555d47/_ds_bundle.js"></script>
+<style>
+  html, body { margin: 0; padding: 0; background: #000509; }
+  body { font-family: var(--font-body, Inter, Helvetica, sans-serif); -webkit-font-smoothing: antialiased; }
+  a { color: var(--blue-400); text-decoration: none; }
+  a:hover { color: var(--blue-300); text-decoration: none; }
+  button { font-family: inherit; }
+  [data-focusable]:focus-visible { outline: none; border-color: var(--blue-400) !important; box-shadow: 0 0 0 3px rgba(0,204,255,.55) !important; }
+  @keyframes kx-orbit { 0% { transform: rotate(0) translateX(26px) } 100% { transform: rotate(360deg) translateX(26px) } }
+  @keyframes kx-rise { 0% { opacity: 0; transform: translateY(12px) } 100% { opacity: 1; transform: none } }
+  @keyframes kxl-pan { 0% { background-position: 0% 50% } 100% { background-position: 100% 50% } }
+  @keyframes kxl-prog { 0% { transform: scaleX(0) } 100% { transform: scaleX(1) } }
+  @keyframes kxl-dot { 0% { left: 0%; opacity: 0 } 15% { opacity: 1 } 85% { opacity: 1 } 100% { left: 100%; opacity: 0 } }
+  @media (max-width: 760px) { [data-conn] { display: none !important; } }
+  @keyframes kxl-tile { 0%, 40%, 100% { transform: scale(1); box-shadow: inset 0 0 0 1px rgba(255,255,255,.08) } 18%, 26% { transform: scale(1.08); box-shadow: inset 0 0 0 1px rgba(255,255,255,.35), 0 0 18px rgba(0,204,255,.3) } }
+@keyframes kxa-logo { 0% { opacity: 0 } 10%, 94% { opacity: 1 } 100% { opacity: 0 } }
+  @keyframes kxa-head { 0%, 10% { opacity: 0; transform: translateY(1.4cqw) } 25%, 94% { opacity: 1; transform: none } 100% { opacity: 0 } }
+  @keyframes kxa-sub { 0%, 22% { opacity: 0 } 32%, 94% { opacity: 1 } 100% { opacity: 0 } }
+  @keyframes kxa-car { 0%, 30% { opacity: 0; transform: translateX(5cqw) } 45%, 94% { opacity: 1; transform: none } 100% { opacity: 0 } }
+  @keyframes kxa-price { 0%, 45% { opacity: 0; transform: translateY(.9cqw) } 55%, 94% { opacity: 1; transform: none } 100% { opacity: 0 } }
+  @keyframes kxa-cta { 0%, 70% { opacity: 0; transform: scale(.8) } 76% { opacity: 1; transform: scale(1.08) } 80%, 94% { opacity: 1; transform: scale(1) } 100% { opacity: 0 } }
+  @keyframes kxa-play { 0% { left: 0% } 100% { left: 100% } }
+  @keyframes kxl-pulse { 0%, 100% { opacity: .55 } 50% { opacity: 1 } }
+  @media (prefers-reduced-motion: reduce) { *, *::before, *::after { animation-duration: .001ms !important; animation-iteration-count: 1 !important; transition-duration: .001ms !important; } }
+</style>
+</helmet>
+
+<div data-screen-label="Rich Media Layers" style="position: relative; color: #fff; overflow-x: clip; isolation: isolate;">
+  <sc-if value="{{ full }}" hint-placeholder-val="{{ true }}">
+  <div aria-hidden="true" data-kx-bg-keep style="position: fixed; inset: 0; z-index: 0; pointer-events: none; overflow: hidden;">
+    <div style="position: absolute; top: -22vh; right: -14vw; width: 78vw; height: 78vw; border-radius: 50%; background: radial-gradient(circle at 50% 50%, rgba(0,204,255,.14), rgba(0,204,255,.04) 40%, transparent 68%); filter: blur(24px); animation: kx-drift-a 62s ease-in-out infinite;"></div>
+    <div style="position: absolute; bottom: -34vh; left: -18vw; width: 72vw; height: 72vw; border-radius: 50%; background: radial-gradient(circle at 50% 50%, rgba(109,94,240,.12), rgba(109,94,240,.03) 42%, transparent 70%); filter: blur(30px); animation: kx-drift-b 78s ease-in-out infinite;"></div>
+    <div style="position: absolute; top: 34vh; left: 28vw; width: 46vw; height: 46vw; border-radius: 50%; background: radial-gradient(circle at 50% 50%, rgba(214,125,240,.10), transparent 64%); filter: blur(40px); animation: kx-drift-a 96s ease-in-out infinite;"></div>
+    <div style="position: absolute; inset: -10% -10% -60%; opacity: .8; animation: kx-stars 140s linear infinite; background-image: radial-gradient(1.4px 1.4px at 7% 12%, rgba(255,255,255,.85), transparent), radial-gradient(1.2px 1.2px at 19% 41%, rgba(0,204,255,.8), transparent), radial-gradient(1px 1px at 31% 8%, rgba(255,255,255,.6), transparent), radial-gradient(1.6px 1.6px at 44% 63%, rgba(255,255,255,.7), transparent), radial-gradient(1px 1px at 57% 22%, rgba(156,235,255,.75), transparent), radial-gradient(1.3px 1.3px at 68% 51%, rgba(255,255,255,.65), transparent), radial-gradient(1px 1px at 78% 15%, rgba(255,255,255,.5), transparent), radial-gradient(1.5px 1.5px at 88% 37%, rgba(0,204,255,.6), transparent), radial-gradient(1px 1px at 95% 71%, rgba(255,255,255,.55), transparent), radial-gradient(1.2px 1.2px at 12% 78%, rgba(255,255,255,.6), transparent), radial-gradient(1px 1px at 26% 92%, rgba(138,124,248,.7), transparent), radial-gradient(1.4px 1.4px at 39% 33%, rgba(255,255,255,.5), transparent), radial-gradient(1px 1px at 52% 86%, rgba(255,255,255,.6), transparent), radial-gradient(1.2px 1.2px at 63% 74%, rgba(0,204,255,.55), transparent), radial-gradient(1px 1px at 74% 95%, rgba(255,255,255,.45), transparent), radial-gradient(1.3px 1.3px at 84% 60%, rgba(255,255,255,.6), transparent), radial-gradient(1px 1px at 92% 88%, rgba(156,235,255,.5), transparent), radial-gradient(1.1px 1.1px at 4% 55%, rgba(255,255,255,.5), transparent);"></div>
+    <div style="position: absolute; inset: 0; background-image: linear-gradient(rgba(255,255,255,.022) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,.022) 1px, transparent 1px); background-size: 88px 88px; mask-image: radial-gradient(circle at 50% 18%, #000, transparent 72%);"></div>
+  </div>
+
+  <header style="position: sticky; top: 0; z-index: 60; display: flex; align-items: center; gap: clamp(12px, 1.6vw, 20px); flex-wrap: wrap; min-height: 72px; padding: 14px clamp(20px, 4vw, 56px); box-sizing: border-box; background: rgba(0,5,9,.72); backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px);">
+    <a href="Creative Playground.dc.html" aria-label="KORTX home" style="position: relative; display: grid; place-items: center; width: 46px; height: 46px; flex: none;">
+      <span aria-hidden="true" style="position: absolute; inset: 0; border-radius: 50%; background: radial-gradient(circle at 50% 50%, rgba(0,204,255,.24), transparent 68%);"></span>
+      <span aria-hidden="true" style="position: absolute; inset: 3px; border: 1px solid rgba(0,204,255,.30); border-radius: 50%;"></span>
+      <span aria-hidden="true" style="position: absolute; inset: 8px; border: 1px solid rgba(138,124,248,.28); border-radius: 50%; transform: rotate(18deg) scaleY(.6);"></span>
+      <img src="assets/kortx-logomark-bright-blue.svg" alt="KORTX" style="position: relative; width: 20px; display: block;">
+      <span aria-hidden="true" style="position: absolute; top: 50%; left: 50%; width: 4px; height: 4px; margin: -2px; border-radius: 50%; background: var(--blue-300); box-shadow: 0 0 9px rgba(0,204,255,.9); animation: kx-orbit 18s linear infinite;"></span>
+    </a>
+    <dc-import name="Site Nav" hint-size="200px,40px"></dc-import>
+    <div style="flex: 1;"></div>
+    <dc-import name="User Menu" hint-size="40px,40px" style="margin-left: auto; order: 99;"></dc-import>
+  </header>
+  </sc-if>
+
+  <main style="position: relative; max-width: 1180px; margin: 0 auto; box-sizing: border-box; padding: {{ mainPad }};">
+    <sc-if value="{{ full }}" hint-placeholder-val="{{ false }}"><div data-block="Rich Media Layers · Head" style="display: flex; flex-direction: column; align-items: center; text-align: center; gap: 8px; animation: kx-rise 600ms cubic-bezier(.16,1,.3,1) both;">
+      <h1 style="margin: 0; max-width: 820px; font-size: clamp(28px, 3.4vw, 42px); font-weight: 700; letter-spacing: -.025em; line-height: 1.05; text-wrap: balance;">How rich media ads are built</h1>
+    </div></sc-if>
+
+    <section data-block="Rich Media Layers · Stack" style="position: relative; margin-top: clamp(12px, 2vh, 24px); display: flex; flex-direction: column; align-items: center; gap: 10px;">
+
+      <div style="position: relative; z-index: 1; width: min(1100px, 100%); display: flex; align-items: center; justify-content: center; margin-top: clamp(28px, 5vh, 48px);">
+        <div style="position: relative; z-index: 1; flex: 0 1 auto; min-width: 0; width: min(100%, 64vh); margin: 0 auto; aspect-ratio: 4 / 3; container-type: inline-size; perspective: 1600px; perspective-origin: 30% 50%;">
+        <div style="{{ scene }}">
+          <div style="{{ L0 }}">
+            <div style="position: absolute; inset: 0; border-radius: inherit; background: radial-gradient(90% 50% at 80% 10%, rgba(0,204,255,.35), transparent 60%), radial-gradient(90% 50% at 10% 90%, rgba(109,94,240,.45), transparent 60%), linear-gradient(170deg, #0B1630, #05080F 70%); background-size: 100% 200%; animation: kxl-pan 14s ease-in-out infinite alternate;"></div>
+            <div aria-hidden="true" style="position: absolute; inset: 0; border-radius: inherit; overflow: hidden; opacity: {{ psdOp }}; transition: opacity 700ms cubic-bezier(.16,1,.3,1); pointer-events: none; font-family: inherit;">
+              <div style="position: absolute; left: 0; right: 0; top: 0; height: 2.6cqw; display: flex; align-items: center; gap: .6cqw; padding: 0 .9cqw; background: #2B2B2B; border-bottom: 1px solid #1A1A1A; font-size: .78cqw; color: #D6D6D6; white-space: nowrap;"><span style="width: .7cqw; height: .7cqw; border-radius: 2px; background: #31A8FF;"></span><span style="font-weight: 600;">campaign_300x600.psd</span><span style="color: #8A8A8A;">@ 100% (RGB/8)</span></div>
+              <div style="position: absolute; left: 0; right: 0; top: 2.6cqw; height: 1.1cqw; background: repeating-linear-gradient(90deg, #8A8A8A 0 1px, transparent 1px 1.6cqw), #3A3A3A; background-size: 100% 40%; background-repeat: no-repeat; background-position: bottom; border-bottom: 1px solid #1A1A1A;"></div>
+              <div style="position: absolute; left: 0; top: 3.7cqw; bottom: 0; width: 1.1cqw; background: repeating-linear-gradient(180deg, #8A8A8A 0 1px, transparent 1px 1.6cqw), #3A3A3A; background-size: 40% 100%; background-repeat: no-repeat; background-position: right; border-right: 1px solid #1A1A1A;"></div>
+              <span style="position: absolute; left: 9%; top: 3.7cqw; bottom: 0; width: 0; border-left: 1px solid rgba(0,255,255,.75);"></span>
+              <span style="position: absolute; right: 9%; top: 3.7cqw; bottom: 0; width: 0; border-left: 1px solid rgba(0,255,255,.75);"></span>
+              <span style="position: absolute; left: 1.1cqw; right: 0; top: 36%; height: 0; border-top: 1px solid rgba(0,255,255,.75);"></span>
+              <span style="position: absolute; left: 1.1cqw; right: 0; top: 68%; height: 0; border-top: 1px solid rgba(0,255,255,.75);"></span>
+              <div style="position: absolute; left: 1.1cqw; right: 0; top: 3.7cqw; bottom: 0;">
+                <div style="position: absolute; left: 9%; right: 9%; top: 5%; display: flex; flex-direction: column; gap: .8cqw;"><span style="font-size: .75cqw; font-weight: 600; letter-spacing: .22em; color: rgba(255,255,255,.75);">YOUR LOGO</span><span style="font-size: 1.9cqw; font-weight: 600; letter-spacing: -.03em; line-height: 1.12; color: #fff;">Explore the new collection.</span><span style="font-size: .9cqw; line-height: 1.35; color: rgba(255,255,255,.7);">Swipe to see every style.</span></div>
+                <div style="position: absolute; left: 9%; right: 9%; top: 38%; height: 28%; border-radius: .6cqw; background: radial-gradient(90% 90% at 70% 20%, rgba(0,204,255,.55), transparent 65%), linear-gradient(160deg, #0B1630, #070B15); box-shadow: inset 0 0 0 1px rgba(255,255,255,.1); display: grid; place-items: center; font-size: .75cqw; font-weight: 500; letter-spacing: .2em; color: rgba(255,255,255,.85);">{{ f2 }}</div>
+                <div style="position: absolute; left: 9%; right: 9%; bottom: 5%; display: flex; flex-direction: column; gap: .9cqw;"><div style="display: flex; align-items: baseline; justify-content: space-between; gap: 1cqw;"><span style="font-size: 1.15cqw; font-weight: 600; color: #fff;">{{ f1 }}</span><span style="font-size: 1cqw; font-weight: 700; color: var(--lime-300);">{{ f3 }}</span></div><span style="padding: .6cqw; border-radius: 99px; background: #fff; color: #05080F; text-align: center; font-size: 1cqw; font-weight: 600;">Shop Now</span></div>
+                <span style="position: absolute; left: 7%; top: 86%; width: 86%; height: 10%; border: 1.5px solid #00CCFF; border-radius: .3cqw; box-shadow: 0 0 1.2cqw rgba(0,204,255,.45); opacity: {{ po0 }}; transition: opacity 400ms cubic-bezier(.16,1,.3,1);"><span style="position: absolute; left: -1px; top: -1.25cqw; padding: .1cqw .45cqw; border-radius: .25cqw; background: #00CCFF; color: #001830; font-size: .62cqw; font-weight: 700; white-space: nowrap;">CTA</span></span>
+                <span style="position: absolute; left: 7%; top: 36%; width: 86%; height: 52%; border: 1.5px solid #00CCFF; border-radius: .3cqw; box-shadow: 0 0 1.2cqw rgba(0,204,255,.45); opacity: {{ po1 }}; transition: opacity 400ms cubic-bezier(.16,1,.3,1);"><span style="position: absolute; left: -1px; top: -1.25cqw; padding: .1cqw .45cqw; border-radius: .25cqw; background: #00CCFF; color: #001830; font-size: .62cqw; font-weight: 700; white-space: nowrap;">Product</span></span>
+                <span style="position: absolute; left: 7%; top: 8.5%; width: 86%; height: 15%; border: 1.5px solid #00CCFF; border-radius: .3cqw; box-shadow: 0 0 1.2cqw rgba(0,204,255,.45); opacity: {{ po2 }}; transition: opacity 400ms cubic-bezier(.16,1,.3,1);"><span style="position: absolute; left: -1px; top: -1.25cqw; padding: .1cqw .45cqw; border-radius: .25cqw; background: #00CCFF; color: #001830; font-size: .62cqw; font-weight: 700; white-space: nowrap;">Headline</span></span>
+                <span style="position: absolute; left: 7%; top: 3.5%; width: 46%; height: 4%; border: 1.5px solid #00CCFF; border-radius: .3cqw; box-shadow: 0 0 1.2cqw rgba(0,204,255,.45); opacity: {{ po3 }}; transition: opacity 400ms cubic-bezier(.16,1,.3,1);"><span style="position: absolute; left: -1px; top: -1.25cqw; padding: .1cqw .45cqw; border-radius: .25cqw; background: #00CCFF; color: #001830; font-size: .62cqw; font-weight: 700; white-space: nowrap;">Logo</span></span>
+                <span style="position: absolute; left: 1.5%; top: 2%; width: 97%; height: 96%; border: 1.5px solid #00CCFF; border-radius: .3cqw; box-shadow: 0 0 1.2cqw rgba(0,204,255,.45); opacity: {{ po4 }}; transition: opacity 400ms cubic-bezier(.16,1,.3,1);"><span style="position: absolute; left: -1px; top: -1.25cqw; padding: .1cqw .45cqw; border-radius: .25cqw; background: #00CCFF; color: #001830; font-size: .62cqw; font-weight: 700; white-space: nowrap;">Background</span></span>
+              </div>
+
+            </div>
+            <div aria-hidden="true" style="position: absolute; left: calc(100% + 1.2cqw); top: 10%; width: 92%; opacity: {{ psdOp }}; transition: opacity 700ms cubic-bezier(.16,1,.3,1); pointer-events: none; border-radius: .4cqw; background: #2B2B2B; border: 1px solid #1A1A1A; box-shadow: 0 .6cqw 1.6cqw rgba(0,0,0,.5); font-size: 1.1cqw; color: #D6D6D6; overflow: hidden;">
+                <div style="display: flex; gap: 1.3cqw; padding: .8cqw 1cqw; background: #333; border-bottom: 1px solid #1A1A1A; font-weight: 600;"><span style="color: #fff;">Layers</span><span style="color: #8A8A8A;">Channels</span></div>
+                <div style="display: flex; align-items: center; gap: .9cqw; padding: .75cqw 1cqw; border-bottom: 1px solid #222; background: {{ pr0 }}; color: {{ pc0 }}; transition: background 300ms cubic-bezier(.16,1,.3,1), color 300ms cubic-bezier(.16,1,.3,1);"><span style="color: #8A8A8A;">◉</span><span style="width: 2.2cqw; height: 1.5cqw; background: #555; border: 1px solid #777;"></span><span>CTA</span></div>
+                <div style="display: flex; align-items: center; gap: .9cqw; padding: .75cqw 1cqw; border-bottom: 1px solid #222; background: {{ pr1 }}; color: {{ pc1 }}; transition: background 300ms cubic-bezier(.16,1,.3,1), color 300ms cubic-bezier(.16,1,.3,1);"><span style="color: #8A8A8A;">◉</span><span style="width: 2.2cqw; height: 1.5cqw; background: #555; border: 1px solid #777;"></span><span>Product</span></div>
+                <div style="display: flex; align-items: center; gap: .9cqw; padding: .75cqw 1cqw; border-bottom: 1px solid #222; background: {{ pr2 }}; color: {{ pc2 }}; transition: background 300ms cubic-bezier(.16,1,.3,1), color 300ms cubic-bezier(.16,1,.3,1);"><span style="color: #8A8A8A;">◉</span><span style="width: 2.2cqw; height: 1.5cqw; display: grid; place-items: center; font-weight: 700; color: #fff;">T</span><span>Headline</span></div>
+                <div style="display: flex; align-items: center; gap: .9cqw; padding: .75cqw 1cqw; border-bottom: 1px solid #222; background: {{ pr3 }}; color: {{ pc3 }}; transition: background 300ms cubic-bezier(.16,1,.3,1), color 300ms cubic-bezier(.16,1,.3,1);"><span style="color: #8A8A8A;">◉</span><span style="width: 2.2cqw; height: 1.5cqw; background: #555; border: 1px solid #777;"></span><span>Logo</span></div>
+                <div style="display: flex; align-items: center; gap: .9cqw; padding: .75cqw 1cqw; border-bottom: 1px solid #222; background: {{ pr4 }}; color: {{ pc4 }}; transition: background 300ms cubic-bezier(.16,1,.3,1), color 300ms cubic-bezier(.16,1,.3,1);"><span style="color: #8A8A8A;">◉</span><span style="width: 2.2cqw; height: 1.5cqw; background: linear-gradient(160deg, #0B1630, #6D5EF0); border: 1px solid #9AB;"></span><span>Background</span></div>
+              </div>
+            
+          </div>
+          <div style="{{ L1 }}">
+            <div style="position: absolute; left: 9%; right: 9%; top: 5%; display: flex; flex-direction: column; gap: 1cqw;"><span style="align-self: flex-start; font-size: 0.8cqw; font-weight: 600; letter-spacing: .22em; color: rgba(255,255,255,.75); outline: 1px solid {{ olA }}; outline-offset: .2cqw; transition: outline-color 500ms cubic-bezier(.16,1,.3,1);">YOUR LOGO</span><span style="font-size: 2.1cqw; font-weight: 600; letter-spacing: -.03em; line-height: 1.12; color: #fff; outline: 1px solid {{ olA }}; outline-offset: .2cqw; transition: outline-color 500ms cubic-bezier(.16,1,.3,1);">Explore the new collection.</span><span style="font-size: 0.95cqw; line-height: 1.35; color: rgba(255,255,255,.7);">Swipe to see every style.</span></div>
+            <div aria-hidden="true" style="position: absolute; inset: 0; border-radius: inherit; opacity: {{ prepOp }}; transition: opacity 600ms cubic-bezier(.16,1,.3,1); pointer-events: none;">
+              <div style="position: absolute; left: 9%; right: 9%; top: 38%; height: 28%; border-radius: .6cqw; background: radial-gradient(90% 90% at 70% 20%, rgba(0,204,255,.55), transparent 65%), linear-gradient(160deg, #0B1630, #070B15); display: grid; place-items: center; font-size: .75cqw; font-weight: 500; letter-spacing: .2em; color: rgba(255,255,255,.85); outline: 1px solid {{ bxImg }}; outline-offset: .45cqw; transition: outline-color 500ms cubic-bezier(.16,1,.3,1);">{{ f2 }}</div>
+              <div style="position: absolute; left: 9%; right: 9%; bottom: 5%; display: flex; flex-direction: column; gap: 1.4cqw;"><div style="display: flex; align-items: baseline; justify-content: space-between; gap: 1cqw; outline: 1px solid {{ bxA }}; outline-offset: .45cqw; transition: outline-color 500ms cubic-bezier(.16,1,.3,1);"><span style="font-size: 1.25cqw; font-weight: 600; color: #fff;">{{ f1 }}</span><span style="font-size: 1.1cqw; font-weight: 700; color: var(--lime-300);">{{ f3 }}</span></div><span style="padding: .7cqw; border-radius: 99px; background: #fff; color: #05080F; text-align: center; font-size: 1.05cqw; font-weight: 600; outline: 1px solid {{ bxA }}; outline-offset: .45cqw; transition: outline-color 500ms cubic-bezier(.16,1,.3,1);">Shop Now</span></div>
+              <div style="position: absolute; left: 30%; top: 44%; width: 92%; border-radius: .5cqw; background: #0B1220; border: 1px solid rgba(167,139,250,.6); box-shadow: 0 0 2cqw rgba(109,94,240,.45), 0 .8cqw 1.6cqw rgba(0,0,0,.5); font-size: 1.15cqw; color: rgba(255,255,255,.8); overflow: hidden; opacity: {{ menuOp }}; transform: translateY({{ menuY }}); transition: opacity 500ms cubic-bezier(.16,1,.3,1), transform 500ms cubic-bezier(.16,1,.3,1);">
+                <div style="padding: .8cqw 1.1cqw; font-size: .9cqw; font-weight: 600; letter-spacing: .16em; text-transform: uppercase; color: #A78BFA; border-bottom: 1px solid rgba(255,255,255,.08);">Make interactive</div>
+                <div style="display: flex; justify-content: space-between; padding: .75cqw 1.1cqw; background: rgba(109,94,240,.28); color: #fff; font-weight: 600;"><span>Carousel</span><span>✓</span></div>
+                <div style="padding: .75cqw 1.1cqw;">Hotspots</div>
+                <div style="padding: .75cqw 1.1cqw;">Scratch-off</div>
+                <div style="padding: .75cqw 1.1cqw;">Map</div>
+              </div>
+              <svg viewBox="0 0 24 24" style="position: absolute; left: {{ curX }}; top: {{ curY }}; width: 1.6cqw; height: 1.6cqw; transition: left 900ms cubic-bezier(.16,1,.3,1), top 900ms cubic-bezier(.16,1,.3,1); filter: drop-shadow(0 .2cqw .4cqw rgba(0,0,0,.6));"><path d="M4 2l15 9-6.5 1.5L9.5 19z" fill="#fff" stroke="#05080F" stroke-width="1.2" stroke-linejoin="round"></path></svg>
+            </div>
+            
+          </div>
+          <div style="{{ L2 }}">
+            <div style="position: absolute; left: 6%; right: 6%; top: 36%; height: 32%; display: flex; align-items: center; gap: .8cqw;"><span style="flex: none; width: 2.2cqw; height: 2.2cqw; border-radius: 50%; border: 1px solid rgba(255,255,255,.3); background: rgba(5,8,15,.5); color: #fff; font-size: 1.2cqw; display: grid; place-items: center;">‹</span><span style="flex: 1; height: 100%; border-radius: .6cqw; background: radial-gradient(90% 90% at 70% 20%, rgba(0,204,255,.55), transparent 65%), linear-gradient(160deg, #0B1630, #070B15); box-shadow: inset 0 0 0 1px rgba(255,255,255,.1); display: grid; place-items: center; font-size: 0.75cqw; font-weight: 500; letter-spacing: .2em; color: rgba(255,255,255,.85); animation: kxl-tile 3.6s cubic-bezier(.45,0,.55,1) infinite both;">{{ f2 }}</span><span style="flex: none; width: 2.2cqw; height: 2.2cqw; border-radius: 50%; border: 1px solid rgba(255,255,255,.3); background: rgba(5,8,15,.5); color: #fff; font-size: 1.2cqw; display: grid; place-items: center;">›</span></div><div style="position: absolute; left: 0; right: 0; top: 70%; display: flex; justify-content: center; gap: .5cqw;"><span style="width: 1.6cqw; height: .5cqw; border-radius: 99px; background: #fff;"></span><span style="width: .5cqw; height: .5cqw; border-radius: 99px; background: rgba(255,255,255,.35);"></span><span style="width: .5cqw; height: .5cqw; border-radius: 99px; background: rgba(255,255,255,.35);"></span></div>
+            <div aria-hidden="true" style="position: absolute; inset: 0; border-radius: inherit; overflow: hidden; opacity: {{ anOp }}; transition: opacity 600ms cubic-bezier(.16,1,.3,1); pointer-events: none; background: radial-gradient(90% 50% at 80% 10%, rgba(0,204,255,.35), transparent 60%), radial-gradient(90% 50% at 10% 90%, rgba(109,94,240,.45), transparent 60%), linear-gradient(170deg, #0B1630, #05080F 70%);">
+              <div style="position: absolute; left: 9%; right: 9%; top: 5%; display: flex; flex-direction: column; gap: 1cqw;"><span style="font-size: 0.8cqw; font-weight: 600; letter-spacing: .22em; color: rgba(255,255,255,.75); animation: kxa-logo 5s linear infinite;">YOUR LOGO</span><span style="font-size: 2.1cqw; font-weight: 600; letter-spacing: -.03em; line-height: 1.12; color: #fff; animation: kxa-head 5s linear infinite;">Explore the new collection.</span><span style="font-size: 0.95cqw; line-height: 1.35; color: rgba(255,255,255,.7); animation: kxa-sub 5s linear infinite;">Swipe to see every style.</span></div>
+              <div style="position: absolute; left: 9%; right: 9%; top: 38%; height: 28%; border-radius: .6cqw; background: radial-gradient(90% 90% at 70% 20%, rgba(0,204,255,.55), transparent 65%), linear-gradient(160deg, #0B1630, #070B15); box-shadow: inset 0 0 0 1px rgba(255,255,255,.1); display: grid; place-items: center; font-size: .75cqw; font-weight: 500; letter-spacing: .2em; color: rgba(255,255,255,.85); animation: kxa-car 5s linear infinite;">{{ f2 }}</div>
+              <div style="position: absolute; left: 9%; right: 9%; bottom: 5%; display: flex; flex-direction: column; gap: 1.4cqw;"><div style="display: flex; align-items: baseline; justify-content: space-between; gap: 1cqw; animation: kxa-price 5s linear infinite;"><span style="font-size: 1.25cqw; font-weight: 600; color: #fff;">{{ f1 }}</span><span style="font-size: 1.1cqw; font-weight: 700; color: var(--lime-300);">{{ f3 }}</span></div><span style="padding: .7cqw; border-radius: 99px; background: #fff; color: #05080F; text-align: center; font-size: 1.05cqw; font-weight: 600; animation: kxa-cta 5s linear infinite;">Shop Now</span></div>
+            </div>
+            <div aria-hidden="true" style="position: absolute; left: calc(100% + 1.2cqw); top: 10%; width: 108%; opacity: {{ tlOp }}; transition: opacity 700ms cubic-bezier(.16,1,.3,1); pointer-events: none; border-radius: .4cqw; background: #2B2B2B; border: 1px solid #1A1A1A; box-shadow: 0 .6cqw 1.6cqw rgba(0,0,0,.5); font-size: 1cqw; color: #D6D6D6; overflow: hidden;">
+              <div style="display: flex; align-items: center; justify-content: space-between; gap: 1.3cqw; padding: .8cqw 1cqw; background: #333; border-bottom: 1px solid #1A1A1A; font-weight: 600;"><span style="color: #fff;">Timeline</span><span style="color: #8A8A8A; font-weight: 500;">5.0s · loop</span></div>
+              <div style="position: relative;">
+                <div style="display: grid; grid-template-columns: 28% 1fr; border-bottom: 1px solid #1A1A1A; background: #262626;"><span></span><span style="position: relative; height: 1.6cqw; border-left: 1px solid #222;"><span style="position: absolute; left: 0%; top: 0; bottom: 0; border-left: 1px solid #555;"><span style="position: absolute; left: .3cqw; top: .15cqw; font-size: .8cqw; color: #8A8A8A;">0s</span></span><span style="position: absolute; left: 20%; top: 0; bottom: 0; border-left: 1px solid #555;"><span style="position: absolute; left: .3cqw; top: .15cqw; font-size: .8cqw; color: #8A8A8A;">1s</span></span><span style="position: absolute; left: 40%; top: 0; bottom: 0; border-left: 1px solid #555;"><span style="position: absolute; left: .3cqw; top: .15cqw; font-size: .8cqw; color: #8A8A8A;">2s</span></span><span style="position: absolute; left: 60%; top: 0; bottom: 0; border-left: 1px solid #555;"><span style="position: absolute; left: .3cqw; top: .15cqw; font-size: .8cqw; color: #8A8A8A;">3s</span></span><span style="position: absolute; left: 80%; top: 0; bottom: 0; border-left: 1px solid #555;"><span style="position: absolute; left: .3cqw; top: .15cqw; font-size: .8cqw; color: #8A8A8A;">4s</span></span><span style="position: absolute; left: 100%; top: 0; bottom: 0; border-left: 1px solid #555;"><span style="position: absolute; left: .3cqw; top: .15cqw; font-size: .8cqw; color: #8A8A8A;">5s</span></span></span></div>
+                <div style="display: grid; grid-template-columns: 28% 1fr; align-items: center; border-bottom: 1px solid #222; min-height: 2.3cqw;"><span style="padding: 0 1cqw; color: #D6D6D6;">Logo</span><span style="position: relative; height: 2.3cqw; border-left: 1px solid #222;"><span style="position: absolute; left: 0%; width: 10%; top: 30%; height: 40%; background: rgba(109,94,240,.35); border-radius: .2cqw;"></span><span style="position: absolute; left: 0%; top: 50%; width: .75cqw; height: .75cqw; transform: translate(-50%, -50%) rotate(45deg); background: #FFC94D; border: 1px solid #7A5A10;"></span><span style="position: absolute; left: 10%; top: 50%; width: .75cqw; height: .75cqw; transform: translate(-50%, -50%) rotate(45deg); background: #FFC94D; border: 1px solid #7A5A10;"></span></span></div>
+                <div style="display: grid; grid-template-columns: 28% 1fr; align-items: center; border-bottom: 1px solid #222; min-height: 2.3cqw;"><span style="padding: 0 1cqw; color: #D6D6D6;">Headline</span><span style="position: relative; height: 2.3cqw; border-left: 1px solid #222;"><span style="position: absolute; left: 10%; width: 15%; top: 30%; height: 40%; background: rgba(109,94,240,.35); border-radius: .2cqw;"></span><span style="position: absolute; left: 10%; top: 50%; width: .75cqw; height: .75cqw; transform: translate(-50%, -50%) rotate(45deg); background: #FFC94D; border: 1px solid #7A5A10;"></span><span style="position: absolute; left: 25%; top: 50%; width: .75cqw; height: .75cqw; transform: translate(-50%, -50%) rotate(45deg); background: #FFC94D; border: 1px solid #7A5A10;"></span></span></div>
+                <div style="display: grid; grid-template-columns: 28% 1fr; align-items: center; border-bottom: 1px solid #222; min-height: 2.3cqw;"><span style="padding: 0 1cqw; color: #D6D6D6;">Subhead</span><span style="position: relative; height: 2.3cqw; border-left: 1px solid #222;"><span style="position: absolute; left: 22%; width: 10%; top: 30%; height: 40%; background: rgba(109,94,240,.35); border-radius: .2cqw;"></span><span style="position: absolute; left: 22%; top: 50%; width: .75cqw; height: .75cqw; transform: translate(-50%, -50%) rotate(45deg); background: #FFC94D; border: 1px solid #7A5A10;"></span><span style="position: absolute; left: 32%; top: 50%; width: .75cqw; height: .75cqw; transform: translate(-50%, -50%) rotate(45deg); background: #FFC94D; border: 1px solid #7A5A10;"></span></span></div>
+                <div style="display: grid; grid-template-columns: 28% 1fr; align-items: center; border-bottom: 1px solid #222; min-height: 2.3cqw;"><span style="padding: 0 1cqw; color: #D6D6D6;">Carousel</span><span style="position: relative; height: 2.3cqw; border-left: 1px solid #222;"><span style="position: absolute; left: 30%; width: 15%; top: 30%; height: 40%; background: rgba(109,94,240,.35); border-radius: .2cqw;"></span><span style="position: absolute; left: 30%; top: 50%; width: .75cqw; height: .75cqw; transform: translate(-50%, -50%) rotate(45deg); background: #FFC94D; border: 1px solid #7A5A10;"></span><span style="position: absolute; left: 45%; top: 50%; width: .75cqw; height: .75cqw; transform: translate(-50%, -50%) rotate(45deg); background: #FFC94D; border: 1px solid #7A5A10;"></span></span></div>
+                <div style="display: grid; grid-template-columns: 28% 1fr; align-items: center; border-bottom: 1px solid #222; min-height: 2.3cqw;"><span style="padding: 0 1cqw; color: #D6D6D6;">Price</span><span style="position: relative; height: 2.3cqw; border-left: 1px solid #222;"><span style="position: absolute; left: 45%; width: 10%; top: 30%; height: 40%; background: rgba(109,94,240,.35); border-radius: .2cqw;"></span><span style="position: absolute; left: 45%; top: 50%; width: .75cqw; height: .75cqw; transform: translate(-50%, -50%) rotate(45deg); background: #FFC94D; border: 1px solid #7A5A10;"></span><span style="position: absolute; left: 55%; top: 50%; width: .75cqw; height: .75cqw; transform: translate(-50%, -50%) rotate(45deg); background: #FFC94D; border: 1px solid #7A5A10;"></span></span></div>
+                <div style="display: grid; grid-template-columns: 28% 1fr; align-items: center; border-bottom: 1px solid #222; min-height: 2.3cqw;"><span style="padding: 0 1cqw; color: #D6D6D6;">CTA</span><span style="position: relative; height: 2.3cqw; border-left: 1px solid #222;"><span style="position: absolute; left: 70%; width: 10%; top: 30%; height: 40%; background: rgba(109,94,240,.35); border-radius: .2cqw;"></span><span style="position: absolute; left: 70%; top: 50%; width: .75cqw; height: .75cqw; transform: translate(-50%, -50%) rotate(45deg); background: #FFC94D; border: 1px solid #7A5A10;"></span><span style="position: absolute; left: 80%; top: 50%; width: .75cqw; height: .75cqw; transform: translate(-50%, -50%) rotate(45deg); background: #FFC94D; border: 1px solid #7A5A10;"></span></span></div>
+                <div style="position: absolute; left: 28%; right: 0; top: 0; bottom: 0; pointer-events: none;"><span style="position: absolute; top: 0; bottom: 0; width: 0; border-left: 1.5px solid #FF4D5E; animation: kxa-play 5s linear infinite;"><span style="position: absolute; left: -.55cqw; top: 0; width: 1cqw; height: 1cqw; background: #FF4D5E; clip-path: polygon(0 0, 100% 0, 100% 60%, 50% 100%, 0 60%);"></span></span></div>
+              </div>
+            </div>
+            
+          </div>
+          <div style="{{ L3 }}">
+            <div style="position: absolute; left: 9%; right: 9%; bottom: 5%; display: flex; flex-direction: column; gap: 1cqw;"><div style="display: flex; align-items: baseline; justify-content: space-between; gap: 1cqw;"><span style="font-size: 1.25cqw; font-weight: 600; color: #fff;">{{ f1 }}</span><span style="font-size: 1.1cqw; font-weight: 700; color: var(--lime-300);">{{ f3 }}</span></div><span style="padding: .7cqw; border-radius: 99px; background: #fff; color: #05080F; text-align: center; font-size: 1.05cqw; font-weight: 600;">Shop Now</span></div>
+            <div aria-hidden="true" style="position: absolute; inset: 0; border-radius: inherit; overflow: hidden; opacity: {{ feedOp }}; transition: opacity 600ms cubic-bezier(.16,1,.3,1); pointer-events: none; background: radial-gradient(90% 50% at 80% 10%, rgba(0,204,255,.35), transparent 60%), radial-gradient(90% 50% at 10% 90%, rgba(109,94,240,.45), transparent 60%), linear-gradient(170deg, #0B1630, #05080F 70%);">
+              <div style="position: absolute; left: 9%; right: 9%; top: 5%; display: flex; flex-direction: column; gap: 1cqw;"><span style="font-size: 0.8cqw; font-weight: 600; letter-spacing: .22em; color: rgba(255,255,255,.75);">YOUR LOGO</span><span style="font-size: 2.1cqw; font-weight: 600; letter-spacing: -.03em; line-height: 1.12; color: #fff;">Explore the new collection.</span><span style="font-size: 0.95cqw; line-height: 1.35; color: rgba(255,255,255,.7);">Swipe to see every style.</span></div>
+              <div style="position: absolute; left: 9%; right: 9%; top: 38%; height: 28%; border-radius: .6cqw; background: radial-gradient(90% 90% at 70% 20%, rgba(0,204,255,.55), transparent 65%), linear-gradient(160deg, #0B1630, #070B15); box-shadow: inset 0 0 0 1px rgba(255,255,255,.1); display: grid; place-items: center; font-size: .75cqw; font-weight: 500; letter-spacing: .2em; color: rgba(255,255,255,.85); outline: 1.5px dashed rgba(190,242,100,.85); outline-offset: .3cqw;">{{ f2 }}</div>
+              <div style="position: absolute; left: 9%; right: 9%; bottom: 5%; display: flex; flex-direction: column; gap: 1.4cqw;"><div style="display: flex; align-items: baseline; justify-content: space-between; gap: 1cqw;"><span style="font-size: 1.25cqw; font-weight: 600; color: #fff; outline: 1.5px dashed rgba(190,242,100,.85); outline-offset: .3cqw;">{{ f1 }}</span><span style="font-size: 1.1cqw; font-weight: 700; color: var(--lime-300); outline: 1.5px dashed rgba(190,242,100,.85); outline-offset: .3cqw;">{{ f3 }}</span></div><span style="padding: .7cqw; border-radius: 99px; background: #fff; color: #05080F; text-align: center; font-size: 1.05cqw; font-weight: 600;">Shop Now</span></div>
+            </div>
+            
+          </div>
+        </div>
+        <sc-if value="{{ showFeedRows }}" hint-placeholder-val="{{ false }}">
+          <div data-kx-feed="1" style="position: absolute; left: 27%; top: 20%; width: 64%; text-align: left; z-index: 3; transform: rotateY(-40deg) rotateX(10deg); transform-origin: 0% 50%;">
+          <div>
+            <div style="border-radius: 12px; border: 1px solid rgba(255,255,255,.1); overflow: hidden; font-size: 12.5px; background: #070B15; box-shadow: inset 0 1px 0 rgba(255,255,255,.06), 0 20px 40px rgba(0,0,0,.5);">
+              <div style="display: grid; grid-template-columns: 1.15fr 1.45fr 1fr .75fr; gap: 4px; padding: 6px 8px; background: rgba(255,255,255,.05); font-size: 10px; font-weight: 600; letter-spacing: .06em; white-space: nowrap; text-transform: uppercase; color: rgba(255,255,255,.55);"><span style="color: var(--lime-300);">Trigger</span><span>Product</span><span>Image</span><span>Price</span></div>
+              <sc-for list="{{ feedRows }}" as="fr" hint-placeholder-count="3">
+                <button type="button" data-focusable="1" data-i="{{ fr.i }}" onClick="{{ pickRow }}" aria-pressed="{{ fr.on }}" style="{{ fr.style }}"><span style="color: var(--lime-300); font-weight: 600;">{{ fr.trig }}</span><span>{{ fr.head }}</span><span>{{ fr.img }}</span><span>{{ fr.price }}</span></button>
+              </sc-for>
+            </div>
+            
+          </div>
+          </div>
+        </sc-if>
+        </div>
+      </div>
+      <div role="tablist" aria-label="Build steps" style="position: relative; z-index: 2; display: flex; flex-wrap: wrap; justify-content: center; gap: 8px;">
+        <sc-for list="{{ steps }}" as="st" hint-placeholder-count="5">
+          <button type="button" role="tab" data-focusable="1" data-s="{{ st.i }}" onClick="{{ pickStep }}" aria-selected="{{ st.on }}" style="{{ st.pill }}" style-hover="border-color: rgba(167,139,250,.6); color: #fff;">
+            <span style="{{ st.pnum }}">{{ st.n }}</span><span>{{ st.label }}</span>
+          </button>
+        </sc-for>
+      </div>
+      <div style="position: relative; z-index: 1; width: min(1040px, 100%); display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: 12px clamp(16px, 3vw, 36px); margin-top: 6px;">
+        <div style="flex: 1 1 320px; max-width: 560px; display: flex; flex-direction: column; gap: 6px; text-align: {{ capAlign }};">
+          <p style="margin: 0; font-size: 16px; line-height: 1.55; color: rgba(255,255,255,.8); text-wrap: pretty;">{{ stepBody }}</p>
+        </div>
+      </div>
+    </section>
+  </main>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+const E = 'cubic-bezier(.16,1,.3,1)';
+const N = 4, GAP = 9;
+const PLANE = {"l":34,"t":8,"w":32,"h":84,"r":1.4};
+const BASE = [{"border":"1px solid rgba(255,255,255,.16)"},{"border":"1px solid rgba(255,255,255,.28)"},{"border":"1px solid rgba(0,204,255,.45)"},{"border":"1.5px dashed rgba(190,242,100,.7)","background":"rgba(190,242,100,.04)"}];
+const TAGS = ["Exported layers · PSD or Figma","Rich media prep · import & build","Animation · timeline","Feed · dynamic swaps"];
+const STEPS = [{"label":"Design file","value":"Image, HTML or MP4","eyebrow":"Step 1 · Design file","body":"We start with the layered PSD, Figma or HTML file and export each layer. All elements fill the full canvas size."},{"label":"Rich media prep","value":"Import and build","eyebrow":"Step 2 · Rich media prep","body":"We bring the exported layers into our rich media platform. This is where we take still layers and breathe life into them through rich media animation and interactivity."},{"label":"Animation","value":"Carousel, map, game","eyebrow":"","body":"Interactive pieces like carousels, maps, or games are added, and then the animation timeline in our rich media platform sets how every layer moves."},{"label":"Feed","value":"Dynamic","eyebrow":"Step 4 · Feed","body":"Where it applies, text, images, videos, URL's, BG colors or fonts are assigned to a feed, so they switch out based on pre-determined rules."},{"label":"Finished ad","value":"All layers","eyebrow":"Step 5 · Finished ad","body":"All layers play together as one animated rich media ad that people can click, tap, swipe and explore."}];
+const ROWS = [["Trail Runner","RUNNER","$129","60°F+"],["Alpine Parka","PARKA","$249","Under 40°F"],["Day Pack","PACK","$79","Weekends"]].map(r => ({ head: r[0], img: r[1], price: r[2], trig: r[3], f1: r[0], f2: r[1], f3: r[2] }));
+
+class Component extends DCLogic {
+  state = { step: 0, row: 0, ph: 0 };
+  componentDidMount() { if (!this.props.embed) document.title = "Rich Media Layers · KORTX Creative Labs"; this.tm = setInterval(() => { const s0 = this.state.step; if (s0 === 3 || s0 === 4) this.setState(s => ({ row: (s.row + 1) % 3 })); else if (s0 === 0 || s0 === 1) this.setState(s => ({ ph: (s.ph + 1) % (s0 === 0 ? 5 : 3) })); }, 1800); }
+  componentWillUnmount() { clearInterval(this.tm); }
+  pickStep = e => this.setState({ step: +e.currentTarget.dataset.s, ph: 0 });
+  pickRow = e => this.setState({ row: +e.currentTarget.dataset.i });
+  renderVals() { const e = !!this.props.embed; return Object.assign(this._rv(), { full: !e, mainPad: e ? '0 0 8px' : 'clamp(32px, 5vh, 64px) clamp(20px, 4vw, 40px) 96px' }); }
+  _rv() {
+    const { step, row } = this.state, flat = step === N, r = ROWS[row], st = STEPS[step];
+    const tr = 'transform 1100ms ' + E + ', opacity 700ms ' + E + ', filter 700ms ' + E + ', box-shadow 700ms ' + E;
+    const out = {
+      scene: { position: 'absolute', inset: 0, transformStyle: 'preserve-3d', transform: flat ? 'rotateY(-40deg) rotateX(10deg) translateX(4%) scale(1.02)' : step === 3 ? 'rotateY(-40deg) rotateX(10deg) translateX(-24%) scale(1.02)' : (step === 0 || step === 2) ? 'rotateY(-40deg) rotateX(10deg) translateX(-14%) scale(1.02)' : 'rotateY(-40deg) rotateX(10deg) translateX(4%) scale(1.02)', transition: 'transform 1300ms ' + E },
+      f1: r.f1, f2: r.f2, f3: r.f3, psdOp: step === 0 ? 1 : 0, anOp: (step === 2 || step === 4) ? 1 : 0, tlOp: step === 2 ? 1 : 0, feedOp: step === 3 ? 1 : 0, ...Object.fromEntries([0,1,2,3,4].flatMap(i => { const on = step === 0 && this.state.ph === i; return [['pr' + i, on ? '#1F4F7A' : 'transparent'], ['pc' + i, on ? '#fff' : '#D6D6D6'], ['po' + i, on ? 1 : 0]]; })), prepOp: step === 1 ? 1 : 0,
+      olA: step === 1 ? (this.state.ph === 0 ? '#00CCFF' : 'rgba(0,204,255,.35)') : 'transparent', bxA: this.state.ph === 0 ? '#00CCFF' : 'rgba(0,204,255,.35)', bxImg: this.state.ph === 0 ? '#00CCFF' : '#A78BFA',
+      menuOp: this.state.ph === 2 ? 1 : 0, menuY: this.state.ph === 2 ? '0' : '.6cqw',
+      curX: this.state.ph === 0 ? '82%' : '46%', curY: this.state.ph === 0 ? '28%' : '42%',
+      stepEyebrow: st.eyebrow, stepBody: st.body, capAlign: 'center', showFeedRows: STEPS[step].label === 'Feed',
+      pickStep: this.pickStep, pickRow: this.pickRow,
+      feedRows: ROWS.map((x, i) => ({ i: String(i), on: String(i === row), trig: x.trig, head: x.head, img: x.img, price: x.price, style: { display: 'grid', gridTemplateColumns: '1.15fr 1.45fr 1fr .75fr', gap: 4, whiteSpace: 'nowrap', width: '100%', padding: '8px 8px', border: 0, borderTop: '1px solid rgba(255,255,255,.06)', background: i === row ? 'rgba(190,242,100,.12)' : 'transparent', color: i === row ? '#fff' : 'rgba(255,255,255,.75)', fontSize: 11, textAlign: 'left', cursor: 'pointer', fontFamily: 'inherit', minHeight: 44, alignItems: 'center' } })),
+      steps: STEPS.map((x, i) => { const on = i === step; return { i: String(i), on: String(on), n: String(i + 1), label: x.label,
+        pill: { display: 'inline-flex', alignItems: 'center', gap: 8, minHeight: 40, padding: '0 16px 0 6px', borderRadius: 999, border: '1px solid ' + (on ? 'rgba(0,204,255,.65)' : 'rgba(255,255,255,.12)'), background: on ? 'rgba(0,60,110,.45)' : 'rgba(5,8,15,.4)', boxShadow: on ? '0 0 24px rgba(0,204,255,.28)' : 'none', color: on ? '#fff' : 'rgba(255,255,255,.7)', fontSize: 13.5, fontWeight: 600, cursor: 'pointer', fontFamily: 'inherit', transition: 'all 300ms ' + E },
+        pnum: { display: 'grid', placeItems: 'center', width: 28, height: 28, borderRadius: '50%', fontSize: 12, fontWeight: 700, background: on ? '#00CCFF' : 'rgba(255,255,255,.08)', color: on ? '#001830' : 'rgba(255,255,255,.7)' } }; })
+    };
+    for (let i = 0; i < N; i++) {
+      const vis = flat || i <= step, blur = !flat && i < step, z = flat ? i * .3 : (vis ? i * GAP : i * GAP + 14);
+      out['L' + i] = Object.assign({ position: 'absolute', left: PLANE.l + '%', top: PLANE.t + '%', width: PLANE.w + '%', height: PLANE.h + '%', borderRadius: PLANE.r + 'cqw', transform: 'translateZ(' + z + 'cqw)', opacity: (flat && i === 3) ? 0 : vis ? (blur ? .55 : 1) : 0, filter: blur ? 'blur(5px)' : 'none', transition: tr },
+        flat ? (i === 0 ? { boxShadow: '0 0 0 1px rgba(0,204,255,.55), 0 0 36px rgba(0,204,255,.22), 0 30px 60px rgba(0,0,0,.55)' } : {}) : Object.assign({}, BASE[i], (i === 3 && step === 3) ? { border: '1px solid transparent', background: 'transparent' } : {}, i === step ? { boxShadow: '0 0 30px rgba(0,204,255,.25)' } : (i === 0 ? { boxShadow: '0 30px 60px rgba(0,0,0,.5)' } : {})));
+      out['T' + i] = { position: 'absolute', left: 0, top: '-3.4cqw', padding: '.4cqw 1.1cqw', borderRadius: 99, fontSize: '1.25cqw', fontWeight: 600, letterSpacing: '.06em', whiteSpace: 'nowrap', color: '#fff', background: 'rgba(5,8,15,.75)', border: '1px solid ' + (i === N - 1 && i === N - 1 ? 'rgba(190,242,100,.7)' : 'rgba(0,204,255,.5)'), opacity: vis && !flat ? 1 : 0, transition: 'opacity 500ms ' + E };
+      out['TT' + i] = TAGS[i];
+    }
+    return out;
+  }
+}
+</script>
+</body>
+</html>

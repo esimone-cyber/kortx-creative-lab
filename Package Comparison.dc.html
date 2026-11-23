@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<script src="kx-theme.js"></script>
+<link rel="stylesheet" href="_ds/kortx-design-guide-2026-5bc7ff27-9282-4218-938a-63d43f555d47/tokens/fonts.css">
+<link rel="stylesheet" href="_ds/kortx-design-guide-2026-5bc7ff27-9282-4218-938a-63d43f555d47/tokens/colors.css">
+<link rel="stylesheet" href="_ds/kortx-design-guide-2026-5bc7ff27-9282-4218-938a-63d43f555d47/tokens/typography.css">
+<link rel="stylesheet" href="_ds/kortx-design-guide-2026-5bc7ff27-9282-4218-938a-63d43f555d47/tokens/spacing.css">
+<link rel="stylesheet" href="_ds/kortx-design-guide-2026-5bc7ff27-9282-4218-938a-63d43f555d47/tokens/radius.css">
+<link rel="stylesheet" href="_ds/kortx-design-guide-2026-5bc7ff27-9282-4218-938a-63d43f555d47/tokens/elevation.css">
+<link rel="stylesheet" href="_ds/kortx-design-guide-2026-5bc7ff27-9282-4218-938a-63d43f555d47/tokens/motion.css">
+<link rel="stylesheet" href="_ds/kortx-design-guide-2026-5bc7ff27-9282-4218-938a-63d43f555d47/tokens/base.css">
+<link rel="stylesheet" href="_ds/kortx-design-guide-2026-5bc7ff27-9282-4218-938a-63d43f555d47/styles.css">
+<script src="_ds/kortx-design-guide-2026-5bc7ff27-9282-4218-938a-63d43f555d47/_ds_bundle.js"></script>
+<style>
+  html, body { margin: 0; padding: 0; background: #000509; }
+  body { font-family: var(--font-body, Inter, Helvetica, sans-serif); -webkit-font-smoothing: antialiased; }
+  a { color: var(--blue-400); text-decoration: none; }
+  a:hover { color: var(--blue-300); }
+  input, button { font-family: inherit; }
+  input[type="date"]::-webkit-calendar-picker-indicator { filter: invert(1); opacity: .7; cursor: pointer; }
+  [data-focusable]:focus-visible { outline: none; border-color: var(--blue-400) !important; box-shadow: 0 0 0 3px rgba(0,204,255,.55) !important; }
+  [data-reveal] { opacity: 0; transform: translateY(12px); transition: opacity 600ms cubic-bezier(.16,1,.3,1), transform 600ms cubic-bezier(.16,1,.3,1); transition-delay: var(--rd, 0ms); }
+  [data-reveal][data-in] { opacity: 1; transform: none; }
+  [data-gantt]::-webkit-scrollbar { height: 8px; }
+  [data-gantt]::-webkit-scrollbar-thumb { background: rgba(0,204,255,.35); border-radius: 8px; }
+  @media (prefers-reduced-motion: reduce) { [data-reveal] { opacity: 1; transform: none; } *, *::before, *::after { animation-duration: .001ms !important; transition-duration: .001ms !important; } }
+</style>
+</helmet>
+<div ref="{{ rootRef }}" style="font-family: var(--font-body, Inter, sans-serif); color: #fff;">
+  <section id="compare" data-block="Offerings · Compare Packages" style="margin-top: 80px; scroll-margin-top: 96px;">
+      <div style="display: flex; flex-direction: column; align-items: center; text-align: center;">
+        
+        <h2 data-reveal="head" style="margin: 10px 0 0; max-width: 820px; font-size: clamp(26px, 2.8vw, 38px); font-weight: 700; letter-spacing: -.025em; line-height: 1.08; text-wrap: balance;">Every package, side by side</h2>
+      </div>
+      <div data-reveal="card" data-scroll-x="1" style="margin-top: 28px; overflow-x: auto; border-radius: 16px; border: 1px solid rgba(255,255,255,.08); background: #070B15; box-shadow: inset 0 1px 0 rgba(255,255,255,.06), 0 24px 60px rgba(0,0,0,.4);">
+        <div style="min-width: 900px;">
+          <div style="display: grid; grid-template-columns: 150px repeat(4, minmax(0, 1fr)); border-bottom: 1px solid rgba(0,204,255,.25);">
+            <span style="padding: 16px 18px; font-size: 11px; font-weight: 600; letter-spacing: .14em; text-transform: uppercase; color: rgba(255,255,255,.5);">Item</span>
+            <sc-for list="{{ cmpHead }}" as="ch" hint-placeholder-count="4">
+              <button type="button" data-focusable="1" data-c="{{ ch.id }}" onClick="{{ pickCol }}" aria-pressed="{{ ch.on }}" style="{{ ch.style }}" style-hover="background: rgba(109,94,240,.16); color: #fff">{{ ch.name }}</button>
+            </sc-for>
+          </div>
+          <sc-for list="{{ cmpRows }}" as="cr" hint-placeholder-count="8">
+            <div style="display: grid; grid-template-columns: 150px repeat(4, minmax(0, 1fr)); border-top: 1px solid rgba(255,255,255,.06);">
+              <span style="padding: 14px 18px; font-size: 13px; font-weight: 700; color: #fff;">{{ cr.k }}</span>
+              <sc-for list="{{ cr.cells }}" as="cc" hint-placeholder-count="4">
+                <span style="{{ cc.style }}">{{ cc.v }}</span>
+              </sc-for>
+            </div>
+          </sc-for>
+        </div>
+      </div>
+      <p data-reveal="copy" style="margin: 14px auto 0; max-width: 720px; text-align: center; font-size: 12.5px; line-height: 1.55; color: rgba(255,255,255,.5); text-wrap: pretty;">CPMs and minimums follow the <a href="Rate Card.dc.html">2026 Rate Card</a>. Rates in media plans and RFPs are valid for 45 days.</p>
+    </section>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:1200,&quot;height&quot;:900},&quot;showPrices&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;},&quot;selected&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;banners&quot;,&quot;rich&quot;,&quot;iv&quot;,&quot;ctv&quot;],&quot;default&quot;:&quot;banners&quot;,&quot;tsType&quot;:&quot;string&quot;},&quot;onPick&quot;:{&quot;editor&quot;:null,&quot;tsType&quot;:&quot;(id: string) =&gt; void&quot;}}">
+const EASE = 'cubic-bezier(.16,1,.3,1)';
+
+const COMPONENTS = ['3D', '360 Video', 'App Download', 'Audio', 'Carousel', 'Color Picker', 'Countdown', 'Custom Animation', 'Custom Code', 'Drag and Drop', 'Flip Card', 'Form Fill', 'GIF', 'Image Sequencer', 'Interactive Games', 'Inventory', 'Maps', 'Nearby', 'Overlay', 'Pop Up Window', 'QR Code', 'Quiz', 'Scratch Off', 'Scrolling Disclaimers', 'Slider', 'Tap to Call', 'Video', 'Weather FX'];
+
+const P = {
+  banners: { name: 'Banners', eyebrow: 'Animated Banners', sub: 'Five IAB sizes, standard animation',
+    def: 'Banners use simple animations and include all five standard IAB sizes. They reach the widest inventory and do not feature interactive components, which keeps the CPM lower than Rich Media.',
+    best: 'Broad awareness and always-on reach, retargeting site visitors, promoting sales and seasonal offers, and campaigns that refresh images, copy or CTAs mid-flight.',
+    featLabel: 'Features', features: ['Custom Animation', 'Template Options', 'Image, Copy & CTA Updates', 'Dynamic'],
+    sizes: ['300×600', '300×250', '320×50', '160×600', '728×90'],
+    cpm: '$5.50', cpmNote: 'Cross-platform display', cpmDyn: '$6.25', cpmDynNote: 'Dynamic display, 2-month minimum',
+    min: '$5,000', minNote: 'per tactic, $10,000 IO total',
+    sla: '5 business days to build, clock starts when assets are received.',
+    updates: 'Image, copy and CTA refreshes stay on the banner CPM, no interactive upcharge.' },
+  rich: { name: 'Rich Media', eyebrow: 'Interactive / Rich Media', sub: 'Two sizes, every interactive component',
+    def: 'Rich Media lets people tap, swipe, drag and play inside the ad, and every interaction is measured. Inventory is narrower than Banners, and each view earns more time and engagement.',
+    best: 'Engagement and product discovery: menus, product lines, store finders, games.',
+    featLabel: 'Interactive components', features: COMPONENTS,
+    sizes: ['300×600', '300×250'],
+    cpm: '$9.00', cpmNote: 'Includes ideation, production and hosting',
+    min: '$10,000', minNote: 'two sizes, one structural layout',
+    sla: '4 business days to initial mocks. Revisions within 48 hours of feedback.',
+    updates: 'A/B versions can change copy and imagery. Dynamic triggers swap text, images and offers.' },
+  iv: { name: 'Interactive Video', eyebrow: 'Video · Interactive Video', sub: 'Interactive video and CTV',
+    def: 'A 1920×1080 video wrapped in an interactive skin. Viewers tap, click, and interact while the video is playing.',
+    best: 'Turning video views into engagement on desktop and mobile web.',
+    featLabel: 'Interactive components', features: COMPONENTS,
+    sizes: ['1920×1080'],
+    cpm: '$23.50', cpmNote: 'Includes ideation, production and ad serving',
+    min: '$5,000', minNote: 'per tactic',
+    sla: '4 business days to build. Revisions within 48 hours of feedback.',
+    updates: 'Skin copy, products and offers can swap on dynamic triggers.' },
+  ctv: { name: 'CTV', eyebrow: 'Video · Connected TV', sub: 'Interactive video and CTV',
+    def: 'Connected TV spots on the biggest screen in the house. Every CTV ad carries a QR code, so viewers act from their phone.',
+    best: 'Premium reach with a measurable response from the living room.',
+    featLabel: 'Features', features: ['QR Code Overlay', 'Dynamic'],
+    sizes: ['1920×1080'],
+    cpm: '$44.00', cpmNote: 'Interactive CTV, includes ideation and production',
+    min: '$5,000', minNote: 'per tactic, 2-month minimum',
+    sla: 'Runs on the standard 3-week schedule. Publisher verification may apply.',
+    updates: 'End-card copy, offer and QR destination can swap on dynamic triggers.' }
+};
+
+class Component extends DCLogic {
+  constructor(p) { super(p); this.state = { sel: null }; this.rootRef = React.createRef(); }
+  componentDidMount() {
+    const r = this.rootRef.current;
+    if (r && !r.closest('[data-reveal-root]')) r.querySelectorAll('[data-reveal]').forEach(el => el.setAttribute('data-in', ''));
+  }
+  pickCol = e => { const c = e.currentTarget.dataset.c; this.setState({ sel: c }); if (this.props.onPick) this.props.onPick(c); };
+  renderVals() {
+    const showPrices = this.props.showPrices ?? true;
+    const key = this.state.sel ?? this.props.selected ?? 'banners';
+    // Compare
+    const cols = ['banners', 'rich', 'iv', 'ctv'];
+    const featShort = { banners: 'Animation, templates, image, copy and CTA updates', rich: 'All ' + COMPONENTS.length + ' interactive components', iv: 'All ' + COMPONENTS.length + ' interactive components', ctv: 'QR code, overlays, video' };
+    const rowDefs = [['Definition', c => P[c].def], ['Best for', c => P[c].best], ['Features', c => featShort[c]], ['Sizes', c => P[c].sizes.join(', ')]];
+    if (showPrices) rowDefs.push(['Monthly minimum', c => P[c].min + ', ' + P[c].minNote], ['CPM', c => P[c].cpm + (P[c].cpmDyn ? ' (' + P[c].cpmDyn + ' dynamic)' : '')]);
+    rowDefs.push(['Turnaround', c => P[c].sla], ['Dynamic', () => 'Included: pre-set triggers swap text, images and offers.'], ['Updates', c => P[c].updates]);
+    const cmpHead = cols.map(c => { const on = c === key; return { id: c, name: P[c].name, on: String(on), style: { padding: '16px 18px', border: 0, borderRadius: 0, textAlign: 'left', cursor: 'pointer', fontSize: 15, fontWeight: 700, color: on ? '#00CCFF' : '#fff', background: on ? 'rgba(0,204,255,.10)' : 'transparent', boxShadow: on ? 'inset 0 -2px 0 #00CCFF' : 'none', transition: 'all 200ms ' + EASE } }; });
+    const cmpRows = rowDefs.map(([k, fn]) => ({ k, cells: cols.map(c => { const on = c === key; return { v: fn(c), style: { padding: '14px 18px', fontSize: 13, lineHeight: 1.5, textWrap: 'pretty', color: on ? '#fff' : 'rgba(255,255,255,.66)', background: on ? 'rgba(0,204,255,.06)' : 'transparent', fontWeight: k === 'CPM' ? 700 : 400, transition: 'all 200ms ' + EASE } }; }) }));
+    return { rootRef: this.rootRef, cmpHead, cmpRows, pickCol: this.pickCol };
+  }
+}
+</script>
+</body>
+</html>

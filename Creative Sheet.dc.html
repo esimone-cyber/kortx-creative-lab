@@ -1,0 +1,729 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<script src="kx-theme.js"></script>
+<link rel="icon" type="image/svg+xml" href="assets/kortx-logomark-bright-blue.svg">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Simplified Creative Database · KORTX Creative Labs</title>
+<link rel="preconnect" href="https://fdjfsimjilicmfsiijyi.supabase.co" crossorigin>
+<link rel="stylesheet" href="_ds/kortx-design-guide-2026-5bc7ff27-9282-4218-938a-63d43f555d47/tokens/fonts.css">
+<link rel="stylesheet" href="_ds/kortx-design-guide-2026-5bc7ff27-9282-4218-938a-63d43f555d47/tokens/colors.css">
+<link rel="stylesheet" href="_ds/kortx-design-guide-2026-5bc7ff27-9282-4218-938a-63d43f555d47/tokens/typography.css">
+<link rel="stylesheet" href="_ds/kortx-design-guide-2026-5bc7ff27-9282-4218-938a-63d43f555d47/tokens/spacing.css">
+<link rel="stylesheet" href="_ds/kortx-design-guide-2026-5bc7ff27-9282-4218-938a-63d43f555d47/tokens/radius.css">
+<link rel="stylesheet" href="_ds/kortx-design-guide-2026-5bc7ff27-9282-4218-938a-63d43f555d47/tokens/elevation.css">
+<link rel="stylesheet" href="_ds/kortx-design-guide-2026-5bc7ff27-9282-4218-938a-63d43f555d47/tokens/motion.css">
+<link rel="stylesheet" href="_ds/kortx-design-guide-2026-5bc7ff27-9282-4218-938a-63d43f555d47/tokens/base.css">
+<link rel="stylesheet" href="_ds/kortx-design-guide-2026-5bc7ff27-9282-4218-938a-63d43f555d47/styles.css">
+<script src="_ds/kortx-design-guide-2026-5bc7ff27-9282-4218-938a-63d43f555d47/_ds_bundle.js"></script>
+<script src="https://unpkg.com/lucide@0.454.0/dist/umd/lucide.min.js"></script>
+<style>
+  html, body { margin: 0; padding: 0; background: #000509; }
+  body { font-family: var(--font-body, Inter, Helvetica, sans-serif); -webkit-font-smoothing: antialiased; }
+  a { color: var(--blue-400, #00CCFF); text-decoration: none; }
+  a:hover { color: var(--blue-300, #33D6FF); text-decoration: underline; }
+  input, select, textarea, button { font-family: inherit; }
+  ::placeholder { color: rgba(255,255,255,.38); }
+  [data-focusable]:focus-visible, [data-cell]:focus { outline: none; border-color: var(--blue-400, #00CCFF) !important; box-shadow: 0 0 0 3px rgba(0,204,255,.45) !important; }
+  select option { background: #070B15; color: #fff; }
+  [data-sheet-wrap]::-webkit-scrollbar { display: none; }
+  html body [data-sheet-bar], html body [data-sheet-bar]:hover { scrollbar-width: auto !important; scrollbar-color: auto !important; }
+  @supports not selector(::-webkit-scrollbar) { html body [data-sheet-bar], html body [data-sheet-bar]:hover { scrollbar-width: thin !important; scrollbar-color: #00CCFF transparent !important; } }
+  html body [data-sheet-bar]::-webkit-scrollbar { height: 5px !important; background: transparent !important; }
+  html body [data-sheet-bar]::-webkit-scrollbar-track { background: transparent !important; }
+  html body [data-sheet-bar]::-webkit-scrollbar-thumb { background: linear-gradient(90deg, #00CCFF, #6D5EF0) !important; border-radius: 999px !important; border: 0 !important; }
+  /* Chrome/Safari draw ::-webkit-scrollbar (always visible) only when scrollbar-color is unset; Firefox uses the @supports fallback. */
+  html, body, html:hover, body:hover { scrollbar-width: auto !important; scrollbar-color: auto !important; }
+  @supports not selector(::-webkit-scrollbar) { html, html:hover { scrollbar-width: thin !important; scrollbar-color: #00CCFF transparent !important; } }
+  html::-webkit-scrollbar, body::-webkit-scrollbar { width: 5px !important; background: transparent !important; }
+  html::-webkit-scrollbar-track, body::-webkit-scrollbar-track { background: transparent !important; }
+  html::-webkit-scrollbar-thumb, body::-webkit-scrollbar-thumb { background: linear-gradient(180deg, #00CCFF, #6D5EF0) !important; border-radius: 999px !important; border: 0 !important; }
+
+  /* Light theme, this page only: stronger contrast, no grey header bands. */
+  html[data-kx-theme="light"] [data-screen-label="Creative Sheet"] [data-kx-colhead] { background: transparent !important; border-bottom: 2px solid rgba(0,24,48,.22) !important; }
+  html[data-kx-theme="light"] [data-screen-label="Creative Sheet"] [data-kx-colhead] [role="columnheader"] { color: #001830 !important; font-weight: 700 !important; }
+  html[data-kx-theme="light"] [data-screen-label="Creative Sheet"] [role="rowgroup"] > [role="row"]:first-child { background: rgba(0,204,255,.08) !important; border-bottom-color: rgba(0,24,48,.18) !important; }
+  html[data-kx-theme="light"] [data-screen-label="Creative Sheet"] [role="row"] { border-bottom-color: rgba(0,24,48,.16) !important; }
+  html[data-kx-theme="light"] [data-screen-label="Creative Sheet"] [role="row"]:hover { background: rgba(0,120,170,.06) !important; }
+  html[data-kx-theme="light"] [data-screen-label="Creative Sheet"] [data-cell] { background: #FFFFFF !important; color: #001830 !important; border: 1px solid rgba(0,24,48,.22) !important; }
+  html[data-kx-theme="light"] [data-screen-label="Creative Sheet"] [data-cell]::placeholder { color: rgba(0,24,48,.5) !important; }
+  html[data-kx-theme="light"] [data-screen-label="Creative Sheet"] [data-cell] span { color: #001830 !important; }
+  html[data-kx-theme="light"] [data-screen-label="Creative Sheet"] [data-cell] > span[style*="rgba(0,204,255,.12)"], html[data-kx-theme="light"] [data-screen-label="Creative Sheet"] [data-cell] > span[style*="rgba(0, 204, 255, 0.12)"] { background: rgba(0,120,170,.1) !important; border-color: rgba(0,120,170,.45) !important; }
+  html[data-kx-theme="light"] [data-screen-label="Creative Sheet"] select option { background: #FFFFFF !important; color: #001830 !important; }
+  html[data-kx-theme="light"] [data-screen-label="Creative Sheet"] [role="cell"], html[data-kx-theme="light"] [data-screen-label="Creative Sheet"] [role="cell"] span { color: rgba(0,24,48,.86) !important; }
+  html[data-kx-theme="light"] [data-screen-label="Creative Sheet"] [role="cell"] [style*="#BEF264"], html[data-kx-theme="light"] [data-screen-label="Creative Sheet"] [role="cell"] [style*="190, 242, 100"] { color: #3F6212 !important; }
+  html[data-kx-theme="light"] [data-screen-label="Creative Sheet"] [role="cell"] [style*="#FCD34D"], html[data-kx-theme="light"] [data-screen-label="Creative Sheet"] [role="cell"] [style*="252, 211, 77"] { color: #92400E !important; }
+  html[data-kx-theme="light"] [data-screen-label="Creative Sheet"] [role="cell"] [style*="#4ADE80"], html[data-kx-theme="light"] [data-screen-label="Creative Sheet"] [role="cell"] [style*="74, 222, 128"] { color: #166534 !important; }
+  html[data-kx-theme="light"] [data-screen-label="Creative Sheet"] [role="cell"] [style*="#00CCFF"], html[data-kx-theme="light"] [data-screen-label="Creative Sheet"] [role="cell"] [style*="0, 204, 255"] { color: #0369A1 !important; }
+  html[data-kx-theme="light"] [data-screen-label="Creative Sheet"] [role="cell"] button:not([data-cell]) { color: #001830 !important; border-color: rgba(0,24,48,.28) !important; background: #FFFFFF !important; }
+  html[data-kx-theme="light"] [data-screen-label="Creative Sheet"] h1, html[data-kx-theme="light"] [data-screen-label="Creative Sheet"] h2 { color: #001830 !important; }
+  html[data-kx-theme="light"] [data-screen-label="Creative Sheet"] [style*="color: var(--lime-300"] { color: #3F6212 !important; }
+  html[data-kx-theme="light"] [data-screen-label="Creative Sheet"] [role="dialog"] { background: #FFFFFF !important; border-color: rgba(0,24,48,.18) !important; box-shadow: 0 2px 6px rgba(0,24,48,.1), 0 24px 60px rgba(0,24,48,.2) !important; }
+  html[data-kx-theme="light"] [data-screen-label="Creative Sheet"] [role="dialog"] button, html[data-kx-theme="light"] [data-screen-label="Creative Sheet"] [role="dialog"] span, html[data-kx-theme="light"] [data-screen-label="Creative Sheet"] [role="dialog"] div { color: #001830; }
+  html[data-kx-theme="light"] [data-screen-label="Creative Sheet"] [role="alert"] { color: #001830 !important; background: #FEF2F2 !important; border-color: rgba(185,28,28,.4) !important; }
+  @keyframes kx-save-blink { 0%, 100% { background-color: #00CCFF; box-shadow: 0 0 14px rgba(0,204,255,.3), 0 10px 24px rgba(0,0,0,.45) } 50% { background-color: #0091B8; box-shadow: 0 0 44px rgba(0,204,255,.8), 0 10px 24px rgba(0,0,0,.45) } }
+  @keyframes kx-orbit { 0% { transform: rotate(0) translateX(26px) } 100% { transform: rotate(360deg) translateX(26px) } }
+  @keyframes kx-rise { 0% { opacity: 0; transform: translateY(12px) } 100% { opacity: 1; transform: none } }
+  @keyframes kx-drift-a { 0%, 100% { transform: translate(0, 0) } 50% { transform: translate(-6vw, 4vh) } }
+  @keyframes kx-drift-b { 0%, 100% { transform: translate(0, 0) } 50% { transform: translate(5vw, -5vh) } }
+  @keyframes kx-drift-c { 0%, 100% { transform: translate(-50%, -50%) scale(1) } 50% { transform: translate(-46%, -54%) scale(1.08) } }
+  @keyframes kx-stars { 0% { transform: translateY(0) } 100% { transform: translateY(-50%) } }
+  @media (prefers-reduced-motion: reduce) { *, *::before, *::after { animation-duration: .001ms !important; animation-iteration-count: 1 !important; transition-duration: .001ms !important; } }
+</style>
+</helmet>
+
+<div data-screen-label="Creative Sheet" style="position: relative; min-height: 100vh; background: #000509; color: #fff; overflow-x: clip; isolation: isolate;">
+  <div aria-hidden="true" style="position: fixed; inset: 0; z-index: 0; pointer-events: none; overflow: hidden;">
+    <div style="position: absolute; top: -22vh; right: -14vw; width: 78vw; height: 78vw; border-radius: 50%; background: radial-gradient(circle, rgba(0,204,255,.16), rgba(0,204,255,.04) 40%, transparent 68%); filter: blur(24px); animation: kx-drift-a 62s ease-in-out infinite;"></div>
+    <div style="position: absolute; bottom: -34vh; left: -18vw; width: 72vw; height: 72vw; border-radius: 50%; background: radial-gradient(circle, rgba(109,94,240,.15), rgba(109,94,240,.03) 42%, transparent 70%); filter: blur(30px); animation: kx-drift-b 78s ease-in-out infinite;"></div>
+    <div style="position: absolute; left: 50%; top: 50%; width: 50vw; height: 50vw; border-radius: 50%; background: radial-gradient(circle, rgba(214,125,240,.08), transparent 66%); filter: blur(40px); animation: kx-drift-c 96s ease-in-out infinite;"></div>
+    <div style="position: absolute; left: 0; right: 0; top: 0; height: 200%; background-image: radial-gradient(1px 1px at 12% 18%, rgba(255,255,255,.5), transparent), radial-gradient(1px 1px at 68% 32%, rgba(255,255,255,.4), transparent), radial-gradient(1px 1px at 38% 64%, rgba(255,255,255,.35), transparent), radial-gradient(1px 1px at 86% 78%, rgba(255,255,255,.45), transparent), radial-gradient(1px 1px at 22% 88%, rgba(255,255,255,.3), transparent); background-size: 100% 50%; animation: kx-stars 140s linear infinite;"></div>
+    <div style="position: absolute; inset: 0; background-image: linear-gradient(rgba(255,255,255,.035) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,.035) 1px, transparent 1px); background-size: 88px 88px; mask-image: linear-gradient(180deg, #000, transparent 70%); -webkit-mask-image: linear-gradient(180deg, #000, transparent 70%);"></div>
+  </div>
+
+  <header style="position: sticky; top: 0; z-index: 60; display: flex; align-items: center; gap: 16px; flex-wrap: wrap; min-height: 72px; padding: 12px clamp(20px, 4vw, 56px); box-sizing: border-box; background: rgba(0,5,9,.72); backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px); border-bottom: 1px solid rgba(255,255,255,.07);">
+    <a href="/" aria-label="KORTX Creative Labs" style="position: relative; display: grid; place-items: center; width: 46px; height: 46px; flex: none;">
+      <span aria-hidden="true" style="position: absolute; inset: 0; border-radius: 50%; background: radial-gradient(circle at 50% 50%, rgba(0,204,255,.24), transparent 68%);"></span>
+      <span aria-hidden="true" style="position: absolute; inset: 3px; border: 1px solid rgba(0,204,255,.30); border-radius: 50%;"></span>
+      <span aria-hidden="true" style="position: absolute; inset: 8px; border: 1px solid rgba(138,124,248,.28); border-radius: 50%; transform: rotate(18deg) scaleY(.6);"></span>
+      <img src="assets/kortx-logomark-bright-blue.svg" alt="KORTX" style="position: relative; width: 20px; display: block;">
+      <span aria-hidden="true" style="position: absolute; top: 50%; left: 50%; width: 4px; height: 4px; margin: -2px; border-radius: 50%; background: var(--blue-300, #33D6FF); box-shadow: 0 0 9px rgba(0,204,255,.9); animation: kx-orbit 18s linear infinite;"></span>
+    </a>
+    <dc-import name="Site Nav" current="creative-sheet" hint-size="200px,40px"></dc-import>
+    <div style="flex: 1;"></div>
+    <div role="status" aria-live="polite" style="font-size: 12px; font-weight: 600; color: rgba(255,255,255,.72);">{{ syncLabel }}</div>
+    <dc-import name="User Menu" current="creative-sheet" hint-size="40px,40px" style="margin-left: auto; order: 99;"></dc-import>
+  </header>
+
+  <main style="position: relative; box-sizing: border-box; max-width: 1960px; margin: 0 auto; padding: clamp(28px, 5vh, 56px) clamp(16px, 3vw, 40px) 120px;">
+    <section data-block="Creative Sheet · Head" style="display: flex; flex-direction: column; align-items: center; text-align: center; gap: 12px; margin-bottom: 32px; animation: kx-rise 600ms cubic-bezier(.16,1,.3,1) both;">
+      <h1 style="margin: 0; font-size: clamp(30px, 4vw, 48px); font-weight: 700; letter-spacing: -.03em; line-height: 1.05;">Simplified Creative Database</h1>
+    </section>
+
+    <sc-if value="{{ gateLoading }}" hint-placeholder-val="{{ true }}">
+      <div style="padding: 80px 0; text-align: center; font-size: 13px; letter-spacing: .14em; text-transform: uppercase; color: rgba(255,255,255,.55);">Loading the library…</div>
+    </sc-if>
+
+    <sc-if value="{{ gateSignin }}" hint-placeholder-val="{{ false }}">
+      <div style="max-width: 460px; margin: 0 auto; padding: 28px; border-radius: 16px; border: 1px solid rgba(255,255,255,.08); background: #070B15; box-shadow: inset 0 1px 0 rgba(255,255,255,.06), 0 24px 60px rgba(0,0,0,.45); text-align: center;">
+        <div style="font-size: 17px; font-weight: 700;">Sign in to edit</div>
+        <p style="margin: 8px 0 20px; font-size: 14px; line-height: 1.5; color: rgba(255,255,255,.72);">The creative sheet is open to every signed-in @kortx.io teammate.</p>
+        <a href="{{ signInHref }}" data-focusable="1" style="display: inline-flex; align-items: center; height: 44px; padding: 0 24px; border-radius: 999px; background: #00CCFF; color: #001830; font-size: 14px; font-weight: 700; text-decoration: none;" style-hover="background: #66E0FF; color: #001830; text-decoration: none">Sign In</a>
+      </div>
+    </sc-if>
+
+    <sc-if value="{{ gateOk }}" hint-placeholder-val="{{ false }}">
+      <sc-if value="{{ noPerm }}" hint-placeholder-val="{{ false }}">
+        <div role="alert" style="max-width: 820px; margin: 0 auto 20px; padding: 14px 18px; border-radius: 12px; border: 1px solid rgba(251,191,36,.45); background: rgba(251,191,36,.08); font-size: 13.5px; line-height: 1.5; color: #fff; text-align: center;">Your last change didn't save: the database only accepts edits from admins right now. An admin needs to run <strong>supabase/migrations/2026-11-12_creative_sheet_team_edit.sql</strong> once in Supabase.</div>
+      </sc-if>
+      <sc-if value="{{ hasErr }}" hint-placeholder-val="{{ false }}">
+        <div role="alert" style="max-width: 820px; margin: 0 auto 20px; padding: 14px 18px; border-radius: 12px; border: 1px solid rgba(248,113,113,.45); background: rgba(248,113,113,.08); font-size: 13.5px; color: #fff; text-align: center;">{{ err }}</div>
+      </sc-if>
+
+      <div data-kx-sticky-fade="" style="position: sticky; top: calc(var(--kx-hdr, 72px) + 12px); z-index: 55; display: flex; align-items: center; justify-content: flex-end; gap: 12px; margin-bottom: 12px; pointer-events: none;">
+        <sc-if value="{{ saveErrOn }}" hint-placeholder-val="{{ false }}"><div role="alert" style="pointer-events: auto; margin-left: auto; max-width: 520px; padding: 10px 14px; border-radius: 12px; border: 1px solid rgba(248,113,113,.5); background: rgba(40,8,12,.92); color: #fff; font-size: 12.5px; line-height: 1.45;">{{ saveErrText }}</div></sc-if>
+        <div style="position: relative; pointer-events: auto;">
+          <button type="button" data-focusable="1" onClick="{{ toggleUndo }}" aria-disabled="{{ undoDisabled }}" aria-expanded="{{ undoOpenStr }}" aria-haspopup="true" title="Undo recent steps (⌘Z / Ctrl+Z)" style="{{ undoStyle }}" style-hover="transform: translateY(-2px); background: rgba(109,94,240,.16); border-color: rgba(167,139,250,.6); box-shadow: 0 0 32px rgba(109,94,240,.55)" style-active="transform: scale(.985)">{{ undoIcon }}<span>Undo</span><sc-if value="{{ hasSteps }}" hint-placeholder-val="{{ false }}"><span style="min-width: 20px; height: 20px; padding: 0 6px; box-sizing: border-box; border-radius: 99px; background: rgba(0,204,255,.16); color: #9CEBFF; font-size: 11.5px; font-weight: 700; display: grid; place-items: center;">{{ undoCount }}</span></sc-if></button>
+          <sc-if value="{{ undoOpen }}" hint-placeholder-val="{{ false }}">
+            <div onClick="{{ closeUndo }}" style="position: fixed; inset: 0; z-index: 0;"></div>
+            <div role="menu" aria-label="Recent steps" style="position: absolute; right: 0; top: calc(100% + 8px); z-index: 1; width: min(360px, 86vw); box-sizing: border-box; padding: 8px; border-radius: 14px; border: 1px solid rgba(255,255,255,.1); background: #070B15; box-shadow: inset 0 1px 0 rgba(255,255,255,.06), 0 24px 48px rgba(0,0,0,.6); animation: kx-rise 320ms cubic-bezier(.16,1,.3,1) both;">
+              <div style="display: flex; flex-direction: column; gap: 2px; padding: 8px 10px 10px;"><span style="font-size: 11px; font-weight: 600; letter-spacing: .18em; text-transform: uppercase; color: var(--lime-300);">Recent steps</span><span style="font-size: 12.5px; color: rgba(255,255,255,.6);">Pick a step to undo it and everything after it.</span></div>
+              <div style="display: flex; flex-direction: column; gap: 2px; max-height: 340px; overflow-y: auto;">
+                <sc-for list="{{ undoSteps }}" as="us" hint-placeholder-count="3">
+                  <button type="button" role="menuitem" data-focusable="1" data-i="{{ us.i }}" onClick="{{ undoTo }}" style="display: grid; grid-template-columns: 1fr auto; gap: 2px 12px; align-items: baseline; width: 100%; min-height: 44px; padding: 8px 10px; border: 1px solid transparent; border-radius: 10px; background: transparent; color: #fff; text-align: left; cursor: pointer; font-family: inherit;" style-hover="background: rgba(255,255,255,.06); border-color: rgba(255,255,255,.1)">
+                    <span style="font-size: 13px; font-weight: 600; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">{{ us.label }}</span>
+                    <span style="font-size: 11.5px; color: rgba(255,255,255,.5); white-space: nowrap;">{{ us.when }}</span>
+                    <span style="grid-column: 1 / -1; font-size: 12px; color: rgba(255,255,255,.62); overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">{{ us.was }}</span>
+                  </button>
+                </sc-for>
+              </div>
+              <div style="padding: 10px 10px 6px; margin-top: 6px; border-top: 1px solid rgba(255,255,255,.08); font-size: 12px; color: rgba(255,255,255,.55);">⌘Z / Ctrl+Z undoes a whole field at once. ⇧⌘Z / Ctrl+Y redoes it.</div>
+            </div>
+          </sc-if>
+        </div>
+        <button type="button" data-focusable="1" onClick="{{ redo }}" aria-disabled="{{ redoDisabled }}" title="Redo (⇧⌘Z / Ctrl+Y)" style="{{ redoStyle }}" style-hover="transform: translateY(-2px); background: rgba(109,94,240,.16); border-color: rgba(167,139,250,.6); box-shadow: 0 0 32px rgba(109,94,240,.55)" style-active="transform: scale(.985)">{{ redoIcon }}<span>Redo</span></button>
+        <button type="button" data-focusable="1" onClick="{{ saveAll }}" aria-disabled="{{ saveDisabled }}" style="{{ saveStyle }}" style-hover="transform: translateY(-2px)" style-active="transform: scale(.985)">{{ saveLabel }}</button>
+      </div>
+      <div style="display: flex; flex-direction: column; align-items: center; text-align: center; gap: 8px; padding: 28px 20px 24px; border-radius: 14px 14px 0 0; border: 1px solid rgba(255,255,255,.08); border-bottom: 1px solid rgba(255,255,255,.1); background: #070B15; box-shadow: inset 0 1px 0 rgba(255,255,255,.06);">
+        <div style="font-size: 11px; font-weight: 600; letter-spacing: .18em; text-transform: uppercase; color: var(--lime-300, #BEF264);">Creative Playground</div>
+        <h2 style="margin: 0; font-size: clamp(24px, 2.6vw, 34px); font-weight: 700; letter-spacing: -.025em; line-height: 1.1;">Gallery</h2>
+        <div style="font-size: 13px; color: rgba(255,255,255,.62);">{{ countLabel }}</div>
+      </div>
+      <div ref="{{ wrapRef }}" onScroll="{{ onWrapScroll }}" data-sheet-wrap="1" style="scrollbar-width: none; overflow-x: auto; border-radius: 0 0 14px 14px; border: 1px solid rgba(255,255,255,.08); border-top: 0; background: #070B15; box-shadow: inset 0 1px 0 rgba(255,255,255,.06), 0 24px 60px rgba(0,0,0,.45);">
+        <div role="table" aria-label="Creatives" style="min-width: 2292px;">
+          <sc-for list="{{ groups }}" as="g" hint-placeholder-count="2">
+          <div role="rowgroup" aria-label="{{ g.label }}">
+          <div role="row" style="display: flex; align-items: baseline; gap: 10px; padding: 18px 16px 10px; border-bottom: 1px solid rgba(255,255,255,.1); background: rgba(0,204,255,.05);">
+            <span style="font-size: 15px; font-weight: 700; letter-spacing: -.01em; color: #fff;">{{ g.label }}</span>
+            <span style="font-size: 12px; color: rgba(255,255,255,.6);">{{ g.count }}</span>
+          </div>
+          <div role="row" style="display: grid; grid-template-columns: 52px 170px 190px 190px 270px 130px 170px 210px 280px 230px 240px 250px; border-bottom: 1px solid rgba(255,255,255,.1); background: rgba(0,24,48,.6);" data-kx-colhead="1">
+            <sc-for list="{{ headers }}" as="h" hint-placeholder-count="12">
+              <div role="columnheader" style="padding: 12px; font-size: 11px; font-weight: 600; letter-spacing: .14em; text-transform: uppercase; color: rgba(255,255,255,.7);">{{ h }}</div>
+            </sc-for>
+          </div>
+          <sc-for list="{{ g.rows }}" as="r" hint-placeholder-count="6">
+            <div role="row" style="display: grid; grid-template-columns: 52px 170px 190px 190px 270px 130px 170px 210px 280px 230px 240px 250px; border-bottom: 1px solid rgba(255,255,255,.16); align-items: center;" style-hover="background: rgba(0,204,255,.04)">
+              <div role="cell" style="padding: 8px 0 8px 14px; font-size: 12.5px; font-weight: 600; color: rgba(255,255,255,.55); font-variant-numeric: tabular-nums;">{{ r.num }}</div>
+              <div role="cell" style="padding: 8px 10px; display: flex; flex-direction: column; gap: 6px; min-width: 0;">
+                <div style="display: flex; align-items: center; gap: 8px;">
+                  <span aria-hidden="true" style="{{ r.setBadge }}">{{ r.setIcon }}</span>
+                  <sc-if value="{{ r.notSet }}" hint-placeholder-val="{{ true }}">
+                    <button type="button" data-focusable="1" data-k="{{ r.key }}" onClick="{{ markSet }}" style="height: 32px; padding: 0 14px; border-radius: 999px; border: 1px solid rgba(255,255,255,.18); background: rgba(255,255,255,.06); color: #fff; font-size: 12.5px; font-weight: 700; cursor: pointer; transition: all 200ms cubic-bezier(.16,1,.3,1);" style-hover="transform: translateY(-2px); border-color: rgba(167,139,250,.6); background: rgba(109,94,240,.16); box-shadow: 0 0 32px rgba(109,94,240,.55)" style-active="transform: scale(.985)">All set</button>
+                  </sc-if>
+                  <sc-if value="{{ r.isSet }}" hint-placeholder-val="{{ false }}">
+                    <span style="font-size: 12.5px; font-weight: 700; color: #4ADE80;">All set</span>
+                    <button type="button" data-focusable="1" data-k="{{ r.key }}" onClick="{{ redoSet }}" style="margin-left: auto; height: 28px; padding: 0 12px; border-radius: 999px; border: 1px solid rgba(255,255,255,.14); background: transparent; color: rgba(255,255,255,.8); font-size: 12px; font-weight: 600; cursor: pointer;" style-hover="color: #fff; background: rgba(255,255,255,.08)">Redo</button>
+                  </sc-if>
+                </div>
+                <sc-if value="{{ r.isSet }}" hint-placeholder-val="{{ false }}"><span title="{{ r.setBy }}" style="font-size: 11.5px; color: rgba(255,255,255,.6); overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">{{ r.setBy }}</span></sc-if>
+              </div>
+              <div role="cell" style="padding: 10px 12px; display: flex; flex-direction: column; gap: 2px; min-width: 0;">
+                <span style="font-size: 12px; font-weight: 600; color: {{ r.statusColor }};">{{ r.status }}</span>
+                <span style="font-size: 12px; color: rgba(255,255,255,.72);">{{ r.editedAt }}</span>
+                <span title="{{ r.editedBy }}" style="font-size: 11.5px; color: rgba(255,255,255,.55); overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">{{ r.editedBy }}</span>
+              </div>
+              <div role="cell" style="padding: 8px;"><input data-cell="1" data-k="{{ r.key }}" data-f="brand" value="{{ r.brand }}" onChange="{{ onText }}" onBlur="{{ onFlush }}" aria-label="Brand" style="box-sizing: border-box; width: 100%; height: 36px; padding: 0 10px; border-radius: 8px; border: 1px solid transparent; background: rgba(255,255,255,.04); color: #fff; font-size: 13.5px; font-weight: 600;"></div>
+              <div role="cell" style="padding: 8px; display: flex; gap: 6px; align-items: center;">
+                <input data-cell="1" data-k="{{ r.key }}" data-f="link" value="{{ r.link }}" onChange="{{ onText }}" onBlur="{{ onFlush }}" readOnly="{{ r.isZip }}" placeholder="Celtra preview link" aria-label="Celtra preview link" style="box-sizing: border-box; flex: 1; min-width: 0; height: 36px; padding: 0 10px; border-radius: 8px; border: 1px solid transparent; background: rgba(255,255,255,.04); color: rgba(255,255,255,.85); font-size: 12.5px;">
+                <sc-if value="{{ r.hasLink }}" hint-placeholder-val="{{ false }}"><a href="{{ r.link }}" target="_blank" rel="noreferrer" aria-label="Open preview" data-focusable="1" style="display: grid; place-items: center; width: 32px; height: 32px; flex: none; border-radius: 8px; color: #00CCFF;" style-hover="background: rgba(0,204,255,.12); text-decoration: none">{{ openIcon }}</a></sc-if>
+              </div>
+              <div role="cell" style="padding: 8px;">
+                <sc-if value="{{ r.hasThumb }}" hint-placeholder-val="{{ false }}">
+                  <button type="button" data-focusable="1" aria-label="Expand preview" title="Click to expand" data-k="{{ r.key }}" onClick="{{ onThumbIn }}" style="{{ r.thumbBox }}" style-hover="border-color: rgba(0,204,255,.6)"><iframe loading="lazy" src="{{ r.thumbSrc }}" title="{{ r.brand }} preview" tabindex="-1" scrolling="no" style="{{ r.thumbFrame }}"></iframe></button>
+                </sc-if>
+                <sc-if value="{{ r.noThumb }}" hint-placeholder-val="{{ false }}"><span style="display: block; font-size: 12px; color: rgba(255,255,255,.45);">{{ r.noThumbLabel }}</span></sc-if>
+              </div>
+              <div role="cell" style="padding: 8px;">
+                <select data-cell="1" data-k="{{ r.key }}" data-f="product" value="{{ r.product }}" onChange="{{ onPick }}" aria-label="Ad product" style="box-sizing: border-box; width: 100%; height: 36px; padding: 0 8px; border-radius: 8px; border: 1px solid transparent; background: rgba(255,255,255,.04); color: #fff; font-size: 13px;">
+                  <sc-for list="{{ productOpts }}" as="o" hint-placeholder-count="5"><option value="{{ o }}">{{ o }}</option></sc-for>
+                </select>
+              </div>
+              <div role="cell" style="padding: 8px;">
+                <select data-cell="1" data-k="{{ r.key }}" data-f="vertical" value="{{ r.vertical }}" onChange="{{ onPick }}" aria-label="Vertical" style="box-sizing: border-box; width: 100%; height: 36px; padding: 0 8px; border-radius: 8px; border: 1px solid transparent; background: rgba(255,255,255,.04); color: #fff; font-size: 13px;">
+                  <option value="">Choose a vertical…</option>
+                  <sc-for list="{{ verticalOpts }}" as="o" hint-placeholder-count="19"><option value="{{ o }}">{{ o }}</option></sc-for>
+                </select>
+              </div>
+              <div role="cell" style="padding: 8px;"><textarea data-cell="1" data-k="{{ r.key }}" data-f="known" value="{{ r.known }}" onChange="{{ onText }}" onBlur="{{ onFlush }}" rows="2" placeholder="What it's known for" aria-label="Known for" style="box-sizing: border-box; display: block; width: 100%; min-height: 36px; padding: 8px 10px; border-radius: 8px; border: 1px solid transparent; background: rgba(255,255,255,.04); color: #fff; font-size: 13px; line-height: 1.4; resize: vertical;"></textarea></div>
+              <sc-for list="{{ r.multis }}" as="m" hint-placeholder-count="3">
+                <div role="cell" style="padding: 8px;">
+                  <button type="button" data-cell="1" data-k="{{ m.key }}" data-f="{{ m.field }}" onClick="{{ openPop }}" aria-label="{{ m.aria }}" style="box-sizing: border-box; width: 100%; min-height: 36px; padding: 6px 8px; display: flex; flex-wrap: wrap; gap: 4px; align-items: center; border-radius: 8px; border: 1px solid transparent; background: rgba(255,255,255,.04); color: #fff; text-align: left; cursor: pointer;" style-hover="border-color: rgba(0,204,255,.4)">
+                    <sc-for list="{{ m.chips }}" as="ch" hint-placeholder-count="2"><span style="padding: 3px 8px; border-radius: 999px; background: rgba(0,204,255,.12); border: 1px solid rgba(0,204,255,.3); font-size: 12px; line-height: 1.2; color: #fff;">{{ ch }}</span></sc-for>
+                    <sc-if value="{{ m.empty }}" hint-placeholder-val="{{ false }}"><span style="font-size: 12.5px; color: rgba(255,255,255,.45);">Select…</span></sc-if>
+                  </button>
+                </div>
+              </sc-for>
+            </div>
+          </sc-for>
+          </div>
+          </sc-for>
+        </div>
+      </div>
+      <div ref="{{ barRef }}" onScroll="{{ onBarScroll }}" aria-label="Scroll the sheet sideways" data-sheet-bar="1" style="position: fixed; left: clamp(16px, 3vw, 40px); right: clamp(16px, 3vw, 40px); bottom: 10px; z-index: 70; height: 5px; overflow-x: auto; overflow-y: hidden; border-radius: 999px; background: transparent; border: 0; backdrop-filter: none; -webkit-backdrop-filter: none;"><div ref="{{ barInnerRef }}" style="height: 0; width: 2292px;"></div></div>
+
+      <sc-for list="{{ copySections }}" as="cs" hint-placeholder-count="0">
+        <section data-block="Creative Sheet · Playground copy" style="margin-top: 64px;">
+          <div style="display: flex; flex-direction: column; align-items: center; text-align: center; gap: 8px; margin-bottom: 24px;">
+            <div style="font-size: 11px; font-weight: 600; letter-spacing: .18em; text-transform: uppercase; color: var(--lime-300, #BEF264);">Creative Playground</div>
+            <h2 style="margin: 0; font-size: clamp(24px, 2.6vw, 34px); font-weight: 700; letter-spacing: -.025em; line-height: 1.1;">{{ cs.title }}</h2>
+            <div style="font-size: 13px; color: rgba(255,255,255,.62);">{{ cs.count }}</div>
+          </div>
+          <div data-sheet-wrap="1" onScroll="{{ onAnyWrapScroll }}" style="overflow-x: auto; scrollbar-width: none; border-radius: 14px; border: 1px solid rgba(255,255,255,.08); background: #070B15; box-shadow: inset 0 1px 0 rgba(255,255,255,.06), 0 24px 60px rgba(0,0,0,.45);">
+            <div role="table" aria-label="{{ cs.title }}" style="{{ cs.tableStyle }}">
+              <div role="row" style="{{ cs.gridStyle }} border-bottom: 1px solid rgba(255,255,255,.1); background: rgba(0,24,48,.6);" data-kx-colhead="1">
+                <sc-for list="{{ cs.headers }}" as="h" hint-placeholder-count="6">
+                  <div role="columnheader" style="padding: 12px; font-size: 11px; font-weight: 600; letter-spacing: .14em; text-transform: uppercase; color: rgba(255,255,255,.7);">{{ h }}</div>
+                </sc-for>
+              </div>
+              <sc-for list="{{ cs.cards }}" as="cd" hint-placeholder-count="3">
+                <div role="row" style="{{ cs.gridStyle }} border-bottom: 1px solid rgba(255,255,255,.16); align-items: center;" style-hover="background: rgba(0,204,255,.04)">
+                  <div role="cell" style="padding: 8px 0 8px 14px; font-size: 12.5px; font-weight: 600; color: rgba(255,255,255,.55); font-variant-numeric: tabular-nums;">{{ cd.num }}</div>
+                  <div role="cell" style="padding: 8px 10px; display: flex; flex-direction: column; gap: 6px; min-width: 0;">
+                    <div style="display: flex; align-items: center; gap: 8px;">
+                      <span aria-hidden="true" style="{{ cd.setBadge }}">{{ cd.setIcon }}</span>
+                      <sc-if value="{{ cd.notSet }}" hint-placeholder-val="{{ true }}">
+                        <button type="button" data-focusable="1" data-cid="{{ cd.id }}" onClick="{{ markCopySet }}" style="height: 32px; padding: 0 14px; border-radius: 999px; border: 1px solid rgba(255,255,255,.18); background: rgba(255,255,255,.06); color: #fff; font-size: 12.5px; font-weight: 700; cursor: pointer; transition: all 200ms cubic-bezier(.16,1,.3,1);" style-hover="transform: translateY(-2px); border-color: rgba(167,139,250,.6); background: rgba(109,94,240,.16); box-shadow: 0 0 32px rgba(109,94,240,.55)" style-active="transform: scale(.985)">All set</button>
+                      </sc-if>
+                      <sc-if value="{{ cd.isSet }}" hint-placeholder-val="{{ false }}">
+                        <span style="font-size: 12.5px; font-weight: 700; color: #4ADE80;">All set</span>
+                        <button type="button" data-focusable="1" data-cid="{{ cd.id }}" onClick="{{ redoCopySet }}" style="margin-left: auto; height: 28px; padding: 0 12px; border-radius: 999px; border: 1px solid rgba(255,255,255,.14); background: transparent; color: rgba(255,255,255,.8); font-size: 12px; font-weight: 600; cursor: pointer;" style-hover="color: #fff; background: rgba(255,255,255,.08)">Redo</button>
+                      </sc-if>
+                    </div>
+                    <sc-if value="{{ cd.isSet }}" hint-placeholder-val="{{ false }}"><span title="{{ cd.setBy }}" style="font-size: 11.5px; color: rgba(255,255,255,.6); overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">{{ cd.setBy }}</span></sc-if>
+                  </div>
+                  <div role="cell" style="padding: 10px 12px; display: flex; flex-direction: column; gap: 2px; min-width: 0;">
+                    <span style="font-size: 12px; font-weight: 600; color: {{ cd.statusColor }};">{{ cd.status }}</span>
+                    <span style="font-size: 12px; color: rgba(255,255,255,.72);">{{ cd.editedAt }}</span>
+                    <span title="{{ cd.editedBy }}" style="font-size: 11.5px; color: rgba(255,255,255,.55); overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">{{ cd.editedBy }}</span>
+                  </div>
+                  <div role="cell" style="padding: 8px;">
+                    <sc-if value="{{ cd.hasFrame }}" hint-placeholder-val="{{ false }}">
+                      <button type="button" data-focusable="1" data-cid="{{ cd.id }}" onClick="{{ openCopyBig }}" aria-label="Expand preview" title="Click to expand" style="position: relative; display: block; width: 56px; height: 112px; padding: 0; overflow: hidden; border-radius: 6px; border: 1px solid rgba(255,255,255,.14); background: #EEF1F5; cursor: zoom-in;" style-hover="border-color: rgba(0,204,255,.6)"><iframe loading="lazy" src="{{ cd.frame }}" title="{{ cd.label }} preview" tabindex="-1" scrolling="no" style="position: absolute; left: 0; top: 0; width: 300px; height: 600px; border: 0; pointer-events: none; transform-origin: 0 0; transform: scale(.1867);"></iframe></button>
+                    </sc-if>
+                    <sc-if value="{{ cd.noFrame }}" hint-placeholder-val="{{ false }}"><span style="font-size: 12px; color: rgba(255,255,255,.45);">Built in page</span></sc-if>
+                  </div>
+                  <div role="cell" style="padding: 8px 12px; font-size: 13.5px; font-weight: 600; color: #fff;">{{ cd.label }}</div>
+                  <sc-for list="{{ cd.fields }}" as="fd" hint-placeholder-count="3">
+                    <div role="cell" style="padding: 8px;"><textarea data-cell="1" data-cid="{{ cd.id }}" data-ck="{{ fd.k }}" value="{{ fd.v }}" onChange="{{ onCopyEdit }}" onBlur="{{ onFlush }}" rows="{{ fd.rows }}" aria-label="{{ fd.label }}" style="box-sizing: border-box; display: block; width: 100%; min-height: 36px; padding: 8px 10px; border-radius: 8px; border: 1px solid transparent; background: rgba(255,255,255,.04); color: #fff; font-size: 13px; line-height: 1.4; resize: vertical;"></textarea></div>
+                  </sc-for>
+                </div>
+              </sc-for>
+            </div>
+          </div>
+        </section>
+      </sc-for>
+    </sc-if>
+  </main>
+
+  <sc-if value="{{ bigOpen }}" hint-placeholder-val="{{ false }}">
+    <div role="dialog" aria-label="Enlarged preview" style="{{ big.box }}">
+      <div onPointerDown="{{ onDragStart }}" onDoubleClick="{{ resetBigPos }}" title="Drag to move · double-click to reset" style="display: flex; align-items: center; gap: 8px; height: 26px; margin: -4px -4px 4px; padding: 0 6px; border-radius: 8px; cursor: grab; user-select: none; touch-action: none;" style-hover="background: rgba(255,255,255,.05)">
+        <span aria-hidden="true" style="display: grid; place-items: center; color: rgba(255,255,255,.55);">{{ gripIcon }}</span>
+        <span style="flex: 1; min-width: 0; font-size: 12px; font-weight: 600; color: #fff; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">{{ big.brand }}</span>
+        <span style="font-size: 11px; color: rgba(255,255,255,.5);">Drag to move</span>
+        <button type="button" data-focusable="1" onPointerDown="{{ stopDrag }}" onClick="{{ popOut }}" aria-label="Open in its own window" title="Open in its own window (move it to another screen)" style="display: grid; place-items: center; width: 24px; height: 24px; padding: 0; border: 0; border-radius: 6px; background: transparent; color: rgba(255,255,255,.75); cursor: pointer;" style-hover="color: #fff; background: rgba(255,255,255,.1)">{{ popIcon }}</button>
+        <button type="button" data-focusable="1" onPointerDown="{{ stopDrag }}" onClick="{{ closeBig }}" aria-label="Close preview" style="display: grid; place-items: center; width: 24px; height: 24px; margin-right: -2px; padding: 0; border: 0; border-radius: 6px; background: transparent; color: rgba(255,255,255,.75); cursor: pointer;" style-hover="color: #fff; background: rgba(255,255,255,.1)">{{ closeSmall }}</button>
+      </div>
+      <div style="{{ big.stage }}"><iframe src="{{ big.link }}" title="{{ big.brand }} enlarged preview" tabindex="-1" scrolling="no" style="{{ big.frame }}"></iframe></div>
+      <div role="separator" aria-label="Resize preview" title="Drag to resize" onPointerDown="{{ onResizeStart }}" onDoubleClick="{{ resetBigSize }}" style="position: absolute; left: 2px; bottom: 2px; width: 22px; height: 22px; display: grid; place-items: center; cursor: nesw-resize; touch-action: none; color: rgba(255,255,255,.6); border-radius: 6px;" style-hover="color: #00CCFF; background: rgba(0,204,255,.12)">{{ resizeIcon }}</div>
+    </div>
+  </sc-if>
+  <sc-if value="{{ popOpen }}" hint-placeholder-val="{{ false }}">
+    <div onClick="{{ closePop }}" style="position: fixed; inset: 0; z-index: 80;"></div>
+    <div role="dialog" aria-label="{{ pop.title }}" style="{{ pop.style }}">
+      <div style="padding: 4px 6px 10px; font-size: 11px; font-weight: 600; letter-spacing: .16em; text-transform: uppercase; color: rgba(255,255,255,.62);">{{ pop.title }}</div>
+      <div style="max-height: 300px; overflow-y: auto; display: flex; flex-direction: column; gap: 2px;">
+        <sc-for list="{{ pop.opts }}" as="o" hint-placeholder-count="6">
+          <button type="button" role="checkbox" aria-checked="{{ o.on }}" data-v="{{ o.v }}" onClick="{{ toggleOpt }}" style="display: flex; align-items: center; gap: 10px; min-height: 36px; padding: 6px 8px; border: 0; border-radius: 8px; background: transparent; color: #fff; font-size: 13.5px; text-align: left; cursor: pointer;" style-hover="background: rgba(255,255,255,.06)">
+            <span aria-hidden="true" style="{{ o.box }}">{{ o.check }}</span>{{ o.v }}
+          </button>
+        </sc-for>
+      </div>
+      <sc-if value="{{ pop.canAdd }}" hint-placeholder-val="{{ false }}">
+        <div style="display: flex; gap: 6px; margin-top: 10px; padding-top: 10px; border-top: 1px solid rgba(255,255,255,.08);">
+          <input data-focusable="1" value="{{ newOpt }}" onInput="{{ onNewOpt }}" onKeyDown="{{ onNewKey }}" placeholder="Add a measure…" aria-label="New measure option" style="box-sizing: border-box; flex: 1; min-width: 0; height: 36px; padding: 0 12px; border-radius: 999px; border: 1px solid rgba(255,255,255,.14); background: rgba(255,255,255,.04); color: #fff; font-size: 13px; outline: none;">
+          <button type="button" data-focusable="1" onClick="{{ addOpt }}" style="height: 36px; padding: 0 16px; border-radius: 999px; border: 0; background: #00CCFF; color: #001830; font-size: 13px; font-weight: 700; cursor: pointer;" style-hover="background: #66E0FF">Add</button>
+        </div>
+      </sc-if>
+    </div>
+  </sc-if>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+const PRODUCTS = ['Rich Media', 'Banners', 'Interactive Video', 'CTV', 'AI Video Production'];
+const GOALS = ['Awareness', 'Engagement', 'Product Discovery', 'Store Visits', 'Commerce', 'Lead Generation'];
+const MEASURES = ['CTR', 'Engagement Rate', 'Video Completion Rate', 'Viewability', 'Store Visits', 'Conversions', 'Leads', 'Brand Lift', 'ROAS', 'Interaction Rate', 'Time Spent'];
+const SHARE = 'https://captivate.kortx.io/shareablePreview/';
+const split = s => String(s || '').split(',').map(x => x.trim()).filter(Boolean);
+
+class Component extends DCLogic {
+  state = { copyCards: [], copyDirty: {}, copyStatus: {}, zipUrls: {}, bigScale: Number((() => { try { return localStorage.getItem('kx.sheet.bigScale'); } catch (e) { return null; } })()) || 1, bigPos: (() => { try { return JSON.parse(localStorage.getItem('kx.sheet.bigPos') || 'null'); } catch (e) { return null; } })(), dirty: {}, saving: false, savedFlash: false, view: 'shown', gate: 'loading', me: null, rows: [], q: '', pop: null, newOpt: '', status: {}, noPerm: false, err: '', extra: [], verticals: [], components: [] };
+  timers = {};
+  wrapRef = React.createRef(); barRef = React.createRef(); barInnerRef = React.createRef();
+  /* One permanent bar at the bottom of the screen drives whichever table is most in view. */
+  activeWrap() {
+    const vh = window.innerHeight; let best = null, area = 0;
+    document.querySelectorAll('[data-sheet-wrap]').forEach(w => { const r = w.getBoundingClientRect(); const vis = Math.min(r.bottom, vh) - Math.max(r.top, 0); if (vis > area) { area = vis; best = w; } });
+    return best || this.wrapRef.current;
+  }
+  onWrapScroll = e => this.onAnyWrapScroll(e);
+  onAnyWrapScroll = e => { if (this.syncing === 'bar') return; const w = e && e.currentTarget, b = this.barRef.current; if (!w || !b || w !== this.activeWrap()) return; this.syncing = 'wrap'; this.sizeBar(); b.scrollLeft = w.scrollLeft; requestAnimationFrame(() => { this.syncing = null; }); };
+  onBarScroll = () => { if (this.syncing === 'wrap') return; const w = this.activeWrap(), b = this.barRef.current; if (w && b) { this.syncing = 'bar'; w.scrollLeft = b.scrollLeft; requestAnimationFrame(() => { this.syncing = null; }); } };
+  sizeBar() { const w = this.activeWrap(), i = this.barInnerRef.current, b = this.barRef.current; if (!w || !i || !b) return; const iw = w.scrollWidth - w.clientWidth + b.clientWidth; if (i.style.width !== iw + 'px') i.style.width = iw + 'px'; if (Math.abs(b.scrollLeft - w.scrollLeft) > 1 && this.syncing !== 'bar') { this.syncing = 'wrap'; b.scrollLeft = w.scrollLeft; requestAnimationFrame(() => { this.syncing = null; }); } }
+  componentDidUpdate() { this.sizeBar(); if (this.popWin && !this.popWin.closed) this.paintPop(); if (this.lockPos && this.state.big && !this.state.bigPos) { const p = this.lockPos; this.lockPos = null; this.setState({ bigPos: p }); } }
+
+  async componentDidMount() {
+    this.onLeave = e => { if (Object.keys(this.state.dirty).length) { e.preventDefault(); e.returnValue = ''; } };
+    window.addEventListener('beforeunload', this.onLeave);
+    this.onRs = () => this.sizeBar(); window.addEventListener('resize', this.onRs); window.addEventListener('scroll', this.onRs, { passive: true });
+    this.onEsc = e => { if (e.key !== 'Escape') return; if (this.state.undoOpen) this.closeUndo(); else if (this.state.pop) this.closePop(); else if (this.state.big) this.closeBig(); };
+    window.addEventListener('keydown', this.onEsc);
+    window.addEventListener('keydown', this.onUndoKey, true);
+    try {
+      this.cloud = await import('./creative-cloud.js');
+      const data = await import('./creative-data.js');
+      this.setState({ verticals: data.VERTICALS, components: data.COMPONENTS });
+      const me = await this.cloud.currentUser();
+      if (!me) return this.setState({ gate: 'signin' });
+      this.setState({ me, gate: 'ok' });
+      this.load();
+      this.cloud.onAuthChange(u => { if (!u) this.setState({ gate: 'signin', me: null }); });
+    } catch (e) { this.setState({ gate: 'ok', err: 'Could not connect to the database: ' + (e.message || e) }); }
+  }
+  componentWillUnmount() { window.removeEventListener('keydown', this.onUndoKey, true); clearInterval(this.popPoll); window.removeEventListener('resize', this.onRs); window.removeEventListener('scroll', this.onRs); window.removeEventListener('beforeunload', this.onLeave); window.removeEventListener('keydown', this.onEsc); Object.values(this.timers).forEach(clearTimeout); }
+
+  async load() {
+    try {
+      const sb = await this.cloud.client();
+      const { data, error } = await sb.from('creatives').select('*').neq('in_gallery', false).order('sort_order', { ascending: true });
+      if (error) throw error;
+      this.setState({ rows: data.map(d => ({
+        key: d.id, isZip: d.source === 'zip', brand: d.brand || '',
+        link: d.captivate_id ? SHARE + d.captivate_id : '', product: d.creative_type || 'Rich Media',
+        verticals: d.verticals || [], known: d.description || '', goals: d.campaign_goals || [],
+        measure: split(d.measure), comps: d.components || [], inGallery: d.in_gallery !== false, allSet: !!d.review_done, setBy: d.reviewed_by || '', zipKey: d.zip_path || '', zipW: d.zip_width || 300, zipH: d.zip_height || 600, updatedAt: d.updated_at, updatedBy: d.updated_by || ''
+      })) });
+      this.loadZips(); this.loadCopy();
+    } catch (e) { this.setState({ err: 'Could not load creatives: ' + (e.message || e) }); }
+  }
+
+  async loadZips() {
+    const zips = this.state.rows.filter(r => r.isZip && r.zipKey); if (!zips.length) return;
+    let store; try { store = await import('./html-zip-store.js'); } catch (e) { return; }
+    for (const r of zips) store.previewUrl(r.zipKey).then(url => this.setState(s => ({ zipUrls: Object.assign({}, s.zipUrls, { [r.key]: url }) }))).catch(() => {});
+  }
+  /* Crop + source for a creative: Captivate share page (calibrated crop) or an unpacked HTML zip at native size. */
+  geo(r) {
+    if (r.isZip) { const src = (this.state.zipUrls || {})[r.key]; return src ? { src, c: { x: 0, y: 0, w: r.zipW, h: r.zipH }, fw: r.zipW, fh: r.zipH, v: r.zipH > r.zipW } : null; }
+    if (!/^https?:/.test(r.link)) return null;
+    const v = ['Rich Media', 'Banners'].includes(r.product);
+    return { src: r.link, c: v ? { x: 498, y: 111, w: 299, h: 598 } : { x: 198, y: 293, w: 804, h: 452 }, fw: 1200, fh: 1000, v };
+  }
+  async setReview(key, done) {
+    const by = (this.state.me || {}).email || '';
+    const prev = this.state.rows.find(x => x.key === key);
+    this.setState(s => ({ rows: s.rows.map(x => x.key === key ? Object.assign({}, x, { allSet: done, setBy: done ? by : '' }) : x) }));
+    try {
+      const sb = await this.cloud.client();
+      const res = await sb.from('creatives').update({ review_done: done, reviewed_by: done ? by : null, reviewed_at: done ? new Date().toISOString() : null }).eq('id', key).select('id');
+      if (res.error) throw res.error;
+      if (!res.data || !res.data.length) { this.setState({ noPerm: true }); throw new Error('No permission'); }
+    } catch (e) {
+      this.setState(s => ({ rows: s.rows.map(x => x.key === key ? Object.assign({}, x, { allSet: prev.allSet, setBy: prev.setBy }) : x),
+        err: /review_done|reviewed_/.test(e.message || '') ? 'The All set column needs the database update: run supabase/migrations/2026-11-12_creative_sheet_team_edit.sql again in Supabase.' : (e.message === 'No permission' ? '' : 'Could not update status: ' + (e.message || e)) }));
+    }
+  }
+  markSet = e => this.setReview(e.currentTarget.dataset.k, true);
+  redoSet = e => this.setReview(e.currentTarget.dataset.k, false);
+  async loadCopy() {
+    try {
+      const [cfg, pc] = await Promise.all([import('./playground-config.js'), import('./playground-copy.js?v=20261112b')]);
+      this.pc = pc;
+      let saved = []; try { saved = await pc.fetchCopy(); } catch (e) { this.copyMissing = true; }
+      const cards = pc.cardsFrom(cfg).map(c => { const s = saved.find(x => x.id === c.id); return Object.assign(c, { values: Object.assign({}, c.values, (s && s.data) || {}), updatedAt: s ? s.updated_at : null, updatedBy: s ? s.updated_by : '', allSet: !!(s && s.review_done), setBy: (s && s.reviewed_by) || '' }); });
+      this.setState({ copyCards: cards });
+      fetch('./playground-config.js', { method: 'HEAD', cache: 'no-store' }).then(r => { const lm = r.headers.get('last-modified'); if (lm) this.setState({ copyBaseAt: new Date(lm).toISOString() }); }).catch(() => {});
+    } catch (e) { /* playground copy optional */ }
+  }
+  onCopyEdit = e => {
+    const { cid, ck } = e.currentTarget.dataset, v = e.currentTarget.value;
+    { const id = 'c:' + cid + ':' + ck; if (this.cur !== id) { const c = this.state.copyCards.find(x => x.id === cid) || { values: {} }; this.pushStep({ id, kind: 'copy', cid, ck, before: c.values[ck] || '', label: (c.label || 'Playground copy') + ' · ' + ck }); this.cur = id; } }
+    this.setState(s => ({ copyCards: s.copyCards.map(c => c.id === cid ? Object.assign({}, c, { values: Object.assign({}, c.values, { [ck]: v }) }) : c),
+      copyDirty: Object.assign({}, s.copyDirty, { [cid]: true }), copyStatus: Object.assign({}, s.copyStatus, { [cid]: 'Unsaved' }), savedFlash: false }));
+  };
+  openCopyBig = e => { const id = e.currentTarget.dataset.cid, rc = e.currentTarget.getBoundingClientRect(); this.setState({ big: { k: 'copy:' + id, rc: { left: rc.left, right: rc.right, top: rc.top, bottom: rc.bottom } } }); };
+  async setCopyReview(id, done) {
+    const by = (this.state.me || {}).email || '', card = this.state.copyCards.find(c => c.id === id); if (!card) return;
+    const prev = { allSet: card.allSet, setBy: card.setBy };
+    this.setState(s => ({ copyCards: s.copyCards.map(c => c.id === id ? Object.assign({}, c, { allSet: done, setBy: done ? by : '' }) : c) }));
+    try {
+      const cloud = await import('./creative-cloud.js'), sb = await cloud.client();
+      const res = await sb.from('playground_copy').upsert({ id, data: card.values, review_done: done, reviewed_by: done ? by : null, reviewed_at: done ? new Date().toISOString() : null }, { onConflict: 'id' }).select('id');
+      if (res.error) throw res.error;
+      if (!res.data || !res.data.length) { this.setState({ noPerm: true }); throw new Error('No permission'); }
+      this.setState(s => { const d = Object.assign({}, s.copyDirty); delete d[id]; return { copyDirty: d }; });
+    } catch (e) {
+      this.setState(s => ({ copyCards: s.copyCards.map(c => c.id === id ? Object.assign({}, c, prev) : c),
+        err: e.message === 'No permission' ? '' : /playground_copy|review_done|relation|PGRST205|42P01/.test((e.message || '') + (e.code || '')) ? 'Playground copy needs the database update: run supabase/migrations/2026-11-12_creative_sheet_team_edit.sql in Supabase.' : 'Could not update status: ' + (e.message || e) }));
+    }
+  }
+  markCopySet = e => this.setCopyReview(e.currentTarget.dataset.cid, true);
+  redoCopySet = e => this.setCopyReview(e.currentTarget.dataset.cid, false);
+  async saveCopyAll() {
+    const ids = Object.keys(this.state.copyDirty || {}); if (!ids.length) return true;
+    const by = (this.state.me || {}).email || '', now = new Date().toISOString();
+    const rows = ids.map(id => ({ id, data: (this.state.copyCards.find(c => c.id === id) || {}).values || {}, updated_by: by, updated_at: now }));
+    try {
+      const res = await this.pc.saveCopy(rows);
+      if (!res.length) { this.setState({ noPerm: true }); return false; }
+      this.setState(s => ({ copyDirty: {}, copyCards: s.copyCards.map(c => ids.includes(c.id) ? Object.assign({}, c, { updatedAt: now, updatedBy: by }) : c), copyStatus: Object.assign({}, s.copyStatus, Object.fromEntries(ids.map(i => [i, 'Saved']))) }));
+      return true;
+    } catch (e) {
+      this.setState({ err: /playground_copy|relation|PGRST205|42P01/.test((e.message || '') + (e.code || '')) ? 'Playground copy needs the database update: run supabase/migrations/2026-11-12_creative_sheet_team_edit.sql in Supabase.' : 'Could not save Playground copy: ' + (e.message || e) });
+      return false;
+    }
+  }
+  patchFor(r, f) {
+    if (f === 'brand') return { brand: r.brand || 'Untitled' };
+    if (f === 'link') { const m = String(r.link).match(/shareablePreview\/([A-Za-z0-9_-]+)/) || String(r.link).trim().match(/^([A-Za-z0-9_-]{4,})$/); return m ? { captivate_id: m[1] } : null; }
+    if (f === 'product') return { creative_type: r.product, format: ['Rich Media', 'Banners'].includes(r.product) ? '300x600' : '1920x1080' };
+    if (f === 'vertical') return { verticals: r.verticals };
+    if (f === 'known') return { description: r.known || null };
+    if (f === 'goals') return { campaign_goals: r.goals };
+    if (f === 'measure') return { measure: r.measure.length ? r.measure.join(', ') : null };
+    if (f === 'comps') return { components: r.comps };
+    return null;
+  }
+
+  async save(key, fields) {
+    const r = this.state.rows.find(x => x.key === key); if (!r) return false;
+    const patch = {}; for (const f of fields) { const p = this.patchFor(r, f); if (!p) { this.setStatus(key, 'Check the link'); return false; } Object.assign(patch, p); }
+    const now = new Date().toISOString(), by = (this.state.me || {}).email || '';
+    this.setStatus(key, 'Saving…');
+    try {
+      const sb = await this.cloud.client();
+      let res = await sb.from('creatives').update(Object.assign({}, patch, { updated_at: now, updated_by: by })).eq('id', key).select('id, updated_at');
+      if (res.error && /updated_by/.test(res.error.message || '')) { this.missingBy = true; res = await sb.from('creatives').update(Object.assign({}, patch, { updated_at: now })).eq('id', key).select('id, updated_at'); }
+      if (res.error) throw res.error;
+      if (!res.data || !res.data.length) { this.setState({ noPerm: true }); this.setStatus(key, 'Not saved'); return false; }
+      this.setState(s => ({ noPerm: false, rows: s.rows.map(x => x.key === key ? Object.assign({}, x, { updatedAt: res.data[0].updated_at || now, updatedBy: this.missingBy ? x.updatedBy : by }) : x) }));
+      this.setStatus(key, 'Saved'); return true;
+    } catch (e) { this.setStatus(key, 'Error'); this.setState({ err: 'Could not save: ' + (e.message || e) }); return false; }
+  }
+  setStatus(key, v) {
+    this.setState(s => ({ status: Object.assign({}, s.status, { [key]: v }) }));
+    if (v === 'Saved') { clearTimeout(this.timers['st' + key]); this.timers['st' + key] = setTimeout(() => this.setState(s => { const st = Object.assign({}, s.status); if (st[key] === 'Saved') delete st[key]; return { status: st }; }), 2500); }
+  }
+  setField(key, f, v) { this.setState(s => ({ rows: s.rows.map(x => x.key === key ? Object.assign({}, x, { [f]: v }) : x) })); }
+
+  mark(k, f) { this.setState(s => { const d = Object.assign({}, s.dirty); d[k] = Array.from(new Set((d[k] || []).concat(f))); const st = Object.assign({}, s.status, { [k]: 'Unsaved' }); return { dirty: d, status: st, savedFlash: false }; }); }
+  onText = e => { const { k, f } = e.currentTarget.dataset; this.rowStep(k, f, f, true); this.setField(k, f, e.currentTarget.value); this.mark(k, f); };
+  onFlush = () => { this.cur = null; };
+  hist = []; cur = null; redoStack = [];
+  stepLabel(f) { return ({ brand: 'Brand', link: 'Preview link', product: 'Ad product', vertical: 'Vertical', verticals: 'Vertical', known: 'What we know', goals: 'Campaign goals', measure: 'What we measure', comps: 'Components' })[f] || f; }
+  pushStep(st) { this.redoStack = []; this.hist.push(Object.assign({ at: Date.now() }, st)); if (this.hist.length > 60) this.hist.shift(); this.setState({ histN: this.hist.length }); }
+  rowStep(k, f, store, sess) {
+    const r = this.state.rows.find(x => x.key === k); if (!r) return;
+    const id = 'r:' + k + ':' + f;
+    if (sess && this.cur === id) return;
+    const v = r[store]; this.pushStep({ id, kind: 'row', k, mark: f, before: { [store]: Array.isArray(v) ? v.slice() : v }, label: this.stepLabel(f) + ' · ' + (r.brand || 'Untitled') });
+    this.cur = sess ? id : null;
+  }
+  snap(st) { if (st.kind === 'row') { const r = this.state.rows.find(x => x.key === st.k) || {}; const o = {}; Object.keys(st.before).forEach(f => { const v = r[f]; o[f] = Array.isArray(v) ? v.slice() : v; }); return o; } const c = this.state.copyCards.find(x => x.id === st.cid) || { values: {} }; return c.values[st.ck] || ''; }
+  applyStep(st, vals) {
+    const val = vals === undefined ? st.before : vals;
+    if (st.kind === 'row') { Object.keys(val).forEach(f => this.setField(st.k, f, val[f])); this.mark(st.k, st.mark); }
+    else this.setState(s => ({ copyCards: s.copyCards.map(c => c.id === st.cid ? Object.assign({}, c, { values: Object.assign({}, c.values, { [st.ck]: val }) }) : c), copyDirty: Object.assign({}, s.copyDirty, { [st.cid]: true }), copyStatus: Object.assign({}, s.copyStatus, { [st.cid]: 'Unsaved' }), savedFlash: false }));
+  }
+  undoToIdx(i) { if (i < 0 || i >= this.hist.length) return; this.cur = null; const take = this.hist.splice(i); take.slice().reverse().forEach(st => { st.after = this.snap(st); this.applyStep(st); }); this.redoStack.push(take); this.setState({ histN: this.hist.length, redoN: this.redoStack.length, undoOpen: false }); }
+  redo = () => { const grp = this.redoStack.pop(); if (!grp) return; this.cur = null; grp.forEach(st => { this.applyStep(st, st.after); this.hist.push(st); }); this.setState({ histN: this.hist.length, redoN: this.redoStack.length }); };
+  undoTo = e => this.undoToIdx(+e.currentTarget.dataset.i);
+  toggleUndo = () => { if (!this.hist.length) return; this.setState(s => ({ undoOpen: !s.undoOpen })); };
+  closeUndo = () => this.setState({ undoOpen: false });
+  onUndoKey = e => { if (!(e.metaKey || e.ctrlKey) || e.altKey) return; const k = (e.key || '').toLowerCase(); const isRedo = (k === 'z' && e.shiftKey) || (k === 'y' && !e.shiftKey); if (isRedo) { if (!this.redoStack.length) return; e.preventDefault(); e.stopPropagation(); this.redo(); return; } if (k !== 'z' || e.shiftKey || !this.hist.length) return; e.preventDefault(); e.stopPropagation(); this.undoToIdx(this.hist.length - 1); };
+  wasText(v) { const t = Array.isArray(v) ? v.join(', ') : String(v == null ? '' : v); const s = t.trim().replace(/\s+/g, ' '); return 'Was: ' + (s ? '“' + (s.length > 70 ? s.slice(0, 70) + '…' : s) + '”' : '(empty)'); }
+  agoText(t) { const m = Math.round((Date.now() - t) / 60000); return m < 1 ? 'just now' : m < 60 ? m + 'm ago' : Math.round(m / 60) + 'h ago'; }
+
+  saveAll = async () => {
+    const keys = Object.keys(this.state.dirty), hasCopy = Object.keys(this.state.copyDirty || {}).length; if ((!keys.length && !hasCopy) || this.state.saving) return;
+    this.setState({ saving: true, err: '', noPerm: false });
+    const dirty = this.state.dirty; let ok = 0;
+    for (const k of keys) { if (await this.save(k, dirty[k])) ok++; }
+    const copyOk = await this.saveCopyAll();
+    this.setState(s => { const d = Object.assign({}, s.dirty); keys.forEach(k => { if (s.status[k] === 'Saved') delete d[k]; }); return { dirty: d, saving: false, savedFlash: ok === keys.length && copyOk }; });
+    clearTimeout(this.timers.flash); this.timers.flash = setTimeout(() => this.setState({ savedFlash: false }), 2400);
+  };
+  onPick = e => {
+    const { k, f } = e.currentTarget.dataset, v = e.currentTarget.value;
+    this.rowStep(k, f, f === 'vertical' ? 'verticals' : f, false);
+    if (f === 'vertical') {
+      const r = this.state.rows.find(x => x.key === k);
+      const rest = (r.verticals || []).slice(1).filter(x => x !== v);
+      this.setField(k, 'verticals', v ? [v].concat(rest) : rest);
+    } else this.setField(k, f, v);
+    this.mark(k, f);
+  };
+  openPop = e => {
+    const { k, f } = e.currentTarget.dataset, rc = e.currentTarget.getBoundingClientRect();
+    const w = 280, left = Math.max(12, Math.min(rc.left, window.innerWidth - w - 12));
+    const below = window.innerHeight - rc.bottom > 380;
+    this.setState({ pop: { k, f, left, w, top: below ? rc.bottom + 6 : null, bottom: below ? null : window.innerHeight - rc.top + 6 }, newOpt: '' });
+  };
+  closePop = () => this.setState({ pop: null, newOpt: '' });
+  toggleOpt = e => {
+    const v = e.currentTarget.dataset.v, { k, f } = this.state.pop;
+    const r = this.state.rows.find(x => x.key === k); const cur = r[f] || [];
+    this.rowStep(k, f, f, false);
+    this.setField(k, f, cur.includes(v) ? cur.filter(x => x !== v) : cur.concat(v));
+    this.mark(k, f);
+  };
+  onNewOpt = e => this.setState({ newOpt: e.currentTarget.value });
+  onNewKey = e => { if (e.key === 'Enter') { e.preventDefault(); this.addOpt(); } };
+  addOpt = () => {
+    const v = this.state.newOpt.trim().replace(/,/g, ' '); if (!v || !this.state.pop) return;
+    const { k, f } = this.state.pop, r = this.state.rows.find(x => x.key === k);
+    this.setState(s => ({ newOpt: '', extra: s.extra.includes(v) ? s.extra : s.extra.concat(v) }));
+    if (!(r[f] || []).includes(v)) { this.rowStep(k, f, f, false); this.setField(k, f, (r[f] || []).concat(v)); this.mark(k, f); }
+  };
+  onSearch = e => this.setState({ q: e.currentTarget.value });
+
+  measureOpts() {
+    const all = MEASURES.slice();
+    this.state.rows.forEach(r => r.measure.forEach(m => { if (!all.some(a => a.toLowerCase() === m.toLowerCase())) all.push(m); }));
+    this.state.extra.forEach(m => { if (!all.includes(m)) all.push(m); });
+    return all;
+  }
+  /* Live mini preview: the Captivate share page at its calibrated 1200 × 1000 viewport, scaled and offset so only the ad shows (same crop as creative-db.js FORMATS). */
+  thumb(r) {
+    const g = this.geo(r);
+    if (!g) return { hasThumb: false, noThumb: true, noThumbLabel: r.isZip ? 'Loading HTML…' : 'No link' };
+    const v = g.v, c = g.c;
+    const W = v ? 56 : 112, s = W / c.w, H = Math.round(c.h * s);
+    return { hasThumb: true, noThumb: false, noThumbLabel: '', thumbSrc: g.src,
+      thumbBox: { position: 'relative', display: 'block', width: W, height: H, padding: 0, cursor: 'zoom-in', overflow: 'hidden', borderRadius: 6, border: (this.state.big && this.state.big.k === r.key) ? '2px solid #00CCFF' : '1px solid rgba(255,255,255,.14)', background: '#EEF1F5', transition: 'border-color 200ms cubic-bezier(.16,1,.3,1)' },
+      thumbFrame: { position: 'absolute', left: 0, top: 0, width: g.fw, height: g.fh, border: 0, pointerEvents: 'none', transformOrigin: '0 0', transform: 'translate(' + (-c.x * s).toFixed(2) + 'px,' + (-c.y * s).toFixed(2) + 'px) scale(' + s.toFixed(4) + ')' } };
+  }
+  onThumbIn = e => { const k = e.currentTarget.dataset.k, rc = e.currentTarget.getBoundingClientRect(); this.setState({ big: { k, rc: { left: rc.left, right: rc.right, top: rc.top, bottom: rc.bottom } } }); };
+  closeBig = () => this.setState({ big: null });
+  stopDrag = e => e.stopPropagation();
+  onDragStart = e => {
+    const box = e.currentTarget.parentElement, rc = box.getBoundingClientRect(), ox = e.clientX - rc.left, oy = e.clientY - rc.top;
+    this.dragging = true; e.currentTarget.style.cursor = 'grabbing'; e.preventDefault();
+    const move = ev => { const left = Math.max(8, Math.min(ev.clientX - ox, window.innerWidth - rc.width - 8)), top = Math.max(8, Math.min(ev.clientY - oy, window.innerHeight - rc.height - 8)); this.setState({ bigPos: { left, top } }); };
+    const up = () => { this.dragging = false; window.removeEventListener('pointermove', move); window.removeEventListener('pointerup', up); try { localStorage.setItem('kx.sheet.bigPos', JSON.stringify(this.state.bigPos)); } catch (err) {} };
+    window.addEventListener('pointermove', move); window.addEventListener('pointerup', up);
+  };
+  onResizeStart = e => {
+    e.preventDefault(); e.stopPropagation();
+    const x0 = e.clientX, y0 = e.clientY, base = this.bigBaseW || 260, w0 = this.bigW || base, minW = this.bigMinW || 110, maxW = this.bigMaxW || w0, ratio = this.bigRatio || 2;
+    const box = e.currentTarget.parentElement.getBoundingClientRect(), right = box.right, top0 = box.top, chrome = box.width - w0;
+    this.dragging = true;
+    const move = ev => { const dx = x0 - ev.clientX, dy = (ev.clientY - y0) / ratio, d = Math.abs(dx) > Math.abs(dy) ? dx : dy; const w = Math.max(minW, Math.min(maxW, w0 + d)); this.setState({ bigScale: w / base, bigPos: { left: Math.max(8, right - w - chrome), top: top0 } }); };
+    const up = () => { this.dragging = false; window.removeEventListener('pointermove', move); window.removeEventListener('pointerup', up); try { localStorage.setItem('kx.sheet.bigScale', String(this.state.bigScale)); localStorage.setItem('kx.sheet.bigPos', JSON.stringify(this.state.bigPos)); } catch (err) {} };
+    window.addEventListener('pointermove', move); window.addEventListener('pointerup', up);
+  };
+  resetBigSize = () => { this.setState({ bigScale: 1 }); try { localStorage.removeItem('kx.sheet.bigScale'); } catch (err) {} };
+  resetBigPos = () => { this.setState({ bigPos: null }); try { localStorage.removeItem('kx.sheet.bigPos'); } catch (err) {} };
+  /* Pop-out: a real browser window the user can drag to any monitor. It follows whichever thumbnail is clicked next. */
+  popOut = () => {
+    const b = this.popInfo(); if (!b) return;
+    const w = window.open('', 'kxAdPreview', 'popup=yes,width=' + Math.round(b.w + 48) + ',height=' + Math.round(b.h + 92));
+    if (!w) { this.setState({ err: 'Your browser blocked the pop-out window. Allow pop-ups for this site and try again.' }); return; }
+    this.popWin = w; this.popKey = null;
+    const d = w.document; d.open(); d.write('<!doctype html><html><head><meta charset="utf-8"><title>Ad preview</title><style>html,body{margin:0;height:100%;background:#000509;color:#fff;font-family:Inter,Helvetica,sans-serif;overflow:hidden}#h{height:40px;display:flex;align-items:center;padding:0 16px;font-size:13px;font-weight:600;border-bottom:1px solid rgba(255,255,255,.08)}#s{position:absolute;top:40px;left:0;right:0;bottom:0;display:grid;place-items:center}#b{position:relative;overflow:hidden;border-radius:8px;background:#EEF1F5;box-shadow:0 20px 60px rgba(0,0,0,.6)}#b iframe{position:absolute;left:0;top:0;border:0;transform-origin:0 0}</style></head><body><div id="h"></div><div id="s"><div id="b"><iframe scrolling="no"></iframe></div></div></body></html>'); d.close();
+    w.addEventListener('resize', () => this.paintPop(true));
+    clearInterval(this.popPoll); this.popPoll = setInterval(() => { if (!this.popWin || this.popWin.closed) { clearInterval(this.popPoll); this.popWin = null; this.setState({ popped: false }); } }, 800);
+    this.setState({ popped: true }, () => this.paintPop(true));
+  };
+  popInfo() {
+    const b = this.state.big; if (!b) return null; let r, g;
+    if (String(b.k).indexOf('copy:') === 0) { const cd = this.state.copyCards.find(c => c.id === b.k.slice(5)); if (!cd || !cd.frame) return null; r = { brand: cd.label }; g = { src: cd.frame, c: { x: 0, y: 0, w: 300, h: 600 }, fw: 300, fh: 600 }; }
+    else { r = this.state.rows.find(x => x.key === b.k); g = r && this.geo(r); if (!g) return null; }
+    return { key: b.k, brand: r.brand, zipKey: r.isZip ? r.zipKey : '', src: new URL(g.src, location.href).href, c: g.c, fw: g.fw, fh: g.fh, w: g.c.w > g.c.h ? 640 : 300, h: g.c.w > g.c.h ? 360 : 600 };
+  }
+  paintPop(force) {
+    const w = this.popWin; if (!w || w.closed) return; const info = this.popInfo(); if (!info) return;
+    const d = w.document, f = d.querySelector('#b iframe'), box = d.getElementById('b'); if (!f || !box) return;
+    d.getElementById('h').textContent = info.brand; d.title = info.brand + ' · Ad preview';
+    if (this.popKey !== info.key) {
+      this.popKey = info.key;
+      if (info.zipKey) { f.removeAttribute('src'); f.srcdoc = '<p style="font:13px sans-serif;color:#555;text-align:center;margin-top:40%">Loading…</p>'; import('./html-zip-store.js').then(z => z.inlineHtml(info.zipKey)).then(html => { if (this.popKey === info.key) f.srcdoc = html; }).catch(() => { f.srcdoc = '<p style="font:13px sans-serif;color:#555;text-align:center;margin-top:40%">Could not load this HTML creative.</p>'; }); }
+      else { f.removeAttribute('srcdoc'); f.src = info.src; }
+    }
+    const s = Math.min((w.innerWidth - 32) / info.c.w, (w.innerHeight - 40 - 32) / info.c.h);
+    box.style.width = Math.round(info.c.w * s) + 'px'; box.style.height = Math.round(info.c.h * s) + 'px';
+    f.style.width = info.fw + 'px'; f.style.height = info.fh + 'px';
+    f.style.transform = 'translate(' + (-info.c.x * s).toFixed(2) + 'px,' + (-info.c.y * s).toFixed(2) + 'px) scale(' + s.toFixed(4) + ')';
+  }
+  bigVals() {
+    const b = this.state.big; if (!b) return null;
+    let r, g;
+    if (String(b.k).indexOf('copy:') === 0) { const cd = this.state.copyCards.find(c => c.id === b.k.slice(5)); if (!cd || !cd.frame) return null; r = { brand: cd.label }; g = { src: cd.frame, c: { x: 0, y: 0, w: 300, h: 600 }, fw: 300, fh: 600, v: true }; }
+    else { r = this.state.rows.find(x => x.key === b.k); g = r && this.geo(r); if (!g) return null; }
+    const v = g.v, c = g.c;
+    const pad = 12, avail = Math.max(120, window.innerHeight - 84 - 12 - pad * 2 - 26);
+    const maxW = Math.min(avail * c.w / c.h, window.innerWidth - 48), sc = this.state.bigScale || 1;
+    const W = Math.max(v ? 110 : 220, Math.min((v ? 260 : 520) * sc, maxW)), s = W / c.w, H = Math.round(c.h * s);
+    this.bigBaseW = v ? 260 : 520; this.bigW = W; this.bigMinW = v ? 110 : 220; this.bigMaxW = maxW; this.bigRatio = c.h / c.w;
+    const boxW = W + pad * 2, boxH = H + pad * 2 + 26;
+    const fixed = this.state.bigPos;
+    let left = b.rc.right + 14; if (left + boxW > window.innerWidth - 12) left = b.rc.left - boxW - 14; left = Math.max(12, left);
+    let top = Math.max(84, Math.min((b.rc.top + b.rc.bottom) / 2 - boxH / 2, window.innerHeight - boxH - 12));
+    if (!fixed) this.lockPos = { left, top };
+    if (fixed) { left = Math.max(8, Math.min(fixed.left, window.innerWidth - boxW - 8)); top = Math.max(8, Math.min(fixed.top, window.innerHeight - boxH - 8)); }
+    return { brand: r.brand, link: g.src,
+      box: { position: 'fixed', zIndex: 90, left, top, width: boxW, boxSizing: 'border-box', padding: pad, borderRadius: 14, border: '1px solid rgba(0,204,255,.3)', background: '#070B15', boxShadow: 'inset 0 1px 0 rgba(255,255,255,.06), 0 30px 70px rgba(0,0,0,.65), 0 0 60px rgba(0,204,255,.18)', pointerEvents: 'auto', animation: 'kx-rise 200ms cubic-bezier(.16,1,.3,1) both' },
+      stage: { position: 'relative', width: W, height: H, overflow: 'hidden', borderRadius: 8, background: '#EEF1F5' },
+      frame: { position: 'absolute', left: 0, top: 0, width: g.fw, height: g.fh, border: 0, pointerEvents: 'none', transformOrigin: '0 0', transform: 'translate(' + (-c.x * s).toFixed(2) + 'px,' + (-c.y * s).toFixed(2) + 'px) scale(' + s.toFixed(4) + ')' } };
+  }
+  fmt(ts) {
+    if (!ts) return '—';
+    const d = new Date(ts); if (isNaN(d)) return '—';
+    return d.toLocaleDateString(undefined, { month: 'short', day: 'numeric', year: 'numeric' }) + ' · ' + d.toLocaleTimeString(undefined, { hour: 'numeric', minute: '2-digit' });
+  }
+  icon(name, size, color) {
+    const node = window.lucide && window.lucide.icons && window.lucide.icons[name]; if (!node) return null;
+    const kids = (Array.isArray(node[2]) ? node[2] : node).map((c, i) => React.createElement(c[0], Object.assign({ key: i }, c[1])));
+    return React.createElement('svg', { width: size, height: size, viewBox: '0 0 24 24', fill: 'none', stroke: color, strokeWidth: 2, strokeLinecap: 'round', strokeLinejoin: 'round' }, kids);
+  }
+
+  renderVals() {
+    const s = this.state, q = s.q.trim().toLowerCase();
+    const scope = s.rows.filter(r => r.inGallery);
+    const list = q ? scope.filter(r => [r.brand, r.product, r.verticals.join(' '), r.known, r.goals.join(' '), r.measure.join(' '), r.comps.join(' ')].join(' ').toLowerCase().includes(q)) : scope;
+    const saving = s.saving, nDirty = Object.keys(s.dirty).length + Object.keys(s.copyDirty || {}).length;
+    const multi = (r, field, label, vals) => ({ key: r.key, field, aria: label, chips: vals, empty: !vals.length });
+    let pop = null;
+    if (s.pop) {
+      const r = s.rows.find(x => x.key === s.pop.k) || {}, cur = r[s.pop.f] || [];
+      const base = s.pop.f === 'goals' ? GOALS : s.pop.f === 'comps' ? s.components : this.measureOpts();
+      const opts = base.concat(cur.filter(v => !base.includes(v)));
+      pop = {
+        title: { goals: 'Campaign goals', measure: 'What we measure', comps: 'Components' }[s.pop.f] + ' · ' + (r.brand || ''),
+        canAdd: s.pop.f === 'measure',
+        style: { position: 'fixed', zIndex: 81, left: s.pop.left, width: s.pop.w, top: s.pop.top == null ? 'auto' : s.pop.top, bottom: s.pop.bottom == null ? 'auto' : s.pop.bottom, boxSizing: 'border-box', padding: 10, borderRadius: 14, border: '1px solid rgba(255,255,255,.1)', background: '#070B15', boxShadow: 'inset 0 1px 0 rgba(255,255,255,.06), 0 24px 60px rgba(0,0,0,.6)', animation: 'kx-rise 200ms cubic-bezier(.16,1,.3,1) both' },
+        opts: opts.map(v => { const on = cur.includes(v); return { v, on: String(on), check: on ? this.icon('Check', 13, '#001830') : null,
+          box: { display: 'grid', placeItems: 'center', width: 18, height: 18, flex: 'none', boxSizing: 'border-box', borderRadius: 5, border: '1.5px solid ' + (on ? '#00CCFF' : 'rgba(255,255,255,.4)'), background: on ? '#00CCFF' : 'transparent' } }; })
+      };
+    }
+    return {
+      gateLoading: s.gate === 'loading', gateSignin: s.gate === 'signin', gateOk: s.gate === 'ok',
+      signInHref: this.cloud ? this.cloud.route('/sign-in') : 'Sign In.dc.html',
+      syncLabel: s.gate !== 'ok' ? '' : saving ? 'Saving…' : s.noPerm ? 'Edits not saving' : nDirty ? nDirty + ' unsaved' : 'All changes saved',
+      toggleUndo: this.toggleUndo, closeUndo: this.closeUndo, undoTo: this.undoTo, undoOpen: !!s.undoOpen, undoOpenStr: String(!!s.undoOpen), hasSteps: this.hist.length > 0, undoCount: String(this.hist.length), undoDisabled: String(!this.hist.length), undoIcon: this.icon('Undo2', 15, 'currentColor'),
+      undoSteps: this.hist.map((st, i) => ({ i: String(i), label: st.label, was: this.wasText(st.kind === 'row' ? st.before[Object.keys(st.before)[0]] : st.before), when: this.agoText(st.at) })).reverse().slice(0, 25),
+      undoStyle: { display: 'inline-flex', alignItems: 'center', gap: 8, height: 44, padding: '0 18px 0 16px', borderRadius: 999, border: '1px solid ' + (this.hist.length ? 'rgba(0,204,255,.65)' : 'rgba(255,255,255,.14)'), background: this.hist.length ? 'rgba(0,60,110,.55)' : 'rgba(7,11,21,.92)', boxShadow: this.hist.length ? '0 0 24px rgba(0,204,255,.28)' : 'none', color: this.hist.length ? '#9CEBFF' : '#fff', fontSize: 14, fontWeight: 600, fontFamily: 'inherit', cursor: this.hist.length ? 'pointer' : 'default', opacity: this.hist.length ? 1 : .4, pointerEvents: this.hist.length ? 'auto' : 'none', backdropFilter: 'blur(14px)', transition: 'transform 200ms cubic-bezier(.16,1,.3,1), background 200ms, border-color 200ms, box-shadow 200ms, opacity 200ms' },
+      redo: this.redo, redoDisabled: String(!this.redoStack.length), redoIcon: this.icon('Redo2', 15, 'currentColor'),
+      redoStyle: { display: 'inline-flex', alignItems: 'center', gap: 8, height: 44, padding: '0 18px 0 16px', borderRadius: 999, border: '1px solid ' + (this.redoStack.length ? 'rgba(0,204,255,.65)' : 'rgba(255,255,255,.14)'), background: this.redoStack.length ? 'rgba(0,60,110,.55)' : 'rgba(7,11,21,.92)', boxShadow: this.redoStack.length ? '0 0 24px rgba(0,204,255,.28)' : 'none', color: this.redoStack.length ? '#9CEBFF' : '#fff', fontSize: 14, fontWeight: 600, fontFamily: 'inherit', cursor: this.redoStack.length ? 'pointer' : 'default', opacity: this.redoStack.length ? 1 : .4, pointerEvents: this.redoStack.length ? 'auto' : 'none', backdropFilter: 'blur(14px)', transition: 'transform 200ms cubic-bezier(.16,1,.3,1), background 200ms, border-color 200ms, box-shadow 200ms, opacity 200ms' },
+      saveAll: this.saveAll, saveDisabled: String(!nDirty || saving),
+      saveLabel: saving ? 'Saving…' : nDirty ? 'Save ' + nDirty + (nDirty === 1 ? ' change' : ' changes') : 'Saved',
+      saveStyle: { pointerEvents: 'auto', height: 44, padding: '0 26px', borderRadius: 999, border: nDirty ? 0 : '1px solid rgba(255,255,255,.14)', background: nDirty ? '#00CCFF' : 'rgba(7,11,21,.92)', color: nDirty ? '#001830' : 'rgba(255,255,255,.6)', fontSize: 14, fontWeight: 700, cursor: nDirty && !saving ? 'pointer' : 'default', boxShadow: nDirty ? '0 0 32px rgba(0,204,255,.35), 0 10px 24px rgba(0,0,0,.45)' : '0 10px 24px rgba(0,0,0,.45)', animation: nDirty && !saving ? 'kx-save-blink 1.8s ease-in-out infinite' : 'none', transition: 'all 200ms cubic-bezier(.16,1,.3,1)' },
+      wrapRef: this.wrapRef, barRef: this.barRef, barInnerRef: this.barInnerRef, onWrapScroll: this.onWrapScroll, onAnyWrapScroll: this.onAnyWrapScroll, onBarScroll: this.onBarScroll,
+      ...(() => { const big = s.popped ? null : this.bigVals(); return { popOut: this.popOut, popIcon: this.icon('ExternalLink', 13, 'currentColor'), bigOpen: !!big, big: big || {}, onThumbIn: this.onThumbIn, closeBig: this.closeBig, onResizeStart: this.onResizeStart, resetBigSize: this.resetBigSize, resizeIcon: this.icon('MoveDiagonal', 13, 'currentColor'), stopDrag: this.stopDrag, closeSmall: this.icon('X', 14, 'currentColor'), activeKey: (s.big || {}).k, onDragStart: this.onDragStart, resetBigPos: this.resetBigPos, gripIcon: this.icon('GripVertical', 14, 'currentColor') }; })(),
+      copySections: this.pc ? this.pc.SECTIONS.map(sec => { const cards = s.copyCards.filter(c => c.section === sec.id); const cols = '52px 170px 190px 90px 200px ' + sec.fields.map(([k]) => (k === 'eyebrow' ? '200px' : k === 'title' ? '260px' : '300px')).join(' '); const minW = 52 + 170 + 190 + 90 + 200 + sec.fields.reduce((n, [k]) => n + (k === 'eyebrow' ? 200 : k === 'title' ? 260 : 300), 0); return { title: sec.title, count: cards.length + (cards.length === 1 ? ' ad' : ' ads'), headers: ['#', 'Status', 'Last Edited', 'Preview', 'Ad'].concat(sec.fields.map(f => f[1])), gridStyle: 'display: grid; grid-template-columns: ' + cols + ';', tableStyle: { minWidth: minW }, cards: cards.map((c, ci) => { const st = (s.copyStatus || {})[c.id] || ''; return {
+        num: String(ci + 1), isSet: !!c.allSet, notSet: !c.allSet, setBy: c.setBy || '',
+        setIcon: this.icon(c.allSet ? 'CircleCheck' : 'CircleDashed', 20, c.allSet ? '#4ADE80' : '#FBBF24'),
+        setBadge: { display: 'grid', placeItems: 'center', width: 26, height: 26, flex: 'none', borderRadius: 999, background: c.allSet ? 'rgba(74,222,128,.14)' : 'rgba(251,191,36,.14)' },
+        id: c.id, label: c.label, frame: c.frame, hasFrame: !!c.frame, noFrame: !c.frame,
+        editedAt: c.updatedAt ? this.fmt(c.updatedAt) : '-', editedBy: c.updatedAt ? (c.updatedBy || '') : '',
+        status: st, statusColor: st === 'Saved' ? '#BEF264' : st === 'Unsaved' ? '#FCD34D' : 'transparent',
+        edited: c.updatedAt ? 'Edited ' + this.fmt(c.updatedAt) + (c.updatedBy ? ' · ' + c.updatedBy : '') : 'Using the default copy',
+        fields: sec.fields.map(([k, label]) => ({ k, label, v: c.values[k] || '', rows: k === 'title' || k === 'eyebrow' ? 2 : 3 })) }; }) }; }).filter(x => x.cards.length) : [],
+      onCopyEdit: this.onCopyEdit, openCopyBig: this.openCopyBig, markCopySet: this.markCopySet, redoCopySet: this.redoCopySet,
+      saveErrOn: !!(s.err || s.noPerm), saveErrText: s.err || (s.noPerm ? 'Not saved: your account can’t edit creatives yet. An admin needs to run the Supabase update.' : ''),
+      noPerm: s.noPerm, hasErr: !!s.err, err: s.err, q: s.q, onSearch: this.onSearch,
+      countLabel: list.length + (list.length === 1 ? ' creative' : ' creatives'),
+      viewTabs: [['shown', 'In the gallery'], ['hidden', 'Hidden from gallery'], ['all', 'All']].map(([id, label]) => { const n = s.rows.filter(r => id === 'all' || (id === 'shown' ? r.inGallery : !r.inGallery)).length, on = s.view === id; return { id, label: label + ' · ' + n, on: String(on), style: { height: 36, padding: '0 16px', borderRadius: 999, border: 0, background: on ? 'rgba(0,204,255,.16)' : 'transparent', boxShadow: on ? 'inset 0 0 0 1px rgba(0,204,255,.55)' : 'none', color: on ? '#fff' : 'rgba(255,255,255,.7)', fontSize: 13, fontWeight: 600, cursor: 'pointer', transition: 'all 200ms cubic-bezier(.16,1,.3,1)' } }; }),
+      pickView: e => this.setState({ view: e.currentTarget.dataset.v }),
+      headers: ['#', 'Status', 'Last Edited', 'Brand', 'Celtra Preview Link', 'Preview', 'Ad Product', 'Vertical', 'Known For', 'Campaign Goals', 'What We Measure', 'Components'],
+      productOpts: PRODUCTS, verticalOpts: s.verticals, openIcon: this.icon('ExternalLink', 15, 'currentColor'),
+      groups: PRODUCTS.concat(Array.from(new Set(list.map(r => r.product))).filter(x => !PRODUCTS.includes(x))).map(prod => ({ label: prod, rows: list.filter(r => r.product === prod) })).filter(g => g.rows.length).map(g => ({ label: g.label, count: g.rows.length + (g.rows.length === 1 ? ' creative' : ' creatives'), rows: g.rows.map((r, i) => {
+        const st = s.status[r.key] || '';
+        return {
+          ...this.thumb(r),
+          num: String(i + 1), key: r.key, isSet: !!r.allSet, notSet: !r.allSet, setBy: r.setBy || '',
+          setIcon: this.icon(r.allSet ? 'CircleCheck' : 'CircleDashed', 20, r.allSet ? '#4ADE80' : '#FBBF24'),
+          setBadge: { display: 'grid', placeItems: 'center', width: 26, height: 26, flex: 'none', borderRadius: 999, background: r.allSet ? 'rgba(74,222,128,.14)' : 'rgba(251,191,36,.14)' }, brand: r.brand, link: r.link, hasLink: /^https?:/.test(r.link), isZip: r.isZip,
+          product: r.product, vertical: r.verticals[0] || '', known: r.known,
+          multis: [multi(r, 'goals', 'Campaign goals', r.goals), multi(r, 'measure', 'What we measure', r.measure), multi(r, 'comps', 'Components', r.comps)],
+          status: st, statusColor: st === 'Saved' ? '#BEF264' : st === 'Saving…' ? '#00CCFF' : st === 'Unsaved' ? '#FCD34D' : st ? '#FCA5A5' : 'transparent',
+          editedAt: r.updatedBy ? this.fmt(r.updatedAt) : '-', editedBy: r.updatedBy || ''
+        };
+      }) })),
+      markSet: this.markSet, redoSet: this.redoSet, onText: this.onText, onFlush: this.onFlush, onPick: this.onPick, openPop: this.openPop,
+      popOpen: !!pop, pop: pop || { opts: [] }, closePop: this.closePop, toggleOpt: this.toggleOpt,
+      newOpt: s.newOpt, onNewOpt: this.onNewOpt, onNewKey: this.onNewKey, addOpt: this.addOpt
+    };
+  }
+}
+</script>
+</body>
+</html>

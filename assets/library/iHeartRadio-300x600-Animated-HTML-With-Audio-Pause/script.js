@@ -1,0 +1,16 @@
+"use strict";
+const ad=document.getElementById('ad');
+const tracks=[{"id": "o281", "frames": [{"offset": 0.02, "easing": "ease-out", "top": "19.32%"}, {"offset": 0.07, "easing": "ease-out", "top": "30.56%"}, {"offset": 0.96, "top": "30.56%"}, {"offset": 1, "top": "30.56%"}]}, {"id": "o300", "frames": [{"offset": 0.03, "easing": "ease-out", "top": "19.29%"}, {"offset": 0.08, "easing": "ease-out", "top": "44.40%"}, {"offset": 0.96, "top": "44.40%"}, {"offset": 1, "top": "44.40%"}]}, {"id": "o427", "frames": [{"offset": 0.055, "easing": "ease-out", "top": "70.84%", "opacity": 0}, {"offset": 0.105, "easing": "ease-out", "top": "67.50%", "opacity": 1}, {"offset": 0.96, "top": "67.50%", "opacity": 1}, {"offset": 1, "top": "67.50%", "opacity": 1}]}, {"id": "o464", "frames": [{"offset": 0.065, "easing": "ease-out", "top": "81.67%", "opacity": 0}, {"offset": 0.115, "easing": "ease-out", "opacity": 1, "top": "78.33%"}, {"offset": 0.96, "top": "78.33%", "opacity": 1}, {"offset": 1, "top": "78.33%", "opacity": 1}]}, {"id": "o484", "frames": [{"offset": 0.09, "easing": "ease-out", "opacity": 0}, {"offset": 0.14, "easing": "ease-out", "opacity": 1}, {"offset": 0.96, "opacity": 1}, {"offset": 1, "opacity": 1}]}];
+const animations=tracks.map(t=>document.getElementById(t.id).animate(t.frames,{duration:10000,iterations:Infinity,fill:'both'}));
+const audio=new Map([130,131,132].map(id=>[String(id),new Audio('assets/'+id+'.mp3')]));
+const pauseButton=document.getElementById('pause');
+const status=document.getElementById('status');
+let paused=false,active=null,resumeAudio=false;
+function report(name,detail={}){ad.dispatchEvent(new CustomEvent('adinteraction',{bubbles:true,detail:{name,...detail}}));}
+function updateButton(){pauseButton.setAttribute('aria-pressed',String(paused));pauseButton.setAttribute('aria-label',paused?'Resume animation and audio':'Pause animation and audio');document.getElementById('pause-label').textContent=paused?'Resume':'Pause';document.getElementById('pause-icon').textContent=paused?'▶':'Ⅱ';}
+function playActive(){if(!active)return;active.play().catch(()=>{status.textContent='Audio could not play. Click a podcast to try again.';});}
+pauseButton.addEventListener('click',()=>{paused=!paused;if(paused){resumeAudio=!!active&&!active.paused;audio.forEach(a=>a.pause());animations.forEach(a=>a.pause());}else{animations.forEach(a=>a.play());if(resumeAudio)playActive();}updateButton();report(paused?'pause':'resume');});
+document.querySelectorAll('.podcast').forEach(button=>{button.addEventListener('click',()=>{const next=audio.get(button.dataset.audio);audio.forEach(a=>{if(a!==next)a.pause();});active=next;if(active.ended)active.currentTime=0;if(paused){paused=false;animations.forEach(a=>a.play());updateButton();}resumeAudio=true;playActive();status.textContent=button.getAttribute('aria-label');report('podcast_select',{podcast:button.dataset.audio});});});
+audio.forEach(a=>{a.preload='auto';a.addEventListener('ended',()=>{if(active===a){resumeAudio=false;status.textContent='Preview finished. Select a podcast to listen.';}});});
+document.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>report('clickout',{url:a.href})));
+window.addEventListener('pagehide',()=>audio.forEach(a=>a.pause()));

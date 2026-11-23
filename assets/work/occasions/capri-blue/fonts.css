@@ -1,0 +1,12 @@
+@font-face {
+  font-family: 'Ubuntu';
+  font-style: normal;
+  font-weight: 400;
+  src: url(assets/ubuntu-0.woff2) format('truetype');
+}
+@font-face {
+  font-family: 'Ubuntu';
+  font-style: normal;
+  font-weight: 700;
+  src: url(assets/ubuntu-1.woff2) format('truetype');
+}

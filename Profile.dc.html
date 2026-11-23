@@ -1,0 +1,1092 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<script src="kx-theme.js"></script>
+<link rel="icon" type="image/svg+xml" href="assets/kortx-logomark-bright-blue.svg">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Profile · KORTX Creative Labs</title>
+<link rel="preconnect" href="https://fdjfsimjilicmfsiijyi.supabase.co" crossorigin>
+<link rel="preconnect" href="https://esm.sh" crossorigin>
+<link rel="stylesheet" href="_ds/kortx-design-guide-2026-5bc7ff27-9282-4218-938a-63d43f555d47/tokens/fonts.css">
+<link rel="stylesheet" href="_ds/kortx-design-guide-2026-5bc7ff27-9282-4218-938a-63d43f555d47/tokens/colors.css">
+<link rel="stylesheet" href="_ds/kortx-design-guide-2026-5bc7ff27-9282-4218-938a-63d43f555d47/tokens/typography.css">
+<link rel="stylesheet" href="_ds/kortx-design-guide-2026-5bc7ff27-9282-4218-938a-63d43f555d47/tokens/spacing.css">
+<link rel="stylesheet" href="_ds/kortx-design-guide-2026-5bc7ff27-9282-4218-938a-63d43f555d47/tokens/radius.css">
+<link rel="stylesheet" href="_ds/kortx-design-guide-2026-5bc7ff27-9282-4218-938a-63d43f555d47/tokens/elevation.css">
+<link rel="stylesheet" href="_ds/kortx-design-guide-2026-5bc7ff27-9282-4218-938a-63d43f555d47/tokens/motion.css">
+<link rel="stylesheet" href="_ds/kortx-design-guide-2026-5bc7ff27-9282-4218-938a-63d43f555d47/tokens/base.css">
+<link rel="stylesheet" href="_ds/kortx-design-guide-2026-5bc7ff27-9282-4218-938a-63d43f555d47/styles.css">
+<script src="_ds/kortx-design-guide-2026-5bc7ff27-9282-4218-938a-63d43f555d47/_ds_bundle.js"></script>
+<style>
+  html, body { margin: 0; padding: 0; background: #000509; }
+  body { font-family: var(--font-body, Inter, Helvetica, sans-serif); -webkit-font-smoothing: antialiased; }
+  a { color: var(--blue-400); text-decoration: none; }
+  a:hover { color: var(--blue-300); }
+  input, select, textarea, button { font-family: inherit; }
+  ::placeholder { color: rgba(255,255,255,.38); }
+  input[type="date"]::-webkit-calendar-picker-indicator { filter: invert(1); opacity: .6; }
+  [data-focusable]:focus-visible { outline: none; border-color: var(--blue-400) !important; box-shadow: 0 0 0 3px rgba(0,204,255,.55) !important; }
+  [data-space-fade] { --fx: 13%; --fy: 15%;
+    -webkit-mask-image: linear-gradient(90deg, transparent 0%, #000 var(--fx), #000 calc(100% - var(--fx)), transparent 100%), linear-gradient(180deg, transparent 0%, #000 var(--fy), #000 calc(100% - var(--fy)), transparent 100%);
+    mask-image: linear-gradient(90deg, transparent 0%, #000 var(--fx), #000 calc(100% - var(--fx)), transparent 100%), linear-gradient(180deg, transparent 0%, #000 var(--fy), #000 calc(100% - var(--fy)), transparent 100%);
+    -webkit-mask-composite: source-in; mask-composite: intersect; }
+  @keyframes kx-rise { 0% { opacity: 0; transform: translateY(12px) } 100% { opacity: 1; transform: translateY(0) } }
+  @media (prefers-reduced-motion: reduce) { *, *::before, *::after { animation-duration: .001ms !important; transition-duration: .001ms !important; } }
+  @keyframes kx-orbit { 0% { transform: rotate(0) translateX(26px) } 100% { transform: rotate(360deg) translateX(26px) } }
+</style>
+</helmet>
+
+<div style="position: relative; min-height: 100vh; background: #000509; color: #fff; overflow-x: clip; isolation: isolate;">
+  <div aria-hidden="true" style="position: fixed; inset: 0; z-index: 0; pointer-events: none; overflow: hidden;">
+    <div style="position: absolute; top: -22vh; right: -14vw; width: 78vw; height: 78vw; border-radius: 50%; background: radial-gradient(circle at 50% 50%, rgba(0,204,255,.14), rgba(0,204,255,.04) 40%, transparent 68%); filter: blur(24px);"></div>
+    <div style="position: absolute; bottom: -34vh; left: -18vw; width: 72vw; height: 72vw; border-radius: 50%; background: radial-gradient(circle at 50% 50%, rgba(109,94,240,.12), rgba(109,94,240,.03) 42%, transparent 70%); filter: blur(30px);"></div>
+    <div style="position: absolute; left: 50%; top: 40%; width: min(150vh, 130vw); aspect-ratio: 1 / 1; transform: translate(-50%, -50%); border-radius: 50%; border: 1px solid rgba(255,255,255,.06);"></div>
+    <div style="position: absolute; inset: 0; background-image: radial-gradient(1.4px 1.4px at 12% 18%, rgba(255,255,255,.8), transparent), radial-gradient(1.2px 1.2px at 78% 12%, rgba(255,255,255,.7), transparent), radial-gradient(1.6px 1.6px at 64% 72%, rgba(255,255,255,.7), transparent), radial-gradient(1.1px 1.1px at 28% 84%, rgba(255,255,255,.6), transparent), radial-gradient(1.3px 1.3px at 90% 58%, rgba(255,255,255,.7), transparent);"></div>
+  </div>
+
+  <header style="position: sticky; top: 0; z-index: 60; display: flex; align-items: center; gap: 20px; flex-wrap: wrap; min-height: 72px; padding: 12px clamp(20px, 4vw, 56px); background: transparent;">
+    <div aria-hidden="true" style="position: absolute; left: 0; right: 0; top: 0; height: 150px; pointer-events: none; z-index: -1; background: linear-gradient(180deg, rgba(0,5,9,.94) 0%, rgba(0,5,9,.82) 38%, rgba(0,5,9,.45) 66%, rgba(0,5,9,.12) 86%, rgba(0,5,9,0) 100%); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); -webkit-mask-image: linear-gradient(180deg, #000 0%, #000 45%, transparent 100%); mask-image: linear-gradient(180deg, #000 0%, #000 45%, transparent 100%);"></div>
+    <a href="/" aria-label="KORTX Creative Labs" style="position: relative; display: grid; place-items: center; width: 46px; height: 46px; flex: none;">
+      <span aria-hidden="true" style="position: absolute; inset: 0; border-radius: 50%; background: radial-gradient(circle at 50% 50%, rgba(0,204,255,.24), transparent 68%);"></span>
+      <span aria-hidden="true" style="position: absolute; inset: 3px; border: 1px solid rgba(0,204,255,.30); border-radius: 50%;"></span>
+      <span aria-hidden="true" style="position: absolute; inset: 8px; border: 1px solid rgba(138,124,248,.28); border-radius: 50%; transform: rotate(18deg) scaleY(.6);"></span>
+      <img src="assets/kortx-logomark-bright-blue.svg" alt="KORTX" style="position: relative; width: 20px; display: block;">
+      <span aria-hidden="true" style="position: absolute; top: 50%; left: 50%; width: 4px; height: 4px; margin: -2px; border-radius: 50%; background: var(--blue-300, #33D6FF); box-shadow: 0 0 9px rgba(0,204,255,.9); animation: kx-orbit 18s linear infinite;"></span>
+    </a>
+    <dc-import name="Site Nav" current="profile" hint-size="200px,40px"></dc-import>
+    <div style="flex: 1;"></div>
+    <a href="Proposal Builder.dc.html" data-focusable="1" style="padding: 9px 16px; border-radius: 999px; background: var(--blue-400); color: #001830; font-size: 13px; font-weight: 700;" style-hover="background: var(--blue-300); color: #001830">New Landing Page</a>
+    <x-import component-from-global-scope="KORTXDesignSystem_a22685.Button" variant="ghost" size="sm" on-click="{{ onAuthButton }}" hint-size="auto,32px">{{ authLabel }}</x-import>
+    <dc-import name="User Menu" current="proposals" hint-size="40px,40px" style="margin-left: auto; order: 99;"></dc-import>
+  </header>
+
+  <main style="position: relative; z-index: 1; max-width: 1280px; margin: 0 auto; padding: clamp(28px, 4vw, 52px) clamp(20px, 4vw, 56px) 96px;">
+
+    <sc-if value="{{ signedOut }}" hint-placeholder-val="{{ false }}">
+      <form onSubmit="{{ submitSignIn }}" aria-label="Sign in" style="max-width: 420px; margin: 8vh auto 0; display: flex; flex-direction: column; gap: 14px; padding: 28px; border-radius: 16px; border: 1px solid rgba(0,204,255,.3); background: #070B15; box-shadow: 0 30px 70px rgba(0,0,0,.6), 0 0 50px rgba(0,204,255,.1);">
+        <div style="font-size: 11px; font-weight: 600; letter-spacing: .18em; text-transform: uppercase; color: var(--lime-300);">KORTX Team Sign In</div>
+        <div style="font-size: 24px; font-weight: 700; letter-spacing: -.02em;">Sign in to see your profile.</div>
+        <input data-focusable="1" type="email" data-field="authEmail" value="{{ authEmail }}" onChange="{{ onAuthField }}" placeholder="you@kortx.io" autocomplete="email" style="height: 42px; padding: 0 12px; border-radius: 8px; border: 1px solid rgba(255,255,255,.14); background: rgba(0,5,9,.6); color: #fff; font-size: 14px; outline: none;">
+        <input data-focusable="1" type="password" data-field="authPass" value="{{ authPass }}" onChange="{{ onAuthField }}" placeholder="Password" autocomplete="current-password" style="height: 42px; padding: 0 12px; border-radius: 8px; border: 1px solid rgba(255,255,255,.14); background: rgba(0,5,9,.6); color: #fff; font-size: 14px; outline: none;">
+        <sc-if value="{{ authErr }}" hint-placeholder-val="{{ false }}"><div role="alert" style="font-size: 12px; color: #F0B4FF;">{{ authErr }}</div></sc-if>
+        <button type="submit" data-focusable="1" style="height: 44px; border-radius: 999px; border: 0; background: var(--blue-400); color: #001830; font-size: 14px; font-weight: 700; cursor: pointer;">Sign In</button>
+      </form>
+    </sc-if>
+
+    <sc-if value="{{ signedIn }}" hint-placeholder-val="{{ false }}">
+      <div style="animation: kx-rise 600ms cubic-bezier(.16,1,.3,1) both;">
+
+        <!-- IDENTITY -->
+        <section data-block="Profile · Identity" aria-label="Your profile" style="display: flex; align-items: center; gap: clamp(18px, 3vw, 32px); flex-wrap: wrap;">
+          <div style="position: relative; width: 112px; height: 112px; flex: none;">
+            <div aria-hidden="true" style="position: absolute; inset: -14px; border-radius: 50%; background: radial-gradient(closest-side, rgba(0,204,255,.35), transparent 75%); filter: blur(10px);"></div>
+            <div style="position: relative; width: 100%; height: 100%; border-radius: 50%; overflow: hidden; border: 1px solid rgba(0,204,255,.5); background: #0A1120; display: grid; place-items: center; font-size: 40px; font-weight: 700; color: var(--blue-300);">
+              {{ headshotEl }}
+              <sc-if value="{{ noHeadshot }}" hint-placeholder-val="{{ true }}"><span>{{ initial }}</span></sc-if>
+            </div>
+          </div>
+          <div style="min-width: 0; flex: 1 1 280px;">
+            <div style="font-size: 11px; font-weight: 600; letter-spacing: .18em; text-transform: uppercase; color: var(--lime-300);">{{ roleLabel }}</div>
+            <h1 style="margin: 6px 0 0; font-size: clamp(28px, 3.6vw, 44px); font-weight: 700; letter-spacing: -.03em; line-height: 1.05;">{{ displayName }}</h1>
+            <div style="margin-top: 6px; font-size: 14px; color: rgba(255,255,255,.65);">{{ subline }}</div>
+          </div>
+          <div style="display: flex; gap: 12px; flex-wrap: wrap;">
+            <sc-for list="{{ stats }}" as="st" hint-placeholder-count="3">
+              <div style="min-width: 120px; padding: 14px 16px; border-radius: 12px; border: 1px solid rgba(255,255,255,.08); background: #070B15;">
+                <div style="font-size: 26px; font-weight: 700; letter-spacing: -.02em;">{{ st.v }}</div>
+                <div style="margin-top: 2px; font-size: 12px; color: rgba(255,255,255,.55);">{{ st.k }}</div>
+              </div>
+            </sc-for>
+          </div>
+        </section>
+
+        <!-- TABS -->
+        <div role="tablist" aria-label="Profile sections" style="display: flex; gap: 6px; margin-top: 36px; border-bottom: 1px solid rgba(255,255,255,.08);">
+          <sc-for list="{{ tabs }}" as="t" hint-placeholder-count="3">
+            <button type="button" role="tab" data-focusable="1" data-tab="{{ t.id }}" aria-selected="{{ t.on }}" onClick="{{ onTab }}" style="{{ t.style }}">{{ t.label }}</button>
+          </sc-for>
+        </div>
+
+        <!-- MY SITES -->
+        <sc-if value="{{ onSites }}" hint-placeholder-val="{{ true }}">
+            <div data-block="My Builds · Filters" role="search" aria-label="Filter builds" style="margin-top: 24px; display: flex; flex-wrap: wrap; align-items: end; gap: 12px; padding: 14px; border-radius: 12px; border: 1px solid rgba(0,204,255,.24); background: rgba(255,255,255,.045); box-shadow: inset 0 1px 0 rgba(0,204,255,.28);">
+              <label style="display: flex; flex-direction: column; gap: 5px; flex: 1 1 220px; min-width: 0;"><span style="font-size: 11px; font-weight: 600; color: rgba(255,255,255,.6);">Search</span>
+                <input data-focusable="1" type="search" data-f="q" value="{{ f.q }}" onInput="{{ onFilter }}" placeholder="Search brand, agency, campaign or email" style="height: 38px; width: 100%; padding: 0 12px; border-radius: 8px; border: 1px solid rgba(255,255,255,.14); background: rgba(0,5,9,.6); color: #fff; font-size: 13px;" style-focus="outline: none; border-color: #00CCFF; box-shadow: 0 0 0 3px rgba(0,204,255,.55)"></label>
+              <label style="display: flex; flex-direction: column; gap: 5px;"><span style="font-size: 11px; font-weight: 600; color: rgba(255,255,255,.6);">From</span>
+                <input data-focusable="1" type="date" data-f="from" value="{{ f.from }}" onChange="{{ onFilter }}" style="height: 38px; padding: 0 10px; border-radius: 8px; border: 1px solid rgba(255,255,255,.14); background: rgba(0,5,9,.6); color: #fff; font-size: 13px; color-scheme: dark;"></label>
+              <label style="display: flex; flex-direction: column; gap: 5px;"><span style="font-size: 11px; font-weight: 600; color: rgba(255,255,255,.6);">To</span>
+                <input data-focusable="1" type="date" data-f="to" value="{{ f.to }}" onChange="{{ onFilter }}" style="height: 38px; padding: 0 10px; border-radius: 8px; border: 1px solid rgba(255,255,255,.14); background: rgba(0,5,9,.6); color: #fff; font-size: 13px; color-scheme: dark;"></label>
+              <label style="display: flex; flex-direction: column; gap: 5px;"><span style="font-size: 11px; font-weight: 600; color: rgba(255,255,255,.6);">Type</span>
+                <select data-focusable="1" data-f="type" value="{{ f.type }}" onChange="{{ onFilter }}" style="height: 38px; min-width: 150px; padding: 0 10px; border-radius: 8px; border: 1px solid rgba(255,255,255,.14); background: rgba(0,5,9,.6); color: #fff; font-size: 13px; appearance: none; -webkit-appearance: none; padding-right: 36px; background-image: url(&quot;data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' %76iew%42ox='0 0 24 24' fill='none' stroke='%2300CCFF' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E&quot;); background-repeat: no-repeat; background-position: right 12px center; background-size: 14px 14px; cursor: pointer;">
+                  <option value="">All</option><option value="page">Pages</option><option value="mock">Mocks</option>
+                </select></label>
+              <label style="display: flex; flex-direction: column; gap: 5px;"><span style="font-size: 11px; font-weight: 600; color: rgba(255,255,255,.6);">Brand</span>
+                <select data-focusable="1" data-f="brand" value="{{ f.brand }}" onChange="{{ onFilter }}" style="height: 38px; min-width: 150px; padding: 0 10px; border-radius: 8px; border: 1px solid rgba(255,255,255,.14); background: #070B15; color: #fff; font-size: 13px; appearance: none; -webkit-appearance: none; padding-right: 36px; background-image: url(&quot;data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' %76iew%42ox='0 0 24 24' fill='none' stroke='%2300CCFF' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E&quot;); background-repeat: no-repeat; background-position: right 12px center; background-size: 14px 14px; cursor: pointer;">
+                  <option value="">All brands</option>
+                  <sc-for list="{{ brandOptions }}" as="b" hint-placeholder-count="0"><option value="{{ b }}">{{ b }}</option></sc-for>
+                </select></label>
+              <label style="display: flex; flex-direction: column; gap: 5px;"><span style="font-size: 11px; font-weight: 600; color: rgba(255,255,255,.6);">Agency</span>
+                <select data-focusable="1" data-f="agency" value="{{ f.agency }}" onChange="{{ onFilter }}" style="height: 38px; min-width: 150px; padding: 0 10px; border-radius: 8px; border: 1px solid rgba(255,255,255,.14); background: #070B15; color: #fff; font-size: 13px; appearance: none; -webkit-appearance: none; padding-right: 36px; background-image: url(&quot;data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' %76iew%42ox='0 0 24 24' fill='none' stroke='%2300CCFF' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E&quot;); background-repeat: no-repeat; background-position: right 12px center; background-size: 14px 14px; cursor: pointer;">
+                  <option value="">All agencies</option>
+                  <sc-for list="{{ agencyOptions }}" as="a" hint-placeholder-count="0"><option value="{{ a }}">{{ a }}</option></sc-for>
+                </select></label>
+              <label style="display: flex; flex-direction: column; gap: 5px;"><span style="font-size: 11px; font-weight: 600; color: rgba(255,255,255,.6);">Created By</span>
+                <select data-focusable="1" data-f="by" value="{{ f.by }}" onChange="{{ onFilter }}" style="height: 38px; min-width: 150px; padding: 0 10px; border-radius: 8px; border: 1px solid rgba(255,255,255,.14); background: #070B15; color: #fff; font-size: 13px; appearance: none; -webkit-appearance: none; padding-right: 36px; background-image: url(&quot;data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' %76iew%42ox='0 0 24 24' fill='none' stroke='%2300CCFF' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E&quot;); background-repeat: no-repeat; background-position: right 12px center; background-size: 14px 14px; cursor: pointer;">
+                  <option value="">Everyone</option>
+                  <sc-for list="{{ byOptions }}" as="o" hint-placeholder-count="0"><option value="{{ o }}">{{ o }}</option></sc-for>
+                </select></label>
+              <button type="button" data-focusable="1" onClick="{{ clearFilters }}" style="height: 38px; padding: 0 12px; border: 0; background: transparent; color: rgba(255,255,255,.7); font-size: 13px; cursor: pointer;">Clear</button>
+              <span style="flex: 1;"></span>
+              <span style="font-size: 12px; color: rgba(255,255,255,.6); align-self: center;">{{ filterCount }}</span>
+            </div>
+          <section data-block="Profile · My sites" aria-label="Proposals you generated" style="margin-top: 20px;">
+
+            <sc-if value="{{ hasSampleNote }}" hint-placeholder-val="{{ false }}">
+              <div style="margin-top: 12px; padding: 10px 14px; border-radius: 10px; border: 1px solid rgba(190,242,100,.35); background: rgba(190,242,100,.05); font-size: 12px; color: rgba(255,255,255,.8);">{{ sampleNote }}</div>
+            </sc-if>
+            <div data-block="My Builds · Builds card" style="margin-top: 14px; border-radius: 12px; border: 1px solid rgba(255,255,255,.08); background: #070B15; box-shadow: inset 0 1px 0 rgba(255,255,255,.05), 0 20px 50px rgba(0,0,0,.45); overflow: hidden;">
+              <div role="tablist" aria-label="Build type" style="display: flex; gap: 4px; padding: 0 12px; border-bottom: 1px solid rgba(255,255,255,.08);">
+                <button type="button" role="tab" data-focusable="1" aria-selected="{{ tabPagesOn }}" onClick="{{ showPagesTab }}" style="{{ tabPagesStyle }}" style-hover="color: #fff">Pages</button>
+                <button type="button" role="tab" data-focusable="1" aria-selected="{{ tabMocksOn }}" onClick="{{ showMocksTab }}" style="{{ tabMocksStyle }}" style-hover="color: #fff">Mocks</button>
+                <button type="button" role="tab" data-focusable="1" aria-selected="{{ tabFbOn }}" onClick="{{ showFbTab }}" style="{{ tabFbStyle }}" style-hover="color: #fff">Feedback</button>
+              </div>
+              <sc-if value="{{ onFbTab }}" hint-placeholder-val="{{ false }}">
+                <div data-block="My Builds · Feedback" style="overflow-x: auto;">
+                  <div style="min-width: 1000px;">
+                    <div style="display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr) 96px minmax(0, 1.4fr) 150px 110px 84px 130px; gap: 12px; padding: 12px 18px; font-size: 11px; font-weight: 600; letter-spacing: .12em; text-transform: uppercase; color: rgba(255,255,255,.5); border-bottom: 1px solid rgba(255,255,255,.07);">
+                      <span>Agency</span><span>Brand</span><span>Created by</span><span>Campaign</span><span>Status</span><span>Created</span><span>Time</span><span></span>
+                    </div>
+                    <sc-for list="{{ fbRows }}" as="fb" hint-placeholder-count="0">
+                      <div style="display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr) 96px minmax(0, 1.4fr) 150px 110px 84px 130px; gap: 12px; align-items: center; padding: 14px 18px; border-bottom: 1px solid rgba(255,255,255,.05); font-size: 13px;">
+                        <span style="min-width: 0; color: rgba(255,255,255,.85); white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">{{ fb.agency }}</span>
+                        <span style="min-width: 0; font-weight: 600; color: #fff; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">{{ fb.brand }}</span>
+                        <span style="min-width: 0; color: rgba(255,255,255,.8); white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">{{ fb.by }}</span>
+                        <span title="{{ fb.campaign }}" style="min-width: 0; color: #fff; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">{{ fb.campaign }}</span>
+                        <span style="{{ fb.statusStyle }}">{{ fb.status }}</span>
+                        <span style="color: rgba(255,255,255,.7);">{{ fb.date }}</span>
+                        <span style="color: rgba(255,255,255,.7); white-space: nowrap;">{{ fb.time }}</span>
+                        <span style="display: flex; justify-content: flex-end;"><a href="{{ fb.url }}" style="padding: 5px 12px; border-radius: 999px; border: 1px solid rgba(0,204,255,.35); background: rgba(0,204,255,.06); color: #fff; font-size: 12px; font-weight: 600; white-space: nowrap; transition: all 200ms cubic-bezier(.16,1,.3,1);" style-hover="transform: translateY(-2px); background: rgba(109,94,240,.16); border-color: rgba(167,139,250,.6); box-shadow: 0 0 32px rgba(109,94,240,.55); color: #fff" style-active="transform: scale(.985)">Go to Preview</a></span>
+                      </div>
+                    </sc-for>
+                  </div>
+                </div>
+                <sc-if value="{{ fbEmpty }}" hint-placeholder-val="{{ false }}">
+                  <div style="padding: 48px 18px; text-align: center;">
+                    <div style="font-size: 16px; font-weight: 600;">No feedback reviews yet</div>
+                    <div style="margin-top: 6px; font-size: 13px; color: rgba(255,255,255,.6);">Import a Celtra share link on Creative Feedback and it appears here.</div>
+                  </div>
+                </sc-if>
+              </sc-if>
+              <sc-if value="{{ notFbTab }}" hint-placeholder-val="{{ true }}">
+              <div data-block="My Builds · Bulk actions" style="display: flex; flex-wrap: wrap; align-items: center; gap: 10px; padding: 12px 18px; border-bottom: 1px solid rgba(255,255,255,.07);">
+                <span style="font-size: 12.5px; font-weight: 600; color: rgba(255,255,255,.75);">{{ bSelLabel }}</span>
+                <button type="button" data-focusable="1" disabled="{{ bNoSel }}" onClick="{{ bHide }}" style="padding: 6px 14px; border-radius: 999px; font-size: 12.5px; font-weight: 600; white-space: nowrap; color: #fff; cursor: pointer; transition: all 200ms cubic-bezier(.16,1,.3,1); border: 1px solid rgba(0,204,255,.45); background: rgba(0,204,255,.08);" style-disabled="opacity: .4; cursor: not-allowed" style-hover="transform: translateY(-2px); background: rgba(109,94,240,.16); border-color: rgba(167,139,250,.6); box-shadow: 0 0 32px rgba(109,94,240,.55); color: #fff" style-active="transform: scale(.985)">{{ hideSelLabel }}</button>
+                <button type="button" data-focusable="1" disabled="{{ bNoSel }}" onClick="{{ bDelete }}" style="padding: 6px 14px; border-radius: 999px; font-size: 12.5px; font-weight: 600; white-space: nowrap; color: #fff; cursor: pointer; transition: all 200ms cubic-bezier(.16,1,.3,1); border: 1px solid rgba(214,125,240,.5); background: rgba(214,125,240,.08);" style-disabled="opacity: .4; cursor: not-allowed" style-hover="transform: translateY(-2px); background: rgba(109,94,240,.16); border-color: rgba(167,139,250,.6); box-shadow: 0 0 32px rgba(109,94,240,.55); color: #fff" style-active="transform: scale(.985)">{{ bDeleteLabel }}</button>
+                <span style="font-size: 12px; color: rgba(255,255,255,.6);">{{ convMsg }}</span>
+                <span style="flex: 1;"></span>
+                <label style="display: inline-flex; align-items: center; gap: 6px; font-size: 12px; font-weight: 600; color: rgba(255,255,255,.75); white-space: nowrap; cursor: pointer;" style-hover="color: #fff">
+                  <input type="checkbox" data-focusable="1" checked="{{ showHiddenOn }}" onChange="{{ toggleShowHidden }}" style="width: 13px; height: 13px; margin: 0; accent-color: #00CCFF; cursor: pointer;">{{ showHiddenLabel }}</label>
+              </div>
+              <div style="overflow-x: auto;">
+                <div style="min-width: 1520px;">
+                  <div style="display: grid; grid-template-columns: 28px 84px minmax(0, 1fr) 96px minmax(0, 1.2fr) minmax(0, 1.3fr) 112px 110px 84px 560px; gap: 12px; padding: 12px 18px; font-size: 11px; font-weight: 600; letter-spacing: .12em; text-transform: uppercase; color: rgba(255,255,255,.5); border-bottom: 1px solid rgba(255,255,255,.07);">
+                    <label style="display: grid; place-items: center; cursor: pointer;" title="Select all"><input type="checkbox" data-focusable="1" aria-label="Select all" checked="{{ bAllSel }}" onChange="{{ bToggleAll }}" style="width: 16px; height: 16px; margin: 0; accent-color: #00CCFF; cursor: pointer;"></label><button type="button" data-focusable="1" onClick="{{ sortType.go }}" aria-label="{{ sortType.aria }}" style="display: inline-flex; align-items: center; gap: 4px; padding: 0; border: 0; background: transparent; color: {{ sortType.color }}; font: inherit; letter-spacing: inherit; text-transform: inherit; cursor: pointer; text-align: left;" style-hover="color: #fff">{{ sortType.label }}<span aria-hidden="true" style="font-size: 10px;">{{ sortType.arrow }}</span></button><button type="button" data-focusable="1" onClick="{{ sortBrand.go }}" aria-label="{{ sortBrand.aria }}" style="display: inline-flex; align-items: center; gap: 4px; padding: 0; border: 0; background: transparent; color: {{ sortBrand.color }}; font: inherit; letter-spacing: inherit; text-transform: inherit; cursor: pointer; text-align: left;" style-hover="color: #fff">{{ sortBrand.label }}<span aria-hidden="true" style="font-size: 10px;">{{ sortBrand.arrow }}</span></button><span style="align-self: center;">Created by</span><button type="button" data-focusable="1" onClick="{{ sortTitle.go }}" aria-label="{{ sortTitle.aria }}" style="display: inline-flex; align-items: center; gap: 4px; padding: 0; border: 0; background: transparent; color: {{ sortTitle.color }}; font: inherit; letter-spacing: inherit; text-transform: inherit; cursor: pointer; text-align: left;" style-hover="color: #fff">{{ sortTitle.label }}<span aria-hidden="true" style="font-size: 10px;">{{ sortTitle.arrow }}</span></button><button type="button" data-focusable="1" onClick="{{ sortDetail.go }}" aria-label="{{ sortDetail.aria }}" style="display: inline-flex; align-items: center; gap: 4px; padding: 0; border: 0; background: transparent; color: {{ sortDetail.color }}; font: inherit; letter-spacing: inherit; text-transform: inherit; cursor: pointer; text-align: left;" style-hover="color: #fff">{{ sortDetail.label }}<span aria-hidden="true" style="font-size: 10px;">{{ sortDetail.arrow }}</span></button><button type="button" data-focusable="1" onClick="{{ sortStatus.go }}" aria-label="{{ sortStatus.aria }}" style="display: inline-flex; align-items: center; gap: 4px; padding: 0; border: 0; background: transparent; color: {{ sortStatus.color }}; font: inherit; letter-spacing: inherit; text-transform: inherit; cursor: pointer; text-align: left;" style-hover="color: #fff">{{ sortStatus.label }}<span aria-hidden="true" style="font-size: 10px;">{{ sortStatus.arrow }}</span></button><button type="button" data-focusable="1" onClick="{{ sortCreated.go }}" aria-label="{{ sortCreated.aria }}" style="display: inline-flex; align-items: center; gap: 4px; padding: 0; border: 0; background: transparent; color: {{ sortCreated.color }}; font: inherit; letter-spacing: inherit; text-transform: inherit; cursor: pointer; text-align: left;" style-hover="color: #fff">{{ sortCreated.label }}<span aria-hidden="true" style="font-size: 10px;">{{ sortCreated.arrow }}</span></button><button type="button" data-focusable="1" onClick="{{ sortTime.go }}" aria-label="{{ sortTime.aria }}" style="display: inline-flex; align-items: center; gap: 4px; padding: 0; border: 0; background: transparent; color: {{ sortTime.color }}; font: inherit; letter-spacing: inherit; text-transform: inherit; cursor: pointer; text-align: left;" style-hover="color: #fff">{{ sortTime.label }}<span aria-hidden="true" style="font-size: 10px;">{{ sortTime.arrow }}</span></button><span style="text-align: right;">Actions</span>
+                  </div>
+                  <sc-for list="{{ builds }}" as="b" hint-placeholder-count="3">
+                    <div style="display: grid; grid-template-columns: 28px 84px minmax(0, 1fr) 96px minmax(0, 1.2fr) minmax(0, 1.3fr) 112px 110px 84px 560px; gap: 12px; align-items: center; padding: 14px 18px; border-bottom: 1px solid rgba(255,255,255,.05); font-size: 13px; background: {{ b.rowBg }}; opacity: {{ b.rowOpacity }};">
+                      <label style="display: grid; place-items: center; cursor: pointer;"><input type="checkbox" data-focusable="1" aria-label="Select build" checked="{{ b.sel }}" onChange="{{ b.toggle }}" style="width: 16px; height: 16px; margin: 0; accent-color: #00CCFF; cursor: pointer;"></label>
+                      <span style="{{ b.typeStyle }}">{{ b.type }}</span>
+                      <span style="min-width: 0; font-weight: 600; color: #fff; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">{{ b.brand }}</span>
+                      <span style="min-width: 0; color: rgba(255,255,255,.8); white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">{{ b.by }}</span>
+                      <span title="{{ b.title }}" style="min-width: 0; color: #fff; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">{{ b.title }}</span>
+                      <span style="min-width: 0; color: rgba(255,255,255,.7); white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">{{ b.detail }}</span>
+                      <span style="{{ b.statusStyle }}">{{ b.status }}</span>
+                      <span style="color: rgba(255,255,255,.7);">{{ b.date }}</span>
+                      <span style="color: rgba(255,255,255,.7); white-space: nowrap;">{{ b.time }}</span>
+                      <span style="display: flex; justify-content: flex-end; gap: 6px;">
+                        <sc-if value="{{ b.hasFiles }}" hint-placeholder-val="{{ false }}"><button type="button" data-focusable="1" onClick="{{ b.openFiles }}" style="padding: 5px 12px; border-radius: 999px; border: 1px solid rgba(255,255,255,.16); background: rgba(255,255,255,.04); color: #fff; font: inherit; font-size: 12px; font-weight: 600; white-space: nowrap; cursor: pointer; transition: all 200ms cubic-bezier(.16,1,.3,1);" style-hover="transform: translateY(-2px); background: rgba(109,94,240,.16); border-color: rgba(167,139,250,.6); box-shadow: 0 0 32px rgba(109,94,240,.55)" style-active="transform: scale(.985)">Files</button></sc-if>
+                        <sc-if value="{{ b.hasChat }}" hint-placeholder-val="{{ false }}"><button type="button" data-focusable="1" onClick="{{ b.openChat }}" style="padding: 5px 12px; border-radius: 999px; border: 1px solid rgba(255,255,255,.16); background: rgba(255,255,255,.04); color: #fff; font: inherit; font-size: 12px; font-weight: 600; white-space: nowrap; cursor: pointer; transition: all 200ms cubic-bezier(.16,1,.3,1);" style-hover="transform: translateY(-2px); background: rgba(109,94,240,.16); border-color: rgba(167,139,250,.6); box-shadow: 0 0 32px rgba(109,94,240,.55)" style-active="transform: scale(.985)">Chat history</button></sc-if>
+                        <sc-if value="{{ b.showContinue }}" hint-placeholder-val="{{ true }}"><a href="{{ b.url }}" style="padding: 5px 12px; border-radius: 999px; border: 1px solid rgba(0,204,255,.35); background: rgba(0,204,255,.06); color: #fff; font-size: 12px; font-weight: 600; white-space: nowrap; transition: all 200ms cubic-bezier(.16,1,.3,1);" style-hover="transform: translateY(-2px); background: rgba(109,94,240,.16); border-color: rgba(167,139,250,.6); box-shadow: 0 0 32px rgba(109,94,240,.55); color: #fff" style-active="transform: scale(.985)">Continue</a></sc-if>
+                        <sc-if value="{{ b.hasLive }}" hint-placeholder-val="{{ false }}"><a href="{{ b.liveUrl }}" target="_blank" rel="noopener" title="Open the published page" style="padding: 5px 12px; border-radius: 999px; border: 1px solid rgba(255,255,255,.16); background: rgba(255,255,255,.04); color: #fff; font-size: 12px; font-weight: 600; white-space: nowrap; transition: all 200ms cubic-bezier(.16,1,.3,1);" style-hover="transform: translateY(-2px); background: rgba(109,94,240,.16); border-color: rgba(167,139,250,.6); box-shadow: 0 0 32px rgba(109,94,240,.55); color: #fff" style-active="transform: scale(.985)">Live page</a></sc-if>
+                        <sc-if value="{{ b.hasAnalytics }}" hint-placeholder-val="{{ false }}"><a href="{{ b.analyticsUrl }}" title="Views, visitors and mock clicks" style="padding: 5px 12px; border-radius: 999px; border: 1px solid rgba(0,204,255,.45); background: rgba(0,204,255,.08); color: #fff; font-size: 12px; font-weight: 600; white-space: nowrap; transition: all 200ms cubic-bezier(.16,1,.3,1);" style-hover="transform: translateY(-2px); background: rgba(109,94,240,.16); border-color: rgba(167,139,250,.6); box-shadow: 0 0 32px rgba(109,94,240,.55); color: #fff" style-active="transform: scale(.985)">Analytics</a></sc-if>
+                        <a href="{{ b.addUrl }}" style="padding: 5px 12px; border-radius: 999px; border: 1px solid rgba(255,255,255,.16); background: rgba(255,255,255,.04); color: #fff; font-size: 12px; font-weight: 600; white-space: nowrap; transition: all 200ms cubic-bezier(.16,1,.3,1);" style-hover="transform: translateY(-2px); background: rgba(109,94,240,.16); border-color: rgba(167,139,250,.6); box-shadow: 0 0 32px rgba(109,94,240,.55); color: #fff" style-active="transform: scale(.985)" onClick="{{ b.onAdd }}">{{ b.addLabel }}</a>
+                      </span>
+                    </div>
+                  </sc-for>
+                </div>
+              </div>
+              <sc-if value="{{ buildsEmpty }}" hint-placeholder-val="{{ false }}">
+                <div style="padding: 48px 18px; text-align: center;">
+                  <div style="font-size: 16px; font-weight: 600;">{{ bEmptyTitle }}</div>
+                  <div style="margin-top: 6px; font-size: 13px; color: rgba(255,255,255,.6);">{{ bEmptyText }}</div>
+                </div>
+              </sc-if>
+              </sc-if>
+            </div>
+          </section>
+        </sc-if>
+
+        <!-- FOOTER CARD (headshot + CTA) -->
+        <sc-if value="{{ onFooter }}" hint-placeholder-val="{{ false }}">
+          <section data-block="Profile · Footer card" aria-label="Landing page footer" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 400px), 1fr)); gap: 24px; margin-top: 24px; align-items: start;">
+            <form onSubmit="{{ saveProfile }}" style="display: flex; flex-direction: column; gap: 16px; padding: 24px; border-radius: 16px; border: 1px solid rgba(255,255,255,.08); background: #070B15;">
+              <div style="font-size: 11px; font-weight: 600; letter-spacing: .18em; text-transform: uppercase; color: rgba(255,255,255,.55);">Footer Details</div>
+              <div style="font-size: 13px; line-height: 1.5; color: rgba(255,255,255,.65);">Shown at the bottom of every landing page you generate.</div>
+              <div>
+                <div style="font-size: 12px; font-weight: 600; color: rgba(255,255,255,.72);">Headshot — still image or short video</div>
+                <label data-focusable="1" style="position: relative; display: flex; align-items: center; gap: 14px; margin-top: 8px; padding: 14px; border-radius: 12px; border: 1px dashed rgba(0,204,255,.4); background: rgba(0,204,255,.04); cursor: pointer;">
+                  <span style="display: grid; place-items: center; width: 40px; height: 40px; flex: none; border-radius: 50%; background: rgba(0,204,255,.1); color: var(--blue-400); font-size: 18px;">↑</span>
+                  <span><span style="display: block; font-size: 13px; font-weight: 600;">{{ uploadLabel }}</span><span style="display: block; margin-top: 2px; font-size: 12px; color: rgba(255,255,255,.55);">JPG, PNG or MP4 · square works best · video up to 10 seconds</span></span>
+                  <input type="file" accept="image/*,video/mp4,video/webm,video/quicktime" onChange="{{ onHeadshot }}" style="position: absolute; width: 1px; height: 1px; opacity: 0;">
+                </label>
+              </div>
+              <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 14px;">
+                <sc-for list="{{ fields }}" as="fd" hint-placeholder-count="6">
+                  <label style="display: flex; flex-direction: column; gap: 6px;">
+                    <span style="font-size: 12px; font-weight: 600; color: rgba(255,255,255,.72);">{{ fd.label }}</span>
+                    <input data-focusable="1" data-k="{{ fd.k }}" value="{{ fd.v }}" onChange="{{ onProfileField }}" placeholder="{{ fd.ph }}" type="{{ fd.type }}" style="height: 42px; padding: 0 12px; border-radius: 8px; border: 1px solid rgba(255,255,255,.14); background: rgba(0,5,9,.6); color: #fff; font-size: 14px; outline: none;">
+                  </label>
+                </sc-for>
+              </div>
+              <div style="display: flex; align-items: center; gap: 12px;">
+                <button type="submit" data-focusable="1" style="height: 42px; padding: 0 20px; border-radius: 999px; border: 0; background: var(--blue-400); color: #001830; font-size: 14px; font-weight: 700; cursor: pointer;">{{ saveLabel }}</button>
+                <span role="status" style="font-size: 12px; color: {{ msgColor }};">{{ profileMsg }}</span>
+              </div>
+            </form>
+
+            <div>
+              <div style="font-size: 11px; font-weight: 600; letter-spacing: .18em; text-transform: uppercase; color: rgba(255,255,255,.55); margin-bottom: 10px; text-align: center;">Footer Preview</div>
+              <!-- Mirrors the Creative Labs's closing blocks (team plate + closing CTA);
+                   the team photo is replaced by this person's headshot. -->
+              <div style="position: relative; overflow: hidden; border-radius: 16px; border: 1px solid rgba(255,255,255,.08); background: #000509;">
+                <div aria-hidden="true" style="position: absolute; inset: 0; pointer-events: none; background: radial-gradient(60% 50% at 85% 0%, rgba(0,204,255,.12), transparent 70%), radial-gradient(60% 50% at 0% 100%, rgba(109,94,240,.12), transparent 70%);"></div>
+                <div style="position: relative; padding: 40px 24px 0; display: flex; flex-direction: column; align-items: center; gap: 20px;">
+                  <div style="text-align: center; display: flex; flex-direction: column; align-items: center; gap: 10px;">
+                    <h2 style="margin: 0; max-width: 520px; text-align: center; text-wrap: balance; font-size: clamp(22px, 2.4vw, 30px); font-weight: 700; letter-spacing: -.03em; line-height: 1.05; color: #fff;">Let’s build a concept around your goals.</h2>
+                    <p style="margin: 0; max-width: 420px; text-align: center; text-wrap: pretty; font-size: 14px; line-height: 1.5; color: rgba(255,255,255,.72);">Share your campaign objective. We’ll help shape a creative direction for your brand.</p>
+                  </div>
+                  <div style="position: relative; width: min(360px, 84%); perspective: 1700px; perspective-origin: 62% 38%;">
+                    <div aria-hidden="true" style="position: absolute; left: 50%; top: 54%; width: 116%; height: 116%; transform: translate(-50%, -50%); z-index: 0; pointer-events: none; filter: blur(40px); background: radial-gradient(closest-side, rgba(0,204,255,.30), rgba(109,94,240,.18) 52%, rgba(0,204,255,0) 78%);"></div>
+                    <div data-space-fade style="position: relative; z-index: 1; aspect-ratio: 16 / 9; overflow: hidden; transform: rotateX(11deg) rotateY(-15deg) rotateZ(2.6deg);">
+                      {{ plateEl }}
+                    </div>
+                  </div>
+                  <div style="font-size: 11px; font-weight: 600; letter-spacing: .18em; text-transform: uppercase; color: var(--lime-300, #BEF264);">Ready When You Are</div>
+                </div>
+                <div style="position: relative; padding: 32px 24px 26px; display: flex; flex-direction: column; align-items: center; gap: 16px; text-align: center;">
+                  <div style="display: flex; flex-direction: column; gap: 2px;">
+                    <span style="font-size: 15px; font-weight: 700; color: #fff;">{{ displayName }}</span>
+                    <span style="font-size: 12px; color: rgba(255,255,255,.65);">{{ previewTitle }}</span>
+                    <span style="font-size: 12px; color: rgba(255,255,255,.55);">{{ previewContact }}</span>
+                  </div>
+                  <span style="display: inline-block; padding: 14px 26px; border-radius: 999px; background: var(--blue-400, #00CCFF); color: #001830; font-size: 14px; font-weight: 700; letter-spacing: -.01em;">{{ previewCta }}</span>
+                  <div style="margin-top: 6px; width: 100%; padding-top: 16px; border-top: 1px solid rgba(255,255,255,.07); font-size: 11px; font-weight: 600; letter-spacing: .18em; text-transform: uppercase; color: var(--blue-400, #00CCFF);">Built with grit in Detroit.</div>
+                </div>
+              </div>
+            </div>
+          </section>
+        </sc-if>
+
+        <!-- ACCOUNT -->
+        <sc-if value="{{ onAccount }}" hint-placeholder-val="{{ false }}">
+          <section data-block="Profile · Account" aria-label="Account settings" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 360px), 1fr)); gap: 24px; margin-top: 24px; align-items: start;">
+            <form onSubmit="{{ submitPassword }}" style="display: flex; flex-direction: column; gap: 14px; padding: 24px; border-radius: 16px; border: 1px solid rgba(255,255,255,.08); background: #070B15;">
+              <div style="font-size: 11px; font-weight: 600; letter-spacing: .18em; text-transform: uppercase; color: rgba(255,255,255,.55);">Change Password</div>
+              <sc-for list="{{ pwFields }}" as="pf" hint-placeholder-count="3">
+                <label style="display: flex; flex-direction: column; gap: 6px;">
+                  <span style="font-size: 12px; font-weight: 600; color: rgba(255,255,255,.72);">{{ pf.label }}</span>
+                  <input data-focusable="1" type="password" data-k="{{ pf.k }}" value="{{ pf.v }}" onChange="{{ onPw }}" autocomplete="{{ pf.ac }}" style="height: 42px; padding: 0 12px; border-radius: 8px; border: 1px solid rgba(255,255,255,.14); background: rgba(0,5,9,.6); color: #fff; font-size: 14px; outline: none;">
+                </label>
+              </sc-for>
+              <div style="font-size: 12px; color: rgba(255,255,255,.55);">At least 10 characters.</div>
+              <div style="display: flex; align-items: center; gap: 12px;">
+                <button type="submit" data-focusable="1" disabled="{{ pwInvalid }}" style="{{ pwBtnStyle }}">{{ pwLabel }}</button>
+                <span role="status" style="font-size: 12px; color: {{ pwMsgColor }};">{{ pwMsg }}</span>
+              </div>
+            </form>
+
+            <div style="display: flex; flex-direction: column; gap: 24px;">
+              <form onSubmit="{{ submitEmail }}" style="display: flex; flex-direction: column; gap: 14px; padding: 24px; border-radius: 16px; border: 1px solid rgba(255,255,255,.08); background: #070B15;">
+                <div style="font-size: 11px; font-weight: 600; letter-spacing: .18em; text-transform: uppercase; color: rgba(255,255,255,.55);">Sign-In Email</div>
+                <input data-focusable="1" type="email" value="{{ newEmail }}" onChange="{{ onNewEmail }}" placeholder="{{ email }}" style="height: 42px; padding: 0 12px; border-radius: 8px; border: 1px solid rgba(255,255,255,.14); background: rgba(0,5,9,.6); color: #fff; font-size: 14px; outline: none;">
+                <div style="display: flex; align-items: center; gap: 12px;">
+                  <button type="submit" data-focusable="1" style="height: 40px; padding: 0 16px; border-radius: 999px; border: 1px solid rgba(255,255,255,.2); background: rgba(255,255,255,.06); color: #fff; font-size: 13px; font-weight: 600; cursor: pointer;">Update Email</button>
+                  <span role="status" style="font-size: 12px; color: {{ emailMsgColor }};">{{ emailMsg }}</span>
+                </div>
+              </form>
+              <div style="display: flex; flex-direction: column; gap: 10px; padding: 24px; border-radius: 16px; border: 1px solid rgba(255,255,255,.08); background: #070B15;">
+                <div style="font-size: 11px; font-weight: 600; letter-spacing: .18em; text-transform: uppercase; color: rgba(255,255,255,.55);">Account</div>
+                <dl style="margin: 0; display: grid; grid-template-columns: auto minmax(0, 1fr); gap: 8px 14px; font-size: 13px;">
+                  <dt style="color: rgba(255,255,255,.5);">Email</dt><dd style="margin: 0;">{{ email }}</dd>
+                  <dt style="color: rgba(255,255,255,.5);">Access</dt><dd style="margin: 0;">{{ roleLabel }}</dd>
+                </dl>
+                <button type="button" data-focusable="1" onClick="{{ signOut }}" style="align-self: flex-start; margin-top: 6px; height: 38px; padding: 0 16px; border-radius: 999px; border: 1px solid rgba(214,125,240,.45); background: transparent; color: #fff; font-size: 13px; font-weight: 600; cursor: pointer;">Sign Out</button>
+              </div>
+            </div>
+          </section>
+        </sc-if>
+      </div>
+    </sc-if>
+  </main>
+
+  <footer data-block="Site footer" style="position: relative; z-index: 1; background: transparent;">
+    <div style="max-width: 1280px; margin: 0 auto; padding: clamp(28px, 4vh, 48px) clamp(20px, 4vw, 56px) clamp(32px, 4vw, 52px); text-align: center;">
+      <div style="padding-top: clamp(16px, 2vw, 24px); border-top: 1px solid rgba(255,255,255,.07); font-size: 11px; font-weight: 600; letter-spacing: .18em; text-transform: uppercase; color: var(--blue-400, #00CCFF);">Built with grit in Detroit.</div>
+    </div>
+  </footer>
+
+  <sc-if value="{{ filesOpen }}" hint-placeholder-val="{{ false }}">
+    <div style="position: fixed; inset: 0; z-index: 97; display: flex; align-items: center; justify-content: center; padding: clamp(12px, 3vw, 40px); background: rgba(0,8,18,.84); backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px); animation: kx-rise 240ms cubic-bezier(.16,1,.3,1) both;">
+      <div onClick="{{ closeFiles }}" style="position: absolute; inset: 0;"></div>
+      <div role="dialog" aria-modal="true" aria-label="Files" style="position: relative; z-index: 2; width: 100%; max-width: 760px; max-height: calc(100vh - 48px); display: flex; flex-direction: column; border-radius: 16px; border: 1px solid rgba(0,204,255,.3); background: #070B15; box-shadow: inset 0 1px 0 rgba(0,204,255,.3), 0 30px 70px rgba(0,0,0,.6), 0 0 60px rgba(0,204,255,.12); overflow: hidden;">
+        <div style="flex: none; display: flex; align-items: flex-start; gap: 12px; padding: 20px 22px 16px; border-bottom: 1px solid rgba(255,255,255,.08);">
+          <div style="flex: 1; min-width: 0;">
+            <div style="font-size: 11px; font-weight: 600; letter-spacing: .18em; text-transform: uppercase; color: var(--lime-300, #BEF264);">Files</div>
+            <div style="margin-top: 6px; font-size: 20px; font-weight: 700; letter-spacing: -.02em; line-height: 1.2; color: #fff;">{{ filesTitle }}</div>
+            <div style="margin-top: 4px; font-size: 12.5px; color: rgba(255,255,255,.55);">{{ filesSub }}</div>
+          </div>
+          <button type="button" data-focusable="1" onClick="{{ closeFiles }}" aria-label="Close" style="flex: none; display: grid; place-items: center; width: 34px; height: 34px; border-radius: 8px; border: 1px solid rgba(255,255,255,.16); background: rgba(255,255,255,.05); color: #fff; cursor: pointer;" style-hover="border-color: rgba(167,139,250,.6); background: rgba(109,94,240,.16)"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" aria-hidden="true"><path d="M18 6 6 18M6 6l12 12"></path></svg></button>
+        </div>
+        <div style="flex: none; display: flex; align-items: flex-end; gap: 10px; flex-wrap: wrap; padding: 14px 22px; border-bottom: 1px solid rgba(255,255,255,.08);">
+          <label style="display: flex; flex-direction: column; gap: 5px; font-size: 11px; font-weight: 600; letter-spacing: .12em; text-transform: uppercase; color: rgba(255,255,255,.55);">File type
+            <select data-k="type" value="{{ filesF.type }}" onChange="{{ onFilesF }}" style="min-height: 40px; padding: 0 12px; border-radius: 8px; border: 1px solid rgba(255,255,255,.14); background: rgba(255,255,255,.04); color: #fff; font: inherit; font-size: 13px; color-scheme: dark; min-width: 140px; appearance: none; -webkit-appearance: none; padding-right: 36px; background-image: url(&quot;data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' %76iew%42ox='0 0 24 24' fill='none' stroke='%2300CCFF' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E&quot;); background-repeat: no-repeat; background-position: right 12px center; background-size: 14px 14px; cursor: pointer;">
+              <option value="">All types</option>
+              <sc-for list="{{ filesTypes }}" as="t" hint-placeholder-count="0"><option value="{{ t }}">{{ t }}</option></sc-for>
+            </select>
+          </label>
+          <label style="display: flex; flex-direction: column; gap: 5px; font-size: 11px; font-weight: 600; letter-spacing: .12em; text-transform: uppercase; color: rgba(255,255,255,.55);">Made in
+            <select data-k="origin" value="{{ filesF.origin }}" onChange="{{ onFilesF }}" style="min-height: 40px; padding: 0 12px; border-radius: 8px; border: 1px solid rgba(255,255,255,.14); background: rgba(255,255,255,.04); color: #fff; font: inherit; font-size: 13px; color-scheme: dark; min-width: 150px; appearance: none; -webkit-appearance: none; padding-right: 36px; background-image: url(&quot;data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' %76iew%42ox='0 0 24 24' fill='none' stroke='%2300CCFF' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E&quot;); background-repeat: no-repeat; background-position: right 12px center; background-size: 14px 14px; cursor: pointer;">
+              <option value="">Any builder</option>
+              <option value="Page Builder">Page Builder</option>
+              <option value="Mock Builder">Mock Builder</option>
+            </select>
+          </label>
+          <label style="display: flex; flex-direction: column; gap: 5px; font-size: 11px; font-weight: 600; letter-spacing: .12em; text-transform: uppercase; color: rgba(255,255,255,.55);">From
+            <input type="date" data-k="from" value="{{ filesF.from }}" onChange="{{ onFilesF }}" style="min-height: 40px; padding: 0 12px; border-radius: 8px; border: 1px solid rgba(255,255,255,.14); background: rgba(255,255,255,.04); color: #fff; font: inherit; font-size: 13px; color-scheme: dark;">
+          </label>
+          <label style="display: flex; flex-direction: column; gap: 5px; font-size: 11px; font-weight: 600; letter-spacing: .12em; text-transform: uppercase; color: rgba(255,255,255,.55);">To
+            <input type="date" data-k="to" value="{{ filesF.to }}" onChange="{{ onFilesF }}" style="min-height: 40px; padding: 0 12px; border-radius: 8px; border: 1px solid rgba(255,255,255,.14); background: rgba(255,255,255,.04); color: #fff; font: inherit; font-size: 13px; color-scheme: dark;">
+          </label>
+          <sc-if value="{{ filesFiltered }}" hint-placeholder-val="{{ false }}"><button type="button" data-focusable="1" onClick="{{ clearFilesF }}" style="min-height: 40px; padding: 0 16px; border-radius: 999px; border: 1px solid rgba(255,255,255,.16); background: rgba(255,255,255,.06); color: #fff; font: inherit; font-size: 12px; font-weight: 600; cursor: pointer; transition: all 200ms cubic-bezier(.16,1,.3,1);" style-hover="transform: translateY(-2px); background: rgba(109,94,240,.16); border-color: rgba(167,139,250,.6); box-shadow: 0 0 32px rgba(109,94,240,.55)" style-active="transform: scale(.985)">Clear</button></sc-if>
+        </div>
+        <div style="flex: 1; min-height: 0; overflow-y: auto; padding: 16px 22px 24px; display: flex; flex-direction: column; gap: 8px;">
+          <sc-if value="{{ filesBusy }}" hint-placeholder-val="{{ false }}"><div style="font-size: 13px; color: rgba(255,255,255,.6);">Loading files…</div></sc-if>
+          <sc-if value="{{ filesEmpty }}" hint-placeholder-val="{{ false }}"><div style="padding: 28px 12px; text-align: center; font-size: 14px; line-height: 1.5; color: rgba(255,255,255,.65);">{{ filesEmptyText }}</div></sc-if>
+          <sc-for list="{{ fileItems }}" as="it" hint-placeholder-count="0">
+            <div style="display: flex; align-items: center; gap: 12px; flex-wrap: wrap; padding: 10px 14px; border-radius: 10px; border: 1px solid rgba(255,255,255,.08); background: rgba(255,255,255,.025);">
+              <span style="flex: none; min-width: 52px; text-align: center; padding: 2px 8px; border-radius: 6px; border: 1px solid rgba(255,255,255,.16); font-size: 10px; font-weight: 700; letter-spacing: .08em; color: rgba(255,255,255,.8);">{{ it.kind }}</span>
+              <span style="flex: 1 1 220px; min-width: 0;">
+                <span style="display: block; font-size: 13.5px; font-weight: 600; color: #fff; overflow-wrap: anywhere;">{{ it.name }}</span>
+                <span style="display: block; margin-top: 2px; font-size: 12px; color: rgba(255,255,255,.55); overflow-wrap: anywhere;">{{ it.meta }}</span>
+              </span>
+              <span style="display: flex; gap: 6px; flex: none;">
+                <sc-if value="{{ it.hasView }}" hint-placeholder-val="{{ false }}"><button type="button" data-focusable="1" data-url="{{ it.url }}" data-path="{{ it.path }}" data-key="{{ it.zipKey }}" onClick="{{ viewFile }}" style="padding: 5px 12px; border-radius: 999px; border: 1px solid rgba(255,255,255,.16); background: transparent; color: rgba(255,255,255,.85); font: inherit; font-size: 12px; font-weight: 600; cursor: pointer;" style-hover="background: rgba(109,94,240,.16); border-color: rgba(167,139,250,.6); color: #fff">View file ↗</button></sc-if>
+                <sc-if value="{{ it.isZip }}" hint-placeholder-val="{{ false }}"><button type="button" data-focusable="1" data-key="{{ it.zipKey }}" data-name="{{ it.name }}" onClick="{{ downloadZipFile }}" style="padding: 5px 12px; border-radius: 999px; border: 1px solid rgba(255,255,255,.16); background: transparent; color: rgba(255,255,255,.85); font: inherit; font-size: 12px; font-weight: 600; cursor: pointer;" style-hover="background: rgba(109,94,240,.16); border-color: rgba(167,139,250,.6); color: #fff">Download</button></sc-if>
+                <a href="{{ it.openUrl }}" data-focusable="1" title="{{ it.openTitle }}" style="padding: 5px 14px; border-radius: 999px; border: 1px solid rgba(0,204,255,.45); background: rgba(0,204,255,.08); color: #fff; font-size: 12px; font-weight: 600; text-decoration: none; transition: all 200ms cubic-bezier(.16,1,.3,1);" style-hover="transform: translateY(-2px); background: rgba(109,94,240,.16); border-color: rgba(167,139,250,.6); box-shadow: 0 0 32px rgba(109,94,240,.55); color: #fff; text-decoration: none" style-active="transform: scale(.985)">Open</a>
+              </span>
+            </div>
+          </sc-for>
+          <sc-if value="{{ filesMsg }}" hint-placeholder-val="{{ false }}"><div role="status" style="font-size: 12.5px; color: #F0B4FF;">{{ filesMsg }}</div></sc-if>
+        </div>
+      </div>
+    </div>
+  </sc-if>
+  <sc-if value="{{ briefOpen }}" hint-placeholder-val="{{ false }}">
+    <div style="position: fixed; inset: 0; z-index: 97; display: flex; align-items: center; justify-content: center; padding: clamp(12px, 3vw, 40px); background: rgba(0,8,18,.84); backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px); animation: kx-rise 240ms cubic-bezier(.16,1,.3,1) both;">
+      <div onClick="{{ closeBrief }}" style="position: absolute; inset: 0;"></div>
+      <div role="dialog" aria-modal="true" aria-label="Brief intake" style="position: relative; z-index: 2; width: 100%; max-width: 760px; max-height: calc(100vh - 48px); display: flex; flex-direction: column; border-radius: 16px; border: 1px solid rgba(0,204,255,.3); background: #070B15; box-shadow: inset 0 1px 0 rgba(0,204,255,.3), 0 30px 70px rgba(0,0,0,.6), 0 0 60px rgba(0,204,255,.12); overflow: hidden;">
+        <div style="flex: none; display: flex; align-items: flex-start; gap: 12px; padding: 20px 22px 16px; border-bottom: 1px solid rgba(255,255,255,.08);">
+          <div style="flex: 1; min-width: 0;">
+            <div style="font-size: 11px; font-weight: 600; letter-spacing: .18em; text-transform: uppercase; color: var(--lime-300, #BEF264);">Brief Intake</div>
+            <div style="margin-top: 6px; font-size: 20px; font-weight: 700; letter-spacing: -.02em; line-height: 1.2; color: #fff;">{{ briefTitle }}</div>
+            <sc-if value="{{ briefSub }}" hint-placeholder-val="{{ false }}"><div style="margin-top: 4px; font-size: 12.5px; color: rgba(255,255,255,.55);">{{ briefSub }}</div></sc-if>
+          </div>
+          <button type="button" data-focusable="1" onClick="{{ closeBrief }}" aria-label="Close" style="flex: none; display: grid; place-items: center; width: 34px; height: 34px; border-radius: 8px; border: 1px solid rgba(255,255,255,.16); background: rgba(255,255,255,.05); color: #fff; cursor: pointer;" style-hover="border-color: rgba(167,139,250,.6); background: rgba(109,94,240,.16)"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" aria-hidden="true"><path d="M18 6 6 18M6 6l12 12"></path></svg></button>
+        </div>
+        <div style="flex: 1; min-height: 0; overflow-y: auto; padding: 18px 22px 24px; display: flex; flex-direction: column; gap: 20px;">
+          <sc-if value="{{ briefBusy }}" hint-placeholder-val="{{ false }}"><div style="font-size: 13px; color: rgba(255,255,255,.6);">Loading the brief…</div></sc-if>
+          <sc-if value="{{ briefEmpty }}" hint-placeholder-val="{{ false }}"><div style="padding: 28px 12px; text-align: center; font-size: 14px; line-height: 1.5; color: rgba(255,255,255,.65);">{{ briefEmptyText }}</div></sc-if>
+          <sc-for list="{{ briefGroups }}" as="g" hint-placeholder-count="0">
+            <div style="display: flex; flex-direction: column; gap: 10px;">
+              <div style="font-size: 11px; font-weight: 600; letter-spacing: .18em; text-transform: uppercase; color: var(--blue-300, #66E0FF);">{{ g.title }}</div>
+              <dl style="margin: 0; display: grid; grid-template-columns: minmax(0, 1fr); gap: 10px;">
+                <sc-for list="{{ g.rows }}" as="r" hint-placeholder-count="0">
+                  <div style="padding: 10px 14px; border-radius: 10px; border: 1px solid rgba(255,255,255,.08); background: rgba(255,255,255,.025);">
+                    <sc-if value="{{ r.q }}" hint-placeholder-val="{{ false }}"><dt style="font-size: 12px; color: rgba(255,255,255,.55);">{{ r.q }}</dt></sc-if>
+                    <dd style="margin: 3px 0 0; font-size: 14px; line-height: 1.5; color: #fff; white-space: pre-wrap; text-wrap: pretty;">{{ r.a }}</dd>
+                  </div>
+                </sc-for>
+              </dl>
+            </div>
+          </sc-for>
+        </div>
+      </div>
+    </div>
+  </sc-if>
+
+  <sc-if value="{{ framingOpen }}" hint-placeholder-val="{{ false }}">
+    <div style="position: fixed; inset: 0; z-index: 96; display: flex; align-items: center; justify-content: center; padding: 20px; background: rgba(0,8,18,.84); backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px);">
+      <div onClick="{{ cancelFraming }}" style="position: absolute; inset: 0;"></div>
+      <div role="dialog" aria-modal="true" aria-label="Frame your headshot" style="position: relative; z-index: 2; width: 100%; max-width: 620px; padding: 24px; border-radius: 16px; border: 1px solid rgba(0,204,255,.3); background: #070B15; box-shadow: 0 30px 70px rgba(0,0,0,.6), 0 0 60px rgba(0,204,255,.12);">
+        <div style="font-size: 11px; font-weight: 600; letter-spacing: .18em; text-transform: uppercase; color: var(--lime-300);">New Headshot</div>
+                
+                  <div style="margin-top: 14px;">
+                    <div style="display: flex; align-items: center; justify-content: space-between; gap: 10px; font-size: 12px; font-weight: 600; color: rgba(255,255,255,.72);"><span>Frame your photo</span><span style="font-weight: 500; color: rgba(255,255,255,.5);">Drag to move · zoom to fit</span></div>
+                    <div onPointerDown="{{ onFrameDown }}" role="img" aria-label="Headshot framing — drag to reposition" style="position: relative; margin-top: 8px; aspect-ratio: 16 / 9; overflow: hidden; border-radius: 10px; border: 1px solid rgba(0,204,255,.45); background: #0A1120; cursor: grab; touch-action: none; box-shadow: inset 0 0 0 1px rgba(255,255,255,.04);">
+                      {{ frameEl }}
+                      <div aria-hidden="true" style="position: absolute; inset: 0; pointer-events: none; background-image: linear-gradient(90deg, transparent 33.2%, rgba(255,255,255,.14) 33.2%, rgba(255,255,255,.14) 33.5%, transparent 33.5%, transparent 66.4%, rgba(255,255,255,.14) 66.4%, rgba(255,255,255,.14) 66.7%, transparent 66.7%), linear-gradient(0deg, transparent 33.2%, rgba(255,255,255,.14) 33.2%, rgba(255,255,255,.14) 33.5%, transparent 33.5%, transparent 66.4%, rgba(255,255,255,.14) 66.4%, rgba(255,255,255,.14) 66.7%, transparent 66.7%);"></div>
+                    </div>
+                    <div style="display: flex; align-items: center; gap: 10px; margin-top: 10px;">
+                      <button type="button" data-focusable="1" data-d="-0.1" onClick="{{ zoomStep }}" aria-label="Zoom out" style="width: 32px; height: 32px; flex: none; border-radius: 50%; border: 1px solid rgba(255,255,255,.18); background: rgba(255,255,255,.05); color: #fff; font-size: 16px; cursor: pointer;">−</button>
+                      <input data-focusable="1" type="range" min="0.3" max="3" step="0.01" value="{{ zoom }}" onChange="{{ onZoom }}" aria-label="Zoom" style="flex: 1; min-width: 0; accent-color: #00CCFF;">
+                      <button type="button" data-focusable="1" data-d="0.1" onClick="{{ zoomStep }}" aria-label="Zoom in" style="width: 32px; height: 32px; flex: none; border-radius: 50%; border: 1px solid rgba(255,255,255,.18); background: rgba(255,255,255,.05); color: #fff; font-size: 16px; cursor: pointer;">+</button>
+                      <span style="width: 44px; text-align: right; font-size: 12px; font-variant-numeric: tabular-nums; color: rgba(255,255,255,.65);">{{ zoomPct }}</span>
+                      <button type="button" data-focusable="1" onClick="{{ resetFrame }}" style="padding: 6px 10px; border-radius: 999px; border: 1px solid rgba(255,255,255,.18); background: transparent; color: rgba(255,255,255,.8); font-size: 12px; cursor: pointer;">Reset</button>
+                    </div>
+                  </div>
+
+        <div style="display: flex; align-items: center; justify-content: flex-end; gap: 10px; margin-top: 18px;">
+          <span role="status" style="flex: 1; font-size: 12px; color: {{ msgColor }};">{{ framingMsg }}</span>
+          <button type="button" data-focusable="1" onClick="{{ cancelFraming }}" style="height: 40px; padding: 0 16px; border-radius: 999px; border: 1px solid rgba(255,255,255,.18); background: transparent; color: #fff; font-size: 13px; font-weight: 600; cursor: pointer;">Cancel</button>
+          <button type="button" data-focusable="1" onClick="{{ confirmFraming }}" style="height: 40px; padding: 0 18px; border-radius: 999px; border: 0; background: var(--blue-400); color: #001830; font-size: 13px; font-weight: 700; cursor: pointer;">{{ framingSaveLabel }}</button>
+        </div>
+      </div>
+    </div>
+  </sc-if>
+  <sc-if value="{{ chatOpen }}" hint-placeholder-val="{{ false }}">
+    <div role="dialog" aria-modal="true" aria-label="Chat history" onClick="{{ closeChat }}" style="position: fixed; inset: 0; z-index: 300; display: grid; place-items: center; padding: 24px; background: rgba(0,5,9,.78); backdrop-filter: blur(6px);">
+      <div onClick="{{ stopProp }}" style="width: min(760px, 100%); max-height: min(80vh, 900px); display: flex; flex-direction: column; border-radius: 16px; border: 1px solid rgba(255,255,255,.08); background: #070B15; box-shadow: inset 0 1px 0 rgba(255,255,255,.05), 0 30px 80px rgba(0,0,0,.6); overflow: hidden; animation: kx-rise 320ms cubic-bezier(.16,1,.3,1) both;">
+        <div style="display: flex; align-items: center; gap: 12px; padding: 16px 20px; border-bottom: 1px solid rgba(255,255,255,.08);">
+          <div style="display: flex; flex-direction: column; gap: 2px; min-width: 0; flex: 1;">
+            <span style="font-size: 11px; font-weight: 600; letter-spacing: .18em; text-transform: uppercase; color: var(--blue-300, #66E0FF);">Chat history</span>
+            <span style="font-size: 16px; font-weight: 700; color: #fff; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">{{ chatTitle }}</span>
+          </div>
+          <button type="button" data-focusable="1" onClick="{{ copyAllChat }}" style="padding: 6px 14px; border-radius: 999px; border: 1px solid rgba(0,204,255,.45); background: rgba(0,204,255,.08); color: #fff; font: inherit; font-size: 12.5px; font-weight: 600; cursor: pointer;" style-hover="background: rgba(109,94,240,.16); border-color: rgba(167,139,250,.6)">{{ copyAllLabel }}</button>
+          <button type="button" data-focusable="1" onClick="{{ closeChat }}" aria-label="Close" style="display: grid; place-items: center; width: 36px; height: 36px; border-radius: 50%; border: 1px solid rgba(255,255,255,.16); background: rgba(255,255,255,.04); color: #fff; font-size: 18px; cursor: pointer;" style-hover="background: rgba(109,94,240,.16); border-color: rgba(167,139,250,.6)">×</button>
+        </div>
+        <div style="flex: 1; min-height: 0; overflow-y: auto; padding: 16px 20px; display: flex; flex-direction: column; gap: 12px;">
+          <sc-if value="{{ chatNote }}" hint-placeholder-val="{{ false }}"><p style="margin: 0; text-align: center; font-size: 13px; color: rgba(255,255,255,.6);">{{ chatNote }}</p></sc-if>
+          <sc-for list="{{ chatMsgs }}" as="cm" hint-placeholder-count="0">
+            <div style="{{ cm.box }}">
+              <div style="display: flex; align-items: center; gap: 8px;">
+                <span style="font-size: 11px; font-weight: 600; letter-spacing: .14em; text-transform: uppercase; color: {{ cm.roleColor }};">{{ cm.role }}</span>
+                <span style="font-size: 11px; color: rgba(255,255,255,.45);">{{ cm.when }}</span>
+                <span style="flex: 1;"></span>
+                <button type="button" data-focusable="1" onClick="{{ cm.copy }}" style="padding: 3px 10px; border-radius: 999px; border: 1px solid rgba(255,255,255,.16); background: transparent; color: rgba(255,255,255,.8); font: inherit; font-size: 11.5px; font-weight: 600; cursor: pointer;" style-hover="color: #fff; border-color: rgba(167,139,250,.6); background: rgba(109,94,240,.16)">{{ cm.copyLabel }}</button>
+              </div>
+              <div style="font-size: 13.5px; line-height: 1.55; color: rgba(255,255,255,.88); white-space: pre-wrap; overflow-wrap: anywhere; user-select: text;">{{ cm.text }}</div>
+            </div>
+          </sc-for>
+        </div>
+      </div>
+    </div>
+  </sc-if>
+
+  <sc-if value="{{ filesOpen }}" hint-placeholder-val="{{ false }}">
+    <div role="dialog" aria-modal="true" aria-label="Files" onClick="{{ closeFiles }}" style="position: fixed; inset: 0; z-index: 300; display: grid; place-items: center; padding: 24px; background: rgba(0,5,9,.78); backdrop-filter: blur(6px);">
+      <div onClick="{{ stopProp }}" style="width: min(640px, 100%); max-height: min(80vh, 800px); display: flex; flex-direction: column; border-radius: 16px; border: 1px solid rgba(255,255,255,.08); background: #070B15; box-shadow: inset 0 1px 0 rgba(255,255,255,.05), 0 30px 80px rgba(0,0,0,.6); overflow: hidden; animation: kx-rise 320ms cubic-bezier(.16,1,.3,1) both;">
+        <div style="display: flex; align-items: center; gap: 12px; padding: 16px 20px; border-bottom: 1px solid rgba(255,255,255,.08);">
+          <div style="display: flex; flex-direction: column; gap: 2px; min-width: 0; flex: 1;">
+            <span style="font-size: 11px; font-weight: 600; letter-spacing: .18em; text-transform: uppercase; color: var(--blue-300, #66E0FF);">Files</span>
+            <span style="font-size: 16px; font-weight: 700; color: #fff; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">{{ filesTitle }}</span>
+          </div>
+          <button type="button" data-focusable="1" onClick="{{ closeFiles }}" aria-label="Close" style="display: grid; place-items: center; width: 36px; height: 36px; border-radius: 50%; border: 1px solid rgba(255,255,255,.16); background: rgba(255,255,255,.04); color: #fff; font-size: 18px; cursor: pointer;" style-hover="background: rgba(109,94,240,.16); border-color: rgba(167,139,250,.6)">×</button>
+        </div>
+        <div style="flex: 1; min-height: 0; overflow-y: auto; padding: 12px 20px 18px; display: flex; flex-direction: column; gap: 8px;">
+          <sc-if value="{{ filesNote }}" hint-placeholder-val="{{ false }}"><p style="margin: 8px 0; text-align: center; font-size: 13px; color: rgba(255,255,255,.6); text-wrap: pretty;">{{ filesNote }}</p></sc-if>
+          <sc-for list="{{ fileRows }}" as="fr" hint-placeholder-count="0">
+            <div style="display: flex; align-items: center; gap: 12px; padding: 10px 12px; border-radius: 12px; border: 1px solid rgba(255,255,255,.08); background: rgba(255,255,255,.02);">
+              <span style="flex: none; min-width: 44px; padding: 3px 8px; border-radius: 6px; background: rgba(0,204,255,.10); color: var(--blue-300, #66E0FF); font-size: 11px; font-weight: 700; letter-spacing: .08em; text-align: center;">{{ fr.fmt }}</span>
+              <div style="flex: 1; min-width: 0; display: flex; flex-direction: column; gap: 2px;">
+                <span style="font-size: 13.5px; font-weight: 600; color: #fff; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">{{ fr.name }}</span>
+                <span style="font-size: 12px; color: rgba(255,255,255,.55);">{{ fr.meta }}</span>
+              </div>
+              <button type="button" data-focusable="1" onClick="{{ fr.dl }}" style="padding: 5px 12px; border-radius: 999px; border: 1px solid rgba(255,255,255,.16); background: rgba(255,255,255,.04); color: #fff; font: inherit; font-size: 12px; font-weight: 600; white-space: nowrap; cursor: pointer; transition: all 200ms cubic-bezier(.16,1,.3,1);" style-hover="transform: translateY(-2px); background: rgba(109,94,240,.16); border-color: rgba(167,139,250,.6); box-shadow: 0 0 32px rgba(109,94,240,.55)" style-active="transform: scale(.985)">{{ fr.dlLabel }}</button>
+            </div>
+          </sc-for>
+        </div>
+      </div>
+    </div>
+  </sc-if>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  state = {
+    user: null, checked: false, profile: {}, tab: 'footer', pages: [], pagesErr: '', f: { from: '', to: '', brand: '', agency: '', by: '', q: '', type: '' }, convRows: [],
+    busy: false, msg: '', msgOk: true, uploading: false, confirmId: null,
+    pw: { current: '', next: '', confirm: '' }, pwBusy: false, pwMsg: '', pwOk: true,
+    newEmail: '', emailMsg: '', emailOk: true,
+    authEmail: '', authPass: '', authErr: ''
+  };
+
+  async componentDidMount() {
+    { const qp = new URLSearchParams(location.search), qt = qp.get('tab'); if (qt === 'sites') { location.replace((window.location.hostname.match(/netlify\.app$|kortx\.io$/i) ? '/my-builds' : 'My%20Builds.dc.html') + location.search.replace(/([?&])tab=sites&?/, '$1').replace(/[?&]$/, '')); return; } if (['footer', 'ai', 'account'].includes(qt)) this.setState({ tab: qt });
+      if (['page', 'mock', 'feedback'].includes(qp.get('builds'))) this.setState({ buildTab: qp.get('builds') });
+      if (qp.get('embed') === '1') { this.embed = true; const st = document.createElement('style'); st.textContent = 'header, footer, [data-block="Profile · Identity"], [aria-label="Profile sections"], [aria-label="Build type"] { display: none !important; } main { padding-top: 16px !important; }'; document.head.appendChild(st); } }
+    import('./creative-feedback-api.js').then(m => m.listReviews()).then(r => this.setState({ fbReviews: r || [] }, () => this.loadOwners())).catch(() => this.setState({ fbReviews: [] }));
+    this.cloud = await import('./creative-cloud.js');
+    this.api = await import('./proposal-api.js');
+    this.cloud.onAuthChange(user => this.onUser(user)).catch(() => {});
+    this.onUser(await this.cloud.currentUser().catch(() => null));
+  }
+  async onUser(user) {
+    this.setState({ user, checked: true });
+    if (!user) return;
+    const got = (await this.api.getProfile().catch(() => ({}))) || {};
+    /* Seed Eric's footer so it is filled in from the start; any saved value wins. */
+    const seed = /^esimone@/i.test(user.email || '') ? { full_name: 'Eric Simone', title: 'Lead Designer', phone: '248-841-5434',
+      cta_label: 'Request a Concept', headshot_url: new URL('assets/team/eric-simone.jpg', location.href).href, headshot_kind: 'image', headshot_frame: { z: .55, x: 0, y: 0, w: 1125, h: 1500 } } : {};
+    const profile = Object.assign({}, seed, Object.fromEntries(Object.entries(got).filter(([, v]) => v != null && v !== '')));
+    this.setState({ profile });
+    this.loadPages();
+    this.loadClaims();
+    this.loadConvs();
+  }
+  /* Creator first names for My Builds: one profiles lookup for every owner id on the page. */
+  async loadOwners() {
+    const ids = [...new Set([].concat((this.state.pages || []).map(x => x.owner), (this.state.convRows || []).map(x => x.owner), (this.state.fbReviews || []).map(x => x._by)).filter(Boolean))].filter(id => !(this.state.owners || {})[id]);
+    if (!ids.length || !this.cloud || !this.cloud.client) return;
+    try { const sb = await this.cloud.client(); const { data } = await sb.from('profiles').select('id, full_name, email').in('id', ids); const m = Object.assign({}, this.state.owners); (data || []).forEach(r => { m[r.id] = String(r.full_name || '').trim().split(/\s+/)[0] || String(r.email || '').split('@')[0].split(/[._-]/)[0].replace(/^./, c => c.toUpperCase()); }); this.setState({ owners: m }); } catch (e) {}
+  }
+  firstName(id) { const u = this.state.user, mine = u && (!id || id === u.id); if (mine) { const n = String((this.state.profile && this.state.profile.full_name) || u.name || '').trim().split(/\s+/)[0]; return n || String(u.email || '').split('@')[0].split(/[._-]/)[0].replace(/^./, c => c.toUpperCase()); } return (this.state.owners || {})[id] || 'Teammate'; }
+  async loadConvs() {
+    const [pc, mc] = await Promise.all([
+      this.api.listChats ? this.api.listChats().catch(() => []) : [],
+      import('./mock-api.js').then(m => m.listMySessions()).catch(() => [])
+    ]);
+    const rows = (pc || []).map(x => ({ kind: 'page', id: x.id, title: x.title || 'Untitled proposal', brand: x.brand || '', updated_at: x.updated_at, created_at: x.created_at || x.updated_at, detail: 'Page Builder' }))
+      .concat((mc || []).map(x => ({ kind: 'mock', owner: x.owner, id: x.id, title: x.title || 'New mock', brand: x.brand || '', updated_at: x.updated_at, created_at: x.created_at || x.updated_at,
+        approved: !!x.approved, btitle: (x.settings && x.settings.title) || '', detail: (x.settings && x.settings.mode === 'video' ? 'Video' : 'Banner') + (x.mocks ? ' · ' + x.mocks + (x.mocks === 1 ? ' mock' : ' mocks') : '') })));
+    rows.sort((a, b) => new Date(b.updated_at) - new Date(a.updated_at));
+    this.setState({ convRows: rows }, () => this.loadOwners());
+  }
+  /* Chat history popup: every prompt and reply for a build, each copyable. */
+  openChatHistory = async (kind, id, title) => {
+    this.setState({ chatModal: { title, msgs: [], loading: true, err: '' } });
+    try {
+      const row = kind === 'mock' ? await import('./mock-api.js').then(m => m.getSession(id)) : await this.api.loadChat(id);
+      const raw = (row && (row.messages || (row.data && row.data.messages))) || [];
+      const clean = x => String(x == null ? '' : typeof x === 'string' ? x : Array.isArray(x) ? x.map(p => p.text || '').join('\n') : x.text || JSON.stringify(x)).replace(/```(?:html|json)?\s*\n[\s\S]*?(?:```|$)/gi, '[code]').replace(/\[\[KX_[A-Z]+\]\][\s\S]*$/, '').trim();
+      const msgs = raw.filter(m => m && (m.role === 'user' || m.role === 'assistant')).map(m => ({ role: m.role, text: clean(m.content), at: m.at || m.created_at || null })).filter(m => m.text);
+      this.setState({ chatModal: { title, msgs, loading: false, err: '' } });
+    } catch (e) { this.setState({ chatModal: { title, msgs: [], loading: false, err: 'Couldn’t load this chat: ' + ((e && e.message) || e) } }); }
+  };
+  openFiles = async (sessionId, title) => {
+    this.setState({ filesModal: { title, rows: [], loading: true, err: '' } });
+    try { const m = await import('./mock-api.js'); const rows = await m.listSessionFiles(sessionId); this.setState({ filesModal: { title, rows: rows || [], loading: false, err: '' } }); }
+    catch (e) { this.setState({ filesModal: { title, rows: [], loading: false, err: 'Couldn’t load files: ' + ((e && e.message) || e) } }); }
+  };
+  downloadFile = async f => {
+    this.setState({ dlBusy: f.id });
+    try { const m = await import('./mock-api.js'); const url = await m.fileUrl(f.path, 600); const r = await fetch(url); const b = await r.blob(); const a = document.createElement('a'); a.href = URL.createObjectURL(b); a.download = f.name; document.body.appendChild(a); a.click(); a.remove(); setTimeout(() => URL.revokeObjectURL(a.href), 4000); }
+    catch (e) { this.setState(s => ({ filesModal: s.filesModal && Object.assign({}, s.filesModal, { err: 'Download failed: ' + ((e && e.message) || e) }) })); }
+    this.setState({ dlBusy: '' });
+  };
+  copyText = async (text, key) => { try { await navigator.clipboard.writeText(text); } catch (e) { const ta = document.createElement('textarea'); ta.value = text; document.body.appendChild(ta); ta.select(); document.execCommand('copy'); ta.remove(); } this.setState({ copiedKey: key }); clearTimeout(this._cpT); this._cpT = setTimeout(() => this.setState({ copiedKey: '' }), 1600); };
+  toggleConv = k => this.setState(s => { const n = new Set(s.convSel || []); n.has(k) ? n.delete(k) : n.add(k); return { convSel: n, convConfirm: false }; });
+  deleteConvs = async keys => {
+    if (!this.state.convConfirm) { this.setState({ convConfirm: true }); clearTimeout(this.convT); this.convT = setTimeout(() => this.setState({ convConfirm: false }), 4000); return; }
+    clearTimeout(this.convT);
+    this.setState({ convDelBusy: true, convConfirm: false, convMsg: '' });
+    const rows = (this.state.convRows || []).filter(r => keys.includes(r.kind + ':' + r.id));
+    const mock = await import('./mock-api.js').catch(() => null);
+    let fail = 0;
+    for (const r of rows) {
+      try { const n = r.kind === 'mock' ? await mock.deleteSession(r.id) : await this.api.deleteChat(r.id); if (!n) fail++; } catch (e) { fail++; }
+    }
+    await this.loadConvs();
+    this.setState({ convSel: new Set(), convDelBusy: false, convMsg: fail ? fail + ' couldn’t be deleted. Only the person who started a conversation (or an admin) can delete it.' : 'Deleted ' + rows.length + (rows.length === 1 ? ' conversation' : ' conversations') + '.' });
+  };
+  loadClaims() {
+    if (!this.cloud.listMyClaimedBriefs) return;
+    this.cloud.listMyClaimedBriefs().then(claims => this.setState({ claims, claimsErr: '' }))
+      .catch(err => this.setState({ claims: [], claimsErr: /claimed_by/.test(err.message || '') ? 'Claims aren’t turned on yet. Run supabase/migrations/2026-10-21_brief_claims.sql in the Supabase SQL Editor.' : '' }));
+  }
+  startProposal = async e => {
+    const id = e.currentTarget.dataset.id, c = (this.state.claims || []).find(x => x.id === id);
+    if (c && c.status !== 'proposal') { try { await this.cloud.setBriefStatus(id, 'proposal'); } catch (err) {} }
+    location.href = this.cloud.route('/page-builder?brief=' + encodeURIComponent(id));
+  };
+  releaseClaim = async e => {
+    const id = e.currentTarget.dataset.id;
+    if (this.state.confirmRelease !== id) { this.setState({ confirmRelease: id }); setTimeout(() => this.state.confirmRelease === id && this.setState({ confirmRelease: null }), 3000); return; }
+    try { await this.cloud.unclaimBrief(id); this.setState(s => ({ claims: (s.claims || []).filter(x => x.id !== id), confirmRelease: null })); }
+    catch (err) { this.setState({ claimsErr: err.message || String(err), confirmRelease: null }); }
+  };
+  loadConns() {
+    this.api.listConnections().then(list => this.setState({ conns: Object.fromEntries(list.map(c => [c.provider, c])), connNotice: '' }))
+      .catch(err => this.setState({ conns: {}, connNotice: err.code === 'not-deployed' ? 'Connections need the ai-connections function deployed in Supabase (see CHANGELOG). The buttons below will work once it is live.' : (err.message || String(err)) }));
+  }
+  openConnect = e => this.setState({ connP: e.currentTarget.dataset.p, connKey: '', connErr: '' });
+  closeConnect = () => this.setState({ connP: null, connKey: '', connErr: '', connBusy: false });
+  onConnKey = e => this.setState({ connKey: e.currentTarget.value, connErr: '' });
+  submitConnect = async e => {
+    e.preventDefault();
+    const p = this.state.connP;
+    this.setState({ connBusy: true, connErr: '' });
+    try { const c = await this.api.connectProvider(p, this.state.connKey); this.setState(st => ({ conns: Object.assign({}, st.conns, { [p]: c }), connP: null, connKey: '' })); }
+    catch (err) { this.setState({ connErr: err.message || String(err) }); }
+    this.setState({ connBusy: false });
+  };
+  disconnect = async e => {
+    const p = e.currentTarget.dataset.p;
+    if (this.state.confirmDisc !== p) { this.setState({ confirmDisc: p }); setTimeout(() => this.state.confirmDisc === p && this.setState({ confirmDisc: null }), 3000); return; }
+    try { await this.api.disconnectProvider(p); this.setState(st => { const c = Object.assign({}, st.conns); delete c[p]; return { conns: c, confirmDisc: null }; }); }
+    catch (err) { this.setState({ connNotice: err.message || String(err), confirmDisc: null }); }
+  };
+  loadPages() {
+    /* Real pages only. Sample rows were removed: deleting them never stuck because they were rebuilt on every load. */
+    this.api.listMyPages().then(pages => this.setState({ pages, sample: false, pagesErr: '' }, () => this.loadOwners()))
+      .catch(err => this.setState({ pages: [], sample: false, pagesErr: /relation|does not exist|schema cache|PGRST205/i.test(err.message || '') ? 'Run the Page Builder SQL migration in Supabase to start saving pages.' : (err.message || String(err)) }));
+  }
+
+  /* Placeholder rows so the table can be judged before real pages exist. */
+  samplePages() {
+    const rows = [
+      ['ARCO', 'Doner', 'Proposal', 'published', '2026-09-26'], ['Indiana University', '', 'KORTX Intelligence', 'published', '2026-09-22'],
+      ['Tropical Smoothie Cafe', 'Campbell Ewald', 'Proposal', 'draft', '2026-09-19'], ['Sheetz', 'Brunner', 'Proposal', 'published', '2026-09-12'],
+      ['Visit Arizona', 'MMGY', 'KORTX Intelligence', 'published', '2026-09-03'], ['Harris Health', '', 'Proposal', 'draft', '2026-08-27'],
+      ['Discount Tire', 'Doner', 'Proposal', 'published', '2026-08-18'], ['Oakland Community College', 'Lambert', 'KORTX Intelligence', 'draft', '2026-08-06']
+    ];
+    return rows.map(([brand, agency, page_type, status, d], i) => ({ id: 'sample-' + i, slug: brand.toLowerCase().replace(/[^a-z0-9]+/g, '-') + '-sample', brand, agency, page_type, status, created_at: d + 'T15:00:00Z' }));
+  }
+
+  onTab = e => this.setState({ tab: e.currentTarget.dataset.tab });
+  /* My Builds → Brief Intake: the client's intake (campaign_briefs, via the page's builder.form.briefId), else the brief text saved on the page. */
+  openBrief = async e => {
+    const id = e.currentTarget.dataset.id, title = e.currentTarget.dataset.title;
+    this.lastFocus = e.currentTarget;
+    this.setState({ briefOpen: true, briefBusy: true, briefTitle: title, briefSub: '', briefGroups: [], briefEmpty: false });
+    if (!this.onBriefEsc) { this.onBriefEsc = ev => { if (ev.key === 'Escape' && this.state.briefOpen) this.closeBrief(); }; document.addEventListener('keydown', this.onBriefEsc); }
+    try {
+      if (String(id).startsWith('sample-')) throw new Error('sample');
+      const page = await this.api.getPage(id), sec = (page.sections || [])[0] || {}, form = (sec.builder && sec.builder.form) || {};
+      let groups = [], sub = '';
+      if (form.briefId && this.cloud.getBrief) {
+        const b = await this.cloud.getBrief(form.briefId).catch(() => null);
+        if (b) {
+          sub = 'Submitted ' + new Date(b.created_at || Date.now()).toLocaleDateString(undefined, { month: 'short', day: 'numeric', year: 'numeric' }) + (b.advertiser ? ' · ' + b.advertiser : '') + (b.agency ? ' · ' + b.agency : '');
+          (b.qa || []).filter(r => r && r.a).forEach(r => { let g = groups.find(x => x.title === (r.section || 'Brief')); if (!g) { g = { title: r.section || 'Brief', rows: [] }; groups.push(g); } g.rows.push({ q: r.q || '', a: Array.isArray(r.a) ? r.a.join(', ') : String(r.a) }); });
+        }
+      }
+      if (!groups.length) {
+        const text = String(page.brief || form.brief || '').trim();
+        let g = null;
+        text.split(/\n/).forEach(l => { const t = l.trim(); if (!t) return; if (/^[A-Z0-9 &/,.()'—-]{4,}$/.test(t) && t === t.toUpperCase()) { g = { title: t, rows: [] }; groups.push(g); return; }
+          if (!g) { g = { title: 'Brief', rows: [] }; groups.push(g); } const m = t.match(/^([^:]{2,80}):\s+(.+)$/); g.rows.push(m ? { q: m[1], a: m[2] } : { q: '', a: t }); });
+        groups = groups.filter(x => x.rows.length);
+      }
+      this.setState({ briefBusy: false, briefSub: sub, briefGroups: groups, briefEmpty: !groups.length, briefEmptyText: 'No brief was attached to this proposal. Briefs come from the Brief List, or the text pasted into the Builder.' });
+    } catch (err) {
+      this.setState({ briefBusy: false, briefEmpty: true, briefEmptyText: String(id).startsWith('sample-') ? 'This is a sample row. Briefs show here for proposals you publish.' : 'Could not load the brief: ' + (err.message || err) });
+    }
+  };
+  /* My Builds → Files: every document, HTML folder and Celtra preview attached to the proposal. */
+  openFiles = async e => {
+    const id = e.currentTarget.dataset.id, title = e.currentTarget.dataset.title, rowBrand = e.currentTarget.dataset.brand || ''; this.lastFocus = e.currentTarget;
+    this.setState({ filesOpen: true, filesBusy: true, filesTitle: title, filesAll: [], filesF: {}, filesEmptyText: '', filesMsg: '' });
+    if (!this.onFilesEsc) { this.onFilesEsc = ev => { if (ev.key === 'Escape' && this.state.filesOpen) this.closeFiles(); }; document.addEventListener('keydown', this.onFilesEsc); }
+    const route = h => this.cloud ? this.cloud.route(h) : h, enc = encodeURIComponent;
+    const ext = (name, mime) => { const m = String(name || '').split('?')[0].match(/\.([a-z0-9]{2,5})$/i); if (m) return m[1].toUpperCase().replace('JPEG', 'JPG');
+      const t = String(mime || ''); return /pdf/i.test(t) ? 'PDF' : /word|docx/i.test(t) ? 'DOCX' : /photoshop|psd/i.test(t) ? 'PSD' : /png/i.test(t) ? 'PNG' : /jpe?g/i.test(t) ? 'JPG' : /gif/i.test(t) ? 'GIF' : /svg/i.test(t) ? 'SVG' : /mp4/i.test(t) ? 'MP4' : /quicktime|mov/i.test(t) ? 'MOV' : /html/i.test(t) ? 'HTML' : /zip/i.test(t) ? 'ZIP' : 'FILE'; };
+    const items = [];
+    try {
+      if (!String(id).startsWith('sample-')) {
+        const page = await this.api.getPage(id), sec = (page.sections || [])[0] || {}, b = sec.builder || {}, form = b.form || {};
+        const when = page.updated_at || page.created_at, chatId = b.chatId || '';
+        const openUrl = chatId ? route('/page-builder') + '?chat=' + enc(chatId) : route('/page-builder') + '?page=' + enc(id);
+        const pb = x => Object.assign({ origin: 'Page Builder', openUrl, date: when, sub: '', url: '', path: '', zipKey: '', isZip: false }, x);
+        (page.assets || []).forEach(a => items.push(pb({ kind: ext(a.name || a.url, a.type), name: a.name || 'File', url: a.url || '', date: a.uploadedAt || a.created_at || when })));
+        if (form.briefId) items.push(pb({ kind: 'BRIEF', name: 'Campaign brief intake' }));
+        if (form.clientLogo && !/^data:/.test(form.clientLogo)) items.push(pb({ kind: ext(form.clientLogo) === 'FILE' ? 'LOGO' : ext(form.clientLogo), name: 'Brand logo', sub: form.logoSource === 'upload' ? 'Uploaded' : 'From the brand website', url: form.clientLogo }));
+        (b.creatives || []).forEach(c => {
+          if (c.source === 'zip' && c.zipKey) items.push(pb({ kind: 'HTML', name: c.zipName || c.name || c.id || 'HTML folder', sub: c.format === 'wide' ? '1920 × 1080' : '300 × 600', zipKey: c.zipKey, isZip: true }));
+          else if (c.celtraId) items.push(pb({ kind: 'CELTRA', name: c.name || 'Celtra ' + c.celtraId, url: 'https://ads.celtra.com/' + c.celtraId + '/preview' }));
+          else if (c.id) items.push(pb({ kind: 'LIBRARY', name: [c.brand, c.name].filter(Boolean).join(' · ') || c.id, sub: c.product || '', url: 'https://captivate.kortx.io/shareablePreview/' + c.id }));
+        });
+        const brand = page.brand || rowBrand, bKey = String(brand || '').trim().toLowerCase();
+        /* Files uploaded inside the Page Builder conversation(s) for this proposal. */
+        const chatIds = chatId ? [chatId] : (this.api.listChats && bKey ? (await this.api.listChats().catch(() => [])).filter(c => String(c.brand || '').trim().toLowerCase() === bKey).map(c => c.id).slice(0, 5) : []);
+        const byUrl = new Map(items.filter(x => x.url).map(x => [x.url, x]));
+        for (const cid of chatIds) {
+          const c = this.api.loadChat ? await this.api.loadChat(cid).catch(() => null) : null; if (!c) continue;
+          const cOpen = route('/page-builder') + '?chat=' + enc(cid), ups = [];
+          (c.messages || []).forEach(m => (m.files || []).forEach(f => f && f.url && ups.push({ name: f.name, type: f.type, url: f.url, date: m.ts || m.at || c.updated_at })));
+          const bd = c.form && c.form.briefDoc; if (bd && bd.url) ups.push({ name: bd.name, type: 'application/pdf', url: bd.url, date: c.updated_at });
+          ups.forEach(u => {
+            const had = byUrl.get(u.url);
+            if (had) { had.openUrl = cOpen; had.sub = had.sub || 'Uploaded in the conversation'; return; }
+            const it = pb({ kind: ext(u.name || u.url, u.type), name: u.name || 'File', sub: 'Uploaded in the conversation', url: u.url, date: u.date, openUrl: cOpen });
+            byUrl.set(u.url, it); items.push(it);
+          });
+        }
+        if (brand) {
+          const mf = await import('./mock-api.js').then(m => m.listBrandFiles(brand)).catch(() => []);
+          mf.forEach(f => items.push({ origin: 'Mock Builder', kind: ext(f.name, f.mime), name: f.name, sub: f.kind === 'generated' ? 'Generated' : 'Uploaded', date: f.created_at, url: '', path: f.path || '', zipKey: '', isZip: false,
+            openUrl: f.session_id ? route('/mock-builder') + '?session=' + enc(f.session_id) : route('/mock-builder') }));
+        }
+      }
+      items.sort((a, b) => new Date(b.date || 0) - new Date(a.date || 0));
+      this.setState({ filesBusy: false, filesAll: items, filesEmptyText: String(id).startsWith('sample-') ? 'This is a sample row. Files show here for proposals you save.' : 'Nothing has been attached to this proposal yet. Files appear here when you upload a brief, a logo, HTML folders or Celtra links in the Builder, or generate mocks for this brand.' });
+    } catch (err) {
+      this.setState({ filesBusy: false, filesAll: [], filesEmptyText: 'Could not load the files: ' + (err.message || err) });
+    }
+  };
+  onFilesF = e => { const k = e.currentTarget.dataset.k, v = e.currentTarget.value; this.setState(s => ({ filesF: Object.assign({}, s.filesF, { [k]: v }) })); };
+  clearFilesF = () => this.setState({ filesF: {} });
+  viewFile = async e => {
+    const d = e.currentTarget.dataset;
+    if (d.key) return this.openZipFile(e);
+    if (d.url) { window.open(d.url, '_blank', 'noopener'); return; }
+    if (!d.path) return;
+    const w = window.open('', '_blank');
+    try { const u = await import('./mock-api.js').then(m => m.fileUrl(d.path)); if (w) w.location.href = u; else location.href = u; }
+    catch (err) { if (w) w.close(); this.setState({ filesMsg: 'Could not open that file: ' + (err.message || err) }); }
+  };
+  filesVals() {
+    const s = this.state, all = s.filesAll || [], f = s.filesF || {}, from = f.from ? new Date(f.from) : null, to = f.to ? new Date(f.to + 'T23:59:59') : null;
+    const list = all.filter(x => (!f.type || x.kind === f.type) && (!f.origin || x.origin === f.origin) && (!from || new Date(x.date) >= from) && (!to || new Date(x.date) <= to));
+    const filtered = !!(f.type || f.origin || f.from || f.to);
+    return {
+      filesF: { type: f.type || '', origin: f.origin || '', from: f.from || '', to: f.to || '' }, onFilesF: this.onFilesF, clearFilesF: this.clearFilesF, viewFile: this.viewFile, filesFiltered: filtered,
+      filesTypes: [...new Set(all.map(x => x.kind))].sort(),
+      filesSub: s.filesBusy ? '' : (filtered ? list.length + ' of ' + all.length : all.length) + (all.length === 1 ? ' file' : ' files') + ' · Open returns to the conversation that made it',
+      filesEmpty: !s.filesBusy && !list.length, filesEmptyText: all.length ? 'No files match these filters.' : (s.filesEmptyText || ''),
+      fileItems: list.map(x => ({ kind: x.kind, name: x.name, url: x.url || '', path: x.path || '', zipKey: x.zipKey || '', isZip: !!x.isZip, hasView: !!(x.url || x.path || x.zipKey), openUrl: x.openUrl, openTitle: 'Open the ' + x.origin + ' conversation',
+        meta: [x.sub, x.origin, x.date ? new Date(x.date).toLocaleDateString(undefined, { month: 'short', day: 'numeric', year: 'numeric' }) : ''].filter(Boolean).join(' · ') }))
+    };
+  }
+  closeFiles = () => { this.setState({ filesOpen: false }); if (this.lastFocus && this.lastFocus.focus) this.lastFocus.focus(); };
+  openZipFile = async e => {
+    const key = e.currentTarget.dataset.key, w = window.open('', '_blank');
+    try { const z = await import('./html-zip-store.js'), u = await z.previewUrl(key); if (w) w.location.href = u; else location.href = u; }
+    catch (err) { if (w) w.close(); this.setState({ filesMsg: 'Could not open that HTML folder: ' + (err.message || err) }); }
+  };
+  downloadZipFile = async e => {
+    const key = e.currentTarget.dataset.key, name = e.currentTarget.dataset.name;
+    try { const z = await import('./html-zip-store.js'); await z.exportHtml(key, name); } catch (err) { this.setState({ filesMsg: 'Could not download it: ' + (err.message || err) }); }
+  };
+  copyFileLink = e => { const u = e.currentTarget.dataset.url; if (u && navigator.clipboard) navigator.clipboard.writeText(u); };
+  closeBrief = () => { this.setState({ briefOpen: false }); if (this.lastFocus && this.lastFocus.focus) this.lastFocus.focus(); };
+  onFilter = e => { const k = e.currentTarget.dataset.f, v = e.currentTarget.value; this.setState(s => ({ f: Object.assign({}, s.f, { [k]: v }) })); };
+  clearFilters = () => this.setState({ f: { from: '', to: '', brand: '', agency: '', by: '', q: '', type: '' } });
+  hiddenKey() { return 'kortx.mybuilds.hidden.v1:' + ((this.state.user && this.state.user.email) || 'anon'); }
+  readHidden() { try { return JSON.parse(localStorage.getItem(this.hiddenKey()) || '[]'); } catch (e) { return []; } }
+  writeHidden(ids) { try { localStorage.setItem(this.hiddenKey(), JSON.stringify(ids)); } catch (e) {} this.setState({ hiddenIds: ids }); }
+  setHidden(ids, on) { const cur = new Set(this.state.hiddenIds || this.readHidden()); ids.forEach(id => on ? cur.add(id) : cur.delete(id)); this.writeHidden([...cur]); }
+  toggleSel = e => { const id = e.currentTarget.dataset.id, on = e.currentTarget.checked; this.setState(s => { const sel = new Set(s.sel || []); on ? sel.add(id) : sel.delete(id); return { sel: [...sel], bulkConfirm: false }; }); };
+  toggleAll = e => { const on = e.currentTarget.checked; this.setState({ sel: on ? (this.visIds || []) : [], bulkConfirm: false }); };
+  hideOne = e => { const id = e.currentTarget.dataset.id, hid = (this.state.hiddenIds || this.readHidden()).includes(id); this.setHidden([id], !hid); this.setState(s => ({ sel: (s.sel || []).filter(x => x !== id) })); };
+  hideSelected = () => { const sel = this.state.sel || []; if (!sel.length) return; const hid = new Set(this.state.hiddenIds || this.readHidden()), unhide = this.state.showHidden && sel.every(id => hid.has(id)); this.setHidden(sel, !unhide); this.setState({ sel: [], bulkConfirm: false }); };
+  deleteSelected = async () => {
+    const sel = this.state.sel || []; if (!sel.length) return;
+    if (!this.state.bulkConfirm) { this.setState({ bulkConfirm: true }); clearTimeout(this.bt); this.bt = setTimeout(() => this.setState({ bulkConfirm: false }), 3000); return; }
+    const real = sel.filter(id => !String(id).startsWith('sample-'));
+    await Promise.all(real.map(id => this.api.deletePage(id).catch(() => {})));
+    this.setHidden(sel, false);
+    this.setState(st => ({ sel: [], bulkConfirm: false, pages: st.pages.filter(x => !sel.includes(x.id)) }));
+    if (real.length) this.loadPages();
+  };
+  toggleShowHidden = () => this.setState(s => ({ showHidden: !s.showHidden, sel: [] }));
+  removeSite = async e => {
+    const id = e.currentTarget.dataset.id;
+    if (id.startsWith('sample-')) { this.setState(st => ({ pages: st.pages.filter(x => x.id !== id) })); return; }
+    if (this.state.confirmId !== id) { this.setState({ confirmId: id }); setTimeout(() => this.state.confirmId === id && this.setState({ confirmId: null }), 3000); return; }
+    await this.api.deletePage(id).catch(() => {});
+    this.setState({ confirmId: null }); this.loadPages();
+  };
+
+  onProfileField = e => { const k = e.currentTarget.dataset.k, v = e.currentTarget.value; this.setState(s => ({ profile: Object.assign({}, s.profile, { [k]: v }) })); };
+  onHeadshot = async e => {
+    const file = e.currentTarget.files && e.currentTarget.files[0];
+    e.currentTarget.value = '';
+    if (!file) return;
+    if (file.size > 60 * 1024 * 1024) { this.setState({ msg: 'That file is over 60 MB.', msgOk: false }); return; }
+    const dims = await this.mediaSize(file);
+    this.pendingFile = file;
+    this.beforeFraming = this.state.profile;
+    this.setState(st => ({ framingOpen: true, msg: '', profile: Object.assign({}, st.profile, { headshot_url: URL.createObjectURL(file), headshot_kind: file.type.startsWith('video') ? 'video' : 'image', headshot_frame: { z: 1, x: 0, y: 0, w: dims.w, h: dims.h } }) }));
+  };
+  cancelFraming = () => { this.pendingFile = null; this.setState({ framingOpen: false, uploading: false, profile: this.beforeFraming || this.state.profile }); };
+  confirmFraming = async () => {
+    const file = this.pendingFile;
+    this.setState({ uploading: true, msg: '' });
+    try {
+      const frame = this.frame();
+      const { url, kind } = file ? await this.api.uploadHeadshot(file) : { url: this.state.profile.headshot_url, kind: this.state.profile.headshot_kind };
+      const profile = Object.assign({}, this.state.profile, { headshot_url: url, headshot_kind: kind, headshot_frame: frame });
+      await this.api.saveProfile(profile);
+      this.pendingFile = null;
+      this.setState({ profile, framingOpen: false, msg: 'Headshot updated.', msgOk: true });
+    } catch (err) {
+      this.setState({ msg: /bucket|not found/i.test(err.message || '') ? 'Uploads need the Page Builder SQL migration run in Supabase first.' : (err.message || String(err)), msgOk: false });
+    }
+    this.setState({ uploading: false });
+  };
+  mediaSize(file) {
+    return new Promise(res => {
+      const u = URL.createObjectURL(file), video = file.type.startsWith('video');
+      const el = document.createElement(video ? 'video' : 'img');
+      const done = () => { res({ w: el.videoWidth || el.naturalWidth || 1, h: el.videoHeight || el.naturalHeight || 1 }); URL.revokeObjectURL(u); };
+      if (video) { el.onloadedmetadata = done; el.muted = true; } else el.onload = done;
+      el.onerror = () => res({ w: 1, h: 1 });
+      el.src = u;
+    });
+  }
+  frame() { return Object.assign({ z: 1, x: 0, y: 0, w: 1, h: 1 }, this.state.profile.headshot_frame || {}); }
+  setFrame(p) { this.setState(s => ({ profile: Object.assign({}, s.profile, { headshot_frame: Object.assign({}, this.frame(), p) }) })); }
+  onZoom = e => this.setFrame({ z: Number(e.currentTarget.value) });
+  zoomStep = e => { const d = Number(e.currentTarget.dataset.d); this.setFrame({ z: Math.min(3, Math.max(.3, +(this.frame().z + d).toFixed(2))) }); };
+  resetFrame = () => this.setFrame({ z: 1, x: 0, y: 0 });
+  onFrameDown = e => {
+    if (e.button != null && e.button !== 0) return;
+    e.preventDefault();
+    const box = e.currentTarget.getBoundingClientRect(), f0 = this.frame(), sx = e.clientX, sy = e.clientY;
+    const move = ev => this.setFrame({ x: +(f0.x + (ev.clientX - sx) / box.width * 100).toFixed(2), y: +(f0.y + (ev.clientY - sy) / box.height * 100).toFixed(2) });
+    const up = () => { window.removeEventListener('pointermove', move); window.removeEventListener('pointerup', up); };
+    window.addEventListener('pointermove', move); window.addEventListener('pointerup', up);
+  };
+  /* One framing for every place the headshot appears: width is set so the
+     media covers the frame at zoom 1, then zoom and offsets (in % of the
+     frame) move it. Frames of other shapes reuse the same numbers. */
+  mediaEl(p, frameAspect, fallback, cover) {
+    const kind = p.headshot_url ? (p.headshot_kind || 'image') : '';
+    const f = kind ? this.frame() : { z: 1, x: 0, y: 0, w: 16, h: 9 };
+    const ia = (f.w || 1) / (f.h || 1);
+    /* The round avatar always fills its circle; the wide plates use the chosen zoom. */
+    const width = 100 * Math.max(1, ia / frameAspect) * (cover ? Math.max(1, f.z) : f.z);
+    return React.createElement(kind === 'video' ? 'video' : 'img', Object.assign({
+      src: kind ? p.headshot_url : fallback, alt: '', draggable: false,
+      style: Object.assign({ position: 'absolute', left: 'calc(50% + ' + f.x + '%)', top: 'calc(50% + ' + f.y + '%)', width: width + '%', height: 'auto', maxWidth: 'none', transform: 'translate(-50%, -50%)', pointerEvents: 'none', userSelect: 'none' }, cover ? {} : (() => {
+        /* The team-photo fade, applied to the photo itself so a zoomed-out
+           headshot dissolves on every edge, not just at the frame's. */
+        const m = 'linear-gradient(90deg, transparent 0%, #000 16%, #000 84%, transparent 100%), linear-gradient(180deg, transparent 0%, #000 14%, #000 80%, transparent 100%)';
+        return { WebkitMaskImage: m, maskImage: m, WebkitMaskComposite: 'source-in', maskComposite: 'intersect' };
+      })())
+    }, kind === 'video' ? { autoPlay: true, muted: true, loop: true, playsInline: true } : {}));
+  }
+
+  saveProfile = async e => {
+    e.preventDefault();
+    this.setState({ busy: true, msg: '' });
+    try { await this.api.saveProfile(this.state.profile); this.setState({ msg: 'Saved.', msgOk: true }); }
+    catch (err) { this.setState({ msg: err.message || String(err), msgOk: false }); }
+    this.setState({ busy: false });
+  };
+
+  onPw = e => { const k = e.currentTarget.dataset.k, v = e.currentTarget.value; this.setState(s => ({ pw: Object.assign({}, s.pw, { [k]: v }), pwMsg: '' })); };
+  submitPassword = async e => {
+    e.preventDefault();
+    const { current, next, confirm } = this.state.pw;
+    if (next !== confirm) { this.setState({ pwMsg: 'The new passwords do not match.', pwOk: false }); return; }
+    this.setState({ pwBusy: true });
+    try { await this.api.changePassword(current, next, this.state.user.email); this.setState({ pw: { current: '', next: '', confirm: '' }, pwMsg: 'Password changed.', pwOk: true }); }
+    catch (err) { this.setState({ pwMsg: err.message || String(err), pwOk: false }); }
+    this.setState({ pwBusy: false });
+  };
+  onNewEmail = e => this.setState({ newEmail: e.currentTarget.value, emailMsg: '' });
+  submitEmail = async e => {
+    e.preventDefault();
+    try { await this.api.changeEmail(this.state.newEmail); this.setState({ emailMsg: 'Check both inboxes to confirm the change.', emailOk: true }); }
+    catch (err) { this.setState({ emailMsg: err.message || String(err), emailOk: false }); }
+  };
+  signOut = () => this.cloud.signOut().then(() => this.setState({ user: null, pages: [], profile: {} }));
+  onAuthButton = () => { if (this.state.user) this.signOut(); };
+  onAuthField = e => this.setState({ [e.currentTarget.dataset.field]: e.currentTarget.value });
+  submitSignIn = async e => {
+    e.preventDefault();
+    try { await this.cloud.signIn(this.state.authEmail.trim(), this.state.authPass); this.setState({ authPass: '', authErr: '' }); this.onUser(await this.cloud.currentUser()); }
+    catch (err) { this.setState({ authErr: err.message || 'Could not sign in' }); }
+  };
+
+  renderVals() {
+    const s = this.state, p = s.profile || {}, f = s.f;
+    /* Real name only — never the email handle. */
+    const name = (p.full_name || (s.user && s.user.name) || '').trim();
+    const inRange = d => (!f.from || d >= f.from) && (!f.to || d <= f.to + 'T23:59:59');
+    const hidSet = new Set(s.hiddenIds || this.readHidden()), sel = new Set(s.sel || []);
+    const myEmail = (s.user && s.user.email) || '', me = myEmail || name || 'You', q = (f.q || '').trim().toLowerCase();
+    const match = (d, brand, agency, by, extra) => inRange(d || '') && (!f.brand || brand === f.brand) && (!f.agency || (agency || '') === f.agency) && (!f.by || by === f.by) && (!q || [brand, agency, by, extra].join(' ').toLowerCase().includes(q));
+    /* Created By = the KORTX account (@kortx.io email) behind the claim or build. */
+    const claimBy = r => r.claimed_by_email || myEmail || '';
+    const claimsF = (s.claims || []).filter(r => match(r.created_at, r.advertiser || '', r.agency, claimBy(r), r.campaign_name));
+    const filtered = s.pages.filter(x => match(x.created_at, x.brand, x.agency, me, x.page_type));
+    const pages = filtered.filter(x => s.showHidden ? hidSet.has(x.id) : !hidSet.has(x.id)); this.visIds = pages.map(x => x.id);
+    const hiddenCount = s.pages.filter(x => hidSet.has(x.id)).length, selN = pages.filter(x => sel.has(x.id)).length;
+    const uniq = k => [...new Set(s.pages.map(x => x[k]).concat((s.claims || []).map(r => k === 'brand' ? r.advertiser : r[k])).filter(Boolean))].sort();
+    const tab = (id, label) => { const on = s.tab === id; return { id, label, on: String(on), style: { padding: '12px 16px', marginBottom: -1, border: 0, borderBottom: '2px solid ' + (on ? '#00CCFF' : 'transparent'), background: 'transparent', color: on ? '#fff' : 'rgba(255,255,255,.6)', fontSize: 14, fontWeight: 600, cursor: 'pointer' } }; };
+    const pwValid = s.pw.current && s.pw.next.length >= 10 && s.pw.next === s.pw.confirm;
+    const kind = p.headshot_url ? (p.headshot_kind || 'image') : '';
+    return {
+      signedIn: !!s.user, signedOut: s.checked && !s.user, authLabel: s.user ? 'Sign Out' : 'Signed Out', onAuthButton: this.onAuthButton,
+      authEmail: s.authEmail, authPass: s.authPass, authErr: s.authErr, onAuthField: this.onAuthField, submitSignIn: this.submitSignIn,
+      initial: (name || '?').charAt(0).toUpperCase(), displayName: name || 'Add your name in Footer Card',
+      roleLabel: s.user && s.user.isAdmin ? 'Admin' : 'KORTX Team',
+      subline: p.title || '',
+      noHeadshot: !kind,
+      headshotEl: !kind ? null : this.mediaEl(p, 1, null, true),
+      frameEl: this.mediaEl(p, 16 / 9, 'assets/team-photo.jpg'), hasMedia: !!kind, zoom: String(this.frame().z), zoomPct: Math.round(this.frame().z * 100) + '%',
+      framingOpen: !!s.framingOpen, cancelFraming: this.cancelFraming, confirmFraming: this.confirmFraming,
+      framingSaveLabel: s.uploading ? 'Saving…' : 'Save Headshot', framingMsg: s.framingOpen ? s.msg : '',
+      onZoom: this.onZoom, zoomStep: this.zoomStep, resetFrame: this.resetFrame, onFrameDown: this.onFrameDown,
+      stats: [
+        { k: 'Pages generated', v: String(s.pages.length) },
+        { k: 'Published', v: String(s.pages.filter(x => x.status === 'published').length) },
+        { k: 'Brands', v: String(uniq('brand').length) }
+      ],
+      tabs: [tab('footer', 'Footer Card'), tab('account', 'Account')], onTab: this.onTab,
+      onAi: s.tab === 'ai', connNotice: !!s.connNotice, connNoticeText: s.connNotice || '',
+      connCards: [['openai', 'ChatGPT', 'OpenAI', 'AI'], ['claude', 'Claude', 'Anthropic', 'C']].map(([id, label, vendor, mark]) => {
+        const c = (s.conns || {})[id], on = !!c, rgb = on ? '190,242,100' : '255,255,255';
+        return { id, label, vendor, mark, connected: on, status: on ? 'Connected' : 'Not connected',
+          hint: on ? c.key_hint : '—', verified: on && c.verified_at ? new Date(c.verified_at).toLocaleString(undefined, { month: 'short', day: 'numeric', hour: 'numeric', minute: '2-digit' }) : '—',
+          models: on && c.models && c.models.length ? c.models.slice(0, 4).join(', ') + (c.models.length > 4 ? ' +' + (c.models.length - 4) : '') : '—',
+          connectLabel: on ? 'Replace Key' : 'Connect to ' + label, disconnectLabel: s.confirmDisc === id ? 'Confirm' : 'Disconnect',
+          style: { padding: 22, borderRadius: 16, background: '#070B15', border: '1px solid ' + (on ? 'rgba(0,204,255,.45)' : 'rgba(255,255,255,.08)'), boxShadow: on ? '0 0 50px rgba(0,204,255,.14), 0 24px 60px rgba(0,0,0,.45)' : '0 24px 60px rgba(0,0,0,.45)' },
+          pillStyle: { display: 'inline-flex', alignItems: 'center', gap: 7, padding: '4px 10px', borderRadius: 999, fontSize: 11, fontWeight: 600, border: '1px solid rgba(' + rgb + ',.4)', background: 'rgba(' + rgb + ',.07)', color: '#fff', whiteSpace: 'nowrap' },
+          dotStyle: { width: 7, height: 7, borderRadius: '50%', background: 'rgb(' + rgb + ')', boxShadow: on ? '0 0 10px rgb(' + rgb + ')' : 'none' } };
+      }),
+      openConnect: this.openConnect, disconnect: this.disconnect,
+      connOpen: !!s.connP, closeConnect: this.closeConnect, onConnKey: this.onConnKey, submitConnect: this.submitConnect, connKey: s.connKey || '', connErr: s.connErr || '',
+      connTitle: s.connP === 'claude' ? 'Connect to Claude' : 'Connect to ChatGPT', connVendor: s.connP === 'claude' ? 'Anthropic' : 'OpenAI',
+      connLink: this.api ? this.api.KEY_LINKS[s.connP || 'openai'] : '#', connLinkLabel: s.connP === 'claude' ? 'console.anthropic.com' : 'platform.openai.com',
+      connPlaceholder: s.connP === 'claude' ? 'sk-ant-…' : 'sk-…', connSubmitLabel: s.connBusy ? 'Verifying…' : 'Verify & Connect',
+      claims: claimsF.map(r => { const started = r.status === 'proposal'; return { id: r.id, advertiser: r.advertiser || 'Untitled brief', sub: r.campaign_name || '',
+        created: r.created_at ? new Date(r.created_at).toLocaleDateString(undefined, { month: 'short', day: 'numeric', year: 'numeric' }) : '—', agency: r.agency || '—', brand: r.advertiser || '—', createdBy: r.claimed_by_email || myEmail || '—', createdByName: r.claimed_by_name || (r.claimed_by_email === myEmail ? name : '') || '', when: r.claimed_at ? new Date(r.claimed_at).toLocaleDateString(undefined, { month: 'short', day: 'numeric', year: 'numeric' }) : '—',
+        status: started ? 'Proposal Started' : 'Claimed', startLabel: started ? 'Continue Build' : 'Start Build', releaseLabel: s.confirmRelease === r.id ? 'Confirm Release' : 'Release',
+        viewHref: this.cloud ? this.cloud.route('/briefs?brief=' + encodeURIComponent(r.id)) : '#',
+        statusStyle: { padding: '3px 9px', borderRadius: 999, fontSize: 11, fontWeight: 700, color: started ? 'var(--blue-300)' : 'var(--lime-300)', background: started ? 'rgba(0,204,255,.1)' : 'rgba(190,242,100,.1)', border: '1px solid ' + (started ? 'rgba(0,204,255,.35)' : 'rgba(190,242,100,.35)') } }; }),
+      noClaims: !!s.user && Array.isArray(s.claims) && !s.claims.length && !s.claimsErr, claimsErr: s.claimsErr || '',
+      startProposal: this.startProposal, releaseClaim: this.releaseClaim, briefsHref: this.cloud ? this.cloud.route('/briefs') : 'Brief List.dc.html',
+      onSites: s.tab === 'sites', openFiles: this.openFiles, closeFiles: this.closeFiles, openZipFile: this.openZipFile, downloadZipFile: this.downloadZipFile, copyFileLink: this.copyFileLink,
+      filesOpen: !!s.filesOpen, filesBusy: !!s.filesBusy, filesTitle: s.filesTitle || '', filesMsg: s.filesMsg || '', ...this.filesVals(),
+      openBrief: this.openBrief, closeBrief: this.closeBrief, briefOpen: !!s.briefOpen, briefBusy: !!s.briefBusy, briefTitle: s.briefTitle || '', briefSub: s.briefSub || '', briefGroups: s.briefGroups || [], briefEmpty: !!s.briefEmpty, briefEmptyText: s.briefEmptyText || '', onFooter: s.tab === 'footer', onAccount: s.tab === 'account',
+      f, onFilter: this.onFilter, clearFilters: this.clearFilters, brandOptions: uniq('brand'), agencyOptions: uniq('agency'), byOptions: [...new Set([me].concat((s.claims || []).map(claimBy)).filter(Boolean))].sort(),
+      ...(() => { const ff = s.f || {}, q = (ff.q || '').trim().toLowerCase(), from = ff.from ? new Date(ff.from) : null, to = ff.to ? new Date(ff.to + 'T23:59:59') : null;
+        const list = (s.convRows || []).filter(r => (!ff.type || ff.type === r.kind) && (!ff.brand || r.brand === ff.brand) && (!q || (r.title + ' ' + r.brand).toLowerCase().includes(q)) && (!from || new Date(r.updated_at) >= from) && (!to || new Date(r.updated_at) <= to));
+        const route = h => this.cloud ? this.cloud.route(h) : h;
+        const cs = s.convSel || new Set(), keyOf = r => r.kind + ':' + r.id, selKeys = list.map(keyOf).filter(k => cs.has(k)), allSel = !!list.length && selKeys.length === list.length;
+        return { showPages: ff.type !== 'mock', convsEmpty: !list.length,
+          allConvSel: allSel, toggleAllConvs: () => this.setState({ convSel: allSel ? new Set() : new Set(list.map(keyOf)), convConfirm: false }),
+          hasConvSel: selKeys.length > 0, convDelBusy: !!s.convDelBusy, convMsg: s.convMsg || '', deleteConvs: () => this.deleteConvs(selKeys),
+          convDelLabel: s.convDelBusy ? 'Deleting…' : s.convConfirm ? 'Confirm delete ' + selKeys.length : 'Delete ' + selKeys.length + ' selected', convCount: list.length + (list.length === 1 ? ' conversation' : ' conversations'),
+          convEmptyTitle: (s.convRows || []).length ? 'No conversations match these filters' : 'No saved conversations yet',
+          convs: list.map(r => ({ sel: cs.has(keyOf(r)), toggle: () => this.toggleConv(keyOf(r)), rowBg: cs.has(keyOf(r)) ? 'rgba(0,204,255,.06)' : 'transparent', type: r.kind === 'mock' ? 'Mock' : 'Page', title: r.title, brand: r.brand || '—', detail: r.detail,
+            date: new Date(r.updated_at).toLocaleDateString(undefined, { month: 'short', day: 'numeric', year: 'numeric' }),
+            url: r.kind === 'mock' ? route('/mock-builder') + '?session=' + encodeURIComponent(r.id) : route('/page-builder') + '?chat=' + encodeURIComponent(r.id),
+            typeStyle: { justifySelf: 'start', padding: '3px 9px', borderRadius: 999, fontSize: 11, fontWeight: 600, border: '1px solid ' + (r.kind === 'mock' ? 'rgba(167,139,250,.55)' : 'rgba(0,204,255,.45)'), color: '#fff', background: r.kind === 'mock' ? 'rgba(109,94,240,.12)' : 'rgba(0,204,255,.08)' } })) }; })(),
+      filterCount: (claimsF.length + pages.length) + ' results',
+      siteCount: pages.length + ' of ' + s.pages.length + ' builds' + (s.showHidden ? ' · hidden' : ''),
+      sites: pages.map(x => ({ id: x.id, slug: x.slug, title: (x.brand || 'Untitled') + ' — ' + x.page_type, brand: x.brand || '—', agency: x.agency || '—',
+        status: x.status === 'published' ? 'Published' : 'Draft', date: new Date(x.created_at).toLocaleDateString(undefined, { month: 'short', day: 'numeric', year: 'numeric' }),
+        url: this.api ? this.api.pageUrl(x.slug) : '#', removeLabel: s.confirmId === x.id ? 'Confirm' : 'Delete',
+        sel: sel.has(x.id), hideLabel: hidSet.has(x.id) ? 'Unhide' : 'Hide', rowBg: sel.has(x.id) ? 'rgba(0,204,255,.06)' : 'transparent', rowOpacity: hidSet.has(x.id) ? .7 : 1,
+        noCreatives: !(x.creative_ids || []).length, addUrl: 'Add%20Creative.dc.html?page=' + encodeURIComponent(x.id) + (String(x.id).startsWith('sample-') ? '&brand=' + encodeURIComponent(x.brand || '') : ''),
+        addStyle: { padding: '5px 10px', borderRadius: 999, fontSize: 12, fontWeight: 600, whiteSpace: 'nowrap', border: '1px solid ' + ((x.creative_ids || []).length ? 'rgba(255,255,255,.14)' : 'rgba(0,204,255,.6)'), background: (x.creative_ids || []).length ? 'transparent' : 'rgba(0,204,255,.14)', color: '#fff' },
+        statusStyle: { justifySelf: 'start', padding: '3px 9px', borderRadius: 999, fontSize: 11, fontWeight: 600, border: '1px solid ' + (x.status === 'published' ? 'rgba(190,242,100,.5)' : 'rgba(255,255,255,.2)'), color: x.status === 'published' ? 'var(--lime-300)' : 'rgba(255,255,255,.7)' } })),
+      removeSite: this.removeSite, sitesEmpty: !pages.length,
+      toggleSel: this.toggleSel, toggleAll: this.toggleAll, hideOne: this.hideOne, hideSelected: this.hideSelected, deleteSelected: this.deleteSelected, toggleShowHidden: this.toggleShowHidden,
+      allSel: pages.length > 0 && selN === pages.length, noSel: !selN, selLabel: selN ? selN + ' selected' : 'Select builds to hide or delete',
+      hideSelLabel: s.showHidden ? 'Unhide Selected' : 'Hide Selected', deleteSelLabel: s.bulkConfirm ? 'Confirm Delete (' + selN + ')' : 'Delete Selected',
+      hasHidden: hiddenCount > 0 || !!s.showHidden, showHiddenLabel: s.showHidden ? 'Hide Hidden' : 'Show Hidden', showHiddenOn: !!s.showHidden,
+      sampleNote: s.sample ? 'Sample rows — your real pages appear here once you publish from the Page Builder.' + (s.pagesErr ? ' ' + s.pagesErr : '') : '', hasSampleNote: !!s.sample,
+      emptyTitle: s.pagesErr ? 'Pages are not set up yet' : s.pages.length ? 'No pages match these filters' : 'No landing pages yet',
+      emptyText: s.pagesErr || (s.pages.length ? 'Clear a filter to see more.' : 'Pages you publish from the Page Builder appear here.'),
+      ...(() => {
+        const ff = s.f || {}, tab = ff.type || s.buildTab || 'page', q = (ff.q || '').trim().toLowerCase(), from = ff.from ? new Date(ff.from) : null, to = ff.to ? new Date(ff.to + 'T23:59:59') : null;
+        const route = h => this.cloud ? this.cloud.route(h) : h, fmt = d => new Date(d).toLocaleDateString(undefined, { month: 'short', day: 'numeric', year: 'numeric' }), fmtT = d => d ? new Date(d).toLocaleTimeString(undefined, { hour: 'numeric', minute: '2-digit' }) : '';
+        const tabStyle = on => ({ minHeight: 44, padding: '0 14px', border: 0, borderBottom: '2px solid ' + (on ? '#00CCFF' : 'transparent'), marginBottom: -1, background: 'transparent', color: on ? '#fff' : 'rgba(255,255,255,.6)', font: 'inherit', fontSize: 13, fontWeight: 600, cursor: 'pointer', transition: 'all 200ms cubic-bezier(.16,1,.3,1)' });
+        const setTab = k => () => this.setState(st => ({ buildTab: k, f: Object.assign({}, st.f, { type: '' }), sel: [], convSel: new Set(), bulkConfirm: false, convConfirm: false }));
+        const typeStyle = mock => ({ justifySelf: 'start', padding: '3px 9px', borderRadius: 999, fontSize: 11, fontWeight: 600, border: '1px solid ' + (mock ? 'rgba(167,139,250,.55)' : 'rgba(0,204,255,.45)'), color: '#fff', background: mock ? 'rgba(109,94,240,.12)' : 'rgba(0,204,255,.08)' });
+        const pageChats = (s.convRows || []).filter(r => r.kind === 'page');
+        const stat = ok => ({ status: ok ? 'Approved' : 'In progress', statusStyle: { justifySelf: 'start', padding: '3px 9px', borderRadius: 999, fontSize: 11, fontWeight: 600, whiteSpace: 'nowrap', border: '1px solid ' + (ok ? 'rgba(190,242,100,.5)' : 'rgba(0,204,255,.4)'), color: ok ? 'var(--lime-300, #BEF264)' : 'var(--blue-300, #33D6FF)', background: ok ? 'rgba(190,242,100,.08)' : 'rgba(0,204,255,.08)' } });
+        let rows, selN, allSel, toggleAll, bHide, bDelete, bDeleteLabel;
+        if (tab === 'mock') {
+          const all = (s.convRows || []).filter(r => r.kind === 'mock' && (!ff.brand || r.brand === ff.brand) && (!q || (r.title + ' ' + r.brand).toLowerCase().includes(q)) && (!from || new Date(r.created_at) >= from) && (!to || new Date(r.created_at) <= to));
+          const list = all.filter(r => s.showHidden ? hidSet.has('mock:' + r.id) : !hidSet.has('mock:' + r.id));
+          const cs = s.convSel || new Set(), keyOf = r => 'mock:' + r.id, keys = list.map(keyOf).filter(k => cs.has(k));
+          selN = keys.length; allSel = !!list.length && selN === list.length;
+          toggleAll = () => this.setState({ convSel: allSel ? new Set() : new Set(list.map(keyOf)), convConfirm: false });
+          bHide = () => { if (!keys.length) return; this.setHidden(keys, !s.showHidden); this.setState({ convSel: new Set(), convConfirm: false }); };
+          bDelete = () => this.deleteConvs(keys);
+          bDeleteLabel = s.convDelBusy ? 'Deleting…' : s.convConfirm ? 'Confirm Delete (' + selN + ')' : 'Delete Selected';
+          rows = list.map(r => { const on = cs.has(keyOf(r)); return { by: this.firstName(r.owner), sel: on, toggle: () => this.toggleConv(keyOf(r)), type: 'Mock', typeStyle: typeStyle(true), ...stat(r.approved), brand: r.brand || '—', title: r.btitle || '—', detail: r.detail, date: fmt(r.created_at), time: fmtT(r.created_at), ts: +new Date(r.created_at) || 0, tod: (d => d.getHours() * 60 + d.getMinutes())(new Date(r.created_at)), hasChat: !this.embed, openChat: () => this.openChatHistory('mock', r.id, (r.brand || 'Mock') + ' · ' + r.detail), hasFiles: !this.embed, showContinue: !this.embed, openFiles: () => this.openFiles(r.id, (r.brand || 'Mock') + ' · ' + r.detail),
+            url: route('/mock-builder') + '?session=' + encodeURIComponent(r.id), addUrl: 'Add%20Creative.dc.html?brand=' + encodeURIComponent(r.brand || '') + '&mock=' + encodeURIComponent(r.id), addLabel: this.embed ? 'Select' : 'Add to page',
+            onAdd: this.embed ? e => { e.preventDefault(); window.parent.postMessage({ type: 'kx-mock-pick', id: r.id, brand: r.brand || '', detail: r.detail || '' }, '*'); } : undefined,
+            rowBg: on ? 'rgba(0,204,255,.06)' : 'transparent', rowOpacity: hidSet.has(keyOf(r)) ? .7 : 1 }; });
+        } else {
+          selN = pages.filter(x => sel.has(x.id)).length; allSel = pages.length > 0 && selN === pages.length;
+          toggleAll = () => this.setState({ sel: allSel ? [] : pages.map(x => x.id), bulkConfirm: false });
+          bHide = this.hideSelected; bDelete = this.deleteSelected;
+          bDeleteLabel = s.bulkConfirm ? 'Confirm Delete (' + selN + ')' : 'Delete Selected';
+          rows = pages.map(x => { const on = sel.has(x.id), chat = pageChats.find(r => r.brand && r.brand === x.brand); return { by: this.firstName(x.owner), sel: on, toggle: () => this.setState(st => { const n = new Set(st.sel || []); n.has(x.id) ? n.delete(x.id) : n.add(x.id); return { sel: [...n], bulkConfirm: false }; }), type: 'Page', typeStyle: typeStyle(false), ...stat(x.status === 'published'),
+            brand: x.brand || '—', title: x.title || (chat && chat.title) || x.page_type || '—', detail: [x.page_type, x.status === 'published' ? 'Published' : 'Draft', (x.creative_ids || []).length ? '' : 'Creatives pending'].filter(Boolean).join(' · '), date: fmt(x.created_at), time: fmtT(x.created_at), ts: +new Date(x.created_at) || 0, tod: (d => d.getHours() * 60 + d.getMinutes())(new Date(x.created_at)), hasChat: !!chat && !this.embed, showContinue: !this.embed, openChat: () => chat && this.openChatHistory('page', chat.id, (x.brand || 'Page') + ' · Page Builder'),
+            url: chat ? route('/page-builder') + '?chat=' + encodeURIComponent(chat.id) : (this.api ? this.api.pageUrl(x.slug) : '#'),
+            hasAnalytics: !String(x.id).startsWith('sample-'), analyticsUrl: '/analytics?page=' + encodeURIComponent(x.id), hasLive: x.status === 'published', liveUrl: this.api ? this.api.pageUrl(x.slug) : '#', addUrl: 'Add%20Creative.dc.html?page=' + encodeURIComponent(x.id) + (String(x.id).startsWith('sample-') ? '&brand=' + encodeURIComponent(x.brand || '') : ''), addLabel: 'Add to page', onAdd: undefined,
+            rowBg: on ? 'rgba(0,204,255,.06)' : 'transparent', rowOpacity: hidSet.has(x.id) ? .7 : 1 }; });
+        }
+        const mock = tab === 'mock', fbOn = tab === 'feedback';
+        const fbRows = (s.fbReviews || []).map(rv => { const cs = rv.creatives || [], a = cs.filter(c => c.status === 'approved').length, ch = cs.some(c => c.status === 'changes'), done = cs.length && a === cs.length;
+          return { by: this.firstName(rv._by), agency: rv.agency || '—', brand: rv.brand || '—', campaign: rv.title || '—', status: a + '/' + cs.length + ' approved' + (ch ? ' · changes' : ''), date: rv.created_at ? fmt(rv.created_at) : '', time: fmtT(rv.created_at),
+            url: route('/creative-feedback') + '?review=' + encodeURIComponent(rv.id),
+            statusStyle: { justifySelf: 'start', padding: '3px 9px', borderRadius: 999, fontSize: 11, fontWeight: 600, whiteSpace: 'nowrap', border: '1px solid ' + (done ? 'rgba(190,242,100,.5)' : ch ? 'rgba(214,125,240,.5)' : 'rgba(0,204,255,.4)'), color: done ? 'var(--lime-300, #BEF264)' : ch ? '#F0B4FF' : 'var(--blue-300, #33D6FF)', background: done ? 'rgba(190,242,100,.08)' : ch ? 'rgba(214,125,240,.08)' : 'rgba(0,204,255,.08)' } }; });
+        /* Click a column head: first click ascending (newest-first for dates), second flips, third clears. */
+        const so = s.bSort || { k: '', dir: 0 }, keyOf2 = { Type: r => r.type, Brand: r => String(r.brand || '').toLowerCase(), Title: r => String(r.title || '').toLowerCase(), Detail: r => String(r.detail || '').toLowerCase(), Status: r => r.status, Created: r => r.ts, Time: r => r.tod };
+        if (so.k && so.dir) { const g = keyOf2[so.k]; rows = rows.slice().sort((a, b) => { const x = g(a), y = g(b); return (x < y ? -1 : x > y ? 1 : 0) * so.dir; }); }
+        const sortVals = {}; Object.keys(keyOf2).forEach(k => { const act = so.k === k && so.dir, dateLike = k === 'Created' || k === 'Time';
+          sortVals['sort' + k] = { label: k, arrow: act ? (so.dir > 0 ? '▲' : '▼') : '', color: act ? '#fff' : 'rgba(255,255,255,.5)', aria: 'Sort by ' + k.toLowerCase() + (act ? (so.dir > 0 ? ', ascending' : ', descending') : ''),
+            go: () => this.setState(st => { const c = st.bSort || {}; const first = dateLike ? -1 : 1; if (c.k !== k) return { bSort: { k, dir: first } }; if (c.dir === first) return { bSort: { k, dir: -first } }; return { bSort: { k: '', dir: 0 } }; }) }; });
+        const cmod = s.chatModal, copyOk = s.copiedKey;
+        Object.assign(this._chatVals = {}, { chatOpen: !!cmod, chatTitle: cmod ? cmod.title : '', chatNote: cmod ? (cmod.loading ? 'Loading…' : cmod.err || (!cmod.msgs.length ? 'No messages saved for this build.' : '')) : '',
+          chatMsgs: cmod ? cmod.msgs.map((m, i) => ({ role: m.role === 'user' ? 'You' : 'AI', roleColor: m.role === 'user' ? 'var(--blue-300, #66E0FF)' : 'rgba(255,255,255,.6)', when: m.at ? fmt(m.at) + ' · ' + fmtT(m.at) : '', text: m.text, copyLabel: copyOk === 'm' + i ? 'Copied' : 'Copy', copy: () => this.copyText(m.text, 'm' + i),
+            box: { display: 'flex', flexDirection: 'column', gap: 6, padding: '12px 14px', borderRadius: 12, border: '1px solid ' + (m.role === 'user' ? 'rgba(0,204,255,.28)' : 'rgba(255,255,255,.08)'), background: m.role === 'user' ? 'rgba(0,204,255,.05)' : 'rgba(255,255,255,.02)' } })) : [],
+          copyAllLabel: copyOk === 'all' ? 'Copied' : 'Copy all prompts', copyAllChat: () => cmod && this.copyText(cmod.msgs.filter(m => m.role === 'user').map(m => m.text).join('\n\n'), 'all'),
+          closeChat: () => this.setState({ chatModal: null }), stopProp: e => e.stopPropagation() });
+        const fm = s.filesModal;
+        const fileVals = { filesOpen: !!fm, filesTitle: fm ? fm.title : '', filesNote: fm ? (fm.loading ? 'Loading…' : fm.err || (!fm.rows.length ? 'No files yet. Approve a mock in Mock Builder and its HTML ZIP, PNG, GIF and MP4 are saved here.' : '')) : '',
+          fileRows: fm ? fm.rows.map(f => ({ name: f.name, fmt: String((f.meta && f.meta.format) || (f.name.split('.').pop() || '')).toUpperCase().replace('ZIP', 'HTML'), meta: [(f.meta && f.meta.size) || '', f.size ? (f.size / 1048576).toFixed(f.size > 10485760 ? 0 : 2) + ' MB' : '', f.created_at ? fmt(f.created_at) + ' · ' + fmtT(f.created_at) : ''].filter(Boolean).join(' · '), dlLabel: s.dlBusy === f.id ? 'Opening…' : 'Download', dl: () => this.downloadFile(f) })) : [],
+          closeFiles: () => this.setState({ filesModal: null }) };
+        return { ...this._chatVals, ...fileVals, ...sortVals, tabPagesOn: String(!mock && !fbOn), tabMocksOn: String(mock), tabPagesStyle: tabStyle(!mock && !fbOn), tabMocksStyle: tabStyle(mock), showPagesTab: setTab('page'), showMocksTab: setTab('mock'),
+          tabFbOn: String(fbOn), tabFbStyle: tabStyle(fbOn), showFbTab: setTab('feedback'), onFbTab: fbOn, notFbTab: !fbOn, fbRows, fbEmpty: !fbRows.length,
+          builds: rows, buildsEmpty: !rows.length, bAllSel: allSel, bToggleAll: toggleAll, bNoSel: !selN, bHide, bDelete, bDeleteLabel,
+          bSelLabel: selN ? selN + ' selected' : 'Select ' + (mock ? 'mocks' : 'pages') + ' to hide or delete',
+          bEmptyTitle: mock ? ((s.convRows || []).some(r => r.kind === 'mock') ? 'No mocks match these filters' : 'No mocks yet') : (s.pagesErr ? 'Pages are not set up yet' : s.pages.length ? 'No pages match these filters' : 'No landing pages yet'),
+          bEmptyText: mock ? 'Mocks you make in the Mock Builder save here automatically.' : (s.pagesErr || (s.pages.length ? 'Clear a filter to see more.' : 'Pages you publish from the Page Builder appear here.')) };
+      })(),
+      uploadLabel: s.uploading ? 'Uploading…' : p.headshot_url ? 'Replace headshot' : 'Upload headshot', onHeadshot: this.onHeadshot,
+      fields: [
+        { k: 'full_name', label: 'Full name', v: p.full_name || '', ph: 'Jordan Smith', type: 'text' },
+        { k: 'title', label: 'Title', v: p.title || '', ph: 'Account Director', type: 'text' },
+        { k: 'phone', label: 'Phone', v: p.phone || '', ph: '313-555-0100', type: 'tel' },
+        { k: 'cta_label', label: 'Call to action', v: p.cta_label || '', ph: 'Request a Concept', type: 'text' }
+      ],
+      onProfileField: this.onProfileField, saveProfile: this.saveProfile, saveLabel: s.busy ? 'Saving…' : 'Save Footer',
+      profileMsg: s.msg, msgColor: s.msgOk ? 'var(--lime-300)' : '#F0B4FF',
+      previewTitle: (p.title || 'Your title') + ' · KORTX', previewContact: [s.user && s.user.email, p.phone].filter(Boolean).join(' · '),
+      previewCta: p.cta_label || 'Request a Concept',
+      plateNote: kind ? 'Your headshot replaces the team photo on every page you generate.' : 'Showing the team photo until you upload a headshot.',
+      plateEl: this.mediaEl(p, 16 / 9, 'assets/team-photo.jpg'),
+      pwFields: [
+        { k: 'current', label: 'Current password', v: s.pw.current, ac: 'current-password' },
+        { k: 'next', label: 'New password', v: s.pw.next, ac: 'new-password' },
+        { k: 'confirm', label: 'Confirm new password', v: s.pw.confirm, ac: 'new-password' }
+      ],
+      onPw: this.onPw, submitPassword: this.submitPassword, pwInvalid: !pwValid || s.pwBusy, pwLabel: s.pwBusy ? 'Changing…' : 'Change Password',
+      pwBtnStyle: { height: 42, padding: '0 20px', borderRadius: 999, border: 0, background: 'var(--blue-400)', color: '#001830', fontSize: 14, fontWeight: 700, cursor: pwValid ? 'pointer' : 'default', opacity: pwValid ? 1 : .4 },
+      pwMsg: s.pwMsg, pwMsgColor: s.pwOk ? 'var(--lime-300)' : '#F0B4FF',
+      email: s.user ? s.user.email : '', newEmail: s.newEmail, onNewEmail: this.onNewEmail, submitEmail: this.submitEmail,
+      emailMsg: s.emailMsg, emailMsgColor: s.emailOk ? 'var(--lime-300)' : '#F0B4FF', signOut: this.signOut
+    };
+  }
+}
+</script>
+</body>
+</html>

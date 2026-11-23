@@ -1,0 +1,1243 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<script src="kx-theme.js"></script>
+<link rel="icon" type="image/svg+xml" href="assets/kortx-logomark-bright-blue.svg">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>KORTX Creative Database</title>
+<link rel="preconnect" href="https://captivate.kortx.io">
+<link rel="preconnect" href="https://fdjfsimjilicmfsiijyi.supabase.co" crossorigin>
+<link rel="preconnect" href="https://esm.sh" crossorigin>
+<link rel="preconnect" href="https://unpkg.com" crossorigin>
+<link rel="stylesheet" href="_ds/kortx-design-guide-2026-5bc7ff27-9282-4218-938a-63d43f555d47/tokens/fonts.css">
+<link rel="stylesheet" href="_ds/kortx-design-guide-2026-5bc7ff27-9282-4218-938a-63d43f555d47/tokens/colors.css">
+<link rel="stylesheet" href="_ds/kortx-design-guide-2026-5bc7ff27-9282-4218-938a-63d43f555d47/tokens/typography.css">
+<link rel="stylesheet" href="_ds/kortx-design-guide-2026-5bc7ff27-9282-4218-938a-63d43f555d47/tokens/spacing.css">
+<link rel="stylesheet" href="_ds/kortx-design-guide-2026-5bc7ff27-9282-4218-938a-63d43f555d47/tokens/radius.css">
+<link rel="stylesheet" href="_ds/kortx-design-guide-2026-5bc7ff27-9282-4218-938a-63d43f555d47/tokens/elevation.css">
+<link rel="stylesheet" href="_ds/kortx-design-guide-2026-5bc7ff27-9282-4218-938a-63d43f555d47/tokens/motion.css">
+<link rel="stylesheet" href="_ds/kortx-design-guide-2026-5bc7ff27-9282-4218-938a-63d43f555d47/tokens/base.css">
+<link rel="stylesheet" href="_ds/kortx-design-guide-2026-5bc7ff27-9282-4218-938a-63d43f555d47/styles.css">
+<script src="_ds/kortx-design-guide-2026-5bc7ff27-9282-4218-938a-63d43f555d47/_ds_bundle.js"></script>
+<script src="https://unpkg.com/lucide@0.454.0/dist/umd/lucide.min.js"></script>
+<style>
+  @keyframes kx-dimin { 0% { opacity: 0 } 100% { opacity: 1 } }
+  html, body { margin: 0; padding: 0; background: #000509; }
+  body { font-family: var(--font-body, Inter, Helvetica, sans-serif); -webkit-font-smoothing: antialiased; }
+  a { color: var(--blue-400); text-decoration: none; }
+  a:hover { color: var(--blue-300); }
+  input, select, textarea { font-family: inherit; }
+  [data-focusable]:focus-visible { outline: none; border-color: var(--blue-400) !important;
+    box-shadow: 0 0 0 3px rgba(0,204,255,.55) !important; }
+  @keyframes kx-liquid { 0% { opacity: 0; transform: translateY(-8px) scale(.9); filter: blur(6px) }
+    100% { opacity: 1; transform: translateY(0) scale(1); filter: blur(0) } }
+  @keyframes kx-orbit { 0% { transform: rotate(0) translateX(26px) } 100% { transform: rotate(360deg) translateX(26px) } }
+  @keyframes kx-rowin { 0% { opacity: 0; transform: translateY(10px) } 100% { opacity: 1; transform: translateY(0) } }
+  @keyframes kx-toastin { 0% { opacity: 0; transform: translateX(-50%) translateY(14px) } 100% { opacity: 1; transform: translateX(-50%) translateY(0) } }
+  @keyframes kx-toastbar { 0% { transform: scaleX(1) } 100% { transform: scaleX(0) } }
+  @media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after { animation-duration: .001ms !important; transition-duration: .001ms !important; }
+  }
+</style>
+</helmet>
+
+<div style="position: relative; min-height: 100vh; background: #000509; color: #fff; overflow-x: clip; isolation: isolate;">
+
+  <div aria-hidden="true" style="position: fixed; inset: 0; z-index: 0; pointer-events: none;">
+    <div style="position: absolute; top: -22vh; right: -14vw; width: 78vw; height: 78vw; border-radius: 50%; background: radial-gradient(circle at 50% 50%, rgba(0,204,255,.14), rgba(0,204,255,.04) 40%, transparent 68%); filter: blur(24px);"></div>
+    <div style="position: absolute; bottom: -34vh; left: -18vw; width: 72vw; height: 72vw; border-radius: 50%; background: radial-gradient(circle at 50% 50%, rgba(109,94,240,.12), rgba(109,94,240,.03) 42%, transparent 70%); filter: blur(30px);"></div>
+  </div>
+
+  <header style="position: sticky; top: 0; z-index: 60; display: flex; align-items: center; gap: 20px; flex-wrap: wrap; min-height: 72px; padding: 12px clamp(20px, 4vw, 56px); background: transparent;">
+    <div aria-hidden="true" style="position: absolute; left: 0; right: 0; top: 0; height: 170px; pointer-events: none; z-index: -1; background: linear-gradient(180deg, rgba(0,5,9,.97) 0%, rgba(0,5,9,.93) 40%, rgba(0,5,9,.7) 62%, rgba(0,5,9,.32) 82%, rgba(0,5,9,0) 100%); backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px); -webkit-mask-image: linear-gradient(180deg, #000 0%, #000 50%, transparent 100%); mask-image: linear-gradient(180deg, #000 0%, #000 50%, transparent 100%);"></div>
+    <a href="/" aria-label="KORTX Creative Labs" style="position: relative; display: grid; place-items: center; width: 46px; height: 46px; flex: none;">
+      <span aria-hidden="true" style="position: absolute; inset: 0; border-radius: 50%; background: radial-gradient(circle at 50% 50%, rgba(0,204,255,.24), transparent 68%);"></span>
+      <span aria-hidden="true" style="position: absolute; inset: 3px; border: 1px solid rgba(0,204,255,.30); border-radius: 50%;"></span>
+      <span aria-hidden="true" style="position: absolute; inset: 8px; border: 1px solid rgba(138,124,248,.28); border-radius: 50%; transform: rotate(18deg) scaleY(.6);"></span>
+      <img src="assets/kortx-logomark-bright-blue.svg" alt="KORTX" style="position: relative; width: 20px; display: block;">
+      <span aria-hidden="true" style="position: absolute; top: 50%; left: 50%; width: 4px; height: 4px; margin: -2px; border-radius: 50%; background: var(--blue-300); box-shadow: 0 0 9px rgba(0,204,255,.9); animation: kx-orbit 18s linear infinite;"></span>
+    </a>
+    <dc-import name="Site Nav" current="database-view" hint-size="200px,40px"></dc-import>
+    <div style="flex: 1;"></div>
+    <div style="display: flex; align-items: center; gap: 10px; flex-wrap: wrap;">
+      <div role="status" aria-live="polite" style="display: flex; flex-direction: column; align-items: flex-end; gap: 2px; min-width: 0;">
+        <span style="font-size: 11px; font-weight: 600; letter-spacing: .08em; text-transform: uppercase; color: {{ syncColor }};">{{ syncLabel }}</span>
+        <span style="font-size: 11px; color: rgba(255,255,255,.55);">{{ accountLabel }}</span>
+      </div>
+      <span style="padding: 4px 10px; border-radius: 999px; font-size: 11px; font-weight: 600; border: 1px solid rgba(255,255,255,.2); color: rgba(255,255,255,.72);">View Only</span>
+      <sc-if value="{{ picker }}" hint-placeholder-val="{{ false }}">
+        <nav aria-label="Builder steps" style="display: flex; align-items: center; gap: 6px; flex-wrap: wrap; margin-right: 8px;">
+          <sc-for list="{{ pickerSteps }}" as="st" hint-placeholder-count="3">
+            <span aria-current="{{ st.current }}" style="{{ st.style }}"><span style="{{ st.dotStyle }}">{{ st.n }}</span>{{ st.label }}</span>
+          </sc-for>
+        </nav>
+        <x-import component-from-global-scope="KORTXDesignSystem_a22685.Button" size="sm" on-click="{{ onContinue }}" disabled="{{ noPicks }}" hint-size="auto,32px">{{ continueLabel }}</x-import>
+      </sc-if>
+    </div>
+    <dc-import name="User Menu" current="database" hint-size="40px,40px" style="margin-left: auto; order: 99;"></dc-import>
+  </header>
+
+  <main style="position: relative; z-index: 1; max-width: 1280px; margin: 0 auto; padding: clamp(28px, 4vw, 52px) clamp(20px, 4vw, 56px) clamp(56px, 8vh, 112px);">
+
+    <!-- Proposal-only additions: kept apart from the step flow in the header. -->
+    <sc-if value="{{ picker }}" hint-placeholder-val="{{ false }}">
+      <div role="region" aria-label="Add creative for this proposal" style="display: flex; flex-wrap: wrap; align-items: center; gap: 12px 16px; margin-bottom: 24px; padding: 14px 18px; border-radius: 12px; border: 1px dashed rgba(0,204,255,.35); background: rgba(0,204,255,.04);">
+        <div style="flex: 1 1 280px; min-width: 0;">
+          <div style="font-size: 13px; font-weight: 600; color: #fff;">Not in the library?</div>
+          <div style="margin-top: 2px; font-size: 12px; line-height: 1.45; color: rgba(255,255,255,.6);">Add a ready-to-go HTML5 zip or a Celtra preview.</div>
+        </div>
+        <div style="display: flex; gap: 8px; flex-wrap: wrap;">
+          <x-import component-from-global-scope="KORTXDesignSystem_a22685.Button" variant="ghost" size="sm" on-click="{{ openZipAdd }}" hint-size="auto,32px">Add HTML Folder</x-import>
+          <x-import component-from-global-scope="KORTXDesignSystem_a22685.Button" variant="ghost" size="sm" on-click="{{ openCeltraAdd }}" hint-size="auto,32px">Add Celtra Preview</x-import>
+        </div>
+      </div>
+    </sc-if>
+
+    <sc-if value="{{ migrateShow }}" hint-placeholder-val="{{ false }}">
+      <div role="region" aria-label="Unsent edits" style="display: flex; flex-wrap: wrap; align-items: center; gap: 16px; margin-bottom: 24px; padding: 18px 20px; border-radius: 12px; border: 1px solid rgba(0,204,255,.32); background: #070B15; box-shadow: 0 0 40px rgba(0,204,255,.10);">
+        <div style="flex: 1 1 320px; min-width: 0; display: flex; flex-direction: column; gap: 4px;">
+          <div style="font-size: 11px; font-weight: 600; letter-spacing: .18em; text-transform: uppercase; color: var(--lime-300);">Saved in this browser only</div>
+          <div style="font-size: 14px; line-height: 1.5; color: rgba(255,255,255,.76); text-wrap: pretty;">{{ migrateText }}</div>
+        </div>
+        <x-import component-from-global-scope="KORTXDesignSystem_a22685.Button" size="sm" on-click="{{ runMigrate }}" hint-size="auto,32px">{{ migrateLabel }}</x-import>
+      </div>
+    </sc-if>
+
+    <sc-if value="{{ addOpen }}" hint-placeholder-val="{{ false }}">
+      <div style="position: fixed; inset: 0; z-index: 90; display: flex; align-items: center; justify-content: center; padding: clamp(14px, 3vw, 44px); background: rgba(0,8,18,.82); backdrop-filter: blur(14px);">
+        <div onClick="{{ cancelDraft }}" style="position: absolute; inset: 0;"></div>
+        <div role="dialog" aria-modal="true" aria-label="{{ draft.dialogLabel }}" ref="{{ dialogRef }}" style="position: relative; z-index: 2; width: 100%; max-width: 880px; max-height: 100%; overflow-y: auto; padding: 22px; border-radius: 20px; border: 1px solid rgba(0,204,255,.28); background: linear-gradient(180deg, rgba(9,16,30,.97), rgba(4,8,18,.98)); box-shadow: 0 40px 120px rgba(0,0,0,.7), 0 0 90px rgba(0,204,255,.10); animation: kx-liquid 380ms cubic-bezier(.22,1,.28,1) both;">
+          <button type="button" data-focusable="1" onClick="{{ cancelDraft }}" aria-label="Close" style="position: absolute; top: 18px; right: 18px; display: grid; place-items: center; width: 34px; height: 34px; border-radius: 8px; border: 1px solid rgba(255,255,255,.14); background: rgba(255,255,255,.06); color: #fff; cursor: pointer; transition: all 200ms cubic-bezier(.16,1,.3,1);" style-hover="background: rgba(255,255,255,.12); border-color: rgba(0,204,255,.45)">{{ closeIcon }}</button>
+          <div style="font-size: 11px; font-weight: 600; letter-spacing: .18em; text-transform: uppercase; color: var(--lime-300); margin-bottom: 16px;">{{ draft.dialogLabel }}</div>
+
+        <div role="group" aria-label="Creative source" style="display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 16px;">
+          <button type="button" data-focusable="1" data-value="link" aria-pressed="{{ draft.isLink }}" onClick="{{ onDraftSource }}" style="{{ draft.linkTab.style }}" style-hover="border-color: rgba(0,204,255,.6); color: #fff">Celtra Preview Link</button>
+          <sc-if value="{{ picker }}" hint-placeholder-val="{{ false }}"><button type="button" data-focusable="1" data-value="celtra" aria-pressed="{{ draft.isCeltra }}" onClick="{{ onDraftSource }}" style="{{ draft.celtraTab.style }}" style-hover="border-color: rgba(0,204,255,.5); color: #fff">Celtra preview</button></sc-if>
+          <button type="button" data-focusable="1" data-value="zip" aria-pressed="{{ draft.isZip }}" onClick="{{ onDraftSource }}" style="{{ draft.zipTab.style }}" style-hover="border-color: rgba(0,204,255,.6); color: #fff">HTML5 Zip Upload</button>
+        </div>
+
+        <sc-if value="{{ draft.isZip }}" hint-placeholder-val="{{ false }}">
+          <label data-focusable="1" style="display: flex; align-items: center; gap: 14px; margin-bottom: 14px; padding: 18px; border-radius: 12px; border: 1px dashed rgba(0,204,255,.45); background: rgba(0,204,255,.05); cursor: pointer; transition: all 200ms cubic-bezier(.16,1,.3,1);" style-hover="background: rgba(0,204,255,.1); border-color: rgba(0,204,255,.7)">
+            <span style="display: grid; place-items: center; width: 42px; height: 42px; flex: none; border-radius: 999px; background: rgba(0,204,255,.10); color: var(--blue-400);">{{ uploadIcon }}</span>
+            <span style="min-width: 0; flex: 1;">
+              <span style="display: block; font-size: 13px; font-weight: 600; color: #fff;">{{ draft.zipTitle }}</span>
+              <span style="display: block; margin-top: 3px; font-size: 11px; color: rgba(255,255,255,.6);">{{ draft.zipSub }}</span>
+            </span>
+            <input type="file" accept=".zip,application/zip,application/x-zip-compressed" onChange="{{ onZipPick }}" style="position: absolute; width: 1px; height: 1px; opacity: 0; pointer-events: none;">
+          </label>
+        </sc-if>
+
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(190px, 1fr)); gap: 14px;">
+          <label style="{{ draft.linkFieldStyle }}">
+            <span style="{{ labelStyle }}">{{ draft.idLabel }}</span>
+            <input data-focusable="1" data-field="id" value="{{ draft.id }}" onChange="{{ onDraftChange }}" placeholder="{{ draft.idPlaceholder }}" style="{{ inputStyle }}">
+            <span style="display: block; margin-top: 5px; font-size: 10px; font-family: ui-monospace, monospace; color: rgba(0,204,255,.75);">{{ draft.resolved }}</span>
+          </label>
+          <label style="display: block;">
+            <span style="{{ labelStyle }}">Brand</span>
+            <input data-focusable="1" data-field="brand" value="{{ draft.brand }}" onChange="{{ onDraftChange }}" placeholder="Toyota" style="{{ inputStyle }}">
+          </label>
+          <label style="display: block;">
+            <span style="{{ labelStyle }}">Ad product</span>
+            <select data-focusable="1" data-field="product" value="{{ draft.product }}" onChange="{{ onDraftChange }}" style="{{ inputStyle }}">
+              <sc-for list="{{ products }}" as="p" hint-placeholder-count="6">
+                <option value="{{ p }}">{{ p }}</option>
+              </sc-for>
+            </select>
+          </label>
+          <label style="display: block;">
+            <span style="{{ labelStyle }}">Vertical</span>
+            <select data-focusable="1" data-field="vertical" value="{{ draft.vertical }}" onChange="{{ onDraftChange }}" style="{{ inputStyle }}">
+              <option value="">Choose a vertical…</option>
+              <sc-for list="{{ verticals }}" as="v" hint-placeholder-count="10">
+                <option value="{{ v }}">{{ v }}</option>
+              </sc-for>
+            </select>
+          </label>
+        </div>
+
+
+        <div style="margin-top: 16px; padding-top: 14px; border-top: 1px solid rgba(255,255,255,.08);">
+          <div style="font-size: 11px; font-weight: 600; letter-spacing: .18em; text-transform: uppercase; color: var(--lime-300);">Gallery Brief — shown beside the ad</div>
+          <label style="display: block; margin-top: 12px;">
+            <span style="{{ labelStyle }}">Known for</span>
+            <input data-focusable="1" data-field="bestFor" value="{{ draft.bestFor }}" onChange="{{ onDraftChange }}" placeholder="Retailers launching a new product line" style="{{ inputStyle }}">
+          </label>
+          <label style="display: block; margin-top: 14px;">
+            <span style="{{ labelStyle }}">Campaign goal</span>
+            <select data-focusable="1" value="{{ draftGoal }}" onChange="{{ onDraftGoal }}" style="{{ inputStyle }}">
+              <option value="">Choose a campaign goal…</option>
+              <sc-for list="{{ goalOptions }}" as="g" hint-placeholder-count="6">
+                <option value="{{ g }}">{{ g }}</option>
+              </sc-for>
+            </select>
+          </label>
+          <label style="display: block; margin-top: 14px;">
+            <span style="{{ labelStyle }}">What we measure</span>
+            <input data-focusable="1" data-field="measure" value="{{ draft.measure }}" onChange="{{ onDraftChange }}" placeholder="Swipes per frame, store visits, CTR" style="{{ inputStyle }}">
+          </label>
+        </div>
+
+        <div style="margin-top: 16px;">
+          <span style="{{ labelStyle }}">Components — pick any that apply</span>
+          <div role="group" style="display: flex; flex-wrap: wrap; gap: 8px; margin-top: 8px;">
+            <sc-for list="{{ draftComponents }}" as="c" hint-placeholder-count="12">
+              <button type="button" data-focusable="1" aria-pressed="{{ c.active }}" data-value="{{ c.label }}" onClick="{{ onDraftComponent }}" style="{{ c.style }}" style-hover="border-color: rgba(0,204,255,.5); color: #fff">{{ c.label }}</button>
+            </sc-for>
+          </div>
+        </div>
+
+        <button type="button" data-focusable="1" role="checkbox" aria-checked="{{ draft.pinned }}" aria-pressed="{{ draft.pinned }}" onClick="{{ onDraftPinned }}" style="display: flex; align-items: center; gap: 11px; margin-top: 18px; padding: 12px 14px; width: 100%; border-radius: 12px; border: 1px solid rgba(255,255,255,.12); background: rgba(255,255,255,.04); text-align: left; cursor: pointer; transition: all 200ms cubic-bezier(.16,1,.3,1);" style-hover="border-color: rgba(0,204,255,.4); background: rgba(255,255,255,.07)">
+          <span style="{{ draft.pinBoxStyle }}">{{ draft.pinMark }}</span>
+          <span style="min-width: 0;">
+            <span style="display: block; font-size: 13px; font-weight: 600; color: #fff;">Move it to the top</span>
+            <span style="display: block; margin-top: 2px; font-size: 11px; line-height: 1.4; color: rgba(255,255,255,.55);">Leads the gallery on the main page, so the newest work is seen first.</span>
+          </span>
+        </button>
+
+        <div style="display: flex; align-items: center; gap: 12px; margin-top: 20px; padding-top: 16px; border-top: 1px solid rgba(255,255,255,.12);">
+          <x-import component-from-global-scope="KORTXDesignSystem_a22685.Button" size="sm" on-click="{{ saveDraft }}" disabled="{{ draft.invalid }}" hint-size="auto,32px">{{ draft.saveLabel }}</x-import>
+          <x-import component-from-global-scope="KORTXDesignSystem_a22685.Button" variant="ghost" size="sm" on-click="{{ cancelDraft }}" hint-size="auto,32px">Cancel</x-import>
+          <span style="font-size: 12px; color: rgba(255,255,255,.5);">{{ draft.hint }}</span>
+        </div>
+        </div>
+      </div>
+    </sc-if>
+
+    <section aria-label="Filters" style="margin-bottom: 20px; padding: 18px 20px; border-radius: 20px; border: 1px solid rgba(255,255,255,.14); background: rgba(255,255,255,.05); backdrop-filter: blur(18px) saturate(150%); box-shadow: inset 0 1px 0 rgba(255,255,255,.14);">
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 14px;">
+        <label style="display: block;">
+          <span style="{{ labelStyle }}">Search</span>
+          <input data-focusable="1" data-field="q" value="{{ q }}" onChange="{{ onFilterChange }}" placeholder="Creative name, creative ID or brand…" style="{{ inputStyle }}">
+        </label>
+        <label style="display: block;">
+          <span style="{{ labelStyle }}">Vertical</span>
+          <select data-focusable="1" data-field="fVertical" value="{{ fVertical }}" onChange="{{ onFilterChange }}" style="{{ inputStyle }}">
+            <option value="">All verticals</option>
+            <sc-for list="{{ verticals }}" as="v" hint-placeholder-count="10">
+              <option value="{{ v }}">{{ v }}</option>
+            </sc-for>
+          </select>
+        </label>
+        <label style="display: block;">
+          <span style="{{ labelStyle }}">Ad product</span>
+          <select data-focusable="1" data-field="fProduct" value="{{ fProduct }}" onChange="{{ onFilterChange }}" style="{{ inputStyle }}">
+            <option value="">All products</option>
+            <sc-for list="{{ products }}" as="p" hint-placeholder-count="6">
+              <option value="{{ p }}">{{ p }}</option>
+            </sc-for>
+          </select>
+        </label>
+      </div>
+
+      <div style="margin-top: 16px;" onMouseEnter="{{ openFilterComponents }}">
+        <button type="button" data-focusable="1" aria-expanded="{{ compsOpen }}" onClick="{{ toggleFilterComponents }}" style="{{ facetHeadStyle }}">
+          <span style="flex: 1; text-align: left; display: flex; align-items: center; gap: 8px;">
+            <span style="font-size: 13px; font-weight: 600; color: #fff;">Filter by Component</span>
+            <span style="font-size: 11px; color: {{ compsValueColor }};">{{ compsValueLabel }}</span>
+          </span>
+          <span style="{{ compsChevronStyle }}" style-hover="transform: scale(1.12) rotate({{ compsChevronDeg }}); box-shadow: inset 0 1px 0 rgba(255,255,255,.6), 0 0 24px rgba(138,124,248,.6), 0 6px 18px rgba(0,0,0,.4)">{{ chevronIcon }}</span>
+        </button>
+        <div style="{{ compsPanelStyle }}">
+          <div role="group" aria-label="Filter by component" style="display: flex; flex-wrap: wrap; gap: 8px; padding: 14px 2px 2px;">
+            <sc-for list="{{ filterComponents }}" as="c" hint-placeholder-count="12">
+              <button type="button" data-focusable="1" aria-pressed="{{ c.active }}" data-value="{{ c.label }}" onClick="{{ onFilterComponent }}" style="{{ c.style }}" style-hover="border-color: rgba(0,204,255,.5); color: #fff">{{ c.label }}</button>
+            </sc-for>
+          </div>
+        </div>
+      </div>
+
+      <div style="display: flex; align-items: center; justify-content: space-between; gap: 12px; margin-top: 16px; padding-top: 14px; border-top: 1px solid rgba(255,255,255,.12);">
+        <span style="font-size: 12px; color: rgba(255,255,255,.6);">{{ resultLabel }}</span>
+        <x-import component-from-global-scope="KORTXDesignSystem_a22685.Button" variant="ghost" size="sm" on-click="{{ clearFilters }}" disabled="{{ filtersClean }}" hint-size="auto,32px">Clear</x-import>
+      </div>
+    </section>
+
+    <div role="list" aria-label="Creative database" style="display: flex; flex-direction: column; gap: 12px;">
+      <sc-for list="{{ rows }}" as="r" hint-placeholder-count="6">
+        <div role="listitem" data-row="{{ r.key }}" style="{{ r.rowStyle }}">
+          <sc-if value="{{ picker }}" hint-placeholder-val="{{ false }}">
+            <button type="button" data-focusable="1" role="checkbox" aria-checked="{{ r.picked }}" aria-label="{{ r.pickAria }}" data-key="{{ r.key }}" onClick="{{ togglePick }}" style="{{ r.pickBox }}">{{ r.pickMark }}</button>
+          </sc-if>
+          <!-- PREVIEW — mounts only near the viewport; hover scales the whole
+               stage up from its left edge and lifts it above its neighbours. -->
+          <div data-lazy="{{ r.key }}" style="{{ r.slotStyle }}">
+            <div data-scale="{{ r.hoverScale }}" onMouseEnter="{{ onPreviewEnter }}" onMouseLeave="{{ onPreviewLeave }}" style="{{ r.panelStyle }}">
+              <div style="{{ r.stageStyle }}">
+              <sc-if value="{{ r.live }}" hint-placeholder-val="{{ false }}">
+                <iframe src="{{ r.url }}" title="{{ r.frameTitle }}" scrolling="no" loading="eager" importance="high" style="{{ r.frameStyle }}"></iframe>
+              </sc-if>
+              <sc-if value="{{ r.idle }}" hint-placeholder-val="{{ true }}">
+                <div style="position: absolute; inset: 0; display: grid; place-items: center; background: #EEF1F5; font-size: 8px; letter-spacing: .1em; text-transform: uppercase; color: rgba(0,24,48,.45);">Loading</div>
+              </sc-if>
+                <div aria-hidden="true" style="position: absolute; inset: 0; pointer-events: none; border-radius: 6px; box-shadow: inset 0 0 0 1px rgba(0,24,48,.1);"></div>
+              </div>
+            </div>
+          </div>
+
+          <div style="min-width: 0; display: flex; flex-direction: column; gap: 6px;">
+            <div style="display: flex; align-items: baseline; gap: 10px; flex-wrap: wrap;">
+              <span style="font-size: 16px; font-weight: 650; letter-spacing: -.015em; color: #fff;">{{ r.brand }}</span>
+            </div>
+            <div style="display: flex; align-items: center; gap: 8px; flex-wrap: wrap; font-size: 11px; color: rgba(255,255,255,.5);">
+              <span style="padding: 3px 8px; border-radius: 999px; border: 1px solid rgba(0,204,255,.3); color: var(--blue-300);">{{ r.product }}</span>
+              <span>{{ r.vertical }}</span>
+              <span style="color: rgba(255,255,255,.28);">·</span>
+              <span style="font-family: ui-monospace, monospace;">{{ r.id }}</span>
+              <span style="color: rgba(255,255,255,.28);">·</span>
+              <span>{{ r.formatLabel }}</span>
+            </div>
+            <div style="font-size: 12px; line-height: 1.45; color: rgba(255,255,255,.6); text-wrap: pretty;">{{ r.knownFor }}</div>
+            <div style="display: flex; flex-wrap: wrap; gap: 5px; margin-top: 2px;">
+              <sc-for list="{{ r.components }}" as="tag" hint-placeholder-count="3">
+                <span style="padding: 3px 8px; border-radius: 999px; border: 1px solid rgba(255,255,255,.14); background: rgba(255,255,255,.05); font-size: 10px; font-weight: 500; color: rgba(255,255,255,.7);">{{ tag }}</span>
+              </sc-for>
+            </div>
+          </div>
+
+          <div style="display: flex; flex-direction: column; align-items: flex-end; gap: 8px; flex: none;">
+            <sc-if value="{{ r.isZip }}" hint-placeholder-val="{{ false }}">
+              <button type="button" data-focusable="1" data-key="{{ r.key }}" onClick="{{ exportRowHtml }}" style="display: inline-flex; align-items: center; gap: 5px; padding: 6px 11px; border-radius: 999px; border: 1px solid rgba(190,242,100,.4); background: rgba(190,242,100,.08); font-size: 11px; font-weight: 600; color: var(--lime-300); cursor: pointer; white-space: nowrap; transition: all 200ms cubic-bezier(.16,1,.3,1);" style-hover="border-color: rgba(190,242,100,.7); background: rgba(190,242,100,.14)">{{ r.exportLabel }}</button>
+            </sc-if>
+            <a href="{{ r.url }}" target="_blank" rel="noopener" data-focusable="1" style="display: inline-flex; align-items: center; gap: 5px; padding: 6px 11px; border-radius: 999px; border: 1px solid rgba(0,204,255,.34); background: rgba(0,204,255,.09); font-size: 11px; font-weight: 600; color: var(--blue-200);">Open{{ openIcon }}</a>
+            <sc-if value="{{ r.isLink }}" hint-placeholder-val="{{ true }}">
+              <button type="button" data-focusable="1" data-key="{{ r.key }}" onClick="{{ copyLink }}" style="{{ ghostBtn }}" style-hover="border-color: rgba(0,204,255,.45); color: #fff">{{ r.copyLabel }}</button>
+            </sc-if>
+            
+          </div>
+        </div>
+      </sc-for>
+    </div>
+
+    <sc-if value="{{ isEmpty }}" hint-placeholder-val="{{ false }}">
+      <div style="padding: 80px 20px; text-align: center;">
+        <div style="font-size: 22px; font-weight: 650; letter-spacing: -.02em; color: #fff;">Nothing matches those filters.</div>
+        <p style="margin: 12px auto 22px; max-width: 420px; font-size: 14px; line-height: 1.5; color: rgba(255,255,255,.6);">Clear a filter, or add a creative with its share URL.</p>
+        <x-import component-from-global-scope="KORTXDesignSystem_a22685.Button" variant="outline" size="sm" on-click="{{ clearFilters }}" hint-size="auto,36px">Clear Filters</x-import>
+      </div>
+    </sc-if>
+  </main>
+
+  <footer data-block="Site footer" style="position: relative; z-index: 1; background: transparent;">
+    <div style="max-width: 1280px; margin: 0 auto; padding: clamp(28px, 4vh, 48px) clamp(20px, 4vw, 56px) clamp(32px, 4vw, 52px); text-align: center;">
+      <div style="padding-top: clamp(16px, 2vw, 24px); border-top: 1px solid rgba(255,255,255,.07); font-size: 11px; font-weight: 600; letter-spacing: .18em; text-transform: uppercase; color: var(--blue-400, #00CCFF);">Built with grit in Detroit.</div>
+    </div>
+  </footer>
+
+  <sc-if value="{{ pAddOpen }}" hint-placeholder-val="{{ false }}">
+    <div style="position: fixed; inset: 0; z-index: 96; display: flex; align-items: center; justify-content: center; padding: 20px; background: rgba(0,8,18,.82); backdrop-filter: blur(14px);">
+      <div onClick="{{ closePAdd }}" style="position: absolute; inset: 0;"></div>
+      <div role="dialog" aria-modal="true" aria-label="{{ pAddTitle }}" style="position: relative; z-index: 2; width: 100%; max-width: 460px; display: flex; flex-direction: column; gap: 14px; padding: 24px; border-radius: 16px; border: 1px solid rgba(0,204,255,.3); background: #070B15; box-shadow: 0 30px 70px rgba(0,0,0,.6);">
+        <div style="font-size: 11px; font-weight: 600; letter-spacing: .18em; text-transform: uppercase; color: var(--lime-300);">{{ pAddTitle }}</div>
+        <sc-if value="{{ pAddZip }}" hint-placeholder-val="{{ false }}">
+          <label data-focusable="1" style="position: relative; display: flex; align-items: center; gap: 14px; padding: 14px; border-radius: 12px; border: 1px dashed rgba(0,204,255,.4); background: rgba(0,204,255,.04); cursor: pointer;">
+            <span style="display: grid; place-items: center; width: 40px; height: 40px; flex: none; border-radius: 50%; background: rgba(0,204,255,.1); color: var(--blue-400); font-size: 18px;">↑</span>
+            <span style="font-size: 13px; font-weight: 600; color: #fff;">{{ pZipLabel }}</span>
+            <input type="file" multiple="{{ true }}" accept=".zip,application/zip,application/x-zip-compressed" onChange="{{ onPZip }}" style="position: absolute; width: 1px; height: 1px; opacity: 0;">
+          </label>
+        </sc-if>
+        <sc-if value="{{ pAddCeltra }}" hint-placeholder-val="{{ false }}">
+          <input data-focusable="1" type="url" value="{{ pUrl }}" onChange="{{ onPUrl }}" placeholder="Paste the Celtra preview URL" aria-label="Celtra preview URL" style="height: 44px; padding: 0 12px; border-radius: 8px; border: 1px solid rgba(255,255,255,.14); background: rgba(0,5,9,.6); color: #fff; font-size: 14px; outline: none;">
+        </sc-if>
+        <sc-if value="{{ pErr }}" hint-placeholder-val="{{ false }}"><div role="alert" style="font-size: 12px; color: #F0B4FF;">{{ pErr }}</div></sc-if>
+        <div style="display: flex; justify-content: flex-end; gap: 10px;">
+          <button type="button" data-focusable="1" onClick="{{ closePAdd }}" style="height: 40px; padding: 0 16px; border-radius: 999px; border: 1px solid rgba(255,255,255,.18); background: transparent; color: #fff; font-size: 13px; font-weight: 600; cursor: pointer;">Cancel</button>
+          <sc-if value="{{ pAddCeltra }}" hint-placeholder-val="{{ false }}">
+            <button type="button" data-focusable="1" onClick="{{ addCeltra }}" style="height: 40px; padding: 0 18px; border-radius: 999px; border: 0; background: var(--blue-400); color: #001830; font-size: 13px; font-weight: 700; cursor: pointer;">Add</button>
+          </sc-if>
+        </div>
+      </div>
+    </div>
+  </sc-if>
+
+  <sc-if value="{{ authOpen }}" hint-placeholder-val="{{ false }}">
+    <div style="position: fixed; inset: 0; z-index: 96; display: flex; align-items: center; justify-content: center; padding: 20px; background: rgba(0,8,18,.82); backdrop-filter: blur(14px);">
+      <div onClick="{{ closeAuth }}" style="position: absolute; inset: 0;"></div>
+      <form role="dialog" aria-modal="true" aria-label="Sign in" onSubmit="{{ submitSignIn }}" style="position: relative; z-index: 2; width: 100%; max-width: 420px; display: flex; flex-direction: column; gap: 14px; padding: 24px; border-radius: 16px; border: 1px solid rgba(0,204,255,.28); background: linear-gradient(180deg, rgba(9,16,30,.97), rgba(4,8,18,.98)); box-shadow: 0 40px 120px rgba(0,0,0,.7);">
+        <button type="button" data-focusable="1" onClick="{{ closeAuth }}" aria-label="Close" style="position: absolute; top: 16px; right: 16px; display: grid; place-items: center; width: 32px; height: 32px; border-radius: 8px; border: 1px solid rgba(255,255,255,.14); background: rgba(255,255,255,.06); color: #fff; cursor: pointer;">{{ closeIcon }}</button>
+        <div style="font-size: 11px; font-weight: 600; letter-spacing: .18em; text-transform: uppercase; color: var(--lime-300);">KORTX Team Sign In</div>
+        <div style="font-size: 13px; line-height: 1.5; color: rgba(255,255,255,.72); text-wrap: pretty;">Admins add and edit creatives. Everyone else can browse.</div>
+        <label style="display: block;">
+          <span style="{{ labelStyle }}">Work email</span>
+          <input data-focusable="1" type="email" autocomplete="username" data-field="authEmail" value="{{ authEmail }}" onChange="{{ onAuthField }}" placeholder="name@kortx.io" style="{{ inputStyle }}">
+        </label>
+        <label style="display: block;">
+          <span style="{{ labelStyle }}">Password</span>
+          <input data-focusable="1" type="password" autocomplete="current-password" data-field="authPass" value="{{ authPass }}" onChange="{{ onAuthField }}" placeholder="8+ characters" style="{{ inputStyle }}">
+        </label>
+        <div style="font-size: 12px; line-height: 1.45; color: #FCA5A5;">{{ authErr }}</div>
+        <div style="font-size: 12px; line-height: 1.45; color: var(--lime-300);">{{ authMsg }}</div>
+        <div style="display: flex; gap: 10px; flex-wrap: wrap;">
+          <button type="submit" data-focusable="1" style="flex: 1; padding: 10px 16px; border-radius: 8px; border: 1px solid var(--blue-400); background: var(--blue-400); color: #001830; font-size: 13px; font-weight: 700; cursor: pointer; transition: all 200ms cubic-bezier(.16,1,.3,1);" style-hover="background: var(--blue-300); border-color: var(--blue-300)">{{ authSubmitLabel }}</button>
+          <button type="button" data-focusable="1" onClick="{{ submitSignUp }}" style="flex: 1; padding: 10px 16px; border-radius: 8px; border: 1px solid rgba(255,255,255,.16); background: rgba(255,255,255,.06); color: #fff; font-size: 13px; font-weight: 600; cursor: pointer; transition: all 200ms cubic-bezier(.16,1,.3,1);" style-hover="background: rgba(255,255,255,.12)">Create Account</button>
+        </div>
+      </form>
+    </div>
+  </sc-if>
+
+  <!-- UNDO TOAST — a removal stays reversible for ten seconds. -->
+  <sc-if value="{{ undoOpen }}" hint-placeholder-val="{{ false }}">
+    <div role="status" aria-live="polite" style="position: fixed; left: 50%; bottom: 28px; z-index: 95; transform: translateX(-50%); display: flex; align-items: center; gap: 16px; padding: 14px 16px 14px 20px; border-radius: 999px; border: 1px solid rgba(255,255,255,.16); background: rgba(6,12,24,.92); backdrop-filter: blur(18px) saturate(150%); box-shadow: inset 0 1px 0 rgba(255,255,255,.14), 0 22px 60px rgba(0,0,0,.6); animation: kx-toastin 320ms cubic-bezier(.16,1,.3,1) both;">
+      <span style="display: flex; align-items: baseline; gap: 8px; min-width: 0;">
+        <span style="font-size: 13px; color: rgba(255,255,255,.72); white-space: nowrap;">Removed</span>
+        <span style="font-size: 13px; font-weight: 600; color: #fff; max-width: 320px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">{{ undoLabel }}</span>
+      </span>
+      <span aria-hidden="true" style="width: 1px; height: 20px; background: rgba(255,255,255,.14);"></span>
+      <button type="button" data-focusable="1" onClick="{{ undoRemove }}" style="flex: none; padding: 7px 16px; border-radius: 999px; border: 1px solid rgba(0,204,255,.5); background: rgba(0,204,255,.14); color: #fff; font-size: 13px; font-weight: 600; cursor: pointer; transition: all 200ms cubic-bezier(.16,1,.3,1);" style-hover="background: rgba(0,204,255,.24); border-color: rgba(0,204,255,.7)">Undo</button>
+      <button type="button" data-focusable="1" onClick="{{ dismissUndo }}" aria-label="Dismiss" style="flex: none; display: grid; place-items: center; width: 28px; height: 28px; border-radius: 50%; border: 1px solid rgba(255,255,255,.14); background: rgba(255,255,255,.06); color: rgba(255,255,255,.7); cursor: pointer; transition: all 200ms cubic-bezier(.16,1,.3,1);" style-hover="background: rgba(255,255,255,.14); color: #fff">{{ closeIcon }}</button>
+      <span aria-hidden="true" style="position: absolute; left: 20px; right: 20px; bottom: 5px; height: 2px; border-radius: 999px; overflow: hidden; background: rgba(255,255,255,.10);">
+        <span style="display: block; width: 100%; height: 100%; border-radius: 999px; background: var(--blue-400); transform-origin: left center; animation: kx-toastbar 10s linear both;"></span>
+      </span>
+    </div>
+  </sc-if>
+</div>
+
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:1320,&quot;height&quot;:900}}">
+class Component extends DCLogic {
+  state = {
+    rows: [], loading: true,
+    q: '', fVertical: '', fProduct: '', fComponents: [], compsOpen: false,
+    addOpen: false,
+    draft: null, editKey: null, live: {}, copied: null, undo: null,
+    zipUrls: {}, zipBusy: false, zipErr: '', exporting: null,
+    cloudOk: false, user: null, sync: '', syncErr: '',
+    authOpen: false, authEmail: '', authPass: '', authBusy: false, authMsg: '', authErr: ''
+  };
+
+  /* ---------------- shared library (Supabase) ---------------- */
+  /* One-time move of edits made before the shared library existed (browser-only
+     v5 list + IndexedDB zips) into Supabase. Local values win; rows match on
+     Captivate ID so live keys are reused. */
+  legacyRows() {
+    if (localStorage.getItem('kortx.creative.db.v5.sent')) return null;
+    try { const v = JSON.parse(localStorage.getItem('kortx.creative.db.v5') || 'null'); return Array.isArray(v) && v.length ? v : null; } catch (e) { return null; }
+  }
+  runMigrate = async () => {
+    if (this.state.migrating) return;
+    if (!this.requireAdmin()) return;
+    const legacy = this.legacyRows();
+    if (!legacy) return;
+    this.setState({ migrating: 'Sending…', syncErr: '' });
+    try {
+      const live = this.state.rows;
+      const byId = {}; live.forEach(r => { if (r.source !== 'zip' && r.id) byId[r.id] = r; });
+      const out = [], seen = {};
+      for (const raw of legacy) {
+        if (raw.source === 'zip') {
+          const blob = await this.zipStore.getZip(raw.zipKey);
+          if (!blob) throw new Error('The ' + (raw.name || raw.brand) + ' zip is missing from this browser');
+          const cloud = await import('./creative-cloud.js');
+          await cloud.uploadZip(raw.zipKey, blob);
+          const exists = live.find(r => r.source === 'zip' && r.zipKey === raw.zipKey);
+          out.push(this.db.makeRow(Object.assign({}, raw, { key: exists ? exists.key : crypto.randomUUID() })));
+          continue;
+        }
+        if (seen[raw.id]) {
+          const row = seen[raw.id];
+          if (raw.vertical && row.verticals.indexOf(raw.vertical) < 0) row.verticals.push(raw.vertical);
+          continue;
+        }
+        const match = byId[raw.id];
+        const row = this.db.makeRow(Object.assign({}, raw, { key: match ? match.key : crypto.randomUUID() }));
+        row.verticals = (match && match.verticals && match.verticals.length ? match.verticals.slice() : []);
+        if (raw.vertical && row.verticals.indexOf(raw.vertical) < 0) row.verticals.unshift(raw.vertical);
+        seen[raw.id] = row; out.push(row);
+      }
+      live.forEach(r => { if (r.source !== 'zip' && !seen[r.id]) out.push(r); else if (r.source === 'zip' && !out.some(o => o.key === r.key)) out.push(r); });
+      await this.db.saveRemote(out);
+      localStorage.setItem('kortx.creative.db.v5.sent', new Date().toISOString());
+      const rows = await this.db.loadRemote();
+      this.setState({ rows, migrating: '', sync: 'Sent to live library' }, () => this.sweep && this.sweep());
+    } catch (err) {
+      this.setState({ migrating: '', syncErr: 'Not sent: ' + (err.message || 'library unreachable') });
+    }
+  };
+  get isAdmin() { return !!(this.state.user && this.state.user.isAdmin); }
+  requireAdmin() {
+    return false;
+    if (this.isAdmin && this.state.cloudOk) return true;
+    if (!this.state.cloudOk) { this.setState({ syncErr: 'Offline — could not reach the library. Reload to edit.' }); return false; }
+    this.setState({ authOpen: true, authErr: this.state.user ? 'Your account can view but not edit. Ask an admin for access.' : '', authMsg: '' });
+    return false;
+  }
+  openAuth = () => {
+    if (this.state.user) {
+      this.cloud.signOut().then(() => this.setState({ user: null }));
+      return;
+    }
+    this.setState({ authOpen: true, authErr: '', authMsg: '' });
+  };
+  closeAuth = () => this.setState({ authOpen: false, authPass: '', authBusy: false });
+  onAuthField = e => this.setState({ [e.currentTarget.dataset.field]: e.currentTarget.value });
+  submitSignIn = async e => {
+    if (e && e.preventDefault) e.preventDefault();
+    const { authEmail, authPass } = this.state;
+    if (!authEmail || !authPass) return this.setState({ authErr: 'Enter your email and password' });
+    this.setState({ authBusy: true, authErr: '', authMsg: '' });
+    try {
+      const user = await this.cloud.signIn(authEmail.trim(), authPass);
+      this.setState({ user, authOpen: false, authPass: '', authBusy: false });
+    } catch (err) {
+      this.setState({ authBusy: false, authErr: /confirm/i.test(err.message) ? 'Check your inbox and click the confirmation link first.' : (err.message || 'Could not sign in') });
+    }
+  };
+  submitSignUp = async () => {
+    const { authEmail, authPass } = this.state;
+    if (!authEmail || authPass.length < 8) return this.setState({ authErr: 'Use your @kortx.io email and a password of 8+ characters' });
+    this.setState({ authBusy: true, authErr: '', authMsg: '' });
+    try {
+      const r = await this.cloud.signUp(authEmail.trim(), authPass);
+      if (r === 'signed-in') {
+        const user = await this.cloud.currentUser();
+        this.setState({ user, authOpen: false, authPass: '', authBusy: false });
+      } else {
+        this.setState({ authBusy: false, authMsg: 'Account created. Click the link in the email we just sent, then sign in here.' });
+      }
+    } catch (err) {
+      this.setState({ authBusy: false, authErr: err.message || 'Could not create the account' });
+    }
+  };
+
+  zipPending = {};
+  /* Zip rows only get a URL once their bundle is unpacked; do that for rows the
+     sweep has marked live. */
+  hydrateZips() {
+    if (!this.zipStore) return;
+    const live = this.state.live;
+    this.state.rows.concat(this.state.extras || []).forEach(r => {
+      if (r.source !== 'zip' || !r.zipKey || !live[r.key]) return;
+      if (this.state.zipUrls[r.zipKey] || this.zipPending[r.zipKey]) return;
+      this.zipPending[r.zipKey] = true;
+      this.zipStore.previewUrl(r.zipKey)
+        .then(url => this.setState(s => ({ zipUrls: Object.assign({}, s.zipUrls, { [r.zipKey]: url }) })))
+        .catch(() => {})
+        .finally(() => { delete this.zipPending[r.zipKey]; });
+    });
+  }
+
+  onDraftSource = e => {
+    const v = e.currentTarget.dataset.value;
+    this.setState(s => ({ zipErr: '', draft: Object.assign({}, s.draft || this.blankDraft(), { source: v }) }));
+  };
+  onZipPick = async e => {
+    const file = e.currentTarget.files && e.currentTarget.files[0];
+    e.currentTarget.value = '';
+    if (!file) return;
+    this.setState({ zipBusy: true, zipErr: '' });
+    try {
+      const info = await this.zipStore.inspectZip(file);
+      const key = 'z' + Date.now().toString(36) + Math.random().toString(36).slice(2, 6);
+      await this.zipStore.putZip(key, file);
+      const base = file.name.replace(/\.zip$/i, '');
+      this.setState(s => {
+        const d = Object.assign({}, s.draft || this.blankDraft());
+        Object.assign(d, { source: 'zip', zipKey: key, zipName: file.name, zipW: info.w, zipH: info.h, id: base });
+        if (!d.name) d.name = base;
+        return { draft: d, zipBusy: false };
+      });
+    } catch (err) {
+      this.setState({ zipBusy: false, zipErr: err.message || 'Could not read that zip' });
+    }
+  };
+  exportRowHtml = async e => {
+    const key = e.currentTarget.dataset.key;
+    const row = this.state.rows.find(r => r.key === key);
+    if (!row || !row.zipKey) return;
+    this.setState({ exporting: key });
+    try { await this.zipStore.exportHtml(row.zipKey, row.zipName || row.name || row.brand); }
+    catch (err) { alert(err.message || 'Export failed'); }
+    this.setState({ exporting: null });
+  };
+
+  dialogRef = React.createRef();
+
+  /* Escape closes the editor, and focus moves into the dialog on open so the
+     form is usable from the keyboard without hunting for it. */
+  onDialogKey = e => {
+    if (e.key === 'Escape' && this.state.addOpen) this.cancelDraft();
+  };
+
+  componentDidUpdate(prevProps, prevState) {
+    if (this.state.addOpen && !prevState.addOpen) {
+      const el = this.dialogRef.current;
+      const first = el && el.querySelector('input, select');
+      if (first) first.focus();
+    }
+    this.sweep && this.sweep();
+    this.hydrateZips();
+  }
+
+  async componentDidMount() {
+    document.addEventListener('keydown', this.onDialogKey);
+    const mod = await import('./creative-db.js');
+    this.db = mod;
+    this.zipStore = await import('./html-zip-store.js');
+    if (this.props.picker) { this.celtraDoc = (await import('./creative-data.js')).celtraDoc; if (this.props.selectedKeys) this.setState({ pick: this.props.selectedKeys.slice() }); }
+    this.setState({ rows: mod.load(), loading: false }, () => this.sweep && this.sweep());
+    (async () => {
+      try {
+        this.cloud = await import('./creative-cloud.js');
+        const rows = await mod.loadRemote();
+        this.setState({ rows, cloudOk: true, syncErr: '' }, () => this.sweep && this.sweep());
+        this.cloud.currentUser().then(user => this.setState({ user })).catch(() => {});
+        this.cloud.onAuthChange(user => this.setState({ user })).catch(() => {});
+      } catch (err) {
+        console.warn('Creative library unreachable:', err && (err.message || err));
+        this.setState({ cloudOk: false, syncErr: 'Offline — showing the last saved copy.' });
+      }
+    })();
+
+    /* Rect-based proximity rather than IntersectionObserver: IO callbacks are
+       suppressed inside embedded previews, and each row holds a live iframe. */
+    /* Each preview is a whole Captivate share page, so mounting is the expensive
+       part. Three things make it feel fast:
+         - a deep prefetch band, biased in the scroll direction, so a frame
+           starts loading long before it reaches the viewport;
+         - already-mounted rows are never unmounted while under the cap, so
+           scrolling back is instant rather than a fresh load;
+         - eviction, when it happens, drops the farthest row, not the newest. */
+    const MAX_LIVE = 26;
+    const BAND = 1500;
+    this.lastY = window.scrollY || 0;
+    this.dir = 1;
+
+    this.sweep = () => {
+      const vh = window.innerHeight || 800;
+      const ahead = BAND + 900, behind = BAND * 0.5;
+      const top = this.dir > 0 ? -behind : -ahead;
+      const bottom = vh + (this.dir > 0 ? ahead : behind);
+
+      const inBand = [], all = [];
+      document.querySelectorAll('[data-lazy]').forEach(el => {
+        const key = el.dataset.lazy;
+        const r = el.getBoundingClientRect();
+        const mid = r.top + r.height / 2;
+        const dist = mid < 0 ? -mid : (mid > vh ? mid - vh : 0);
+        all.push({ key, dist });
+        if (r.bottom > top && r.top < bottom) inBand.push({ key, dist });
+      });
+
+      const live = Object.assign({}, this.state.live);
+      let changed = false;
+      inBand.sort((a, b) => a.dist - b.dist);
+      /* On-screen rows mount together; rows further out join two at a time so the
+         first screen isn't competing with a dozen share pages loading at once. */
+      let extra = 0, pending = false;
+      for (const row of inBand) {
+        if (live[row.key]) continue;
+        if (row.dist === 0 || extra < 2) { live[row.key] = true; changed = true; if (row.dist > 0) extra++; }
+        else pending = true;
+      }
+      clearTimeout(this.trickle);
+      if (pending) this.trickle = setTimeout(() => this.sweep(), 700);
+
+      const keys = Object.keys(live);
+      if (keys.length > MAX_LIVE) {
+        const byDist = {};
+        all.forEach(a => { byDist[a.key] = a.dist; });
+        keys.sort((a, b) => (byDist[b] || 1e9) - (byDist[a] || 1e9));
+        for (let i = 0; i < keys.length - MAX_LIVE; i++) { delete live[keys[i]]; changed = true; }
+      }
+      if (changed) this.setState({ live }, () => this.hydrateZips && this.hydrateZips());
+    };
+
+    this.onScroll = () => {
+      const y = window.scrollY || 0;
+      if (y !== this.lastY) { this.dir = y > this.lastY ? 1 : -1; this.lastY = y; }
+      if (this.raf) return;
+      this.raf = requestAnimationFrame(() => {
+        try { this.sweep(); } finally { this.raf = null; }
+      });
+    };
+    window.addEventListener('scroll', this.onScroll, { passive: true });
+    window.addEventListener('resize', this.onScroll);
+    this.timer = setInterval(() => this.sweep(), 900);
+    this.sweep();
+
+    if (!(window.lucide && window.lucide.icons)) {
+      let n = 0;
+      const w = setInterval(() => {
+        if (window.lucide && window.lucide.icons) { clearInterval(w); this.forceUpdate(); }
+        else if (++n > 40) clearInterval(w);
+      }, 150);
+    }
+  }
+
+  componentWillUnmount() {
+    document.removeEventListener('keydown', this.onDialogKey);
+    clearTimeout(this.undoTimer);
+    window.removeEventListener('scroll', this.onScroll);
+    window.removeEventListener('resize', this.onScroll);
+    clearInterval(this.timer);
+  }
+
+  icon(name, size, color, style) {
+    const set = (window.lucide && window.lucide.icons) || {};
+    const node = set[name];
+    let kids = [];
+    if (node) {
+      const raw = (Array.isArray(node) && typeof node[0] === 'string') ? node[2] : node;
+      kids = (raw || []).map((c, i) => React.createElement(c[0], Object.assign({ key: i }, c[1])));
+    }
+    return React.createElement('svg', {
+      viewBox: '0 0 24 24', width: size, height: size, fill: 'none', stroke: color,
+      strokeWidth: 1.75, strokeLinecap: 'round', strokeLinejoin: 'round',
+      'aria-hidden': 'true', style: Object.assign({ flex: 'none' }, style)
+    }, kids);
+  }
+
+  persist(rows) {
+    const prev = this.state.rows;
+    this.setState({ rows, sync: 'Saving…', syncErr: '' }, () => { this.db.save(rows); this.sweep(); });
+    const run = (this.saveChain || Promise.resolve()).then(() => this.db.saveRemote(rows));
+    this.saveChain = run.catch(() => {});
+    run.then(() => {
+      this.setState({ sync: 'Saved' });
+      clearTimeout(this.syncTimer);
+      this.syncTimer = setTimeout(() => this.setState({ sync: '' }), 2400);
+    }).catch(err => {
+      this.setState({ rows: prev, sync: '', syncErr: 'Not saved: ' + (err.message || 'library unreachable') }, () => this.db.save(prev));
+    });
+  }
+
+  /* ---------------- filters ---------------- */
+  onFilterChange = e => {
+    const { field } = e.currentTarget.dataset;
+    const map = { q: 'q', fVertical: 'fVertical', fProduct: 'fProduct' };
+    if (map[field]) this.setState({ [map[field]]: e.currentTarget.value });
+  };
+  onFilterComponent = e => {
+    const v = e.currentTarget.dataset.value;
+    this.setState(s => ({
+      fComponents: s.fComponents.includes(v) ? s.fComponents.filter(c => c !== v) : s.fComponents.concat([v])
+    }));
+  };
+  openFilterComponents = () => { if (!this.state.compsOpen) this.setState({ compsOpen: true }); };
+  toggleFilterComponents = () => this.setState(s => ({ compsOpen: !s.compsOpen }));
+  clearFilters = () => this.setState({ q: '', fVertical: '', fProduct: '', fComponents: [] });
+
+  /* ---------------- add / edit ---------------- */
+  blankDraft() {
+    return { id: '', name: '', brand: '', product: 'Rich Media', vertical: '',
+      components: [], goals: [], knownFor: '', bestFor: '', measure: '', format: 'vertical', pinned: true,
+      source: 'link', zipKey: '', zipName: '', zipW: 0, zipH: 0 };
+  }
+  toggleAdd = () => (this.state.addOpen || this.requireAdmin()) && this.setState(s => ({
+    addOpen: !s.addOpen,
+    draft: s.addOpen ? null : (s.draft || this.blankDraft()), editKey: s.addOpen ? null : s.editKey
+  }));
+
+  onDraftChange = e => {
+    const { field } = e.currentTarget.dataset;
+    const value = e.currentTarget.value;
+    this.setState(s => ({ draft: Object.assign({}, s.draft || this.blankDraft(), { [field]: value }) }));
+  };
+  onDraftPinned = e => {
+    const on = e.currentTarget.getAttribute('aria-pressed') !== 'true';
+    this.setState(s => ({ draft: Object.assign({}, s.draft || this.blankDraft(), { pinned: on }) }));
+  };
+  onDraftComponent = e => {
+    const v = e.currentTarget.dataset.value;
+    this.setState(s => {
+      const d = Object.assign({}, s.draft || this.blankDraft());
+      d.components = d.components.includes(v) ? d.components.filter(c => c !== v) : d.components.concat([v]);
+      return { draft: d };
+    });
+  };
+  onDraftGoal = e => {
+    const v = e.target.value;
+    this.setState(s => ({ draft: Object.assign({}, s.draft || this.blankDraft(), { goals: v ? [v] : [] }) }));
+  };
+  get picker() { return !!this.props.picker; }
+  openZipAdd = () => this.setState({ pAdd: 'zip', pErr: '', pUrl: '' });
+  openCeltraAdd = () => this.setState({ pAdd: 'celtra', pErr: '', pUrl: '' });
+  closePAdd = () => this.setState({ pAdd: null, pErr: '', pUrl: '', pBusy: false });
+  onPUrl = e => this.setState({ pUrl: e.currentTarget.value, pErr: '' });
+  addPicked(row) {
+    row.addedHere = true;
+    const keys = (this.state.pick || []).concat([row.key]);
+    this.setState(s => ({ extras: [row].concat(s.extras || []), pick: keys, pAdd: null, pBusy: false, pUrl: '' }), () => { this.emitPicks(keys); this.sweep && this.sweep(); });
+  }
+  /* Several zips at once: each one is added as its own pick. */
+  onPZip = async e => {
+    const files = Array.from(e.currentTarget.files || []);
+    e.currentTarget.value = '';
+    if (!files.length) return;
+    const bad = [];
+    for (const f of files) { this.setState({ pBusy: true, pErr: '' }); if (!(await this.addPZipFile(f))) bad.push(f.name); }
+    this.setState({ pBusy: false, pErr: bad.length ? 'Could not read ' + bad.join(', ') + '. Each file needs to be an HTML5 zip.' : '' });
+  };
+  addPZipFile = async file => {
+    try {
+      const info = await this.zipStore.inspectZip(file);
+      const key = 'z' + Date.now().toString(36) + Math.random().toString(36).slice(2, 6);
+      await this.zipStore.putZip(key, file);
+      const base = file.name.replace(/\.zip$/i, '');
+      const row = this.db.makeRow({ id: base, name: base, brand: base, product: 'Rich Media', source: 'zip', zipKey: key, zipName: file.name, zipW: info.w, zipH: info.h, components: [] });
+      try { const u = await this.zipStore.previewUrl(key); if (u) this.setState(s => ({ zipUrls: Object.assign({}, s.zipUrls, { [key]: u }) })); } catch (e2) {}
+      this.addPicked(row);
+      return true;
+    } catch (err) { return false; }
+  };
+  addCeltra = () => {
+    const id = this.parseCeltra(this.state.pUrl);
+    if (!id) { this.setState({ pErr: 'Paste a Celtra preview URL or creative ID.' }); return; }
+    const row = this.db.makeRow({ id, name: 'Celtra ' + id, brand: 'Celtra Preview', product: 'Rich Media', components: [] });
+    row.source = 'celtra'; row.celtraId = id;
+    this.addPicked(row);
+  };
+  parseCeltra(v) {
+    const t = String(v || '').trim();
+    const m = t.match(/celtra\.com\/(?:[a-z-]+\/)*([0-9a-f]{6,})/i) || t.match(/[?&#](?:creativeId|id)=([0-9a-f]{6,})/i) || t.match(/^([0-9a-f]{6,})$/i);
+    return m ? m[1] : '';
+  }
+  emitPicks(keys) {
+    const all = this.state.rows.concat(this.state.extras || []);
+    if (this.props.onSelectionChange) this.props.onSelectionChange(keys, all.filter(r => keys.includes(r.key)));
+  }
+  togglePick = e => {
+    const k = e.currentTarget.dataset.key;
+    const cur = this.state.pick || [];
+    const keys = cur.includes(k) ? cur.filter(x => x !== k) : cur.concat([k]);
+    this.setState({ pick: keys }, () => this.emitPicks(keys));
+  };
+  onContinue = () => this.props.onContinue && this.props.onContinue();
+  saveDraft = () => {
+    const d0 = this.state.draft;
+    if (this.picker) {
+      /* Picker additions are session-only: they join this proposal, not the
+         shared library. */
+      const src = d0.source;
+      const id = src === 'zip' ? (d0.id || d0.zipName) : src === 'celtra' ? this.parseCeltra(d0.id) : this.db.parseCreativeId(d0.id);
+      if (!id || (src === 'zip' && !d0.zipKey)) return;
+      const row = this.db.makeRow(Object.assign({}, d0, { id }));
+      if (src === 'celtra') { row.source = 'celtra'; row.celtraId = id; }
+      row.addedHere = true;
+      const keys = (this.state.pick || []).concat([row.key]);
+      this.setState(s => ({ extras: [row].concat(s.extras || []), pick: keys, draft: this.blankDraft(), addOpen: false }), () => { this.emitPicks(keys); this.sweep && this.sweep(); });
+      return;
+    }
+    const d = this.state.draft;
+    const isZip = d.source === 'zip';
+    const id = isZip ? (d.id || d.zipName) : this.db.parseCreativeId(d.id);
+    if (!id || (isZip && !d.zipKey)) return;
+    const row = this.db.makeRow(Object.assign({}, d, { id, key: this.state.editKey || undefined }));
+    /* "Move to top" is what orders the gallery: pinned rows lead, newest first.
+       An edit with the box unticked drops the pin and returns the row to the
+       list in place. */
+    const rows = this.state.editKey
+      ? (d.pinned
+          ? [row].concat(this.state.rows.filter(r => r.key !== this.state.editKey))
+          : this.state.rows.map(r => (r.key === this.state.editKey ? row : r)))
+      : [row].concat(this.state.rows);
+    this.setState({ draft: this.blankDraft(), editKey: null, addOpen: false });
+    this.persist(rows);
+  };
+  cancelDraft = () => this.setState({ draft: this.blankDraft(), editKey: null, addOpen: false });
+
+  editRow = e => {
+    if (!this.requireAdmin()) return;
+    const key = e.currentTarget.dataset.key;
+    const row = this.state.rows.find(r => r.key === key);
+    if (!row) return;
+    /* Editing defaults to leaving the row where it is; adding defaults to the top. */
+    this.setState({ draft: Object.assign({}, row, { pinned: false }), editKey: key, addOpen: true });
+  };
+  /* Remove is reversible for 10s: keep the row and its position so Undo puts it
+     back exactly where it was, not at the end of the list. */
+  removeRow = e => {
+    if (!this.requireAdmin()) return;
+    const key = e.currentTarget.dataset.key;
+    const index = this.state.rows.findIndex(r => r.key === key);
+    const row = this.state.rows[index];
+    if (!row) return;
+    this.persist(this.state.rows.filter(r => r.key !== key));
+    clearTimeout(this.undoTimer);
+    this.setState({ undo: { row, index, label: row.brand + ' — ' + (row.name || row.id) } });
+    this.undoTimer = setTimeout(() => this.setState({ undo: null }), 10000);
+  };
+
+  undoRemove = () => {
+    const u = this.state.undo;
+    if (!u) return;
+    clearTimeout(this.undoTimer);
+    const rows = this.state.rows.slice();
+    rows.splice(Math.min(u.index, rows.length), 0, u.row);
+    this.persist(rows);
+    this.setState({ undo: null });
+  };
+  dismissUndo = () => { clearTimeout(this.undoTimer); this.setState({ undo: null }); };
+
+  copyLink = e => {
+    const key = e.currentTarget.dataset.key;
+    const row = this.state.rows.find(r => r.key === key);
+    if (!row) return;
+    const url = this.db.shareUrl(row.id);
+    if (navigator.clipboard) navigator.clipboard.writeText(url);
+    this.setState({ copied: key });
+    clearTimeout(this.copyTimer);
+    this.copyTimer = setTimeout(() => this.setState({ copied: null }), 1600);
+  };
+
+  exportJson = () => {
+    const blob = new Blob([JSON.stringify(this.state.rows, null, 2)], { type: 'application/json' });
+    const a = document.createElement('a');
+    a.href = URL.createObjectURL(blob);
+    a.download = 'kortx-creative-database.json';
+    a.click();
+    setTimeout(() => URL.revokeObjectURL(a.href), 4000);
+  };
+
+  /* ---------------- shared styles ---------------- */
+  get inputStyle() {
+    return {
+      width: '100%', boxSizing: 'border-box', marginTop: 6, padding: '9px 11px',
+      borderRadius: 10, border: '1px solid rgba(255,255,255,.16)',
+      background: 'rgba(4,10,20,.6)', color: '#fff', fontSize: 13,
+      transition: 'border-color 200ms cubic-bezier(.16,1,.3,1), box-shadow 200ms cubic-bezier(.16,1,.3,1)'
+    };
+  }
+  /* Same pill spec as the Creative Labs's catalogue filters (chipStyle /
+     facetTabStyle in Playground 9-10 v8) so a filter reads identically on
+     either page: the family hue carries the whole state, idle at .4/.05 and
+     selected at .7/.18 with a bloom — never a white fill. */
+  pill(label, active) {
+    return {
+      label, active,
+      style: {
+        display: 'inline-flex', alignItems: 'center', gap: 8,
+        padding: '9px 14px', borderRadius: 999,
+        border: '1px solid rgba(0,204,255,' + (active ? '.7' : '.4') + ')',
+        background: active ? 'rgba(0,204,255,.18)' : 'rgba(0,204,255,.05)',
+        color: active ? '#fff' : 'rgba(255,255,255,.82)',
+        boxShadow: active ? '0 0 22px rgba(0,204,255,.26)' : 'none',
+        fontSize: 13, fontWeight: 600, letterSpacing: '.02em',
+        whiteSpace: 'nowrap', cursor: 'pointer',
+        transition: 'all 200ms cubic-bezier(.16,1,.3,1)'
+      }
+    };
+  }
+
+  /* Hover zoom is applied directly to the node rather than through a style rule:
+     the factor differs per format, and touching only transform/z-index keeps the
+     iframe from reloading. */
+  /* Each row card has a backdrop-filter, which makes it its own stacking
+     context — so a z-index on the preview alone can never beat the row painted
+     after it. The row itself has to be lifted for the enlarged preview to sit
+     above its neighbours. */
+  onPreviewEnter = e => {
+    const el = e.currentTarget;
+    el.style.transform = 'scale(' + (el.dataset.scale || 3) + ')';
+    el.style.borderColor = 'rgba(0,204,255,.5)';
+    el.style.boxShadow = 'inset 0 1px 0 rgba(255,255,255,.24), 0 30px 70px rgba(0,0,0,.6), 0 0 60px rgba(0,204,255,.22)';
+    el.style.zIndex = '3';
+    const slot = el.parentElement;
+    if (slot) { slot.style.zIndex = '3'; slot.style.overflow = 'visible'; }
+    const row = el.closest('[role="listitem"]');
+    if (row) row.style.zIndex = '50';
+  };
+  onPreviewLeave = e => {
+    const el = e.currentTarget;
+    el.style.transform = 'scale(1)';
+    el.style.borderColor = 'rgba(255,255,255,.16)';
+    el.style.boxShadow = 'inset 0 1px 0 rgba(255,255,255,.2), 0 8px 22px rgba(0,0,0,.34)';
+    el.style.zIndex = '1';
+    const slot = el.parentElement;
+    if (slot) slot.style.zIndex = '1';
+    const row = el.closest('[role="listitem"]');
+    if (row) row.style.zIndex = '1';
+  };
+
+  /* One row's preview: the share page loaded at its calibrated viewport, offset
+     and scaled so only the creative shows. Hover scales the whole stage. */
+  rowVals(r) {
+    const format = this.db.formatFor(r.product);
+    const fmt = this.db.FORMATS[format];
+    /* Same framing as the Admin page and the Creative Playground: the admin's per-ad nudge, then the 2px edge bleed. */
+    const crop0 = this.db.cropRect(fmt);
+    const cw = Math.max(40, crop0.w + (r.cropDW || 0)), ch = crop0.h * cw / crop0.w;
+    const crop = (c => { const w = Math.max(40, c.w - 4), h = c.h * w / c.w; return Object.assign({}, c, { x: c.x + (c.w - w) / 2, y: c.y + (c.h - h) / 2, w, h }); })(Object.assign({}, crop0, { x: crop0.x + (r.cropDX || 0) - (cw - crop0.w) / 2, y: crop0.y + (r.cropDY || 0) - (ch - crop0.h) / 2, w: cw, h: ch }));
+    const wide = format === 'wide';
+    /* One fixed slot box for every row, so both formats sit on the same centre
+       line and rows keep one rhythm. The panel adds 7px of padding and a 1px
+       border on each side, so the creative itself gets the box less 16px in
+       each direction — and the crop is fitted to CONTAIN inside that, never
+       sized from height alone. Sizing from height is what pushed the 16:9 crop
+       wider than its own slot, where place-items:center silently gives up and
+       left-aligns. */
+    const SLOT_W = 300, SLOT_H = 184, CHROME = 16;
+    const fitW = SLOT_W - CHROME, fitH = SLOT_H - CHROME;
+    const scale = Math.min(fitW / crop.w, fitH / crop.h);
+    const baseW = Math.round(crop.w * scale);
+    const baseH = Math.round(crop.h * scale);
+    const hover = wide ? 2.9 : 2.6;
+    const isZip = r.source === 'zip';
+    const zipUrl = isZip ? (this.state.zipUrls[r.zipKey] || '') : '';
+    const zw = r.zipW || (wide ? 1920 : 300), zh = r.zipH || (wide ? 1080 : 600);
+    const zs = Math.min(fitW / zw, fitH / zh);
+    const isCeltra = r.source === 'celtra';
+    const cs = Math.min(fitW / 300, fitH / 600);
+    const celtraVals = isCeltra && this.celtraDoc ? {
+      url: 'data:text/html;charset=utf-8,' + encodeURIComponent(this.celtraDoc(r.celtraId, 300, 600)), isLink: false,
+      id: r.celtraId, formatLabel: '300 × 600 · Celtra',
+      stageStyle: { position: 'relative', width: Math.round(300 * cs), height: Math.round(600 * cs), display: 'block', borderRadius: 6, overflow: 'hidden', background: '#fff' },
+      frameStyle: { position: 'absolute', top: 0, left: 0, width: 300, height: 600, border: 0, transform: 'scale(' + cs.toFixed(4) + ')', transformOrigin: 'top left' }
+    } : {};
+    const picked = (this.state.pick || []).includes(r.key);
+    const pickVals = this.picker ? {
+      picked: String(picked), pickMark: picked ? '✓' : '', pickLabel: picked ? 'Selected' : 'Select',
+      pickStyle: { display: 'inline-flex', alignItems: 'center', gap: 8, padding: '7px 13px 7px 8px', borderRadius: 999, cursor: 'pointer', fontSize: 12, fontWeight: 700, whiteSpace: 'nowrap', border: '1px solid ' + (picked ? '#00CCFF' : 'rgba(255,255,255,.2)'), background: picked ? 'rgba(0,204,255,.16)' : 'rgba(255,255,255,.05)', color: '#fff', boxShadow: picked ? '0 0 22px rgba(0,204,255,.35)' : 'none', transition: 'all 200ms cubic-bezier(.16,1,.3,1)' },
+      pickAria: (picked ? 'Deselect ' : 'Select ') + r.brand + (r.name ? ' — ' + r.name : ''),
+      pickBox: { display: 'grid', placeItems: 'center', width: 28, height: 28, padding: 0, borderRadius: 8, cursor: 'pointer', fontSize: 15, fontWeight: 800, border: '1.5px solid ' + (picked ? '#00CCFF' : 'rgba(255,255,255,.4)'), background: picked ? '#00CCFF' : 'rgba(0,5,9,.5)', color: '#001830', boxShadow: picked ? '0 0 18px rgba(0,204,255,.6)' : 'none', transition: 'all 200ms cubic-bezier(.16,1,.3,1)' }
+    } : {};
+    const zipVals = isZip ? {
+      url: zipUrl, live: !!this.state.live[r.key] && !!zipUrl, idle: !(this.state.live[r.key] && zipUrl),
+      id: r.zipName || r.id, formatLabel: zw + ' × ' + zh + ' · HTML5',
+      stageStyle: { position: 'relative', width: Math.round(zw * zs), height: Math.round(zh * zs), display: 'block',
+        borderRadius: 6, overflow: 'hidden', background: '#fff' },
+      frameStyle: { position: 'absolute', top: 0, left: 0, width: zw, height: zh, border: 0,
+        transform: 'scale(' + zs.toFixed(4) + ')', transformOrigin: 'top left' }
+    } : {};
+    return Object.assign({}, r, {
+      isZip, isLink: !isZip,
+      exportLabel: this.state.exporting === r.key ? 'Exporting…' : 'Export HTML',
+      url: this.db.shareUrl(r.id),
+      name: r.name || '',
+      knownFor: r.knownFor || '',
+      vertical: r.vertical || 'Unassigned',
+      formatLabel: fmt.label,
+      format, live: !!this.state.live[r.key],
+      idle: !this.state.live[r.key],
+      copyLabel: this.state.copied === r.key ? 'Copied' : 'Copy link',
+      frameTitle: r.brand + ' — ' + (r.name || r.id),
+      rowStyle: {
+        position: 'relative', zIndex: 1,
+        display: 'grid',
+        gridTemplateColumns: '320px minmax(0, 1fr) auto',
+        gap: 18, alignItems: 'center', padding: 14, borderRadius: 18,
+        border: '1px solid rgba(255,255,255,.11)',
+        background: 'rgba(255,255,255,.04)',
+        backdropFilter: 'blur(14px) saturate(140%)',
+        boxShadow: 'inset 0 1px 0 rgba(255,255,255,.09)',
+        animation: 'kx-rowin 420ms cubic-bezier(.22,1,.28,1) both'
+      },
+      /* The slot keeps the row's height fixed; the stage inside is what grows,
+         so an enlarged preview floats over its neighbours instead of pushing. */
+      /* Fixed-size window, preview centred inside it: a 300 × 600 and a
+         1920 × 1080 both sit centred in the same frame. */
+      slotStyle: {
+        position: 'relative', width: SLOT_W, height: SLOT_H, zIndex: 1,
+        display: 'grid', placeItems: 'center',
+        overflow: 'visible'
+      },
+      /* Apple-style frosted panel: it carries the rounded border and the blur,
+         and it is the element that scales — so the ad inside never has its own
+         corners clipped away. */
+      panelStyle: {
+        position: 'relative', padding: 7, borderRadius: 14,
+        border: '1px solid rgba(255,255,255,.16)',
+        background: 'rgba(255,255,255,.07)',
+        backdropFilter: 'blur(18px) saturate(160%)',
+        WebkitBackdropFilter: 'blur(18px) saturate(160%)',
+        boxShadow: 'inset 0 1px 0 rgba(255,255,255,.2), 0 8px 22px rgba(0,0,0,.34)',
+        transformOrigin: 'center center', cursor: 'zoom-in',
+        transform: 'scale(1)',
+        transition: 'transform 420ms cubic-bezier(.22,1,.28,1), box-shadow 420ms cubic-bezier(.22,1,.28,1), border-color 420ms cubic-bezier(.22,1,.28,1)'
+      },
+      stageStyle: {
+        position: 'relative', width: baseW, height: baseH, display: 'block',
+        borderRadius: 6, overflow: 'hidden', background: '#fff'
+      },
+      frameStyle: {
+        position: 'absolute', top: 0, left: 0, width: fmt.view.w, height: fmt.view.h, border: 0,
+        transform: 'scale(' + scale.toFixed(4) + ') translate(' + (-crop.x) + 'px,' + (-crop.y) + 'px)',
+        transformOrigin: 'top left'
+      },
+      hoverScale: hover
+    }, zipVals, celtraVals, pickVals, this.picker && !picked ? { rowStyle: {
+        position: 'relative', zIndex: 1, display: 'grid', gridTemplateColumns: '28px 320px minmax(0, 1fr) auto',
+        gap: 18, alignItems: 'center', padding: 14, borderRadius: 18,
+        border: '1px solid rgba(255,255,255,.11)', background: 'rgba(255,255,255,.04)',
+        backdropFilter: 'blur(14px) saturate(140%)', boxShadow: 'inset 0 1px 0 rgba(255,255,255,.09)'
+      } } : {}, this.picker && picked ? { rowStyle: {
+        position: 'relative', zIndex: 1, display: 'grid', gridTemplateColumns: '28px 320px minmax(0, 1fr) auto',
+        gap: 18, alignItems: 'center', padding: 14, borderRadius: 18,
+        border: '1px solid rgba(0,204,255,.6)', background: 'rgba(0,204,255,.06)',
+        backdropFilter: 'blur(14px) saturate(140%)',
+        boxShadow: 'inset 0 1px 0 rgba(0,204,255,.3), 0 0 40px rgba(0,204,255,.16)'
+      } } : {});
+  }
+
+  renderVals() {
+    const s = this.state;
+    if (!this.db) {
+      return { rows: [], verticals: [], products: [], filterComponents: [], draftComponents: [], goalOptions: [], draftGoal: '',
+        countLabel: 'Loading…', resultLabel: '', isEmpty: false, addLabel: 'Add Creative',
+        pageTitle: this.props.title || 'Best of Creative Services Database', picker: !!this.props.picker, notPicker: !this.props.picker, noPicks: true, continueLabel: 'Loading…', pickerSteps: [],
+        labelStyle: {}, inputStyle: {}, areaStyle: {}, ghostBtn: {}, facetHeadStyle: {} };
+    }
+    const filtered = this.db.applyFilters(this.picker ? (s.extras || []).concat(s.rows) : s.rows, {
+      q: s.q, vertical: s.fVertical, product: s.fProduct, components: s.fComponents
+    });
+    const draft = s.draft || this.blankDraft();
+    const resolvedId = this.db.parseCreativeId(draft.id);
+    const draftZip = draft.source === 'zip';
+    const draftCeltra = draft.source === 'celtra';
+    const celtraId = draftCeltra ? this.parseCeltra(draft.id) : '';
+    const tab = on => this.pill('', on).style;
+
+    return {
+      uploadIcon: this.icon('Upload', 20, 'currentColor'),
+      onDraftSource: this.onDraftSource,
+      onZipPick: this.onZipPick,
+      exportRowHtml: this.exportRowHtml,
+      rows: filtered.map(r => this.rowVals(r)),
+      isEmpty: !s.loading && filtered.length === 0,
+      verticals: this.db.VERTICALS,
+      products: this.db.PRODUCTS,
+      countLabel: s.rows.length + ' creatives · ' +
+        new Set(s.rows.map(r => r.vertical).filter(Boolean)).size + ' verticals',
+      resultLabel: filtered.length === s.rows.length
+        ? 'Showing all ' + s.rows.length
+        : 'Showing ' + filtered.length + ' of ' + s.rows.length,
+      filtersClean: !s.q && !s.fVertical && !s.fProduct && s.fComponents.length === 0,
+
+      q: s.q, fVertical: s.fVertical, fProduct: s.fProduct,
+      compsOpen: s.compsOpen,
+      compsPanelStyle: {
+        overflow: 'hidden', maxHeight: s.compsOpen ? 620 : 0, opacity: s.compsOpen ? 1 : 0,
+        transition: 'max-height 640ms cubic-bezier(.22,1,.28,1), opacity 380ms cubic-bezier(.22,1,.28,1)'
+      },
+      compsChevronStyle: {
+        display: 'grid', placeItems: 'center', width: 30, height: 30, flex: 'none',
+        borderRadius: 999, border: '1px solid rgba(255,255,255,.24)',
+        background: 'linear-gradient(160deg, rgba(255,255,255,.24), rgba(255,255,255,.06))',
+        backdropFilter: 'blur(10px) saturate(160%)',
+        boxShadow: 'inset 0 1px 0 rgba(255,255,255,.4), 0 4px 14px rgba(0,0,0,.28)',
+        color: '#fff', transform: s.compsOpen ? 'rotate(90deg)' : 'rotate(0deg)',
+        transition: 'transform 520ms cubic-bezier(.22,1,.28,1), box-shadow 320ms cubic-bezier(.16,1,.3,1)'
+      },
+      compsChevronDeg: s.compsOpen ? '90deg' : '0deg',
+      compsValueLabel: s.fComponents.length ? '· ' + s.fComponents.length + ' selected' : '· any',
+      compsValueColor: s.fComponents.length ? 'var(--blue-300)' : 'rgba(255,255,255,.38)',
+      chevronIcon: this.icon('ChevronRight', 15, 'currentColor'),
+      openIcon: this.icon('ExternalLink', 11, 'currentColor'),
+      closeIcon: this.icon('X', 16, 'currentColor'),
+      dialogRef: this.dialogRef,
+      filterComponents: s.compsOpen
+        ? this.db.COMPONENTS.map(c => this.pill(c, s.fComponents.includes(c))) : [],
+
+      addOpen: s.addOpen,
+      addLabel: s.addOpen ? 'Close' : (s.editKey ? 'Editing' : 'Add Creative'),
+      pageTitle: this.props.title || 'Best of Creative Services Database',
+      picker: this.picker, notPicker: !this.picker,
+      pickerSteps: ['Select Creatives', 'Page Details', 'Generate & Review'].map((label, i) => { const on = i === 0; return { n: String(i + 1), label, current: on ? 'step' : 'false',
+        style: { display: 'flex', alignItems: 'center', gap: 8, padding: '6px 12px 6px 6px', borderRadius: 999, fontSize: 12.5, fontWeight: 600, border: '1px solid ' + (on ? 'rgba(0,204,255,.55)' : 'rgba(255,255,255,.12)'), background: on ? 'rgba(0,204,255,.12)' : 'rgba(255,255,255,.04)', color: on ? '#fff' : 'rgba(255,255,255,.55)', boxShadow: on ? '0 0 22px rgba(0,204,255,.22)' : 'none' },
+        dotStyle: { display: 'grid', placeItems: 'center', width: 22, height: 22, borderRadius: '50%', fontSize: 11, fontWeight: 700, background: on ? '#00CCFF' : 'rgba(255,255,255,.1)', color: on ? '#001830' : '#fff' } }; }),
+      openZipAdd: this.openZipAdd, openCeltraAdd: this.openCeltraAdd,
+      pAddOpen: !!s.pAdd, pAddZip: s.pAdd === 'zip', pAddCeltra: s.pAdd === 'celtra', pAddTitle: s.pAdd === 'zip' ? 'Add HTML Folder' : 'Add Celtra Preview',
+      closePAdd: this.closePAdd, onPZip: this.onPZip, onPUrl: this.onPUrl, pUrl: s.pUrl || '', addCeltra: this.addCeltra,
+      pErr: s.pErr || '', pZipLabel: s.pBusy ? 'Reading zip…' : 'Upload HTML5 zip', onContinue: this.onContinue, togglePick: this.togglePick,
+      noPicks: !(s.pick || []).length,
+      continueLabel: (s.pick || []).length ? 'Continue · ' + s.pick.length + ' selected' : 'Select creatives to continue',
+      draft: Object.assign({}, draft, {
+        resolved: draft.id ? (draftCeltra ? (celtraId ? 'Celtra ID: ' + celtraId : 'Could not read a Celtra ID from that') : resolvedId ? 'ID: ' + resolvedId : 'Could not read an ID from that') : '',
+        invalid: draftZip ? (!draft.zipKey || s.zipBusy) : draftCeltra ? !celtraId : !resolvedId,
+        isZip: draftZip, isLink: !draftZip && !draftCeltra, isCeltra: draftCeltra,
+        idLabel: draftCeltra ? 'Celtra creative ID or preview tag' : 'Creative ID or share URL',
+        idPlaceholder: draftCeltra ? 'dc3bbed9 or the preview tag' : 'rsdx41',
+        linkTab: { style: tab(!draftZip && !draftCeltra) }, zipTab: { style: tab(draftZip) }, celtraTab: { style: tab(draftCeltra) },
+        linkFieldStyle: { display: draftZip ? 'none' : 'block' },
+        zipTitle: s.zipBusy ? 'Reading zip…' : (draft.zipName || 'Choose an HTML5 zip file'),
+        zipSub: s.zipErr ? s.zipErr : (draft.zipName
+          ? (draft.zipW ? draft.zipW + ' × ' + draft.zipH + ' detected' : 'Size not declared — uses the ad product format') + ' · click to replace'
+          : 'The zip should hold an index.html and its assets'),
+        saveLabel: s.editKey ? 'Save Changes' : 'Add To Database',
+        dialogLabel: s.editKey ? 'Edit Creative' : 'Add A Creative',
+        pinned: draft.pinned !== false,
+        pinBoxStyle: {
+          display: 'grid', placeItems: 'center', width: 20, height: 20, flex: 'none',
+          borderRadius: 5,
+          border: '1px solid ' + (draft.pinned !== false ? 'rgba(0,204,255,.7)' : 'rgba(255,255,255,.26)'),
+          background: draft.pinned !== false ? 'rgba(0,204,255,.22)' : 'rgba(255,255,255,.05)',
+          boxShadow: draft.pinned !== false ? '0 0 18px rgba(0,204,255,.3)' : 'none',
+          color: '#fff', fontSize: 12, fontWeight: 700, lineHeight: 1,
+          transition: 'all 200ms cubic-bezier(.16,1,.3,1)'
+        },
+        pinMark: draft.pinned !== false ? '✓' : '',
+        hint: draftZip
+          ? (draft.zipKey ? 'Plays from the uploaded zip, stored in the shared library' : 'Upload a zip to continue')
+          : resolvedId
+          ? 'Preview loads from captivate.kortx.io/shareablePreview/' + resolvedId
+          : 'Paste the share URL or just the ID'
+      }),
+      draftComponents: this.db.COMPONENTS.map(c => this.pill(c, draft.components.includes(c))),
+      goalOptions: this.db.CAMPAIGN_GOALS.slice(),
+      draftGoal: (draft.goals || [])[0] || '',
+
+
+      labelStyle: { display: 'block', fontSize: 10, fontWeight: 600, letterSpacing: '.14em',
+        textTransform: 'uppercase', color: 'rgba(255,255,255,.5)' },
+      inputStyle: this.inputStyle,
+      areaStyle: Object.assign({}, this.inputStyle, { resize: 'vertical', lineHeight: 1.5,
+        fontFamily: 'ui-monospace, monospace', fontSize: 11 }),
+      ghostBtn: { padding: '5px 10px', borderRadius: 999, border: '1px solid rgba(255,255,255,.14)',
+        background: 'rgba(255,255,255,.05)', color: 'rgba(255,255,255,.66)', fontSize: 11,
+        fontWeight: 500, cursor: 'pointer', whiteSpace: 'nowrap',
+        transition: 'all 200ms cubic-bezier(.16,1,.3,1)' },
+      facetHeadStyle: { display: 'flex', alignItems: 'center', gap: 12, width: '100%',
+        padding: 0, border: 0, background: 'transparent', cursor: 'pointer' },
+
+      toggleAdd: this.toggleAdd,
+      onDraftChange: this.onDraftChange,
+      onDraftComponent: this.onDraftComponent,
+      onDraftGoal: this.onDraftGoal,
+      onDraftPinned: this.onDraftPinned,
+      saveDraft: this.saveDraft,
+      cancelDraft: this.cancelDraft,
+      exportJson: this.exportJson,
+      onFilterChange: this.onFilterChange,
+      onFilterComponent: this.onFilterComponent,
+      openFilterComponents: this.openFilterComponents,
+      toggleFilterComponents: this.toggleFilterComponents,
+      clearFilters: this.clearFilters,
+      editRow: this.editRow,
+      removeRow: this.removeRow,
+      undoRemove: this.undoRemove,
+      dismissUndo: this.dismissUndo,
+      undoOpen: !!s.undo,
+      undoLabel: s.undo ? s.undo.label : '',
+      copyLink: this.copyLink,
+      migrateShow: false,
+      migrateText: (() => { const l = this.legacyRows() || []; const z = l.filter(r => r.source === 'zip').length; return l.length + ' creatives' + (z ? ' and ' + z + ' uploaded zip' + (z > 1 ? 's' : '') : '') + ' from before the live library are stored only here. Send them so the live site shows your edits.' + (this.isAdmin ? '' : ' Sign in as an admin first.'); })(),
+      migrateLabel: s.migrating || (this.isAdmin ? 'Send To Live Library' : 'Sign In To Send'),
+      runMigrate: this.runMigrate,
+      authLabel: s.user ? 'Sign Out' : 'Sign In',
+      openAuth: this.openAuth,
+      accountLabel: '',
+      syncLabel: s.syncErr || s.sync || (s.cloudOk ? 'Live library' : ''),
+      syncColor: s.syncErr ? '#FCA5A5' : (s.sync === 'Saving…' ? 'rgba(255,255,255,.6)' : 'var(--lime-300)'),
+      authOpen: s.authOpen, authEmail: s.authEmail, authPass: s.authPass,
+      authErr: s.authErr, authMsg: s.authMsg,
+      authSubmitLabel: s.authBusy ? 'Working…' : 'Sign In',
+      onAuthField: this.onAuthField, submitSignIn: this.submitSignIn,
+      submitSignUp: this.submitSignUp, closeAuth: this.closeAuth,
+      onPreviewEnter: this.onPreviewEnter,
+      onPreviewLeave: this.onPreviewLeave
+    };
+  }
+}
+
+</script>
+</body>
+</html>

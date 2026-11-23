@@ -1,0 +1,12 @@
+:root{
+  --radius-xs:4px;
+  --radius-sm:6px;
+  --radius-md:8px;    /* Kampus inputs, table chips */
+  --radius-lg:12px;   /* Kampus cards, deck pills */
+  --radius-xl:16px;   /* deck panels */
+  --radius-2xl:20px;
+  --radius-pill:999px;
+  --radius-mark:22%; /* @kind radius */  /* the logomark's squircle corner ratio */
+  --border-width:1px;
+  --border-width-accent:2px;  /* cyan bullet rules */
+}
