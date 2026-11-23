@@ -32,4 +32,4 @@ jobs:
           for f in $FILES; do echo "▶ $f"; psql "$SUPABASE_DB_URL" -v ON_ERROR_STOP=1 -f "$f"; done
           psql "$SUPABASE_DB_URL" -c "notify pgrst, 'reload schema';"
       - name: Deploy Edge Functions
-        run: supabase functions deploy --project-ref "$PROJECT_REF"
+        run: supabase functions deploy --project-ref "$PROJECT_REF"--yes
